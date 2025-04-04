@@ -111,9 +111,10 @@ async def run_agent():
                 logger.error(f"Error in test case {i + 1}: {e}")
                 api_results[f"case_{i + 1}"] = {"input": test_case, "error": str(e)}
 
-        # Save all results to YAML file
         script_dir = Path(__file__).parent
-        output_file = script_dir / "twitter_profile_agent_results.yaml"
+        current_file = Path(__file__).stem
+        base_filename = f"{current_file}_example"
+        output_file = script_dir / f"{base_filename}.yaml"
 
         yaml_content = {
             "username_extraction_tests": extraction_results,
