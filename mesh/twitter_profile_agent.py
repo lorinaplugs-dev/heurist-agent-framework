@@ -64,7 +64,7 @@ class TwitterProfileAgent(MeshAgent):
                 "external_apis": ["Twitter API"],
                 "tags": ["Social", "Twitter"],
                 "recommended": True,
-                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Twitter.png",
+                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/apidance.png",
                 "examples": [
                     "Get recent tweets from @username",
                     "Show me the latest updates from username",
