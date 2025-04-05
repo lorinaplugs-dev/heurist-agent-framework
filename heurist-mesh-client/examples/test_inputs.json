@@ -80,7 +80,7 @@
     },
     "get_token_pairs": {
       "chain": "solana",
-      "token_address": "8TE8oxirpnriy9CKCd6dyjtff2vvP3n6hrSMqX58pump"
+      "token_address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
     },
     "search_pairs": {
       "search_term": "ETH"
