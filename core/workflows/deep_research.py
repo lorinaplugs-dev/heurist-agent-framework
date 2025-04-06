@@ -110,7 +110,7 @@ class ResearchWorkflow:
 
         <prompt>{query}</prompt>
 
-        {f"Previous learnings to consider:\n{learnings_text}" if learnings_text else ""}
+        {f"Previous learnings to consider:{chr(10)}{learnings_text}" if learnings_text else ""}
         """
         example_response = """\n
         IMPORTANT: MAKE SURE YOU FOLLOW THE EXAMPLE RESPONSE FORMAT AND ONLY THAT FORMAT WITH THE CORRECT QUERY AND RESEARCH GOAL.
