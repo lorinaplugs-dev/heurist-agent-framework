@@ -112,32 +112,6 @@ async def process_mesh_request(request: MeshRequest, api_key: str = Depends(get_
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.get("/agents")
-async def list_agents():
-    """
-    Return a list of available agents and their metadata,
-    including any tools that each agent supports.
-    """
-    agents_info = {}
-    for agent_id, agent_cls in agents_dict.items():
-        agent = agent_cls()
-        # We can optionally re-generate or just rely on the stored metadata from S3.
-        # For a quick approach, re-attach the tools right now.
-        tools = None
-        if hasattr(agent, "get_tool_schemas") and callable(agent.get_tool_schemas):
-            tools = agent.get_tool_schemas()
-
-        agents_info[agent_id] = {
-            "metadata": agent.metadata,
-            "module": agent_cls.__module__.split(".")[-1],
-            "tools": tools,
-        }
-
-        logger.info(f"Agent {agent_id} has tools: {tools}")
-
-    return agents_info
-
-
 @app.get("/mesh_health")
 async def health_check():
     return {
