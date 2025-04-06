@@ -137,7 +137,7 @@ class MetadataManager:
 
     def fetch_existing_metadata(self) -> Dict:
         try:
-            response = requests.get("https://mesh.heurist.ai/mesh_agents_metadata.json")
+            response = requests.get("https://mesh.heurist.ai/metadata.json")
             response.raise_for_status()
             return response.json()
         except Exception as e:
@@ -280,7 +280,7 @@ class MetadataManager:
             metadata_json = json.dumps(metadata, indent=2)
             self.s3_client.put_object(
                 Bucket="mesh",
-                Key="mesh_agents_metadata.json",
+                Key="metadata.json",
                 Body=metadata_json,
                 ContentType="application/json",
             )

@@ -182,4 +182,4 @@ The Mesh API provides access to a growing ecosystem of specialized AI agents:
 | ZkIgniteAnalystAgent         | zkSync Era DeFi analysis with yield and TVL data      |
 | ZerionWalletAnalysisAgent    | Token and NFT holdings of a crypto wallet             |
 
-For a complete and up-to-date list of available agents and their capabilities, visit the [Mesh Agents Metadata Endpoint](https://mesh.heurist.ai/mesh_agents_metadata.json).
+For a complete and up-to-date list of available agents and their capabilities, visit the [Mesh Agents Metadata Endpoint](https://mesh.heurist.ai/metadata.json).
