@@ -1,7 +1,6 @@
 import asyncio
 import os
 import sys
-import uuid
 
 from dotenv import load_dotenv
 
@@ -21,13 +20,11 @@ async def main():
     workflow = Workflow(api_key=api_key, workflow_url="https://sequencer-v2.heurist.xyz")
 
     # Create a task (e.g., Text2Video)
-    task = Text2VideoTask(
-        consumer_id=str(uuid.uuid4()), prompt="A beautiful sunset over the ocean", timeout_seconds=600, workflow_id="1"
-    )
+    task = Text2VideoTask(prompt="A beautiful sunset over the ocean", timeout_seconds=600, workflow_id="1")
 
     # Execute and wait for result
     try:
-        result = await workflow.execute_workflow(task)
+        result = await workflow.execute_workflow_and_wait_for_result(task)
         print(f"Result: {result}")
     except Exception as e:
         import traceback

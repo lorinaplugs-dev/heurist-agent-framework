@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Optional
 
 from ..imgen import generate_image_with_retry_smartgen
+from ..videogen import Text2VideoTask, Workflow
 from ..voice import speak_text, transcribe_audio
 
 logger = logging.getLogger(__name__)
@@ -105,3 +106,49 @@ class MediaHandler:
         # Base probability otherwise
         image_probability = float(os.getenv("IMAGE_GENERATION_PROBABILITY", 0.3))
         return random.random() < image_probability
+
+    async def generate_video_prompt(self, message: str, duration: int = 5) -> str:
+        """Generate a detailed video prompt based on the user message"""
+        system_prompt = "You are a video prompt creator. Generate a detailed, short video based on the user's message."
+        response, _, _ = await self.llm_provider.call(
+            system_prompt=system_prompt,
+            user_prompt=f"Create a video prompt based on this: {message}, the video should be {duration} seconds long",
+            temperature=0.7,
+        )
+        return response
+
+    async def generate_video(self, prompt: str, duration: int = 5, quality: int = 80) -> str:
+        """Generate a video based on the prompt"""
+        print("Generating video")
+        try:
+            # Get API key and workflow URL from environment
+            api_key = os.getenv("HEURIST_API_KEY")
+            workflow_url = "https://sequencer-v2.heurist.xyz"
+            # Create video task
+            video_task = Text2VideoTask(
+                prompt=prompt,
+                length=duration,  # Duration in seconds
+                quality=quality,
+                timeout_seconds=600,
+                workflow_id="1",
+            )
+
+            # Initialize workflow
+            workflow = Workflow(api_key=api_key, workflow_url=workflow_url)
+
+            # Execute workflow and wait for result
+            logger.info(f"Starting video generation with prompt: {prompt}")
+            result = await workflow.execute_workflow_and_wait_for_result(video_task)
+
+            if result.status == "finished" and result.result:
+                video_url = result.result
+                logger.info(f"Video generated successfully: {video_url}")
+                return video_url
+            else:
+                error_msg = f"Video generation failed with status: {result.status}"
+                logger.error(error_msg)
+                return error_msg
+
+        except Exception as e:
+            logger.error(f"Error generating video: {str(e)}")
+            return f"Error generating video: {str(e)}"

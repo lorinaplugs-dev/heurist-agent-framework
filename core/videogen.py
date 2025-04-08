@@ -18,7 +18,11 @@ class WorkflowTaskType(str, Enum):
 
 def parse_api_key_string(combined_key: str) -> Tuple[str, str]:
     """Split the combined API key into consumer ID and API key."""
-    parts = combined_key.split("#")
+    if "#" in combined_key:
+        parts = combined_key.split("#")
+    else:
+        parts = combined_key.split("-")
+
     return parts[0] if parts else "", parts[1] if len(parts) > 1 else ""
 
 
@@ -27,6 +31,14 @@ class WorkflowTaskResult:
     task_id: str
     status: str  # 'waiting' | 'running' | 'finished' | 'failed' | 'canceled'
     result: Optional[Any] = None
+
+    def __init__(self, task_id: str, status: str, result: Optional[Any] = None, **kwargs):
+        self.task_id = task_id
+        self.status = status
+        self.result = result
+        # Store any additional fields dynamically
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
 
 class WorkflowTask(ABC):
@@ -141,7 +153,6 @@ class Workflow:
             "job_id": f"{task.job_id_prefix or 'sdk-workflow'}-{task_id}",
             "workflow_id": task.workflow_id,
         }
-
         if task.timeout_seconds:
             data["timeout_seconds"] = task.timeout_seconds
 
