@@ -61,7 +61,7 @@ class TokenMetricsAgent(MeshAgent):
                 ],
                 "external_apis": ["TokenMetrics"],
                 "tags": ["Market Analysis", "Crypto", "Finance"],
-                "image_url": "https://path-to-your-logo-image",
+                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/tokenmetrics.png",
                 "examples": [
                     "What is the current market sentiment?",
                     "Show me resistance and support levels for BTC and ETH",
