@@ -94,9 +94,10 @@ async def run_agent():
         id_recognition_results = await test_id_pattern_recognition(agent)
 
         test_cases = [
-            {"query": "Give me details of heurist_ai", "limit": 5},
-            {"query": "What realdonaldtrump has been tweeting?", "limit": 5},
-            {"tool": "get_user_tweets", "tool_arguments": {"username": "elonmusk", "limit": 5}},
+            {"query": "Summarise recent updates of @heurist_ai", "limit": 5},
+            {"query": "What has @elonmusk been tweeting lately?", "limit": 5},
+            {"query": "Get the recent tweets from cz_binance", "limit": 5},
+            {"tool": "get_user_tweets", "tool_arguments": {"username": "realdonaldtrump", "limit": 5}},
             # Test with a numeric ID (this is a placeholder ID)
             {"query": "Get tweets from user_id:778764142412984320", "limit": 5},
         ]
