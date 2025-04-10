@@ -87,7 +87,6 @@ class TruthSocialAgent(MeshAgent):
         IMPORTANT:
         - Always provide context when referencing specific posts
         - Be aware that you're accessing publicly available information only
-        - When no specific profile is requested, default to @realDonaldTrump
         """
 
     def get_tool_schemas(self) -> List[Dict]:
