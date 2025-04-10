@@ -235,7 +235,7 @@ class MetadataManager:
             apis_text = ", ".join(apis) if apis else "-"
 
             module_name = agent_data.get("module", "")
-            source_link = f"[Source](./{module_name}.py)" if module_name else "-"
+            source_link = f"[Source](./agents/{module_name}.py)" if module_name else "-"
 
             description = agent_data["metadata"].get("description", "").replace("\n", " ")
             rows.append(f"| {agent_id} | {description} | {tools_text} | {source_link} | {apis_text} |")
