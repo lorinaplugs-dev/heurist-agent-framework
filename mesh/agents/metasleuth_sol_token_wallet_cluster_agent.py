@@ -45,7 +45,7 @@ class MetaSleuthSolTokenWalletClusterAgent(MeshAgent):
                 ],
                 "external_apis": ["MetaSleuth"],
                 "tags": ["Solana"],
-                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/MetaSleuth.png",  # use the logo of metasleuth
+                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/MetaSleuth.png",
                 "examples": [
                     "Analyze the wallet clusters of this Solana token: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
                     "What percentage of the supply of 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN is held by the top wallet clusters?",

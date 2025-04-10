@@ -56,7 +56,7 @@ class MasaTwitterSearchAgent(MeshAgent):
                 ],
                 "external_apis": ["Masa"],
                 "tags": ["Twitter"],
-                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Masa.png",  # use the logo of masa
+                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Masa.png",
                 "examples": [
                     "Search for tweets about @heurist_ai",
                     "What are people saying about $BTC on Twitter?",

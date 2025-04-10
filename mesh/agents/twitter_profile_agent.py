@@ -61,7 +61,7 @@ class TwitterProfileAgent(MeshAgent):
                 "external_apis": ["Twitter API"],
                 "tags": ["Twitter"],
                 "recommended": True,
-                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/twitter.png",
+                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Twitter.png",
                 "examples": [
                     "Summarise recent updates of @heurist_ai",
                     "What has @elonmusk been tweeting lately?",

@@ -69,7 +69,7 @@ class DeepResearchAgent(MeshAgent):
                 ],
                 "external_apis": ["Firecrawl"],
                 "tags": ["Research"],
-                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/deep_research.png",  # use an emoji of 🔍
+                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/DeepResearch.png",
                 "examples": [
                     "What is the latest news on Bitcoin?",
                     "Find information about the Ethereum blockchain",
