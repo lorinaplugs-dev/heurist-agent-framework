@@ -65,7 +65,7 @@ class SpaceTimeAgent(MeshAgent):
                     },
                 ],
                 "external_apis": ["Space and Time"],
-                "tags": ["SQL", "ZK"],
+                "tags": ["Onchain Data"],
                 "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/SpacenTime.png",
                 "examples": [

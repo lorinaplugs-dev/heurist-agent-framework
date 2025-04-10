@@ -61,7 +61,7 @@ class TwitterProfileAgent(MeshAgent):
                     },
                 ],
                 "external_apis": ["Twitter API"],
-                "tags": ["Social", "Twitter"],
+                "tags": ["Twitter"],
                 "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/twitter.png",
                 "examples": [
