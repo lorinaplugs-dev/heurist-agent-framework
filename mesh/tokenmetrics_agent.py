@@ -60,7 +60,7 @@ class TokenMetricsAgent(MeshAgent):
                     },
                 ],
                 "external_apis": ["TokenMetrics"],
-                "tags": ["Market Analysis", "Crypto", "Finance"],
+                "tags": ["Market Analysis"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/tokenmetrics.png",
                 "examples": [
                     "What is the current market sentiment?",
@@ -104,7 +104,7 @@ class TokenMetricsAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_sentiments",
-                    "description": "Retrieves market sentiment data for cryptocurrencies from TokenMetrics. This tool provides sentiment analysis that indicates whether the market or specific tokens are trending bullish or bearish. Use this for understanding the current market mood and sentiment shifts. ALWAYS use this tool when user asks about sentiment, feelings, or mood of the market.",
+                    "description": "Retrieves market sentiment data for cryptocurrencies from TokenMetrics. This tool provides sentiment analysis that indicates whether the market or specific tokens are trending bullish or bearish. Use this for understanding the current market sentiment and help with investment decisions.",
                     "parameters": {
                         "type": "object",
                         "properties": {
