@@ -145,7 +145,7 @@ class MetadataManager:
             return {"agents": {}}
 
     def load_agents(self) -> Dict[str, dict]:
-        mesh_dir = Path("mesh")
+        mesh_dir = Path("mesh/agents")
         if not mesh_dir.exists():
             log.error("Mesh directory not found")
             return {}
