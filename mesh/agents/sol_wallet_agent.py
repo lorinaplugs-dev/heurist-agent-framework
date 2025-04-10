@@ -9,10 +9,9 @@ import pydash as _py
 from dotenv import load_dotenv
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
 
-from core.llm import call_llm_async, call_llm_with_tools_async
+from core.llm import call_llm_with_tools_async
 from decorators import monitor_execution, with_cache, with_retry
-
-from .mesh_agent import MeshAgent
+from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
 load_dotenv()
@@ -59,7 +58,7 @@ class SolWalletAgent(MeshAgent):
                 ],
                 "external_apis": ["Helius"],
                 "tags": ["Solana"],
-                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/solana.png",
+                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Solana.png",
             }
         )
 
@@ -176,35 +175,6 @@ class SolWalletAgent(MeshAgent):
                 },
             },
         ]
-
-    # ------------------------------------------------------------------------
-    #                       SHARED / UTILITY METHODS
-    # ------------------------------------------------------------------------
-    async def _respond_with_llm(self, query: str, tool_call_id: str, data: dict, temperature: float) -> str:
-        """
-        Reusable helper to ask the LLM to generate a user-friendly explanation
-        given a piece of data from a tool call.
-        """
-        return await call_llm_async(
-            base_url=self.heurist_base_url,
-            api_key=self.heurist_api_key,
-            model_id=self.metadata["large_model_id"],
-            messages=[
-                {"role": "system", "content": self.get_system_prompt()},
-                {"role": "user", "content": query},
-                {"role": "tool", "content": str(data), "tool_call_id": tool_call_id},
-            ],
-            temperature=temperature,
-        )
-
-    def _handle_error(self, maybe_error: dict) -> dict:
-        """
-        Small helper to return the error if present in
-        a dictionary with the 'error' key.
-        """
-        if "error" in maybe_error:
-            return {"error": maybe_error["error"]}
-        return {}
 
     # ------------------------------------------------------------------------
     #                      HELIUS API-SPECIFIC METHODS
@@ -562,7 +532,12 @@ class SolWalletAgent(MeshAgent):
                 return {"response": "", "data": data}
 
             explanation = await self._respond_with_llm(
-                query=query, tool_call_id=tool_call.id, data=data, temperature=0.7
+                model_id=self.metadata["large_model_id"],
+                system_prompt=self.get_system_prompt(),
+                query=query,
+                tool_call_id=tool_call.id,
+                data=data,
+                temperature=0.7,
             )
 
             return {"response": explanation, "data": data}

@@ -8,8 +8,7 @@ from dotenv import load_dotenv
 
 from core.llm import call_llm_async, call_llm_with_tools_async
 from decorators import monitor_execution, with_cache, with_retry
-
-from .mesh_agent import MeshAgent
+from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
 load_dotenv()
@@ -119,6 +118,9 @@ class CarvOnchainDataAgent(MeshAgent):
     # ------------------------------------------------------------------------
     #                       SHARED / UTILITY METHODS
     # ------------------------------------------------------------------------
+
+    # this has a different signature, that supports anthropic models better.
+    # todo: remove it from here, and edit all the other agents  to just use this one.
     async def _respond_with_llm(
         self,
         query: str,
@@ -165,15 +167,6 @@ class CarvOnchainDataAgent(MeshAgent):
             ],
             temperature=temperature,
         )
-
-    def _handle_error(self, maybe_error: dict) -> dict:
-        """
-        Small helper to return the error if present in
-        a dictionary with the 'error' key.
-        """
-        if "error" in maybe_error:
-            return {"error": maybe_error["error"]}
-        return {}
 
     # ------------------------------------------------------------------------
     #                      CARV API-SPECIFIC METHODS

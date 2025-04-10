@@ -44,7 +44,7 @@ class AgentLoader:
 
     def load_agents(self) -> Dict[str, Type[MeshAgent]]:
         agents_dict = {}
-        package_name = "mesh"
+        package_name = "mesh.agents"
         found_agents = []
         import_errors = []
 

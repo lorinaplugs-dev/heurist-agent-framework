@@ -7,10 +7,8 @@ from typing import Any, Dict, List
 import requests
 from dotenv import load_dotenv
 
-from core.llm import call_llm_async
 from decorators import monitor_execution, with_cache, with_retry
-
-from .mesh_agent import MeshAgent
+from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
 load_dotenv()
@@ -308,21 +306,54 @@ class TwitterProfileAgent(MeshAgent):
 
         return ""
 
-    async def _respond_with_llm(self, query: str, tool_call_id: str, data: dict, temperature: float) -> str:
+    async def _make_api_request(self, endpoint: str, params: Dict, max_retries: int = 3) -> Dict:
         """
-        Generate an LLM explanation of the Twitter profile data
+        Make API request with retry logic for 429 errors
+
+        Args:
+            endpoint: API endpoint URL
+            params: Request parameters
+            max_retries: Maximum number of retries (default: 3)
+
+        Returns:
+            API response as dictionary
         """
-        return await call_llm_async(
-            base_url=self.heurist_base_url,
-            api_key=self.heurist_api_key,
-            model_id=self.metadata["large_model_id"],
-            messages=[
-                {"role": "system", "content": self.get_system_prompt()},
-                {"role": "user", "content": query},
-                {"role": "tool", "content": str(data), "tool_call_id": tool_call_id},
-            ],
-            temperature=temperature,
-        )
+        retries = 0
+        backoff_time = 2
+
+        while retries <= max_retries:
+            try:
+                response = requests.get(endpoint, params=params, headers=self.headers)
+
+                if response.status_code == 200:
+                    return response.json()
+                if response.status_code == 429:
+                    retries += 1
+                    if retries > max_retries:
+                        response.raise_for_status()
+                    wait_time = (
+                        backoff_time
+                        * (2 ** (retries - 1))
+                        * (0.8 + 0.4 * asyncio.get_event_loop().create_future().get_loop().time() % 1)
+                    )
+                    logger.warning(
+                        f"Rate limit hit. Retrying in {wait_time:.2f} seconds (Attempt {retries}/{max_retries})"
+                    )
+                    await asyncio.sleep(wait_time)
+                    continue
+                response.raise_for_status()
+
+            except requests.exceptions.RequestException as e:
+                logger.error(f"Request error: {str(e)}")
+                retries += 1
+                if retries > max_retries:
+                    return {"status": "error", "error": f"API request failed after {max_retries} retries: {str(e)}"}
+
+                wait_time = backoff_time * (2 ** (retries - 1))
+                logger.warning(f"Request failed. Retrying in {wait_time} seconds (Attempt {retries}/{max_retries})")
+                await asyncio.sleep(wait_time)
+
+        return {"status": "error", "error": "Maximum retries exceeded"}
 
     async def _make_api_request(self, endpoint: str, params: Dict, max_retries: int = 3) -> Dict:
         """
@@ -526,7 +557,12 @@ class TwitterProfileAgent(MeshAgent):
                 return {"response": "", "data": data}
 
             explanation = await self._respond_with_llm(
-                query=query, tool_call_id="twitter_profile_query", data=data, temperature=0.7
+                model_id=self.metadata["large_model_id"],
+                system_prompt=self.get_system_prompt(),
+                query=query,
+                tool_call_id="twitter_profile_query",
+                data=data,
+                temperature=0.7,
             )
 
             return {"response": explanation, "data": data}

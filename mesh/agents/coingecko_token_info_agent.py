@@ -11,8 +11,7 @@ from smolagents.memory import SystemPromptStep
 from core.custom_smolagents import OpenAIServerModel
 from core.llm import call_llm_async
 from decorators import monitor_execution, with_cache, with_retry
-
-from .mesh_agent import MeshAgent
+from mesh.mesh_agent import MeshAgent
 
 load_dotenv()
 logger = logging.getLogger(__name__)
@@ -856,32 +855,6 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             },
         }
 
-    async def _respond_with_llm(self, query: str, tool_call_id: str, data: dict, temperature: float) -> str:
-        """
-        Reusable helper to ask the LLM to generate a user-friendly explanation
-        given a piece of data from a tool call.
-        """
-        return await call_llm_async(
-            base_url=self.heurist_base_url,
-            api_key=self.heurist_api_key,
-            model_id=self.metadata["large_model_id"],
-            messages=[
-                {"role": "system", "content": self.get_system_prompt()},
-                {"role": "user", "content": query},
-                {"role": "tool", "content": str(data), "tool_call_id": tool_call_id},
-            ],
-            temperature=temperature,
-        )
-
-    def _handle_error(self, maybe_error: dict) -> dict:
-        """
-        Small helper to return the error if present in
-        a dictionary with the 'error' key.
-        """
-        if "error" in maybe_error:
-            return {"error": maybe_error["error"]}
-        return {}
-
     @monitor_execution()
     @with_retry(max_retries=3)
     async def handle_message(self, params: Dict[str, Any]) -> Dict[str, Any]:
@@ -946,7 +919,12 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                     return {"response": "", "data": result}
                 if query:
                     explanation = await self._respond_with_llm(
-                        query=query, tool_call_id="direct_tool", data=result, temperature=0.7
+                        model_id=self.metadata["large_model_id"],
+                        system_prompt=self.get_system_prompt(),
+                        query=query,
+                        tool_call_id="direct_tool",
+                        data=result,
+                        temperature=0.7,
                     )
                     return {"response": explanation, "data": result}
 
