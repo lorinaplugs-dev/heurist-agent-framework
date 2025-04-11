@@ -23,10 +23,17 @@ async def run_agent():
         # Test direct tool call
         agent_input_direct = {
             "tool": "get_trump_posts",
-            "tool_arguments": {"max_posts": 20},
-            "raw_data_only": True,
+            "tool_arguments": {"max_posts": 5},
+            "raw_data_only": False,
         }
         agent_output_direct = await agent.handle_message(agent_input_direct)
+
+        agent_input_direct_2 = {
+            "tool": "get_trump_posts",
+            "tool_arguments": {"max_posts": 5},
+            "raw_data_only": True,
+        }
+        agent_output_direct_2 = await agent.handle_message(agent_input_direct_2)
 
         script_dir = Path(__file__).parent
         current_file = Path(__file__).stem
@@ -38,6 +45,8 @@ async def run_agent():
             "output_query": agent_output_query,
             "input_direct": agent_input_direct,
             "output_direct": agent_output_direct,
+            "input_direct_2": agent_input_direct_2,
+            "output_direct_2": agent_output_direct_2,
         }
 
         with open(output_file, "w", encoding="utf-8") as f:

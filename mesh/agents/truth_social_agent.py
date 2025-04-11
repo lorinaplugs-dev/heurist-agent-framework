@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 import os
@@ -9,7 +10,7 @@ from apify_client import ApifyClient
 from dotenv import load_dotenv
 
 from core.llm import call_llm_with_tools_async
-from decorators import monitor_execution, with_cache, with_retry
+from decorators import monitor_execution, with_retry
 from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
@@ -126,11 +127,11 @@ class TruthSocialAgent(MeshAgent):
     # ------------------------------------------------------------------------
     #                      APIFY API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
-    @with_cache(ttl_seconds=1800)  # Cache for 30 minutes
     @with_retry(max_retries=3)
     async def get_trump_posts(self, profile: str = "@realDonaldTrump", max_posts: int = 20) -> Dict:
         """
         Retrieve recent posts from Donald Trump's Truth Social profile using Apify.
+        The Apify client library is synchronous so we run it in a thread.
         """
         try:
             run_input = {
@@ -140,9 +141,9 @@ class TruthSocialAgent(MeshAgent):
                 "includeMuted": False,
             }
 
-            run = self.client.actor("wFKNJUPPLyEg7pdgv").call(run_input=run_input)
+            # Run the actor call in a background thread.
+            run = await asyncio.to_thread(lambda: self.client.actor("wFKNJUPPLyEg7pdgv").call(run_input=run_input))
             dataset_id = run.get("defaultDatasetId")
-
             if not dataset_id:
                 return {"error": "Failed to retrieve posts: No dataset returned"}
 
@@ -177,13 +178,16 @@ class TruthSocialAgent(MeshAgent):
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         """
-        Handle execution of specific tools and return the raw data
+        Handle execution of specific tools and return the raw data.
+        Enforce a minimum of 20 posts regardless of user input.
         """
         if tool_name == "get_trump_posts":
             profile = function_args.get("profile", "@realDonaldTrump")
-            max_posts = function_args.get("max_posts", 20)
+            user_supplied = function_args.get("max_posts", 20)
+            # Enforce at least 20 posts.
+            max_posts = user_supplied if user_supplied >= 20 else 20
 
-            logger.info(f"Retrieving Truth Social posts for profile: {profile}")
+            logger.info(f"Retrieving Truth Social posts for profile: {profile} with max_posts: {max_posts}")
             result = await self.get_trump_posts(profile, max_posts)
 
             errors = self._handle_error(result)
@@ -216,7 +220,18 @@ class TruthSocialAgent(MeshAgent):
         # ---------------------
         if tool_name:
             data = await self._handle_tool_logic(tool_name=tool_name, function_args=tool_args)
-            return {"response": "", "data": data}
+            if raw_data_only:
+                return {"response": "", "data": data}
+            else:
+                explanation = await self._respond_with_llm(
+                    model_id=self.metadata["large_model_id"],
+                    system_prompt=self.get_system_prompt(),
+                    query="Explain",
+                    tool_call_id="direct_call",
+                    data=data,
+                    temperature=0.7,
+                )
+                return {"response": explanation, "data": data}
 
         # ---------------------
         # 2) NATURAL LANGUAGE QUERY (LLM decides the tool)
@@ -265,3 +280,11 @@ class TruthSocialAgent(MeshAgent):
 
     async def cleanup(self):
         pass
+
+    def _handle_error(self, result: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Check if the result contains an error and return the error dictionary if so.
+        """
+        if "error" in result:
+            return {"error": result["error"]}
+        return None

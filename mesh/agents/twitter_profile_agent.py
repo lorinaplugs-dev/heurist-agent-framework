@@ -438,7 +438,7 @@ class TwitterProfileAgent(MeshAgent):
         """Handle tool execution logic"""
         if tool_name == "get_user_tweets":
             identifier = function_args.get("username")
-            limit = function_args.get("limit", 10)
+            limit = max(function_args.get("limit", 10), 10)
 
             if not identifier:
                 return {"error": "Missing 'username' in tool_arguments"}

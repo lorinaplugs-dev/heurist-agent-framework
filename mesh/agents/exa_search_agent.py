@@ -192,7 +192,7 @@ class ExaSearchAgent(MeshAgent):
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         if tool_name == "exa_web_search":
             search_term = function_args.get("search_term")
-            limit = function_args.get("limit", 10)
+            limit = max(function_args.get("limit", 10), 10)
 
             if not search_term:
                 return {"error": "Missing 'search_term' in tool_arguments"}
