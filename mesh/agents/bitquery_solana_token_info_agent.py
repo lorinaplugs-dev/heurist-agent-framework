@@ -82,7 +82,6 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
             "You are a specialized assistant that analyzes Solana token data using the Bitquery API. Your capabilities include:\n\n"
             "1. Token Metrics Analysis:\n"
             "   - Trading volume and price movements\n"
-            "   - Liquidity analysis\n"
             "   - Market cap tracking\n"
             "   - Price history and trends\n\n"
             "2. Holder Analysis:\n"
@@ -220,7 +219,7 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     async def query_token_metrics(self, token_address: str, quote_token: str = "sol") -> Dict:
         """
-        Get detailed token trading information including metrics like volume, liquidity, and market cap.
+        Get detailed token trading information including metrics like volume and market cap.
 
         Args:
             token_address (str): The mint address of the token
@@ -283,28 +282,6 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
                 ) {
                   sum(of: Trade_Side_AmountInUSD, if: {Trade: {Side: {Type: {is: sell}}}})
                 }
-                liquidity: DEXPools(
-                  where: {
-                    Pool: {
-                      Market: {
-                        BaseCurrency: { MintAddress: { is: $token } }
-                        QuoteCurrency: { MintAddress: { is: $quote_token } }
-                      }
-                    }
-                    Block: { Time: { till: $time_1h_ago } }
-                  }
-                  limit: { count: 10 }
-                  orderBy: { descending: Block_Time }
-                ) {
-                  Pool {
-                    Base {
-                      PostAmountInUSD
-                    }
-                    Quote {
-                      PostAmountInUSD
-                    }
-                  }
-                }
                 marketcap: TokenSupplyUpdates(
                   where: {
                     TokenSupplyUpdate: { Currency: { MintAddress: { is: $token } } }
@@ -322,30 +299,6 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
                     }
                   }
                 }
-                # Add token price data
-                tokenPrice: DEXTrades(
-                  limit: {count: 10}
-                  orderBy: {descending: Block_Time}
-                  where: {
-                    Trade: {
-                      Buy: {Currency: {MintAddress: {is: $token}}}
-                      Sell: {Currency: {MintAddress: {is: $quote_token}}}
-                    }
-                  }
-                ) {
-                  Trade {
-                    Buy {
-                      Currency {
-                        Symbol
-                      }
-                    }
-                    Sell {
-                      Currency {
-                        Symbol
-                      }
-                    }
-                  }
-                }
               }
             }
             """
@@ -356,11 +309,7 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
             result = await self._execute_query(query, variables)
 
             # If no data found with primary quote token, try alternatives
-            if (
-                not result.get("data", {}).get("Solana", {}).get("liquidity")
-                and quote_token.lower() != "sol"
-                and quote_token != self.SOL_ADDRESS
-            ):
+            if quote_token.lower() != "sol" and quote_token != self.SOL_ADDRESS:
                 # Try with SOL as fallback
                 sol_variables = {"time_1h_ago": time_1h_ago, "token": token_address, "quote_token": self.SOL_ADDRESS}
                 result = await self._execute_query(query, sol_variables)
