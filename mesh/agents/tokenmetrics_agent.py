@@ -222,7 +222,19 @@ class TokenMetricsAgent(MeshAgent):
         self, token_ids: str = "3375,3306", symbols: str = "BTC,ETH", limit: int = 10, page: int = 0
     ) -> Dict:
         try:
-            params = {"token_id": token_ids, "symbol": symbols, "limit": limit, "page": page}
+            params = {"limit": limit, "page": page}
+
+            # If custom symbols are provided (different from default), use only those
+            if symbols != "BTC,ETH":
+                params["symbol"] = symbols
+            # If custom token_ids are provided (different from default), use only those
+            elif token_ids != "3375,3306":
+                params["token_id"] = token_ids
+            # If no custom values are provided, use defaults
+            else:
+                params["symbol"] = symbols
+                params["token_id"] = token_ids
+
             url = f"{self.base_url}/resistance-support"
 
             response = requests.get(url, headers=self.headers, params=params)
