@@ -70,6 +70,9 @@ jobs:
 
       - name: Wait for deployment
         run: |
+          echo "Waiting 10 seconds for deployment to start..."
+          sleep 10
+
           for i in {1..30}; do
             echo "Waiting for deployment... (attempt $i/30)"
             response=$(curl -s https://sequencer-v2.heurist.xyz/mesh_health || echo "")
@@ -81,7 +84,7 @@ jobs:
               exit 0
             fi
 
-            sleep 10
+            sleep 5
           done
 
           echo "Deployment timed out"
