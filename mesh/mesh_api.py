@@ -1,6 +1,5 @@
 import logging
 import os
-import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -17,6 +16,14 @@ sys.path.append(str(project_root))
 
 from mesh.mesh_manager import AgentLoader, Config  # noqa: E402
 
+
+# exclude `mesh_health` logs as it's used for health checks
+class EndpointFilter(logging.Filter):
+    def filter(self, record: logging.LogRecord) -> bool:
+        return "GET /mesh_health" not in record.getMessage()
+
+
+logging.getLogger("uvicorn.access").addFilter(EndpointFilter())
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s - %(message)s")
 logger = logging.getLogger("MeshAPI")
 
@@ -37,17 +44,8 @@ app.add_middleware(
 
 config = Config()
 agents_dict = AgentLoader(config).load_agents()
-
-try:
-    result = subprocess.run(
-        ["git", "rev-parse", "HEAD"],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    current_commit = result.stdout.strip() if result.returncode == 0 else "unknown"
-except Exception:
-    current_commit = "unknown"
+# passed in at build time, by github actions
+current_commit = os.getenv("GITHUB_SHA", "unknown")
 
 
 class MeshRequest(BaseModel):
@@ -127,4 +125,5 @@ async def health_check():
 
 
 if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0")
     uvicorn.run(app, host="0.0.0.0")
