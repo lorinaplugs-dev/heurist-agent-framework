@@ -147,6 +147,26 @@
       "address": "tQNVaFm2sy81tWdHZ971ztS5FKaShJUKGAzHMcypump"
     }
   },
+  "MindAiKolAgent": {
+    "get_best_initial_calls": {
+      "period": 168,
+      "token_symbol": "HEU"
+    },
+    "get_kol_statistics": {
+      "period": 720,
+      "kol_name": "@agentcookiefun"
+    },
+    "get_token_statistics": {
+      "period": 720,
+      "token_symbol": "HEU"
+    },
+    "get_top_gainers": {
+      "period": 720,
+      "token_category": "top100",
+      "tokens_amount": 5,
+      "kols_amount": 3
+    }
+  },
   "MoniTwitterInsightAgent": {
     "get_smart_followers_categories": {
       "username": "heurist_ai"
@@ -182,10 +202,27 @@
       "nl_query": "What's the average transactions in past week for Ethereum"
     }
   },
+  "TokenMetricsAgent": {
+    "get_resistance_support_levels": {
+      "limit": 10,
+      "page": 0,
+      "symbols": "DOGE",
+      "token_ids": "3393"
+    },
+    "get_sentiments": {
+      "limit": 5,
+      "page": 0
+    }
+  },
+  "TruthSocialAgent": {
+    "get_trump_posts": {
+      "max_posts": 5
+    }
+  },
   "TwitterProfileAgent": {
     "get_user_tweets": {
-      "username": "elonmusk",
-      "limit": 5
+      "limit": 5,
+      "username": "elonmusk"
     }
   },
   "ZerionWalletAnalysisAgent": {
