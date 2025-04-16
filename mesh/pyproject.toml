@@ -20,11 +20,18 @@ dependencies = [
     "safe-eth-py==6.0.0b42", # to build web3-ethereum-defi
     "scikit-learn==1.6.1", # for core embeddings
     "smolagents==1.9.2", # for coingecko, zkignite
-    "spaceandtime==1.1.17", # for spaceandtime agent
+    "spaceandtime==1.1.70", # for spaceandtime agent
     "tenacity==8.5.0", # sol wallet agent
     "tiktoken==0.9.0", # core embeddings
     "uvicorn==0.34.0", # for mesh api server
     "web3-ethereum-defi==0.28.1", # aave agent
+]
+
+# required for spaceandtime agent as it uses old deps
+[tool.uv]
+override-dependencies = [
+    "requests==2.32.3",
+    "python-dotenv==1.1.0",
 ]
 
 [tool.uv.sources]
