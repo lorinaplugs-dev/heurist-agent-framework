@@ -200,13 +200,9 @@ class TokenMetricsAgent(MeshAgent):
             logger.error(f"Unexpected error: {e}")
             return {"error": f"Unexpected error: {str(e)}"}
 
-    @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_sentiments(self, limit: int = 10, page: int = 0) -> Dict:
-        """
-        Retrieves market sentiment data from TokenMetrics API.
-        Filters results to only include Twitter-related fields.
-        """
         try:
             params = {"limit": limit, "page": page}
             url = f"{self.base_url}/sentiments"
@@ -242,14 +238,11 @@ class TokenMetricsAgent(MeshAgent):
             logger.error(f"Unexpected error: {e}")
             return {"error": f"Unexpected error: {str(e)}"}
 
-    @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_resistance_support_levels(
         self, token_ids: str = "3375,3306", symbols: str = "BTC,ETH", limit: int = 10, page: int = 0
     ) -> Dict:
-        """
-        Retrieves resistance and support level data for specified cryptocurrencies.
-        """
         try:
             params = {"token_id": token_ids, "symbol": symbols, "limit": limit, "page": page}
             url = f"{self.base_url}/resistance-support"
@@ -429,14 +422,7 @@ class TokenMetricsAgent(MeshAgent):
                 params["custom_token_ids"] = custom_token_ids
                 params["custom_symbols"] = custom_symbols
 
-        return super()._before_handle_message(params)
-
-    async def _after_handle_message(self, response: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Hook called after message handling.
-        Allows for modification of the response before it's returned to the caller.
-        """
-        return super()._after_handle_message(response)
+        return await super()._before_handle_message(params)
 
     def _should_use_sentiment_tool(self, query: str) -> bool:
         """
