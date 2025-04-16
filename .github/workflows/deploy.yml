@@ -2,12 +2,6 @@ name: Build and Deploy Mesh
 
 on:
   push:
-    paths:
-      - "mesh/**"
-      - "core/**"
-      - "clients/**"
-      - "agents/**"
-      - "interfaces/**"
     branches: [main]
   workflow_dispatch:
 
