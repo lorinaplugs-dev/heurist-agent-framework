@@ -16,7 +16,7 @@ class DuckDuckGoSearchAgent(MeshAgent):
             {
                 "name": "DuckDuckGo Agent",
                 "version": "1.0.0",
-                "author": "Heurist Team",
+                "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": (
                     "This agent can fetch and analyze web search results using DuckDuckGo API and provide intelligent summaries."

@@ -26,7 +26,7 @@ class TokenMetricsAgent(MeshAgent):
             {
                 "name": "TokenMetrics Agent",
                 "version": "1.0.0",
-                "author": "Heurist Team",
+                "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent provides market insights, sentiment analysis, and resistance/support data for cryptocurrencies using TokenMetrics API.",
                 "inputs": [

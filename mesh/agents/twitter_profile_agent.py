@@ -28,7 +28,7 @@ class TwitterProfileAgent(MeshAgent):
             {
                 "name": "Twitter Profile Agent",
                 "version": "1.0.0",
-                "author": "Heurist Team",
+                "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent fetches a Twitter user's profile information and recent tweets. It's useful for getting project updates or tracking key opinion leaders (KOLs) in the space.",
                 "inputs": [

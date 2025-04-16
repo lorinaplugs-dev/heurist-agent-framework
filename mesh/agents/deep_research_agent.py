@@ -28,7 +28,7 @@ class DeepResearchAgent(MeshAgent):
             {
                 "name": "Deep Research Agent",
                 "version": "1.0.0",
-                "author": "Heurist Team",
+                "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "Advanced research agent that performs multi-level web searches with recursive exploration, analyzes content across sources, and produces comprehensive research reports with key insights",
                 "inputs": [
