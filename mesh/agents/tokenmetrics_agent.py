@@ -60,17 +60,9 @@ class TokenMetricsAgent(MeshAgent):
                 "tags": ["Market Analysis"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/TokenMetrics.png",
                 "examples": [
-                    "What is the current market sentiment?",
-                    "Show me resistance and support levels for BTC and ETH",
-                    "Get the latest sentiment analysis for top cryptocurrencies",
-                    "What are the key support and resistance levels for Bitcoin?",
-                    "What's the sentiment for Solana (SOL)?",
-                    "Show me resistance levels for HEU token",
-                    "What is the current market sentiment for top cryptocurrencies?",
-                    "Can you show me the top 5 cryptocurrencies by market feeling?",
-                    "What are the key resistance and support levels for Bitcoin and Ethereum?",
-                    "What are the resistance and support levels for Solana (SOL)?",
-                    "What's the current sentiment for Heurist token?",
+                    "What is the current crypto market sentiment?",
+                    "Show me resistance and support levels for ETH",
+                    "resistance and support levels for Solana",
                 ],
             }
         )
@@ -80,26 +72,12 @@ class TokenMetricsAgent(MeshAgent):
         You are a cryptocurrency market analyst specializing in technical analysis and sentiment data.
         You provide insights based on data from TokenMetrics, a leading crypto analytics platform.
 
-        When analyzing sentiment data:
-        1. Summarize the overall market sentiment (bullish, bearish, or neutral)
-        2. Highlight tokens with notably positive or negative sentiment
-        3. Identify any significant sentiment shifts compared to previous periods
-        4. Provide context on what the sentiment data might mean for investors
-
-        When analyzing resistance and support levels:
-        1. Explain the current price in relation to resistance/support zones
-        2. Identify key price levels that traders should watch
-        3. Note when a token is testing significant support or resistance
-        4. Suggest what the technical setup might indicate for short-term price action
-
         Your analysis should be:
         - Clear and concise
         - Focused on data rather than speculation
         - Suitable for both beginner and advanced crypto traders
-        - Careful to note that this is analysis, not financial advice
 
-        IMPORTANT: When a user asks about sentiment, feeling, or mood of the market, always use the get_sentiments tool.
-        The default number of results should be 10 unless explicitly specified by the user.
+        IMPORTANT: the get_sentiments tool only returns overviews of the sentiment of the market, not the sentiment of a specific token.
 
         When a user asks about a specific token other than BTC or ETH:
         1. First use get_token_info internally to find the token's ID (don't explain this step)
@@ -112,7 +90,7 @@ class TokenMetricsAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_sentiments",
-                    "description": "Retrieves market sentiment data for cryptocurrencies from TokenMetrics. This tool provides sentiment analysis that indicates whether the market or specific tokens are trending bullish or bearish. Use this for understanding the current market sentiment and help with investment decisions.",
+                    "description": "Retrieves market sentiment data for cryptocurrencies from TokenMetrics. This only returns overviews of the sentiment of the market, not the sentiment of a specific token.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -413,9 +391,6 @@ class TokenMetricsAgent(MeshAgent):
         query = params.get("query")
 
         if query:
-            if self._should_use_sentiment_tool(query):
-                limit = self._extract_limit_from_query(query)
-                logger.info(f"Auto-detected sentiment query, sentiment keywords found with limit={limit}")
             custom_token_ids, custom_symbols = await self.process_custom_tokens(query)
             if custom_token_ids and custom_symbols:
                 logger.info(f"Detected custom tokens: IDs={custom_token_ids}, Symbols={custom_symbols}")
@@ -445,33 +420,3 @@ class TokenMetricsAgent(MeshAgent):
             "market sentiment",
         ]
         return any(keyword in query_lower for keyword in sentiment_keywords)
-
-    def _extract_limit_from_query(self, query: str) -> int:
-        """
-        Extract limit number from a query if present, otherwise return default 10.
-        """
-        import re
-
-        # Look for patterns like "top 5", "show me 20", "get 15", etc.
-        patterns = [
-            r"top\s+(\d+)",
-            r"show\s+(?:me\s+)?(\d+)",
-            r"get\s+(\d+)",
-            r"limit\s+(?:to\s+)?(\d+)",
-            r"(\d+)\s+results",
-            r"(\d+)\s+tokens",
-            r"(\d+)\s+coins",
-            r"(\d+)\s+cryptocurrencies",
-        ]
-
-        for pattern in patterns:
-            match = re.search(pattern, query.lower())
-            if match:
-                try:
-                    limit = int(match.group(1))
-                    return limit
-                except ValueError:
-                    pass
-
-        # Return default if no pattern matched
-        return 10
