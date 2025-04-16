@@ -6,11 +6,13 @@ from typing import Any, Dict, Optional
 
 import aiohttp
 import uvicorn
+from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel
 
+load_dotenv()
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 
@@ -44,7 +46,6 @@ app.add_middleware(
 
 config = Config()
 agents_dict = AgentLoader(config).load_agents()
-# passed in at build time, by github actions
 current_commit = os.getenv("GITHUB_SHA", "unknown")
 
 
