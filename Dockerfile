@@ -1,4 +1,4 @@
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim@sha256:5c8edeb8b5644b618882e06ddaa8ddf509dcd1aa7d08fedac7155106116a9a9e
 
 # Capture git commit hash at build time
 ARG GITHUB_SHA=unknown
@@ -9,14 +9,9 @@ ENV UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     PATH="/app/mesh/.venv/bin:$PATH"
 
-# Install the project into `/app`
-WORKDIR /app
-
 # Install supervisor for process management, curl for healthchecks, git for dependency installation, libpq-dev and gcc for psycopg2
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    rm -f /etc/apt/apt.conf.d/docker-clean && \
-    echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' >/etc/apt/apt.conf.d/keep-cache && \
     apt-get update && \
     apt-get install -yqq --no-install-recommends \
     supervisor \
@@ -27,6 +22,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libc6-dev && \
     rm -rf /var/lib/apt/lists/*
 
+# Set the working directory
+WORKDIR /app
+
 # Copy mesh project files for dependency installation for better caching
 COPY mesh/pyproject.toml mesh/uv.lock ./mesh/
 
@@ -35,17 +33,19 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     cd mesh && \
     uv sync --frozen --no-install-project --no-dev
 
-# Add supervisor configuration
+# Copy specific configuration and scripts
 COPY .docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-# Add the rest of the project source code
-COPY . .
+COPY .docker/env-setup.sh .docker/requirements_checker.py /app/.docker/
 
 # Make the env-setup script executable
 RUN chmod +x /app/.docker/env-setup.sh
 
+# Copy the rest of the application code
+COPY . .
+
 # Run requirements check to verify all dependencies are installed correctly
-RUN python .docker/requirements_checker.py && echo "Requirements check passed!" || (echo "Requirements check failed!" && exit 1)
+# Copied after the rest of the application code as it uses it to verify dependencies
+RUN python /app/.docker/requirements_checker.py && echo "Requirements check passed!" || (echo "Requirements check failed!" && exit 1)
 
 # Reset the entrypoint
 ENTRYPOINT []

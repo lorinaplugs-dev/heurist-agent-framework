@@ -9,41 +9,22 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Cache
-        uses: actions/cache@v3
-        id: cache
-        with:
-          path: |
-            var-cache-apt
-            var-lib-apt
-            uv-cache
-          key: cache-${{ hashFiles('Dockerfile') }}-${{ hashFiles('mesh/uv.lock') }}
-
-      - name: Inject cache into Docker
-        uses: reproducible-containers/buildkit-cache-dance@v3.1.0
-        with:
-          cache-map: |
-            {
-              "var-cache-apt": "/var/cache/apt",
-              "var-lib-apt": "/var/lib/apt",
-              "uv-cache": "/root/.cache/uv"
-            }
-          skip-extraction: ${{ steps.cache.outputs.cache-hit }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
@@ -64,22 +45,26 @@ jobs:
 
       - name: Wait for deployment
         run: |
-          echo "Waiting 45 seconds for deployment to start..."
-          sleep 45
+          echo "Waiting up to 4 minutes (initial 45s + 45 attempts * 5s) for deployment..."
+          sleep 45 # initial wait for docker swarm to update
 
           for i in {1..45}; do
-            echo "Waiting for deployment... (attempt $i/45)"
-            response=$(curl -s https://sequencer-v2.heurist.xyz/mesh_health || echo "")
+            echo "Checking deployment status... (attempt $i/45)"
+            response=$(curl --fail -s --max-time 5 https://sequencer-v2.heurist.xyz/mesh_health || echo "error")
 
-            commit=$(echo "$response" | jq -r '.commit' 2>/dev/null || echo "")
-
-            if [ -n "$commit" ] && [ "$commit" = "${{ github.sha }}" ]; then
-              echo "Deployment successful!"
-              exit 0
+            if [[ "$response" != "error" ]]; then
+              commit=$(echo "$response" | jq -r '.commit' 2>/dev/null || echo "")
+              echo "Current deployed commit: $commit"
+              if [[ -n "$commit" && "$commit" = "${{ github.sha }}" ]]; then
+                echo "Deployment successful!"
+                exit 0
+              fi
+            else
+              echo "Health check endpoint not ready or returned error."
             fi
 
             sleep 5
           done
 
-          echo "Deployment timed out"
+          echo "Deployment timed out or failed verification after multiple attempts."
           exit 1
