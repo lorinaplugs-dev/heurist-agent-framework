@@ -42,6 +42,7 @@ class GoplusAnalysisAgent(MeshAgent):
                 ],
                 "external_apis": ["GoPlus"],
                 "tags": ["Security"],
+                "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Goplus.png",
                 "examples": [
                     "Check the safety of this token: 0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9 on Ethereum",

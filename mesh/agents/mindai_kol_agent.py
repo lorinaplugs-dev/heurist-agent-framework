@@ -54,7 +54,6 @@ class MindAiKolAgent(MeshAgent):
                 ],
                 "external_apis": ["Mind AI"],
                 "tags": ["KOL"],
-                "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/MindAI.png",
                 "examples": [
                     "Find the best initial calls for HEU token",
