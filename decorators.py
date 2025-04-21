@@ -14,28 +14,56 @@ T = TypeVar("T", bound=Callable)
 # Python's dict operations are atomic so it's thread-safe
 def with_cache(ttl_seconds: int = 300):
     """Cache function results for specified duration"""
+    import hashlib
+    import json
 
     def decorator(func: T) -> T:
         # Move cache to class level using a unique key
         cache_key_base = f"_cache_{func.__name__}"
         ttl_key = f"_cache_ttl_{func.__name__}"
+        hits_key = f"_cache_hits_{func.__name__}"
+        misses_key = f"_cache_misses_{func.__name__}"
 
         @wraps(func)
         async def wrapper(self, *args, **kwargs) -> Any:
-            # Initialize class-level cache
+            # Initialize class-level cache and stats
             if not hasattr(self.__class__, cache_key_base):
                 setattr(self.__class__, cache_key_base, {})
                 setattr(self.__class__, ttl_key, {})
+                setattr(self.__class__, hits_key, 0)
+                setattr(self.__class__, misses_key, 0)
 
             cache = getattr(self.__class__, cache_key_base)
             cache_ttl = getattr(self.__class__, ttl_key)
 
-            cache_key = f"{str(args)}:{str(kwargs)}"
+            # Use a more stable cache key method
+            try:
+                # First try to create a JSON-based key with sorted keys
+                args_str = json.dumps(args, sort_keys=True, default=str)
+                kwargs_str = json.dumps(sorted(kwargs.items()), default=str)
+
+                # Create a hash for potentially large inputs
+                key_material = f"{func.__name__}:{args_str}:{kwargs_str}"
+                cache_key = hashlib.md5(key_material.encode()).hexdigest()
+
+            except (TypeError, ValueError):
+                # Fallback to string representation if JSON serialization fails
+                cache_key = f"{func.__name__}:{str(args)}:{str(kwargs)}"
+                logger.warning(f"Using fallback cache key generation for {func.__name__}")
+
+            # Add debug logging
+            logger.debug(f"Cache key for {func.__name__}: {cache_key}")
 
             # Check cache
             if cache_key in cache and datetime.now() < cache_ttl[cache_key]:
-                logger.debug(f"Cache hit for {func.__name__}")
+                # Update hit stats
+                setattr(self.__class__, hits_key, getattr(self.__class__, hits_key) + 1)
+                logger.debug(f"Cache hit for {func.__name__} with key {cache_key}")
                 return cache[cache_key]
+
+            # Update miss stats
+            setattr(self.__class__, misses_key, getattr(self.__class__, misses_key) + 1)
+            logger.debug(f"Cache miss for {func.__name__} with key {cache_key}")
 
             # Execute function
             result = await func(self, *args, **kwargs)
@@ -43,6 +71,16 @@ def with_cache(ttl_seconds: int = 300):
             # Update cache
             cache[cache_key] = result
             cache_ttl[cache_key] = datetime.now() + timedelta(seconds=ttl_seconds)
+
+            # Limit cache size to prevent memory issues (keep last 100 entries)
+            if len(cache) > 10000:
+                # Find and remove oldest entries
+                oldest_keys = sorted(cache_ttl.items(), key=lambda x: x[1])[: len(cache) - 100]
+                for k, _ in oldest_keys:
+                    if k in cache:
+                        del cache[k]
+                    if k in cache_ttl:
+                        del cache_ttl[k]
 
             return result
 
