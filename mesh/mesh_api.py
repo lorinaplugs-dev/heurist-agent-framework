@@ -3,6 +3,7 @@ import logging
 import os
 import sys
 import time
+from contextlib import asynccontextmanager
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -32,7 +33,15 @@ logging.getLogger("uvicorn.access").addFilter(EndpointFilter())
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s - %(message)s")
 logger = logging.getLogger("MeshAPI")
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    yield
+    logger.info("Application shutdown: cleaning up agent pool")
+    await agent_pool.cleanup()
+
+
+app = FastAPI(lifespan=lifespan)
 security = HTTPBearer(auto_error=False)
 
 app.add_middleware(
@@ -245,12 +254,6 @@ async def cache_debug():
         "active_agent_instances": len(agent_pool.instances),
         "timestamp": datetime.now().isoformat(),
     }
-
-
-@app.on_event("shutdown")
-async def shutdown_event():
-    logger.info("Application shutdown: cleaning up agent pool")
-    await agent_pool.cleanup()
 
 
 if __name__ == "__main__":
