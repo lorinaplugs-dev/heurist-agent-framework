@@ -74,12 +74,7 @@ class TwitterProfileAgent(MeshAgent):
         return """
         You are a specialized Twitter analyst that helps users get information about Twitter profiles and their recent tweets.
 
-        When analyzing a Twitter profile:
-        1. Provide a brief overview of the account (name, bio, follower count)
-        2. Summarize their recent tweet activity (frequency, topics)
-        3. Highlight notable tweets with high engagement
-
-        Keep your analysis factual and concise. Focus on the data provided without making assumptions.
+        Keep your analysis factual and concise. Only use the data provided. NEVER make up data that is not returned from the tool.
         """
 
     def get_tool_schemas(self) -> List[Dict]:

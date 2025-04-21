@@ -88,15 +88,8 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
     def get_system_prompt(self) -> str:
         return (
             "You are a specialized assistant that analyzes Twitter data for crypto tokens using ELFA API. "
-            "Your responses should be clear, concise, and data-driven.\n\n"
-            "When analyzing mentions:\n"
-            "1. Summarize the overall sentiment and engagement\n"
-            "2. Highlight key influencers and their impact\n"
-            "3. Identify notable trends or patterns\n\n"
-            "When analyzing accounts:\n"
-            "1. Summarize engagement metrics\n"
-            "2. Highlight influential connections\n"
-            "3. Note posting patterns and impact"
+            "Your responses should be clear, concise, and data-driven.\n"
+            "NEVER make up data that is not returned from the tool."
         )
 
     def get_tool_schemas(self) -> List[Dict]:

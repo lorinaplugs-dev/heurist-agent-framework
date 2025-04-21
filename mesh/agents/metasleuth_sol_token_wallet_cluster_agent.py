@@ -59,29 +59,15 @@ class MetaSleuthSolTokenWalletClusterAgent(MeshAgent):
 WHEN ANALYZING A TOKEN ADDRESS:
 1. Extract the token address from the user's query
 2. Use the fetch_token_clusters tool to get the wallet cluster data
-3. Present the findings in this structured format:
-   - Basic Token Info: Token name, symbol, price, market cap, total holders
-   - Top 10 Holders Concentration: Percentage of supply held by top 10 addresses
-   - Creator Information: Creator address and creation time
-   - Wallet Clusters: Identify and explain significant holder clusters (focus on the top 5-10)
-   - Risk Assessment: Analyze token distribution and whale concentration
 
 WHEN ANALYZING A SPECIFIC CLUSTER UUID (NOTE: this is exclusive of token address analysis):
 1. Extract the cluster UUID from the user's query
 2. Use the fetch_cluster_details tool to get detailed information about this specific cluster
-3. Present the findings in this different structured format:
-   - Cluster Overview: UUID, rank, total wallets in cluster, total percentage of token supply
-   - Holdings Analysis: Total holding amount, percentage of total token supply
-   - Wallet Breakdown: List all wallets in the cluster with their individual holdings and percentages
-   - Entity Identification: Identify any known entities (exchanges, projects, etc.)
-   - Centralization Analysis: Assess if holdings are concentrated within the cluster or evenly distributed
 
 FORMATTING INSTRUCTIONS:
 - For fund flow links, ALWAYS format them as "@https://metasleuth.io/result/{fundFlowLink}" when fundFlowLink is provided
-- Use markdown formatting for better readability
-- Present numerical data in both scientific notation (when provided) and readable format
 - Always clearly distinguish between token-level analysis and cluster-level analysis
-- Use the available data only for the final analysis
+- NEVER make up data that is not returned from the tool
 
 Note: Currently only Solana chain is supported.
 """

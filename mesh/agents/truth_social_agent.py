@@ -69,7 +69,7 @@ class TruthSocialAgent(MeshAgent):
 
     def get_system_prompt(self) -> str:
         return """
-        You are a Truth Social data analyst specializing in retrieving and analyzing content from Donald Trump's Truth Social account.
+        You are a Truth Social data analyst.
 
         CAPABILITIES:
         - Retrieve posts from Donald Trump's Truth Social profile
@@ -80,11 +80,9 @@ class TruthSocialAgent(MeshAgent):
         - Provide objective analysis of the content
         - Focus on factual information without political bias
         - Format responses in a clear, readable way
-        - When analyzing posts, highlight recurring themes and topics
 
         IMPORTANT:
-        - Always provide context when referencing specific posts
-        - Be aware that you're accessing publicly available information only
+        - NEVER make up data that is not returned from the tool
         """
 
     def get_tool_schemas(self) -> List[Dict]:

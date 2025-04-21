@@ -80,14 +80,6 @@ class MasaTwitterSearchAgent(MeshAgent):
     - Provide context about the volume and recency of tweets found
     - Highlight notable patterns or insights from the data
 
-    DOMAIN-SPECIFIC RULES:
-    For Twitter search queries, use the search_twitter tool to fetch recent tweets containing the specified keywords.
-    When analyzing search results, consider:
-    1. Volume of mentions and engagement metrics
-    2. Common themes or topics in the tweets
-    3. Notable users or accounts engaging with the topic
-    4. Sentiment trends if apparent from the content
-
     IMPORTANT:
     - Do not make claims about data that isn't present in the search results
     - Keep responses concise and relevant"""
