@@ -2,11 +2,11 @@
 
 ![mesh-2](https://github.com/user-attachments/assets/ae8987db-f009-4cbb-9e8d-1ebc828f1810)
 
-🧩 **Heurist Mesh** is a new open network of modular and purpose-built AI agents. Each agent is a specialized unit that can process data, generate reports, or engage in conversations, while collectively forming an intelligent swarm to tackle complex tasks. Built on decentralized compute and powered by diverse open-source AI models, Mesh agents can be combined into powerful workflows for cost-efficient and highly flexible solutions. Once a Mesh agent is added to this Github main branch, it's automatically deployed and instantly available via REST API and MCP.
+🧩 **Heurist Mesh** is an open network of modular and purpose-built AI agents. Each agent is a specialized unit that can process data, generate reports, or engage in conversations, while collectively forming an intelligent swarm to tackle complex tasks. Built on decentralized compute and powered by diverse open-source AI models, Mesh agents can be combined into powerful workflows for cost-efficient and highly flexible solutions. Once a Mesh agent is added to this Github main branch, it's automatically deployed and instantly available via REST API and MCP.
 
 ➡️ Set up a self-hosted MCP server to use the agents at [heurist-mesh-mcp-server](https://github.com/heurist-network/heurist-mesh-mcp-server/blob/main/README.md)
 
-➡️ Use [Heurist Mesh MCP Provisioner](https://mcp.heurist.ai) to start a managed MCP server.
+➡️ Use [Heurist Mesh MCP Portal](https://mcp.heurist.ai) to start a managed MCP server.
 
 ## Table of Contents
 1. [How It Works](#how-it-works)
@@ -40,7 +40,66 @@
 
 ## Agent Deployment
 
-Mesh agents are deployed on Heurist's compute layer. Agents are deployed after a pull request is merged into the main branch, and will be available for use in the Heurist Mesh via API or frontend interface. Heurist team will take care of the API keys and other environment variables used by the agents.
+### Production Deployment
+
+Mesh agents are deployed on Heurist's compute layer using Docker Swarm for high availability. The deployment process is fully automated:
+
+1. When a pull request is merged into the main branch, a GitHub Action triggers automatically
+2. The action builds a Docker image and runs validation checks that attempt to import all agents
+3. After successful build, the image is pushed to GitHub Container Registry
+4. A webhook notifies the production server to update the deployment
+5. The deployment uses Docker Swarm with multiple replicas for zero-downtime updates
+6. A health check confirms the deployment's success
+
+Benefits of this deployment approach:
+- Zero downtime during updates (rolling updates with multiple replicas)
+- Easy rollbacks in case of deployment issues
+- Better dependency management through `uv` package manager
+- Proper health checks and monitoring
+
+### Viewing Production Logs
+
+To view logs from the production deployment:
+```bash
+docker service logs mesh_mesh -f
+```
+
+### Local Development Environment
+
+For local development of mesh agents:
+
+1. Set up a Python virtual environment with `uv`:
+   ```bash
+   # Install uv (if not already installed)
+   # Then in the mesh folder:
+   uv venv
+
+   # Activate the virtual environment
+   # On Windows:
+   .venv\Scripts\activate
+   # On Linux/Mac:
+   source .venv/bin/activate
+
+   # Install dependencies
+   uv sync
+   ```
+
+2. When adding external dependencies:
+   ```bash
+   uv add package_name
+   ```
+
+3. Test your agent locally:
+   ```bash
+   python -m uvicorn mesh_api:app --reload
+   ```
+
+### Handling External Dependencies
+
+When creating agents that require external dependencies:
+1. Always use `uv add` instead of `pip install` to ensure proper dependency tracking
+2. Make sure to test that your agent loads correctly in the container environment
+3. Update the requirements file with `uv export requirements.txt`
 
 We plan to enable local hosting of agents in the future where you can deploy your agents on your own servers without giving up any sensitive data, while being composable with the Heurist Mesh.
 
@@ -216,11 +275,29 @@ mesh/
 
 ### Creating a New Mesh Agent
 
-1. **Create Your Agent File**  
+1. **Set Up Local Development Environment**
+   - Create a Python virtual environment using `uv`:
+     ```bash
+     # Navigate to the mesh directory
+     cd mesh
+
+     # Create virtual environment
+     uv venv
+
+     # Activate it (Windows)
+     .venv\Scripts\activate
+     # or (Linux/Mac)
+     source .venv/bin/activate
+
+     # Install dependencies
+     uv sync
+     ```
+
+2. **Create Your Agent File**  
    - Name it logically, e.g., `my_special_agent.py`.  
    - Place it inside the `mesh` folder at the same level as the other agent files.
 
-2. **Inherit from `MeshAgent`**  
+3. **Inherit from `MeshAgent`**  
    ```python
    from .mesh_agent import MeshAgent
    from typing import Dict, Any
@@ -253,13 +330,21 @@ mesh/
            return {"response": response_text}
    ```
 
-3. **Implement Your Custom Logic**  
+4. **Implement Your Custom Logic**  
    - You can call external APIs, orchestrate LLM calls, call other mesh agents, or do any specialized processing.
    - You should use os.environ to store any sensitive information. Such data should not be hardcoded in the agent file and should not be committed to the repository.
    - Make sure to wrap significant network operations with any relevant decorators (e.g., `@with_retry`, `@with_cache`) if needed.
 
-4. **Add Required Metadata**  
+5. **Add Required Metadata**  
    - Ensure you update `self.metadata` with all relevant fields (e.g., `name`, `description`, `inputs`, `outputs`, `tags`, and any external APIs used).
+
+6. **Add External Dependencies**
+   - If your agent requires external packages, add them using `uv add`:
+     ```bash
+     uv add package_name
+     ```
+   - Always ensure the agent loads properly with the added dependencies.
+   - The deployment CI pipeline will attempt to import your agent to validate dependencies.
 
 ### Testing Your Agent
 
@@ -343,11 +428,19 @@ We welcome community contributions to develop the Heurist Mesh.
    - Write a corresponding test script under `mesh/tests/`.  
 
 4. **Test**  
-   - Run your test script locally to confirm no errors occur and that your agent works as expected.  
+   - Run your test script locally to confirm no errors occur and that your agent works as expected.
+   - If using external dependencies, ensure they are added using `uv add` and updated in the lock file.
+   - Test your agent with the local API server to verify it responds correctly:
+     ```bash
+     python -m uvicorn mesh_api:app --reload
+     ```
 
 5. **Open a Pull Request**  
    - Summarize what your agent does and why it's valuable.  
-   - Include any relevant info (e.g., external APIs used, example test output).  
+   - Include any relevant info (e.g., external APIs used, example test output).
+
+6. **Deployment Process** (after PR is merged)
+   - When your PR is merged to main, a GitHub Action workflow will automatically build and deploy.
 
 ### Coding Style and Best Practices
 
@@ -368,8 +461,7 @@ Each agent's `metadata` dictionary should at least contain:
 - **`inputs`**: List of inputs with `name`, `description`, and `type`.
 - **`outputs`**: List of outputs with `name`, `description`, and `type`.  
 - **`external_apis`**: Any external service your agent accesses (e.g., `['DefiLlama']`).  
-- **`tags`**: Keywords or categories to help users discover your agent.  
-- **`mcp_tool_name` (optional)**: If you want your agent interoperable through Claude's MCP interface, specify a unique tool name.
+- **`tags`**: Keywords or categories to help users discover your agent.
 
 ### Testing Requirements
 
