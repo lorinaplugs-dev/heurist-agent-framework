@@ -82,7 +82,6 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
         )
 
         tools = [
-            self.get_coingecko_id_tool(),
             self.get_token_info_tool(),
             self.get_trending_coins_tool(),
             self.get_token_price_multi_tool(),
@@ -128,7 +127,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     - Provide only relevant metrics for the query context
 
     DOMAIN-SPECIFIC RULES:
-    For specific token queries, identify whether the user provided a CoinGecko ID directly or needs to search by token name or symbol. Coingecko ID is lowercase string and may contain dashes. If the user doesn't explicity say the input is the CoinGecko ID, you should use get_coingecko_id to search for the token. Do not make up CoinGecko IDs.
+    For specific token queries, identify whether the user provided a CoinGecko ID directly or needs to search by token name or symbol. Coingecko ID is lowercase string and may contain dashes. If a direct CoinGecko ID lookup fails, the system will automatically attempt to search and find the best matching token. Do not make up CoinGecko IDs.
 
     For trending coins requests, use the get_trending_coins tool to fetch the current top trending cryptocurrencies.
 
@@ -153,18 +152,6 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
 
     def get_tool_schemas(self) -> List[Dict]:
         return [
-            {
-                "type": "function",
-                "function": {
-                    "name": "get_coingecko_id",
-                    "description": "Search for a token by name to get its CoinGecko ID. This tool helps you find the correct CoinGecko ID for any cryptocurrency when you only know its name or symbol. The CoinGecko ID is required for fetching detailed token information using other CoinGecko tools.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {"token_name": {"type": "string", "description": "The token name to search for"}},
-                        "required": ["token_name"],
-                    },
-                },
-            },
             {
                 "type": "function",
                 "function": {
@@ -326,57 +313,6 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
         ]
 
     # Tool definitions using smolagents tool decorator
-    def get_coingecko_id_tool(self):
-        @tool
-        def get_coingecko_id(token_name: str) -> Dict[str, Any]:
-            """Search for a token by name to get its CoinGecko ID.
-
-            Args:
-                token_name: The token name to search for
-
-            Returns:
-                Dictionary with the CoinGecko ID or error message
-            """
-            logger.info(f"Searching for token: {token_name}")
-            try:
-                response = requests.get(f"{self.api_url}/search?query={token_name}", headers=self.headers)
-                response.raise_for_status()
-                search_results = response.json()
-
-                if search_results.get("coins") and len(search_results["coins"]) == 1:
-                    first_coin = search_results["coins"][0]
-                    return {"coingecko_id": first_coin["id"]}
-                elif (search_results.get("coins") and len(search_results["coins"]) == 0) or (
-                    search_results.get("coins") is None
-                ):
-                    return {"error": f"No token found for {token_name}"}
-                else:
-                    valid_tokens = [
-                        token for token in search_results["coins"] if token.get("market_cap_rank") is not None
-                    ]
-
-                    if not valid_tokens:
-                        return {"error": f"No valid tokens found for {token_name}"}
-
-                    exact_matches = [
-                        token
-                        for token in valid_tokens
-                        if token["name"].lower() == token_name.lower() or token["symbol"].lower() == token_name.lower()
-                    ]
-
-                    if exact_matches:
-                        exact_matches.sort(key=lambda x: x.get("market_cap_rank", float("inf")))
-                        return {"coingecko_id": exact_matches[0]["id"]}
-
-                    valid_tokens.sort(key=lambda x: x.get("market_cap_rank", float("inf")))
-                    return {"coingecko_id": valid_tokens[0]["id"]}
-
-            except requests.RequestException as e:
-                logger.error(f"Error searching for token: {e}")
-                return {"error": f"Failed to search for token: {str(e)}"}
-
-        return get_coingecko_id
-
     def get_token_info_tool(self):
         @tool
         def get_token_info(coingecko_id: str) -> Dict[str, Any]:
@@ -656,6 +592,31 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return selected_token
         return None
 
+    async def _search_token(self, query: str) -> str | None:
+        """internal helper to search for a token and return its id"""
+        try:
+            response = requests.get(f"{self.api_url}/search?query={query}", headers=self.headers)
+            response.raise_for_status()
+            search_results = response.json()
+
+            if not search_results.get("coins"):
+                return None
+
+            if len(search_results["coins"]) == 1:
+                return search_results["coins"][0]["id"]
+
+            # try exact matches first
+            for coin in search_results["coins"]:
+                if coin["name"].lower() == query.lower() or coin["symbol"].lower() == query.lower():
+                    return coin["id"]
+
+            # if no exact match, return first result
+            return search_results["coins"][0]["id"]
+
+        except requests.RequestException as e:
+            logger.error(f"Error searching for token: {e}")
+            return None
+
     # ------------------------------------------------------------------------
     #                      COINGECKO API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
@@ -685,40 +646,21 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return {"error": f"Failed to fetch trending coins: {str(e)}"}
 
     @with_cache(ttl_seconds=3600)
-    async def _get_coingecko_id(self, token_name: str) -> dict | str:
-        try:
-            response = requests.get(f"{self.api_url}/search?query={token_name}", headers=self.headers)
-            response.raise_for_status()
-            search_results = response.json()
-            # Return the first coin id if found
-            if search_results.get("coins") and len(search_results["coins"]) == 1:
-                first_coin = search_results["coins"][0]
-                return first_coin["id"]
-            elif (search_results.get("coins") and len(search_results["coins"]) == 0) or (
-                search_results.get("coins") is None
-            ):
-                return None
-            else:
-                selected_token_id = await self.select_best_token_match(search_results, token_name)
-                return selected_token_id or None
-
-        except requests.RequestException as e:
-            logger.error(f"Error: {e}")
-            return {"error": f"Failed to search for token: {str(e)}"}
-
-    @with_cache(ttl_seconds=3600)
     async def _get_token_info(self, coingecko_id: str) -> dict:
         try:
             response = requests.get(f"{self.api_url}/coins/{coingecko_id}", headers=self.headers)
 
             # if response fails, try to search for the token and use first result
             if response.status_code != 200:
-                fallback_id = await self._get_coingecko_id(coingecko_id)
-                if isinstance(fallback_id, str):  # ensure we got a valid id back
-                    response = requests.get(f"{self.api_url}/coins/{fallback_id}", headers=self.headers)
-                    response.raise_for_status()
-                    return response.json()
-                return {"error": "Failed to fetch token info and fallback search failed"}
+                fallback_id = await self._search_token(coingecko_id)
+                if fallback_id:
+                    try:
+                        fallback_response = requests.get(f"{self.api_url}/coins/{fallback_id}", headers=self.headers)
+                        fallback_response.raise_for_status()
+                        return fallback_response.json()
+                    except requests.RequestException:
+                        pass
+                return {"error": "Failed to fetch token info"}
 
             response.raise_for_status()
             return response.json()
@@ -726,7 +668,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             logger.error(f"Error: {e}")
             return {"error": f"Failed to fetch token info: {str(e)}"}
 
-    @with_cache(ttl_seconds=3600)  # Cache for 1 hour
+    @with_cache(ttl_seconds=3600)
     async def _get_categories_list(self) -> dict:
         """Get a list of all CoinGecko categories"""
         try:
@@ -881,12 +823,6 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                     result = await self._get_token_info(tool_args["coingecko_id"])
                     if not isinstance(result, dict) or "error" not in result:
                         result = self.format_token_info(result)
-                elif tool_name == "get_coingecko_id":
-                    result = await self._get_coingecko_id(tool_args["token_name"])
-                    if isinstance(result, str):
-                        result = {"coingecko_id": result}
-                    elif result is None:
-                        result = {"error": f"No token found for {tool_args['token_name']}"}
                 elif tool_name == "get_token_price_multi":
                     result = await self._get_token_price_multi(
                         ids=tool_args["ids"],
@@ -969,13 +905,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
 
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         """Handle execution of specific tools and return the raw data"""
-        if tool_name == "get_coingecko_id":
-            result = await self._get_coingecko_id(function_args["token_name"])
-            if isinstance(result, str):
-                return {"coingecko_id": result}
-            return result
-
-        elif tool_name == "get_token_info":
+        if tool_name == "get_token_info":
             result = await self._get_token_info(function_args["coingecko_id"])
             if not isinstance(result, dict) or "error" not in result:
                 return self.format_token_info(result)
