@@ -1,0 +1,1538 @@
+username_extraction_tests:
+  heurist_ai: heurist_ai
+  Give me details of heurist_ai: heurist_ai
+  Show the latest updates from elonmusk: elonmusk
+  What vitalikbuterin has been posting about?: vitalikbuterin
+  can you get me info about @jack: jack
+  twitter.com/naval: naval
+  x.com/pmarca: pmarca
+  I want to see realdonaldtrump's tweets: realdonaldtrump
+  Check out the profile for naval's account: naval
+  Look at the latest from username karpathy: username
+  Tweets by chamath: chamath
+  Find the recent activity of handle balajis: handle
+  user_id:12345678: '12345678'
+  userid:12345678: '12345678'
+  Check twitter ID 12345678: '12345678'
+  Show me tweets from user:12345678: '12345678'
+  What's happening with twitter_id:12345678: '12345678'
+  'Get twitter_id: 12345678': '12345678'
+  '12345678': '12345678'
+  Get me information about blockchain: blockchain
+  What's happening on Twitter?: happening
+  Show me the latest tech news on Twitter: tech
+id_pattern_recognition:
+  user_id:123456789: '123456789'
+  userid:123456789: '123456789'
+  id:123456789: '123456789'
+  user:123456789: '123456789'
+  twitter id 123456789: '123456789'
+  twitter_id 123456789: '123456789'
+  'twitter id: 123456789': '123456789'
+  'twitter_id: 123456789': '123456789'
+  '123456789': '123456789'
+  Show me tweets from user_id:123456789: '123456789'
+  'Get info about twitter id: 123456789': '123456789'
+tweet_detail_tests:
+  case_1:
+    input:
+      tool: get_twitter_detail
+      tool_arguments:
+        tweet_id: '1913624766793289972'
+    output:
+      response: ''
+      data: &id001
+        status: success
+        pinned_tweet: null
+        tweets:
+        - tweet_id: '1913624766793289972'
+          user_id: '1736748346566459392'
+          media_type: video
+          text: 'Your agents, your way.
+
+            Create a dedicated MCP server with Heurist as simple as 3 steps 👇 https://t.co/8fj2Xkc9Jt'
+          medias:
+          - https://pbs.twimg.com/amplify_video_thumb/1913624592876535808/img/WHw2G9VCP7UNO0fL.jpg
+          urls: null
+          is_self_send: true
+          is_retweet: false
+          is_quote: false
+          is_reply: false
+          is_like: false
+          related_tweet_id: ''
+          related_user_id: ''
+          favorite_count: 43
+          quote_count: 2
+          reply_count: 12
+          retweet_count: 20
+          created_at: Sat Apr 19 16:04:32 +0000 2025
+          user:
+            id_str: '1736748346566459392'
+            name: Heurist
+            screen_name: heurist_ai
+            location: Agent-native Cloud
+            description: "Agent-native Cloud for Collective Intelligence \nBacked\
+              \ by @AmberGroup_io, @ManifoldTrading, @SeliniCapital \nhttps://t.co/RVIdwhpLdz"
+            followers_count: 34727
+            friends_count: 241
+            created_at: Mon Dec 18 14:01:02 +0000 2023
+            favourites_count: 1321
+            verified: true
+            statuses_count: 1193
+            media_count: 231
+            profile_image_url_https: https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_normal.jpg
+        - tweet_id: '1913625034478034984'
+          user_id: '1736748346566459392'
+          media_type: ''
+          text: '1. Get an API key: https://t.co/Me0O3WQ4H9
+
+            2. Visit Heurist MCP Portal https://t.co/9mZtQWfB0W
+
+            3. Choose your agents and start!'
+          medias: null
+          urls:
+          - https://heurist.ai/credits
+          - https://mcp.heurist.ai
+          is_self_send: false
+          is_retweet: false
+          is_quote: false
+          is_reply: true
+          is_like: false
+          related_tweet_id: '1913624766793289972'
+          related_user_id: '1736748346566459392'
+          favorite_count: 6
+          quote_count: 0
+          reply_count: 0
+          retweet_count: 3
+          created_at: Sat Apr 19 16:05:36 +0000 2025
+          user:
+            id_str: '1736748346566459392'
+            name: Heurist
+            screen_name: heurist_ai
+            location: Agent-native Cloud
+            description: "Agent-native Cloud for Collective Intelligence \nBacked\
+              \ by @AmberGroup_io, @ManifoldTrading, @SeliniCapital \nhttps://t.co/RVIdwhpLdz"
+            followers_count: 34727
+            friends_count: 241
+            created_at: Mon Dec 18 14:01:02 +0000 2023
+            favourites_count: 1321
+            verified: true
+            statuses_count: 1193
+            media_count: 231
+            profile_image_url_https: https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_normal.jpg
+        - tweet_id: '1913655451293720778'
+          user_id: '1874053447030628355'
+          media_type: ''
+          text: '@heurist_ai 🔥 Just tried setting up my MCP server—took less than
+            5 minutes! Heurist nailed the UX.'
+          medias: null
+          urls: null
+          is_self_send: false
+          is_retweet: false
+          is_quote: false
+          is_reply: true
+          is_like: false
+          related_tweet_id: '1913624766793289972'
+          related_user_id: '1736748346566459392'
+          favorite_count: 0
+          quote_count: 0
+          reply_count: 0
+          retweet_count: 0
+          created_at: Sat Apr 19 18:06:28 +0000 2025
+          user:
+            id_str: '1874053447030628355'
+            name: Hoodrat | Party Ape 🚀 🕹️👾 Nifty League
+            screen_name: HLeague84016
+            location: ''
+            description: ''
+            followers_count: 17
+            friends_count: 7
+            created_at: Tue Dec 31 11:22:35 +0000 2024
+            favourites_count: 182
+            verified: false
+            statuses_count: 81
+            media_count: 0
+            profile_image_url_https: https://pbs.twimg.com/profile_images/1874054003371163648/Ulw0J-pC_normal.jpg
+        - tweet_id: '1913655033914065398'
+          user_id: '1878762026878504960'
+          media_type: ''
+          text: '@heurist_ai Just set this up for our internal tools—runs like a dream.'
+          medias: null
+          urls: null
+          is_self_send: false
+          is_retweet: false
+          is_quote: false
+          is_reply: true
+          is_like: false
+          related_tweet_id: '1913624766793289972'
+          related_user_id: '1736748346566459392'
+          favorite_count: 0
+          quote_count: 0
+          reply_count: 0
+          retweet_count: 0
+          created_at: Sat Apr 19 18:04:48 +0000 2025
+          user:
+            id_str: '1878762026878504960'
+            name: DigiMask CLONE $MGT🌕
+            screen_name: CloneMgt68974
+            location: New York, USA
+            description: Talk about 🔥tech 🔥crypto 🔥
+            followers_count: 54
+            friends_count: 297
+            created_at: Mon Jan 13 11:12:43 +0000 2025
+            favourites_count: 0
+            verified: false
+            statuses_count: 49
+            media_count: 0
+            profile_image_url_https: https://pbs.twimg.com/profile_images/1878762361579786241/hr0guLXP_normal.jpg
+        - tweet_id: '1913655086967820623'
+          user_id: '1863707690901356544'
+          media_type: ''
+          text: '@heurist_ai “Your agents, your way.” No lies detected ✅'
+          medias: null
+          urls: null
+          is_self_send: false
+          is_retweet: false
+          is_quote: false
+          is_reply: true
+          is_like: false
+          related_tweet_id: '1913624766793289972'
+          related_user_id: '1736748346566459392'
+          favorite_count: 0
+          quote_count: 0
+          reply_count: 0
+          retweet_count: 0
+          created_at: Sat Apr 19 18:05:01 +0000 2025
+          user:
+            id_str: '1863707690901356544'
+            name: CHEF
+            screen_name: CHEF03825545919
+            location: Binan City, Philippines
+            description: Lil Ass Aeon🪽 Went to the doc to get my test levels checked,
+              I got 6900T. GME on roids💹🧲
+            followers_count: 1
+            friends_count: 6
+            created_at: Mon Dec 02 22:12:08 +0000 2024
+            favourites_count: 352
+            verified: false
+            statuses_count: 91
+            media_count: 0
+            profile_image_url_https: https://pbs.twimg.com/profile_images/1863707969986125824/uWaIykv8_normal.jpg
+        - tweet_id: '1913654987885850681'
+          user_id: '1656649581671874562'
+          media_type: ''
+          text: '@heurist_ai Heurist about to change how devs think about deploying
+            AI agents… mark my words 🧠'
+          medias: null
+          urls: null
+          is_self_send: false
+          is_retweet: false
+          is_quote: false
+          is_reply: true
+          is_like: false
+          related_tweet_id: '1913624766793289972'
+          related_user_id: '1736748346566459392'
+          favorite_count: 0
+          quote_count: 0
+          reply_count: 0
+          retweet_count: 0
+          created_at: Sat Apr 19 18:04:37 +0000 2025
+          user:
+            id_str: '1656649581671874562'
+            name: Annie Blair
+            screen_name: paula_coff13333
+            location: ''
+            description: Has ADHD, access to the internet and a somewhat inconsistent
+              personality
+            followers_count: 4
+            friends_count: 0
+            created_at: Thu May 11 13:17:12 +0000 2023
+            favourites_count: 0
+            verified: false
+            statuses_count: 988
+            media_count: 2
+            profile_image_url_https: https://pbs.twimg.com/profile_images/1656649729466576896/3XVxx4VW_normal.jpg
+        next_cursor_str: NwAAAPAoHBlW7Iew8ajH1Y410IDd1Y_1x4418sC5-dHE1Y41nsWwlbTK1Y41lIPRzc7f1Y41JQQRFQ4AAA
+  case_2:
+    input:
+      tool: get_twitter_detail
+      tool_arguments:
+        tweet_id: '1914394032169762877'
+    output:
+      response: ''
+      data: &id002
+        status: success
+        pinned_tweet: null
+        tweets:
+        - tweet_id: '1914394032169762877'
+          user_id: '1452628121589592069'
+          media_type: photo
+          text: 'Big screen moment for AI agents.
+
+
+            This is what it feels like to build with Heurist.
+
+
+            One interface, endless powers.
+
+
+            Plug into the future → mcp dot/ heurist dot/ ai https://t.co/OB6LowyWjw'
+          medias:
+          - https://pbs.twimg.com/media/GpFK3rAa4AAnHUd.jpg
+          urls: null
+          is_self_send: false
+          is_retweet: false
+          is_quote: true
+          is_reply: false
+          is_like: false
+          related_tweet_id: '1913624766793289972'
+          related_user_id: '1736748346566459392'
+          favorite_count: 4
+          quote_count: 0
+          reply_count: 0
+          retweet_count: 0
+          created_at: Mon Apr 21 19:01:19 +0000 2025
+          user:
+            id_str: '1452628121589592069'
+            name: Frank ✈️ (📜,📜)
+            screen_name: gpt3_eth
+            location: Seattle, WA
+            description: universe/acc on Heurist
+            followers_count: 1606
+            friends_count: 5136
+            created_at: Mon Oct 25 13:53:35 +0000 2021
+            favourites_count: 6435
+            verified: true
+            statuses_count: 1372
+            media_count: 70
+            profile_image_url_https: https://pbs.twimg.com/profile_images/1905034272995704832/P2bUqPPE_normal.jpg
+        next_cursor_str: ''
+api_call_tests:
+  case_1:
+    input:
+      query: Summarise recent updates of @heurist_ai
+      limit: 5
+    output:
+      response: "**Summary of Recent Updates from @heurist_ai**\n\n**Profile Overview:**\n\
+        \n* **Name:** Heurist\n* **Screen Name:** @heurist_ai\n* **Description:**\
+        \ Agent-native Cloud for Collective Intelligence, backed by @AmberGroup_io,\
+        \ @ManifoldTrading, @SeliniCapital\n* **Followers:** 34,711\n* **Tweets:**\
+        \ 1,193\n\n**Recent Tweet Topics (Last 5 Days):**\n\n1. **Agent Development\
+        \ Insights**: Sharing wisdom from @AnthropicAI on effective agent building,\
+        \ emphasizing simplicity in architecture.\n\t* Engagement: High (e.g., 31\
+        \ retweets, 59 likes, 18 replies on one tweet)\n2. **Heurist Mesh Updates**:\n\
+        \t* **Space and Time Agent**: Now available, enabling natural language queries\
+        \ for trustless blockchain analytics.\n\t\t+ Engagement: High (32 retweets,\
+        \ 84 likes, 21 replies)\n\t* **ZERION Agent Introduction**: Portfolio tracking\
+        \ agent for instant insights into EVM wallets.\n\t\t+ Engagement: High (30\
+        \ retweets, 99 likes, 25 replies)\n3. **Product/Service Announcements**:\n\
+        \t* Creating a dedicated MCP server with Heurist in 3 steps.\n\t\t+ Engagement:\
+        \ Moderate (20 retweets, 43 likes, 12 replies)\n\t* Access to 25+ specialized\
+        \ agents via a unified API.\n\t\t+ Engagement: Low to Moderate (varies by\
+        \ tweet)\n4. **Community Engagement & Retweets**: Engaging with other users\
+        \ and projects (e.g., @artoriatech, @TheZKnomist, @0xbellatr1x) to foster\
+        \ community and share relevant content.\n5. **Miscellaneous**: Brief updates\
+        \ and teasers (e.g., \"$NATION \U0001F49A $HEU Stay tuned \U0001F440\") with\
+        \ notable engagement.\n\n**Engagement Highlights:**\n\n* Highest Engagement\
+        \ Tweet: Introduction of ZERION Agent (30 retweets, 99 likes, 25 replies)\n\
+        * Consistent engagement across tweets related to Heurist Mesh updates and\
+        \ agent development insights."
+      data:
+        profile:
+          id_str: '1736748346566459392'
+          name: Heurist
+          screen_name: heurist_ai
+          description: "Agent-native Cloud for Collective Intelligence \nBacked by\
+            \ @AmberGroup_io, @ManifoldTrading, @SeliniCapital \nhttps://t.co/RVIdwhpLdz"
+          followers_count: 34711
+          friends_count: 241
+          statuses_count: 1193
+          profile_image_url: https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_normal.jpg
+          verified: false
+          created_at: Mon Dec 18 14:01:02 +0000 2023
+        tweets:
+        - text: 'RT @heurist_ai: Your agents, your way.
+
+            Create a dedicated MCP server with Heurist as simple as 3 steps 👇 https://t.co/8fj2Xkc9Jt'
+          created_at: Tue Apr 22 06:53:26 +0000 2025
+          engagement:
+            retweets: 20
+            likes: 0
+            replies: 0
+        - text: 'RT @agentcookiefun: @hyperfy_io @heurist_ai @tutorial_agent @sendaifun
+            @AiBananalyst $HEU @heurist_ai CA: https://t.co/3TPOsJ32Eo
+
+            0.18 mind…'
+          created_at: Mon Apr 21 19:38:44 +0000 2025
+          engagement:
+            retweets: 3
+            likes: 0
+            replies: 0
+        - text: '1/ You don''t need agents for everything. Why is that?
+
+
+            Recently, @AnthropicAI shared critical insights on effective agent building
+            at an AI Engineer workshop. The core message: resist the urge to "agentify"
+            everything.
+
+
+            A thread on smart agent development 🧵'
+          created_at: Mon Apr 21 15:48:23 +0000 2025
+          engagement:
+            retweets: 31
+            likes: 59
+            replies: 18
+        - text: '5/ Keep your agent architecture simple: Model + Tools + Loop within
+            an Environment. Most successful agents share remarkably similar backend
+            architectures.
+
+
+            The development secret: iterate on these basic components first. Advanced
+            optimizations should come later. https://t.co/pThcTMY2aA'
+          created_at: Mon Apr 21 15:48:39 +0000 2025
+          engagement:
+            retweets: 2
+            likes: 2
+            replies: 1
+        - text: '6/ This wisdom comes from @AnthropicAI''s engineering team. Watch
+            the entire episode here: https://t.co/aDTzSUSxpi
+
+
+            Want to see how we''re applying these principles at Heurist? Check out
+            our agent framework implementation: https://t.co/7o8IT6JAIw'
+          created_at: Mon Apr 21 15:48:42 +0000 2025
+          engagement:
+            retweets: 3
+            likes: 5
+            replies: 0
+        - text: "RT @0xbellatr1x: a lot of impersonating groups out there. stay safu.\
+            \ always follow links originating from our X profile : @heurist_ai \n\
+            http…"
+          created_at: Mon Apr 21 15:38:56 +0000 2025
+          engagement:
+            retweets: 2
+            likes: 0
+            replies: 0
+        - text: 'RT @TheZKnomist: 5. @heurist_ai Mesh: Towards Compositional Intelligence
+
+            - source: https://t.co/0eMbeNt84D
+
+
+            6. @HoloworldAI x @open_mcp x @…'
+          created_at: Sun Apr 20 16:00:13 +0000 2025
+          engagement:
+            retweets: 4
+            likes: 0
+            replies: 0
+        - text: 'RT @SpaceandTimeDB: Ask natural language questions about onchain
+            data with the latest agent from @heurist_ai AI Mesh.
+
+
+            Powered by SXT''s ind…'
+          created_at: Sat Apr 19 19:14:53 +0000 2025
+          engagement:
+            retweets: 38
+            likes: 0
+            replies: 0
+        - text: 'Your agents, your way.
+
+            Create a dedicated MCP server with Heurist as simple as 3 steps 👇 https://t.co/8fj2Xkc9Jt'
+          created_at: Sat Apr 19 16:04:32 +0000 2025
+          engagement:
+            retweets: 20
+            likes: 43
+            replies: 12
+        - text: '1. Get an API key: https://t.co/Me0O3WQ4H9
+
+            2. Visit Heurist MCP Portal https://t.co/9mZtQWfB0W
+
+            3. Choose your agents and start!'
+          created_at: Sat Apr 19 16:05:36 +0000 2025
+          engagement:
+            retweets: 3
+            likes: 6
+            replies: 0
+        - text: 'TRUTH ENGINE ONLINE ✓
+
+
+            Space and Time Agent is now available on Heurist Mesh! 🔍🔮
+
+
+            Transform natural language into ZK-verified SQL queries for trustless
+            blockchain analytics across multiple chains.
+
+
+            Every result cryptographically proven by @SpaceandTimeDB https://t.co/Rdpx1SEX4J'
+          created_at: Fri Apr 18 16:00:29 +0000 2025
+          engagement:
+            retweets: 32
+            likes: 84
+            replies: 21
+        - text: 'Try tap into 25+ specialized agents out-of-box with a unified API!
+
+
+            &gt; MCP Portal: https://t.co/8d9rU6cNZh
+
+            &gt; Apply for Heurist API: https://t.co/B0ImiTfUpx'
+          created_at: Fri Apr 18 16:00:32 +0000 2025
+          engagement:
+            retweets: 0
+            likes: 4
+            replies: 0
+        - text: 'RT @artoriatech: Windsurf is providing the latest @openai o4-mini
+            model for free! so I decided to use it and create a MCP walkthrough.
+
+
+            Her…'
+          created_at: Fri Apr 18 03:23:14 +0000 2025
+          engagement:
+            retweets: 23
+            likes: 0
+            replies: 0
+        - text: '$NATION 💚 $HEU
+
+
+            Stay tuned 👀'
+          created_at: Fri Apr 18 03:07:03 +0000 2025
+          engagement:
+            retweets: 30
+            likes: 66
+            replies: 14
+        - text: 'Introducing ZERION Agent on Heurist Mesh! 🧩
+
+
+            This powerful portfolio tracking agent gives you instant insights into
+            any EVM wallet''s tokens and NFTs through simple natural language queries.
+
+
+            Ask about holdings, track asset performance, and get detailed analytics
+            - all powered by @zerion'
+          created_at: Wed Apr 16 15:39:07 +0000 2025
+          engagement:
+            retweets: 30
+            likes: 99
+            replies: 25
+        - text: 'Try tap into 25+ specialized agents out-of-box with a unified API!
+
+
+            &gt; Apply for Heurist API: https://t.co/NNxKarZNik
+
+            &gt; Explore Mesh docs: https://t.co/qRCEIMTvA7'
+          created_at: Wed Apr 16 15:39:10 +0000 2025
+          engagement:
+            retweets: 0
+            likes: 7
+            replies: 0
+  case_2:
+    input:
+      query: What has @elonmusk been tweeting lately?
+      limit: 5
+    output:
+      response: "**Recent Tweets from @elonmusk (as of Tue Apr 22 2025)**\n\nHere's\
+        \ a summary of @elonmusk's latest tweets:\n\n1. **Original Tweets:**\n\t*\
+        \ \"Best economist ever\" (15:22:51, 3682 retweets, 35,275 likes, 2,410 replies)\n\
+        \t* \"Separate audio system for the rear screen\" (12:10:26, 2,654 retweets,\
+        \ 23,956 likes, 2,104 replies)\n\t* \"Exactly\" (11:49:52, 2,521 retweets,\
+        \ 28,576 likes, 3,155 replies)\n\t* \"Yes\" (11:49:05, 8,629 retweets, 53,444\
+        \ likes, 1,944 replies)\n\t* \"Low birth rates will end civilization\" (11:21:27,\
+        \ 7,599 retweets, 41,724 likes, 10,656 replies)\n\t* \"https://t.co/kslsp7oJ7g\"\
+        \ (11:34:40, 7,929 retweets, 45,264 likes, 3,923 replies)\n\t* \"\U0001F4AF\
+        \" (11:10:12, 19,903 retweets, 111,152 likes, 10,849 replies)\n\n2. **Retweeted\
+        \ Content (15 tweets):**\n\t* Topics: Earth Day, SpaceX launches, Starlink,\
+        \ politics (e.g., US governance, free speech, immigration), and technology\
+        \ (e.g., AI, Tesla FSD)\n\t* Original authors: @SpaceX, @Starlink, @MarioNawfal,\
+        \ @TobyPhln, @cb_doge, @VigilantFox, @TheChiefNerd, @stillgray, @Geiger_Capital,\
+        \ @skscartoon, @ada_lluch, and @JOE ROGAN (via @MarioNawfal)\n\n**Note:**\
+        \ Engagement metrics (retweets, likes, replies) are subject to change over\
+        \ time and may not reflect the current numbers."
+      data:
+        profile:
+          id_str: '44196397'
+          name: Elon Musk
+          screen_name: elonmusk
+          description: ''
+          followers_count: 219479094
+          friends_count: 1111
+          statuses_count: 77303
+          profile_image_url: https://pbs.twimg.com/profile_images/1893803697185910784/Na5lOWi5_normal.jpg
+          verified: false
+          created_at: Tue Jun 02 20:12:29 +0000 2009
+        tweets:
+        - text: Best economist ever
+          created_at: Tue Apr 22 15:22:51 +0000 2025
+          engagement:
+            retweets: 3682
+            likes: 35275
+            replies: 2410
+        - text: 'RT @SpaceX: Three launches from all three launch pads in California
+            and Florida in ~36 hours https://t.co/RATecwb66c'
+          created_at: Tue Apr 22 14:21:27 +0000 2025
+          engagement:
+            retweets: 1153
+            likes: 0
+            replies: 0
+        - text: 'RT @Starlink: Starlink keeps you connected as you explore our planet
+            🛰️🌏❤️
+
+
+            Happy Earth Day! https://t.co/Mv8Ifj55Mk'
+          created_at: Tue Apr 22 14:19:40 +0000 2025
+          engagement:
+            retweets: 1037
+            likes: 0
+            replies: 0
+        - text: 'RT @MarioNawfal: 🚨🇺🇸 SCOTT JENNINGS: BIG NUCLEAR FAMILIES ARE UNDER
+            ASSAULT—WE NEED MORE CHILDREN TO MAKE AMERICA GREAT
+
+
+            "Fertility rates h…'
+          created_at: Tue Apr 22 14:19:08 +0000 2025
+          engagement:
+            retweets: 758
+            likes: 0
+            replies: 0
+        - text: 'RT @TobyPhln: Here''s a brain dump of things I worry/think about
+            atm.
+
+
+            AI is getting pretty good, but human-AI bandwidth is excruciatingly l…'
+          created_at: Tue Apr 22 14:18:38 +0000 2025
+          engagement:
+            retweets: 298
+            likes: 0
+            replies: 0
+        - text: 'RT @MarioNawfal: 🇺🇸VIVEK: UNELECTED BUREAUCRATS ARE THE “FOURTH BRANCH”
+            THE FOUNDERS NEVER WANTED
+
+
+            Running for Ohio governor, Vivek Ramaswa…'
+          created_at: Tue Apr 22 12:14:59 +0000 2025
+          engagement:
+            retweets: 1442
+            likes: 0
+            replies: 0
+        - text: Separate audio system for the rear screen
+          created_at: Tue Apr 22 12:10:26 +0000 2025
+          engagement:
+            retweets: 2654
+            likes: 23956
+            replies: 2104
+        - text: 'RT @ada_lluch: Melania Trump looked stunning as always. 🥰 https://t.co/jIFpLsarCH'
+          created_at: Tue Apr 22 12:09:46 +0000 2025
+          engagement:
+            retweets: 1260
+            likes: 0
+            replies: 0
+        - text: Exactly
+          created_at: Tue Apr 22 11:49:52 +0000 2025
+          engagement:
+            retweets: 2521
+            likes: 28576
+            replies: 3155
+        - text: 'Yes'
+          created_at: Tue Apr 22 11:49:05 +0000 2025
+          engagement:
+            retweets: 8629
+            likes: 53444
+            replies: 1944
+        - text: "RT @cb_doge: Happy Earth Day \U0001F30E\n\n https://t.co/KXxYOrk524"
+          created_at: Tue Apr 22 11:48:47 +0000 2025
+          engagement:
+            retweets: 959
+            likes: 0
+            replies: 0
+        - text: 'RT @VigilantFox: NEW: Scott Jennings says Larry David’s attack on
+            Bill Maher wasn’t about dinner—it was the modern left threatening the
+            nex…'
+          created_at: Tue Apr 22 11:47:00 +0000 2025
+          engagement:
+            retweets: 5743
+            likes: 0
+            replies: 0
+        - text: 'RT @TheChiefNerd: “Dr. Anthony Fauci’s fortune doubled — hitting
+            about $15 million — between early 2019 and the end of 2023 over the course…'
+          created_at: Tue Apr 22 11:45:41 +0000 2025
+          engagement:
+            retweets: 2379
+            likes: 0
+            replies: 0
+        - text: https://t.co/kslsp7oJ7g
+          created_at: Tue Apr 22 11:34:40 +0000 2025
+          engagement:
+            retweets: 7929
+            likes: 45264
+            replies: 3923
+        - text: 'RT @stillgray: Britain is now arresting up to 30 people every day
+            for online speech-related offenses. No jokes, no memes, no criticism that…'
+          created_at: Tue Apr 22 11:26:04 +0000 2025
+          engagement:
+            retweets: 2171
+            likes: 0
+            replies: 0
+        - text: Low birth rates will end civilization
+          created_at: Tue Apr 22 11:21:27 +0000 2025
+          engagement:
+            retweets: 7599
+            likes: 41724
+            replies: 10656
+        - text: 'RT @Geiger_Capital: This was happening every day for 3+ years…
+
+
+            They were mass released into the US. There was no outcry for “case by
+            case”…'
+          created_at: Tue Apr 22 11:15:07 +0000 2025
+          engagement:
+            retweets: 2236
+            likes: 0
+            replies: 0
+        - text: 'RT @skscartoon: The idea of granting the same due process to illegal
+            aliens as American citizens before deportation is nonsensical.
+
+
+            It''s l…'
+          created_at: Tue Apr 22 11:11:13 +0000 2025
+          engagement:
+            retweets: 3272
+            likes: 0
+            replies: 0
+        - text: 'RT @MarioNawfal: JOE ROGAN: TESLA FSD IS WILD - MY CAR JUST DRIVES
+            ITSELF
+
+
+            “I put in my address, press these buttons, and it just takes off…'
+          created_at: Tue Apr 22 11:10:37 +0000 2025
+          engagement:
+            retweets: 691
+            likes: 0
+            replies: 0
+        - text: 💯
+          created_at: Tue Apr 22 11:10:12 +0000 2025
+          engagement:
+            retweets: 19903
+            likes: 111152
+            replies: 10849
+  case_3:
+    input:
+      query: Get the recent tweets from cz_binance
+      limit: 5
+    output:
+      response: "**Twitter Profile Analysis: @cz_binance**\n\n**Profile Overview**\n\
+        \n* **ID:** 902926941413453824\n* **Name:** CZ \n* **Screen Name:** @cz_binance\n\
+        * **Description:** DM: https://t.co/ITLXkxWlol (fees go to charity) | @BNBchain,\
+        \ @YZiLabs, @GiggleAcademy, ex-@binance.\n* **Followers:** 10,065,032\n* **Following:**\
+        \ 1,805\n* **Tweets:** 9,924\n* **Verified:** No\n* **Account Creation:**\
+        \ Wed, Aug 30, 2017\n\n**Recent Tweets (Last 4 days, from newest to oldest)**\n\
+        \n1. **Great discussions in Malaysia** \n\t* Tweet: \"Great discussions in\
+        \ Malaysia  » Anwar, CZ bincang potensi blockchain Malaysia - Kosmo Digital\
+        \ https://t.co/UKCkQciFCS\"\n\t* Date: Tue, Apr 22, 2025, 16:34:19 +0000\n\
+        \t* Engagement: 88 Retweets, 681 Likes, 223 Replies\n2. **RT: @Dp520888 (Chinese\
+        \ text, roughly translates to a positive experience with Binance's wallet)**\n\
+        \t* Date: Tue, Apr 22, 2025, 16:28:28 +0000\n\t* Engagement: 6 Retweets, 0\
+        \ Likes, 0 Replies\n3. **Who's coming to UAE?**\n\t* Date: Mon, Apr 21, 2025,\
+        \ 12:32:56 +0000\n\t* Engagement: 328 Retweets, 4,667 Likes, 1,841 Replies\n\
+        4. **RT: @aliumutcrypto (positive experience with BNB Chain for USDT transfers)**\n\
+        \t* Date: Mon, Apr 21, 2025, 12:31:22 +0000\n\t* Engagement: 43 Retweets,\
+        \ 0 Likes, 0 Replies\n5. **Crypto News Update: BNB Chain's Surging Popularity\
+        \ in USDT Transfers**\n\t* Date: Mon, Apr 21, 2025, 12:24:28 +0000\n\t* Engagement:\
+        \ 216 Retweets, 1,255 Likes, 437 Replies"
+      data:
+        profile:
+          id_str: '902926941413453824'
+          name: CZ 🔶 BNB
+          screen_name: cz_binance
+          description: 'DM: https://t.co/ITLXkxWlol (fees go to charity)
+
+
+            @BNBchain, @YZiLabs, @GiggleAcademy, ex-@binance.'
+          followers_count: 10065032
+          friends_count: 1805
+          statuses_count: 9924
+          profile_image_url: https://pbs.twimg.com/profile_images/1902270560236605440/KpVD026z_normal.jpg
+          verified: false
+          created_at: Wed Aug 30 16:12:13 +0000 2017
+        tweets:
+        - text: "Great discussions in Malaysia\U0001F1F2\U0001F1FE \n\n» Anwar, CZ\
+            \ bincang potensi blockchain Malaysia - Kosmo Digital https://t.co/UKCkQciFCS"
+          created_at: Tue Apr 22 16:34:19 +0000 2025
+          engagement:
+            retweets: 88
+            likes: 681
+            replies: 223
+        - text: 'RT @Dp520888: 上个月
+
+            用币安的无私钥钱包
+
+            打新了 #BMT
+
+            当时我觉得这垃圾钱包真难用啊
+
+            这怎么能是宇宙第一大所搞的玩意呢
+
+
+            也就隔了一个月
+
+            就在刚刚
+
+            我又使用了一次
+
+            交互，提现，充值全来了一遍
+
+
+            卧槽，惊艳我了
+
+            比吃德芙巧克力感觉还丝滑
+
+
+            币安钱包终于成长为
+
+            我…'
+          created_at: Tue Apr 22 16:28:28 +0000 2025
+          engagement:
+            retweets: 6
+            likes: 0
+            replies: 0
+        - text: Who's coming to UAE?
+          created_at: Mon Apr 21 12:32:56 +0000 2025
+          engagement:
+            retweets: 328
+            likes: 4667
+            replies: 1841
+        - text: 'RT @aliumutcrypto: @cz_binance Lately, I’ve been using BNB Chain
+            for USDT transfers, and honestly, the experience has been super smooth.
+            Th…'
+          created_at: Mon Apr 21 12:31:22 +0000 2025
+          engagement:
+            retweets: 43
+            likes: 0
+            replies: 0
+        - text: 'Crypto News Update: What’s Behind BNB Chain’s Surging Popularity
+            in USDT Transfers? https://t.co/HbFLMKod7f'
+          created_at: Mon Apr 21 12:24:28 +0000 2025
+          engagement:
+            retweets: 216
+            likes: 1255
+            replies: 437
+        - text: These are videos of lessons. Download the app for full interactivity.
+            All free, as education should be.
+          created_at: Mon Apr 21 12:21:08 +0000 2025
+          engagement:
+            retweets: 225
+            likes: 1163
+            replies: 307
+        - text: "RT @GiggleAcademy: Giggle Academy is now on Youtube \U0001F44B \n\
+            \nClick the \U0001F517 below and SUBSCRIBE !\nhttps://t.co/d33A2rwovA\
+            \ https://t.co/xw0mmZWzMx"
+          created_at: Mon Apr 21 11:57:02 +0000 2025
+          engagement:
+            retweets: 81
+            likes: 0
+            replies: 0
+        - text: 'RT @Eljaboom: 🔥 @BNBChain recorded the highest active USDT addresses
+            in the past month.
+
+
+            Nearly 12 million active addresses sent and receiv…'
+          created_at: Mon Apr 21 05:56:45 +0000 2025
+          engagement:
+            retweets: 133
+            likes: 0
+            replies: 0
+        - text: 'RT @TCryptochicks: #BNB Easter Price History!
+
+
+            🔶️2018: $6.50
+
+
+            🔶️ 2019: $24.50
+
+
+            🔶️2020: $13.50
+
+
+            🔶️2021: $337.50
+
+
+            🔶️2022: $417.50
+
+
+            🔶️2023: $3…'
+          created_at: Sun Apr 20 20:32:06 +0000 2025
+          engagement:
+            retweets: 147
+            likes: 0
+            replies: 0
+        - text: "RT @EnHeng456: 有点超乎我的意外了，这次大概是投入了40个bnb，能卖出来7000多刀\n\n  没想到收益这么高，大概是23000美元本金，赚了7000美金\n\
+            \n感谢@BNBCHAINZH @four_meme_ @SKYAIpro  \n\n  skyai技术真强\U0001F44D当之…"
+          created_at: Sun Apr 20 07:22:31 +0000 2025
+          engagement:
+            retweets: 104
+            likes: 0
+            replies: 0
+        - text: Happy Easter! https://t.co/H4Y7OAmlX2
+          created_at: Sat Apr 19 18:33:09 +0000 2025
+          engagement:
+            retweets: 762
+            likes: 6385
+            replies: 1693
+        - text: 'RT @Crypto_L92: 刚刚上推刷到 @cz_binance 表哥的推文，是关于 @KiloEx_perp 被盗资金后续，真没想到处理速度有这么快，这次事件的处理，更加说明了
+            #Binance    对资金安全这方面的重视以及币安安全团队的业内实力之强 @heyibin…'
+          created_at: Sat Apr 19 08:16:43 +0000 2025
+          engagement:
+            retweets: 107
+            likes: 0
+            replies: 0
+        - text: 'Glad to see the industry and the @BNBChain ecosystem working closely
+            to track down the hacker and get 90% of the funds back, with the rest
+            being a bounty.
+
+
+            I was notified within minutes of the hack. I didn''t do very much other
+            than connect experts together. 🙌👏'
+          created_at: Fri Apr 18 14:14:45 +0000 2025
+          engagement:
+            retweets: 343
+            likes: 1604
+            replies: 757
+        - text: "RT @Crypto_bn: Just a few @cz_binance mentioned. But here is the\
+            \ full rewards for holding #BNB\n\nPlease add if I miss any \n\n\U0001F536\
+            Pay transaction…"
+          created_at: Fri Apr 18 08:44:38 +0000 2025
+          engagement:
+            retweets: 155
+            likes: 0
+            replies: 0
+        - text: There are so many different versions of BNB rewards. asBNB, slisBNB,
+            clisBNB... combine them?
+          created_at: Fri Apr 18 06:25:53 +0000 2025
+          engagement:
+            retweets: 275
+            likes: 1833
+            replies: 622
+        - text: 😆
+          created_at: Fri Apr 18 05:39:48 +0000 2025
+          engagement:
+            retweets: 152
+            likes: 1022
+            replies: 215
+        - text: 'RT @reachme_io: 1/ 🚨 Changelog Update
+
+
+            A fresh batch of features just went live. Here’s what’s new 🧵'
+          created_at: Thu Apr 17 21:28:25 +0000 2025
+          engagement:
+            retweets: 49
+            likes: 0
+            replies: 0
+        - text: 'RT @spidey_cyp155: Does any crypto match BNB in burn value?
+
+            Short answer: No.
+
+
+            BNB has burned 60M+ tokens (~$34bn+) via a dual burn system…'
+          created_at: Thu Apr 17 19:08:55 +0000 2025
+          engagement:
+            retweets: 94
+            likes: 0
+            replies: 0
+        - text: '#BNB'
+          created_at: Thu Apr 17 19:07:36 +0000 2025
+          engagement:
+            retweets: 273
+            likes: 1731
+            replies: 412
+        - text: Welcome to BNB Chain.
+          created_at: Thu Apr 17 18:53:54 +0000 2025
+          engagement:
+            retweets: 218
+            likes: 1342
+            replies: 392
+  case_4:
+    input:
+      tool: get_user_tweets
+      tool_arguments:
+        username: realdonaldtrump
+        limit: 5
+    output:
+      response: ''
+      data:
+        profile:
+          id_str: '25073877'
+          name: Donald J. Trump
+          screen_name: realDonaldTrump
+          description: 45th & 47th President of the United States of America🇺🇸
+          followers_count: 103690287
+          friends_count: 53
+          statuses_count: 59739
+          profile_image_url: https://pbs.twimg.com/profile_images/874276197357596672/kUuht00m_normal.jpg
+          verified: false
+          created_at: Wed Mar 18 13:46:38 +0000 2009
+        tweets:
+        - text: Sleepy Joe Biden, THE WORST PRESIDENT IN THE HISTORY OF THE UNITED
+            STATES, has allowed millions and millions of Criminals, many of them murderers,
+            drug dealers, and people released from prisons and mental institutions
+            from all around the world, to enter our Country through it’s very dangerous
+            and ill conceived Open Border. Sorry, but it’s my job to get these killers
+            and thugs out of here. THAT’S WHAT I GOT ELECTED TO DO. MAGA!
+          created_at: Fri Apr 18 22:30:07 +0000 2025
+          engagement:
+            retweets: 55216
+            likes: 381071
+            replies: 45664
+        - text: Following my Day One Executive Order, the Office of Personnel Management
+            will be issuing new Civil Service Regulations for career government employees.
+            Moving forward, career government employees, working on policy matters,
+            will be classified as “Schedule Policy/Career,” and will be held to the
+            highest standards of conduct and performance. If these government workers
+            refuse to advance the policy interests of the President, or are engaging
+            in corrupt behavior, they should no longer have a job. This is common
+            sense, and will allow the federal government to finally be “run like a
+            business.” We must root out corruption and implement accountability in
+            our Federal Workforce!
+          created_at: Fri Apr 18 22:28:37 +0000 2025
+          engagement:
+            retweets: 34047
+            likes: 198915
+            replies: 14876
+        - text: This is the hand of the man that the Democrats feel should be brought
+            back to the United States, because he is such “a fine and innocent person.”
+            They said he is not a member of MS-13, even though he’s got MS-13 tattooed
+            onto his knuckles, and two Highly Respected Courts found that he was a
+            member of MS-13, beat up his wife, etc. I was elected to take bad people
+            out of the United States, among other things. I must be allowed to do
+            my job. MAKE AMERICA GREAT AGAIN!
+          created_at: Fri Apr 18 22:27:57 +0000 2025
+          engagement:
+            retweets: 81794
+            likes: 492507
+            replies: 36471
+        - text: https://t.co/Y6OFeGKS4l
+          created_at: Wed Apr 16 13:44:57 +0000 2025
+          engagement:
+            retweets: 24030
+            likes: 155106
+            replies: 18534
+        - text: The United States has a chance to do something that should have been
+            done DECADES AGO. Don’t be Weak! Don’t be Stupid! Don’t be a PANICAN (A
+            new party based on Weak and Stupid people!). Be Strong, Courageous, and
+            Patient, and GREATNESS will be the result!
+          created_at: Mon Apr 07 14:56:03 +0000 2025
+          engagement:
+            retweets: 73418
+            likes: 507894
+            replies: 68812
+        - text: Oil prices are down, interest rates are down (the slow moving Fed
+            should cut rates!), food prices are down, there is NO INFLATION, and the
+            long time abused USA is bringing in Billions of Dollars a week from the
+            abusing countries on Tariffs that are already in place. This is despite
+            the fact that the biggest abuser of them all, China, whose markets are
+            crashing, just raised its Tariffs by 34%, on top of its long term ridiculously
+            high Tariffs (Plus!), not acknowledging my warning for abusing countries
+            not to retaliate. They’ve made enough, for decades, taking advantage of
+            the Good OL’ USA! Our past “leaders” are to blame for allowing this, and
+            so much else, to happen to our Country. MAKE AMERICA GREAT AGAIN!
+          created_at: Mon Apr 07 14:55:39 +0000 2025
+          engagement:
+            retweets: 69958
+            likes: 506953
+            replies: 54597
+        - text: 'These Houthis gathered for instructions on an attack. Oops, there
+            will be no attack by these Houthis! 
+
+
+            They will never sink our ships again! https://t.co/lEzfyDgWP5'
+          created_at: Fri Apr 04 23:27:15 +0000 2025
+          engagement:
+            retweets: 62360
+            likes: 479417
+            replies: 73058
+        - text: https://t.co/ZoSf5TdLqo
+          created_at: Thu Apr 03 13:08:29 +0000 2025
+          engagement:
+            retweets: 32009
+            likes: 184801
+            replies: 26870
+        - text: https://t.co/CdTzF2sfMZ
+          created_at: Wed Apr 02 20:07:22 +0000 2025
+          engagement:
+            retweets: 23893
+            likes: 120832
+            replies: 13953
+        - text: https://t.co/k8Eh7B8fq3
+          created_at: Wed Apr 02 15:47:38 +0000 2025
+          engagement:
+            retweets: 29695
+            likes: 158944
+            replies: 12567
+        - text: https://t.co/RPXb6Y9E6y
+          created_at: Wed Apr 02 13:42:29 +0000 2025
+          engagement:
+            retweets: 47561
+            likes: 381240
+            replies: 38735
+        - text: REPUBLICANS MUST DEFUND AND TOTALLY DISASSOCIATE THEMSELVES FROM NPR
+            &amp; PBS, THE RADICAL LEFT “MONSTERS” THAT SO BADLY HURT OUR COUNTRY!
+          created_at: Tue Apr 01 20:53:05 +0000 2025
+          engagement:
+            retweets: 39074
+            likes: 263924
+            replies: 22046
+        - text: 'The Iran-backed Houthi Terrorists have been decimated by the relentless
+            strikes over the past two weeks. Many of their Fighters and Leaders are
+            no longer with us. We hit them every day and night — Harder and harder.
+            Their capabilities that threaten Shipping and the Region are rapidly being
+            destroyed. Our attacks will continue until they are no longer a threat
+            to Freedom of Navigation. The choice for the Houthis is clear: Stop shooting
+            at U.S. ships, and we will stop shooting at you. Otherwise, we have only
+            just begun, and the real pain is yet to come, for both the Houthis and
+            their sponsors in Iran.'
+          created_at: Mon Mar 31 18:49:47 +0000 2025
+          engagement:
+            retweets: 40054
+            likes: 268192
+            replies: 24381
+        - text: There will never have been a transformation of a Country like the
+            transformation that is happening, for all to see, in the United States
+            of America. Companies are pouring into our Country at levels never seen
+            before, with Jobs (and Money!) to follow. It is a beautiful thing to watch!
+          created_at: Mon Mar 31 18:49:06 +0000 2025
+          engagement:
+            retweets: 51772
+            likes: 368136
+            replies: 36824
+        - text: In two months, there has been more Private Investment spoken for,
+            and/or committed to, than in four years of the Sleepy Joe Biden Administration
+            — A fact that the Fake News hates talking about!
+          created_at: Mon Mar 31 18:48:06 +0000 2025
+          engagement:
+            retweets: 24740
+            likes: 177326
+            replies: 10017
+        - text: Thank you President Bukele, of El Salvador, for taking the criminals
+            that were so stupidly allowed, by the Crooked Joe Biden Administration,
+            to enter our Country, and giving them such a wonderful place to live!
+          created_at: Mon Mar 31 18:16:47 +0000 2025
+          engagement:
+            retweets: 58755
+            likes: 362171
+            replies: 13014
+        - text: https://t.co/PRHm1dTtSX
+          created_at: Mon Mar 31 13:33:55 +0000 2025
+          engagement:
+            retweets: 22625
+            likes: 124591
+            replies: 11747
+        - text: 'America First Patriot Randy Fine is running to represent the Wonderful
+            People of Florida’s 6th Congressional District! A highly successful, Harvard
+            educated businessman, and greatly respected State Legislator, Randy has
+            been a tremendous Voice for MAGA. In Congress, Randy will be an incredible
+            fighter, who will work tirelessly with me to Strengthen our Economy, Lower
+            Taxes, Secure the Border, Champion our Military/Vets, Ensure American
+            Energy DOMINANCE, Protect our always under siege Second Amendment, and
+            Advance PEACE THROUGH STRENGTH.
+
+             
+
+            Randy Fine has my Complete and Total Endorsement! Election Day is this
+            Tuesday, April 1st. GET OUT AND VOTE FOR RANDY — HE WILL NOT LET YOU DOWN!
+            https://t.co/3Bnn5ZweH2'
+          created_at: Mon Mar 31 13:30:28 +0000 2025
+          engagement:
+            retweets: 21179
+            likes: 105140
+            replies: 10106
+        - text: 'Jimmy Patronis, Chief Financial Officer and Fire Marshall for the
+            Great State of Florida, is running an incredible Campaign for Congress
+            in Florida’s 1st Congressional District! A fourth generation Floridian
+            from the beautiful Panhandle, and owner of an iconic seafood restaurant,
+            Jimmy has been a wonderful friend to me, and to MAGA. As your next Congressman,
+            Jimmy will fight hard alongside of me to Grow our Economy, Cut Taxes,
+            Secure our Border, Stop Migrant Crime, Strengthen our Brave Military/Vets,
+            Restore American Energy DOMINANCE, and Defend our always under siege Second
+            Amendment.
+
+             
+
+            Florida, Election Day is this Tuesday, April 1st. GET OUT AND VOTE FOR
+            JIMMY PATRONIS. Jimmy has my Complete and Total Endorsement — HE WILL
+            NEVER LET YOU DOWN! https://t.co/xP3nBIgOep'
+          created_at: Mon Mar 31 13:30:06 +0000 2025
+          engagement:
+            retweets: 18654
+            likes: 91765
+            replies: 3162
+        - text: 'RT @OcrazioCornPop: 🚨 SIGNAL SCANDAL:  Katherine Maher, the leftist
+            NPR CEO, is currently the Chair of the Board of Signal!
+
+
+            WHAT ARE THE O…'
+          created_at: Sun Mar 30 20:39:21 +0000 2025
+          engagement:
+            retweets: 24429
+            likes: 0
+            replies: 0
+  case_5:
+    input:
+      query: Get tweets from user_id:778764142412984320
+      limit: 5
+    output:
+      response: "**Twitter Profile Analysis for @huggingface (User ID: 778764142412984320)**\n\
+        \n**Profile Overview:**\n\n* **Name:** Hugging Face\n* **Screen Name:** @huggingface\n\
+        * **Description:** The AI community building the future.\n* **Followers:**\
+        \ 497,857\n* **Friends (Following):** 201\n* **Total Tweets:** 10,642\n* **Verified:**\
+        \ No\n* **Account Creation Date:** Thu Sep 22 01:13:35 +0000 2016\n\n**Recent\
+        \ Tweets (20) Analysis (Apr 16 - Apr 22, 2025):**\n\n* **Tweet Types:** All\
+        \ 20 recent tweets are **Retweets (RT)**\n* **Topics:**\n\t+ AI and Machine\
+        \ Learning advancements (12 tweets)\n\t+ Hugging Face platform and model updates\
+        \ (4 tweets)\n\t+ Robotics and Simulation (2 tweets)\n\t+ Open-source projects\
+        \ and collaborations (2 tweets)\n* **Engagement Metrics (Average per Tweet):**\n\
+        \t+ **Retweets:** 43.6\n\t+ **Likes:** 0 (no likes reported for any of the\
+        \ recent tweets)\n\t+ **Replies:** 0 (no replies reported for any of the recent\
+        \ tweets)\n* **Top Engaging Tweets (by Retweets):**\n\t1. RT @TheTuringPost:\
+        \ 11 new types of RAG... (222 Retweets)\n\t2. RT @xenovacom: Woah... This\
+        \ is the fastest Transformers.js... (81 Retweets)\n\t3. RT @vllm_project:\
+        \ vLLM...! You can now deploy any @huggingface language model... (130 Retweets,\
+        \ actually the highest but listed as per original order)\n\n**Observations:**\n\
+        \n* The @huggingface account primarily engages in sharing updates from the\
+        \ broader AI and ML community, indicating a strong focus on community building\
+        \ and awareness.\n* The absence of original tweets in the analyzed period\
+        \ suggests a strategy focusing on amplifying others' content, possibly to\
+        \ foster collaboration and highlight advancements in the field.\n* Engagement\
+        \ is notably high for certain tweets, indicating a responsive audience interested\
+        \ in AI innovations and Hugging Face's ecosystem. However, the lack of likes\
+        \ and replies across all tweets is noteworthy, suggesting room for improvement\
+        \ in encouraging direct interactions."
+      data:
+        profile:
+          id_str: '778764142412984320'
+          name: Hugging Face
+          screen_name: huggingface
+          description: The AI community building the future. https://t.co/VkRPD0Vclr
+          followers_count: 497857
+          friends_count: 201
+          statuses_count: 10642
+          profile_image_url: https://pbs.twimg.com/profile_images/1348748676282388482/nr8ZuLBE_normal.jpg
+          verified: false
+          created_at: Thu Sep 22 01:13:35 +0000 2016
+        tweets:
+        - text: 'RT @NielsRogge: Excited to share 2 new notebooks I worked on!
+
+
+            I called them "How I use VLMs in 2025" as they showcase my workflow on
+            getti…'
+          created_at: Tue Apr 22 11:54:47 +0000 2025
+          engagement:
+            retweets: 16
+            likes: 0
+            replies: 0
+        - text: 'RT @vanstriendaniel: NVIDIA''s ClimbLab: Setting a New Standard for
+            Pretraining
+
+
+            - 1.2 trillion tokens in 20 semantic clusters
+
+            - Two-classif…'
+          created_at: Tue Apr 22 08:27:43 +0000 2025
+          engagement:
+            retweets: 11
+            likes: 0
+            replies: 0
+        - text: 'RT @xenovacom: Woah... This is the fastest Transformers.js has ever
+            been! 🤯 Run a 1.7B LLM 100% locally in your browser at over 130 tokens…'
+          created_at: Tue Apr 22 00:15:51 +0000 2025
+          engagement:
+            retweets: 81
+            likes: 0
+            replies: 0
+        - text: 'RT @reach_vb: HOLY SHIT, Anthropic released 3307 vales expressed
+            by Claude across hundreds and thousands of REAL WORLD CONVERSATIONS! 🔥
+
+
+            ht…'
+          created_at: Mon Apr 21 22:04:26 +0000 2025
+          engagement:
+            retweets: 45
+            likes: 0
+            replies: 0
+        - text: 'RT @vllm_project: vLLM🤝🤗! You can now deploy any @huggingface  language
+            model with vLLM''s speed. This integration makes it possible for one…'
+          created_at: Mon Apr 21 22:01:37 +0000 2025
+          engagement:
+            retweets: 130
+            likes: 0
+            replies: 0
+        - text: 'RT @AnthropicAI: We’ve made the dataset of Claude’s expressed values
+            open for anyone to download and explore for themselves.
+
+
+            Download the…'
+          created_at: Mon Apr 21 22:00:59 +0000 2025
+          engagement:
+            retweets: 23
+            likes: 0
+            replies: 0
+        - text: 'RT @jadechoghari: Robotics simulation is how we teach robots to act
+            smart—before they ever touch the real world. It’s physical AI: simulati…'
+          created_at: Mon Apr 21 22:00:52 +0000 2025
+          engagement:
+            retweets: 19
+            likes: 0
+            replies: 0
+        - text: 'RT @ClementDelangue: So cool to see transformers becoming the source
+            of truth for model definition &amp; collaborating with wonderful partners…'
+          created_at: Mon Apr 21 22:00:38 +0000 2025
+          engagement:
+            retweets: 14
+            likes: 0
+            replies: 0
+        - text: "RT @ai_for_success: I just built this classic game on Hugging Face\
+            \ DeepSite. \n\nIt's fun to play. You should try out . It’s has a canvas\
+            \ fea…"
+          created_at: Sun Apr 20 23:58:31 +0000 2025
+          engagement:
+            retweets: 11
+            likes: 0
+            replies: 0
+        - text: 'RT @adcock_brett: Hugging Face acquired Pollen Robotics, the French
+            startup behind the open-source ''Reachy 2'' humanoid
+
+
+            The move comes as p…'
+          created_at: Sun Apr 20 23:58:20 +0000 2025
+          engagement:
+            retweets: 18
+            likes: 0
+            replies: 0
+        - text: 'RT @bsubra: Reachy 2 robot: friendly &amp; approachable, inviting
+            natural interaction; perfect for research, education &amp; experimenting
+            with emb…'
+          created_at: Sun Apr 20 23:56:28 +0000 2025
+          engagement:
+            retweets: 2
+            likes: 0
+            replies: 0
+        - text: 'RT @akv_13: Orpheus has hit it''s first 100k downloads on HuggingFace
+            🤗. A first small step, with many strides to follow shortly, starting w…'
+          created_at: Sun Apr 20 23:55:29 +0000 2025
+          engagement:
+            retweets: 5
+            likes: 0
+            replies: 0
+        - text: 'RT @TheTuringPost: 11 new types of RAG
+
+
+            ▪️ InstructRAG
+
+            ▪️ Collaborative RAG (CoRAG)
+
+            ▪️ ReaRAG
+
+            ▪️ MCTS-RAG
+
+            ▪️ Typed-RAG
+
+            ▪️ MADAM-RAG
+
+            ▪️ HM-R…'
+          created_at: Sun Apr 20 23:54:18 +0000 2025
+          engagement:
+            retweets: 222
+            likes: 0
+            replies: 0
+        - text: 'RT @ahatamiz1: HuggingFace has massively advanced the state of AI..
+            it''s hard to imagine the field without their presence.
+
+
+            And a special s…'
+          created_at: Sun Apr 20 23:47:06 +0000 2025
+          engagement:
+            retweets: 5
+            likes: 0
+            replies: 0
+        - text: 'RT @victormustar: 👀 ByteDance Research just open‑sourced ChatTS‑14B,
+            natively understands &amp; reasons over time‑series! (Apache‑2.0 licensed)…'
+          created_at: Sun Apr 20 23:46:07 +0000 2025
+          engagement:
+            retweets: 114
+            likes: 0
+            replies: 0
+        - text: "RT @MaziyarPanahi: How about a filter for only reasoning‑powered\
+            \ models on @huggingface? \U0001F917 \n\nPlus a size‑sorter to rank them\
+            \ by footprint!…"
+          created_at: Sun Apr 20 23:45:46 +0000 2025
+          engagement:
+            retweets: 2
+            likes: 0
+            replies: 0
+        - text: 'RT @dylan_ebert_: this isn''t a 3D model.
+
+
+            let''s fix that
+
+
+            how to make *game-ready* 3D assets with AI and Blender https://t.co/40gTfPR2oE'
+          created_at: Fri Apr 18 17:00:12 +0000 2025
+          engagement:
+            retweets: 40
+            likes: 0
+            replies: 0
+        - text: 'RT @reach_vb: NEW: Quantisation Aware Trained Gemma 3 from @GoogleDeepMind
+            🔥
+
+
+            &gt; Gemma 3 27B from 54GB → 14.1GB) 🤯
+
+
+            Open source checkpoints…'
+          created_at: Fri Apr 18 13:37:35 +0000 2025
+          engagement:
+            retweets: 86
+            likes: 0
+            replies: 0
+        - text: 'RT @techandco: Hugging Face rachète Pollen Robotics
+
+
+            "Hugging Face est en passe de devenir la plateforme de référence pour
+            les développeurs…'
+          created_at: Wed Apr 16 20:13:14 +0000 2025
+          engagement:
+            retweets: 6
+            likes: 0
+            replies: 0
+        - text: 'RT @_derek_liu_: We''ve just revamped the
+
+            @Huggingface
+
+            Quantization docs! 🥳 Understand concepts better &amp; choose the right
+            technique for your…'
+          created_at: Wed Apr 16 20:12:08 +0000 2025
+          engagement:
+            retweets: 86
+            likes: 0
+            replies: 0
+  case_6:
+    input:
+      tool: get_twitter_detail
+      tool_arguments:
+        tweet_id: '1913624766793289972'
+    output:
+      response: ''
+      data: *id001
+  case_7:
+    input:
+      tool: get_twitter_detail
+      tool_arguments:
+        tweet_id: '1914394032169762877'
+        cursor: ''
+    output:
+      response: ''
+      data: *id002
+  case_8:
+    input:
+      query: Show me the details and replies for tweet 1913624766793289972
+    output:
+      response: "**Tweet Details for ID 1913624766793289972**\n\n* **Tweet ID:** 1913624766793289972\n\
+        * **User ID:** 1736748346566459392\n* **Username:** @heurist_ai (Heurist)\n\
+        * **Tweet Text:** \"Your agents, your way. Create a dedicated MCP server with\
+        \ Heurist as simple as 3 steps \U0001F447 https://t.co/8fj2Xkc9Jt\"\n* **Media\
+        \ Type:** Video\n* **Media URL:** https://pbs.twimg.com/amplify_video_thumb/1913624592876535808/img/WHw2G9VCP7UNO0fL.jpg\n\
+        * **Created At:** Sat Apr 19 16:04:32 +0000 2025\n* **Engagement:**\n\t+ **Favorite\
+        \ Count:** 43\n\t+ **Quote Count:** 2\n\t+ **Reply Count:** 12\n\t+ **Retweet\
+        \ Count:** 20\n\n**Replies to Tweet ID 1913624766793289972:**\n\n1. **Reply\
+        \ from @heurist_ai (Self Reply)**\n\t* **Tweet ID:** 1913625034478034984\n\
+        \t* **Text:** \"1. Get an API key: https://t.co/Me0O3WQ4H9 2. Visit Heurist\
+        \ MCP Portal https://t.co/9mZtQWfB0W 3. Choose your agents and start!\"\n\t\
+        * **Created At:** Sat Apr 19 16:05:36 +0000 2025\n\t* **Engagement:**\n\t\t\
+        - **Favorite Count:** 6\n\t\t- **Retweet Count:** 3\n\n2. **Reply from @HLeague84016**\n\
+        \t* **Tweet ID:** 1913655451293720778\n\t* **Text:** \"@heurist_ai \U0001F525\
+        \ Just tried setting up my MCP server—took less than 5 minutes! Heurist nailed\
+        \ the UX.\"\n\t* **Created At:** Sat Apr 19 18:06:28 +0000 2025\n\t* **Engagement:**\n\
+        \t\t- **Favorite Count:** 0\n\t\t- **Retweet Count:** 0\n\n3. **Reply from\
+        \ @CloneMgt68974**\n\t* **Tweet ID:** 191"
+      data: *id001
+  case_9:
+    input:
+      query: 'Get all information about this tweet: 1914394032169762877'
+    output:
+      response: '**Tweet Analysis: 1914394032169762877**
+
+
+        ****Tweet Details****
+
+
+        * **Tweet ID:** 1914394032169762877
+
+        * **User ID:** 1452628121589592069
+
+        * **Type:** Original Tweet (not a retweet, reply, or self-send)
+
+        * **Quote:** Yes, quoting another tweet (ID: 1913624766793289972)
+
+        * **Media:** Photo
+
+        * **Media URL:** https://pbs.twimg.com/media/GpFK3rAa4AAnHUd.jpg
+
+        * **URLs in Tweet:** https://t.co/OB6LowyWjw (redirects to mcp.heurist.ai)
+
+        * **Creation Date:** Monday, April 21, 2025, 19:01:19 +0000
+
+
+        ****Tweet Content****
+
+
+        * **Text:**
+
+        > "Big screen moment for AI agents.\n\nThis is what it feels like to build
+        with Heurist.\n\nOne interface, endless powers.\n\nPlug into the future →
+        mcp.heurist.ai https://t.co/OB6LowyWjw"
+
+        * **Language:** English
+
+        * **Mentions:** None
+
+        * **Hashtags:** None
+
+
+        ****Engagement Metrics (at time of data collection)****
+
+
+        * **Favorites (Likes):** 4
+
+        * **Quotes:** 0
+
+        * **Replies:** 0
+
+        * **Retweets:** 0
+
+
+        ****User Information (Tweet Author)****
+
+
+        * **User ID:** 1452628121589592069
+
+        * **Name:** Frank ✈️ (📜,📜)
+
+        * **Screen Name (@):** @gpt3_eth
+
+        * **Location:** Seattle, WA
+
+        * **Bio:** universe/acc on Heurist
+
+        * **Verified Account:** Yes
+
+        * **Account Creation Date:** Monday, October 25, 2021, 13:53:35 +0000
+
+        * **Followers:** 1,606
+
+        * **Following (Friends):** 5,136
+
+        * **Total Tweets:** 1,372
+
+        * **Media Count:** 70
+
+        * **Favorites:** 6,435
+
+        * **Profile Image URL:** https://pbs.twimg.com/profile_images/1905034272995704832/P2bUqPPE_normal.jpg
+
+
+        ****Related Tweet (Being Qu'
+      data: *id002
