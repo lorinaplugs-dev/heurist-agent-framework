@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 
-class TwitterProfileAgent(MeshAgent):
+class TwitterInfoAgent(MeshAgent):
     def __init__(self):
         super().__init__()
         self.api_key = os.getenv("APIDANCE_API_KEY")
@@ -100,6 +100,50 @@ class TwitterProfileAgent(MeshAgent):
                         "required": ["username"],
                     },
                 },
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_twitter_detail",
+                    "description": "Fetch detailed information about a specific tweet including replies and thread content",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "tweet_id": {
+                                "type": "string",
+                                "description": "The ID of the tweet to fetch details for",
+                            },
+                            "cursor": {
+                                "type": "string",
+                                "description": "Cursor for pagination through replies or threaded content",
+                                "default": "",
+                            },
+                        },
+                        "required": ["tweet_id"],
+                    },
+                },
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_general_search",
+                    "description": "Search for tweets using a query term",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "q": {
+                                "type": "string",
+                                "description": "The search query term (e.g. eth)",
+                            },
+                            "cursor": {
+                                "type": "string",
+                                "description": "A pagination token to fetch the next page of results",
+                                "default": "",
+                            },
+                        },
+                        "required": ["q"],
+                    },
+                },
             }
         ]
 
@@ -108,6 +152,12 @@ class TwitterProfileAgent(MeshAgent):
 
     def get_twitter_tweets_endpoint(self) -> str:
         return f"{self.base_url}/sapi/UserTweets"
+
+    def get_twitter_detail_endpoint(self) -> str:
+        return f"{self.base_url}/sapi/TweetDetail"
+
+    def get_twitter_search_endpoint(self) -> str:
+        return f"{self.base_url}/sapi/Search"
 
     # ------------------------------------------------------------------------
     #                       SHARED / UTILITY METHODS
@@ -426,6 +476,54 @@ class TwitterProfileAgent(MeshAgent):
             logger.error(f"Unexpected error in apidance_get_tweets: {e}")
             return {"status": "error", "error": f"Unexpected error: {str(e)}"}
 
+    @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
+    async def apidance_get_tweet_detail(self, tweet_id: str, cursor: str = "") -> Dict:
+        """Fetch detailed information about a specific tweet"""
+        try:
+            params = {"tweet_id": tweet_id}
+            if cursor:
+                params["cursor"] = cursor
+
+            tweet_data = await self._make_api_request(endpoint=self.get_twitter_detail_endpoint(), params=params)
+
+            if "status" in tweet_data and tweet_data["status"] == "error":
+                return tweet_data
+
+            return {
+                "status": "success",
+                "pinned_tweet": tweet_data.get("pinned_tweet"),
+                "tweets": tweet_data.get("tweets", []),
+                "next_cursor_str": tweet_data.get("next_cursor_str"),
+            }
+        except Exception as e:
+            logger.error(f"Unexpected error in apidance_get_tweet_detail: {e}")
+            return {"status": "error", "error": f"Unexpected error: {str(e)}"}
+
+    @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
+    async def apidance_general_search(self, query: str, cursor: str = "") -> Dict:
+        """Search for tweets using a query term"""
+        try:
+            params = {"q": query}
+            if cursor:
+                params["cursor"] = cursor
+
+            search_data = await self._make_api_request(endpoint=self.get_twitter_search_endpoint(), params=params)
+
+            if "status" in search_data and search_data["status"] == "error":
+                return search_data
+
+            return {
+                "status": "success",
+                "pinned_tweet": search_data.get("pinned_tweet"),
+                "tweets": search_data.get("tweets", []),
+                "next_cursor_str": search_data.get("next_cursor_str"),
+            }
+        except Exception as e:
+            logger.error(f"Unexpected error in apidance_general_search: {e}")
+            return {"status": "error", "error": f"Unexpected error: {str(e)}"}
+
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
@@ -453,6 +551,34 @@ class TwitterProfileAgent(MeshAgent):
                 return {"error": tweets_result.get("error", "Failed to fetch user tweets")}
 
             return {"profile": profile_result.get("profile", {}), "tweets": tweets_result.get("tweets", [])}
+        elif tool_name == "get_twitter_detail":
+            tweet_id = function_args.get("tweet_id")
+            cursor = function_args.get("cursor", "")
+
+            if not tweet_id:
+                return {"error": "Missing 'tweet_id' in tool_arguments"}
+
+            logger.info(f"Fetching tweet details for tweet_id '{tweet_id}'")
+
+            tweet_detail_result = await self.apidance_get_tweet_detail(tweet_id, cursor)
+            if tweet_detail_result.get("status") == "error":
+                return {"error": tweet_detail_result.get("error", "Failed to fetch tweet details")}
+
+            return tweet_detail_result
+        elif tool_name == "get_general_search":
+            query = function_args.get("q")
+            cursor = function_args.get("cursor", "")
+
+            if not query:
+                return {"error": "Missing 'q' in tool_arguments"}
+
+            logger.info(f"Performing general search for query '{query}'")
+
+            search_result = await self.apidance_general_search(query, cursor)
+            if search_result.get("status") == "error":
+                return {"error": search_result.get("error", "Failed to perform search")}
+
+            return search_result
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
 
