@@ -16,6 +16,7 @@ dependencies = [
     "pydash==8.0.5", # sol wallet agent
     "pyethash", # to build web3-ethereum-defi
     "python-dotenv==1.1.0",
+    "pyyaml>=6.0.2",
     "requests==2.32.3",
     "safe-eth-py==6.0.0b42", # to build web3-ethereum-defi
     "scikit-learn==1.6.1", # for core embeddings
