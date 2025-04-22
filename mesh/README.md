@@ -527,6 +527,7 @@ Thank you for contributing to **Heurist Mesh** and helping build a diverse ecosy
 | TruthSocialAgent | This agent can retrieve and analyze posts from Donald Trump on Truth Social. | • get_trump_posts | [Source](./agents/truth_social_agent.py) | Apify |
 | TwitterProfileAgent | This agent fetches a Twitter user's profile information and recent tweets. It's useful for getting project updates or tracking key opinion leaders (KOLs) in the space. | • get_user_tweets | [Source](./agents/twitter_profile_agent.py) | Twitter API |
 | UnifWeb3NewsAgent | This agent fetches the latest Web3 and cryptocurrency news using UnifAI's API | • get_web3_news | [Source](./agents/unifai_web3_news_agent.py) | UnifAI |
+| UnifaiTokenAnalysisAgent | This agent provides token analysis using UnifAI's API, including GMGN trend analysis (GMGN is a memecoin trading platform) and comprehensive token analysis for various cryptocurrencies | • get_gmgn_trend<br>• get_gmgn_token_info<br>• analyze_token | [Source](./agents/unifai_token_analysis_agent.py) | UnifAI |
 | ZerionWalletAnalysisAgent | This agent can fetch and analyze the token and NFT holdings of a crypto wallet (must be EVM chain) | • fetch_wallet_tokens<br>• fetch_wallet_nfts | [Source](./agents/zerion_wallet_analysis_agent.py) | Zerion |
 | ZkIgniteAnalystAgent | This agent analyzes zkSync Era DeFi opportunities in the zkIgnite program and has access to real-time yield and TVL data | - | [Source](./agents/zkignite_analyst_agent.py) | Merkl, DefiLlama |
 ---  
