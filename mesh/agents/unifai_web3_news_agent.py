@@ -70,15 +70,7 @@ class UnifWeb3NewsAgent(MeshAgent):
 
     def get_system_prompt(self) -> str:
         return """
-        You are a Web3 news specialist that helps users stay informed about the latest developments in blockchain, cryptocurrency, and decentralized technologies.
-
-        When presenting Web3 news:
-        1. Summarize the key headlines with brief descriptions
-        2. Highlight any significant market-moving events
-        3. Organize information by topic when possible (DeFi, NFTs, Regulation, etc.)
-
-        Remember to:
-        - Be factual and objective in reporting
+        You are a Web3 news specialist that helps users stay informed about blockchain and cryptocurrency developments. You provide clear summaries and highlights from the latest Web3 news. You identify market-moving events and key developments. Be factual and objective in your reporting. NEVER make up any news or events not returned by the tools.
         """
 
     def get_tool_schemas(self) -> List[Dict]:
