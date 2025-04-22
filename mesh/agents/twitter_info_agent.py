@@ -122,6 +122,28 @@ class TwitterInfoAgent(MeshAgent):
                         "required": ["tweet_id"],
                     },
                 },
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_general_search",
+                    "description": "Search for tweets using a query term",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "q": {
+                                "type": "string",
+                                "description": "The search query term (e.g. eth)",
+                            },
+                            "cursor": {
+                                "type": "string",
+                                "description": "A pagination token to fetch the next page of results",
+                                "default": "",
+                            },
+                        },
+                        "required": ["q"],
+                    },
+                },
             }
         ]
 
@@ -133,6 +155,9 @@ class TwitterInfoAgent(MeshAgent):
 
     def get_twitter_detail_endpoint(self) -> str:
         return f"{self.base_url}/sapi/TweetDetail"
+
+    def get_twitter_search_endpoint(self) -> str:
+        return f"{self.base_url}/sapi/Search"
 
     # ------------------------------------------------------------------------
     #                       SHARED / UTILITY METHODS
@@ -475,6 +500,30 @@ class TwitterInfoAgent(MeshAgent):
             logger.error(f"Unexpected error in apidance_get_tweet_detail: {e}")
             return {"status": "error", "error": f"Unexpected error: {str(e)}"}
 
+    @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
+    async def apidance_general_search(self, query: str, cursor: str = "") -> Dict:
+        """Search for tweets using a query term"""
+        try:
+            params = {"q": query}
+            if cursor:
+                params["cursor"] = cursor
+
+            search_data = await self._make_api_request(endpoint=self.get_twitter_search_endpoint(), params=params)
+
+            if "status" in search_data and search_data["status"] == "error":
+                return search_data
+
+            return {
+                "status": "success",
+                "pinned_tweet": search_data.get("pinned_tweet"),
+                "tweets": search_data.get("tweets", []),
+                "next_cursor_str": search_data.get("next_cursor_str"),
+            }
+        except Exception as e:
+            logger.error(f"Unexpected error in apidance_general_search: {e}")
+            return {"status": "error", "error": f"Unexpected error: {str(e)}"}
+
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
@@ -516,6 +565,20 @@ class TwitterInfoAgent(MeshAgent):
                 return {"error": tweet_detail_result.get("error", "Failed to fetch tweet details")}
 
             return tweet_detail_result
+        elif tool_name == "get_general_search":
+            query = function_args.get("q")
+            cursor = function_args.get("cursor", "")
+
+            if not query:
+                return {"error": "Missing 'q' in tool_arguments"}
+
+            logger.info(f"Performing general search for query '{query}'")
+
+            search_result = await self.apidance_general_search(query, cursor)
+            if search_result.get("status") == "error":
+                return {"error": search_result.get("error", "Failed to perform search")}
+
+            return search_result
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
 

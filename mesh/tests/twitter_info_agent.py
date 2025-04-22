@@ -125,6 +125,56 @@ async def test_tweet_detail_fetching(agent):
     return results
 
 
+async def test_general_search(agent):
+    """Test the get_general_search functionality"""
+    test_cases = [
+        # Basic search query
+        {
+            "tool": "get_general_search",
+            "tool_arguments": {
+                "q": "heurist ai"
+            }
+        },
+        # Search with specific hashtag
+        {
+            "tool": "get_general_search",
+            "tool_arguments": {
+                "q": "eth"
+            }
+        },
+        # Search with cursor for pagination
+        {
+            "tool": "get_general_search",
+            "tool_arguments": {
+                "q": "Anthropic MCP",
+                "cursor": ""  # Empty cursor for first page
+            }
+        },
+        # Natural language queries
+        {"query": "Search for tweets about crypto marketplace"},
+        {"query": "Find recent discussions about Heurist AI"},
+        {"query": "What are people saying about Vitalik Buterin?"}
+    ]
+
+    results = {}
+    for i, test_case in enumerate(test_cases):
+        try:
+            result = await agent.handle_message(test_case)
+            results[f"case_{i + 1}"] = {
+                "input": test_case,
+                "output": result
+            }
+            logger.info(f"General search test case {i + 1} completed successfully")
+        except Exception as e:
+            logger.error(f"Error in general search test case {i + 1}: {e}")
+            results[f"case_{i + 1}"] = {
+                "input": test_case,
+                "error": str(e)
+            }
+
+    return results
+
+
 async def run_agent():
     agent = TwitterInfoAgent()
     try:
@@ -140,6 +190,10 @@ async def run_agent():
         logger.info("Testing tweet detail functionality...")
         tweet_detail_results = await test_tweet_detail_fetching(agent)
 
+        # Test general search functionality
+        logger.info("Testing general search functionality...")
+        general_search_results = await test_general_search(agent)
+
         test_cases = [
             {"query": "Summarise recent updates of @heurist_ai", "limit": 5},
             {"query": "What has @elonmusk been tweeting lately?", "limit": 5},
@@ -153,6 +207,10 @@ async def run_agent():
             # Query-based test cases for tweet detail
             {"query": f"Show me the details and replies for tweet {TEST_TWEET_IDS[0]}"},
             {"query": f"Get all information about this tweet: {TEST_TWEET_IDS[1]}"},
+            # Add test cases for general search
+            {"tool": "get_general_search", "tool_arguments": {"q": "ethereum"}},
+            {"query": "Search Twitter for discussions about Heurist AI"},
+            {"query": "What are people saying about Heurist AI on Twitter?"},
         ]
 
         api_results = {}
@@ -174,6 +232,7 @@ async def run_agent():
             "username_extraction_tests": extraction_results,
             "id_pattern_recognition": id_recognition_results,
             "tweet_detail_tests": tweet_detail_results,
+            "general_search_tests": general_search_results,
             "api_call_tests": api_results,
         }
 
