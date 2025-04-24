@@ -1,0 +1,669 @@
+trending_projects:
+  input:
+    query: Show me the top AI projects by mindshare
+    raw_data_only: false
+  output:
+    response: "**Top AI Projects by Mindshare**\n\nBased on the provided Cookie API\
+      \ data, here are the top AI projects by mindshare, along with their mindshare\
+      \ percentage and change (delta):\n\n**Top 5 AI Projects:**\n\n1. **KAITO** (`kaito`)\n\
+      \t* Mindshare: **23.85%**\n\t* Mindshare Delta: **-4.47%** (decrease)\n2. **Bittensor**\
+      \ (`bittensor`)\n\t* Mindshare: **3.50%**\n\t* Mindshare Delta: **+1.42%** (increase)\n\
+      3. **Dark Eclipse** (`dark-eclipse`)\n\t* Mindshare: **3.42%**\n\t* Mindshare\
+      \ Delta: **+1.63%** (increase)\n4. **Sei** (`sei`)\n\t* Mindshare: **3.19%**\n\
+      \t* Mindshare Delta: **+1.09%** (increase)\n5. **Openledger** (`openledger`)\n\
+      \t* Mindshare: **3.07%**\n\t* Mindshare Delta: **-1.10%** (decrease)\n\n**Notable\
+      \ Mentions (AI-specific projects with lower mindshare):**\n\n* **PAAL AI** (`paal-ai`):\
+      \ 1.51% mindshare, +0.02% delta\n* **alchemist ai** (`alchemist-ai`): 1.30%\
+      \ mindshare, -0.59% delta\n\n**Observations:**\n\n* KAITO dominates the AI project\
+      \ mindshare, despite a significant decrease.\n* Bittensor, Dark Eclipse, and\
+      \ Sei show promising increases in mindshare, indicating growing interest.\n\
+      * The majority of the listed projects are not exclusively AI-focused, highlighting\
+      \ the broader scope of the provided data. If you'd like to refine the search\
+      \ for more AI-specific projects, please provide additional context or filters."
+    data: &id003
+      status: success
+      data:
+        ok:
+          entries:
+          - projectId: 67bbb96306199e914bd8f584
+            projectName: KAITO
+            projectSlug: kaito
+            mindshare: 23.84724
+            mindshareDelta: -4.4747906
+          - projectId: 67b87457cf254ed986008ab7
+            projectName: Openledger
+            projectSlug: openledger
+            mindshare: 3.7639463
+            mindshareDelta: -1.1026514
+          - projectId: 67b87453cf254ed98600784a
+            projectName: Pepe
+            projectSlug: pepe
+            mindshare: 3.6155403
+            mindshareDelta: -1.3563135
+          - projectId: 67c05fc8f46d8aed36a937d7
+            projectName: Bittensor
+            projectSlug: bittensor
+            mindshare: 3.496493
+            mindshareDelta: 1.4207244
+          - projectId: 67fe1917197a714986ffcd46
+            projectName: Dark Eclipse
+            projectSlug: dark-eclipse
+            mindshare: 3.4156132
+            mindshareDelta: 1.6296886
+          - projectId: 67ed6ffb49367db59929fdda
+            projectName: Sei
+            projectSlug: sei
+            mindshare: 3.1948884
+            mindshareDelta: 1.0879655
+          - projectId: 67b87453cf254ed986007592
+            projectName: Fartcoin
+            projectSlug: fartcoin
+            mindshare: 2.36231
+            mindshareDelta: -1.0397289
+          - projectId: 67b87456cf254ed98600888b
+            projectName: Bankr
+            projectSlug: bankr
+            mindshare: 2.3618195
+            mindshareDelta: 1.1093738
+          - projectId: 67b87457cf254ed986008a48
+            projectName: THeoriq
+            projectSlug: theoriq
+            mindshare: 2.2458165
+            mindshareDelta: -2.7280662
+          - projectId: 67b89286a13787e7ee06253e
+            projectName: Artificial Superintelligence Alliance
+            projectSlug: artificial-superintelligence-alliance
+            mindshare: 2.1403747
+            mindshareDelta: 0.9348048
+          - projectId: 67f87a07197a714986ffcd21
+            projectName: Wayfinder
+            projectSlug: wayfinder-2
+            mindshare: 2.136434
+            mindshareDelta: -11.225264
+          - projectId: 67b88b20a13787e7ee062400
+            projectName: Render
+            projectSlug: render
+            mindshare: 2.087655
+            mindshareDelta: 0.7688719
+          - projectId: 67b87453cf254ed9860075c6
+            projectName: aixbt
+            projectSlug: aixbt
+            mindshare: 1.952658
+            mindshareDelta: 0.13512778
+          - projectId: 67b8c31cf048b872cee34fdb
+            projectName: NEAR Protocol
+            projectSlug: near-protocol
+            mindshare: 1.8658783
+            mindshareDelta: 0.82763636
+          - projectId: 67b87453cf254ed986007693
+            projectName: VIRTUAL
+            projectSlug: virtual
+            mindshare: 1.8312547
+            mindshareDelta: 0.729519
+          - projectId: 67b87455cf254ed9860085b5
+            projectName: Hyperfy
+            projectSlug: hyperfy
+            mindshare: 1.7703271
+            mindshareDelta: 1.4216624
+          - projectId: 67b8d408f048b872cee352fa
+            projectName: ISLAND Token
+            projectSlug: island-token
+            mindshare: 1.6782556
+            mindshareDelta: 0.97666645
+          - projectId: 67b88124a13787e7ee062252
+            projectName: PAAL AI
+            projectSlug: paal-ai
+            mindshare: 1.5140673
+            mindshareDelta: 0.01541543
+          - projectId: 67b87453cf254ed986007670
+            projectName: alchemist ai
+            projectSlug: alchemist-ai
+            mindshare: 1.2970005
+            mindshareDelta: -0.59281445
+          - projectId: 67b87453cf254ed986007898
+            projectName: Quant
+            projectSlug: quant
+            mindshare: 1.1600628
+            mindshareDelta: -0.16669405
+        success: true
+        error: null
+project_details:
+  input:
+    query: Get details for Heurist project
+    raw_data_only: false
+  output:
+    response: "**Heurist Project Details**\n\n* **Name:** Heurist\n* **Symbol:** HEU\n\
+      * **Slug:** heurist\n* **Contracts:**\n\t1. **Chain ID:** 8453\n\t\t+ **Contract\
+      \ Address:** `0xEF22cb48B8483dF6152e1423b19dF5553BbD818b`\n\t2. **Chain ID:**\
+      \ 1 (Ethereum Mainnet)\n\t\t+ **Contract Address:** `0xec463d00aa4da76fb112cd2e4ac1c6bef02da6ea`\n\
+      * **CoinGecko ID:** heurist\n* **Twitter:** [@heurist_ai](https://twitter.com/heurist_ai)\n\
+      * **Sectors:**\n\t1. **AI** (Artificial Intelligence)\n\t2. **DePIN** (Decentralized\
+      \ Finance, possibly indicating involvement in DeFi protocols or infrastructure)\n\
+      \n**Price Metrics (subject to change, last updated at data retrieval):**\n\n\
+      * **Current Price:** $0.03001039\n* **24H Price Change:** **-23.38%**\n* **Market\
+      \ Capitalization:** $3,928,607\n* **24H Market Cap Change:** **-23.36%**\n*\
+      \ **24H Trading Volume:** $320,146\n* **24H Volume Change:** **-42.67%**"
+    data:
+      status: success
+      data:
+        ok:
+          entries:
+          - id: 67b87457cf254ed986008aa1
+            name: Heurist
+            slug: heurist
+            symbol: HEU
+            contracts:
+            - chain: 8453
+              contractAddress: '0xEF22cb48B8483dF6152e1423b19dF5553BbD818b'
+            - chain: 1
+              contractAddress: '0xec463d00aa4da76fb112cd2e4ac1c6bef02da6ea'
+            coinGeckoId: heurist
+            twitterUsernames:
+            - heurist_ai
+            sectors:
+            - id: 67c44ee61350adf93db9380a
+              name: AI
+              slug: ai
+              description: ''
+            - id: 67c44ef41350adf93db9380c
+              name: DePIN
+              slug: depin
+              description: ''
+            price: 0.03001039
+            priceDelta24HoursPercent: -23.376619065977977
+            marketCap: 3928607
+            marketCapDelta24HoursPercent: -23.358460382953403
+            volume24Hours: 320146
+            volume24HoursDelta24HoursPercent: -42.67167821962134
+          totalCount: 1
+          currentPage: 1
+          totalPages: 1
+        success: true
+        error: null
+btc_mindshare_30d:
+  input:
+    query: Get mindshare data for bitcoin for the past 30 days
+    raw_data_only: false
+  output:
+    response: '**Bitcoin Mindshare Data (Last 30 Days)**
+
+
+      **Note:** Since the provided data only covers 8 days, the request for 30 days
+      couldn''t be fully fulfilled based on the given information. Below is the analysis
+      of the provided 8-day mindshare data for Bitcoin:
+
+
+      ### **Mindshare Trends:**
+
+
+      | **Date**                      | **Mindshare Value** |
+
+      |--------------------------------|---------------------|
+
+      | 2025-04-17T00:00:00Z          | 0                   |
+
+      | 2025-04-18T00:00:00Z          | 17.697674           |
+
+      | 2025-04-19T00:00:00Z          | 19.015493           |
+
+      | 2025-04-20T00:00:00Z          | 18.862814           |
+
+      | 2025-04-21T00:00:00Z          | 23.150146           |
+
+      | 2025-04-22T00:00:00Z          | 25.94477            |
+
+      | 2025-04-23T00:00:00Z          | 26.81341            |
+
+      | 2025-04-24T00:00:00Z          | 23.500475           |
+
+
+      ### **Key Observations:**
+
+
+      - **Initial Data Point:** The mindshare value starts at 0 on April 17, 2025,
+      which might indicate the beginning of the data collection period or an anomaly.
+
+      - **Trend:** After the initial 0 value, mindshare shows an overall increasing
+      trend until April 23, 2025, peaking at 26.81341.
+
+      - **Recent Movement:** A slight decrease is observed on April 24, 2025, with
+      a mindshare value of 23.500475, indicating a potential stabilization or slight
+      drop in interest after the peak.
+
+
+      ### **Insights for Users:**
+
+
+      - **Popularity Growth:** Bitcoin''s mindshare increased significantly from April
+      18 to April 23, suggesting growing interest or discussion around the project
+      during this period.
+
+      - **Stabilization Indicators:** The drop on April 24 might indicate a stabilization
+      phase following the peak interest. However, more data is needed to confirm this
+      trend.
+
+
+      ### **Limitation:**
+
+      The analysis is constrained by the availability of data, covering only 8 days
+      instead of the requested 30'
+    data: &id001
+      status: success
+      data:
+        ok:
+          entries:
+          - date: '2025-04-17T00:00:00Z'
+            value: 0
+          - date: '2025-04-18T00:00:00Z'
+            value: 17.697674
+          - date: '2025-04-19T00:00:00Z'
+            value: 19.015493
+          - date: '2025-04-20T00:00:00Z'
+            value: 18.862814
+          - date: '2025-04-21T00:00:00Z'
+            value: 23.150146
+          - date: '2025-04-22T00:00:00Z'
+            value: 25.94477
+          - date: '2025-04-23T00:00:00Z'
+            value: 26.81341
+          - date: '2025-04-24T00:00:00Z'
+            value: 23.500475
+        success: true
+        error: null
+btc_mindshare_15d:
+  input:
+    query: Show me the mindshare trend for Bitcoin for the last 15 days
+    raw_data_only: false
+  output:
+    response: '**Bitcoin Mindshare Trend (Last 15 days)**
+
+
+      **Note:** Data only available for the last 8 days. If more recent data or additional
+      historical data is required, please adjust the request timeframe accordingly.
+
+
+      | **Date** | **Mindshare Value** |
+
+      | --- | --- |
+
+      | 2025-04-17 | **0** (baseline/no data) |
+
+      | 2025-04-18 | 17.70% |
+
+      | 2025-04-19 | **19.02%** (+1.32% from previous day) |
+
+      | 2025-04-20 | 18.86% (-0.16% from previous day) |
+
+      | 2025-04-21 | **23.15%** (+4.29% from previous day) |
+
+      | 2025-04-22 | **25.94%** (+2.79% from previous day) |
+
+      | 2025-04-23 | **26.81%** (+0.87% from previous day) |
+
+      | 2025-04-24 | 23.50% (-3.31% from previous day) |
+
+
+      **Key Observations:**
+
+
+      * **Peak Mindshare:** 26.81% on 2025-04-23
+
+      * **Lowest Mindshare (excluding baseline):** 17.70% on 2025-04-18
+
+      * **Largest Daily Increase:** +4.29% from 2025-04-20 to 2025-04-21
+
+      * **Largest Daily Decrease:** -3.31% from 2025-04-23 to 2025-04-24
+
+
+      **Mindshare Trend Summary:** Bitcoin''s mindshare increased steadily from April
+      18 to reach its peak on April 23, indicating a growth in attention or interest
+      over this period. However, it saw a notable drop on April 24.'
+    data: *id001
+tool_project_details:
+  input:
+    tool: get_project_details
+    tool_arguments:
+      slug: heurist
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      status: success
+      data:
+        ok:
+          id: 67b87457cf254ed986008aa1
+          name: Heurist
+          slug: heurist
+          symbol: HEU
+          contracts:
+          - chain: 8453
+            contractAddress: '0xEF22cb48B8483dF6152e1423b19dF5553BbD818b'
+          - chain: 1
+            contractAddress: '0xec463d00aa4da76fb112cd2e4ac1c6bef02da6ea'
+          coinGeckoId: heurist
+          twitterUsernames:
+          - heurist_ai
+          sectors:
+          - id: 67c44ee61350adf93db9380a
+            name: AI
+            slug: ai
+            description: ''
+          - id: 67c44ef41350adf93db9380c
+            name: DePIN
+            slug: depin
+            description: ''
+          price: 0.03001039
+          priceDelta24HoursPercent: -23.376619065977977
+          marketCap: 3928607
+          marketCapDelta24HoursPercent: -23.358460382953403
+          volume24Hours: 320146
+          volume24HoursDelta24HoursPercent: -42.67167821962134
+        success: true
+        error: null
+tool_search_projects:
+  input:
+    tool: search_projects
+    tool_arguments:
+      search_query: DeFi
+      limit: 5
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      status: success
+      data:
+        ok:
+          entries:
+          - id: 67c05f9cf46d8aed36a93666
+            name: Sun Token
+            slug: sun-token
+            symbol: SUN
+            contracts: []
+            coinGeckoId: sun-token
+            twitterUsernames:
+            - defi_sunio
+            sectors:
+            - id: 67c44ed91350adf93db93808
+              name: DeFI
+              slug: defi
+              description: ''
+            price: 0.01712674
+            priceDelta24HoursPercent: -1.6990419428379748
+            marketCap: 329735904
+            marketCapDelta24HoursPercent: -1.7677473035873932
+            volume24Hours: 40737684
+            volume24HoursDelta24HoursPercent: -17.98258216623335
+          - id: 67c05f91f46d8aed36a935be
+            name: JUST
+            slug: just
+            symbol: JST
+            contracts: []
+            coinGeckoId: just
+            twitterUsernames:
+            - DeFi_JUST
+            sectors:
+            - id: 67c44ed91350adf93db93808
+              name: DeFI
+              slug: defi
+              description: ''
+            price: 0.03146131
+            priceDelta24HoursPercent: -1.1427808326787112
+            marketCap: 311509184
+            marketCapDelta24HoursPercent: -1.2072818292317455
+            volume24Hours: 20675152
+            volume24HoursDelta24HoursPercent: -22.873468354815696
+          - id: 67ce2c13800f55022c48bb3d
+            name: RedStone
+            slug: redstone
+            symbol: RED
+            contracts:
+            - chain: 1
+              contractAddress: '0xc43c6bfeda065fe2c4c11765bf838789bd0bb5de'
+            coinGeckoId: redstone-oracles
+            twitterUsernames:
+            - redstone_defi
+            sectors:
+            - id: 67c44f091350adf93db9380e
+              name: Oracle Coins
+              slug: oracle-coins
+              description: ''
+            price: 0.388655
+            priceDelta24HoursPercent: -3.5320252677563126
+            marketCap: 108838832
+            marketCapDelta24HoursPercent: -3.4371560067027613
+            volume24Hours: 27688020
+            volume24HoursDelta24HoursPercent: -1.8607455742375711
+          - id: 67b8a835a13787e7ee062892
+            name: Moonwell
+            slug: moonwell
+            symbol: WELL
+            contracts:
+            - chain: 8453
+              contractAddress: '0xa88594d404727625a9437c3f886c7643872296ae'
+            coinGeckoId: moonwell-artemis
+            twitterUsernames:
+            - MoonwellDeFi
+            sectors:
+            - id: 67c44ed91350adf93db93808
+              name: DeFI
+              slug: defi
+              description: ''
+            price: 0.02551178
+            priceDelta24HoursPercent: -3.528033531028453
+            marketCap: 85042576
+            marketCapDelta24HoursPercent: -3.373015854980652
+            volume24Hours: 4762051
+            volume24HoursDelta24HoursPercent: -44.39513779103935
+          - id: 67ed704249367db5992a0934
+            name: Definitive
+            slug: definitive
+            symbol: EDGE
+            contracts:
+            - chain: 8453
+              contractAddress: '0xed6e000def95780fb89734c07ee2ce9f6dcaf110'
+            coinGeckoId: definitive
+            twitterUsernames:
+            - DefinitiveFi
+            sectors:
+            - id: 67c44eea1350adf93db9380b
+              name: DEX
+              slug: dex
+              description: ''
+            - id: 67c44ed91350adf93db93808
+              name: DeFI
+              slug: defi
+              description: ''
+            price: 0.061092
+            priceDelta24HoursPercent: -5.614436238914817
+            marketCap: 61207684
+            marketCapDelta24HoursPercent: -5.525945739434002
+            volume24Hours: 3302646
+            volume24HoursDelta24HoursPercent: -25.50497611527824
+          totalCount: 109
+          currentPage: 1
+          totalPages: 22
+        success: true
+        error: null
+tool_mindshare_graph_7d:
+  input:
+    tool: get_mindshare_graph
+    tool_arguments:
+      project_slug: heurist
+    raw_data_only: true
+  output:
+    response: ''
+    data: &id002
+      status: success
+      data:
+        ok:
+          entries:
+          - date: '2025-04-17T00:00:00Z'
+            value: 0
+          - date: '2025-04-18T00:00:00Z'
+            value: 0.024194336
+          - date: '2025-04-19T00:00:00Z'
+            value: 0.040483534
+          - date: '2025-04-20T00:00:00Z'
+            value: 0.017745877
+          - date: '2025-04-21T00:00:00Z'
+            value: 0.018701954
+          - date: '2025-04-22T00:00:00Z'
+            value: 0.018599303
+          - date: '2025-04-23T00:00:00Z'
+            value: 0.013499481
+          - date: '2025-04-24T00:00:00Z'
+            value: 0.008893978
+        success: true
+        error: null
+tool_mindshare_graph_30d:
+  input:
+    tool: get_mindshare_graph
+    tool_arguments:
+      project_slug: heurist
+      days: 30
+    raw_data_only: true
+  output:
+    response: ''
+    data: *id002
+tool_mindshare_leaderboard:
+  input:
+    tool: get_mindshare_leaderboard
+    tool_arguments:
+      timeframe: 2
+      sector_slug: ai
+      sort_by: mindshare
+    raw_data_only: false
+  output:
+    response: ''
+    data: *id003
+growing_projects:
+  input:
+    query: Find fast-growing projects in the gaming sector
+    raw_data_only: false
+  output:
+    response: "**Fast-Growing Gaming Projects (by Mindshare Delta)**\n\nBased on the\
+      \ provided Cookie API data, here are the top fast-growing projects in the gaming\
+      \ sector, ranked by their mindshare delta (change in popularity over time):\n\
+      \n**Top 5 Fastest-Growing Gaming Projects:**\n\n1. **Dark Frontiers** (`dark-frontiers`)\n\
+      \t* Mindshare: 8.377795\n\t* Mindshare Delta: **+4.4947777** (53.7% increase)\n\
+      2. **Voxies** (`voxies`)\n\t* Mindshare: 4.380563\n\t* Mindshare Delta: **+4.141383**\
+      \ (94.6% increase)\n3. **ISLAND Token** (`island-token`)\n\t* Mindshare: 5.139032\n\
+      \t* Mindshare Delta: **+2.9906769** (138.3% increase)\n4. **HODL** (`hodl-3`)\n\
+      \t* Mindshare: 1.7275376\n\t* Mindshare Delta: **+1.6325966** (1735.5% increase)\n\
+      5. **PepeCoin** (`pepecoin`)\n\t* Mindshare: 2.3556616\n\t* Mindshare Delta:\
+      \ **+1.5421157** (189.5% increase)\n\n**Notable Mentions (other gaming projects\
+      \ with significant mindshare delta):**\n\n* **Pixels** (`pixels`): +1.4952779\
+      \ (233.1% increase)\n* **Slingshot** (`slingshot`): +0.9528327 (47.1% increase)\n\
+      * **Nakamoto Games** (`nakamoto-games`): +0.82855415 (24.1% increase)\n\n**Please\
+      \ note:**\n\n* Mindshare and Mindshare Delta values are subject to change over\
+      \ time.\n* The percentages in parentheses represent the approximate percentage\
+      \ increase in mindshare.\n* This analysis only considers the provided data and\
+      \ might not reflect the current market situation. For up-to-date information,\
+      \ please query the Cookie API again."
+    data:
+      status: success
+      data:
+        ok:
+          entries:
+          - projectId: 67b8a083a13787e7ee06277d
+            projectName: Dark Frontiers
+            projectSlug: dark-frontiers
+            mindshare: 8.377795
+            mindshareDelta: 4.4947777
+          - projectId: 67b8b04fa13787e7ee0629c4
+            projectName: Voxies
+            projectSlug: voxies
+            mindshare: 4.380563
+            mindshareDelta: 4.141383
+          - projectId: 67b8d408f048b872cee352fa
+            projectName: ISLAND Token
+            projectSlug: island-token
+            mindshare: 5.139032
+            mindshareDelta: 2.9906769
+          - projectId: 67ce2c13800f55022c48bb3b
+            projectName: HODL
+            projectSlug: hodl-3
+            mindshare: 1.7275376
+            mindshareDelta: 1.6325966
+          - projectId: 67b89214a13787e7ee062524
+            projectName: PepeCoin
+            projectSlug: pepecoin
+            mindshare: 2.3556616
+            mindshareDelta: 1.5421157
+          - projectId: 67bfa2d21162c551fb826d37
+            projectName: Pixels
+            projectSlug: pixels
+            mindshare: 2.187067
+            mindshareDelta: 1.4952779
+          - projectId: 67b899f8a13787e7ee062675
+            projectName: Enjin Coin
+            projectSlug: enjin-coin
+            mindshare: 1.0513873
+            mindshareDelta: 0.959247
+          - projectId: 67e0a11b334fb98ee04a9386
+            projectName: Slingshot
+            projectSlug: slingshot
+            mindshare: 2.976734
+            mindshareDelta: 0.9528327
+          - projectId: 67b8a891a13787e7ee06289f
+            projectName: Nakamoto Games
+            projectSlug: nakamoto-games
+            mindshare: 4.296359
+            mindshareDelta: 0.82855415
+          - projectId: 67b8b717f048b872cee34dd9
+            projectName: ZED RUN
+            projectSlug: zed-run
+            mindshare: 0.9260217
+            mindshareDelta: 0.81434405
+          - projectId: 67b899e4a13787e7ee062673
+            projectName: Immutable
+            projectSlug: immutable
+            mindshare: 2.9724948
+            mindshareDelta: 0.6675365
+          - projectId: 67b8d0dff048b872cee35264
+            projectName: OPENLOOT
+            projectSlug: openloot
+            mindshare: 0.8730669
+            mindshareDelta: 0.5908182
+          - projectId: 67b8c36ef048b872cee34fe6
+            projectName: MON
+            projectSlug: mon
+            mindshare: 1.5682927
+            mindshareDelta: 0.5705093
+          - projectId: 67ed6fea49367db59929fa3f
+            projectName: Smooth Love Potion
+            projectSlug: smooth-love-potion
+            mindshare: 1.2768384
+            mindshareDelta: 0.55652606
+          - projectId: 67b893c2a13787e7ee062578
+            projectName: Axie Infinity
+            projectSlug: axie-infinity
+            mindshare: 1.3510714
+            mindshareDelta: 0.5476509
+          - projectId: 67e9db71c3284fc433813e56
+            projectName: iAgent Protocol
+            projectSlug: iagent-protocol
+            mindshare: 0.49837118
+            mindshareDelta: 0.4556533
+          - projectId: 67b8c9c9f048b872cee35118
+            projectName: XBorg
+            projectSlug: xborg
+            mindshare: 0.44939142
+            mindshareDelta: 0.41680327
+          - projectId: 67b89625a13787e7ee0625dd
+            projectName: GALA
+            projectSlug: gala
+            mindshare: 0.5544106
+            mindshareDelta: 0.40206778
+          - projectId: 67bf9f5e1162c551fb8265ff
+            projectName: MetaCene
+            projectSlug: metacene
+            mindshare: 0.37303424
+            mindshareDelta: 0.37303424
+          - projectId: 67b88ce9a13787e7ee062449
+            projectName: GoMining Token
+            projectSlug: gomining-token
+            mindshare: 0.7233546
+            mindshareDelta: 0.31563678
+        success: true
+        error: null
