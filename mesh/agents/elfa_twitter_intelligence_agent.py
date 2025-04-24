@@ -114,7 +114,7 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
                             },
                             "limit": {
                                 "type": "number",
-                                "description": "Maximum number of results (minimum: 20)",
+                                "description": "Maximum number of results (minimum: 20, maximum: 30)",
                                 "default": 20,
                             },
                         },
