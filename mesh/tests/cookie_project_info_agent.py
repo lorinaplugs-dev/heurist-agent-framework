@@ -5,7 +5,6 @@ from pathlib import Path
 import yaml
 from dotenv import load_dotenv
 
-# Load environment variables and include project root in path
 load_dotenv()
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
@@ -16,54 +15,37 @@ async def run_agent():
     agent = CookieProjectInfoAgent()
     try:
         test_cases = {
-            "trending_projects": {
-                "input": {"query": "Show me the top AI projects by mindshare", "raw_data_only": False},
-            },
-            "project_details": {
-                "input": {"query": "Get details for Heurist project", "raw_data_only": False},
-            },
-            "btc_mindshare_30d": {
-                "input": {"query": "Get mindshare data for bitcoin for the past 30 days", "raw_data_only": False},
-            },
-            "btc_mindshare_15d": {
+            "twitter_username_query": {
                 "input": {
-                    "query": "Show me the mindshare trend for Bitcoin for the last 15 days",
+                    "query": "Tell me about the project with Twitter handle @cookiedotfun",
                     "raw_data_only": False,
                 },
             },
-            "tool_project_details": {
-                "input": {"tool": "get_project_details", "tool_arguments": {"slug": "heurist"}, "raw_data_only": True},
-            },
-            "tool_search_projects": {
+            "twitter_username_query_2": {
                 "input": {
-                    "tool": "search_projects",
-                    "tool_arguments": {"search_query": "DeFi", "limit": 5},
-                    "raw_data_only": True,
-                },
-            },
-            "tool_mindshare_graph_7d": {
-                "input": {
-                    "tool": "get_mindshare_graph",
-                    "tool_arguments": {"project_slug": "heurist"},
-                    "raw_data_only": True,
-                },
-            },
-            "tool_mindshare_graph_30d": {
-                "input": {
-                    "tool": "get_mindshare_graph",
-                    "tool_arguments": {"project_slug": "heurist", "days": 30},
-                    "raw_data_only": True,
-                },
-            },
-            "tool_mindshare_leaderboard": {
-                "input": {
-                    "tool": "get_mindshare_leaderboard",
-                    "tool_arguments": {"timeframe": 2, "sector_slug": "ai", "sort_by": "mindshare"},
+                    "query": "Tell me about the project with Twitter handle @heurist_ai for past 30 days",
                     "raw_data_only": False,
                 },
             },
-            "growing_projects": {
-                "input": {"query": "Find fast-growing projects in the gaming sector", "raw_data_only": False},
+            "contract_address_query": {
+                "input": {
+                    "query": "Get details for the contract 0xc0041ef357b183448b235a8ea73ce4e4ec8c265f",
+                    "raw_data_only": False,
+                },
+            },
+            "tool_twitter_username": {
+                "input": {
+                    "tool": "get_project_by_twitter_username",
+                    "tool_arguments": {"twitter_username": "heurist_ai"},
+                    "raw_data_only": True,
+                },
+            },
+            "tool_contract_address": {
+                "input": {
+                    "tool": "get_project_by_contract_address",
+                    "tool_arguments": {"contract_address": "0xc0041ef357b183448b235a8ea73ce4e4ec8c265f"},
+                    "raw_data_only": True,
+                },
             },
         }
 
