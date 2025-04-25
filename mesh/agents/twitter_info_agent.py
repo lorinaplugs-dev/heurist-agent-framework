@@ -1,7 +1,6 @@
 import asyncio
 import logging
 import os
-import re
 from typing import Any, Dict, List
 
 import requests
@@ -168,188 +167,7 @@ class TwitterInfoAgent(MeshAgent):
 
     def _is_numeric_id(self, input_str: str) -> bool:
         """Check if the input is a numeric ID"""
-        return bool(re.match(r"^\d+$", input_str))
-
-    def _extract_numeric_id(self, input_str: str) -> str:
-        """Extract numeric ID from various formats"""
-        # Check for patterns like "user_id:123456789" or "id:123456789"
-        id_patterns = [
-            r"user_id:(\d+)",
-            r"userid:(\d+)",
-            r"id:(\d+)",
-            r"user:(\d+)",
-            r"twitter id (\d+)",
-            r"twitter_id (\d+)",
-            r"twitter id: (\d+)",
-            r"twitter_id: (\d+)",
-        ]
-
-        for pattern in id_patterns:
-            match = re.search(pattern, input_str, re.IGNORECASE)
-            if match:
-                return match.group(1)
-
-        # Check if the input itself is just a numeric ID
-        if self._is_numeric_id(input_str.strip()):
-            return input_str.strip()
-
-        return ""
-
-    def _extract_username_from_query(self, query: str) -> str:
-        """Extract username or user ID from a query string"""
-        if not query:
-            return ""
-
-        # First check if there's a numeric ID in the query
-        numeric_id = self._extract_numeric_id(query)
-        if numeric_id:
-            return numeric_id
-
-        # Common patterns for Twitter username mentions
-        username_patterns = [
-            r"@(\w+)",  # @username
-            r"twitter\.com/(\w+)",  # twitter.com/username
-            r"x\.com/(\w+)",  # x.com/username (new Twitter domain)
-            r"account (?:for|of) (\w+)",  # account for username or account of username
-            r"(\w+)\'s tweets",  # username's tweets
-            r"(\w+)\'s twitter",  # username's twitter
-            r"(\w+)\'s profile",  # username's profile
-            r"(\w+)\'s account",  # username's account
-            r"about (\w+)",  # about username
-            r"from (\w+)",  # from username
-            r"of (\w+)",  # of username
-            r"by (\w+)",  # by username
-            r"check (?:out )?(\w+)",  # check username or check out username
-            r"look (?:at|up) (\w+)",  # look at username or look up username
-            r"username (\w+)",  # username xyz
-            r"handle (\w+)",  # handle xyz
-        ]
-
-        for pattern in username_patterns:
-            match = re.search(pattern, query.lower())
-            if match:
-                username = match.group(1)
-                # Filter out common words that might be incorrectly matched
-                common_words = [
-                    "the",
-                    "twitter",
-                    "tweets",
-                    "account",
-                    "profile",
-                    "user",
-                    "details",
-                    "information",
-                    "latest",
-                    "recent",
-                    "timeline",
-                    "updates",
-                    "posts",
-                    "feed",
-                    "activity",
-                    "content",
-                    "info",
-                ]
-                if username.lower() not in common_words:
-                    return username
-
-        account_phrases = [
-            "twitter account",
-            "account",
-            "user",
-            "profile",
-            "tweets from",
-            "tweets by",
-            "tweeted by",
-            "posted by",
-            "check out",
-            "look at",
-            "view",
-        ]
-        for phrase in account_phrases:
-            if phrase in query.lower():
-                parts = query.lower().split(phrase, 1)
-                if len(parts) > 1:
-                    potential_username = parts[1].strip().split()[0] if parts[1].strip() else ""
-                    if potential_username and (potential_username.isalnum() or "_" in potential_username):
-                        # Filter out common words
-                        common_words = [
-                            "the",
-                            "twitter",
-                            "tweets",
-                            "account",
-                            "profile",
-                            "user",
-                            "details",
-                            "information",
-                            "latest",
-                            "recent",
-                            "timeline",
-                        ]
-                        if potential_username.lower() not in common_words:
-                            return potential_username
-
-        # Try to find any word that looks like a username
-        words = query.split()
-        for word in words:
-            clean_word = word.strip().lstrip("@")
-            if re.match(r"^[A-Za-z0-9_]+$", clean_word):
-                common_words = [
-                    "the",
-                    "twitter",
-                    "tweets",
-                    "account",
-                    "profile",
-                    "user",
-                    "details",
-                    "information",
-                    "latest",
-                    "recent",
-                    "timeline",
-                    "updates",
-                    "posts",
-                    "feed",
-                    "activity",
-                    "what",
-                    "about",
-                    "show",
-                    "me",
-                    "get",
-                    "find",
-                    "search",
-                    "look",
-                    "check",
-                ]
-                if clean_word.lower() not in common_words:
-                    return clean_word
-
-        # Last resort: just return the last word
-        words = [w for w in query.split() if w.strip()]
-        if words:
-            last_word = self._clean_username(words[-1])
-            common_words = [
-                "the",
-                "twitter",
-                "tweets",
-                "account",
-                "profile",
-                "user",
-                "details",
-                "information",
-                "latest",
-                "recent",
-                "timeline",
-                "feed",
-                "activity",
-                "what",
-                "about",
-                "for",
-                "from",
-                "by",
-            ]
-            if last_word.lower() not in common_words:
-                return last_word
-
-        return ""
+        return input_str.strip().isdigit()
 
     async def _make_api_request(self, endpoint: str, params: Dict, max_retries: int = 3) -> Dict:
         """
@@ -537,6 +355,9 @@ class TwitterInfoAgent(MeshAgent):
                 return {"error": "Missing 'username' in tool_arguments"}
 
             logger.info(f"Fetching tweets for identifier '{identifier}' with limit={limit}")
+            self.push_update(
+                {"identifier": identifier}, f"Looking up Twitter user: @{self._clean_username(identifier)}..."
+            )
 
             profile_result = await self.apidance_get_user_id(identifier)
             if profile_result.get("status") == "error":
@@ -581,33 +402,3 @@ class TwitterInfoAgent(MeshAgent):
             return search_result
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
-
-    # ------------------------------------------------------------------------
-    #                       MAIN MESSAGE HANDLER
-    # ------------------------------------------------------------------------
-    async def _before_handle_message(self, params: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Hook called before message handling to preprocess parameters.
-        Extracts username from query and modifies params if needed.
-        """
-        query = params.get("query")
-
-        if query and not params.get("tool"):
-            identifier = self._extract_username_from_query(query)
-
-            if identifier:
-                logger.info(f"Extracted identifier: '{identifier}' from query: '{query}'")
-
-                modified_params = params.copy()
-                modified_params["tool"] = "get_user_tweets"
-                modified_params["tool_arguments"] = {"username": identifier, "limit": params.get("limit", 10)}
-
-                # Add a thinking message
-                thinking_msg = f"Looking up Twitter user: @{self._clean_username(identifier)}..."
-                self.push_update(params, thinking_msg)
-
-                return modified_params
-            else:
-                return {"error": "Could not extract a valid username or user ID from the query"}
-
-        return await super()._before_handle_message(params)
