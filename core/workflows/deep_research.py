@@ -70,6 +70,7 @@ class ResearchWorkflow:
         self.search_client = self.search_clients.get("default", next(iter(self.search_clients.values())))
 
         self._last_request_time = 0
+        self.report_model = None # Ensure report_model is initialized
 
     async def process(
         self, message: str, personality_provider=None, chat_id: str = None, workflow_options: Dict = None, **kwargs
@@ -91,7 +92,8 @@ class ResearchWorkflow:
 
         if workflow_options:
             options.update(workflow_options)
-            self.report_model = workflow_options.get("report_model", None)
+            # Update self.report_model if provided in options
+            self.report_model = workflow_options.get("report_model", self.report_model)
 
         try:
             if options["interactive"]:
@@ -555,8 +557,9 @@ class ResearchWorkflow:
                 system_prompt=system_prompt, user_prompt=prompt, temperature=0.3, model_id=self.report_model
             )
         else:
+            # Pass None explicitly if self.report_model is None
             response, _, _ = await self.llm_provider.call(
-                system_prompt=system_prompt, user_prompt=prompt, temperature=0.3, model_id=self.report_model
+                system_prompt=system_prompt, user_prompt=prompt, temperature=0.3
             )
 
         try:
