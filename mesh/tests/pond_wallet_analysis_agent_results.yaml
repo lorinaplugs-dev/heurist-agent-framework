@@ -1,0 +1,258 @@
+ethereum_wallet_natural_language:
+  input:
+    query: Analyze Ethereum wallet 0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073
+    raw_data_only: false
+  output:
+    response: "**Ethereum Wallet Analysis: 0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073**\n\
+      \n**Last Updated:** April 28, 2025, 02:18:47\n\n**Key Insights:**\n\n1. **High\
+      \ Trading Activity**:\n\t* **30-Day Trading Volume:** **48.59M** (ETH value,\
+      \ assuming 1 ETH = $1, for simplicity)\n\t* **Average Daily Trading Volume:**\
+      \ **$1.268M** (based on 30-day average)\n\t* **Median Daily Trading Volume:**\
+      \ **$2,943.53** (indicating variability in daily trades)\n2. **Profit and Loss**:\n\
+      \t* **30-Day Trading PNL (Profit and Loss):** **+$692,822.07** (suggesting overall\
+      \ profitable trades)\n3. **Token Diversity**:\n\t* **Unique Tokens Sold (30\
+      \ days):** **41**\n\t* **Unique Tokens Bought (30 days):** **41** (equal diversity\
+      \ in buying and selling)\n4. **Transaction Activity**:\n\t* **Total Actions\
+      \ (30 days) - Swaps:** **3,832**\n\t* **Total Actions (30 days) - All Transactions:**\
+      \ **3,848** (only 16 more than swap actions, indicating most activity is swap-related)\n\
+      5. **Gas Fees**:\n\t* **Total Gas Fees (30 days):** **3.898 ETH** (~$3,898,\
+      \ assuming 1 ETH = $1)\n\t* **Average Gas Fee (30 days):** **0.0101 ETH** (~$10.12\
+      \ per transaction)\n\t* **Median Gas Fee (30 days):** **0.0041 ETH** (~$4.10\
+      \ per transaction, indicating variability)\n\n**Behavioral Patterns and Trends:**\n\
+      \n* **Accumulation vs. Selling Pressure:** The positive PNL suggests more accumulation\
+      \ or profitable selling than loss-inducing selling pressure.\n* **Activity Spikes:**\
+      \ Without hourly or daily breakdowns, it's challenging to identify specific\
+      \ spikes. However, the high median gas fee compared to the average suggests\
+      \ occasional high-fee transactions, possibly during periods of high network\
+      \ congestion or for urgent transactions.\n* **Inactivity:** There is no apparent\
+      \ inactivity period based on the provided data, indicating consistent engagement\
+      \ with the Ethereum network over the last 30 days.\n\n**Flagged Observations:"
+    data:
+      network: ethereum
+      address: '0x2b25b37c683f042e9ae1877bc59a1bb642eb1073'
+      analysis:
+        ETHEREUM_DEX_SWAPS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 3832
+        ETHEREUM_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS: 48591532.155
+        ETHEREUM_DEX_SWAPS_USER_TRADING_VOLUME_AVG_FOR_30DAYS: 12680.462462160753
+        ETHEREUM_DEX_SWAPS_USER_TRADING_VOLUME_MEDIAN_FOR_30DAYS: 2943.5333333333333
+        ETHEREUM_DEX_SWAPS_USER_TRADING_PNL_FOR_30DAYS: 692822.0699999994
+        ETHEREUM_DEX_SWAPS_USER_SOLD_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 41
+        ETHEREUM_DEX_SWAPS_USER_BOUGHT_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 41
+        ETHEREUM_TRANSACTIONS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 3848
+        ETHEREUM_TRANSACTIONS_USER_GAS_FEE_SUM_FOR_30DAYS: 3898857245.3288436
+        ETHEREUM_TRANSACTIONS_USER_GAS_FEE_AVG_FOR_30DAYS: 1013216.539846373
+        ETHEREUM_TRANSACTIONS_USER_GAS_FEE_SUM_MEDIAN_30DAYS: 411623.2416900125
+      updated_at: '2025-04-28T02:18:47'
+solana_wallet_natural_language:
+  input:
+    query: What's the trading volume for Solana wallet 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS?
+    raw_data_only: false
+  output:
+    response: "**Solana Wallet Analysis: 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS**\n\
+      \n**Network:** Solana\n**Address:** 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS\
+      \ (formatted correctly for Solana)\n\n**Key Insights (Last 30 Days):**\n\n1.\
+      \ **Trading Volume:**\n\t* **Total:** **3.23M** (3,232.435)\n\t* **Average per\
+      \ Action:** **293.86** (293.8577272727273)\n\t* **Median per Action:** **152.18**\n\
+      2. **Transaction Count (DEX Swaps):** **11 actions**\n3. **Profit & Loss (PnL)\
+      \ - DEX Swaps:** **+1.998M** (1,998.925) ( Profit )\n4. **Token Diversity:**\n\
+      \t* **Sold Unique Tokens:** **5**\n\t* **Bought Unique Tokens:** **5**\n\n**Incomplete/Missing\
+      \ Data:**\n\n* **Transaction Count (General Solana Transactions):** *None*\n\
+      * **Gas Fee Sum, Average, and Median (Solana Transactions):** *None*\n* **Last\
+      \ Update Timestamp:** *None* (reported as `None`)\n\n**Behavioral Trends and\
+      \ Observations:**\n\n* **Moderate Activity:** With 11 DEX swap actions in 30\
+      \ days, the wallet exhibits periodic engagement, not excessively active or inactive.\n\
+      * **Profitable Trading:** The significant positive PnL (+1.998M) suggests successful\
+      \ trading strategies or favorable market movements.\n* **Diversified Trading:**\
+      \ Engaging with both buying and selling 5 unique tokens each indicates a diversified\
+      \ approach to trading.\n* **Caution - Incomplete Transaction Data:** The absence\
+      \ of general transaction data and gas fees limits the full understanding of\
+      \ wallet activity, potentially hiding patterns or insights.\n\n**Flagged for\
+      \ Further Investigation:**\n\n* None, based on the provided data. However, acquiring\
+      \ the missing transaction and gas fee data could offer a more comprehensive\
+      \ view of wallet activity."
+    data:
+      network: solana
+      address: 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS
+      analysis:
+        SOLANA_DEX_SWAPS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 11
+        SOLANA_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS: 3232.435
+        SOLANA_DEX_SWAPS_USER_TRADING_VOLUME_AVG_FOR_30DAYS: 293.8577272727273
+        SOLANA_DEX_SWAPS_USER_TRADING_VOLUME_MEDIAN_FOR_30DAYS: 152.18
+        SOLANA_DEX_SWAPS_USER_TRADING_PNL_FOR_30DAYS: 1998.925
+        SOLANA_DEX_SWAPS_USER_SOLD_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 5
+        SOLANA_DEX_SWAPS_USER_BOUGHT_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 5
+        SOLANA_TRANSACTIONS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: null
+        SOLANA_TRANSACTIONS_USER_GAS_FEE_SUM_FOR_30DAYS: null
+        SOLANA_TRANSACTIONS_USER_GAS_FEE_AVG_FOR_30DAYS: null
+        SOLANA_TRANSACTIONS_USER_GAS_FEE_SUM_MEDIAN_30DAYS: null
+      updated_at: null
+base_wallet_natural_language:
+  input:
+    query: Check the transaction activity for Base wallet 0x97224Dd2aFB28F6f442E773853F229B3d8A0999a
+    raw_data_only: false
+  output:
+    response: '**Wallet Analysis Report**
+
+      ==========================
+
+
+      **Wallet Details**
+
+
+      * **Network:** Base
+
+      * **Address:** `0x97224Dd2aFB28F6f442E773853F229B3d8A0999a`
+
+      * **Last Updated:** `2025-04-28T01:43:29`
+
+
+      **Key Insights (30-day period)**
+
+      -------------------------------
+
+
+      ### **Trading Activity (DEX Swaps)**
+
+
+      * **Total Actions:** **139** ( swaps/trades)
+
+      * **Total Trading Volume:** **33.86M** ( BASE_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS:
+      33,865.805)
+
+      * **Average Trading Volume:** **243.64** (per action, avg. over 30 days)
+
+      * **Median Trading Volume:** **124.33** (indicating a skew towards smaller trades)
+
+      * **Profit/Loss (PNL):** **+1,213.61** (suggesting an overall profitable period)
+
+
+      ### **Token Diversity**
+
+
+      * **Sold Unique Tokens:** **17**
+
+      * **Bought Unique Tokens:** **15**
+
+      * **Token Diversity Ratio (Bought/Sold):** **0.88** (slightly more tokens sold
+      than bought)
+
+
+      ### **Transaction Activity (All Transactions)**
+
+
+      * **Total Actions:** **646** (all transactions, not just swaps)
+
+      * **Total Gas Fees:** **362.39k** (BASE_TRANSACTIONS_USER_GAS_FEE_SUM_FOR_30DAYS)
+
+      * **Average Gas Fee:** **560.98** (per transaction, avg. over 30 days)
+
+      * **Median Gas Fee:** **364.78** (similar to average, indicating consistent
+      fee structures)
+
+
+      **Trends and Behavioral Patterns**
+
+      ---------------------------------
+
+
+      * **High Transaction Count:** The wallet shows a high transaction count of 646
+      actions in 30 days, indicating **frequent activity**.
+
+      * **Profitable Trading:** The positive PNL of +1,213.61 suggests **successful
+      trading strategies** or **accumulation of value** over the period.
+
+      * **Active Market Participation:** Engagement with 32 unique tokens (15 bought,
+      17 sold) points to **diversified investment or trading interests**.
+
+      * **No Apparent Inactivity Periods:** The data does not indicate any significant
+      periods of inactivity, suggesting **consistent engagement** with the Base network.
+
+      * **No Sudden Activity Spikes:**'
+    data:
+      network: base
+      address: '0x97224dd2afb28f6f442e773853f229b3d8a0999a'
+      analysis:
+        BASE_DEX_SWAPS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 139
+        BASE_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS: 33865.80500000001
+        BASE_DEX_SWAPS_USER_TRADING_VOLUME_AVG_FOR_30DAYS: 243.6388848920864
+        BASE_DEX_SWAPS_USER_TRADING_VOLUME_MEDIAN_FOR_30DAYS: 124.325
+        BASE_DEX_SWAPS_USER_TRADING_PNL_FOR_30DAYS: 1213.609999999998
+        BASE_DEX_SWAPS_USER_SOLD_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 17
+        BASE_DEX_SWAPS_USER_BOUGHT_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 15
+        BASE_TRANSACTIONS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 646
+        BASE_TRANSACTIONS_USER_GAS_FEE_SUM_FOR_30DAYS: 362392.4391408171
+        BASE_TRANSACTIONS_USER_GAS_FEE_AVG_FOR_30DAYS: 560.9790079579212
+        BASE_TRANSACTIONS_USER_GAS_FEE_SUM_MEDIAN_30DAYS: 364.77642228900004
+      updated_at: '2025-04-28T01:43:29'
+ethereum_wallet_direct:
+  input:
+    tool: analyze_ethereum_wallet
+    tool_arguments:
+      address: '0x73AF3bcf944a6559933396c1577B257e2054D935'
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      network: ethereum
+      address: '0x73af3bcf944a6559933396c1577b257e2054d935'
+      analysis:
+        ETHEREUM_DEX_SWAPS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: null
+        ETHEREUM_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS: null
+        ETHEREUM_DEX_SWAPS_USER_TRADING_VOLUME_AVG_FOR_30DAYS: null
+        ETHEREUM_DEX_SWAPS_USER_TRADING_VOLUME_MEDIAN_FOR_30DAYS: null
+        ETHEREUM_DEX_SWAPS_USER_TRADING_PNL_FOR_30DAYS: null
+        ETHEREUM_DEX_SWAPS_USER_SOLD_TOKEN_UNIQUE_COUNT_FOR_30DAYS: null
+        ETHEREUM_DEX_SWAPS_USER_BOUGHT_TOKEN_UNIQUE_COUNT_FOR_30DAYS: null
+        ETHEREUM_TRANSACTIONS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 7
+        ETHEREUM_TRANSACTIONS_USER_GAS_FEE_SUM_FOR_30DAYS: 702842.790826174
+        ETHEREUM_TRANSACTIONS_USER_GAS_FEE_AVG_FOR_30DAYS: 100406.1129751677
+        ETHEREUM_TRANSACTIONS_USER_GAS_FEE_SUM_MEDIAN_30DAYS: 100863.910436046
+      updated_at: null
+solana_wallet_direct:
+  input:
+    tool: analyze_solana_wallet
+    tool_arguments:
+      address: 7g275uQ9JuvTa7EC3TERyAsQUGwid9eDYK2JgpSLrmjK
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      network: solana
+      address: 7g275uQ9JuvTa7EC3TERyAsQUGwid9eDYK2JgpSLrmjK
+      analysis:
+        SOLANA_DEX_SWAPS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 97
+        SOLANA_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS: 28531.255
+        SOLANA_DEX_SWAPS_USER_TRADING_VOLUME_AVG_FOR_30DAYS: 294.13664948453606
+        SOLANA_DEX_SWAPS_USER_TRADING_VOLUME_MEDIAN_FOR_30DAYS: 2.685
+        SOLANA_DEX_SWAPS_USER_TRADING_PNL_FOR_30DAYS: -16431.735
+        SOLANA_DEX_SWAPS_USER_SOLD_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 11
+        SOLANA_DEX_SWAPS_USER_BOUGHT_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 8
+        SOLANA_TRANSACTIONS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 277067
+        SOLANA_TRANSACTIONS_USER_GAS_FEE_SUM_FOR_30DAYS: 2612378679
+        SOLANA_TRANSACTIONS_USER_GAS_FEE_AVG_FOR_30DAYS: 9428.689375
+        SOLANA_TRANSACTIONS_USER_GAS_FEE_SUM_MEDIAN_30DAYS: 5000.000000000002
+      updated_at: '2025-04-28T03:01:22'
+base_wallet_direct:
+  input:
+    tool: analyze_base_wallet
+    tool_arguments:
+      address: '0x1C0002972259E13dBC5eAF01D108624430c744f9'
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      network: base
+      address: '0x1c0002972259e13dbc5eaf01d108624430c744f9'
+      analysis:
+        BASE_DEX_SWAPS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 26952
+        BASE_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS: 10783178.769999998
+        BASE_DEX_SWAPS_USER_TRADING_VOLUME_AVG_FOR_30DAYS: 400.0882594983674
+        BASE_DEX_SWAPS_USER_TRADING_VOLUME_MEDIAN_FOR_30DAYS: 244.55014516129035
+        BASE_DEX_SWAPS_USER_TRADING_PNL_FOR_30DAYS: -1907999.5000000005
+        BASE_DEX_SWAPS_USER_SOLD_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 2
+        BASE_DEX_SWAPS_USER_BOUGHT_TOKEN_UNIQUE_COUNT_FOR_30DAYS: 2
+        BASE_TRANSACTIONS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS: 31304
+        BASE_TRANSACTIONS_USER_GAS_FEE_SUM_FOR_30DAYS: 1325327606.7667785
+        BASE_TRANSACTIONS_USER_GAS_FEE_AVG_FOR_30DAYS: 42337.32451976676
+        BASE_TRANSACTIONS_USER_GAS_FEE_SUM_MEDIAN_30DAYS: 8104.712373085759
+      updated_at: '2025-04-28T01:43:29'
