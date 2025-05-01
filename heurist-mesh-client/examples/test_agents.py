@@ -184,12 +184,13 @@ def load_test_inputs() -> Dict:
 def save_test_inputs(data: Dict) -> None:
     with open(TEST_INPUTS_FILE, "w") as f:
         json.dump(data, f, indent=2, sort_keys=True)
+        f.write("\n")  # add a newline to the end of the file
 
 
 def generate_sample_inputs(agent_id: str, tools: set) -> Dict:
     sample_inputs = {}
     for tool in tools:
-        sample_inputs[tool] = {}
+        sample_inputs[tool] = "__PLACEHOLDER__"
     return sample_inputs
 
 
@@ -248,13 +249,20 @@ def list_agents():
         has_any_test = False
         tool_test_status = []
         actions = []
+        placeholder_text = "__PLACEHOLDER__"
 
         for tool in sorted(tools):
-            has_test = agent_id in test_inputs and tool in test_inputs[agent_id]
-            if has_test:
+            has_test_data = agent_id in test_inputs and tool in test_inputs[agent_id]
+            is_placeholder = has_test_data and test_inputs[agent_id][tool] == placeholder_text
+            has_real_test_input = has_test_data and not is_placeholder
+
+            if has_real_test_input:
                 has_any_test = True
                 tool_names.append(f"[green]{tool}[/]")
                 tool_test_status.append("[green]✓[/]")
+            elif is_placeholder:
+                tool_names.append(f"[yellow]{tool}[/]")
+                tool_test_status.append("[yellow]?[/]")
             else:
                 tool_names.append(f"[dim]{tool}[/]")
                 tool_test_status.append("[red]✗[/]")
