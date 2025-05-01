@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import ast
+import copy
 import json
 import logging
 import os
@@ -190,6 +191,9 @@ class MetadataManager:
                         "module": file_path.stem,
                         "tools": data.get("tools", []),
                     }
+
+                    # Ensure the 'inputs' list is a deep copy to prevent mutation of the shared base list
+                    agent_data["metadata"]["inputs"] = copy.deepcopy(agent_data["metadata"]["inputs"])
 
                     if agent_data["tools"]:
                         tool_names = ", ".join(t["function"]["name"] for t in agent_data["tools"])
