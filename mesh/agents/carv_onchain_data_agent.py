@@ -3,21 +3,16 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import aiohttp
-from dotenv import load_dotenv
-
 from core.llm import call_llm_async
 from decorators import monitor_execution, with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
-load_dotenv()
 
 
 class CarvOnchainDataAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.session = None
         self.api_url = "https://interface.carv.io/ai-agent-backend/sql_query_by_llm"
         self.supported_chains = ["ethereum", "base", "bitcoin", "solana"]
 
@@ -28,33 +23,6 @@ class CarvOnchainDataAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can query blockchain metrics of Ethereum, Base, Bitcoin, or Solana using natural language through the CARV API.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about blockchain metrics.",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw data without LLM explanation",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the blockchain metrics",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured blockchain metrics response",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["CARV"],
                 "tags": ["Onchain Data"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Carv.png",
@@ -67,14 +35,7 @@ class CarvOnchainDataAgent(MeshAgent):
             }
         )
 
-    async def __aenter__(self):
-        self.session = aiohttp.ClientSession()
-        return self
-
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if self.session:
-            await self.session.close()
-            self.session = None
+    # No need to define __aenter__ and __aexit__ - handled by base class
 
     def get_system_prompt(self) -> str:
         return """You are a blockchain data analyst that can access blockchain metrics from various blockchain networks.
@@ -178,11 +139,6 @@ class CarvOnchainDataAgent(MeshAgent):
         """
         Query the CARV API with a natural language question about blockchain metrics.
         """
-        should_close = False
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-            should_close = True
-
         try:
             # Validate blockchain
             blockchain = blockchain.lower()
@@ -205,21 +161,16 @@ class CarvOnchainDataAgent(MeshAgent):
 
             logger.info(f"Querying CARV API for blockchain {blockchain}: {processed_query}")
 
-            async with self.session.post(self.api_url, json=data, headers=headers) as response:
-                if response.status != 200:
-                    error_text = await response.text()
-                    return {"error": f"CARV API error ({response.status}): {error_text}"}
+            response = await self._api_request(url=self.api_url, method="POST", headers=headers, json_data=data)
 
-                result = await response.json()
-                return result
+            if "error" in response:
+                return {"error": response["error"]}
+
+            return response
 
         except Exception as e:
             logger.error(f"Error querying CARV API: {str(e)}")
             return {"error": f"Failed to query blockchain metrics: {str(e)}"}
-        finally:
-            if should_close and self.session:
-                await self.session.close()
-                self.session = None
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC

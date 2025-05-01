@@ -4,7 +4,6 @@ import os
 from typing import Any, Dict, List, Optional
 
 import requests
-from dotenv import load_dotenv
 from smolagents import ToolCallingAgent, tool
 from smolagents.memory import SystemPromptStep
 
@@ -14,7 +13,6 @@ from decorators import monitor_execution, with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
-load_dotenv()
 
 
 class CoinGeckoTokenInfoAgent(MeshAgent):
@@ -30,33 +28,6 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can fetch token information, market data, trending coins, and category data from CoinGecko.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about a token (you can use the token name or symbol or ideally the CoinGecko ID if you have it, but NOT the token address), or a request for trending coins.",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw or base structured data without additional LLM explanation.",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the token information (empty if a direct tool call).",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured token information, trending coins data, or category data.",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["Coingecko"],
                 "tags": ["Trading"],
                 "recommended": True,
@@ -595,7 +566,9 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     async def _search_token(self, query: str) -> str | None:
         """internal helper to search for a token and return its id"""
         try:
-            response = requests.get(f"{self.api_url}/search?query={query}", headers=self.headers)
+            url = f"{self.api_url}/search"
+            params = {"query": query}
+            response = requests.get(url, headers=self.headers, params=params)
             response.raise_for_status()
             search_results = response.json()
 
@@ -623,13 +596,14 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     async def _get_trending_coins(self) -> dict:
         try:
-            response = requests.get(f"{self.api_url}/search/trending", headers=self.headers)
-            response.raise_for_status()
-            trending_data = response.json()
+            url = f"{self.api_url}/search/trending"
+            response = await self._api_request(url=url, method="GET", headers=self.headers)
+            if "error" in response:
+                return {"error": response["error"]}
 
             # Format the trending coins data
             formatted_trending = []
-            for coin in trending_data.get("coins", [])[:10]:
+            for coin in response.get("coins", [])[:10]:
                 coin_info = coin["item"]
                 formatted_trending.append(
                     {
@@ -641,7 +615,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 )
             return {"trending_coins": formatted_trending}
 
-        except requests.RequestException as e:
+        except Exception as e:
             logger.error(f"Error: {e}")
             return {"error": f"Failed to fetch trending coins: {str(e)}"}
 
@@ -672,10 +646,12 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     async def _get_categories_list(self) -> dict:
         """Get a list of all CoinGecko categories"""
         try:
-            response = requests.get(f"{self.api_url}/coins/categories/list", headers=self.headers)
-            response.raise_for_status()
-            return {"categories": response.json()}
-        except requests.RequestException as e:
+            url = f"{self.api_url}/coins/categories/list"
+            response = await self._api_request(url=url, method="GET", headers=self.headers)
+            if "error" in response:
+                return {"error": response["error"]}
+            return {"categories": response}
+        except Exception as e:
             logger.error(f"Error: {e}")
             return {"error": f"Failed to fetch categories list: {str(e)}"}
 
@@ -683,15 +659,17 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     async def _get_category_data(self, order: Optional[str] = "market_cap_desc") -> dict:
         """Get market data for all cryptocurrency categories"""
         try:
+            url = f"{self.api_url}/coins/categories"
             params = {}
             if order:
                 params["order"] = order
 
-            response = requests.get(f"{self.api_url}/coins/categories", headers=self.headers, params=params)
-            response.raise_for_status()
+            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+            if "error" in response:
+                return {"error": response["error"]}
 
             # Process the response to remove specified fields
-            category_data = response.json()
+            category_data = response
             for category in category_data:
                 if "top_3_coins" in category:
                     del category["top_3_coins"]
@@ -701,7 +679,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                     del category["top_3_coins_id"]
 
             return {"category_data": category_data}
-        except requests.RequestException as e:
+        except Exception as e:
             logger.error(f"Error: {e}")
             return {"error": f"Failed to fetch category data: {str(e)}"}
 
@@ -717,6 +695,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
         precision: str = None,
     ) -> dict:
         try:
+            url = f"{self.api_url}/simple/price"
             params = {
                 "ids": ids,
                 "vs_currencies": vs_currencies,
@@ -729,10 +708,11 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             if precision:
                 params["precision"] = precision
 
-            response = requests.get(f"{self.api_url}/simple/price", headers=self.headers, params=params)
-            response.raise_for_status()
-            return response.json()
-        except requests.RequestException as e:
+            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+            if "error" in response:
+                return {"error": response["error"]}
+            return response
+        except Exception as e:
             logger.error(f"Error: {e}")
             return {"error": f"Failed to fetch multi-token price data: {str(e)}"}
 
@@ -747,6 +727,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     ) -> dict:
         """Get tokens within a specific category"""
         try:
+            url = f"{self.api_url}/coins/markets"
             params = {
                 "vs_currency": vs_currency,
                 "category": category_id,
@@ -756,10 +737,11 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 "sparkline": "false",
             }
 
-            response = requests.get(f"{self.api_url}/coins/markets", headers=self.headers, params=params)
-            response.raise_for_status()
-            return {"category_tokens": {"category_id": category_id, "tokens": response.json()}}
-        except requests.RequestException as e:
+            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+            if "error" in response:
+                return {"error": response["error"]}
+            return {"category_tokens": {"category_id": category_id, "tokens": response}}
+        except Exception as e:
             logger.error(f"Error: {e}")
             return {"error": f"Failed to fetch tokens for category '{category_id}': {str(e)}"}
 
@@ -816,39 +798,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             # ---------------------
             if tool_name:
                 logger.info(f"Direct tool call: {tool_name} with args {tool_args}")
-
-                if tool_name == "get_trending_coins":
-                    result = await self._get_trending_coins()
-                elif tool_name == "get_token_info":
-                    result = await self._get_token_info(tool_args["coingecko_id"])
-                    if not isinstance(result, dict) or "error" not in result:
-                        result = self.format_token_info(result)
-                elif tool_name == "get_token_price_multi":
-                    result = await self._get_token_price_multi(
-                        ids=tool_args["ids"],
-                        vs_currencies=tool_args["vs_currencies"],
-                        include_market_cap=tool_args.get("include_market_cap", False),
-                        include_24hr_vol=tool_args.get("include_24hr_vol", False),
-                        include_24hr_change=tool_args.get("include_24hr_change", False),
-                        include_last_updated_at=tool_args.get("include_last_updated_at", False),
-                        precision=tool_args.get("precision", None),
-                    )
-                    if "error" not in result:
-                        result = {"price_data": result}
-                elif tool_name == "get_categories_list":
-                    result = await self._get_categories_list()
-                elif tool_name == "get_category_data":
-                    order = tool_args.get("order", "market_cap_desc")
-                    result = await self._get_category_data(order)
-                elif tool_name == "get_tokens_by_category":
-                    category_id = tool_args["category_id"]
-                    vs_currency = tool_args.get("vs_currency", "usd")
-                    order = tool_args.get("order", "market_cap_desc")
-                    per_page = tool_args.get("per_page", 100)
-                    page = tool_args.get("page", 1)
-                    result = await self._get_tokens_by_category(category_id, vs_currency, order, per_page, page)
-                else:
-                    return {"error": f"Unsupported tool: {tool_name}"}
+                result = await self._handle_tool_logic(tool_name, tool_args)
 
                 if raw_data_only:
                     return {"response": "", "data": result}
@@ -898,10 +848,6 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return {"error": str(e)}
         finally:
             self.current_message = {}
-
-    async def cleanup(self):
-        """Clean up any resources or connections"""
-        pass
 
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         """Handle execution of specific tools and return the raw data"""

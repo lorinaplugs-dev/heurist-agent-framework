@@ -2,12 +2,11 @@ import datetime
 import os
 from typing import Any, Dict, List
 
-import aiohttp
 import requests
 from dotenv import load_dotenv
 
 from decorators import monitor_execution, with_cache, with_retry
-from mesh.mesh_agent import MeshAgent
+from mesh.mesh_agent import MeshAgent  # Uses enhanced MeshAgent base class
 
 load_dotenv()
 
@@ -30,33 +29,7 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent provides comprehensive analysis of Solana tokens using Bitquery API. It can analyze token metrics (volume, price, liquidity), track holders and buyers, monitor trading activity, and identify trending tokens. The agent supports both specific token analysis and market-wide trend discovery.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about a Solana token or a request for trending tokens. If you want to query a specific token, you MUST include token address",
-                        "type": "str",
-                        "required": True,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw data and not the full response",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the token trading information or trending tokens",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured token trading data or trending tokens data",
-                        "type": "dict",
-                    },
-                ],
+                # Common inputs/outputs are defined in the base class
                 "external_apis": ["Bitquery"],
                 "tags": ["Solana"],
                 "recommended": True,
@@ -69,14 +42,7 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
             }
         )
 
-    async def __aenter__(self):
-        self.session = aiohttp.ClientSession()
-        return self
-
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if self.session:
-            await self.session.close()
-            self.session = None
+    # No need to define __aenter__ and __aexit__ - handled by base class
 
     def get_system_prompt(self) -> str:
         return (
@@ -191,6 +157,38 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
     # ------------------------------------------------------------------------
     #                      API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
+
+    async def _execute_query(self, query: str, variables: Dict = None) -> Dict:
+        """
+        Execute a GraphQL query against the Bitquery API with improved error handling.
+        Uses the base class's _api_request method.
+
+        Args:
+            query (str): GraphQL query to execute
+            variables (Dict, optional): Variables for the query
+
+        Returns:
+            Dict: Query results
+        """
+        url = "https://streaming.bitquery.io/eap"
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('BITQUERY_API_KEY')}"}
+
+        payload = {"query": query}
+        if variables:
+            payload["variables"] = variables
+
+        try:
+            # Using the base class's _api_request method
+            response = await self._api_request(url=url, method="POST", headers=headers, json_data=payload)
+
+            if "errors" in response:
+                error_messages = [error.get("message", "Unknown error") for error in response["errors"]]
+                return {"error": f"GraphQL errors: {', '.join(error_messages)}"}
+
+            return response
+
+        except Exception as e:
+            return {"error": f"Query execution failed: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     async def query_token_metrics(self, token_address: str, quote_token: str = "sol") -> Dict:
@@ -320,51 +318,6 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
 
         except Exception as e:
             return {"error": f"Failed to fetch token trading info: {str(e)}"}
-
-    async def _execute_query(self, query: str, variables: Dict = None) -> Dict:
-        """
-        Execute a GraphQL query against the Bitquery API with improved error handling.
-
-        Args:
-            query (str): GraphQL query to execute
-            variables (Dict, optional): Variables for the query
-
-        Returns:
-            Dict: Query results
-        """
-        url = "https://streaming.bitquery.io/eap"
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('BITQUERY_API_KEY')}"}
-
-        payload = {"query": query}
-        if variables:
-            payload["variables"] = variables
-
-        try:
-            async with aiohttp.ClientSession() as session:
-                async with session.post(url, json=payload, headers=headers) as response:
-                    response.raise_for_status()
-                    data = await response.json()
-
-                    if "errors" in data:
-                        error_messages = [error.get("message", "Unknown error") for error in data["errors"]]
-                        raise Exception(f"GraphQL errors: {', '.join(error_messages)}")
-
-                    return data
-        except aiohttp.ClientResponseError as e:
-            if e.status == 429:
-                # Rate limit error
-                raise Exception(f"Rate limit exceeded: {str(e)}")
-            elif e.status >= 500:
-                # Server-side error
-                raise Exception(f"Bitquery server error: {str(e)}")
-            else:
-                raise Exception(f"API request failed: {str(e)}")
-        except aiohttp.ClientError as e:
-            # Network-related errors
-            raise Exception(f"Network error when calling Bitquery: {str(e)}")
-        except Exception as e:
-            # Unexpected errors
-            raise Exception(f"Unexpected error during query execution: {str(e)}")
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     async def get_top_trending_tokens(self) -> Dict:
@@ -844,6 +797,7 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
 
+        # Using base class error handling
         errors = self._handle_error(result)
         if errors:
             return errors
