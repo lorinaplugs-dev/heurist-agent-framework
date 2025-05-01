@@ -3,22 +3,22 @@ twitter_username_query:
     query: Tell me about the project with Twitter handle @cookiedotfun
     raw_data_only: false
   output:
-    response: "**Project Insights for @cookiedotfun**\n\n**Project Overview**\n\n\
-      * **Twitter Handle**: @cookiedotfun (also associated with @agentcookiefun and\
-      \ @Cookie3_com)\n* **Contract Addresses**:\n\t+ Chain 8453: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f`\n\
-      \t+ Chain 56: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f` (note: same address\
-      \ on both chains)\n\n**Market & Community Metrics (latest available)**\n\n*\
-      \ **Market Cap**: $57,883,568.80 (Δ%: **+37.73%**)\n* **Price**: $0.1285 (Δ%:\
-      \ **+37.98%**)\n* **Liquidity**: $1,755,774.46\n* **24H Volume**: $608,432.46\
-      \ (Δ%: **+7.98%**)\n* **Holders Count**: 88,184 (Δ%: **+0.04%**)\n\n**Twitter\
-      \ Engagement (latest available, averaged)**\n\n* **Followers Count**: 513,527\n\
-      * **Smart Followers Count**: 1,996\n* **Average Impressions Count**: 4,218.59\
-      \ (Δ%: **+12.31%**)\n* **Average Engagements Count**: 70.66 (Δ%: **+8.21%**)\n\
-      \n**Top Engaging Tweets (last few, with impressions & smart engagement points)**\n\
-      \n1. **Chain_GPT**: [https://x.com/Chain_GPT/status/1913236151831310768](https://x.com/Chain_GPT/status/1913236151831310768)\
-      \ - Impressions: 20,390, Smart Engagement Points: 3\n2. **rekt2160**: [https://x.com/rekt2160/status/1913990374164766787](https://x.com/rekt2160/status/1913990374164766787)\
-      \ - Impressions: 6,471, Smart Engagement Points: 5\n3. **osf_rekt**: [https://x.com/osf_rekt/status/1913949532787736767](https://x.com/osf_rekt/status/1913949532787736767)\
-      \ -"
+    response: "**Project Insights for @cookiedotfun (Cookie)**\n\n**Project Details**\n\
+      \n* **Twitter Handle(s)**: @cookiedotfun, @agentcookiefun, @Cookie3_com\n* **Contract\
+      \ Addresses**:\n\t+ Chain 8453: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f`\n\
+      \t+ Chain 56: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f` (Note: Same address\
+      \ on multiple chains)\n* **Market Data (latest available)**\n\t+ **Market Cap**:\
+      \ $87,346,731.93 (Δ%: +59.55% _7Days)\n\t+ **Price**: $0.1945 (Δ%: +60.11% _7Days)\n\
+      \t+ **Liquidity**: $2,178,974.21\n\t+ **24H Volume**: $2,094,958.19 (Δ%: +336.52%\
+      \ _7Days)\n\n**Community & Engagement (_7Days data)**\n\n* **Twitter Followers**:\
+      \ 513,957\n* **Smart Followers** (highly engaged): 2,008\n* **Average Impressions\
+      \ per Tweet**: 3,568.6 (Δ%: -23.69%)\n* **Average Engagements per Tweet**: 72.29\
+      \ (Δ%: -3.92%)\n\n**Top Engaging Tweets (last 7 days)**\n\n1. **Coinesper**:\
+      \ 7,386 impressions, 4 smart engagement points ([Tweet URL](https://x.com/coinesper/status/1916529411710476607))\n\
+      2. **Karamata_**: 4,604 impressions, 6 smart engagement points ([Tweet URL](https://x.com/Karamata2_2/status/1916427739235770604))\n\
+      3. **kashvi**: 6,611 impressions, 3 smart engagement points ([Tweet URL](https://x.com/kashviETH/status/1917628781491281957))\n\
+      4. **Emily Lai**: 3,526 impressions, 4 smart engagement points ([Tweet URL](https://x.com/emilyxlai/status/1915776130151235846))\n\
+      5. **CryptoDoc**: 8,290 impressions, 1 smart engagement point ([Tweet URL](https://"
     data:
       status: success
       data:
@@ -33,49 +33,49 @@ twitter_username_query:
           - agentcookiefun
           - Cookie3_com
           - cookiedotfun
-          mindshare: 0.5281639049305138
-          mindshareDeltaPercent: 21.883704102739834
-          marketCap: 57883568.8004195
-          marketCapDeltaPercent: 37.72827656195615
-          price: 0.1284616569
-          priceDeltaPercent: 37.976054957622075
-          liquidity: 1755774.4623342257
-          volume24Hours: 608432.459641295
-          volume24HoursDeltaPercent: 7.984723332585424
-          holdersCount: 88184
-          holdersCountDeltaPercent: 0.039705498644340836
-          averageImpressionsCount: 4218.586206896552
-          averageImpressionsCountDeltaPercent: 12.310771236309893
-          averageEngagementsCount: 70.65517241379311
-          averageEngagementsCountDeltaPercent: 8.212305254819135
-          followersCount: 513527
-          smartFollowersCount: 1996
+          mindshare: 1.2946598251615782
+          mindshareDeltaPercent: 147.85764406631017
+          marketCap: 87346731.9276608
+          marketCapDeltaPercent: 59.54806325184629
+          price: 0.1945299309
+          priceDeltaPercent: 60.10785037522074
+          liquidity: 2178974.2078384142
+          volume24Hours: 2094958.186941763
+          volume24HoursDeltaPercent: 336.52364307155636
+          holdersCount: 88460
+          holdersCountDeltaPercent: 0.31639468819813793
+          averageImpressionsCount: 3568.6
+          averageImpressionsCountDeltaPercent: -23.69220106030777
+          averageEngagementsCount: 72.29230769230769
+          averageEngagementsCountDeltaPercent: -3.919481068885289
+          followersCount: 513957
+          smartFollowersCount: 2008
           topTweets:
-          - tweetUrl: https://x.com/Chain_GPT/status/1913236151831310768
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1874609296119320576/RMXAHHLa_normal.jpg
-            tweetAuthorDisplayName: ChainGPT
-            smartEngagementPoints: 3
-            impressionsCount: 20390
-          - tweetUrl: https://x.com/rekt2160/status/1913990374164766787
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1909684000039600128/8XOmvAii_normal.jpg
-            tweetAuthorDisplayName: '2160'
-            smartEngagementPoints: 5
-            impressionsCount: 6471
-          - tweetUrl: https://x.com/osf_rekt/status/1913949532787736767
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1904125351195779072/qgcGjxsK_normal.jpg
-            tweetAuthorDisplayName: OSF
-            smartEngagementPoints: 5
-            impressionsCount: 5444
-          - tweetUrl: https://x.com/18decimals/status/1913971199430066532
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1911572808796151808/DeZ-L1oj_normal.jpg
-            tweetAuthorDisplayName: 18Decimals
+          - tweetUrl: https://x.com/coinesper/status/1916529411710476607
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1619729617098506243/FZLFQ6He_normal.jpg
+            tweetAuthorDisplayName: Coinesper
             smartEngagementPoints: 4
-            impressionsCount: 6170
-          - tweetUrl: https://x.com/animocabrands/status/1915222792439783448
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1493784454003060736/IMIV00rn_normal.jpg
-            tweetAuthorDisplayName: Animoca Brands ✈️TOKEN2049 Dubai 🌴
+            impressionsCount: 7386
+          - tweetUrl: https://x.com/Karamata2_2/status/1916427739235770604
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1755058687473823744/9Srw1b0M_normal.jpg
+            tweetAuthorDisplayName: Karamata_ 💎
+            smartEngagementPoints: 6
+            impressionsCount: 4604
+          - tweetUrl: https://x.com/kashviETH/status/1917628781491281957
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1882028069801902080/f3QQ07mp_normal.jpg
+            tweetAuthorDisplayName: kashvi
+            smartEngagementPoints: 3
+            impressionsCount: 6611
+          - tweetUrl: https://x.com/emilyxlai/status/1915776130151235846
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1579546621540327424/UOCvH89k_normal.jpg
+            tweetAuthorDisplayName: Emily Lai
+            smartEngagementPoints: 4
+            impressionsCount: 3526
+          - tweetUrl: https://x.com/cryptodoc_/status/1917274765821358080
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1899753833590644736/y_jKI-OQ_normal.jpg
+            tweetAuthorDisplayName: CryptoDoc (Gem Hunter💎)
             smartEngagementPoints: 1
-            impressionsCount: 4482
+            impressionsCount: 8290
         success: true
         error: null
 twitter_username_query_2:
@@ -83,22 +83,61 @@ twitter_username_query_2:
     query: Tell me about the project with Twitter handle @heurist_ai for past 30 days
     raw_data_only: false
   output:
-    response: "**Project Insights: @heurist_ai (Past 30 days, capped at 7 days for\
-      \ consistency)**\n\n* **Project Name:** Heurist\n* **Twitter Handle:** @heurist_ai\n\
-      * **Contract Address:** 0xEF22cb48B8483dF6152e1423b19dF5553BbD818b (Chain ID:\
-      \ 8453)\n\n**Key Metrics (Past 7 days, due to interval cap):**\n\n1. **Mindshare:**\
-      \ 0.1672% (+7.73% change)\n2. **Market Capitalization:** Approximately $4,204,443\
-      \ (+7.54% change)\n3. **Price:** $0.0323 (+1.26% change)\n4. **Liquidity:**\
-      \ $400,751\n5. **24H Volume:** $115,278 (-20.74% change)\n6. **Holders:** 41,143\
-      \ (+0.07% change)\n7. **Twitter Followers:** 34,998\n\n**Engagement Insights:**\n\
-      \n* **Average Impressions/Day:** 11,171 (-11.65% change)\n* **Average Engagements/Day:**\
-      \ 160.4 (+34.11% change)\n* **Smart Followers:** 497\n\n**Top Engaging Tweets\
-      \ (Past 7 days):**\n\n1. **Tweet by @cryptopunk7213**: 6,954 impressions, 2\
-      \ smart engagement points\n   * [https://x.com/cryptopunk7213/status/1914768323654336591](https://x.com/cryptopunk7213/status/1914768323654336591)\n\
-      2. **Tweet by @SpaceandTimeDB**: 10,005 impressions, 1 smart engagement point\n\
-      \   * [https://x.com/SpaceandTimeDB/status/1913286187147829751](https://x.com/SpaceandTimeDB/status/1913286187147829751)\n\
-      3. **Tweet by @Hercules_Defi**: 8,144 impressions, 1 smart engagement point\n\
-      \   * [https://x.com/Hercules_Defi/status/1914666408849629293](https://x.com/Hercules_Defi/status/1914666408849629293)"
+    response: '**Project Insights: @heurist_ai (Capped at 7 days for consistency,
+      as per guidelines)**
+
+
+      **Project Details:**
+
+
+      * **Project Name:** Heurist
+
+      * **Twitter Handle:** @heurist_ai
+
+      * **Contract Address:** 0xEF22cb48B8483dF6152e1423b19dF5553BbD818b (Chain ID:
+      8453)
+
+
+      **Key Metrics (7-day data, capped from requested 30 days):**
+
+
+      * **Mindshare:** 0.0487% ( **-70.51%** change)
+
+      * **Market Cap:** $4,963,070.76 ( **+23.67%** change)
+
+      * **Price:** $0.03799871398 ( **+20.52%** change)
+
+      * **Liquidity:** $414,180.41
+
+      * **24H Volume:** $186,112.07 ( **-0.77%** change)
+
+      * **Holders:** 41,219 ( **+0.18%** change)
+
+      * **Twitter Followers:** 34,491
+
+      * **Smart Followers (highly engaged):** 499
+
+
+      **Engagement Metrics (7-day average):**
+
+
+      * **Impressions:** 7,489.25 ( **-35.17%** change)
+
+      * **Engagements:** 85.25 ( **-47.48%** change)
+
+
+      **Top Tweet (based on smart engagement points, last 7 days):**
+
+
+      * **Author:** nfy (@nonfungibleyash)
+
+      * **Tweet URL:** https://x.com/nonfungibleyash/status/1917849865545019576
+
+      * **Author Profile Image:** https://pbs.twimg.com/profile_images/1908354677835456512/81rHfz24_normal.jpg
+
+      * **Smart Engagement Points:** 1
+
+      * **Impressions:** 28'
     data: &id001
       status: success
       data:
@@ -109,39 +148,29 @@ twitter_username_query_2:
             contractAddress: '0xEF22cb48B8483dF6152e1423b19dF5553BbD818b'
           twitterUsernames:
           - heurist_ai
-          mindshare: 0.16715516991207477
-          mindshareDeltaPercent: 7.73166440491015
-          marketCap: 4204442.72966158
-          marketCapDeltaPercent: 7.539345511028837
-          price: 0.03230006813
-          priceDeltaPercent: 1.2619968565332684
-          liquidity: 400751.4978917561
-          volume24Hours: 115277.610847025
-          volume24HoursDeltaPercent: -20.740349224958656
-          holdersCount: 41143
-          holdersCountDeltaPercent: 0.07053558398599018
-          averageImpressionsCount: 11171
-          averageImpressionsCountDeltaPercent: -11.652589288538797
-          averageEngagementsCount: 160.4
-          averageEngagementsCountDeltaPercent: 34.11371237458195
-          followersCount: 34998
-          smartFollowersCount: 497
+          mindshare: 0.04869058180764683
+          mindshareDeltaPercent: -70.50627179583934
+          marketCap: 4963070.75973274
+          marketCapDeltaPercent: 23.67417951514053
+          price: 0.03799871398
+          priceDeltaPercent: 20.524097299783165
+          liquidity: 414180.41303200735
+          volume24Hours: 186112.07353016
+          volume24HoursDeltaPercent: -0.770246277356564
+          holdersCount: 41219
+          holdersCountDeltaPercent: 0.18472158082784434
+          averageImpressionsCount: 7489.25
+          averageImpressionsCountDeltaPercent: -35.169234764542935
+          averageEngagementsCount: 85.25
+          averageEngagementsCountDeltaPercent: -47.484599589322386
+          followersCount: 34491
+          smartFollowersCount: 499
           topTweets:
-          - tweetUrl: https://x.com/cryptopunk7213/status/1914768323654336591
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1907447673583468544/QJoStc_x_normal.jpg
-            tweetAuthorDisplayName: 7213 | Ejaaz
-            smartEngagementPoints: 2
-            impressionsCount: 6954
-          - tweetUrl: https://x.com/SpaceandTimeDB/status/1913286187147829751
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1876320944266117120/yesGxlq6_normal.jpg
-            tweetAuthorDisplayName: Space and Time
+          - tweetUrl: https://x.com/nonfungibleyash/status/1917849865545019576
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1908354677835456512/81rHfz24_normal.jpg
+            tweetAuthorDisplayName: nfy
             smartEngagementPoints: 1
-            impressionsCount: 10005
-          - tweetUrl: https://x.com/Hercules_Defi/status/1914666408849629293
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1631873364448141312/c7wumcQX_normal.jpg
-            tweetAuthorDisplayName: Hercules | DeFi
-            smartEngagementPoints: 1
-            impressionsCount: 8144
+            impressionsCount: 28
         success: true
         error: null
 contract_address_query:
@@ -149,24 +178,24 @@ contract_address_query:
     query: Get details for the contract 0xc0041ef357b183448b235a8ea73ce4e4ec8c265f
     raw_data_only: false
   output:
-    response: "**Contract Details for 0xc0041ef357b183448b235a8ea73ce4e4ec8c265f**\n\
-      \n### **Contract Addresses Across Chains**\n\n* **Chain 8453 (Unknown/Mainnet\
-      \ not specified)**: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f`\n* **Chain\
-      \ 56 (Binance Smart Chain)**: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f`\n\
-      \n### **Associated Twitter Usernames**\n(Note: These might not be official accounts,\
-      \ but are associated based on the provided data)\n- `@agentcookiefun`\n- `@Cookie3_com`\n\
-      - `@cookiedotfun`\n\n### **Market and Engagement Metrics (latest available,\
-      \ interval not specified but capped at 7 days for interpretation)**\n\n* **Mindshare**:\
-      \ 0.5282% (Δ **+21.88%** over the last 7 days)\n* **Market Cap**: $58,270,928.34\
-      \ (Δ **+38.65%** over the last 7 days)\n* **Price**: $0.1288 (Δ **+38.34%**\
-      \ over the last 7 days)\n* **24H Volume**: $608,432.46 (Δ **+7.98%** over the\
-      \ last 7 days)\n* **Liquidity**: $1,760,967.56\n* **Holders Count**: 88,184\
-      \ (Δ **+0.04%** over the last 7 days)\n\n### **Twitter Engagement (Average over\
-      \ the last 7 days)**\n\n* **Average Impressions**: 4,218.59 (Δ **+12.31%**)\n\
-      * **Average Engagements**: 70.66 (Δ **+8.21%**)\n* **Followers Count**: 513,527\n\
-      * **Smart Followers Count**: 1,996\n\n### **Top Engaging Tweets (Last 7 days,\
-      \ based on Smart Engagement Points & Impressions)**\n\n1. **ChainGPT** - [https://x.com/Chain_GPT/status/1913236151831310768](https://x.com/Chain_GPT/status/1913236151831310768)\n\
-      \t* Impressions: 20,390\n\t* Smart Engagement Points: 3"
+    response: "**Contract Details: 0xc0041ef357b183448b235a8ea73ce4e4ec8c265f**\n\n\
+      **Chain Presence:**\n* **Chain IDs:** \n\t+ Chain 8453\n\t+ Chain 56 (likely\
+      \ Binance Smart Chain, as 56 is BSC's chain ID)\n\n**Market & Liquidity:**\n\
+      * **Market Cap:** $87,592,471.26\n* **Market Cap Change (7 days):** +60.25%\n\
+      * **Current Price:** $0.1954\n* **Price Change (7 days):** +61.88%\n* **Liquidity:**\
+      \ $2,178,794.81\n* **24H Volume:** $2,094,958.19\n* **24H Volume Change:** +336.52%\n\
+      \n**Holders & Engagement:**\n* **Holder Count:** 88,460\n* **Holder Count Change\
+      \ (7 days):** +0.32%\n* **Twitter Followers (associated usernames):** 513,957\n\
+      * **Smart Followers (engaged):** 2,008\n\n**Top Engaging Tweets (last 7 days):**\n\
+      1. **Coinesper**: 7,386 impressions, 4 engagement points ([Tweet URL](https://x.com/coinesper/status/1916529411710476607))\n\
+      2. **Karamata_**: 4,604 impressions, 6 engagement points ([Tweet URL](https://x.com/Karamata2_2/status/1916427739235770604))\n\
+      3. **kashvi**: 6,611 impressions, 3 engagement points ([Tweet URL](https://x.com/kashviETH/status/1917628781491281957))\n\
+      4. **Emily Lai**: 3,526 impressions, 4 engagement points ([Tweet URL](https://x.com/emilyxlai/status/1915776130151235846))\n\
+      5. **CryptoDoc (Gem Hunter)**: 8,290 impressions, 1 engagement point ([Tweet\
+      \ URL](https://x.com/cryptodoc_/status/1917274765821358080))\n\n**Associated\
+      \ Twitter Usernames:**\n* @agentcookiefun\n* @Cookie3_com\n* @cookiedotfun\n\
+      \n**Mindshare & Average Metrics (7 days):**\n* **Mindshare:** 1.29\n* **Mindshare\
+      \ Change:**"
     data: &id002
       status: success
       data:
@@ -181,49 +210,49 @@ contract_address_query:
           - agentcookiefun
           - Cookie3_com
           - cookiedotfun
-          mindshare: 0.5281639049305138
-          mindshareDeltaPercent: 21.883704102739834
-          marketCap: 58270928.3427799
-          marketCapDeltaPercent: 38.64996061297027
-          price: 0.1288030788
-          priceDeltaPercent: 38.34276396616932
-          liquidity: 1760967.5553090903
-          volume24Hours: 608432.459641295
-          volume24HoursDeltaPercent: 7.984723332585424
-          holdersCount: 88184
-          holdersCountDeltaPercent: 0.039705498644340836
-          averageImpressionsCount: 4218.586206896552
-          averageImpressionsCountDeltaPercent: 12.310771236309893
-          averageEngagementsCount: 70.65517241379311
-          averageEngagementsCountDeltaPercent: 8.212305254819135
-          followersCount: 513527
-          smartFollowersCount: 1996
+          mindshare: 1.2946598251615782
+          mindshareDeltaPercent: 147.85764406631017
+          marketCap: 87592471.2576647
+          marketCapDeltaPercent: 60.25139873961355
+          price: 0.1954172914
+          priceDeltaPercent: 61.877925437125946
+          liquidity: 2178794.812501194
+          volume24Hours: 2094958.186941763
+          volume24HoursDeltaPercent: 336.52364307155636
+          holdersCount: 88460
+          holdersCountDeltaPercent: 0.31639468819813793
+          averageImpressionsCount: 3568.6
+          averageImpressionsCountDeltaPercent: -23.69220106030777
+          averageEngagementsCount: 72.29230769230769
+          averageEngagementsCountDeltaPercent: -3.919481068885289
+          followersCount: 513957
+          smartFollowersCount: 2008
           topTweets:
-          - tweetUrl: https://x.com/Chain_GPT/status/1913236151831310768
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1874609296119320576/RMXAHHLa_normal.jpg
-            tweetAuthorDisplayName: ChainGPT
-            smartEngagementPoints: 3
-            impressionsCount: 20390
-          - tweetUrl: https://x.com/rekt2160/status/1913990374164766787
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1909684000039600128/8XOmvAii_normal.jpg
-            tweetAuthorDisplayName: '2160'
-            smartEngagementPoints: 5
-            impressionsCount: 6471
-          - tweetUrl: https://x.com/osf_rekt/status/1913949532787736767
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1904125351195779072/qgcGjxsK_normal.jpg
-            tweetAuthorDisplayName: OSF
-            smartEngagementPoints: 5
-            impressionsCount: 5444
-          - tweetUrl: https://x.com/18decimals/status/1913971199430066532
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1911572808796151808/DeZ-L1oj_normal.jpg
-            tweetAuthorDisplayName: 18Decimals
+          - tweetUrl: https://x.com/coinesper/status/1916529411710476607
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1619729617098506243/FZLFQ6He_normal.jpg
+            tweetAuthorDisplayName: Coinesper
             smartEngagementPoints: 4
-            impressionsCount: 6170
-          - tweetUrl: https://x.com/animocabrands/status/1915222792439783448
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1493784454003060736/IMIV00rn_normal.jpg
-            tweetAuthorDisplayName: Animoca Brands ✈️TOKEN2049 Dubai 🌴
+            impressionsCount: 7386
+          - tweetUrl: https://x.com/Karamata2_2/status/1916427739235770604
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1755058687473823744/9Srw1b0M_normal.jpg
+            tweetAuthorDisplayName: Karamata_ 💎
+            smartEngagementPoints: 6
+            impressionsCount: 4604
+          - tweetUrl: https://x.com/kashviETH/status/1917628781491281957
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1882028069801902080/f3QQ07mp_normal.jpg
+            tweetAuthorDisplayName: kashvi
+            smartEngagementPoints: 3
+            impressionsCount: 6611
+          - tweetUrl: https://x.com/emilyxlai/status/1915776130151235846
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1579546621540327424/UOCvH89k_normal.jpg
+            tweetAuthorDisplayName: Emily Lai
+            smartEngagementPoints: 4
+            impressionsCount: 3526
+          - tweetUrl: https://x.com/cryptodoc_/status/1917274765821358080
+            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1899753833590644736/y_jKI-OQ_normal.jpg
+            tweetAuthorDisplayName: CryptoDoc (Gem Hunter💎)
             smartEngagementPoints: 1
-            impressionsCount: 4482
+            impressionsCount: 8290
         success: true
         error: null
 tool_twitter_username:
@@ -234,51 +263,7 @@ tool_twitter_username:
     raw_data_only: true
   output:
     response: ''
-    data:
-      status: success
-      data:
-        ok:
-          agentName: Heurist
-          contracts:
-          - chain: 8453
-            contractAddress: '0xEF22cb48B8483dF6152e1423b19dF5553BbD818b'
-          twitterUsernames:
-          - heurist_ai
-          mindshare: 0.16715516991207477
-          mindshareDeltaPercent: 7.73166440491015
-          marketCap: 4204442.72966158
-          marketCapDeltaPercent: 7.539345511028837
-          price: 0.03230006813
-          priceDeltaPercent: 1.2619968565332684
-          liquidity: 400751.4978917561
-          volume24Hours: 115277.610847025
-          volume24HoursDeltaPercent: -20.740349224958656
-          holdersCount: 41143
-          holdersCountDeltaPercent: 0.07053558398599018
-          averageImpressionsCount: 11171
-          averageImpressionsCountDeltaPercent: -11.652589288538797
-          averageEngagementsCount: 160.4
-          averageEngagementsCountDeltaPercent: 34.11371237458195
-          followersCount: 34998
-          smartFollowersCount: 497
-          topTweets:
-          - tweetUrl: https://x.com/cryptopunk7213/status/1914768323654336591
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1907447673583468544/QJoStc_x_normal.jpg
-            tweetAuthorDisplayName: 7213 | Ejaaz
-            smartEngagementPoints: 2
-            impressionsCount: 6954
-          - tweetUrl: https://x.com/SpaceandTimeDB/status/1913286187147829751
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1876320944266117120/yesGxlq6_normal.jpg
-            tweetAuthorDisplayName: Space and Time
-            smartEngagementPoints: 1
-            impressionsCount: 10005
-          - tweetUrl: https://x.com/Hercules_Defi/status/1914666408849629293
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1631873364448141312/c7wumcQX_normal.jpg
-            tweetAuthorDisplayName: Hercules | DeFi
-            smartEngagementPoints: 1
-            impressionsCount: 8144
-        success: true
-        error: null
+    data: *id001
 tool_contract_address:
   input:
     tool: get_project_by_contract_address
@@ -287,62 +272,4 @@ tool_contract_address:
     raw_data_only: true
   output:
     response: ''
-    data:
-      status: success
-      data:
-        ok:
-          agentName: Cookie
-          contracts:
-          - chain: 8453
-            contractAddress: '0xc0041ef357b183448b235a8ea73ce4e4ec8c265f'
-          - chain: 56
-            contractAddress: '0xc0041ef357b183448b235a8ea73ce4e4ec8c265f'
-          twitterUsernames:
-          - agentcookiefun
-          - Cookie3_com
-          - cookiedotfun
-          mindshare: 0.5281639049305138
-          mindshareDeltaPercent: 21.883704102739834
-          marketCap: 58270928.3427799
-          marketCapDeltaPercent: 38.64996061297027
-          price: 0.1288030788
-          priceDeltaPercent: 38.34276396616932
-          liquidity: 1760967.5553090903
-          volume24Hours: 608432.459641295
-          volume24HoursDeltaPercent: 7.984723332585424
-          holdersCount: 88184
-          holdersCountDeltaPercent: 0.039705498644340836
-          averageImpressionsCount: 4218.586206896552
-          averageImpressionsCountDeltaPercent: 12.310771236309893
-          averageEngagementsCount: 70.65517241379311
-          averageEngagementsCountDeltaPercent: 8.212305254819135
-          followersCount: 513527
-          smartFollowersCount: 1996
-          topTweets:
-          - tweetUrl: https://x.com/Chain_GPT/status/1913236151831310768
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1874609296119320576/RMXAHHLa_normal.jpg
-            tweetAuthorDisplayName: ChainGPT
-            smartEngagementPoints: 3
-            impressionsCount: 20390
-          - tweetUrl: https://x.com/rekt2160/status/1913990374164766787
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1909684000039600128/8XOmvAii_normal.jpg
-            tweetAuthorDisplayName: '2160'
-            smartEngagementPoints: 5
-            impressionsCount: 6471
-          - tweetUrl: https://x.com/osf_rekt/status/1913949532787736767
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1904125351195779072/qgcGjxsK_normal.jpg
-            tweetAuthorDisplayName: OSF
-            smartEngagementPoints: 5
-            impressionsCount: 5444
-          - tweetUrl: https://x.com/18decimals/status/1913971199430066532
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1911572808796151808/DeZ-L1oj_normal.jpg
-            tweetAuthorDisplayName: 18Decimals
-            smartEngagementPoints: 4
-            impressionsCount: 6170
-          - tweetUrl: https://x.com/animocabrands/status/1915222792439783448
-            tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1493784454003060736/IMIV00rn_normal.jpg
-            tweetAuthorDisplayName: Animoca Brands ✈️TOKEN2049 Dubai 🌴
-            smartEngagementPoints: 1
-            impressionsCount: 4482
-        success: true
-        error: null
+    data: *id002

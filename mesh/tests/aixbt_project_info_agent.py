@@ -12,7 +12,7 @@ async def run_agent():
     agent = AixbtProjectInfoAgent()
     try:
         # Test 1: Natural language query mode
-        query_input = {"query": "Tell me about trending projects on Ethereum"}
+        query_input = {"query": "Tell me about HEU token"}
         query_output = await agent.handle_message(query_input)
 
         # Test 2: Natural language query mode

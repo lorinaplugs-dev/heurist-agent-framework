@@ -77,8 +77,14 @@ class CookieProjectInfoAgent(MeshAgent):
         - Project details including information from Twitter username
         - Project information from contract addresses
 
+        Important instructions on time intervals:
+        - Only use "_3Days" or "_7Days" for interval parameter
+        - If the user asks for 1-4 days of data, use "_3Days" interval
+        - If the user asks for 5 days or more, always use "_7Days" interval
+        - Even if the user asks for data over a longer period (30, 90 days), always cap it at 7 days and inform the user that data has been capped at 7 days for consistency
+
         If a user asks about a specific project, try to identify whether they've provided a Twitter username
-        or contract address and use the appropriate tool and also if interval exceeds more than 7 days, make it 7 days for fetching
+        or contract address and use the appropriate tool.
 
         Keep your responses concise and data-driven while making the information accessible. NEVER make up data that is not returned from the tool.
         """
@@ -89,7 +95,7 @@ class CookieProjectInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_project_by_twitter_username",
-                    "description": "Get information about a crypto project by its Twitter username.",
+                    "description": "Get comprehensive information about a crypto project by its Twitter username. Returns detailed market metrics (market cap, price, 24h volume, liquidity, holder counts), performance trends with percentage changes, Twitter engagement statistics (follower counts, average impressions, engagement rates), and top engaging tweets with smart engagement points and impression counts. Perfect for analyzing a project's market performance, social media reach, and community engagement.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -112,7 +118,7 @@ class CookieProjectInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_project_by_contract_address",
-                    "description": "Get information about a crypto project by its contract address.",
+                    "description": "Get comprehensive information about a crypto project by its contract address. Returns detailed market metrics (market cap, price, 24h volume, liquidity, holder counts), performance trends with percentage changes, associated Twitter accounts, Twitter engagement statistics (follower counts, average impressions, engagement rates), and top engaging tweets with smart engagement points and impression counts. Perfect for analyzing a project's market performance across different chains, social media reach, and community engagement when you have the token contract address.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -144,7 +150,7 @@ class CookieProjectInfoAgent(MeshAgent):
 
         Args:
             twitter_username: Twitter username (without @ symbol)
-            interval: Time interval for data (_7Days, _30Days, _90Days)
+            interval: Time interval for data (_3Days, _7Days)
 
         Returns:
             Dict with project details or error information
@@ -182,7 +188,7 @@ class CookieProjectInfoAgent(MeshAgent):
 
         Args:
             contract_address: Token contract address
-            interval: Time interval for data (_7Days, _30Days, _90Days)
+            interval: Time interval for data (_3Days, _7Days)
 
         Returns:
             Dict with project details or error information
