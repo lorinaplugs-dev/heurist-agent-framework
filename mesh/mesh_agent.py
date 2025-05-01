@@ -4,12 +4,13 @@ import os
 from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Optional
 
+import aiohttp
 import dotenv
 from loguru import logger
 
 from clients.mesh_client import MeshClient
 from core.llm import call_llm_async, call_llm_with_tools_async
-from decorators import monitor_execution, with_retry
+from decorators import monitor_execution, with_cache, with_retry  # noqa: F401
 
 os.environ.clear()
 dotenv.load_dotenv()
@@ -36,8 +37,29 @@ class MeshAgent(ABC):
             "author": "unknown",
             "author_address": "0x0000000000000000000000000000000000000000",
             "description": "",
-            "inputs": [],
-            "outputs": [],
+            "inputs": [
+                {
+                    "name": "query",
+                    "description": "Natural language query to the agent",
+                    "type": "str",
+                    "required": False,
+                },
+                {
+                    "name": "raw_data_only",
+                    "description": "If true, the agent will only return the raw data without LLM explanation",
+                    "type": "bool",
+                    "required": False,
+                    "default": False,
+                },
+            ],
+            "outputs": [
+                {
+                    "name": "response",
+                    "description": "The text response from the agent",
+                    "type": "str",
+                },
+                {"name": "data", "description": "Structured data from the agent", "type": "dict"},
+            ],
             "external_apis": [],
             "tags": [],
             "large_model_id": DEFAULT_MODEL_ID,
@@ -257,10 +279,14 @@ class MeshAgent(ABC):
 
     async def __aenter__(self):
         """Async context manager enter"""
+        self.session = aiohttp.ClientSession()
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         """Async context manager exit"""
+        if self.session:
+            await self.session.close()
+            self.session = None
         await self.cleanup()
 
     async def cleanup(self):
@@ -284,3 +310,47 @@ class MeshAgent(ABC):
                 loop.run_until_complete(self.cleanup())
         except Exception as e:
             logger.error(f"Cleanup failed | Agent: {self.agent_name} | Error: {str(e)}")
+
+    @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
+    @monitor_execution()
+    async def _api_request(
+        self, url: str, method: str = "GET", headers: Dict = None, params: Dict = None, json_data: Dict = None
+    ) -> Dict:
+        """
+        Generic API request method that can be used by child classes.
+        This consolidates the common API request pattern found in all agents.
+
+        Args:
+            url: The API endpoint URL
+            method: HTTP method (GET, POST, etc.)
+            headers: HTTP headers
+            params: URL parameters
+            json_data: JSON payload for POST/PUT requests
+
+        Returns:
+            Dict with response data or error
+        """
+        if not self.session:
+            self.session = aiohttp.ClientSession()
+            should_close = True
+        else:
+            should_close = False
+
+        try:
+            if method.upper() == "GET":
+                async with self.session.get(url, headers=headers, params=params) as response:
+                    response.raise_for_status()
+                    return await response.json()
+            elif method.upper() == "POST":
+                async with self.session.post(url, headers=headers, params=params, json=json_data) as response:
+                    response.raise_for_status()
+                    return await response.json()
+
+        except Exception as e:
+            logger.error(f"API request error: {e}")
+            return {"error": f"API request failed: {str(e)}"}
+        finally:
+            if should_close and self.session:
+                await self.session.close()
+                self.session = None

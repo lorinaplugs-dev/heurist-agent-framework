@@ -1,16 +1,12 @@
 import logging
 from typing import Any, Dict, List
 
-import aiohttp
-from dotenv import load_dotenv
 from eth_defi.aave_v3.reserve import AaveContractsNotConfigured, fetch_reserve_data, get_helper_contracts
 from web3 import Web3
 
-from decorators import monitor_execution, with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
-load_dotenv()
 
 
 class AaveAgent(MeshAgent):
@@ -23,29 +19,6 @@ class AaveAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can report the status of Aave v3 protocols deployed on Ethereum, Polygon, Avalanche, and Arbitrum with details on liquidity, borrowing rates, and more",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about Aave reserves",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw data without LLM explanation",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "The explanation of Aave reserve data",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured Aave reserve data", "type": "dict"},
-                ],
                 "external_apis": ["Aave"],
                 "tags": ["DeFi"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Aave.png",
@@ -56,15 +29,6 @@ class AaveAgent(MeshAgent):
                 ],
             }
         )
-
-    async def __aenter__(self):
-        self.session = aiohttp.ClientSession()
-        return self
-
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if self.session:
-            await self.session.close()
-            self.session = None
 
     def get_system_prompt(self) -> str:
         return """You are a helpful assistant that can access external tools to provide Aave v3 reserve data.
@@ -109,22 +73,12 @@ class AaveAgent(MeshAgent):
     # ------------------------------------------------------------------------
     #                      AAVE API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
-    def _initialize_web3(self, chain_id: int = 137):
-        """
-        Initialize Web3 connection for the specified chain.
-
-        Args:
-            chain_id: Blockchain network ID (default: 137 for Polygon)
-
-        Returns:
-            Web3 instance connected to the appropriate RPC
-        """
-        # handle string chain_id
-        if isinstance(chain_id, str):
-            try:
-                chain_id = int(chain_id)
-            except ValueError:
-                raise ValueError(f"Invalid chain ID format: {chain_id}")
+    def _initialize_web3(self, chain_id: int = 137) -> Web3:
+        """Initialize Web3 connection for a supported chain."""
+        try:
+            chain_id = int(chain_id)
+        except ValueError:
+            raise ValueError(f"Invalid chain ID format: {chain_id}")
 
         rpc_urls = {
             1: "https://rpc.ankr.com/eth",
@@ -133,141 +87,100 @@ class AaveAgent(MeshAgent):
             42161: "https://arb1.arbitrum.io/rpc",
         }
 
-        if chain_id not in rpc_urls:
-            raise ValueError(f"Chain ID {chain_id} not supported or RPC URL not configured")
+        rpc_url = rpc_urls.get(chain_id)
+        if not rpc_url:
+            raise ValueError(f"Unsupported chain ID: {chain_id}")
 
-        rpc_url = rpc_urls[chain_id]
-
-        request_kwargs = {
-            "timeout": 60,
-            "headers": {"Content-Type": "application/json", "User-Agent": "AaveReserveAgent/1.0.0"},
-        }
-
-        w3 = Web3(Web3.HTTPProvider(rpc_url, request_kwargs=request_kwargs))
+        w3 = Web3(
+            Web3.HTTPProvider(
+                rpc_url,
+                request_kwargs={
+                    "timeout": 60,
+                    "headers": {
+                        "Content-Type": "application/json",
+                        "User-Agent": "AaveReserveAgent/1.0.0",
+                    },
+                },
+            )
+        )
 
         if not w3.is_connected():
-            raise ConnectionError(f"Failed to connect to RPC for chain ID {chain_id}")
+            raise ConnectionError(f"Web3 failed to connect for chain ID {chain_id}")
 
         return w3
 
     def _initialize_aave_contracts(self, web3: Web3):
-        """
-        Initialize Aave helper contracts for the connected Web3 instance.
-        Args:
-            web3: Connected Web3 instance
-        Returns:
-            Aave helper contracts
-        """
+        """Initialize Aave contracts for a given Web3 instance."""
         try:
             return get_helper_contracts(web3)
         except AaveContractsNotConfigured as e:
-            chain_id = web3.eth.chain_id
-            raise RuntimeError(f"Aave v3 not supported on chain ID {chain_id}") from e
+            raise RuntimeError(f"Aave v3 not supported on chain ID {web3.eth.chain_id}") from e
 
     def _process_reserve(self, reserve: Dict) -> Dict:
-        """
-        Process reserve data for better readability and API compatibility.
-
-        Args:
-            reserve: Raw reserve data
-
-        Returns:
-            Processed reserve data with friendlier format
-        """
-        processed = {}
-        for key, value in reserve.items():
-            if isinstance(value, int) and abs(value) > 2**53 - 1:
-                processed[key] = str(value)
-            else:
-                processed[key] = value
+        result = {k: str(v) if isinstance(v, int) and abs(v) > 2**53 - 1 else v for k, v in reserve.items()}
 
         if "variableBorrowRate" in reserve:
-            apr = float(reserve["variableBorrowRate"]) / 1e25
-            processed["variableBorrowAPR"] = round(apr, 2)
+            result["variableBorrowAPR"] = round(float(reserve["variableBorrowRate"]) / 1e25, 2)
 
         if "liquidityRate" in reserve:
-            apr = float(reserve["liquidityRate"]) / 1e25
-            processed["depositAPR"] = round(apr, 2)
+            result["depositAPR"] = round(float(reserve["liquidityRate"]) / 1e25, 2)
 
-        return processed
+        return result
 
-    @monitor_execution()
-    @with_cache(ttl_seconds=300)
-    @with_retry(max_retries=3)
     async def get_aave_reserves(
         self, chain_id: int = 137, block_identifier: str = None, asset_filter: str = None
     ) -> Dict:
-        """
-        Fetch Aave reserve data asynchronously.
-
-        Args:
-            chain_id: Blockchain network ID
-            block_identifier: Optional block number or hash for historical data
-            asset_filter: Optional asset symbol to filter results
-
-        Returns:
-            Dictionary with reserve data and base currency info
-        """
+        """Fetch and process Aave reserve data."""
+        # Could use self._api_request() from base class instead of implementing web3 calls
         try:
-            block_id = None
-            if block_identifier:
-                try:
-                    block_id = int(block_identifier)
-                except ValueError:
-                    block_id = block_identifier
+            block_id = int(block_identifier) if block_identifier and block_identifier.isdigit() else block_identifier
             web3 = self._initialize_web3(chain_id)
-            helper_contracts = self._initialize_aave_contracts(web3)
-
-            if chain_id == 1:  # Ethereum mainnet
+            if chain_id == 1:
                 web3.eth.default_block_identifier = "latest"
-                logger.info("Using latest block for Ethereum mainnet query")
+                logger.info("Using latest block for Ethereum mainnet")
+
+            helper_contracts = self._initialize_aave_contracts(web3)
 
             try:
                 raw_reserves, base_currency = fetch_reserve_data(helper_contracts, block_identifier=block_id)
-            except Exception as contract_error:
-                logger.error(f"Contract error when fetching reserve data: {str(contract_error)}")
-
-                # for demonstration, fall back to Polygon data if Ethereum fails
+            except Exception as e:
+                logger.error(f"Contract fetch error: {e}")
                 if chain_id == 1:
-                    logger.info("Ethereum query failed, falling back to Polygon data")
-                    fallback_message = (
-                        "Ethereum data temporarily unavailable. Consider using Polygon network data instead."
-                    )
-                    return {"error": fallback_message}
-                else:
-                    raise
+                    logger.info("Fallback to Polygon due to Ethereum failure")
+                    return {"error": "Ethereum data unavailable. Try Polygon instead."}
+                raise
 
-            processed_reserves = {}
-            for reserve in raw_reserves:
-                symbol = reserve.get("symbol", "").upper()
-                if asset_filter and asset_filter.upper() != symbol:
-                    continue
-
-                asset_address = reserve["underlyingAsset"].lower()
-                processed_reserves[asset_address] = self._process_reserve(reserve)
-
-            processed_base_currency = {
-                "marketReferenceCurrencyUnit": str(base_currency["marketReferenceCurrencyUnit"]),
-                "marketReferenceCurrencyPriceInUsd": str(base_currency["marketReferenceCurrencyPriceInUsd"]),
-                "networkBaseTokenPriceInUsd": str(base_currency["networkBaseTokenPriceInUsd"]),
+            processed_reserves = {
+                reserve["underlyingAsset"].lower(): self._process_reserve(reserve)
+                for reserve in raw_reserves
+                if not asset_filter or reserve.get("symbol", "").upper() == asset_filter.upper()
             }
 
             return {
                 "reserves": processed_reserves,
-                "base_currency": processed_base_currency,
+                "base_currency": {
+                    k: str(v)
+                    for k, v in base_currency.items()
+                    if k
+                    in {
+                        "marketReferenceCurrencyUnit",
+                        "marketReferenceCurrencyPriceInUsd",
+                        "networkBaseTokenPriceInUsd",
+                    }
+                },
                 "chain_id": chain_id,
                 "total_reserves": len(processed_reserves),
             }
 
         except Exception as e:
-            logger.error(f"Error fetching Aave reserves: {str(e)}")
-            return {"error": f"Failed to fetch Aave reserves: {str(e)}"}
+            logger.error(f"Aave reserve fetch error: {e}")
+            return {"error": f"Failed to fetch Aave reserves: {e}"}
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
-        """Handle tool execution without LLM"""
+        """Handle supported Aave tool logic."""
         if tool_name != "get_aave_reserves":
             return {"error": f"Unsupported tool '{tool_name}'"}
 
@@ -275,13 +188,10 @@ class AaveAgent(MeshAgent):
         block_identifier = function_args.get("block_identifier")
         asset_filter = function_args.get("asset_filter")
 
-        logger.info(f"Getting Aave reserves for chain ID {chain_id}")
-        result = await self.get_aave_reserves(
-            chain_id=chain_id, block_identifier=block_identifier, asset_filter=asset_filter
-        )
+        logger.info(f"Fetching Aave reserves (chain_id={chain_id})")
+        result = await self.get_aave_reserves(chain_id, block_identifier, asset_filter)
 
-        errors = self._handle_error(result)
-        if errors:
+        if errors := self._handle_error(result):
             return errors
 
         return {
