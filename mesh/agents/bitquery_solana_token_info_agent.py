@@ -6,7 +6,7 @@ import requests
 from dotenv import load_dotenv
 
 from decorators import monitor_execution, with_cache, with_retry
-from mesh.mesh_agent import MeshAgent  # Uses enhanced MeshAgent base class
+from mesh.mesh_agent import MeshAgent
 
 load_dotenv()
 
@@ -29,7 +29,6 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent provides comprehensive analysis of Solana tokens using Bitquery API. It can analyze token metrics (volume, price, liquidity), track holders and buyers, monitor trading activity, and identify trending tokens. The agent supports both specific token analysis and market-wide trend discovery.",
-                # Common inputs/outputs are defined in the base class
                 "external_apis": ["Bitquery"],
                 "tags": ["Solana"],
                 "recommended": True,
@@ -41,8 +40,6 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
                 ],
             }
         )
-
-    # No need to define __aenter__ and __aexit__ - handled by base class
 
     def get_system_prompt(self) -> str:
         return (
@@ -797,7 +794,6 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
 
-        # Using base class error handling
         errors = self._handle_error(result)
         if errors:
             return errors
