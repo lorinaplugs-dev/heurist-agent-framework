@@ -171,3 +171,6 @@ agents/config/test.prompts.yaml
 
 # Test results from heurist-mesh-client/examples/test_agents.py
 test_results.json
+
+# Dev output from .github/scripts/update_mesh_metadata.py
+metadata.json

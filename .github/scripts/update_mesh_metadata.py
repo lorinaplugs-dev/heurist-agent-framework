@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import ast
 import json
 import logging
@@ -273,7 +274,6 @@ class MetadataManager:
     def upload_metadata(self, metadata: Dict) -> None:
         """Upload metadata to S3 if credentials are available"""
         if not self.s3_client:
-            log.info("Skipping metadata upload to S3 (no credentials)")
             return
 
         try:
@@ -289,8 +289,23 @@ class MetadataManager:
             log.warning(f"Failed to upload metadata to S3: {e}")
             # Don't raise the error, just log it and continue
 
+    def write_metadata_local(self, metadata: Dict) -> None:
+        """Write metadata to a local file"""
+        try:
+            metadata_json = json.dumps(metadata, indent=2)
+            with open("metadata.json", "w", encoding="utf-8") as f:
+                f.write(metadata_json)
+            log.info("Wrote metadata to local file metadata.json")
+        except Exception as e:
+            log.error(f"Failed to write metadata locally: {e}")
+            raise
+
 
 def main():
+    parser = argparse.ArgumentParser(description="Update mesh agent metadata.")
+    parser.add_argument("--dev", action="store_true", help="Write metadata to local file instead of uploading to S3")
+    args = parser.parse_args()
+
     try:
         manager = MetadataManager()
 
@@ -300,7 +315,11 @@ def main():
             sys.exit(1)
 
         metadata = manager.create_metadata(agents)
-        manager.upload_metadata(metadata)
+
+        if args.dev:
+            manager.write_metadata_local(metadata)
+        else:
+            manager.upload_metadata(metadata)
 
         table = manager.generate_agent_table(metadata)
         manager.update_readme(table)
