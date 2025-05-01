@@ -21,45 +21,127 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# base agent metadata structure, synchronized with mesh/mesh_agent.py
-BASE_AGENT_METADATA = {
-    "name": "",
-    "version": "1.0.0",
-    "author": "unknown",
-    "author_address": "0x0000000000000000000000000000000000000000",
-    "description": "",
-    "inputs": [
-        {
-            "name": "query",
-            "description": "Natural language query to the agent",
-            "type": "str",
-            "required": False,
-        },
-        {
-            "name": "raw_data_only",
-            "description": "If true, the agent will only return the raw data without LLM explanation",
-            "type": "bool",
-            "required": False,
-            "default": False,
-        },
-    ],
-    "outputs": [
-        {
-            "name": "response",
-            "description": "The text response from the agent",
-            "type": "str",
-        },
-        {"name": "data", "description": "Structured data from the agent", "type": "dict"},
-    ],
-    "external_apis": [],
-    "tags": [],
-    "large_model_id": "nvidia/llama-3.1-nemotron-70b-instruct",
-    "small_model_id": "nvidia/llama-3.1-nemotron-70b-instruct",
-    "hidden": False,
-    "recommended": False,
-    "image_url": "",
-    "examples": [],
-}
+
+# this is to get the base agent metadata structure, from mesh/mesh_agent.py
+# we don't directly import it because we don't want to load all the dependencies
+# of the mesh_agent.py file just to extract its metadata
+def _convert_ast_node_to_python(node, default_model_id=None):
+    """Helper to convert various AST nodes to Python equivalents."""
+    if isinstance(node, ast.Constant):
+        return node.value
+    elif isinstance(node, ast.List):
+        # pass default_model_id down recursively
+        return [_convert_ast_node_to_python(item, default_model_id) for item in node.elts]
+    elif isinstance(node, ast.Dict):
+        # pass default_model_id down recursively
+        return _convert_ast_dict_to_python_dict(node, default_model_id)
+    elif isinstance(node, ast.NameConstant):  # true, false, none
+        return node.value
+    elif isinstance(node, ast.Name):
+        if node.id == "DEFAULT_MODEL_ID" and default_model_id is not None:
+            return default_model_id
+        else:
+            log.warning(f"Skipping unsupported ast.Name: {node.id}")
+            return f"UNSUPPORTED_AST_NAME_{node.id}"
+    elif isinstance(node, ast.Attribute):
+        # handle self.agent_name specifically as a placeholder
+        if isinstance(node.value, ast.Name) and node.value.id == "self" and node.attr == "agent_name":
+            return ""  # placeholder, will be overwritten by actual agent name later
+        else:
+            log.warning(f"Skipping unsupported ast.Attribute: {ast.dump(node)}")
+            return "UNSUPPORTED_AST_ATTRIBUTE"
+    else:
+        log.warning(f"Skipping unsupported node type during conversion: {type(node)}")
+        return f"UNSUPPORTED_AST_NODE_{type(node).__name__}"
+
+
+def _convert_ast_dict_to_python_dict(node: ast.Dict, default_model_id=None) -> dict:
+    """Converts an ast.Dict node to a Python dictionary."""
+    result = {}
+    for k, v in zip(node.keys, node.values):
+        key = None
+        if isinstance(k, ast.Constant):
+            key = k.value
+        else:
+            log.warning(f"Skipping non-constant key in base metadata dict: {type(k)}")
+            continue
+
+        # pass default_model_id down
+        result[key] = _convert_ast_node_to_python(v, default_model_id)
+    return result
+
+
+def extract_base_metadata(mesh_agent_path: Path) -> dict:
+    """Extracts the base self.metadata dict from MeshAgent.__init__ using AST."""
+    default_model_id = None
+    base_metadata_dict = {}
+
+    try:
+        with open(mesh_agent_path, "r", encoding="utf-8") as f:
+            tree = ast.parse(f.read())
+
+        # first pass: find default_model_id at module level
+        for node in ast.iter_child_nodes(tree):
+            if isinstance(node, ast.Assign) and len(node.targets) == 1:
+                target = node.targets[0]
+                if isinstance(target, ast.Name) and target.id == "DEFAULT_MODEL_ID":
+                    if isinstance(node.value, ast.Constant):
+                        default_model_id = node.value.value
+                        break
+                    else:
+                        log.warning("DEFAULT_MODEL_ID assignment is not a simple constant.")
+                        break
+
+        # second pass: find meshagent class and extract metadata
+        for node in ast.walk(tree):
+            if isinstance(node, ast.ClassDef) and node.name == "MeshAgent":
+                for item in node.body:
+                    if isinstance(item, ast.FunctionDef) and item.name == "__init__":
+                        for stmt in item.body:
+                            # look for self.metadata = { ... } or self.metadata: type = { ... }
+                            is_assign = isinstance(stmt, ast.Assign)
+                            is_annassign = isinstance(stmt, ast.AnnAssign)
+
+                            target = None
+                            value = None
+                            if is_assign and len(stmt.targets) == 1:
+                                target = stmt.targets[0]
+                                value = stmt.value
+                            elif is_annassign:
+                                target = stmt.target
+                                value = stmt.value
+
+                            # check if we found an assignment and if it's self.metadata = {dict}
+                            if (
+                                target is not None
+                                and value is not None
+                                and isinstance(target, ast.Attribute)
+                                and isinstance(target.value, ast.Name)
+                                and target.value.id == "self"
+                                and target.attr == "metadata"
+                                and isinstance(value, ast.Dict)
+                            ):
+                                # pass the found default_model_id to the converter
+                                base_metadata_dict = _convert_ast_dict_to_python_dict(value, default_model_id)
+                                break  # found metadata, exit inner loops
+                        if base_metadata_dict:
+                            break  # found metadata, exit outer loop
+                if base_metadata_dict:
+                    break  # found metadata, exit class search
+
+        if not base_metadata_dict:
+            log.error(
+                f"Could not find 'self.metadata = {{...}}' or 'self.metadata: type = {{...}}' assignment in {mesh_agent_path}"
+            )
+
+        return base_metadata_dict
+
+    except FileNotFoundError:
+        log.error(f"Mesh agent file not found at: {mesh_agent_path}")
+        return {}
+    except Exception as e:
+        log.error(f"Error parsing {mesh_agent_path} for base metadata: {e}")
+        return {}
 
 
 class AgentMetadataExtractor(ast.NodeVisitor):
@@ -158,6 +240,11 @@ class MetadataManager:
             self.s3_client = None
             log.info("S3 credentials not found, skipping metadata upload")
 
+        mesh_agent_file = Path("mesh/mesh_agent.py").resolve()
+        self.base_metadata = extract_base_metadata(mesh_agent_file)
+        if not self.base_metadata:
+            raise ValueError("Failed to extract base metadata")
+
     def fetch_existing_metadata(self) -> Dict:
         try:
             response = requests.get("https://mesh.heurist.ai/metadata.json")
@@ -186,34 +273,33 @@ class MetadataManager:
                     if "EchoAgent" in agent_id:
                         continue
 
+                    agent_base_meta = copy.deepcopy(self.base_metadata)
                     agent_data = {
-                        "metadata": {**BASE_AGENT_METADATA, **(data.get("metadata", {}))},
+                        "metadata": {**agent_base_meta, **(data.get("metadata", {}))},
                         "module": file_path.stem,
                         "tools": data.get("tools", []),
                     }
 
-                    # Ensure the 'inputs' list is a deep copy to prevent mutation of the shared base list
-                    agent_data["metadata"]["inputs"] = copy.deepcopy(agent_data["metadata"]["inputs"])
-
                     if agent_data["tools"]:
                         tool_names = ", ".join(t["function"]["name"] for t in agent_data["tools"])
-                        agent_data["metadata"]["inputs"].extend(
-                            [
-                                {
-                                    "name": "tool",
-                                    "description": f"Directly specify which tool to call: {tool_names}. Bypasses LLM.",
-                                    "type": "str",
-                                    "required": False,
-                                },
-                                {
-                                    "name": "tool_arguments",
-                                    "description": "Arguments for the tool call as a dictionary",
-                                    "type": "dict",
-                                    "required": False,
-                                    "default": {},
-                                },
-                            ]
-                        )
+                        if isinstance(agent_data["metadata"].get("inputs"), list):
+                            agent_data["metadata"]["inputs"].extend(
+                                [
+                                    {
+                                        "name": "tool",
+                                        "description": f"Directly specify which tool to call: {tool_names}. Bypasses LLM.",
+                                        "type": "str",
+                                        "required": False,
+                                    },
+                                    {
+                                        "name": "tool_arguments",
+                                        "description": "Arguments for the tool call as a dictionary",
+                                        "type": "dict",
+                                        "required": False,
+                                        "default": {},
+                                    },
+                                ]
+                            )
 
                     agents_dict[agent_id] = agent_data
 
