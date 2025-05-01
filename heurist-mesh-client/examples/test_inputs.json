@@ -4,6 +4,12 @@
       "chain_id": 137
     }
   },
+  "AixbtProjectInfoAgent": {
+    "search_projects": {
+      "name": "heurist",
+      "limit": 1
+    }
+  },
   "AlloraPricePredictionAgent": {
     "get_allora_prediction": {
       "timeframe": "5m",
@@ -46,9 +52,6 @@
     "get_category_data": {
       "order": "market_cap_desc"
     },
-    "get_coingecko_id": {
-      "token_name": "ethereum"
-    },
     "get_token_info": {
       "coingecko_id": "ethereum"
     },
@@ -67,6 +70,14 @@
       "vs_currency": "usd"
     },
     "get_trending_coins": {}
+  },
+  "CookieProjectInfoAgent": {
+    "get_project_by_contract_address": {
+      "contract_address": "0xc0041ef357b183448b235a8ea73ce4e4ec8c265f"
+    },
+    "get_project_by_twitter_username": {
+      "twitter_username": "heurist_ai"
+    }
   },
   "DeepResearchAgent": {
     "deep_research": {
@@ -153,18 +164,18 @@
       "token_symbol": "HEU"
     },
     "get_kol_statistics": {
-      "period": 720,
-      "kol_name": "@agentcookiefun"
+      "kol_name": "@agentcookiefun",
+      "period": 720
     },
     "get_token_statistics": {
       "period": 720,
       "token_symbol": "HEU"
     },
     "get_top_gainers": {
+      "kols_amount": 3,
       "period": 720,
       "token_category": "top100",
-      "tokens_amount": 5,
-      "kols_amount": 3
+      "tokens_amount": 5
     }
   },
   "MoniTwitterInsightAgent": {
@@ -178,6 +189,17 @@
     "get_smart_mentions_feed": {
       "limit": 100,
       "username": "heurist_ai"
+    }
+  },
+  "PondWalletAnalysisAgent": {
+    "analyze_base_wallet": {
+      "address": "0x1C0002972259E13dBC5eAF01D108624430c744f9"
+    },
+    "analyze_ethereum_wallet": {
+      "address": "0x73AF3bcf944a6559933396c1577B257e2054D935"
+    },
+    "analyze_solana_wallet": {
+      "address": "7g275uQ9JuvTa7EC3TERyAsQUGwid9eDYK2JgpSLrmjK"
     }
   },
   "PumpFunTokenAgent": {
@@ -219,10 +241,34 @@
       "max_posts": 5
     }
   },
-  "TwitterProfileAgent": {
+  "TwitterInfoAgent": {
+    "get_general_search": {
+      "q": "heurist ai"
+    },
+    "get_twitter_detail": {
+      "tweet_id": "1913624766793289972"
+    },
     "get_user_tweets": {
-      "limit": 5,
-      "username": "elonmusk"
+      "username": "realdonaldtrump",
+      "limit": 5
+    }
+  },
+  "UnifaiWeb3NewsAgent": {
+    "get_web3_news": {
+      "limit": 1
+    }
+  },
+  "UnifaiTokenAnalysisAgent": {
+    "analyze_token": {
+      "ticker": "BTC"
+    },
+    "get_gmgn_token_info": {
+      "chain": "eth",
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    },
+    "get_gmgn_trend": {
+      "time_window": "4h",
+      "limit": 10
     }
   },
   "ZerionWalletAnalysisAgent": {
