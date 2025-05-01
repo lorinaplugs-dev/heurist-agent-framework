@@ -15,7 +15,6 @@ class CarvOnchainDataAgent(MeshAgent):
         super().__init__()
         self.api_url = "https://interface.carv.io/ai-agent-backend/sql_query_by_llm"
         self.supported_chains = ["ethereum", "base", "bitcoin", "solana"]
-
         self.metadata.update(
             {
                 "name": "CARV Agent",
@@ -34,8 +33,6 @@ class CarvOnchainDataAgent(MeshAgent):
                 "large_model_id": "openai/gpt-4o-mini",
             }
         )
-
-    # No need to define __aenter__ and __aexit__ - handled by base class
 
     def get_system_prompt(self) -> str:
         return """You are a blockchain data analyst that can access blockchain metrics from various blockchain networks.
