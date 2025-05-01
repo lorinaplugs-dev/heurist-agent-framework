@@ -20,19 +20,40 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# base agent metadata structure from mesh/mesh_agent.py
+# base agent metadata structure, synchronized with mesh/mesh_agent.py
 BASE_AGENT_METADATA = {
     "name": "",
     "version": "1.0.0",
     "author": "unknown",
     "author_address": "0x0000000000000000000000000000000000000000",
     "description": "",
-    "inputs": [],
-    "outputs": [],
+    "inputs": [
+        {
+            "name": "query",
+            "description": "Natural language query to the agent",
+            "type": "str",
+            "required": False,
+        },
+        {
+            "name": "raw_data_only",
+            "description": "If true, the agent will only return the raw data without LLM explanation",
+            "type": "bool",
+            "required": False,
+            "default": False,
+        },
+    ],
+    "outputs": [
+        {
+            "name": "response",
+            "description": "The text response from the agent",
+            "type": "str",
+        },
+        {"name": "data", "description": "Structured data from the agent", "type": "dict"},
+    ],
     "external_apis": [],
     "tags": [],
-    "large_model_id": "anthropic/claude-3.5-haiku",
-    "small_model_id": "anthropic/claude-3.5-haiku",
+    "large_model_id": "nvidia/llama-3.1-nemotron-70b-instruct",
+    "small_model_id": "nvidia/llama-3.1-nemotron-70b-instruct",
     "hidden": False,
     "recommended": False,
     "image_url": "",
