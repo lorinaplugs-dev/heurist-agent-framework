@@ -2,20 +2,37 @@
 set -e
 
 ENV_FILE="/app/.env"
+REQUIRED_VARS=("HEURIST_API_KEY" "PROTOCOL_V2_AUTH_TOKEN")
+MISSING_VARS=()
 
-if [ -z "${HEURIST_API_KEY}" ] || [ -z "${PROTOCOL_V2_AUTH_TOKEN}" ]; then
-    echo "Error: missing HEURIST_API_KEY or PROTOCOL_V2_AUTH_TOKEN"
+for var in "${REQUIRED_VARS[@]}"; do
+    if [ -z "${!var}" ]; then
+        MISSING_VARS+=("$var")
+    fi
+done
+
+if [ ${#MISSING_VARS[@]} -ne 0 ]; then
+    echo "[Entrypoint] Error: Missing required environment variables: ${MISSING_VARS[*]}" >&2
     exit 1
 fi
 
-# This is needed because there are a lot of os.environ.clear() calls in the code,
-# which would otherwise clear the environment variables set in the Dockerfile.
-# This is a workaround to save the environment variables to a file that can be used by python-dotenv.
+# Variables to exclude from the .env file, which are system/build/runtime variables and not needed by the application
+EXCLUDE_REGEX='^PYTHON_SHA256=|^HOSTNAME=|^PYTHON_VERSION=|^UV_COMPILE_BYTECODE=|^HOME=|^LANG=|^GPG_KEY=|^TERM=|^PATH=|^OLDPWD=|^UV_LINK_MODE='
+
+echo "[Entrypoint] Preparing .env file at ${ENV_FILE}..."
 mkdir -p "$(dirname "$ENV_FILE")" 2>/dev/null
 
-# Filter out system/build variables and save the rest for python-dotenv
-env | grep -v '^PYTHON_SHA256\|^HOSTNAME\|^PYTHON_VERSION\|^UV_COMPILE_BYTECODE\|^PWD\|^HOME\|^LANG\|^GPG_KEY\|^TERM\|^SHLVL\|^PATH\|^_\|^OLDPWD\|^UV_LINK_MODE=' >"$ENV_FILE" && echo "Entrypoint: Environment saved to $ENV_FILE"
+if env | grep -v -E "${EXCLUDE_REGEX}" >"$ENV_FILE"; then
+    echo "[Entrypoint] Successfully saved filtered environment to ${ENV_FILE}."
+else
+    echo "[Entrypoint] Error: Failed to save environment to ${ENV_FILE}." >&2
+    exit 1
+fi
 
-# Now, execute the command passed into the container (from docker-compose)
-echo "Entrypoint: Executing command:" "$@"
+# Execute the command passed into the container by docker-compose
+echo "[Entrypoint] Handing over execution to command:" "$@"
 exec "$@"
+
+# This line should not be reached if exec is successful
+echo "[Entrypoint] Error: exec command failed!" >&2
+exit 1
