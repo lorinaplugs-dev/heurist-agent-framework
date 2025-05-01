@@ -88,34 +88,34 @@ class AixbtProjectInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "search_projects",
-                    "description": "Search for cryptocurrency projects with various filtering options. Every field is optional. If not provided, the agent will return all projects. This tool returns project info and notable updates.",
+                    "description": "Search for cryptocurrency projects with comprehensive details including fundamental analysis, market performance, social activity, and recent developments. Return detailed insights on project descriptions, token contracts across multiple chains, Twitter handles, community metrics, price movements, and chronological timelines of notable updates. Perfect for discovering trending projects, researching specific tokens by name/ticker/Twitter handle, or filtering projects by blockchain network and popularity scores.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "limit": {
                                 "type": "integer",
-                                "description": "Number of projects to return (max 50)",
+                                "description": "Number of projects to return (max 50).",
                                 "default": 10,
                             },
                             "name": {
                                 "type": "string",
-                                "description": "Filter projects by name (case-insensitive regex match)",
+                                "description": "Filter projects by name (case-insensitive regex match). Effective for finding specific projects or related projects sharing similar naming conventions.",
                             },
                             "ticker": {
                                 "type": "string",
-                                "description": "Filter projects by ticker symbol (case-insensitive match)",
+                                "description": "Filter projects by ticker symbol (case-insensitive match). Useful when you know the exact trading symbol of a token.",
                             },
                             "xHandle": {
                                 "type": "string",
-                                "description": "Filter projects by X/Twitter handle",
+                                "description": "Filter projects by X/Twitter handle. Ideal for finding projects from their social media identities, with or without the @ symbol.",
                             },
                             "minScore": {
                                 "type": "number",
-                                "description": "Minimum score threshold for filtering projects. This is a time-varying value determined by the social trends of the project. Use 0 if a project name / ticker / handle is specified. Use 0.1~0.3 for general trending projects search. Use 0.4~0.5 to find the most popular projects.",
+                                "description": "Minimum score threshold for filtering projects based on social trends and market activity. Use 0 if a project name/ticker/handle is specified. For trending projects, use 0.1-0.3. For the most popular projects only, use 0.4-0.5. Higher scores indicate more significant current market attention.",
                             },
                             "chain": {
                                 "type": "string",
-                                "description": "Filter projects by blockchain (e.g., 'ethereum', 'solana', 'base')",
+                                "description": "Filter projects by blockchain (e.g., 'ethereum', 'solana', 'base'). Returns projects with tokens deployed on the specified chain, useful for ecosystem-specific research.",
                             },
                         },
                         "required": [],

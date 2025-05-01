@@ -1,6 +1,6 @@
 query_test:
   input:
-    query: Tell me about trending projects on Ethereum
+    query: Tell me about HEU token
   output:
     response: "**Trending Projects on Ethereum (Note: The provided data contains projects\
       \ with multi-chain presence, including Ethereum. If a project's primary chain\
