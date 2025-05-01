@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 
-class UnifWeb3NewsAgent(MeshAgent):
+class UnifaiWeb3NewsAgent(MeshAgent):
     def __init__(self):
         super().__init__()
         self.api_key = os.getenv("UNIFAI_API_KEY")

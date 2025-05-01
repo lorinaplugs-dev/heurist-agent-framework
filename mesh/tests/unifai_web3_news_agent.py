@@ -8,13 +8,13 @@ from dotenv import load_dotenv
 
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from mesh.agents.unifai_web3_news_agent import UnifWeb3NewsAgent  # noqa: E402
+from mesh.agents.unifai_web3_news_agent import UnifaiWeb3NewsAgent  # noqa: E402
 
 load_dotenv()
 
 
 async def run_agent():
-    agent = UnifWeb3NewsAgent()
+    agent = UnifaiWeb3NewsAgent()
     try:
         # Test with a natural language query
         agent_input_query = {

@@ -253,7 +253,7 @@
       "limit": 5
     }
   },
-  "UnifWeb3NewsAgent": {
+  "UnifaiWeb3NewsAgent": {
     "get_web3_news": {
       "limit": 1
     }
