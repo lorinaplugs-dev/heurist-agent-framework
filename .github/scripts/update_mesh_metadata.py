@@ -11,7 +11,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Dict
 
-import boto3
+import boto3  # type: ignore since it's only for github actions
 import requests
 
 logging.basicConfig(

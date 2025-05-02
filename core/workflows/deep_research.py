@@ -70,7 +70,7 @@ class ResearchWorkflow:
         self.search_client = self.search_clients.get("default", next(iter(self.search_clients.values())))
 
         self._last_request_time = 0
-        self.report_model = None # Ensure report_model is initialized
+        self.report_model = None  # Ensure report_model is initialized
 
     async def process(
         self, message: str, personality_provider=None, chat_id: str = None, workflow_options: Dict = None, **kwargs
