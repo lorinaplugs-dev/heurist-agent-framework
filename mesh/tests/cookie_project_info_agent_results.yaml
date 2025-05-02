@@ -3,22 +3,22 @@ twitter_username_query:
     query: Tell me about the project with Twitter handle @cookiedotfun
     raw_data_only: false
   output:
-    response: "**Project Insights for @cookiedotfun (Cookie)**\n\n**Project Details**\n\
-      \n* **Twitter Handle(s)**: @cookiedotfun, @agentcookiefun, @Cookie3_com\n* **Contract\
-      \ Addresses**:\n\t+ Chain 8453: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f`\n\
-      \t+ Chain 56: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f` (Note: Same address\
-      \ on multiple chains)\n* **Market Data (latest available)**\n\t+ **Market Cap**:\
-      \ $87,346,731.93 (Δ%: +59.55% _7Days)\n\t+ **Price**: $0.1945 (Δ%: +60.11% _7Days)\n\
-      \t+ **Liquidity**: $2,178,974.21\n\t+ **24H Volume**: $2,094,958.19 (Δ%: +336.52%\
-      \ _7Days)\n\n**Community & Engagement (_7Days data)**\n\n* **Twitter Followers**:\
-      \ 513,957\n* **Smart Followers** (highly engaged): 2,008\n* **Average Impressions\
-      \ per Tweet**: 3,568.6 (Δ%: -23.69%)\n* **Average Engagements per Tweet**: 72.29\
-      \ (Δ%: -3.92%)\n\n**Top Engaging Tweets (last 7 days)**\n\n1. **Coinesper**:\
-      \ 7,386 impressions, 4 smart engagement points ([Tweet URL](https://x.com/coinesper/status/1916529411710476607))\n\
+    response: "**Project Insights for @cookiedotfun**\n\n**Project Details:**\n\n\
+      * **Twitter Handle:** @cookiedotfun (also associated with @agentcookiefun and\
+      \ @Cookie3_com)\n* **Contract Addresses:**\n\t+ Chain 8453: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f`\n\
+      \t+ Chain 56: `0xc0041ef357b183448b235a8ea73ce4e4ec8c265f` (note: same address\
+      \ on both chains)\n\n**Market & Engagement Metrics (latest available):**\n\n\
+      * **Mindshare:** 1.38% (Δ: +160.82%)\n* **Market Cap:** $80,130,400.43 (Δ: +40.49%)\n\
+      * **Price:** $0.1768 (Δ: +38.86%)\n* **Liquidity:** $2,118,349.69\n* **24H Volume:**\
+      \ $2,114,325.14 (Δ: +280.97%)\n* **Holders Count:** 88,496 (Δ: +0.35%)\n* **Followers\
+      \ Count:** 513,629\n* **Smart Followers Count:** 2,010\n\n**Top Engaging Tweets\
+      \ (last _3Days interval, as per default):**\n\n1. **Coinesper**: 7,386 impressions,\
+      \ 4 smart engagement points ([Tweet URL](https://x.com/coinesper/status/1916529411710476607))\n\
       2. **Karamata_**: 4,604 impressions, 6 smart engagement points ([Tweet URL](https://x.com/Karamata2_2/status/1916427739235770604))\n\
-      3. **kashvi**: 6,611 impressions, 3 smart engagement points ([Tweet URL](https://x.com/kashviETH/status/1917628781491281957))\n\
+      3. **kashvi**: 7,298 impressions, 3 smart engagement points ([Tweet URL](https://x.com/kashviETH/status/1917628781491281957))\n\
       4. **Emily Lai**: 3,526 impressions, 4 smart engagement points ([Tweet URL](https://x.com/emilyxlai/status/1915776130151235846))\n\
-      5. **CryptoDoc**: 8,290 impressions, 1 smart engagement point ([Tweet URL](https://"
+      5. **CryptoDoc**: 8,290 impressions, 1 smart engagement point ([Tweet URL](https://x.com/cryptodoc_/status/1917274765821358080))\n\
+      \n**Interval Note:** The provided data is based on the `_3Days` interval. If"
     data:
       status: success
       data:
@@ -33,23 +33,23 @@ twitter_username_query:
           - agentcookiefun
           - Cookie3_com
           - cookiedotfun
-          mindshare: 1.2946598251615782
-          mindshareDeltaPercent: 147.85764406631017
-          marketCap: 87346731.9276608
-          marketCapDeltaPercent: 59.54806325184629
-          price: 0.1945299309
-          priceDeltaPercent: 60.10785037522074
-          liquidity: 2178974.2078384142
-          volume24Hours: 2094958.186941763
-          volume24HoursDeltaPercent: 336.52364307155636
-          holdersCount: 88460
-          holdersCountDeltaPercent: 0.31639468819813793
-          averageImpressionsCount: 3568.6
-          averageImpressionsCountDeltaPercent: -23.69220106030777
-          averageEngagementsCount: 72.29230769230769
-          averageEngagementsCountDeltaPercent: -3.919481068885289
-          followersCount: 513957
-          smartFollowersCount: 2008
+          mindshare: 1.3794175593218738
+          mindshareDeltaPercent: 160.8205671791517
+          marketCap: 80130400.4327634
+          marketCapDeltaPercent: 40.49231770310158
+          price: 0.1767931363
+          priceDeltaPercent: 38.85820827172601
+          liquidity: 2118349.6852929564
+          volume24Hours: 2114325.143668212
+          volume24HoursDeltaPercent: 280.97464114409405
+          holdersCount: 88496
+          holdersCountDeltaPercent: 0.3481159781832201
+          averageImpressionsCount: 3639.779411764706
+          averageImpressionsCountDeltaPercent: -21.646349053862217
+          averageEngagementsCount: 75.51470588235294
+          averageEngagementsCountDeltaPercent: 0.7773726998150595
+          followersCount: 513629
+          smartFollowersCount: 2010
           topTweets:
           - tweetUrl: https://x.com/coinesper/status/1916529411710476607
             tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1619729617098506243/FZLFQ6He_normal.jpg
@@ -65,7 +65,7 @@ twitter_username_query:
             tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1882028069801902080/f3QQ07mp_normal.jpg
             tweetAuthorDisplayName: kashvi
             smartEngagementPoints: 3
-            impressionsCount: 6611
+            impressionsCount: 7298
           - tweetUrl: https://x.com/emilyxlai/status/1915776130151235846
             tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1579546621540327424/UOCvH89k_normal.jpg
             tweetAuthorDisplayName: Emily Lai
@@ -83,61 +83,21 @@ twitter_username_query_2:
     query: Tell me about the project with Twitter handle @heurist_ai for past 30 days
     raw_data_only: false
   output:
-    response: '**Project Insights: @heurist_ai (Capped at 7 days for consistency,
-      as per guidelines)**
-
-
-      **Project Details:**
-
-
-      * **Project Name:** Heurist
-
-      * **Twitter Handle:** @heurist_ai
-
-      * **Contract Address:** 0xEF22cb48B8483dF6152e1423b19dF5553BbD818b (Chain ID:
-      8453)
-
-
-      **Key Metrics (7-day data, capped from requested 30 days):**
-
-
-      * **Mindshare:** 0.0487% ( **-70.51%** change)
-
-      * **Market Cap:** $4,963,070.76 ( **+23.67%** change)
-
-      * **Price:** $0.03799871398 ( **+20.52%** change)
-
-      * **Liquidity:** $414,180.41
-
-      * **24H Volume:** $186,112.07 ( **-0.77%** change)
-
-      * **Holders:** 41,219 ( **+0.18%** change)
-
-      * **Twitter Followers:** 34,491
-
-      * **Smart Followers (highly engaged):** 499
-
-
-      **Engagement Metrics (7-day average):**
-
-
-      * **Impressions:** 7,489.25 ( **-35.17%** change)
-
-      * **Engagements:** 85.25 ( **-47.48%** change)
-
-
-      **Top Tweet (based on smart engagement points, last 7 days):**
-
-
-      * **Author:** nfy (@nonfungibleyash)
-
-      * **Tweet URL:** https://x.com/nonfungibleyash/status/1917849865545019576
-
-      * **Author Profile Image:** https://pbs.twimg.com/profile_images/1908354677835456512/81rHfz24_normal.jpg
-
-      * **Smart Engagement Points:** 1
-
-      * **Impressions:** 28'
+    response: "**Project Insights: @heurist_ai (Capped at 7 days for consistency)**\n\
+      \n* **Project Details:**\n\t+ **Project Name:** Heurist\n\t+ **Twitter Handle:**\
+      \ @heurist_ai\n\t+ **Contract Address:** 0xEF22cb48B8483dF6152e1423b19dF5553BbD818b\
+      \ (Chain ID: 8453)\n* **Mindshare & Market: (7-day data, as per consistency\
+      \ policy)**\n\t+ **Mindshare:** 0.0511% (Δ: **-68.66%**)\n\t+ **Market Cap:**\
+      \ $4,266,587.92 (Δ: **-0.86%**)\n\t+ **Price:** $0.0326 (Δ: **-0.91%**)\n* **Liquidity\
+      \ & Volume: (7-day data)**\n\t+ **Liquidity:** $370,446.91\n\t+ **24H Volume:**\
+      \ $230,253.83 (Δ: **+96.22%**)\n* **Community & Engagement: (7-day data)**\n\
+      \t+ **Holders:** 41,214 (Δ: **+0.08%**)\n\t+ **Followers:** 34,531\n\t+ **Smart\
+      \ Followers:** 500\n\t+ **Avg. Impressions/Day:** 7,521.5 (Δ: **-36.86%**)\n\
+      \t+ **Avg. Engagements/Day:** 86.25 (Δ: **-49.62%**)\n* **Top Tweet (in the\
+      \ last 7 days):**\n\t+ **Author:** nfy (@nonfungibleyash)\n\t+ **Engagement\
+      \ Score:** 1\n\t+ **Impressions:** 28\n\t+ **[Tweet URL](https://x.com/nonfungibleyash/status/1917849865545019576)**\n\
+      \n**Note:** Due to the specified time interval policy, the data provided is\
+      \ capped at 7 days for consistency, despite the initial request for 30 days."
     data: &id001
       status: success
       data:
@@ -148,23 +108,23 @@ twitter_username_query_2:
             contractAddress: '0xEF22cb48B8483dF6152e1423b19dF5553BbD818b'
           twitterUsernames:
           - heurist_ai
-          mindshare: 0.04869058180764683
-          mindshareDeltaPercent: -70.50627179583934
-          marketCap: 4963070.75973274
-          marketCapDeltaPercent: 23.67417951514053
-          price: 0.03799871398
-          priceDeltaPercent: 20.524097299783165
-          liquidity: 414180.41303200735
-          volume24Hours: 186112.07353016
-          volume24HoursDeltaPercent: -0.770246277356564
-          holdersCount: 41219
-          holdersCountDeltaPercent: 0.18472158082784434
-          averageImpressionsCount: 7489.25
-          averageImpressionsCountDeltaPercent: -35.169234764542935
-          averageEngagementsCount: 85.25
-          averageEngagementsCountDeltaPercent: -47.484599589322386
-          followersCount: 34491
-          smartFollowersCount: 499
+          mindshare: 0.051090272352738456
+          mindshareDeltaPercent: -68.66356857631393
+          marketCap: 4266587.92092291
+          marketCapDeltaPercent: -0.8606175006425872
+          price: 0.03257433419
+          priceDeltaPercent: -0.9149897316949158
+          liquidity: 370446.9146388929
+          volume24Hours: 230253.831287125
+          volume24HoursDeltaPercent: 96.2203177272951
+          holdersCount: 41214
+          holdersCountDeltaPercent: 0.07527377801520045
+          averageImpressionsCount: 7521.5
+          averageImpressionsCountDeltaPercent: -36.85673030104602
+          averageEngagementsCount: 86.25
+          averageEngagementsCountDeltaPercent: -49.620327102803735
+          followersCount: 34531
+          smartFollowersCount: 500
           topTweets:
           - tweetUrl: https://x.com/nonfungibleyash/status/1917849865545019576
             tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1908354677835456512/81rHfz24_normal.jpg
@@ -178,24 +138,25 @@ contract_address_query:
     query: Get details for the contract 0xc0041ef357b183448b235a8ea73ce4e4ec8c265f
     raw_data_only: false
   output:
-    response: "**Contract Details: 0xc0041ef357b183448b235a8ea73ce4e4ec8c265f**\n\n\
-      **Chain Presence:**\n* **Chain IDs:** \n\t+ Chain 8453\n\t+ Chain 56 (likely\
-      \ Binance Smart Chain, as 56 is BSC's chain ID)\n\n**Market & Liquidity:**\n\
-      * **Market Cap:** $87,592,471.26\n* **Market Cap Change (7 days):** +60.25%\n\
-      * **Current Price:** $0.1954\n* **Price Change (7 days):** +61.88%\n* **Liquidity:**\
-      \ $2,178,794.81\n* **24H Volume:** $2,094,958.19\n* **24H Volume Change:** +336.52%\n\
-      \n**Holders & Engagement:**\n* **Holder Count:** 88,460\n* **Holder Count Change\
-      \ (7 days):** +0.32%\n* **Twitter Followers (associated usernames):** 513,957\n\
-      * **Smart Followers (engaged):** 2,008\n\n**Top Engaging Tweets (last 7 days):**\n\
-      1. **Coinesper**: 7,386 impressions, 4 engagement points ([Tweet URL](https://x.com/coinesper/status/1916529411710476607))\n\
-      2. **Karamata_**: 4,604 impressions, 6 engagement points ([Tweet URL](https://x.com/Karamata2_2/status/1916427739235770604))\n\
-      3. **kashvi**: 6,611 impressions, 3 engagement points ([Tweet URL](https://x.com/kashviETH/status/1917628781491281957))\n\
-      4. **Emily Lai**: 3,526 impressions, 4 engagement points ([Tweet URL](https://x.com/emilyxlai/status/1915776130151235846))\n\
-      5. **CryptoDoc (Gem Hunter)**: 8,290 impressions, 1 engagement point ([Tweet\
-      \ URL](https://x.com/cryptodoc_/status/1917274765821358080))\n\n**Associated\
-      \ Twitter Usernames:**\n* @agentcookiefun\n* @Cookie3_com\n* @cookiedotfun\n\
-      \n**Mindshare & Average Metrics (7 days):**\n* **Mindshare:** 1.29\n* **Mindshare\
-      \ Change:**"
+    response: "**Contract Details for 0xc0041ef357b183448b235a8ea73ce4e4ec8c265f**\n\
+      \n* **Chain Presence:**\n\t+ Detected on two chains:\n\t\t1. Chain ID: **8453**\n\
+      \t\t2. Chain ID: **56** (likely Binance Smart Chain, as 56 is its common identifier)\n\
+      \n* **Market & Liquidity:**\n\t+ **Market Cap:** $80,016,849.49\n\t+ **Market\
+      \ Cap Delta (%), 7 Days:** +40.99%\n\t+ **Price:** $0.1775786373\n\t+ **Price\
+      \ Delta (%), 7 Days:** +41.45%\n\t+ **Liquidity:** $2,122,916.84\n\t+ **24H\
+      \ Volume:** $2,114,325.14\n\t+ **24H Volume Delta (%):** +280.97%\n\n* **Holders\
+      \ & Engagement:**\n\t+ **Holders Count:** 88,491\n\t+ **Holders Count Delta\
+      \ (%), 7 Days:** +0.34%\n\t+ **Average Impressions Count:** 3,639.78\n\t+ **Average\
+      \ Impressions Count Delta (%), 7 Days:** -21.65%\n\t+ **Average Engagements\
+      \ Count:** 75.51\n\t+ **Average Engagements Count Delta (%), 7 Days:** +0.78%\n\
+      \n* **Twitter Presence (Associated Handles):**\n\t+ **Followers Count (Across\
+      \ Handles):** 513,629\n\t+ **Smart Followers Count:** 2,010\n\t+ **Associated\
+      \ Twitter Usernames:**\n\t\t1. @agentcookiefun\n\t\t2. @Cookie3_com\n\t\t3.\
+      \ @cookiedotfun\n\n* **Top Engaging Tweets (Last 7 Days):**\n\t1. **Coinesper**\
+      \ - Impressions: 7,386, Smart Engagement Points: 4\n\t\t* Tweet URL: https://x.com/coinesper/status/1916529411710476607\n\
+      \t2. **Karamata_ \U0001F48E** - Impressions: 4,604, Smart Engagement Points:\
+      \ 6\n\t\t* Tweet URL: https://x.com/Karamata2_2/status/1916427739235770604\n\
+      \t3. **kashvi** - Impressions:"
     data: &id002
       status: success
       data:
@@ -210,23 +171,23 @@ contract_address_query:
           - agentcookiefun
           - Cookie3_com
           - cookiedotfun
-          mindshare: 1.2946598251615782
-          mindshareDeltaPercent: 147.85764406631017
-          marketCap: 87592471.2576647
-          marketCapDeltaPercent: 60.25139873961355
-          price: 0.1954172914
-          priceDeltaPercent: 61.877925437125946
-          liquidity: 2178794.812501194
-          volume24Hours: 2094958.186941763
-          volume24HoursDeltaPercent: 336.52364307155636
-          holdersCount: 88460
-          holdersCountDeltaPercent: 0.31639468819813793
-          averageImpressionsCount: 3568.6
-          averageImpressionsCountDeltaPercent: -23.69220106030777
-          averageEngagementsCount: 72.29230769230769
-          averageEngagementsCountDeltaPercent: -3.919481068885289
-          followersCount: 513957
-          smartFollowersCount: 2008
+          mindshare: 1.3794175593218738
+          mindshareDeltaPercent: 160.8205671791517
+          marketCap: 80016849.4946506
+          marketCapDeltaPercent: 40.99564075406016
+          price: 0.1775786373
+          priceDeltaPercent: 41.455955492258695
+          liquidity: 2122916.8413138976
+          volume24Hours: 2114325.143668212
+          volume24HoursDeltaPercent: 280.97464114409405
+          holdersCount: 88491
+          holdersCountDeltaPercent: 0.3424463368447312
+          averageImpressionsCount: 3639.779411764706
+          averageImpressionsCountDeltaPercent: -21.646349053862217
+          averageEngagementsCount: 75.51470588235294
+          averageEngagementsCountDeltaPercent: 0.7773726998150595
+          followersCount: 513629
+          smartFollowersCount: 2010
           topTweets:
           - tweetUrl: https://x.com/coinesper/status/1916529411710476607
             tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1619729617098506243/FZLFQ6He_normal.jpg
@@ -242,7 +203,7 @@ contract_address_query:
             tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1882028069801902080/f3QQ07mp_normal.jpg
             tweetAuthorDisplayName: kashvi
             smartEngagementPoints: 3
-            impressionsCount: 6611
+            impressionsCount: 7298
           - tweetUrl: https://x.com/emilyxlai/status/1915776130151235846
             tweetAuthorProfileImageUrl: https://pbs.twimg.com/profile_images/1579546621540327424/UOCvH89k_normal.jpg
             tweetAuthorDisplayName: Emily Lai
