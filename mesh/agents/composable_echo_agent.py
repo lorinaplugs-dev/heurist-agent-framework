@@ -55,3 +55,13 @@ class ComposableEchoAgent(MeshAgent):
         logger.debug(f"Cleaning up | Task: {self.task_id}")
         await self.mesh_client.close()
         await super().cleanup()
+
+    # dummy implementations for abstract methods
+    async def _handle_tool_logic(self):
+        return None
+
+    def get_system_prompt(self):
+        return None
+
+    def get_tool_schemas(self):
+        return None
