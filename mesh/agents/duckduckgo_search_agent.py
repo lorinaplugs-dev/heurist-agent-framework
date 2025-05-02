@@ -1,11 +1,14 @@
+import asyncio
+import logging
 from typing import Any, Dict, List
 
 from dotenv import load_dotenv
 from duckduckgo_search import DDGS
 
-from decorators import with_cache
+from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
+logger = logging.getLogger(__name__)
 load_dotenv()
 
 
@@ -21,32 +24,6 @@ class DuckDuckGoSearchAgent(MeshAgent):
                 "description": (
                     "This agent can fetch and analyze web search results using DuckDuckGo API and provide intelligent summaries."
                 ),
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "The search query or question or keyword",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "max_results",
-                        "description": "The maximum number of results to return",
-                        "type": "int",
-                        "required": False,
-                        "default": 5,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, return only raw data without natural language response",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {"name": "response", "description": "Analysis and explanation of search results", "type": "str"},
-                    {"name": "data", "description": "The raw search results data", "type": "dict"},
-                ],
                 "external_apis": ["DuckDuckGo"],
                 "tags": ["Search"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/DuckDuckGo.png",
@@ -94,20 +71,29 @@ class DuckDuckGoSearchAgent(MeshAgent):
         ]
 
     # ------------------------------------------------------------------------
-    #                      API-SPECIFIC METHODS
+    #                      DUCKDUCKGO API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
     async def search_web(self, search_term: str, max_results: int = 5) -> Dict:
         """Search the web using DuckDuckGo"""
+        logger.info(f"Searching web for: {search_term}, max_results: {max_results}")
         try:
-            with DDGS() as ddgs:
-                results = []
-                for r in ddgs.text(search_term, max_results=max_results):
-                    results.append({"title": r["title"], "link": r["href"], "snippet": r["body"]})
 
-                return {"status": "success", "data": {"search_term": search_term, "results": results}}
+            def _do_search():
+                with DDGS() as ddgs:
+                    results = []
+                    for r in ddgs.text(search_term, max_results=max_results):
+                        results.append({"title": r["title"], "link": r["href"], "snippet": r["body"]})
+                    return results
+
+            results = await asyncio.get_event_loop().run_in_executor(None, _do_search)
+
+            logger.info(f"Found {len(results)} results for search: {search_term}")
+            return {"status": "success", "data": {"search_term": search_term, "results": results}}
 
         except Exception as e:
+            logger.error(f"Search error: {str(e)}")
             return {"status": "error", "error": f"Failed to fetch search results: {str(e)}", "data": None}
 
     # ------------------------------------------------------------------------
@@ -115,20 +101,20 @@ class DuckDuckGoSearchAgent(MeshAgent):
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         """Handle execution of specific tools and return the raw data"""
+        logger.info(f"Handling tool call: {tool_name} with args: {function_args}")
 
         if tool_name != "search_web":
             return {"error": f"Unsupported tool: {tool_name}"}
 
         search_term = function_args.get("search_term")
-        max_results = function_args.get("max_results", 5)
+        max_results = min(max(function_args.get("max_results", 5), 1), 10)  # Ensure between 1-10
 
         if not search_term:
-            return {"error": "Missing 'search_term' in tool_arguments"}
+            return {"error": "Missing 'search_term' parameter"}
 
         result = await self.search_web(search_term=search_term, max_results=max_results)
 
-        errors = self._handle_error(result)
-        if errors:
+        if errors := self._handle_error(result):
             return errors
 
         return result
