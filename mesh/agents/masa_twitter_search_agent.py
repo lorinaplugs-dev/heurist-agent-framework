@@ -15,7 +15,11 @@ class MasaTwitterSearchAgent(MeshAgent):
     def __init__(self):
         super().__init__()
         self.api_url = "https://api1.dev.masalabs.ai/v1"
-        self.headers = {"Authorization": f"Bearer {os.getenv('MASA_API_KEY')}", "Content-Type": "application/json"}
+        self.api_key = os.getenv("MASA_API_KEY")
+        if not self.api_key:
+            raise ValueError("MASA_API_KEY environment variable is required")
+
+        self.headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
 
         self.metadata.update(
             {

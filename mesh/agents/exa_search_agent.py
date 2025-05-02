@@ -14,6 +14,9 @@ class ExaSearchAgent(MeshAgent):
     def __init__(self):
         super().__init__()
         self.api_key = os.getenv("EXA_API_KEY")
+        if not self.api_key:
+            raise ValueError("EXA_API_KEY environment variable is required")
+
         self.base_url = "https://api.exa.ai"
         self.headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
 

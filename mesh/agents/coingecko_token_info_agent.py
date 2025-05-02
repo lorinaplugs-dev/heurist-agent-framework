@@ -19,7 +19,11 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     def __init__(self):
         super().__init__()
         self.api_url = "https://api.coingecko.com/api/v3"
-        self.headers = {"Authorization": f"Bearer {os.getenv('COINGECKO_API_KEY')}"}
+        self.api_key = os.getenv("COINGECKO_API_KEY")
+        if not self.api_key:
+            raise ValueError("COINGECKO_API_KEY environment variable is required")
+
+        self.headers = {"Authorization": f"Bearer {self.api_key}"}
 
         self.metadata.update(
             {

@@ -18,6 +18,8 @@ class MoniTwitterInsightAgent(MeshAgent):
         self.session = None
         self.base_url = "https://api.discover.getmoni.io"
         self.api_key = os.getenv("MONI_API_KEY")
+        if not self.api_key:
+            raise ValueError("MONI_API_KEY environment variable is required")
 
         self.metadata.update(
             {

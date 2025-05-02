@@ -16,6 +16,11 @@ logger = logging.getLogger(__name__)
 class FirecrawlSearchAgent(MeshAgent):
     def __init__(self):
         super().__init__()
+        self.api_key = os.getenv("FIRECRAWL_KEY")
+        if not self.api_key:
+            raise ValueError("FIRECRAWL_KEY environment variable is required")
+
+        self.app = FirecrawlApp(api_key=self.api_key)
         self.metadata.update(
             {
                 "name": "Firecrawl Search Agent",
@@ -54,7 +59,6 @@ class FirecrawlSearchAgent(MeshAgent):
                 ],
             }
         )
-        self.app = FirecrawlApp(api_key=os.environ.get("FIRECRAWL_KEY", ""))
 
     def get_system_prompt(self) -> str:
         return """You are an expert research analyst that processes web search results.

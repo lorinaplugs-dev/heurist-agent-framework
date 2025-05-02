@@ -15,6 +15,12 @@ load_dotenv()
 class ZerionWalletAnalysisAgent(MeshAgent):
     def __init__(self):
         super().__init__()
+        self.api_key = os.getenv("ZERION_API_KEY")
+        if not self.api_key:
+            raise ValueError("ZERION_API_KEY environment variable is required")
+
+        self.zerion_auth_key = "Basic " + self.api_key
+
         self.metadata.update(
             {
                 "name": "Zerion Agent",
@@ -54,9 +60,6 @@ class ZerionWalletAnalysisAgent(MeshAgent):
                 ],
             }
         )
-
-        # Zerion API credentials - should be loaded from environment variables in production
-        self.zerion_auth_key = "Basic " + os.getenv("ZERION_API_KEY")
 
     def get_system_prompt(self) -> str:
         return """You are a crypto wallet analyst that provides factual analysis of wallet holdings based on Zerion API data.
