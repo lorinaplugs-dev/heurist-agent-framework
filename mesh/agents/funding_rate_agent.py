@@ -1,8 +1,6 @@
 import logging
 from typing import Any, Dict, List
 
-import requests
-
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
@@ -21,36 +19,9 @@ class FundingRateAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can fetch funding rate data and identify arbitrage opportunities across cryptocurrency exchanges.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about funding rates, specific trading pairs, or requests to find arbitrage opportunities.",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw or base structured data without additional LLM explanation.",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the funding rate data or arbitrage opportunities.",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured funding rate data or arbitrage opportunities.",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["Coinsider"],
                 "tags": ["Arbitrage"],
-                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/FundingRate.png",  # crop this pic https://coinpedia.org/price-analysis/crypto-market-trends-why-prices-are-up-but-activity-slows/
+                "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/FundingRate.png",
                 "examples": [
                     "What is the funding rate for BTC on Binance?",
                     "Find arbitrage opportunities between Binance and Bybit",
@@ -172,50 +143,73 @@ class FundingRateAgent(MeshAgent):
     # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     @with_retry(max_retries=3)
-    async def get_all_funding_rates(self) -> dict:
-        try:
-            response = requests.get(f"{self.api_url}/funding_rate/all")
-            response.raise_for_status()
-            data = response.json()
+    async def get_all_funding_rates(self) -> Dict[str, Any]:
+        """
+        Get all current funding rates across exchanges.
+        """
+        logger.info("Fetching all funding rates")
 
-            if isinstance(data, dict) and "data" in data and isinstance(data["data"], list):
-                return {"funding_rates": data["data"]}
+        try:
+            url = f"{self.api_url}/funding_rate/all"
+            response = await self._api_request(url=url, method="GET")
+
+            if "error" in response:
+                logger.error(f"Error fetching all funding rates: {response['error']}")
+                return {"error": response["error"]}
+
+            if isinstance(response, dict) and "data" in response and isinstance(response["data"], list):
+                formatted_rates = self.format_funding_rates(response["data"])
+                logger.info(f"Successfully retrieved {len(formatted_rates)} funding rates")
+                return {"status": "success", "data": {"funding_rates": formatted_rates}}
             else:
-                return {"error": "Unexpected API response format"}
-
-        except requests.RequestException as e:
-            logger.error(f"Error fetching funding rates: {e}")
-            return {"error": f"Failed to fetch funding rates: {str(e)}"}
-
-    @with_cache(ttl_seconds=300)  # Cache for 5 minutes
-    @with_retry(max_retries=3)
-    async def get_symbol_funding_rates(self, symbol: str) -> dict:
-        try:
-            all_rates = await self.get_all_funding_rates()
-            if "error" in all_rates:
-                return all_rates
-
-            funding_rates = all_rates.get("funding_rates", [])
-            symbol_rates = [rate for rate in funding_rates if rate.get("symbol") == symbol.upper()]
-
-            if not symbol_rates:
-                return {"error": f"No funding rate data found for symbol {symbol}"}
-
-            return {"symbol": symbol, "funding_rates": symbol_rates}
+                logger.error("Unexpected API response format for all funding rates")
+                return {"status": "error", "error": "Unexpected API response format"}
 
         except Exception as e:
-            logger.error(f"Error fetching symbol funding rates: {e}")
-            return {"error": f"Failed to fetch funding rates for {symbol}: {str(e)}"}
+            logger.error(f"Exception in get_all_funding_rates: {str(e)}")
+            return {"status": "error", "error": f"Failed to fetch funding rates: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     @with_retry(max_retries=3)
-    async def find_cross_exchange_opportunities(self, min_funding_rate_diff: float = 0.0003) -> dict:
-        try:
-            all_rates = await self.get_all_funding_rates()
-            if "error" in all_rates:
-                return all_rates
+    async def get_symbol_funding_rates(self, symbol: str) -> Dict[str, Any]:
+        """
+        Get funding rates for a specific trading pair across all exchanges.
+        """
+        logger.info(f"Fetching funding rates for symbol: {symbol}")
 
-            funding_data = all_rates.get("funding_rates", [])
+        try:
+            all_rates_result = await self.get_all_funding_rates()
+            if "error" in all_rates_result:
+                return all_rates_result
+
+            all_rates = all_rates_result.get("data", {}).get("funding_rates", [])
+            symbol_rates = [rate for rate in all_rates if rate.get("symbol") == symbol.upper()]
+
+            if not symbol_rates:
+                logger.warning(f"No funding rate data found for symbol {symbol}")
+                return {"status": "no_data", "error": f"No funding rate data found for symbol {symbol}"}
+
+            logger.info(f"Found {len(symbol_rates)} funding rates for symbol {symbol}")
+            return {"status": "success", "data": {"symbol": symbol, "funding_rates": symbol_rates}}
+
+        except Exception as e:
+            logger.error(f"Exception in get_symbol_funding_rates: {str(e)}")
+            return {"status": "error", "error": f"Failed to fetch funding rates for {symbol}: {str(e)}"}
+
+    @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
+    async def find_cross_exchange_opportunities(self, min_funding_rate_diff: float = 0.0003) -> Dict[str, Any]:
+        """
+        Find cross-exchange funding rate arbitrage opportunities.
+        """
+        logger.info(f"Finding cross-exchange opportunities with min diff: {min_funding_rate_diff}")
+
+        try:
+            all_rates_result = await self.get_all_funding_rates()
+            if "error" in all_rates_result:
+                return all_rates_result
+
+            funding_data = all_rates_result.get("data", {}).get("funding_rates", [])
 
             # Group by trading pair symbol
             symbols_map = {}
@@ -227,12 +221,9 @@ class FundingRateAgent(MeshAgent):
                 if symbol not in symbols_map:
                     symbols_map[symbol] = []
 
-                exchange_id = item.get("exchange")
-                item_copy = item.copy()
-                if isinstance(exchange_id, dict) and "id" in exchange_id:
-                    item_copy["exchange"] = exchange_id.get("id")
-
-                symbols_map[symbol].append(item_copy)
+                exchange_id = item.get("exchange", {}).get("id")
+                if exchange_id:
+                    symbols_map[symbol].append(item)
 
             # Filter out trading pairs with arbitrage opportunities
             opportunities = []
@@ -244,41 +235,26 @@ class FundingRateAgent(MeshAgent):
                     continue
 
                 # Sort by funding rate
-                exchanges_data.sort(
-                    key=lambda x: x["rates"][funding_rate_period]
-                    if "rates" in x
-                    and funding_rate_period in x["rates"]
-                    and x["rates"][funding_rate_period] is not None
-                    else 0
-                )
+                exchanges_data.sort(key=lambda x: x.get("rates", {}).get(funding_rate_period, 0) or 0)
 
                 # Get the exchanges with the lowest and highest funding rates
                 lowest_rate_exchange = exchanges_data[0]
                 highest_rate_exchange = exchanges_data[-1]
 
                 # Safely get funding rates
-                lowest_rate = (
-                    lowest_rate_exchange["rates"][funding_rate_period]
-                    if "rates" in lowest_rate_exchange
-                    and funding_rate_period in lowest_rate_exchange["rates"]
-                    and lowest_rate_exchange["rates"][funding_rate_period] is not None
-                    else 0
-                )
-                highest_rate = (
-                    highest_rate_exchange["rates"][funding_rate_period]
-                    if "rates" in highest_rate_exchange
-                    and funding_rate_period in highest_rate_exchange["rates"]
-                    and highest_rate_exchange["rates"][funding_rate_period] is not None
-                    else 0
-                )
+                lowest_rate = lowest_rate_exchange.get("rates", {}).get(funding_rate_period, 0) or 0
+                highest_rate = highest_rate_exchange.get("rates", {}).get(funding_rate_period, 0) or 0
 
                 # Calculate funding rate difference
                 rate_diff = highest_rate - lowest_rate
 
                 # If the difference exceeds the threshold, consider it an arbitrage opportunity
                 if rate_diff >= min_funding_rate_diff:
-                    lowest_exchange_id = lowest_rate_exchange.get("exchange")
-                    highest_exchange_id = highest_rate_exchange.get("exchange")
+                    lowest_exchange_id = lowest_rate_exchange.get("exchange", {}).get("id")
+                    lowest_exchange_name = lowest_rate_exchange.get("exchange", {}).get("name", "Unknown")
+
+                    highest_exchange_id = highest_rate_exchange.get("exchange", {}).get("id")
+                    highest_exchange_name = highest_rate_exchange.get("exchange", {}).get("name", "Unknown")
 
                     # Skip if missing necessary information
                     if lowest_exchange_id is None or highest_exchange_id is None:
@@ -292,14 +268,14 @@ class FundingRateAgent(MeshAgent):
                         "rate_diff": rate_diff,
                         "long_exchange": {
                             "id": lowest_exchange_id,
-                            "name": self.exchange_map.get(lowest_exchange_id, "Unknown"),
+                            "name": lowest_exchange_name,
                             "rate": lowest_rate,
                             "funding_interval": lowest_funding_interval,
                             "quote_currency": lowest_rate_exchange.get("quote_currency", "USDT"),
                         },
                         "short_exchange": {
                             "id": highest_exchange_id,
-                            "name": self.exchange_map.get(highest_exchange_id, "Unknown"),
+                            "name": highest_exchange_name,
                             "rate": highest_rate,
                             "funding_interval": highest_funding_interval,
                             "quote_currency": highest_rate_exchange.get("quote_currency", "USDT"),
@@ -308,21 +284,27 @@ class FundingRateAgent(MeshAgent):
 
                     opportunities.append(opportunity)
 
-            return {"cross_exchange_opportunities": opportunities}
+            logger.info(f"Found {len(opportunities)} cross-exchange opportunities")
+            return {"status": "success", "data": {"cross_exchange_opportunities": opportunities}}
 
         except Exception as e:
-            logger.error(f"Error finding cross-exchange opportunities: {e}")
-            return {"error": f"Failed to find cross-exchange opportunities: {str(e)}"}
+            logger.error(f"Exception in find_cross_exchange_opportunities: {str(e)}")
+            return {"status": "error", "error": f"Failed to find cross-exchange opportunities: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     @with_retry(max_retries=3)
-    async def find_spot_futures_opportunities(self, min_funding_rate: float = 0.0003) -> dict:
-        try:
-            all_rates = await self.get_all_funding_rates()
-            if "error" in all_rates:
-                return all_rates
+    async def find_spot_futures_opportunities(self, min_funding_rate: float = 0.0003) -> Dict[str, Any]:
+        """
+        Find spot-futures funding rate arbitrage opportunities.
+        """
+        logger.info(f"Finding spot-futures opportunities with min rate: {min_funding_rate}")
 
-            funding_data = all_rates.get("funding_rates", [])
+        try:
+            all_rates_result = await self.get_all_funding_rates()
+            if "error" in all_rates_result:
+                return all_rates_result
+
+            funding_data = all_rates_result.get("data", {}).get("funding_rates", [])
             opportunities = []
             funding_rate_period = "1d"  # Using 1-day average funding rate
             excluded_symbols = ["1000LUNC", "1000SHIB", "1000BTT"]  # Symbols to exclude
@@ -332,26 +314,17 @@ class FundingRateAgent(MeshAgent):
                 if not symbol or symbol in excluded_symbols:
                     continue
 
-                if (
-                    "rates" not in item
-                    or funding_rate_period not in item["rates"]
-                    or item["rates"][funding_rate_period] is None
-                ):
-                    continue
-                funding_rate = item["rates"][funding_rate_period]
-
+                funding_rate = item.get("rates", {}).get(funding_rate_period)
                 if not funding_rate or funding_rate <= 0:
                     continue
 
                 if funding_rate >= min_funding_rate:
-                    exchange_id = item.get("exchange")
-                    if isinstance(exchange_id, dict) and "id" in exchange_id:
-                        exchange_id = exchange_id.get("id")
+                    exchange_id = item.get("exchange", {}).get("id")
+                    exchange_name = item.get("exchange", {}).get("name", "Unknown")
 
                     if exchange_id is None:
                         continue
 
-                    exchange_name = self.exchange_map.get(exchange_id, "Unknown")
                     funding_interval = item.get("funding_interval", 8)  # Default to 8 hours
 
                     opportunity = {
@@ -365,11 +338,12 @@ class FundingRateAgent(MeshAgent):
 
                     opportunities.append(opportunity)
 
-            return {"spot_futures_opportunities": opportunities}
+            logger.info(f"Found {len(opportunities)} spot-futures opportunities")
+            return {"status": "success", "data": {"spot_futures_opportunities": opportunities}}
 
         except Exception as e:
-            logger.error(f"Error finding spot-futures opportunities: {e}")
-            return {"error": f"Failed to find spot-futures opportunities: {str(e)}"}
+            logger.error(f"Exception in find_spot_futures_opportunities: {str(e)}")
+            return {"status": "error", "error": f"Failed to find spot-futures opportunities: {str(e)}"}
 
     def format_funding_rates(self, data: List[Dict]) -> List[Dict]:
         """Format funding rate information in a structured way"""
@@ -408,60 +382,33 @@ class FundingRateAgent(MeshAgent):
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
-        """
-        A single method that calls the appropriate function, handles errors/formatting
-        """
+        """Handle tool execution and return the raw data"""
+
+        logger.info(f"Handling tool call: {tool_name} with args: {function_args}")
+
         if tool_name == "get_all_funding_rates":
-            logger.info("Getting all funding rates")
             result = await self.get_all_funding_rates()
-            errors = self._handle_error(result)
-            if errors:
-                return errors
-
-            # Format the data before returning
-            if "funding_rates" in result:
-                result["funding_rates"] = self.format_funding_rates(result["funding_rates"])
-
-            return result
 
         elif tool_name == "get_symbol_funding_rates":
             symbol = function_args.get("symbol")
             if not symbol:
-                return {"error": "Missing 'symbol' in tool_arguments"}
+                return {"error": "Missing 'symbol' parameter"}
 
-            logger.info(f"Getting funding rates for {symbol}")
             result = await self.get_symbol_funding_rates(symbol)
-            errors = self._handle_error(result)
-            if errors:
-                return errors
-
-            # Format the data before returning
-            if "funding_rates" in result:
-                result["funding_rates"] = self.format_funding_rates(result["funding_rates"])
-
-            return result
 
         elif tool_name == "find_cross_exchange_opportunities":
             min_funding_rate_diff = function_args.get("min_funding_rate_diff", 0.0003)
-            logger.info(f"Finding cross-exchange opportunities with min diff of {min_funding_rate_diff}")
-
             result = await self.find_cross_exchange_opportunities(min_funding_rate_diff)
-            errors = self._handle_error(result)
-            if errors:
-                return errors
-
-            return result
 
         elif tool_name == "find_spot_futures_opportunities":
             min_funding_rate = function_args.get("min_funding_rate", 0.0003)
-            logger.info(f"Finding spot-futures opportunities with min rate of {min_funding_rate}")
-
             result = await self.find_spot_futures_opportunities(min_funding_rate)
-            errors = self._handle_error(result)
-            if errors:
-                return errors
-
-            return result
 
         else:
-            return {"error": f"Unsupported tool '{tool_name}'"}
+            return {"error": f"Unsupported tool: {tool_name}"}
+
+        errors = self._handle_error(result)
+        if errors:
+            return errors
+
+        return result
