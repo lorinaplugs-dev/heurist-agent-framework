@@ -16,9 +16,9 @@ logger = logging.getLogger(__name__)
 class FirecrawlSearchAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.api_key = os.getenv("FIRECRAWL_KEY")
+        self.api_key = os.getenv("FIRECRAWL_API_KEY")
         if not self.api_key:
-            raise ValueError("FIRECRAWL_KEY environment variable is required")
+            raise ValueError("FIRECRAWL_API_KEY environment variable is required")
 
         self.app = FirecrawlApp(api_key=self.api_key)
         self.metadata.update(
@@ -28,25 +28,6 @@ class FirecrawlSearchAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "Advanced search agent that uses Firecrawl to perform research with intelligent query generation and content analysis.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language research query to analyze",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, returns only raw data without analysis",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {"name": "response", "description": "Natural language analysis of search results", "type": "str"},
-                    {"name": "data", "description": "Structured search results and metadata", "type": "dict"},
-                ],
                 "external_apis": ["Firecrawl"],
                 "tags": ["Search"],
                 "recommended": True,
@@ -105,11 +86,6 @@ class FirecrawlSearchAgent(MeshAgent):
                                 "type": "string",
                                 "description": "Natural language description of what data to extract from the pages.",
                             },
-                            # "enable_web_search": {
-                            #     "type": "boolean",
-                            #     "description": "When true, extraction can follow links outside the specified domain.",
-                            #     "default": False
-                            # }
                         },
                         "required": ["urls", "extraction_prompt"],
                     },
@@ -122,17 +98,26 @@ class FirecrawlSearchAgent(MeshAgent):
     # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def firecrawl_web_search(self, search_term: str) -> Dict:
-        """Execute a search with error handling"""
+    async def firecrawl_web_search(self, search_term: str) -> Dict[str, Any]:
+        """
+        Execute a web search using Firecrawl and return formatted results.
+        """
+        logger.info(f"Executing Firecrawl web search for '{search_term}'")
+
         try:
             response = await asyncio.get_event_loop().run_in_executor(
                 None, lambda: self.app.search(query=search_term, params={"scrapeOptions": {"formats": ["markdown"]}})
             )
 
             if isinstance(response, dict) and "data" in response:
-                return response
+                logger.info(f"Search completed successfully with {len(response.get('data', []))} results")
+                return {
+                    "status": "success",
+                    "data": {"results": response.get("data", []), "metadata": response.get("metadata", {})},
+                }
             elif isinstance(response, dict) and "success" in response:
-                return {"data": response.get("data", [])}
+                logger.info(f"Search completed with {len(response.get('data', []))} results")
+                return {"status": "success", "data": {"results": response.get("data", [])}}
             elif isinstance(response, list):
                 formatted_data = []
                 for item in response:
@@ -146,20 +131,27 @@ class FirecrawlSearchAgent(MeshAgent):
                                 "title": getattr(item, "title", "") or getattr(item, "metadata", {}).get("title", ""),
                             }
                         )
-                return {"data": formatted_data}
+                logger.info(f"Search completed with {len(formatted_data)} formatted results")
+                return {"status": "success", "data": {"results": formatted_data}}
             else:
-                return {"data": []}
+                logger.warning("Search completed but no results were found")
+                return {"status": "no_data", "data": {"results": []}}
 
         except Exception as e:
-            logger.error(f"Search error: {e}")
-            return {"error": f"Failed to execute search: {str(e)}"}
+            logger.error(f"Exception in firecrawl_web_search: {str(e)}")
+            return {"status": "error", "error": f"Failed to execute search: {str(e)}"}
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def firecrawl_extract_web_data(
         self, urls: List[str], extraction_prompt: str, enable_web_search: bool = False
-    ) -> Dict:
-        """Extract structured data from web pages using natural language instructions"""
+    ) -> Dict[str, Any]:
+        """
+        Extract structured data from web pages using Firecrawl.
+        """
+        urls_str = ", ".join(urls[:3]) + ("..." if len(urls) > 3 else "")
+        logger.info(f"Extracting web data from '{urls_str}' with prompt '{extraction_prompt}'")
+
         try:
             response = await asyncio.get_event_loop().run_in_executor(
                 None,
@@ -170,17 +162,24 @@ class FirecrawlSearchAgent(MeshAgent):
 
             if isinstance(response, dict):
                 if "data" in response:
-                    return response
+                    logger.info("Data extraction completed successfully")
+                    return {
+                        "status": "success",
+                        "data": {"extracted_data": response.get("data", {}), "metadata": response.get("metadata", {})},
+                    }
                 elif "success" in response and response.get("success"):
-                    return {"data": response.get("data", {})}
+                    logger.info("Data extraction completed successfully")
+                    return {"status": "success", "data": {"extracted_data": response.get("data", {})}}
                 else:
-                    return {"error": "Extraction failed", "details": response}
+                    logger.warning(f"Data extraction failed: {response.get('message', 'Unknown error')}")
+                    return {"status": "error", "error": "Extraction failed", "details": response}
             else:
-                return {"data": response}
+                logger.info("Data extraction completed successfully")
+                return {"status": "success", "data": {"extracted_data": response}}
 
         except Exception as e:
-            logger.error(f"Extraction error: {e}")
-            return {"error": f"Failed to extract data: {str(e)}"}
+            logger.error(f"Exception in firecrawl_extract_web_data: {str(e)}")
+            return {"status": "error", "error": f"Failed to extract data: {str(e)}"}
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
@@ -188,25 +187,29 @@ class FirecrawlSearchAgent(MeshAgent):
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         """Handle execution of specific tools and return the raw data"""
 
+        logger.info(f"Handling tool call: {tool_name} with args: {function_args}")
+
         if tool_name == "firecrawl_web_search":
             search_term = function_args.get("search_term")
             if not search_term:
-                return {"error": "Missing 'search_term' in tool_arguments"}
+                return {"status": "error", "error": "Missing 'search_term' parameter"}
 
             result = await self.firecrawl_web_search(search_term)
+
         elif tool_name == "firecrawl_extract_web_data":
             urls = function_args.get("urls")
             extraction_prompt = function_args.get("extraction_prompt")
             enable_web_search = function_args.get("enable_web_search", False)
 
             if not urls:
-                return {"error": "Missing 'urls' in tool_arguments"}
+                return {"status": "error", "error": "Missing 'urls' parameter"}
             if not extraction_prompt:
-                return {"error": "Missing 'extraction_prompt' in tool_arguments"}
+                return {"status": "error", "error": "Missing 'extraction_prompt' parameter"}
 
             result = await self.firecrawl_extract_web_data(urls, extraction_prompt, enable_web_search)
+
         else:
-            return {"error": f"Unsupported tool: {tool_name}"}
+            return {"status": "error", "error": f"Unsupported tool: {tool_name}"}
 
         errors = self._handle_error(result)
         if errors:
