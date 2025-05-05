@@ -22,6 +22,9 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
 
     def __init__(self):
         super().__init__()
+        self.api_key = os.getenv("BITQUERY_API_KEY")
+        if not self.api_key:
+            raise ValueError("BITQUERY_API_KEY environment variable is required")
         self.metadata.update(
             {
                 "name": "Solana Token Info Agent",
@@ -168,7 +171,7 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
             Dict: Query results
         """
         url = "https://streaming.bitquery.io/eap"
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('BITQUERY_API_KEY')}"}
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
 
         payload = {"query": query}
         if variables:
@@ -290,7 +293,7 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
                     result["data"]["fallback_used"] = "Used SOL as fallback quote token"
 
             # Get trading data for price movements
-            trading_data = fetch_and_organize_dex_trade_data(token_address)
+            trading_data = self.fetch_and_organize_dex_trade_data(token_address)
             if trading_data:
                 latest_data = trading_data[-1]
                 first_data = trading_data[0]
@@ -322,7 +325,7 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
         Calls the helper function to fetch the top ten trending tokens on the Solana network.
         """
         try:
-            trending_tokens = top_ten_trending_tokens()
+            trending_tokens = self.top_ten_trending_tokens()
             return {"trending_tokens": trending_tokens}
         except Exception as e:
             return {"error": f"Failed to fetch top trending tokens: {str(e)}"}
@@ -800,289 +803,291 @@ class BitquerySolanaTokenInfoAgent(MeshAgent):
 
         return result
 
+    def fetch_and_organize_dex_trade_data(self, base_address: str) -> List[Dict]:
+        """
+        Fetches DEX trade data from Bitquery for the given base token address,
+        setting the time_ago parameter to one hour before the current UTC time,
+        and returns a list of dictionaries representing time buckets.
 
-def fetch_and_organize_dex_trade_data(base_address: str) -> List[Dict]:
-    """
-    Fetches DEX trade data from Bitquery for the given base token address,
-    setting the time_ago parameter to one hour before the current UTC time,
-    and returns a list of dictionaries representing time buckets.
+        Args:
+            base_address (str): The token address for the base token.
 
-    Args:
-        base_address (str): The token address for the base token.
+        Returns:
+            list of dict: Each dictionary contains keys: 'time', 'open', 'high',
+                        'low', 'close', 'volume'.
+        """
+        # Calculate time_ago as one hour before the current UTC time.
+        time_ago = (datetime.datetime.utcnow() - datetime.timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    Returns:
-        list of dict: Each dictionary contains keys: 'time', 'open', 'high',
-                      'low', 'close', 'volume'.
-    """
-    # Calculate time_ago as one hour before the current UTC time.
-    time_ago = (datetime.datetime.utcnow() - datetime.timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    # GraphQL query using list filtering for tokens.
-    query = """
-    query (
-      $tokens: [String!],
-      $base: String,
-      $dataset: dataset_arg_enum,
-      $time_ago: DateTime,
-      $interval: Int
-    ) {
-      Solana(dataset: $dataset) {
-        DEXTradeByTokens(
-          orderBy: { ascendingByField: "Block_Time" }
-          where: {
-            Transaction: { Result: { Success: true } },
-            Trade: {
-              Side: {
-                Amount: { gt: "0" },
-                Currency: { MintAddress: { in: $tokens } }
-              },
-              Currency: { MintAddress: { is: $base } }
-            },
-            Block: { Time: { after: $time_ago } }
-          }
+        # GraphQL query using list filtering for tokens.
+        query = """
+        query (
+          $tokens: [String!],
+          $base: String,
+          $dataset: dataset_arg_enum,
+          $time_ago: DateTime,
+          $interval: Int
         ) {
-          Block {
-            Time(interval: { count: $interval, in: minutes })
+          Solana(dataset: $dataset) {
+            DEXTradeByTokens(
+              orderBy: { ascendingByField: "Block_Time" }
+              where: {
+                Transaction: { Result: { Success: true } },
+                Trade: {
+                  Side: {
+                    Amount: { gt: "0" },
+                    Currency: { MintAddress: { in: $tokens } }
+                  },
+                  Currency: { MintAddress: { is: $base } }
+                },
+                Block: { Time: { after: $time_ago } }
+              }
+            ) {
+              Block {
+                Time(interval: { count: $interval, in: minutes })
+              }
+              min: quantile(of: Trade_PriceInUSD, level: 0.05)
+              max: quantile(of: Trade_PriceInUSD, level: 0.95)
+              close: median(of: Trade_PriceInUSD)
+              open: median(of: Trade_PriceInUSD)
+              volume: sum(of: Trade_Side_AmountInUSD)
+            }
           }
-          min: quantile(of: Trade_PriceInUSD, level: 0.05)
-          max: quantile(of: Trade_PriceInUSD, level: 0.95)
-          close: median(of: Trade_PriceInUSD)
-          open: median(of: Trade_PriceInUSD)
-          volume: sum(of: Trade_Side_AmountInUSD)
         }
-      }
-    }
-    """
+        """
 
-    # Set up the variables for the query.
-    variables = {
-        "tokens": [
-            "So11111111111111111111111111111111111111112",  # wSOL
-            "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",  # USDC
-            "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",  # USDT
-        ],
-        "base": base_address,
-        "dataset": "combined",
-        "time_ago": time_ago,
-        "interval": 5,
-    }
+        # Set up the variables for the query.
+        variables = {
+            "tokens": [
+                "So11111111111111111111111111111111111111112",  # wSOL
+                "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",  # USDC
+                "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",  # USDT
+            ],
+            "base": base_address,
+            "dataset": "combined",
+            "time_ago": time_ago,
+            "interval": 5,
+        }
 
-    # Bitquery GraphQL endpoint and headers.
-    url = "https://streaming.bitquery.io/eap"
-    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('BITQUERY_API_KEY')}"}
+        # Bitquery GraphQL endpoint and headers.
+        url = "https://streaming.bitquery.io/eap"
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
 
-    # Send the POST request.
-    response = requests.post(url, json={"query": query, "variables": variables}, headers=headers)
-    if response.status_code != 200:
-        raise Exception(f"Query failed with status code {response.status_code}: {response.text}")
+        # Send the POST request.
+        response = requests.post(url, json={"query": query, "variables": variables}, headers=headers)
+        if response.status_code != 200:
+            raise Exception(f"Query failed with status code {response.status_code}: {response.text}")
 
-    raw_data = response.json()
-
-    try:
-        buckets = raw_data["data"]["Solana"]["DEXTradeByTokens"]
-    except (KeyError, TypeError):
-        raise Exception("Unexpected data format received from the API.")
-
-    organized_data = []
-    for bucket in buckets:
-        time_bucket = bucket.get("Block", {}).get("Time")
-        open_price = bucket.get("open")
-        high_price = bucket.get("max")
-        low_price = bucket.get("min")
-        close_price = bucket.get("close")
-        volume_str = bucket.get("volume", "0")
+        raw_data = response.json()
 
         try:
-            volume = float(volume_str)
-        except ValueError:
-            volume = volume_str  # Fallback to the original value if conversion fails.
+            buckets = raw_data["data"]["Solana"]["DEXTradeByTokens"]
+        except (KeyError, TypeError):
+            raise Exception("Unexpected data format received from the API.")
 
-        organized_data.append(
-            {
-                "time": time_bucket,
-                "open": open_price,
-                "high": high_price,
-                "low": low_price,
-                "close": close_price,
-                "volume": volume,
+        organized_data = []
+        for bucket in buckets:
+            time_bucket = bucket.get("Block", {}).get("Time")
+            open_price = bucket.get("open")
+            high_price = bucket.get("max")
+            low_price = bucket.get("min")
+            close_price = bucket.get("close")
+            volume_str = bucket.get("volume", "0")
+
+            try:
+                volume = float(volume_str)
+            except ValueError:
+                volume = volume_str  # Fallback to the original value if conversion fails.
+
+            organized_data.append(
+                {
+                    "time": time_bucket,
+                    "open": open_price,
+                    "high": high_price,
+                    "low": low_price,
+                    "close": close_price,
+                    "volume": volume,
+                }
+            )
+
+        organized_data.sort(key=lambda x: x["time"])
+        return organized_data
+
+    def top_ten_trending_tokens(self):
+        """
+        Fetches trade summary data from Bitquery using the provided GraphQL query,
+        and organizes the returned data into a list of dictionaries for the latest 1-hour data.
+
+        Returns:
+            list of dict: Each dictionary contains:
+                - currency: { Name, MintAddress, Symbol } of the traded asset.
+                - price: { start, min5, end } price data.
+                - dex: { ProtocolName, ProtocolFamily, ProgramAddress } details.
+                - market: { MarketAddress }.
+                - side_currency: { Name, MintAddress, Symbol } from the trade side.
+                - makers: int, count of distinct transaction signers.
+                - total_trades: int, count of trades.
+                - total_traded_volume: float, total traded volume in USD.
+                - total_buy_volume: float, total buy volume in USD.
+                - total_sell_volume: float, total sell volume in USD.
+                - total_buys: int, count of buy trades.
+                - total_sells: int, count of sell trades.
+
+        Raises:
+            Exception: If the API request fails or the returned data format is not as expected.
+        """
+
+        # Calculate the time one hour ago in ISO format.
+        time_since = (datetime.datetime.utcnow() - datetime.timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        # Define the GraphQL query with the dynamic time filter.
+        query = (
+            """
+        query MyQuery {
+          Solana {
+            DEXTradeByTokens(
+              where: {
+                Transaction: {Result: {Success: true}},
+                Trade: {Side: {Currency: {MintAddress: {is: "So11111111111111111111111111111111111111112"}}}},
+                Block: {Time: {since: "%s"}}
+              }
+              orderBy: {descendingByField: "total_trades"}
+              limit: {count: 10}
+            ) {
+              Trade {
+                Currency {
+                  Name
+                  MintAddress
+                  Symbol
+                }
+                start: PriceInUSD(minimum: Block_Time)
+                min5: PriceInUSD(
+                  minimum: Block_Time,
+                  if: {Block: {Time: {after: "2024-08-15T05:14:00Z"}}}
+                )
+                end: PriceInUSD(maximum: Block_Time)
+                Dex {
+                  ProtocolName
+                  ProtocolFamily
+                  ProgramAddress
+                }
+                Market {
+                  MarketAddress
+                }
+                Side {
+                  Currency {
+                    Symbol
+                    Name
+                    MintAddress
+                  }
+                }
+              }
+              makers: count(distinct:Transaction_Signer)
+              total_trades: count
+              total_traded_volume: sum(of: Trade_Side_AmountInUSD)
+              total_buy_volume: sum(
+                of: Trade_Side_AmountInUSD,
+                if: {Trade: {Side: {Type: {is: buy}}}}
+              )
+              total_sell_volume: sum(
+                of: Trade_Side_AmountInUSD,
+                if: {Trade: {Side: {Type: {is: sell}}}}
+              )
+              total_buys: count(if: {Trade: {Side: {Type: {is: buy}}}})
+              total_sells: count(if: {Trade: {Side: {Type: {is: sell}}}})
             }
+          }
+        }
+        """
+            % time_since
         )
 
-    organized_data.sort(key=lambda x: x["time"])
-    return organized_data
+        # Bitquery endpoint and headers.
+        url = "https://streaming.bitquery.io/eap"
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
 
+        # Execute the HTTP POST request.
+        response = requests.post(url, json={"query": query}, headers=headers)
+        if response.status_code != 200:
+            raise Exception(f"Query failed with status code {response.status_code}: {response.text}")
 
-def top_ten_trending_tokens():
-    """
-    Fetches trade summary data from Bitquery using the provided GraphQL query,
-    and organizes the returned data into a list of dictionaries for the latest 1-hour data.
-
-    Returns:
-        list of dict: Each dictionary contains:
-            - currency: { Name, MintAddress, Symbol } of the traded asset.
-            - price: { start, min5, end } price data.
-            - dex: { ProtocolName, ProtocolFamily, ProgramAddress } details.
-            - market: { MarketAddress }.
-            - side_currency: { Name, MintAddress, Symbol } from the trade side.
-            - makers: int, count of distinct transaction signers.
-            - total_trades: int, count of trades.
-            - total_traded_volume: float, total traded volume in USD.
-            - total_buy_volume: float, total buy volume in USD.
-            - total_sell_volume: float, total sell volume in USD.
-            - total_buys: int, count of buy trades.
-            - total_sells: int, count of sell trades.
-
-    Raises:
-        Exception: If the API request fails or the returned data format is not as expected.
-    """
-
-    # Calculate the time one hour ago in ISO format.
-    time_since = (datetime.datetime.utcnow() - datetime.timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    # Define the GraphQL query with the dynamic time filter.
-    query = (
-        """
-    query MyQuery {
-      Solana {
-        DEXTradeByTokens(
-          where: {
-            Transaction: {Result: {Success: true}},
-            Trade: {Side: {Currency: {MintAddress: {is: "So11111111111111111111111111111111111111112"}}}},
-            Block: {Time: {since: "%s"}}
-          }
-          orderBy: {descendingByField: "total_trades"}
-          limit: {count: 10}
-        ) {
-          Trade {
-            Currency {
-              Name
-              MintAddress
-              Symbol
-            }
-            start: PriceInUSD(minimum: Block_Time)
-            min5: PriceInUSD(
-              minimum: Block_Time,
-              if: {Block: {Time: {after: "2024-08-15T05:14:00Z"}}}
-            )
-            end: PriceInUSD(maximum: Block_Time)
-            Dex {
-              ProtocolName
-              ProtocolFamily
-              ProgramAddress
-            }
-            Market {
-              MarketAddress
-            }
-            Side {
-              Currency {
-                Symbol
-                Name
-                MintAddress
-              }
-            }
-          }
-          makers: count(distinct:Transaction_Signer)
-          total_trades: count
-          total_traded_volume: sum(of: Trade_Side_AmountInUSD)
-          total_buy_volume: sum(
-            of: Trade_Side_AmountInUSD,
-            if: {Trade: {Side: {Type: {is: buy}}}}
-          )
-          total_sell_volume: sum(
-            of: Trade_Side_AmountInUSD,
-            if: {Trade: {Side: {Type: {is: sell}}}}
-          )
-          total_buys: count(if: {Trade: {Side: {Type: {is: buy}}}})
-          total_sells: count(if: {Trade: {Side: {Type: {is: sell}}}})
-        }
-      }
-    }
-    """
-        % time_since
-    )
-
-    # Bitquery endpoint and headers.
-    url = "https://streaming.bitquery.io/eap"
-    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('BITQUERY_API_KEY')}"}
-
-    # Execute the HTTP POST request.
-    response = requests.post(url, json={"query": query}, headers=headers)
-    if response.status_code != 200:
-        raise Exception(f"Query failed with status code {response.status_code}: {response.text}")
-
-    raw_data = response.json()
-
-    try:
-        trade_summaries = raw_data["data"]["Solana"]["DEXTradeByTokens"]
-    except (KeyError, TypeError) as err:
-        raise Exception("Unexpected data format received from the API.") from err
-
-    organized_data = []
-    # Process each trade summary item.
-    for summary in trade_summaries:
-        trade_info = summary.get("Trade", {})
-        currency = trade_info.get("Currency", {})
-        dex = trade_info.get("Dex", {})
-        market = trade_info.get("Market", {})
-        side = trade_info.get("Side", {}).get("Currency", {})
-
-        # Parse numeric summary fields.
-        try:
-            makers = int(summary.get("makers", 0))
-        except (ValueError, TypeError):
-            makers = 0
+        raw_data = response.json()
 
         try:
-            total_trades = int(summary.get("total_trades", 0))
-        except (ValueError, TypeError):
-            total_trades = 0
+            trade_summaries = raw_data["data"]["Solana"]["DEXTradeByTokens"]
+        except (KeyError, TypeError) as err:
+            raise Exception("Unexpected data format received from the API.") from err
 
-        def to_float(val):
+        organized_data = []
+        # Process each trade summary item.
+        for summary in trade_summaries:
+            trade_info = summary.get("Trade", {})
+            currency = trade_info.get("Currency", {})
+            dex = trade_info.get("Dex", {})
+            market = trade_info.get("Market", {})
+            side = trade_info.get("Side", {}).get("Currency", {})
+
+            # Parse numeric summary fields.
             try:
-                return float(val)
+                makers = int(summary.get("makers", 0))
             except (ValueError, TypeError):
-                return 0.0
+                makers = 0
 
-        total_traded_volume = to_float(summary.get("total_traded_volume", 0))
-        total_buy_volume = to_float(summary.get("total_buy_volume", 0))
-        total_sell_volume = to_float(summary.get("total_sell_volume", 0))
+            try:
+                total_trades = int(summary.get("total_trades", 0))
+            except (ValueError, TypeError):
+                total_trades = 0
 
-        try:
-            total_buys = int(summary.get("total_buys", 0))
-        except (ValueError, TypeError):
-            total_buys = 0
+            def to_float(val):
+                try:
+                    return float(val)
+                except (ValueError, TypeError):
+                    return 0.0
 
-        try:
-            total_sells = int(summary.get("total_sells", 0))
-        except (ValueError, TypeError):
-            total_sells = 0
+            total_traded_volume = to_float(summary.get("total_traded_volume", 0))
+            total_buy_volume = to_float(summary.get("total_buy_volume", 0))
+            total_sell_volume = to_float(summary.get("total_sell_volume", 0))
 
-        organized_item = {
-            "currency": {
-                "Name": currency.get("Name"),
-                "MintAddress": currency.get("MintAddress"),
-                "Symbol": currency.get("Symbol"),
-            },
-            "price": {"start": trade_info.get("start"), "min5": trade_info.get("min5"), "end": trade_info.get("end")},
-            "dex": {
-                "ProtocolName": dex.get("ProtocolName"),
-                "ProtocolFamily": dex.get("ProtocolFamily"),
-                "ProgramAddress": dex.get("ProgramAddress"),
-            },
-            "market": {"MarketAddress": market.get("MarketAddress")},
-            "side_currency": {
-                "Name": side.get("Name"),
-                "MintAddress": side.get("MintAddress"),
-                "Symbol": side.get("Symbol"),
-            },
-            "makers": makers,
-            "total_trades": total_trades,
-            "total_traded_volume": total_traded_volume,
-            "total_buy_volume": total_buy_volume,
-            "total_sell_volume": total_sell_volume,
-            "total_buys": total_buys,
-            "total_sells": total_sells,
-        }
-        organized_data.append(organized_item)
+            try:
+                total_buys = int(summary.get("total_buys", 0))
+            except (ValueError, TypeError):
+                total_buys = 0
 
-    return organized_data
+            try:
+                total_sells = int(summary.get("total_sells", 0))
+            except (ValueError, TypeError):
+                total_sells = 0
+
+            organized_item = {
+                "currency": {
+                    "Name": currency.get("Name"),
+                    "MintAddress": currency.get("MintAddress"),
+                    "Symbol": currency.get("Symbol"),
+                },
+                "price": {
+                    "start": trade_info.get("start"),
+                    "min5": trade_info.get("min5"),
+                    "end": trade_info.get("end"),
+                },
+                "dex": {
+                    "ProtocolName": dex.get("ProtocolName"),
+                    "ProtocolFamily": dex.get("ProtocolFamily"),
+                    "ProgramAddress": dex.get("ProgramAddress"),
+                },
+                "market": {"MarketAddress": market.get("MarketAddress")},
+                "side_currency": {
+                    "Name": side.get("Name"),
+                    "MintAddress": side.get("MintAddress"),
+                    "Symbol": side.get("Symbol"),
+                },
+                "makers": makers,
+                "total_trades": total_trades,
+                "total_traded_volume": total_traded_volume,
+                "total_buy_volume": total_buy_volume,
+                "total_sell_volume": total_sell_volume,
+                "total_buys": total_buys,
+                "total_sells": total_sells,
+            }
+            organized_data.append(organized_item)
+
+        return organized_data

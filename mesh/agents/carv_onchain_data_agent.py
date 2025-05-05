@@ -15,6 +15,12 @@ class CarvOnchainDataAgent(MeshAgent):
         super().__init__()
         self.api_url = "https://interface.carv.io/ai-agent-backend/sql_query_by_llm"
         self.supported_chains = ["ethereum", "base", "bitcoin", "solana"]
+
+        self.api_key = os.getenv("CARV_API_KEY")
+        if not self.api_key:
+            raise ValueError("CARV_API_KEY environment variable is required")
+        self.headers = {"Content-Type": "application/json", "Authorization": self.api_key}
+
         self.metadata.update(
             {
                 "name": "CARV Agent",
@@ -137,18 +143,11 @@ class CarvOnchainDataAgent(MeshAgent):
         Query the CARV API with a natural language question about blockchain metrics.
         """
         try:
-            # Validate blockchain
             blockchain = blockchain.lower()
             if blockchain not in self.supported_chains:
                 return {
                     "error": f"Unsupported blockchain '{blockchain}'. Supported chains are {', '.join(self.supported_chains)}."
                 }
-
-            # Prepare request
-            headers = {
-                "Content-Type": "application/json",
-                "Authorization": os.getenv("CARV_API_KEY"),
-            }
 
             processed_query = query
             if blockchain not in query.lower():
@@ -158,7 +157,12 @@ class CarvOnchainDataAgent(MeshAgent):
 
             logger.info(f"Querying CARV API for blockchain {blockchain}: {processed_query}")
 
-            response = await self._api_request(url=self.api_url, method="POST", headers=headers, json_data=data)
+            response = await self._api_request(
+                url=self.api_url,
+                method="POST",
+                headers=self.headers,
+                json_data=data,
+            )
 
             if "error" in response:
                 return {"error": response["error"]}

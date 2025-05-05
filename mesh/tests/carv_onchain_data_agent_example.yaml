@@ -2,9 +2,9 @@ ethereum_example:
   input:
     query: Identify the biggest transaction of ETH in the past 30 days
   output:
-    response: The biggest transaction of ETH in the past 30 days was recorded on April
-      9, 2025. The transaction hash is 0xfeae9902504c77545c8dfda1540c8f2921f2bc9eceef11293a3fa6b769e03c4d.
-      It involved a transfer of approximately 3.55 ETH from the address 0x109be9d7d5f64c8c391ced3a8f69bdef20fcaea9
+    response: The biggest transaction of ETH in the past 30 days was for 3.55 ETH.
+      It occurred on April 9, 2025, at 12:55:23 UTC. The transaction hash is 0xfeae9902504c77545c8dfda1540c8f2921f2bc9eceef11293a3fa6b769e03c4d,
+      with the funds transferred from the address 0x109be9d7d5f64c8c391ced3a8f69bdef20fcaea9
       to the address 0xa6dfb62fc572da152a335384f7724535b9defc84.
     data:
       blockchain: ethereum
@@ -45,7 +45,7 @@ direct_example:
           - total_bitcoins_mined
           rows:
           - items:
-            - '55283.63266950004'
+            - '57170.66764975006'
 raw_example:
   input:
     query: What are the top 5 most popular smart contracts on Ethereum in the past
@@ -63,20 +63,20 @@ raw_example:
         data:
           column_infos:
           - contract_address
-          - total_transactions
+          - interaction_count
           rows:
           - items:
             - '0xdac17f958d2ee523a2206206994597c13d831ec7'
-            - '4258407'
+            - '4173838'
           - items:
             - '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
-            - '2456033'
+            - '2387740'
           - items:
             - '0x66a9893cc07d91d95644aedd05d03f95e1dba8af'
-            - '716592'
-          - items:
-            - '0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23'
-            - '523245'
+            - '702608'
           - items:
             - '0x7a250d5630b4cf539739df2c5dacb4c659f2488d'
-            - '488658'
+            - '511607'
+          - items:
+            - '0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23'
+            - '511117'

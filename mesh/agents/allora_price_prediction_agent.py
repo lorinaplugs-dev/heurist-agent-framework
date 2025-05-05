@@ -8,6 +8,15 @@ from mesh.mesh_agent import MeshAgent
 class AlloraPricePredictionAgent(MeshAgent):
     def __init__(self):
         super().__init__()
+
+        self.api_key = os.getenv("ALLORA_API_KEY")
+        if not self.api_key:
+            raise ValueError("ALLORA_API_KEY environment variable is required")
+        self.headers = {
+            "accept": "application/json",
+            "x-api-key": self.api_key,
+        }
+
         self.metadata.update(
             {
                 "name": "Allora Agent",
@@ -72,13 +81,9 @@ class AlloraPricePredictionAgent(MeshAgent):
             return {"error": "Both 'token' and 'timeframe' are required"}
 
         url = f"https://api.upshot.xyz/v2/allora/consumer/price/ethereum-11155111/{token.upper()}/{timeframe}"
-        headers = {
-            "accept": "application/json",
-            "x-api-key": os.getenv("ALLORA_API_KEY"),
-        }
 
         try:
-            response = await self._api_request(url=url, method="GET", headers=headers)
+            response = await self._api_request(url=url, method="GET", headers=self.headers)
 
             if "error" in response:
                 return {"error": response["error"]}

@@ -20,6 +20,9 @@ class SolWalletAgent(MeshAgent):
     def __init__(self):
         super().__init__()
         self.api_url = "https://mainnet.helius-rpc.com"
+        self.api_key = os.getenv("HELIUS_API_KEY")
+        if not self.api_key:
+            raise ValueError("HELIUS_API_KEY environment variable is required")
         self.request_semaphore = asyncio.Semaphore(2)
         self.metadata.update(
             {
@@ -207,7 +210,7 @@ class SolWalletAgent(MeshAgent):
                     "params": {"mint": token_address, "limit": 1000, "cursor": cursor},
                 }
 
-                data = await self._post(url=f"{self.api_url}/?api-key={os.getenv('HELIUS_API_KEY')}", json=payload)
+                data = await self._post(url=f"{self.api_url}/?api-key={self.api_key}", json=payload)
 
                 if not data.get("result", {}).get("token_accounts"):
                     break
@@ -264,7 +267,7 @@ class SolWalletAgent(MeshAgent):
                 },
             }
 
-            data = await self._post(url=f"{self.api_url}/?api-key={os.getenv('HELIUS_API_KEY')}", json=payload)
+            data = await self._post(url=f"{self.api_url}/?api-key={self.api_key}", json=payload)
 
             if data is None:
                 return []
@@ -385,11 +388,7 @@ class SolWalletAgent(MeshAgent):
         try:
             logger.info(f"Querying transaction history for address: {owner_address}")
 
-            api_key = os.getenv("HELIUS_API_KEY")
-            if not api_key:
-                return {"error": "HELIUS_API_KEY not set in environment variables"}
-
-            params = {"api-key": api_key, "type": ["SWAP"], "limit": 100}
+            params = {"api-key": self.api_key, "type": ["SWAP"], "limit": 100}
 
             url = f"https://api.helius.xyz/v0/addresses/{owner_address}/transactions"
 

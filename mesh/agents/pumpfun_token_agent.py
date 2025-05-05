@@ -16,6 +16,11 @@ load_dotenv()
 class PumpFunTokenAgent(MeshAgent):
     def __init__(self):
         super().__init__()
+        self.api_key = os.getenv("BITQUERY_API_KEY")
+        if not self.api_key:
+            raise ValueError("BITQUERY_API_KEY environment variable is required")
+        self.headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
+
         self.session = None
         self.metadata.update(
             {
@@ -403,14 +408,13 @@ Guidelines:
             self.session = aiohttp.ClientSession()
 
         url = "https://streaming.bitquery.io/eap"
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('BITQUERY_API_KEY')}"}
 
         payload = {"query": query}
         if variables:
             payload["variables"] = variables
 
         try:
-            async with self.session.post(url, json=payload, headers=headers) as response:
+            async with self.session.post(url, json=payload, headers=self.headers) as response:
                 response.raise_for_status()
                 data = await response.json()
 

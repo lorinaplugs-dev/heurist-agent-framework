@@ -2,847 +2,585 @@ creation:
   input:
     query: Show me the latest Solana token creations in the last hour
   output:
-    response: "**Latest Solana Token Creations (Last Hour)**\n\nBased on the provided\
-      \ data from Bitquery API, here are the newly created tokens on Pump.fun within\
-      \ the last hour (as of the latest block time: **2025-04-11T07:00:00Z**):\n\n\
-      ### **New Tokens (Created at 2025-04-11T07:00:00Z)**\n\n1. **Imagine a sacred\
-      \ buttplug**\n\t* **Symbol:** [buttplug](https://solscan.io/token/DfV75unFREdLru54KiyMjHMpj2vXFCZcBUZzvivUpump)\n\
-      \t* **Initial Supply:** 1,000,000,000.000000\n\t* **Signer:** AJquveSxdRhtb9EX1M9RreV3Y6xgXF7RZ7o7rqWFJh5s\n\
-      2. **what**\n\t* **Symbol:** [wha](https://solscan.io/token/7JW6H3UUhJ7hT8wAWgbjbnpJ5Ehc2nf1ywhJ8T7Upump)\n\
-      \t* **Initial Supply:** 1,000,000,000.000000\n\t* **Signer:** DB9tbwKNYHZRbmyZ66cR6Q1A4LWWMoeArQTGRjEpekJd\n\
-      3. **BIF**\n\t* **Symbol:** [BIF](https://solscan.io/token/7G88qGSbEcTAVWZJsuDtppBykiH9ssNACLx3rSispump)\n\
-      \t* **Initial Supply:** 1,000,000,000.000000\n\t* **Signer:** 3TQ2rKoUSNmJsEUdPT3FCdc4d3S4PKubSgXLXrjmBwaA\n\
-      4. **daily reminder that u are goated**\n\t* **Symbol:** [reminder](https://solscan.io/token/FBhmddKVABd5uzb24eZyi3egJTNpofN9HLtVtHaspump)\n\
-      \t* **Initial Supply:** 1,000,000,000.000000\n\t* **Signer:** 4vDt"
+    response: "**Latest Solana Token Creations (Last Hour)**\n\nBelow is a concise\
+      \ summary of the newly created tokens on Pump.fun within the last hour, based\
+      \ on the provided data from Bitquery API (as of `2025-05-05T06:00:00Z`). Note\
+      \ that all tokens listed have a creation timestamp of either `2025-05-05T06:00:00Z`\
+      \ or just before the hour mark at `2025-05-05T05:00:00Z`, indicating their recent\
+      \ creation.\n\n### Token List:\n\n1. **[SAY NO TO HIM (REFUSE)](https://solscan.io/token/7yxPyuErf5sAduNcxXXcZL6fynUn1VFqMqtdxt8spump)**\n\
+      \   - **Initial Supply:** 1,000,000,000.000000\n   - **Decimals:** 6\n   - **Signer:**\
+      \ 4Eq8LEt2NkbqTkF1MkcsNhPCz9wVQxL1NvGuY6qrsRQe\n\n2. **[Blorbs Life (Blorb)](https://solscan.io/token/BftUndtedwFsbhmcT5Kb6ipTYHQ2AvSJQB7htvr1pump)**\n\
+      \   - **Initial Supply:** 1,000,000,000.000000\n   - **Decimals:** 6\n   - **Signer:**\
+      \ 54LC8sN2j81XuJrQGaSbc9qU76PSNB9YRUjSsEQuAwk9\n\n3. **[Unnamed Token]()**\n\
+      \   - **Mint Address:** [CVRvTCoqbGvXRSKseokjqZYd88cuUjp8SqpLpLXopump](https://solscan.io/token/CVRvTCoqbGvXRSKseokjqZYd88cuUjp8SqpLpLXopump)\n\
+      \   - **Initial Supply:** 1,000,000,000.000000\n   - **Decimals:** 6\n   - **Signer:**\
+      \ J8PTx4cb2GQzdBGRWQvjZLSLPJAxCXSysZ7JAutSc1Ea"
     data:
       tokens:
-      - name: Imagine a sacred buttplug
-        symbol: buttplug
-        mint_address: DfV75unFREdLru54KiyMjHMpj2vXFCZcBUZzvivUpump
+      - name: SAY NO TO HIM
+        symbol: REFUSE
+        mint_address: 7yxPyuErf5sAduNcxXXcZL6fynUn1VFqMqtdxt8spump
         amount: '1000000000.000000'
-        signer: AJquveSxdRhtb9EX1M9RreV3Y6xgXF7RZ7o7rqWFJh5s
-      - name: what
-        symbol: wha
-        mint_address: 7JW6H3UUhJ7hT8wAWgbjbnpJ5Ehc2nf1ywhJ8T7Upump
+        signer: 4Eq8LEt2NkbqTkF1MkcsNhPCz9wVQxL1NvGuY6qrsRQe
+      - name: Blorbs Life
+        symbol: Blorb
+        mint_address: BftUndtedwFsbhmcT5Kb6ipTYHQ2AvSJQB7htvr1pump
         amount: '1000000000.000000'
-        signer: DB9tbwKNYHZRbmyZ66cR6Q1A4LWWMoeArQTGRjEpekJd
-      - name: BIF
-        symbol: BIF
-        mint_address: 7G88qGSbEcTAVWZJsuDtppBykiH9ssNACLx3rSispump
+        signer: 54LC8sN2j81XuJrQGaSbc9qU76PSNB9YRUjSsEQuAwk9
+      - name: ''
+        symbol: ''
+        mint_address: CVRvTCoqbGvXRSKseokjqZYd88cuUjp8SqpLpLXopump
         amount: '1000000000.000000'
-        signer: 3TQ2rKoUSNmJsEUdPT3FCdc4d3S4PKubSgXLXrjmBwaA
-      - name: daily reminder that u are goated
-        symbol: reminder
-        mint_address: FBhmddKVABd5uzb24eZyi3egJTNpofN9HLtVtHaspump
+        signer: J8PTx4cb2GQzdBGRWQvjZLSLPJAxCXSysZ7JAutSc1Ea
+      - name: Gork Musk
+        symbol: GM
+        mint_address: 4WYG6VWwoHVSP2T9DUF5gZiRTrfxrea2zibBoykcRciu
         amount: '1000000000.000000'
-        signer: 4vDtBGUTifVoq9Bpye1o612avbwD3iXboXseTxGXEC66
-      - name: gangstalicious georgwe
-        symbol: GEORGWE
-        mint_address: 8rua6JQxrj5ge4Fu6takuuawRZZtFR46cdQh3pNGpump
+        signer: 5Ve51ZPcvxAWc4UnetLqPJKBHqmrhGRWJrHkRMKSr4Gd
+      - name: ur mom
+        symbol: ur mom
+        mint_address: 45ASte8i1mL3Gte6zWf7QhvmqHDUK1aBZSgeK968ZxsR
         amount: '1000000000.000000'
-        signer: 2ezDcbua1ZbmHEGyDrCV3nUjF2xedwW1V2H3i73zNRWW
-      - name: Plus4
-        symbol: Plus4
-        mint_address: zH5RkSzQbnK6cMLDnk5VeBSJXjvJm696XXqekUHSFye
+        signer: GSAx56tp8QPEMbNKDjRgtPGscqAzhm5SSLWWxuCyH37U
+      - name: FIRST DOG SENTENCED TO DEATH
+        symbol: Prince
+        mint_address: 5pTBoqpXh2dTZDgi54sGTYApyQrKXTGrpmapMv13pump
         amount: '1000000000.000000'
-        signer: BEKdAsney943z2HSG2LuuYDfHy9ZjgT5wb4xZkokrASi
-      - name: comic tokenized coin
-        symbol: XP
-        mint_address: GFtys9L3veWSnxJYJKYLZ3MVBRnYngjbrTAHMcMLpump
+        signer: H1u8SXPEZa11bc3TMDL8JjaYFo7wY4tRbw8mqtZQzsWN
+      - name: AKOLABS
+        symbol: AKO
+        mint_address: gmo5jBf8SGizHhanbVWriZJa43cTLH9ak81951tpump
         amount: '1000000000.000000'
-        signer: GxKM54YfEA2omLZerbjhm2KpedKp1u9UsvvaqVCHvY4r
-      - name: SLASH QUITS X
-        symbol: SLASH QUIT
-        mint_address: AEdw4m7q15kof1Q66mScv7LFY9knMDNGtgAq9Qmopump
+        signer: EhNM8iggsJhukmFBB38nspw3dD9d6XWc2iEZxN3pbgtn
+      - name: discorocketgorilla
+        symbol: discorilla
+        mint_address: 3qdf9xFufkRyHNqATKLUi2dvxrUGn35tFndRvbrepump
         amount: '1000000000.000000'
-        signer: 7eSnN965nsbxryPgLUk65ewQ4EyyxGFvr4dQ67cNgWza
-      - name: Trump-like Lip
-        symbol: TLL
-        mint_address: FD3PyK4oQeVgbBXbhL2mU4Ke2UZAZPHKKCSmhoo3pump
+        signer: 99q4g7RHKh1eD2w95HFSQdakYC6RqmAqEyzptCLN74E4
+      - name: GROKAI
+        symbol: GROKAI
+        mint_address: GM8NvUohgctFy8fQeB5ZinJ8PPBbMQXG1LhnDN91pump
         amount: '1000000000.000000'
-        signer: GxKM54YfEA2omLZerbjhm2KpedKp1u9UsvvaqVCHvY4r
-      - name: PауFart
-        symbol: РАYFART
-        mint_address: 2XUGZ2c4hF9hsohf4nL2cmrBBPti7MFaMwDSBDqCpump
+        signer: D3AoJkjALG9xj7CGJBPPDaDXaucSgUSu86NbanVGRSRt
+      - name: Take the gamble
+        symbol: CASE
+        mint_address: 8up5cxpHxvTpDoaBMx3Rt1ZFG9t11xFN9sZym515pump
         amount: '1000000000.000000'
-        signer: GeKizLTkyTYkxaVRgzM45VyfwEasLzqfmcJS3HSjgY61
+        signer: Fg7z9rg99FbevkeX1aAEuVoX5KmeFjXn1hdGNh4LEfyX
 graduated_tokens:
   input:
     query: Show me all tokens that have graduated on Pump.fun in the last 48 hours
   output:
-    response: '**Graduated Tokens on Pump.fun (Last 48 hours)**
-
-
-      Here''s a summarized overview of tokens that have graduated on Pump.fun within
-      the last 48 hours, based on the provided data from Bitquery API. For a more
-      detailed view, please refer to the sections below.
-
-
-      **Key Insights:**
-
-
-      * **Total Graduated Tokens:** 64
-
-      * **Timeframe:** 48 hours (ending at the time of query, assuming the `start_time`
-      field indicates the beginning of this period)
-
-      * **Highest Market Cap:** $5,172,493.32 (DOGE OF GENOA)
-
-      * **Lowest Market Cap:** $7268.55 (Jail MrBeast)
-
-
-      **Top 5 Tokens by Market Capitalization:**
-
-
-      | **Rank** | **Token Name** | **Symbol** | **Market Cap (USD)** | **Price (USD)**
-      | **Mint Address** |
-
-      | --- | --- | --- | --- | --- | --- |
-
-      | 1 | **DOGE OF GENOA** | DOG | $5,172,493.32 | $0.005172 | [Dkx84A1VNdkMDSHiuboV5ypACSN7DifXn6PxzHzypump](https://solscan.io/token/Dkx84A1VNdkMDSHiuboV5ypACSN7DifXn6PxzHzypump)
-      |
-
-      | 2 | **txtx token** | txtx | $3,549,825.79 | $0.003549 | [7RCYK2aG77GUyCufs4BKgBLwH26gtjdo33qDj6dypump](https://solscan.io/token/7RCYK2aG77GUyCufs4BKgBLwH26gtjdo33qDj6dypump)
-      |
-
-      | 3 | **make degen pokemons** | DEGENMON | $2,043,054.03 | $0.002043 | [9WXgVjxqXtpN5rKugCb4ajGPNyuSynvCCg1PEewzpump](https://solscan.io/token/9WXgVjxqXtpN5rKugCb4ajGPNyuSynvCCg1PEewzpump)
-      |
-
-      | 4 | **Freaky'
+    response: "**Graduated Tokens on Pump.fun (Last 48 hours)**\n\nBelow is a concise\
+      \ overview of tokens that have graduated on Pump.fun within the last 48 hours,\
+      \ focusing on key insights rather than raw data repetition. \n\n### **Token\
+      \ Count and Price Range**\n- **Total Graduated Tokens:** 52\n- **Price Range\
+      \ (USD):** \n  - Highest: $0.1073 (elon ma - [HwcFmaNZmAjJyj4aEJuC52QrSpU9gawFhsJeehEwpump](https://solscan.io/token/HwcFmaNZmAjJyj4aEJuC52QrSpU9gawFhsJeehEwpump))\n\
+      \  - Lowest: $3.17e-06 (AntiSpace - [4zpQBdSMr5fsutALgfeBhs6gEZJ6YNjawgPP13nfpump](https://solscan.io/token/4zpQBdSMr5fsutALgfeBhs6gEZJ6YNjawgPP13nfpump))\n\
+      \n### **Market Capitalization Insights**\n- **Highest Market Cap:** $107,282,182.39\
+      \ (elon ma - [HwcFmaNZmAjJyj4aEJuC52QrSpU9gawFhsJeehEwpump](https://solscan.io/token/HwcFmaNZmAjJyj4aEJuC52QrSpU9gawFhsJeehEwpump))\n\
+      - **Lowest Market Cap (above $0):** $3,172.46 (AntiSpace - [4zpQBdSMr5fsutALgfeBhs6gEZJ6YNjawgPP13nfpump](https://solscan.io/token/4zpQBdSMr5fsutALgfeBhs6gEZJ6YNjawgPP13nfpump))\n\
+      \n### **Token Categories by Price (USD)**\n- **Above $0.01:** 4 tokens\n  -\
+      \ elon ma ($0.1073)\n  - QUANT OF THE UNITED STATES ($0.0111)\n  - trencher's\
+      \ worst nightmare ($0.0091)\n  - Gorklon Rust ($0.0085)\n- **$0.001 to $0.01"
     data:
       graduated_tokens:
-      - price_usd: 0.005172493322724024
-        market_cap_usd: 5172493.322724024
+      - price_usd: 0.10728218239097886
+        market_cap_usd: 107282182.39097886
         token_info:
-          name: DOGE OF GENOA
-          symbol: DOG
-          mint_address: Dkx84A1VNdkMDSHiuboV5ypACSN7DifXn6PxzHzypump
+          name: elon ma
+          symbol: elonma
+          mint_address: HwcFmaNZmAjJyj4aEJuC52QrSpU9gawFhsJeehEwpump
           decimals: 6
-      - price_usd: 0.003549825793663281
-        market_cap_usd: 3549825.793663281
+      - price_usd: 0.011110067493858762
+        market_cap_usd: 11110067.493858762
         token_info:
-          name: txtx token
-          symbol: txtx
-          mint_address: 7RCYK2aG77GUyCufs4BKgBLwH26gtjdo33qDj6dypump
+          name: QUANT OF THE UNITED STATES
+          symbol: QOTUS
+          mint_address: F9PS2ugy3oJMMsAurBxEAV2669GJWsdQWKnb7uJWpump
           decimals: 6
-      - price_usd: 0.0020430540293351774
-        market_cap_usd: 2043054.0293351775
+      - price_usd: 0.00912292813824797
+        market_cap_usd: 9122928.138247969
         token_info:
-          name: make degen pokemons
-          symbol: DEGENMON
-          mint_address: 9WXgVjxqXtpN5rKugCb4ajGPNyuSynvCCg1PEewzpump
+          name: trencher's worst nightmare
+          symbol: 9to5
+          mint_address: 3RWth1VzUdZRwNqjopueXXEoedqn2bezKbmB9oWgpump
           decimals: 6
-      - price_usd: 0.001507646396108297
-        market_cap_usd: 1507646.3961082972
+      - price_usd: 0.008537819110466817
+        market_cap_usd: 8537819.110466817
         token_info:
-          name: Freaky Ahh Statue
-          symbol: GYATTUE
-          mint_address: 3hDncm84vfub7WgfMHnd3dh9xurMqzKZw8oRgx18pump
+          name: Gorklon Rust
+          symbol: GORKLON
+          mint_address: ACHrCRKGD3WfZ4vHvoiy2RMQMQyXahYPa7PjGvBSpump
           decimals: 6
-      - price_usd: 0.0012696560033879345
-        market_cap_usd: 1269656.0033879345
+      - price_usd: 0.001938417936562992
+        market_cap_usd: 1938417.9365629922
         token_info:
-          name: 420M
-          symbol: 420M
-          mint_address: 7SyppZXmyBtELy6otM5gmg8jnnymLMDoU8xcPyAcpump
+          name: voice of our generation
+          symbol: kanye
+          mint_address: J2Gwbvfdk8FEdmu7Y23DBzPh84Ec4FGCFPmCH8GgB5kd
           decimals: 6
-      - price_usd: 0.0011035800469542442
-        market_cap_usd: 1103580.0469542441
+      - price_usd: 0.0014779520708540412
+        market_cap_usd: 1477952.0708540413
         token_info:
-          name: Fart Of The United States
-          symbol: FOTUS
-          mint_address: Gdtj6y1vd8F3cjAQNLcpE2y2xC5kPABZdzNW5RTpump
+          name: Gork's left nut
+          symbol: Socrates
+          mint_address: H3j55QvNfwrqZV4ibnpGLeqBnSyA5rPaxo1u7UGFpump
           decimals: 6
-      - price_usd: 0.0010040235845131594
-        market_cap_usd: 1004023.5845131594
+      - price_usd: 0.0014426407572848997
+        market_cap_usd: 1442640.7572848997
         token_info:
-          name: FBI cat
-          symbol: AgentMeow
-          mint_address: 8adW9MeoS51hzQYWqSVqvPLBxif4VD1VeGHuKRXmpump
+          name: Gork Weekend Plan
+          symbol: GWP
+          mint_address: xD84TeVqx9wyspW9AFopaDVx2q65dC2HLTahdBvpump
           decimals: 6
-      - price_usd: 0.0009508889117578929
-        market_cap_usd: 950888.9117578929
+      - price_usd: 0.0013276027646722884
+        market_cap_usd: 1327602.7646722884
         token_info:
-          name: hot air rises
-          symbol: 💨
-          mint_address: AxPd7crGMRJ6o5XSB1n8hPkLc5dx1yirs64udzeMpump
+          name: Grōk 3.5
+          symbol: Grōk 3.5
+          mint_address: w9ZTPmM985WPXuGuZfTnj8nHWxG6RWcPXTcUqcNpump
           decimals: 6
-      - price_usd: 0.0009454108777169117
-        market_cap_usd: 945410.8777169117
+      - price_usd: 0.0007882272802362442
+        market_cap_usd: 788227.2802362442
         token_info:
-          name: Victimville
-          symbol: SBF
-          mint_address: 86sYM9jWAvnFyTFtw1QJ3mfNMzcTfyDhHZRBS98tpump
+          name: Farting Chicken Wizard
+          symbol: FCW
+          mint_address: HniuC4BpiycfY9kXc7JU7zKACqw13sCmoNRqyaGvpump
           decimals: 6
-      - price_usd: 0.0009256606396145053
-        market_cap_usd: 925660.6396145052
+      - price_usd: 0.0006939182930757039
+        market_cap_usd: 693918.2930757039
         token_info:
-          name: '$69M '
-          symbol: $69M
-          mint_address: 7DggStXEx9urXZgnSxcMrsuwinjxJbuCFfPdVkKbz7qR
+          name: Gorku Saiyan
+          symbol: GORKU
+          mint_address: 7cTjtZU5wkPoKd58Z3G7EEdAeMV6ztS1YjG2U5RFpump
           decimals: 6
-      - price_usd: 0.0007582428344463004
-        market_cap_usd: 758242.8344463004
+      - price_usd: 0.0006474037214834808
+        market_cap_usd: 647403.7214834808
         token_info:
-          name: First AI Baby
-          symbol: Miguel
-          mint_address: 5fPJuiXfWC3K1nNJyfq74CLJcCjscbERvLRV5aMbpump
+          name: gork king
+          symbol: GORKING
+          mint_address: EdWz76a73WeFKvg5PajTMogyVYYT9JJF2ty9XKfmpump
           decimals: 6
-      - price_usd: 0.0006925070724698842
-        market_cap_usd: 692507.0724698842
+      - price_usd: 0.0006483415312533798
+        market_cap_usd: 648341.5312533798
         token_info:
-          name: Justice for Kanye
-          symbol: BanYe
-          mint_address: 7WWrcL9Gfyer2qCivtyAWzw5C7wyYaWnZDPVBPjkpump
+          name: Gork
+          symbol: Elon
+          mint_address: Ghjy9SrpcM9jWLNFTAbffGMJGYxh4hi8ouwXhE3xpump
           decimals: 6
-      - price_usd: 0.0006378632433850081
-        market_cap_usd: 637863.2433850081
+      - price_usd: 0.0004993660932299762
+        market_cap_usd: 499366.09322997613
         token_info:
-          name: SBF Prison Name
-          symbol: Victimvile
-          mint_address: CRCZJXuM7axw7kJuAPXQv81Pk2kGqoaLZSAthz2jpump
+          name: Justice For Anime
+          symbol: ANIME
+          mint_address: 3QFgk9tyGjpin8K6eV9BL4z6CXkCnBpzaVuQPXQUpump
           decimals: 6
-      - price_usd: 0.0006350716215103313
-        market_cap_usd: 635071.6215103313
+      - price_usd: 0.00048460502106750764
+        market_cap_usd: 484605.0210675076
         token_info:
-          name: Ai Baby "X"`
-          symbol: X
-          mint_address: 2p13Aqacp4a9Ads4JYfvv7KHTEBspEcHeFt2Qei7pump
+          name: Farting Autistic Gorilla Shark
+          symbol: FAGS
+          mint_address: 6c9kxpL8F99tY5cJcfreSYojLEuwVvicpww1HbvCpump
           decimals: 6
-      - price_usd: 0.0006028754390378331
-        market_cap_usd: 602875.4390378331
+      - price_usd: 0.0004661836254646363
+        market_cap_usd: 466183.6254646363
         token_info:
-          name: The Art of The Deal
-          symbol: DEAL
-          mint_address: 9XNqqDL5PDgZrKapocZfKUtcXqFcU5FayUAjFDE4pump
+          name: buttfart token
+          symbol: BFT
+          mint_address: 6exigR2xvEfeocr43nC13n1xoc6bzCUvV5Kvtbunpump
           decimals: 6
-      - price_usd: 0.0005615140293803848
-        market_cap_usd: 561514.0293803848
+      - price_usd: 0.00046263926239722676
+        market_cap_usd: 462639.26239722676
         token_info:
-          name: NEW LIFESTYLE PROTOCOL
-          symbol: GREENLIGHT
-          mint_address: 6hdSnQzBotFcdGEV1AE7wm7SBbdRKjRTaDis4DxXpump
+          name: PokeCardz
+          symbol: POKEZ
+          mint_address: 9s3EnKxgwZHc9fkfj7JKy78LzAqVWENe8idZfgCzpump
           decimals: 6
-      - price_usd: 0.0005373505317423044
-        market_cap_usd: 537350.5317423044
+      - price_usd: 0.00044411911840887324
+        market_cap_usd: 444119.1184088732
         token_info:
-          name: DumDummiesDotFun
-          symbol: DUMDUMMIES
-          mint_address: AF3g85eVMgLt4KiANZu66cT24v94Za1RJQWGg6Vbpump
+          name: Body Of Gorilla, Head Of Shark
+          symbol: Gork
+          mint_address: A1KysWJzqMV1ui1jbzpHvX9ufebn13PZoUicngPtpump
           decimals: 6
-      - price_usd: 0.0004499325922662987
-        market_cap_usd: 449932.5922662987
+      - price_usd: 0.00040891580960159766
+        market_cap_usd: 408915.80960159766
         token_info:
-          name: Hedgecoin
-          symbol: HEDGE
-          mint_address: 3QgKXoMjs4M9S94N6Rk5AFGfRNJ2VxetjXGpC4iqpump
+          name: Trump Media & Technology
+          symbol: DJT
+          mint_address: SEyRKFKRwbJJdPYCo4wj27ouujMbJUQrdLXDCQDTDJT
           decimals: 6
-      - price_usd: 0.0004077119255027927
-        market_cap_usd: 407711.9255027927
+      - price_usd: 0.00039460859503700807
+        market_cap_usd: 394608.59503700805
         token_info:
-          name: Black Mirror Digital Currency
-          symbol: TUPID
-          mint_address: 5xjVQYk7BAWt8cQjNDsxc4cpnQpzTTJNx7XbTd5Kpump
+          name: MASIKI
+          symbol: MASIKI
+          mint_address: 3rxbYBWKWSbBeg5S42qNjm8E53jxhmfVvXUG3G27pump
           decimals: 6
-      - price_usd: 0.00032371156952427623
-        market_cap_usd: 323711.56952427624
+      - price_usd: 0.0003947824893769007
+        market_cap_usd: 394782.4893769007
         token_info:
-          name: 8008coin
-          symbol: 8008coin
-          mint_address: 68hqz1dn5MB1xX7nTowmfnKa8wzUUUUnmMzsjL6Lpump
+          name: Bop Cut Cat
+          symbol: BCC
+          mint_address: BAPPjN6UxWDhs4KUkS5SEEV8brXuBruMsCbAwKEcpump
           decimals: 6
-      - price_usd: 0.000317674239356242
-        market_cap_usd: 317674.239356242
+      - price_usd: 0.0003331767475315819
+        market_cap_usd: 333176.7475315819
         token_info:
-          name: DeepLearning
-          symbol: Deeple
-          mint_address: E7jDjYFT6VAxSbtPPRnF8pEeWpsVCLbM7LyTAgM1pump
+          name: GORKS SECRET WEBSITE
+          symbol: GORKAI
+          mint_address: GoJmkWRUTdL32aNqRf62F9goAKYAPh4e8bDgdxzSpump
           decimals: 6
-      - price_usd: 0.00030097370396319335
-        market_cap_usd: 300973.70396319334
+      - price_usd: 0.0003321619215521763
+        market_cap_usd: 332161.9215521763
         token_info:
-          name: TOKEN IS MOONING HARD
-          symbol: HORNY
-          mint_address: D446rvMkMphHL6Et7gQx35zoiK3D7o1K2p8qSCgypump
+          name: 🍆 + 🏀 🏀
+          symbol: 🍆+🏀
+          mint_address: AMPou1RswFZhccBB5gqJdkYnAGKsLknuYBTxcfK499DM
           decimals: 6
-      - price_usd: 0.0002941897665443755
-        market_cap_usd: 294189.7665443755
+      - price_usd: 0.00032856227023840627
+        market_cap_usd: 328562.27023840626
         token_info:
-          name: Freaky Ahh Statue
-          symbol: GYATTUE
-          mint_address: G5uM3ZtQc4tUPptgzJ35seEFqK4DgJHDiTE8pYMgpump
+          name: High Yield Solana Account
+          symbol: HYSA
+          mint_address: DyCvz8szg9szRC3MNBz67koST7kpqKDoHEFPXgjepump
           decimals: 6
-      - price_usd: 0.0002772265233339086
-        market_cap_usd: 277226.5233339086
+      - price_usd: 0.00032470681179294105
+        market_cap_usd: 324706.81179294107
         token_info:
-          name: Peanuts Law
-          symbol: PL
-          mint_address: 59XsF7EnAk2wpiJYsFEmgDX2KxUiXQJmpepfzx2HdMsM
+          name: ORIGINAL BONK
+          symbol: BONK
+          mint_address: 2j84zCz59gHvyAM9YHHfjbvQ84Kij3xWWu2kc2iApump
           decimals: 6
-      - price_usd: 0.0002456684815578459
-        market_cap_usd: 245668.4815578459
+      - price_usd: 0.0003090026312919379
+        market_cap_usd: 309002.6312919379
         token_info:
-          name: Tomodachi
-          symbol: TOMO
-          mint_address: Bfth5azs5Yni1Uhnq7x33uJ2GSUFkiCbCyqRuHVC3T5G
+          name: Your shot at the american dream
+          symbol: DREAMCOIN
+          mint_address: 34NKgatjYoDbqmmF1rqMbVegJhgd33BnxAG4xo5Jpump
           decimals: 6
-      - price_usd: 0.00022607201141038006
-        market_cap_usd: 226072.01141038007
+      - price_usd: 0.00028856349923574073
+        market_cap_usd: 288563.49923574075
         token_info:
-          name: NIKKI CAPOCCI
-          symbol: GAYSON
-          mint_address: B4L2BEbTXRWjsWoqoYNP9W3Y1gKsAajAANh8eobapump
+          name: Monkey And Wiggles
+          symbol: MAW
+          mint_address: 8hKsfHCT841twXYdZ1djuCefG1HhVrPrAsDGXa66pump
           decimals: 6
-      - price_usd: 0.00022784264022793815
-        market_cap_usd: 227842.64022793816
+      - price_usd: 0.0002876560305536964
+        market_cap_usd: 287656.0305536964
         token_info:
-          name: Truth Terminal Stablecoin
-          symbol: VIRGIN
-          mint_address: qEwaP5UrxVeV2M5QiTQb8BLZnFE19cgbHAFPvmjpump
+          name: Jail Of The United States
+          symbol: ALCATRAZ
+          mint_address: AcFxVfeLfJEPTukQddiiMrofJdU8hoftnZa7qvCUpump
           decimals: 6
-      - price_usd: 0.00018675069115158829
-        market_cap_usd: 186750.69115158828
+      - price_usd: 0.000278579590691086
+        market_cap_usd: 278579.59069108596
         token_info:
-          name: GHIBLI CR7
-          symbol: GHIBLICR7
-          mint_address: 2gxNNCTH7LC7qmBym6LG348p4VGhAA9PgdJbDAhCVjDk
+          name: Plotzcoin
+          symbol: Plotz
+          mint_address: EAJmFSndFCa429pQLKJyci3RyJcPDB5WoB1ENBovpump
           decimals: 6
-      - price_usd: 0.00017888643383999006
-        market_cap_usd: 178886.43383999006
+      - price_usd: 0.00025957401274205366
+        market_cap_usd: 259574.01274205366
         token_info:
-          name: 'New bird species '
-          symbol: TRUMPBIRD
-          mint_address: Drhy7f38j8K8PZZfDExTvPXartdT6jJjiKWTFekYpump
+          name: ' NAOMI'
+          symbol: ' NAOMI'
+          mint_address: 8E95LZRf5T9hbBNEi49tmrvddxAUTVMfLQwiS8B2pump
           decimals: 6
-      - price_usd: 0.00017495560773781338
-        market_cap_usd: 174955.60773781338
+      - price_usd: 0.0002428704694529268
+        market_cap_usd: 242870.4694529268
         token_info:
-          name: Justice for Maryland
-          symbol: MARYLAND
-          mint_address: 7BnMjz3gzRAG7HhxVp8yBtVbzv7ChhFBQEYbtpbapump
+          name: 100% tariff
+          symbol: RIP ANIME
+          mint_address: HmEqVyK1B5sR7KbWz33gSSySxLy9rqRx9rYqhenipump
           decimals: 6
-      - price_usd: 0.00016708484700305335
-        market_cap_usd: 167084.84700305335
+      - price_usd: 0.0002429868940156964
+        market_cap_usd: 242986.8940156964
         token_info:
-          name: Mr Beastfication
-          symbol: BEASTIFY
-          mint_address: D5fifSECUWSwLTtLUxqLB9VFVSAa5Qb81aUyGLg2pump
+          name: the answer to everything
+          symbol: chaos
+          mint_address: 5xE9PjbgfA84TXV2gc6guDmyV7brAcqHknzibRSfpump
           decimals: 6
-      - price_usd: 0.00015918116755070583
-        market_cap_usd: 159181.16755070584
+      - price_usd: 0.00021403863036159037
+        market_cap_usd: 214038.63036159036
         token_info:
-          name: Truth Terminal Stablecoin
-          symbol: VIRGIN
-          mint_address: 6Tyv2AA8Lrkv6bakqVxNyygJKTV74VPFA3MWrHtwpump
+          name: toast
+          symbol: toast
+          mint_address: CofPN84bNkxvw3cecCxhx8fTXnWNea3afmU4iz5Hpump
           decimals: 6
-      - price_usd: 0.00014934765287687876
-        market_cap_usd: 149347.65287687877
+      - price_usd: 0.00020242951402225617
+        market_cap_usd: 202429.51402225616
         token_info:
-          name: NIKKI CAPPOCCI
-          symbol: GAYSON
-          mint_address: 5pghCAKbqf3NDARiMhVCynNQCr4aSP2DrVK2xRPopump
+          name: Forg
+          symbol: Forg
+          mint_address: 4fg29RemLmbPscK3tgLLV6Q3foQMGaawRhmqBbp1pump
           decimals: 6
-      - price_usd: 0.00013831730795090623
-        market_cap_usd: 138317.30795090622
+      - price_usd: 0.00018882933517789158
+        market_cap_usd: 188829.33517789157
         token_info:
-          name: S&P500 of crypto markets
-          symbol: COIN50
-          mint_address: J7skE6AVnX6d8WNzWLcZ9hUdBF1ZX8P1JgtD4wWsScxc
+          name: Blorbs Life
+          symbol: Blorb
+          mint_address: EtUTH33NcLQ8o85sSarXy7QtdCazSQ9f86iuUfqXYy36
           decimals: 6
-      - price_usd: 0.00013411592922289036
-        market_cap_usd: 134115.92922289035
+      - price_usd: 0.0001833409704328062
+        market_cap_usd: 183340.9704328062
         token_info:
-          name: '#1 Baby Conceived by AI Robot'
-          symbol: JOYCE
-          mint_address: GgXZUpLM9BCRHaUz4S2Tz9NYWo8hbPHDUmz6GvQnpump
+          name: POT OF GREED
+          symbol: GREED
+          mint_address: 8So6qvHDimvLS1hkfRq7gRFUjb35HVQstgV3cPGqpump
           decimals: 6
-      - price_usd: 0.00013654732018272223
-        market_cap_usd: 136547.32018272224
+      - price_usd: 0.00016905838975597408
+        market_cap_usd: 169058.3897559741
         token_info:
-          name: BigGame Coin
-          symbol: BIGG
-          mint_address: GzkYYJ2Nr6YdgAxRn2FKsmUn9VjzhdAED3UkzNLhpump
+          name: MILO
+          symbol: MILO
+          mint_address: 13nBnGsCGArE9TSw2E4H7KY86S1eepMbigp6avWPpump
           decimals: 6
-      - price_usd: 0.00012030369948066603
-        market_cap_usd: 120303.69948066604
+      - price_usd: 0.00014627279892497424
+        market_cap_usd: 146272.79892497425
         token_info:
-          name: Thе Token That Only Goes Up
-          symbol: MEMECORE
-          mint_address: Da8zBHdEP6mLrrrdsWXbyfMgCWP7qXVVxvZv8GJwpump
+          name: PnutGuy
+          symbol: PGUY
+          mint_address: DcRcBtM7XopjPnmBUTmp8eWMTztkhVJUkuXeEsqApump
           decimals: 6
-      - price_usd: 0.00011583072375350927
-        market_cap_usd: 115830.72375350927
+      - price_usd: 0.00014500643922957005
+        market_cap_usd: 145006.43922957004
         token_info:
-          name: 'Lesson in that '
-          symbol: Lesson
-          mint_address: 9sj3Bfzp7SLKakXd4uMyW35ruKrX3RwsLKsxfYq7pump
+          name: gork's right nut
+          symbol: plato
+          mint_address: 7mmHaVvUbxrTfRvLpiNs2ptNfJp6pUSeKZWDU6j6pump
           decimals: 6
-      - price_usd: 0.0001142969918132915
-        market_cap_usd: 114296.99181329149
+      - price_usd: 0.00013944721983826202
+        market_cap_usd: 139447.219838262
         token_info:
-          name: First Painting Dog
-          symbol: DOGGOS
-          mint_address: pTaWMpiwy7XaHKas2DQZhEGnDy7SDTc8NtZqct5pump
+          name: catscatscatscatscatscatscatscats
+          symbol: cats
+          mint_address: 2c5peMUxDdXprKSriCchPV8jcjRcGTL1Nh6ap9kgpump
           decimals: 6
-      - price_usd: 0.00010957216501355744
-        market_cap_usd: 109572.16501355745
+      - price_usd: 0.0001321041623825941
+        market_cap_usd: 132104.1623825941
         token_info:
-          name: Elon Goat Token
-          symbol: EGT
-          mint_address: AqtbnTupLi6V6AbP6UzLVRXxWHgzHe59eMeSMHocpump
+          name: Gorilla On Retarded Kangaroo
+          symbol: GORK
+          mint_address: 7XEkXfyJRYvofv1uhAHHM7bEQVv84ZzChc2m81N6pump
           decimals: 6
-      - price_usd: 0.00010661919753230272
-        market_cap_usd: 106619.19753230271
+      - price_usd: 0.0001235371024267145
+        market_cap_usd: 123537.1024267145
         token_info:
-          name: Brain Rot Skeleton
-          symbol: NOOO
-          mint_address: 9NCRjZmqkx2MSgRgQocKNM6NvCkJj3TRJJZ9SLqipump
+          name: buy and keep it in your wallet
+          symbol: condom
+          mint_address: 9RuMUxGWpLhSXMUEbARrU1AHLDV2YGgj6t2yCVrGpump
           decimals: 6
-      - price_usd: 0.00010542799082256101
-        market_cap_usd: 105427.99082256101
+      - price_usd: 0.00011910389514348932
+        market_cap_usd: 119103.89514348932
         token_info:
-          name: 'The Boomer '
-          symbol: 'BOOMER '
-          mint_address: 4HPUEqF9wFLTGZ49zei5oABMvLRWBhP1LhZY8yZcpump
+          name: Trench Confessions
+          symbol: Confess
+          mint_address: FnuxggyaVgdM6EtpHhKpkjFgWKYV1UWVuFBEfLbQEBn4
           decimals: 6
-      - price_usd: 0.00010913365416979121
-        market_cap_usd: 109133.65416979122
+      - price_usd: 0.00010122412413446053
+        market_cap_usd: 101224.12413446052
         token_info:
-          name: Melts
-          symbol: MELTS
-          mint_address: GD6k1g4gsUraLAc9cmskYWJwnjPRyb4ujMRMiSUNpump
+          name: Ansem's Cat
+          symbol: DARCY
+          mint_address: 6EUU2CJszV44zQ1iLg7v7tyDp98sv7h43idduxJnpump
           decimals: 6
-      - price_usd: 0.00010030515964184238
-        market_cap_usd: 100305.15964184239
+      - price_usd: 9.957607372993512e-05
+        market_cap_usd: 99576.07372993512
         token_info:
-          name: First AI Pregnancy
-          symbol: AIBABY
-          mint_address: 7CjuwfmCGJNnHgZMsu2MzBk9kRCuQQvmaJt63juHpump
+          name: phat
+          symbol: partyhats
+          mint_address: FC988ZAKRPc26wefDAxcYWB8kgbJTH4Tg3qDvf7xpump
           decimals: 6
-      - price_usd: 9.81345296191901e-05
-        market_cap_usd: 98134.5296191901
+      - price_usd: 8.968052823676127e-05
+        market_cap_usd: 89680.52823676127
         token_info:
-          name: The Down of Us
-          symbol: EWWIE
-          mint_address: 7oS25WmrdoVhJRmRULLfbsTB4CcEyjTehikE3JUJpump
+          name: Gorklon House
+          symbol: Gorkhouse
+          mint_address: 8rasjK2xbcsxgh1XLNMFD8keW36uEq4LFuSY1Sr7pump
           decimals: 6
-      - price_usd: 9.764136975261649e-05
-        market_cap_usd: 97641.36975261649
+      - price_usd: 8.895531621801398e-05
+        market_cap_usd: 88955.31621801398
         token_info:
-          name: R374RDCOIN
-          symbol: R374RDCOIN
-          mint_address: AoTi3CvdR2nwhbF4ybCwatYKNug6Z5K5BYPmqVwLpump
+          name: GORK [Elon Musk X-AI COIN]
+          symbol: GORK
+          mint_address: 9SA8o67iV87R1XzknYifQJByugKcemq3NMXJDKgYpump
           decimals: 6
-      - price_usd: 9.509447508338697e-05
-        market_cap_usd: 95094.47508338698
+      - price_usd: 8.59082440288003e-05
+        market_cap_usd: 85908.2440288003
         token_info:
-          name: Mint
-          symbol: MINT
-          mint_address: D7VGqwb84BdwCpgvwV2cEzsic1oZBa4qpAsUUg3Npump
+          name: I Blame Cartoons
+          symbol: CRUSH
+          mint_address: 8Pq48Bk2XLC5QHbzp7HifAwKiKzgxmKdFndAtLgVpump
           decimals: 6
-      - price_usd: 9.523391484295973e-05
-        market_cap_usd: 95233.91484295973
+      - price_usd: 8.577337552473703e-05
+        market_cap_usd: 85773.37552473703
         token_info:
-          name: Kiki’s Delivery Service
-          symbol: KIKI
-          mint_address: 4x3TuSUciijhhxEpiDXtx9PRQ1dv51bFhiVAD7bLpump
+          name: Shitposter
+          symbol: SHITPOSTER
+          mint_address: DLY33VwPWy5USWVeqrLcjM7VkhKYHd6AnTjgUeTPdgMu
           decimals: 6
-      - price_usd: 9.287255602792122e-05
-        market_cap_usd: 92872.55602792122
+      - price_usd: 8.591542583559296e-05
+        market_cap_usd: 85915.42583559296
         token_info:
-          name: Decentralized Ass Opening
-          symbol: goatseDAO
-          mint_address: HFGZ3jPpQuwX1dhVWUnkbC1kBWBGvAfFpF5EK344pump
+          name: sit back, relax, and enjoy the
+          symbol: view
+          mint_address: E5W3ToZqGTtXmVAgptkmpvZorpErWuL5tKPRLBkdpump
           decimals: 6
-      - price_usd: 8.78257321509042e-05
-        market_cap_usd: 87825.7321509042
+      - price_usd: 8.274546741421586e-05
+        market_cap_usd: 82745.46741421586
         token_info:
-          name: aby monkey
-          symbol: aby
-          mint_address: 8h2xfwGjGnb6vXTCC4ic3eV4u9TZgbGx2Jdoon8gpump
+          name: Hitposter
+          symbol: HITPOSTER
+          mint_address: Dm1gkhD14d9BnANJdV4yFhi6TTgStarw1PWg2n8Ey6Jx
           decimals: 6
-      - price_usd: 8.353612411448325e-05
-        market_cap_usd: 83536.12411448325
+      - price_usd: 7.890653147256173e-05
+        market_cap_usd: 78906.53147256172
         token_info:
-          name: Groked
-          symbol: Groked
-          mint_address: FooghYoLtjhbFAjtZQqi6uBxDDnYm3KZp6Pea8c5pump
+          name: Shakespeare69
+          symbol: Gork Alt
+          mint_address: 7ZGybDbmJ2p4XUBhBprxhqy2mc2SWqKyXPRFUXfxpump
           decimals: 6
-      - price_usd: 8.321216760964417e-05
-        market_cap_usd: 83212.16760964417
+      - price_usd: 7.58447962899303e-05
+        market_cap_usd: 75844.79628993031
         token_info:
-          name: Memes are Magic
-          symbol: MAM
-          mint_address: F4piESfUHjEZynmGfobfEBxBXNt2isWLtFiKe5hEpump
+          name: Taigu AI
+          symbol: Taigu
+          mint_address: BQhz6DwBiG9h4iqB6vaKUDnU58oP3UrigsWZcDewpump
           decimals: 6
-      - price_usd: 8.399224275680911e-05
-        market_cap_usd: 83992.24275680911
+      - price_usd: 7.573387603759028e-05
+        market_cap_usd: 75733.87603759028
         token_info:
-          name: Father of Memes
-          symbol: JON
-          mint_address: 5PGMfaANNwv5Zs4QjoSvpRRH5LP7MSK45mMDKbMYpump
+          name: Ask Splat
+          symbol: SPLAT
+          mint_address: 6d6yACorbGeWyk7uURW6VEvJTbHDw5VohaQqydSzpump
           decimals: 6
-      - price_usd: 7.954308300944228e-05
-        market_cap_usd: 79543.08300944227
+      - price_usd: 7.348970716812308e-05
+        market_cap_usd: 73489.70716812307
         token_info:
-          name: Gold Season
-          symbol: XAU
-          mint_address: Cd2jBVmmX5LU4gpzTaD6Mumh9R5Zfe2D1vRyTTMcpump
+          name: Artistify AI
+          symbol: ARTY
+          mint_address: 9E21TMYmvJApgTgY9ACgxpwr1VdN4jQGZSWc5xxLpump
           decimals: 6
-      - price_usd: 7.909826911030516e-05
-        market_cap_usd: 79098.26911030516
+      - price_usd: 6.395121918931225e-05
+        market_cap_usd: 63951.21918931224
         token_info:
-          name: EcoFartCoin
-          symbol: EFC
-          mint_address: 57XPWRBcwZtXCYgt8FekPHiR6yxhgTsq1SCCE2ripump
+          name: Graphoria
+          symbol: GRAPH
+          mint_address: QxcCntiD4fZwysz9vYMgH154Q4rbpru2bx73uEjpump
           decimals: 6
-      - price_usd: 7.924532996186819e-05
-        market_cap_usd: 79245.32996186819
+      - price_usd: 5.535176108691974e-05
+        market_cap_usd: 55351.76108691974
         token_info:
-          name: Big Brain Coin
-          symbol: BigBrain
-          mint_address: CoDsM9hAub25b2uJt3xamGCPdehq2nXGouP98FBupump
+          name: gork
+          symbol: GORK
+          mint_address: 4HpVqMZdTt56Zvvm5tSv59pstaNeFAYYxwaVZDwVRpRU
           decimals: 6
-      - price_usd: 7.593634149044507e-05
-        market_cap_usd: 75936.34149044506
+      - price_usd: 4.582021936240015e-05
+        market_cap_usd: 45820.21936240015
         token_info:
-          name: Coin50
-          symbol: COIN50
-          mint_address: 6wtiuwivjAgGfchMno5rgeuzXySJib5Jwp747MsGPmGF
+          name: gorklon
+          symbol: GORKLON
+          mint_address: 6MWycvHUVCU15nYinvwKHus2MeyMcQcmThX7XWSN4TCw
           decimals: 6
-      - price_usd: 7.697431481285266e-05
-        market_cap_usd: 76974.31481285267
+      - price_usd: 2.1132177254198346e-05
+        market_cap_usd: 21132.177254198345
         token_info:
-          name: What does it mean, if anything?
-          symbol: ZION
-          mint_address: 2Rumiad5rZbWnuuU1Pth2zL25odCJTcLts6b8fG7pump
+          name: Grok's Son
+          symbol: GORK
+          mint_address: 7wzAtgQLPZvdtxpRGUknNj5s7yEnvci6EhyMAY76pump
           decimals: 6
-      - price_usd: 7.376682794704266e-05
-        market_cap_usd: 73766.82794704265
+      - price_usd: 1.062512009783278e-05
+        market_cap_usd: 10625.12009783278
         token_info:
-          name: New European DOGE
-          symbol: TRAC
-          mint_address: 29XyDUrq9hfQxcKHbbSLorATnwV9AhX3shoiQrFCpump
+          name: The Virtual Generation
+          symbol: GENV
+          mint_address: 2zfJpHavcswdhPrt5rDfW6heuaC9RkzLMKT2RJ3Dpump
           decimals: 6
-      - price_usd: 7.191895192167863e-05
-        market_cap_usd: 71918.95192167863
+      - price_usd: 1.0293010632230027e-05
+        market_cap_usd: 10293.010632230027
         token_info:
-          name: retarded
-          symbol: RETARDED
-          mint_address: 4qhZcisM7cdeCw7rJPHJjxz3SPyncmNA8CJ6pQnj1VVo
+          name: Horyzon
+          symbol: HORYZON
+          mint_address: DX163AC9k7dHTqofrDdmRAgeHsaLfLF1pwMoRqWYpump
           decimals: 6
-      - price_usd: 7.363866734757728e-05
-        market_cap_usd: 73638.66734757728
+      - price_usd: 8.337850825572843e-06
+        market_cap_usd: 8337.850825572843
         token_info:
-          name: Wall Street
-          symbol: WallStreet
-          mint_address: 6kg5yAXV47riNNLYeb1FuinQmyfX3vRwf7YYaXdypump
+          name: Ghost Screen
+          symbol: GHOST
+          mint_address: GtRt6ncmpBATmB1K8bgczhfUNqrFEGjBa6MjNj4opump
           decimals: 6
-      - price_usd: 7.208847032980562e-05
-        market_cap_usd: 72088.47032980563
+      - price_usd: 7.515788402007441e-06
+        market_cap_usd: 7515.788402007442
         token_info:
-          name: FIRST STATE TO ACCEPT CRYPTO
-          symbol: NYC
-          mint_address: GYtwpocRPbrFEWwhA3PE7yL1djYwYy8pHRSDavFCpump
+          name: dog wif gork
+          symbol: wifgork
+          mint_address: mZZ56L5NufDamUoMxuHNVTytrwfhQKK86iZD47Jpump
           decimals: 6
-      - price_usd: 7.195369546777857e-05
-        market_cap_usd: 71953.69546777857
+      - price_usd: 5.598453415274388e-06
+        market_cap_usd: 5598.453415274388
         token_info:
-          name: Poopcoin
-          symbol: Poopcoin
-          mint_address: QQ6NyQNgeqQbYWtVsYpChX4ZPkp5AfvNpNFsrk7pump
+          name: GORK
+          symbol: GORK
+          mint_address: DcEWG4YvsWLBXAdrrvxGwM55SyJK5YSV8ahUmnDppump
           decimals: 6
-      - price_usd: 6.663732784129779e-05
-        market_cap_usd: 66637.3278412978
+      - price_usd: 5.208426418184945e-06
+        market_cap_usd: 5208.426418184945
         token_info:
-          name: goatchains
-          symbol: GOATCHAINS
-          mint_address: 68avkFkeT2MzR25ynMjxxGpejeY1p5NxYt6XZydYDyvR
+          name: Максим Ганьжин
+          symbol: '@gorklon'
+          mint_address: DvTXo3W1gHLrn7qaMmbHKPUhAqFno6DcAPfpV4U7pump
           decimals: 6
-      - price_usd: 6.552859645827829e-05
-        market_cap_usd: 65528.59645827829
+      - price_usd: 4.302130116704555e-06
+        market_cap_usd: 4302.130116704555
         token_info:
-          name: Wrapped Buttcoin
-          symbol: wbutt
-          mint_address: Hx9Lq2MN5tw4DaKVYx6Wx5oMijuwA8Rk3q8AKQbEpump
+          name: vitafinastradol
+          symbol: VITA
+          mint_address: 5nwTkEE6fKGJfzsdJRq3ZJfqPFdHdM6HgRLeMVmayNdu
           decimals: 6
-      - price_usd: 6.677098318883826e-05
-        market_cap_usd: 66770.98318883826
+      - price_usd: 3.958024313784746e-06
+        market_cap_usd: 3958.024313784746
         token_info:
-          name: first bitcoin bill
-          symbol: H.J RES 25
-          mint_address: EjjHh5LDJWRoVFjVeyvayPHu3BW2CEezU4bC2n81QRPK
+          name: New BTC Commercial
+          symbol: Bitmercial
+          mint_address: APVMQeFkjUpP8prNQs9Vtqhf33ckt7gUcyHfnhf5pump
           decimals: 6
-      - price_usd: 6.372645891831213e-05
-        market_cap_usd: 63726.45891831213
+      - price_usd: 3.66327651357154e-06
+        market_cap_usd: 3663.27651357154
         token_info:
-          name: POKETAX
-          symbol: POKETAX
-          mint_address: HtNsfdFjisSRF8SzZ8AMh3pQSAkac1ggsQdgCEhhpump
+          name: HouseCoin
+          symbol: HOUSE
+          mint_address: 8qtpuP8h8Lqie1EYW1tPqGChVX87ah9M3J1xbgq4pump
           decimals: 6
-      - price_usd: 6.454366493223648e-05
-        market_cap_usd: 64543.664932236476
+      - price_usd: 3.3286695689096254e-06
+        market_cap_usd: 3328.6695689096255
         token_info:
-          name: Gekki The Gecko
-          symbol: GEKKI
-          mint_address: HLL1hTvaGWBKYnBLz9MmcYJvNss4icWrAzbGNqrkpump
+          name: Gorklon Rust
+          symbol: GORKLON
+          mint_address: 91tJxYz2q18QjhixEuWgpSyT6mzB4c43sJ2jd3Upump
           decimals: 6
-      - price_usd: 6.223679149135727e-05
-        market_cap_usd: 62236.79149135727
+      - price_usd: 3.3014326728220207e-06
+        market_cap_usd: 3301.432672822021
         token_info:
-          name: 親指男
-          symbol: Thumb Man
-          mint_address: 9wo1kksoVcirux5tM3K2ZiZSpoHTRxFcQ3MUkQJEpump
+          name: Danna White's New Pet
+          symbol: PLAYMATE
+          mint_address: zx9CgaqsRdMkSu1Cnmv6Cv1r3oRnpbReLUwSKV7pump
           decimals: 6
-      - price_usd: 6.068467263461065e-05
-        market_cap_usd: 60684.67263461065
+      - price_usd: 3.1725516545198784e-06
+        market_cap_usd: 3172.5516545198784
         token_info:
-          name: Tweet like ur in marvel universe
-          symbol: Marvel
-          mint_address: 3hoszjhmiZZUuv2Mh1A76Yud9VfnUJshm92qdnNbpump
+          name: GhostScreenDev
+          symbol: Ghost
+          mint_address: 4bXGswCiMca1pexkPJsL9HFwNjKuDbb3gYKMooKDpump
           decimals: 6
-      - price_usd: 5.908449497822212e-05
-        market_cap_usd: 59084.494978222116
+      - price_usd: 3.174462260085461e-06
+        market_cap_usd: 3174.462260085461
         token_info:
-          name: $420
-          symbol: $420
-          mint_address: 4yztPFu63ZP9w5xfFc9GZw3DWAWEUHVQ4kBrG1y2pump
-          decimals: 6
-      - price_usd: 5.7620344247694844e-05
-        market_cap_usd: 57620.34424769485
-        token_info:
-          name: PBJ
-          symbol: PBJ
-          mint_address: 4H3Hoo5QyQ9G3cgbgcVvv6WXG59oG8WUKtzAbaXppump
-          decimals: 6
-      - price_usd: 5.380035646257279e-05
-        market_cap_usd: 53800.35646257279
-        token_info:
-          name: The Art of the Deal
-          symbol: DonaldPump
-          mint_address: 5VesK2pfwXTZhrVZEfvSe6nuFsFX9KpEHGmP4h3H4AKF
-          decimals: 6
-      - price_usd: 5.3516454432655176e-05
-        market_cap_usd: 53516.45443265518
-        token_info:
-          name: 'Body Pillow '
-          symbol: 'Pillow '
-          mint_address: 57BTcUAH7KuaZVVSGuz8XJeXYacUozc6KB92TcNkpump
-          decimals: 6
-      - price_usd: 5.416341916754438e-05
-        market_cap_usd: 54163.41916754438
-        token_info:
-          name: New Grok Agent
-          symbol: Agent XⅠ
-          mint_address: 4PjT22VmR2CvDVJmL9TWq4ijmZYLCJmhuzn5zNqapump
-          decimals: 6
-      - price_usd: 5.4495353118349285e-05
-        market_cap_usd: 54495.35311834928
-        token_info:
-          name: FARTBILL
-          symbol: FARTBILL
-          mint_address: CFjyNwaqUcmvuqzkBsZjqJD7H5tQDB9ss5h4t78Npump
-          decimals: 6
-      - price_usd: 5.383065949747396e-05
-        market_cap_usd: 53830.65949747396
-        token_info:
-          name: how to create meme
-          symbol: pablo
-          mint_address: DGWbzSHxZ13xHm8jX2L5NbQeqcYUkrTabCeGNS7Tpump
-          decimals: 6
-      - price_usd: 5.0502920569238994e-05
-        market_cap_usd: 50502.920569238995
-        token_info:
-          name: .do
-          symbol: .do
-          mint_address: 9x5xNWdh26JXo3dN7Rsd6vGiFgtdZWusMtg4Ev5Vpump
-          decimals: 6
-      - price_usd: 5.07717638886786e-05
-        market_cap_usd: 50771.7638886786
-        token_info:
-          name: «tszjjjjjjjjj»
-          symbol: tszjjjjjjj
-          mint_address: HQsD7ddx7ZST7dtFjpF7TcgCpxkubzaiGoAWkQ3vpump
-          decimals: 6
-      - price_usd: 5.13612972916845e-05
-        market_cap_usd: 51361.2972916845
-        token_info:
-          name: MAKE ASYLUMS GREAT AGAIN
-          symbol: MAGA
-          mint_address: FSZ4crKdtrkCNdvivwu9jbyVJKMiq1EmhHfKXnXLJVWm
-          decimals: 6
-      - price_usd: 5.0788239685200814e-05
-        market_cap_usd: 50788.23968520082
-        token_info:
-          name: ELON'S 4 INCHER
-          symbol: 4inches
-          mint_address: uynMc5Mf3JAuWGDb8aNz8CaZGQzuePWVkh7qRSzpump
-          decimals: 6
-      - price_usd: 4.762693115088457e-05
-        market_cap_usd: 47626.93115088457
-        token_info:
-          name: Black Mirror sex rock
-          symbol: Rocky
-          mint_address: CYxzpyxaKDYK3LRzftsCzr2LRKoTuBFyGSTiC8B9pump
-          decimals: 6
-      - price_usd: 4.842002444047282e-05
-        market_cap_usd: 48420.02444047282
-        token_info:
-          name: Retard Finance FAFO
-          symbol: ReFiF
-          mint_address: 7WTTdDqeEyrLgaMvv6szuNDFbS5p5gM2VBNTHUq5pump
-          decimals: 6
-      - price_usd: 4.641593001665054e-05
-        market_cap_usd: 46415.93001665054
-        token_info:
-          name: NEW BLACK MIRROR GAME CURRENCY
-          symbol: DILO
-          mint_address: 7v8VG2wiqJPFdcxvc55rByhFQVdaJCxbw8RvV5Pgpump
-          decimals: 6
-      - price_usd: 3.324948200331103e-05
-        market_cap_usd: 33249.48200331103
-        token_info:
-          name: Chicken Jockey
-          symbol: CJ
-          mint_address: EXJLXbj3mp5sikBdCaHJ6ExJ1UGwkEGKire7gBPy5GyM
-          decimals: 6
-      - price_usd: 3.16318461286053e-05
-        market_cap_usd: 31631.8461286053
-        token_info:
-          name: WE ARE SO BACK
-          symbol: BACK
-          mint_address: BBuyJL9AnEx7hNVVMDvqznrmsNvgSrvmUVaN1pdHpump
-          decimals: 6
-      - price_usd: 2.347521142616871e-05
-        market_cap_usd: 23475.21142616871
-        token_info:
-          name: The Cooker
-          symbol: COOKER
-          mint_address: DEZJfR9NeCXm6AWhbkmtYhNDjHCqVBQEoMvdovNhpump
-          decimals: 6
-      - price_usd: 2.0850704776995534e-05
-        market_cap_usd: 20850.704776995535
-        token_info:
-          name: The Believer
-          symbol: Believer
-          mint_address: 6K1qwgYS6A3y4SvT781Sj22vJfXjgepxCLYXnLUpump
-          decimals: 6
-      - price_usd: 1.529435340435271e-05
-        market_cap_usd: 15294.35340435271
-        token_info:
-          name: DUMDUMMIES.FUN
-          symbol: DUMDUMMIES
-          mint_address: B4Gago2zhQ1AhNawSAy6AmParXuV997BvK191Ppzpump
-          decimals: 6
-      - price_usd: 7.533344298879763e-06
-        market_cap_usd: 7533.344298879763
-        token_info:
-          name: That Little Puff
-          symbol: Puff
-          mint_address: PT3QHUKTXeAvJe5aSFP2575yTajsRMb7R82XLgMpump
-          decimals: 6
-      - price_usd: 7.268549120128062e-06
-        market_cap_usd: 7268.549120128062
-        token_info:
-          name: Jail MrBeast
-          symbol: JAILBEAST
-          mint_address: 4izJHbkdzVTvBPdxXewAqUrXPB9X7fqucBxuerJzpump
-          decimals: 6
-      - price_usd: 6.234319134858368e-06
-        market_cap_usd: 6234.319134858368
-        token_info:
-          name: Fatybara
-          symbol: Fatybara
-          mint_address: yKTe8FhdxVeRqWtJ5znVKLZPSkCynA8CG84qivqpump
-          decimals: 6
-      - price_usd: 5.205371347564823e-06
-        market_cap_usd: 5205.371347564823
-        token_info:
-          name: SUPER UNC
-          symbol: UNC
-          mint_address: HA64PDq8uXm9o1TbrGjEEukLR7Xo4GU22XhBVmfwpump
-          decimals: 6
-      - price_usd: 4.716970118874007e-06
-        market_cap_usd: 4716.970118874006
-        token_info:
-          name: 'Toastoshi '
-          symbol: BRED
-          mint_address: 9ugLwzuebryZsgmaXxyiNbKHwwGCmStKxzMLp2FLpump
-          decimals: 6
-      - price_usd: 4.554025246306605e-06
-        market_cap_usd: 4554.025246306605
-        token_info:
-          name: CHAT GPT PEPELINO
-          symbol: PEPELINO
-          mint_address: DwEGgr1PCiTmetNQCBrFrpJWSahESFWWRDj6PhCmpump
-          decimals: 6
-      - price_usd: 4.049155492847532e-06
-        market_cap_usd: 4049.155492847532
-        token_info:
-          name: deportation core
-          symbol: DC
-          mint_address: Fjj4UV92vsQ5sSk7kg8FLMiEDG5icix1PQzrHz7QKQdL
-          decimals: 6
-      - price_usd: 3.133082532648374e-06
-        market_cap_usd: 3133.082532648374
-        token_info:
-          name: Black Mirror Digital Currency
-          symbol: TUPID
-          mint_address: kBQhWtppsfrK5fzi3GU9fxTM2VL3y1r7JqzjZqwpump
-          decimals: 6
-      - price_usd: 2.6804752096792435e-06
-        market_cap_usd: 2680.4752096792436
-        token_info:
-          name: FIRST PUMP.FUN LOGO
-          symbol: PUMP.FUN
-          mint_address: CGKLkzgMcWCXL6sRHsZTEs2nkktHSfGKRPL3eSjTpump
-          decimals: 6
-      - price_usd: 2.5340772017609687e-06
-        market_cap_usd: 2534.077201760969
-        token_info:
-          name: Quolsen
-          symbol: QLSN
-          mint_address: wMFYqXqZDED9SewS4ZBNxdM4C6152TyZbSz6j4Xpump
-          decimals: 6
-      - price_usd: 2.538057086389473e-06
-        market_cap_usd: 2538.0570863894727
-        token_info:
-          name: TAIX AI
-          symbol: TAIX
-          mint_address: GvNctu1XNALRyCurnREep7NLpZKkRmLG4g5d7Ljpump
-          decimals: 6
-      - price_usd: 2.533958209570552e-06
-        market_cap_usd: 2533.9582095705523
-        token_info:
-          name: New Cloned Dog
-          symbol: JOKER
-          mint_address: DDtmrGxJi9ppV4pv8XYZzVtEAAUseDpEfZs4g5izpump
-          decimals: 6
-      - price_usd: 2.58615884781087e-06
-        market_cap_usd: 2586.15884781087
-        token_info:
-          name: ALIEN OF THE UNITED STATES
-          symbol: AOTUS
-          mint_address: 6YTeRyKhEEoPC4N6Kr8SfigUZouJr4oKNGWPbN7Upump
-          decimals: 6
-      - price_usd: 2.3544423511817757e-06
-        market_cap_usd: 2354.442351181776
-        token_info:
-          name: Deep Trading
-          symbol: DT
-          mint_address: E21RsWkFP4FvWkEvgUNQtviuXJg7bdHcmo1Tr8Kepump
-          decimals: 6
-      - price_usd: 2.2972566727768855e-06
-        market_cap_usd: 2297.2566727768854
-        token_info:
-          name: LUMO-FART-DS-INSTRUCT
-          symbol: LUMO-FART
-          mint_address: 7hzkjAYxQGBKWmg8kSH5LV2RANxJ9Zfq43ZH4Spspump
+          name: AntiSpace
+          symbol: ANTI
+          mint_address: 4zpQBdSMr5fsutALgfeBhs6gEZJ6YNjawgPP13nfpump
           decimals: 6
       timeframe_hours: 48
-      tokens_without_price_data:
-      - C5wYSk5h62NH1XZduFcSkJWBMLEBRtj7uZvXgHUvpump
-      - DdqGtQM4UHxRsduZBpuuZEdGx8fPgGyiLor85et9pump
-      - Bm4bpCvHyaqeyP1sqb2XgGYvjab1KtiZBMGk8Dygpump
-      - EqVKSM3vXTrr8ZsNUNyqryyWnuUNH9dD9Dc7pswapump
-      - C6iq3p4MBeuqpgz7DUsscdo7S2Dmt2yT8DbpWiPc7kTf
+      tokens_without_price_data: []

@@ -3,14 +3,17 @@ input:
 output:
   response: 'ETH Price Prediction (5-minute timeframe):
 
-    Current forecast: Ethereum (ETH) is expected to reach approximately $1810.48 in
-    the next 5 minutes, based on Allora''s predictive model analysis. Please note
-    that cryptocurrency markets can be highly volatile, and actual prices may differ.
-    Confidence intervals are not provided for this forecast.'
+    Expected Price: $1,820.91
+
+    Token: Ethereum (ETH)
+
+    Timeframe: 5 minutes
+
+    **Note:** Confidence intervals not provided by the model for this prediction.'
   data:
     prediction_data:
       token: ETH
       timeframe: 5m
-      prediction: 1810.4813232421875
+      prediction: 1820.90771484375
       confidence_intervals: []
       confidence_interval_values: []
