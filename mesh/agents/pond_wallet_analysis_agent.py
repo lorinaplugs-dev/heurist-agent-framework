@@ -32,29 +32,6 @@ class PondWalletAnalysisAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes cryptocurrency wallet activities across Ethereum, Solana, and Base networks using the Cryptopond API.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about wallet analysis",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, return only raw data without natural language response",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of wallet analysis",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured wallet analysis data", "type": "dict"},
-                ],
                 "external_apis": ["Cryptopond"],
                 "tags": ["Wallet Analysis"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/CryptoPond.png",

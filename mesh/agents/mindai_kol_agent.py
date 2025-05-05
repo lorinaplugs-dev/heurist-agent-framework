@@ -29,29 +29,6 @@ class MindAiKolAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes Key Opinion Leaders (KOLs) and token performance in the crypto space using Mind AI API.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about crypto KOLs, tokens, or performance metrics.",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, return only raw data without natural language response.",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the KOL and token analysis.",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured data from Mind AI API.", "type": "dict"},
-                ],
                 "external_apis": ["Mind AI"],
                 "tags": ["KOL"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/MindAI.png",
@@ -192,75 +169,64 @@ class MindAiKolAgent(MeshAgent):
     # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def best_initial_call(
-        self, period: int = 168, token_category: str = None, kol_name: str = None, token_symbol: str = None
-    ) -> Dict:
-        """Fetch best initial calls with optional filters."""
-        endpoint = "/api/v1/best-initial-call"
-        params = {
-            "period": period,
-            "sortBy": "RoaAtCurrPrice",
-            **({"tokenCategory": token_category} if token_category else {}),
-            **({"kolName": kol_name} if kol_name else {}),
-            **({"tokenSymbol": token_symbol.lower()} if token_symbol else {}),
-        }
-
+    async def make_api_request(self, endpoint: str, params: Dict) -> Dict:
+        """Make a direct API request to the Mind AI API"""
         url = f"{self.base_url}{endpoint}"
 
         try:
-            resp = requests.get(url, headers=self.headers, params=params)
-            resp.raise_for_status()
-            return resp.json()
+            # Use direct synchronous request
+            response = requests.get(url, headers=self.headers, params=params)
+            logger.info(f"Request URL: {response.url}")
+            response.raise_for_status()
+            return response.json()
         except requests.exceptions.RequestException as e:
-            logger.error("Error fetching best initial calls: %s", e)
-            return {"error": f"Failed to fetch best initial calls: {e}"}
+            logger.error(f"API request error: {e}")
+            return {"error": f"API request failed: {str(e)}"}
         except Exception as e:
-            logger.error("Unexpected error: %s", e)
-            return {"error": f"Unexpected error: {e}"}
+            logger.error(f"Unexpected error: {e}")
+            return {"error": f"Unexpected error: {str(e)}"}
+
+    @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
+    async def best_initial_call(
+        self, period: int = 720, token_category: str = None, kol_name: str = None, token_symbol: str = None
+    ) -> Dict:
+        """Fetch best initial calls with optional filters."""
+        endpoint = "/api/v1/best-initial-call"
+        params = {"period": period, "sortBy": "RoaAtCurrPrice"}
+
+        if token_symbol:
+            params["tokenSymbol"] = token_symbol.upper()
+        if token_category:
+            params["tokenCategory"] = token_category
+        if kol_name:
+            params["kolName"] = kol_name
+
+        return await self.make_api_request(endpoint, params)
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def kol_statistics(self, period: int = 168, kol_name: str = None) -> Dict:
         """Fetch KOL statistics with optional KOL name."""
         endpoint = "/api/v1/kol-stats"
-        params = {
-            "period": period,
-            **({"kolName": kol_name} if kol_name else {}),
-        }
+        params = {"period": period}
 
-        url = f"{self.base_url}{endpoint}"
+        if kol_name:
+            params["kolName"] = kol_name
 
-        try:
-            resp = requests.get(url, headers=self.headers, params=params)
-            resp.raise_for_status()
-            return resp.json()
-        except requests.exceptions.RequestException as e:
-            logger.error("Error fetching KOL statistics: %s", e)
-            return {"error": f"Failed to fetch KOL statistics: {e}"}
-        except Exception as e:
-            logger.error("Unexpected error: %s", e)
-            return {"error": f"Unexpected error: {e}"}
+        return await self.make_api_request(endpoint, params)
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def token_statistics(self, period: int = 168, token_symbol: str = None) -> Dict:
         """Fetch token statistics with optional token symbol."""
         endpoint = "/api/v1/token-stats"
-        params = {
-            "period": period,
-            **({"tokenSymbol": token_symbol.lower()} if token_symbol else {}),
-        }
-        url = f"{self.base_url}{endpoint}"
-        try:
-            resp = requests.get(url, headers=self.headers, params=params)
-            resp.raise_for_status()
-            return resp.json()
-        except requests.exceptions.RequestException as e:
-            logger.error("Error fetching token statistics: %s", e)
-            return {"error": f"Failed to fetch token statistics: {e}"}
-        except Exception as e:
-            logger.error("Unexpected error: %s", e)
-            return {"error": f"Unexpected error: {e}"}
+        params = {"period": period}
+
+        if token_symbol:
+            params["tokenSymbol"] = token_symbol.upper()
+
+        return await self.make_api_request(endpoint, params)
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
@@ -276,59 +242,57 @@ class MindAiKolAgent(MeshAgent):
             "tokensAmount": tokens_amount,
             "kolsAmount": kols_amount,
         }
-        url = f"{self.base_url}{endpoint}"
-        try:
-            resp = requests.get(url, headers=self.headers, params=params)
-            resp.raise_for_status()
-            return resp.json()
-        except requests.exceptions.RequestException as e:
-            logger.error("Error fetching top gainers: %s", e)
-            return {"error": f"Failed to fetch top gainers: {e}"}
-        except Exception as e:
-            logger.error("Unexpected error: %s", e)
-            return {"error": f"Unexpected error: {e}"}
+
+        return await self.make_api_request(endpoint, params)
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
-        """Handle tool execution and return results."""
-        tool_functions = {
-            "get_best_initial_calls": self.best_initial_call,
-            "get_kol_statistics": self.kol_statistics,
-            "get_token_statistics": self.token_statistics,
-            "get_top_gainers": self.top_gainers,
-        }
-
-        if tool_name not in tool_functions:
-            return {"error": f"Unsupported tool: {tool_name}"}
-
-        period = function_args.get("period", 168)
-
+        """Handle execution of specific tools and return the raw data"""
         if tool_name == "get_best_initial_calls":
-            result = await tool_functions[tool_name](
-                period,
-                function_args.get("token_category"),
-                function_args.get("kol_name"),
-                function_args.get("token_symbol"),
+            period = function_args.get("period", 720)  # Default to 720 hours (30 days) for best initial calls
+            token_category = function_args.get("token_category")
+            kol_name = function_args.get("kol_name")
+            token_symbol = function_args.get("token_symbol")
+
+            logger.info(f"Fetching best initial calls for token: {token_symbol}, period: {period}")
+            result = await self.best_initial_call(
+                period=period, token_category=token_category, kol_name=kol_name, token_symbol=token_symbol
             )
 
         elif tool_name == "get_kol_statistics":
-            result = await tool_functions[tool_name](period, function_args.get("kol_name"))
+            period = function_args.get("period", 168)
+            kol_name = function_args.get("kol_name")
+
+            logger.info(f"Fetching KOL statistics for: {kol_name}, period: {period}")
+            result = await self.kol_statistics(period=period, kol_name=kol_name)
 
         elif tool_name == "get_token_statistics":
+            period = function_args.get("period", 168)
             token_symbol = function_args.get("token_symbol")
+
             if not token_symbol:
-                return {"error": "Missing 'token_symbol' in tool_arguments"}
-            result = await tool_functions[tool_name](period, token_symbol)
+                return {"error": "Missing 'token_symbol' in tool arguments"}
+
+            logger.info(f"Fetching token statistics for: {token_symbol}, period: {period}")
+            result = await self.token_statistics(period=period, token_symbol=token_symbol)
 
         elif tool_name == "get_top_gainers":
-            result = await tool_functions[tool_name](
-                period,
-                function_args.get("token_category", "top100"),
-                function_args.get("tokens_amount", 5),
-                function_args.get("kols_amount", 3),
+            period = function_args.get("period", 168)
+            token_category = function_args.get("token_category", "top100")
+            tokens_amount = function_args.get("tokens_amount", 5)
+            kols_amount = function_args.get("kols_amount", 3)
+
+            logger.info(f"Fetching top gainers for category: {token_category}, period: {period}")
+            result = await self.top_gainers(
+                period=period, token_category=token_category, tokens_amount=tokens_amount, kols_amount=kols_amount
             )
 
-        errors = self._handle_error(result)
-        return errors if errors else result
+        else:
+            return {"error": f"Unsupported tool '{tool_name}'"}
+
+        if errors := self._handle_error(result):
+            return errors
+
+        return result
