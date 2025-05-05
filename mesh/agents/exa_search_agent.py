@@ -2,8 +2,6 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import requests
-
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
@@ -27,29 +25,6 @@ class ExaSearchAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can search the web using Exa's API and provide direct answers to questions.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query to search for on the web.",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw or base structured data without additional LLM explanation.",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of search results (empty if a direct tool call).",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured search results or direct answer data.", "type": "dict"},
-                ],
                 "external_apis": ["Exa"],
                 "tags": ["Search"],
                 "recommended": True,
@@ -132,21 +107,25 @@ class ExaSearchAgent(MeshAgent):
     # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=3600)  # Cache for 1 hour
     @with_retry(max_retries=3)
-    async def search(self, search_term: str, limit: int = 10) -> dict:
+    async def exa_web_search(self, search_term: str, limit: int = 10) -> Dict[str, Any]:
         """
         Uses Exa's /search endpoint to find webpages related to the search term.
         """
+        logger.info(f"Executing Exa web search for '{search_term}' with limit {limit}")
+
         try:
             url = f"{self.base_url}/search"
             payload = {"query": search_term, "numResults": limit, "contents": {"text": True}}
 
-            response = requests.post(url, json=payload, headers=self.headers)
-            response.raise_for_status()
-            search_results = response.json()
+            response = await self._api_request(url=url, method="POST", headers=self.headers, json_data=payload)
+
+            if "error" in response:
+                logger.error(f"Exa search API error: {response['error']}")
+                return {"status": "error", "error": response["error"]}
 
             # Format the search results data
             formatted_results = []
-            for result in search_results.get("results", []):
+            for result in response.get("results", []):
                 formatted_results.append(
                     {
                         "title": result.get("title", "N/A"),
@@ -156,69 +135,85 @@ class ExaSearchAgent(MeshAgent):
                     }
                 )
 
-            return {"search_results": formatted_results}
+            logger.info(f"Successfully retrieved {len(formatted_results)} search results")
+            return {"status": "success", "data": {"search_results": formatted_results}}
 
-        except requests.RequestException as e:
-            logger.error(f"Search API error: {e}")
-            return {"error": f"Failed to execute search: {str(e)}"}
+        except Exception as e:
+            logger.error(f"Exception in exa_web_search: {str(e)}")
+            return {"status": "error", "error": f"Failed to execute search: {str(e)}"}
 
     @with_cache(ttl_seconds=3600)  # Cache for 1 hour
     @with_retry(max_retries=3)
-    async def answer(self, question: str) -> dict:
+    async def exa_answer_question(self, question: str) -> Dict[str, Any]:
         """
         Uses Exa's /answer endpoint to generate a direct answer based on the question.
         """
+        logger.info(f"Getting Exa direct answer for '{question}'")
+
         try:
             url = f"{self.base_url}/answer"
             payload = {"query": question}  # API still uses 'query'
 
-            response = requests.post(url, json=payload, headers=self.headers)
-            response.raise_for_status()
-            answer_result = response.json()
+            response = await self._api_request(url=url, method="POST", headers=self.headers, json_data=payload)
 
-            # Return the formatted answer result
-            return {
-                "answer": answer_result.get("answer", "No direct answer available"),
+            if "error" in response:
+                logger.error(f"Exa answer API error: {response['error']}")
+                return {"status": "error", "error": response["error"]}
+
+            # Format the answer result
+            answer_data = {
+                "answer": response.get("answer", "No direct answer available"),
                 "sources": [
                     {"title": source.get("title", "N/A"), "url": source.get("url", "N/A")}
-                    for source in answer_result.get("sources", [])
+                    for source in response.get("sources", [])
                 ],
             }
 
-        except requests.RequestException as e:
-            logger.error(f"Answer API error: {e}")
-            return {"error": f"Failed to get answer: {str(e)}"}
+            logger.info("Successfully retrieved direct answer")
+            return {"status": "success", "data": answer_data}
+
+        except Exception as e:
+            logger.error(f"Exception in exa_answer_question: {str(e)}")
+            return {"status": "error", "error": f"Failed to get answer: {str(e)}"}
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
+        """
+        Handle execution of specific tools and return the raw data.
+        """
+        logger.info(f"Handling tool call: {tool_name} with args: {function_args}")
+
         if tool_name == "exa_web_search":
             search_term = function_args.get("search_term")
-            limit = max(function_args.get("limit", 10), 10)
+            limit = function_args.get("limit", 10)
 
             if not search_term:
-                return {"error": "Missing 'search_term' in tool_arguments"}
+                logger.error("Missing 'search_term' parameter")
+                return {"status": "error", "error": "Missing 'search_term' parameter"}
 
-            logger.info(f"Executing search for '{search_term}'")
-            result = await self.search(search_term, limit)
-            errors = self._handle_error(result)
-            if errors:
-                return errors
-            return result
+            # Ensure limit is at least 10
+            if limit < 10:
+                limit = 10
+
+            result = await self.exa_web_search(search_term, limit)
 
         elif tool_name == "exa_answer_question":
             question = function_args.get("question")
 
             if not question:
-                return {"error": "Missing 'question' in tool_arguments"}
+                logger.error("Missing 'question' parameter")
+                return {"status": "error", "error": "Missing 'question' parameter"}
 
-            logger.info(f"Getting direct answer for '{question}'")
-            result = await self.answer(question)
-            errors = self._handle_error(result)
-            if errors:
-                return errors
+            result = await self.exa_answer_question(question)
 
-            return result
         else:
-            return {"error": f"Unsupported tool '{tool_name}'"}
+            logger.error(f"Unsupported tool: {tool_name}")
+            return {"status": "error", "error": f"Unsupported tool: {tool_name}"}
+
+        errors = self._handle_error(result)
+        if errors:
+            return errors
+
+        return result
