@@ -33,3 +33,13 @@ class EchoAgent(MeshAgent):
         await asyncio.sleep(delay)
 
         return {"response": query}
+
+    # dummy implementations for abstract methods
+    async def _handle_tool_logic(self):
+        return None
+
+    def get_system_prompt(self):
+        return None
+
+    def get_tool_schemas(self):
+        return None
