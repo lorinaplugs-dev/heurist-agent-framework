@@ -160,7 +160,7 @@
   },
   "MindAiKolAgent": {
     "get_best_initial_calls": {
-      "period": 168,
+      "period": 720,
       "token_symbol": "HEU"
     },
     "get_kol_statistics": {
