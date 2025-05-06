@@ -26,6 +26,7 @@ dependencies = [
     "pyethash", # to build web3-ethereum-defi
     "pytest==7.4.3", # testing
     "python-dotenv==1.1.0",
+    "python-telegram-bot==22.0", # interfaces/telegram.py
     "pyyaml>=6.0.2",
     "requests==2.32.3",
     "ruff==0.11.8", # formatting/linting
