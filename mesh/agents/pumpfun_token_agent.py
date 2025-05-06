@@ -3,7 +3,6 @@ import os
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List
 
-import aiohttp
 from dotenv import load_dotenv
 
 from decorators import monitor_execution, with_cache, with_retry
@@ -20,8 +19,8 @@ class PumpFunTokenAgent(MeshAgent):
         if not self.api_key:
             raise ValueError("BITQUERY_API_KEY environment variable is required")
         self.headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
+        self.bitquery_url = "https://streaming.bitquery.io/eap"
 
-        self.session = None
         self.metadata.update(
             {
                 "name": "PumpFun Agent",
@@ -29,29 +28,6 @@ class PumpFunTokenAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes Pump.fun token on Solana using Bitquery API. It tracks token creation and graduation events on Pump.fun.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about a token (must include a token address), or a request for trending coins. ",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw or base structured data without additional LLM explanation.",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the token information (empty if a direct tool call).",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured token analysis data.", "type": "dict"},
-                ],
                 "external_apis": ["Bitquery"],
                 "tags": ["Solana"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Pumpfun.png",
@@ -62,15 +38,6 @@ class PumpFunTokenAgent(MeshAgent):
         )
 
         self.VALID_INTERVALS = {"hours", "days"}
-
-    async def __aenter__(self):
-        self.session = aiohttp.ClientSession()
-        return self
-
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if self.session:
-            await self.session.close()
-            self.session = None
 
     def get_system_prompt(self) -> str:
         return """You are a specialized assistant that analyzes Pump.fun tokens on Solana using Bitquery API. Your capabilities include:
@@ -107,7 +74,6 @@ Guidelines:
                         "properties": {
                             "interval": {
                                 "type": "string",
-                                # not using `self.VALID_INTERVALS` so that the metadata generator can pick it up easily
                                 "enum": ["hours", "days"],
                                 "default": "hours",
                                 "description": "Time interval (hours/days)",
@@ -142,12 +108,45 @@ Guidelines:
             },
         ]
 
+    async def _execute_query(self, query: str, variables: Dict = None) -> Dict:
+        """
+        Execute a GraphQL query against the Bitquery API using the base class's _api_request method.
+
+        Args:
+            query (str): GraphQL query to execute
+            variables (Dict, optional): Variables for the query
+
+        Returns:
+            Dict: Query results
+        """
+        payload = {"query": query}
+        if variables:
+            payload["variables"] = variables
+
+        try:
+            result = await self._api_request(
+                url=self.bitquery_url, method="POST", headers=self.headers, json_data=payload
+            )
+
+            if "error" in result:
+                return result
+
+            if "errors" in result:
+                error_messages = [error.get("message", "Unknown error") for error in result["errors"]]
+                return {"error": f"GraphQL errors: {', '.join(error_messages)}"}
+
+            return result
+
+        except Exception as e:
+            logger.error(f"Error in _execute_query: {str(e)}")
+            return {"error": f"Query execution failed: {str(e)}"}
+
     @monitor_execution()
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def query_recent_token_creation(self, interval: str = "hours", offset: int = 1) -> Dict:
         if interval not in self.VALID_INTERVALS:
-            raise ValueError(f"Invalid interval. Must be one of: {', '.join(self.VALID_INTERVALS)}")
+            return {"error": f"Invalid interval. Must be one of: {', '.join(self.VALID_INTERVALS)}"}
 
         query = """
         query {
@@ -186,6 +185,9 @@ Guidelines:
         """.replace("INTERVAL_PLACEHOLDER", interval).replace("OFFSET_PLACEHOLDER", str(offset))
 
         result = await self._execute_query(query)
+
+        if "error" in result:
+            return result
 
         if "data" in result and "Solana" in result["data"]:
             tokens = result["data"]["Solana"]["TokenSupplyUpdates"]
@@ -276,6 +278,9 @@ Guidelines:
 
         first_result = await self._execute_query(graduated_query, variables)
 
+        if "error" in first_result:
+            return {"graduated_tokens": [], "error": first_result["error"]}
+
         if "data" not in first_result or "Solana" not in first_result["data"]:
             return {"graduated_tokens": [], "error": "Failed to fetch graduated tokens"}
 
@@ -339,6 +344,9 @@ Guidelines:
 
         second_result = await self._execute_query(price_query, price_variables)
 
+        if "error" in second_result:
+            return {"graduated_tokens": [], "token_addresses": token_addresses, "error": second_result["error"]}
+
         if "data" not in second_result or "Solana" not in second_result["data"]:
             return {
                 "graduated_tokens": [],
@@ -393,52 +401,6 @@ Guidelines:
             "start_time": start_time_str,
         }
 
-    async def _execute_query(self, query: str, variables: Dict = None) -> Dict:
-        """
-        Execute a GraphQL query against the Bitquery API with improved error handling.
-
-        Args:
-            query (str): GraphQL query to execute
-            variables (Dict, optional): Variables for the query
-
-        Returns:
-            Dict: Query results
-        """
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-
-        url = "https://streaming.bitquery.io/eap"
-
-        payload = {"query": query}
-        if variables:
-            payload["variables"] = variables
-
-        try:
-            async with self.session.post(url, json=payload, headers=self.headers) as response:
-                response.raise_for_status()
-                data = await response.json()
-
-                if "errors" in data:
-                    error_messages = [error.get("message", "Unknown error") for error in data["errors"]]
-                    raise Exception(f"GraphQL errors: {', '.join(error_messages)}")
-
-                return data
-        except aiohttp.ClientResponseError as e:
-            if e.status == 429:
-                # Rate limit error
-                raise Exception(f"Rate limit exceeded: {str(e)}")
-            elif e.status >= 500:
-                # Server-side error
-                raise Exception(f"Bitquery server error: {str(e)}")
-            else:
-                raise Exception(f"API request failed: {str(e)}")
-        except aiohttp.ClientError as e:
-            # Network-related errors
-            raise Exception(f"Network error when calling Bitquery: {str(e)}")
-        except Exception as e:
-            # Unexpected errors
-            raise Exception(f"Unexpected error during query execution: {str(e)}")
-
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         """
         Handle execution of specific tools and return the raw data.
@@ -447,11 +409,14 @@ Guidelines:
         if tool_name == "query_recent_token_creation":
             interval = function_args.get("interval", "hours")
             offset = function_args.get("offset", 1)
-            return await self.query_recent_token_creation(interval=interval, offset=offset)
-
+            result = await self.query_recent_token_creation(interval=interval, offset=offset)
         elif tool_name == "query_latest_graduated_tokens":
             timeframe = function_args.get("timeframe", 24)
-            return await self.query_latest_graduated_tokens(timeframe=timeframe)
-
+            result = await self.query_latest_graduated_tokens(timeframe=timeframe)
         else:
             return {"error": f"Unsupported tool '{tool_name}'"}
+
+        if errors := self._handle_error(result):
+            return errors
+
+        return result

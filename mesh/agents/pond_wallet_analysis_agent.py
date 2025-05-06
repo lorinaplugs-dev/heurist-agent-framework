@@ -2,8 +2,6 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import requests
-
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
@@ -118,38 +116,32 @@ class PondWalletAnalysisAgent(MeshAgent):
         if not model_id:
             return {"error": f"Unsupported network: {network}"}
 
-        try:
-            payload = {
-                "req_type": "1",
-                "access_token": self.api_key,
-                "input_keys": [address],
-                "model_id": model_id,
-            }
+        payload = {
+            "req_type": "1",
+            "access_token": self.api_key,
+            "input_keys": [address],
+            "model_id": model_id,
+        }
 
-            response = requests.post(f"{self.base_url}/predict", headers=self.headers, json=payload)
-            response.raise_for_status()
-            result = response.json()
+        result = await self._api_request(
+            url=f"{self.base_url}/predict", method="POST", headers=self.headers, json_data=payload
+        )
+        if "error" in result:
+            return result
 
-            if result.get("code") != 200 or "resp_items" not in result:
-                return {"error": f"API returned unexpected response: {result}"}
+        if result.get("code") != 200 or "resp_items" not in result:
+            return {"error": f"API returned unexpected response: {result}"}
 
-            resp_items = result.get("resp_items", [])
-            if not resp_items or "analysis_result" not in resp_items[0]:
-                return {"error": "No analysis results found in response"}
+        resp_items = result.get("resp_items", [])
+        if not resp_items or "analysis_result" not in resp_items[0]:
+            return {"error": "No analysis results found in response"}
 
-            return {
-                "network": network,
-                "address": address,
-                "analysis": resp_items[0]["analysis_result"],
-                "updated_at": resp_items[0].get("debug_info", {}).get("UPDATED_AT"),
-            }
-
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Error analyzing {network} wallet: {e}")
-            return {"error": f"Failed to analyze wallet: {e}"}
-        except Exception as e:
-            logger.error(f"Unexpected error during {network} wallet analysis: {e}")
-            return {"error": f"Unexpected error: {e}"}
+        return {
+            "network": network,
+            "address": address,
+            "analysis": resp_items[0]["analysis_result"],
+            "updated_at": resp_items[0].get("debug_info", {}).get("UPDATED_AT"),
+        }
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
@@ -179,5 +171,8 @@ class PondWalletAnalysisAgent(MeshAgent):
         logger.info(f"Analyzing {network.capitalize()} wallet: {address}")
 
         result = await self.analyze_wallet(address, network)
-        errors = self._handle_error(result)
-        return errors or result
+
+        if errors := self._handle_error(result):
+            return errors
+
+        return result

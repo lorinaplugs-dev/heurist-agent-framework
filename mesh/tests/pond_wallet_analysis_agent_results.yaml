@@ -4,27 +4,30 @@ ethereum_wallet_natural_language:
     raw_data_only: false
   output:
     response: "**Ethereum Wallet Analysis: 0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073**\n\
-      \n**Last Updated:** 2025-05-05T02:18:35\n\n**Key Insights:**\n\n1. **High Trading\
-      \ Activity**:\n\t* **Total Actions (30 days)**: **3,586** (transactions) & **3,560**\
-      \ (DEX swaps)\n\t* **Average Daily Actions**: ~119 (transactions) & ~118 (DEX\
-      \ swaps)\n2. **Substantial Trading Volume**:\n\t* **Total Trading Volume (30\
-      \ days)**: **~48.5M** (~$45,005,575.99 USD, assuming $1 ~ 1 ETH for simplicity)\n\
-      \t* **Average Trading Volume (30 days)**: **~$1.26M** (~12,642 ETH) per day\n\
-      \t* **Median Trading Volume (30 days)**: **~2,964** (~$2,964,524.63 USD) per\
-      \ action\n3. **Profit and Loss (PNL)**:\n\t* **30-Day Trading PNL**: **~$1,436,742.07**\
-      \ (profit)\n4. **Token Diversity**:\n\t* **Sold Unique Tokens (30 days)**: **42**\n\
-      \t* **Bought Unique Tokens (30 days)**: **41**\n5. **Gas Fees**:\n\t* **Total\
-      \ Gas Fees (30 days)**: **~3.76M** (in gas units, not Gwei/ETH) (~$3,761,304.66\
-      \ USD, estimating 1 gas unit ~ $0.001)\n\t* **Average Gas Fee (30 days)**: **~1,048,885.94**\
-      \ gas units (~$1,048.89 USD, using the above estimation)\n\n**Trends and Behavioral\
-      \ Patterns:**\n\n* **Frequent Trader**: The wallet exhibits a high frequency\
-      \ of transactions and DEX swaps, indicating an active trading strategy.\n* **Accumulation\
-      \ and Diversification**: The purchase of 41 unique tokens suggests a diversification\
-      \ strategy, while the overall profit and substantial trading volume imply successful\
-      \ accumulation of assets.\n* **Significant Selling Activity**: Selling 42 unique\
-      \ tokens could indicate a portfolio rebalancing strategy or responding to market\
-      \ conditions.\n* **Gas Fee Management**: The high average gas fee might suggest\
-      \ a preference for prompt transaction"
+      \n**Last Updated:** May 5, 2025, 02:18:35\n\n**Key Insights:**\n\n1. **High\
+      \ Trading Activity**:\n\t* **30-Day Trading Volume:** **45.01M** (ETH equivalent)\n\
+      \t* **Average Daily Trading Volume:** **12,642.02** (ETH equivalent)\n\t* **Median\
+      \ Daily Trading Volume:** **2,964.52** (ETH equivalent)\n2. **Frequent Trader**:\n\
+      \t* **30-Day Transaction Count:** **3,586** (all transactions)\n\t* **30-Day\
+      \ DEX Swap Actions:** **3,560** (high proportion of transactions are DEX swaps)\n\
+      3. **Diverse Token Interactions**:\n\t* **Unique Tokens Sold (30D):** **42**\n\
+      \t* **Unique Tokens Bought (30D):** **41**\n4. **Profitability**:\n\t* **30-Day\
+      \ Trading Profit/Loss (PNL):** **+1,436,742.07** (ETH equivalent) - **indicative\
+      \ of profitable trading activities**\n5. **Gas Fee Expenses**:\n\t* **30-Day\
+      \ Total Gas Fees:** **3.7613 ETH** (approx. **$6,351.30** at $1,685/ETH)\n\t\
+      * **Average Gas Fee per Transaction:** **1.049 ETH** (approx. **$1,765.65**\
+      \ at $1,685/ETH)\n\n**Behavioral Patterns and Trends:**\n\n* **Consistent Activity**:\
+      \ The wallet shows consistent daily activity, with a high transaction count\
+      \ and trading volume, suggesting an active trader or potentially a trading bot.\n\
+      * **Accumulation and Profitable Swaps**: The significant profit/loss (PNL) value\
+      \ indicates the wallet's trading activities have been largely profitable over\
+      \ the last 30 days, which might suggest accumulation of assets during this period.\n\
+      * **High Gas Fee Expenses**: The average gas fee per transaction is relatively\
+      \ high, which could indicate:\n\t+ **Urgency in transactions**, prioritizing\
+      \ speed over cost.\n\t+ **Complex transactions**, involving multiple steps or\
+      \ contracts, increasing gas usage.\n\t+ **Activity during network congestion**,\
+      \ when gas prices are higher.\n\n**Unusual or Suspicious Activity:**\nNone identified\
+      \ based on"
     data:
       network: ethereum
       address: '0x2b25b37c683f042e9ae1877bc59a1bb642eb1073'
@@ -47,24 +50,27 @@ solana_wallet_natural_language:
     raw_data_only: false
   output:
     response: "**Solana Wallet Analysis: 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS**\n\
-      \n**Network:** Solana\n**Wallet Address:** 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS\n\
-      **Data Range:** Last 30 Days (as of 2025-05-05T03:07:02)\n\n**Key Insights:**\n\
-      \n1. **Trading Volume:**\n\t* **Total (30D):** **6,326.44** (approx. **$6.3M**,\
-      \ assuming an approximate SOL price of $20 for simplicity; **actual price not\
-      \ provided**)\n\t* **Average (30D):** **191.71**\n\t* **Median (30D):** **126.25**\n\
-      2. **Transaction Activity:**\n\t* **Total Actions (30D):** 61 transactions\n\
-      \t* **DEX Swaps Specific Actions (30D):** 33 actions\n3. **Gas Fees:**\n\t*\
-      \ **Total (30D):** **17,560,355** (in lamports; approx. **$175.60** at a rate\
-      \ of 2e-8 SOL/lamport, or roughly **$3.53** at a $20/SOL price for simplicity;\
-      \ **actual conversion not provided**)\n\t* **Average (30D):** **287,874.67**\
-      \ lamports (approx. **$2.88** or **$0.058** using the above simplifications)\n\
-      4. **Token Diversity:**\n\t* **Sold Unique Tokens (30D):** 7\n\t* **Bought Unique\
-      \ Tokens (30D):** 10\n5. **Profit & Loss (PnL) for Trading:**\n\t* **30D PnL:**\
-      \ **1,641.81** (approx. **$1.64M**, or roughly **$32.84** in SOL at $20/SOL;\
-      \ **actual asset and price not specified**)\n\n**Trends and Observations:**\n\
-      \n* **Moderate Trading Activity:** With 33 DEX swap actions and a total of 61\
-      \ transactions, the wallet shows a consistent level of activity over the 30-day\
-      \ period.\n* **Profitability:** The positive PnL of"
+      \n**Network:** Solana\n**Wallet Address:** 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS\
+      \ (format confirmed as correct for Solana)\n\n**Key Insights (30-day period,\
+      \ as of 2025-05-05T03:07:02)**\n\n1. **Trading Volume:**\n\t* **Total:** **6,326.44**\
+      \ (units not specified, assumed to be in SOL or USD, clarification needed for\
+      \ exact unit)\n\t* **Average Daily:** **191.71** (derived from total trading\
+      \ volume / 30 days)\n\t* **Median Daily:** **126.25** (indicates daily volume\
+      \ variability, with more days closer to this value)\n2. **Transaction Activity:**\n\
+      \t* **Total Actions (DEX Swaps):** **33**\n\t* **Total Transactions (All):**\
+      \ **61** (includes non-DEX swap transactions)\n3. **Token Diversity:**\n\t*\
+      \ **Sold Unique Tokens:** **7**\n\t* **Bought Unique Tokens:** **10**\n4. **Profit\
+      \ and Loss (PnL):**\n\t* **30-Day PnL:** **+1,641.81** (units not specified,\
+      \ assumed to be in SOL or USD, clarification needed for exact unit)\n5. **Gas\
+      \ Fees:**\n\t* **Total Gas Fees:** **17,560,355** (units not specified, assumed\
+      \ to be in lamports, 1 SOL ≈ 1,000,000,000 lamports)\n\t* **Average Gas Fee:**\
+      \ **287,874.67** (per transaction, in the same units as total)\n\t* **Median\
+      \ Gas Fee:** **128,896.00** (per transaction, in the same units as total)\n\n\
+      **Behavioral Patterns and Trends:**\n\n* **Moderate Trading Activity:** With\
+      \ 33 DEX swap actions and 61 total transactions over 30 days, the wallet shows\
+      \ regular but not extremely high activity.\n* **Diversified Portfolio:** Engaging\
+      \ with 17 unique tokens (7 sold, 10 bought) suggests a diversified investment\
+      \ strategy.\n* **Profitability:** The positive PnL of +1,641."
     data:
       network: solana
       address: 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS
@@ -86,84 +92,24 @@ base_wallet_natural_language:
     query: Check the transaction activity for Base wallet 0x97224Dd2aFB28F6f442E773853F229B3d8A0999a
     raw_data_only: false
   output:
-    response: '**Wallet Analysis Report**
-
-      ==========================
-
-
-      **Wallet Details**
-
-
-      * **Network:** Base
-
-      * **Address:** `0x97224Dd2aFB28F6f442E773853F229B3d8A0999a`
-
-      * **Last Updated:** `2025-05-05T01:43:49`
-
-
-      **Key Insights (30-day period)**
-
-      -------------------------------
-
-
-      ### **Trading Activity (DEX Swaps)**
-
-
-      * **Total Actions:** **166** ( trades/exchanges)
-
-      * **Total Trading Volume:** **39.31M** ( BASE_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS:
-      39,313.67)
-
-      * **Average Trading Volume:** **236.83** (per action, averaged over 30 days)
-
-      * **Median Trading Volume:** **100.07** (indicating a skewed distribution with
-      some high-value trades)
-
-      * **Profit/Loss (PNL):** **+32.64** (suggesting an overall profit in the last
-      30 days)
-
-
-      ### **Token Diversity**
-
-
-      * **Unique Tokens Sold:** **15**
-
-      * **Unique Tokens Bought:** **13**
-
-      * **Observation:** The wallet has interacted with a moderate number of unique
-      tokens, indicating some diversification in trading activities.
-
-
-      ### **Transaction Activity (All Transactions, not just DEX Swaps)**
-
-
-      * **Total Actions:** **631** (all transactions, including but not limited to
-      DEX swaps)
-
-      * **Total Gas Fees:** **517,439.47** (high, indicating frequent or complex transactions)
-
-      * **Average Gas Fee:** **820.03** (per transaction, averaged over 30 days)
-
-      * **Median Gas Fee:** **438.09** (lower than the average, suggesting some transactions
-      with significantly higher gas fees)
-
-
-      **Trends and Behavioral Patterns:**
-
-
-      1. **Active Trader:** High transaction counts in both DEX swaps and overall
-      transactions suggest the wallet owner is an active trader/investor.
-
-      2. **Profitable Period:** The positive PNL indicates successful trading decisions
-      over the last 30 days.
-
-      3. **Diversified Portfolio:** Engagement with multiple tokens, though the specific
-      tokens are not listed here, suggests an effort to diversify.
-
-      4. **Frequent Small to Medium Trades:** The median trading volume is significantly
-      lower than the average, implying many smaller trades alongside some larger ones.
-
-      5. **Potential for Gas Fee Optimization:** The high total and average'
+    response: "**Wallet Activity Analysis for Base Wallet: 0x97224Dd2aFB28F6f442E773853F229B3d8A0999a**\n\
+      \n**Network:** Base\n**Address:** 0x97224Dd2aFB28F6f442E773853F229B3d8A0999a\
+      \ (Format: **Valid**)\n**Analysis Period:** 30 Days (Updated: 2025-05-05T01:43:49)\n\
+      \n**Key Insights:**\n\n1. **High Transaction Activity**:\n\t* **Transaction\
+      \ Count (30D):** 631 actions (`BASE_TRANSACTIONS_USER_TOTAL_ACTIONS_COUNT_FOR_30DAYS`)\n\
+      \t* **Average Actions per Day:** ≈ 21 transactions/day\n2. **Trading Volume\
+      \ on DEX Swaps**:\n\t* **Total Trading Volume (30D):** **39.31M** (`BASE_DEX_SWAPS_USER_TRADING_VOLUME_SUM_FOR_30DAYS`)\n\
+      \t* **Average Daily Trading Volume:** ≈ **236.83k** (`BASE_DEX_SWAPS_USER_TRADING_VOLUME_AVG_FOR_30DAYS`)\n\
+      \t* **Median Daily Trading Volume:** ≈ **100.07k** (`BASE_DEX_SWAPS_USER_TRADING_VOLUME_MEDIAN_FOR_30DAYS`)\n\
+      3. **Profit and Loss (PnL) on DEX Swaps**:\n\t* **30-Day PnL:** **+32.64k**\
+      \ (`BASE_DEX_SWAPS_USER_TRADING_PNL_FOR_30DAYS`)\n\t* **Indicates a profitable\
+      \ trading period**\n4. **Token Diversity**:\n\t* **Sold Unique Tokens (30D):**\
+      \ 15 (`BASE_DEX_SWAPS_USER_SOLD_TOKEN_UNIQUE_COUNT_FOR_30DAYS`)\n\t* **Bought\
+      \ Unique Tokens (30D):** 13 (`BASE_DEX_SWAPS_USER_BOUGHT_TOKEN_UNIQUE_COUNT_FOR_30DAYS`)\n\
+      \t* **Suggests active portfolio management**\n5. **Gas Fees**:\n\t* **Total\
+      \ Gas Fees (30D):** **517.44k** (`BASE_TRANSACTIONS_USER_GAS_FEE_SUM_FOR_30DAYS`)\n\
+      \t* **Average Gas Fee per Transaction:** ≈ **820.03** (`BASE_TRANSACTIONS_USER_GAS_FEE_AVG_FOR_30DAYS`)\n\
+      \t* **Median Gas Fee per Transaction:** ≈ **438.09"
     data:
       network: base
       address: '0x97224dd2afb28f6f442e773853f229b3d8a0999a'

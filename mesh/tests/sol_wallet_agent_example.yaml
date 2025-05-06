@@ -3,47 +3,47 @@ natural_language_query_with_analysis:
     query: Give me the holders of this 4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump
     raw_data_only: false
   output:
-    response: "**Wallet Analysis for 4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump**\n\
-      \n**Common Token Holdings:**\n\n1. **TRUMP**\n\t* Token Address: `6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN`\n\
-      \t* **Holder Count:** 8\n\t* **Total Holding Value:** **$68.63M** (avg. $8.58M\
-      \ per holder)\n\t* **Price per Token:** $11.19\n2. **WOLVES**\n\t* Token Address:\
-      \ `3oEBc8fPY6UKfVtkL4WXdar9tGrdDsjWCpbo5hGEoiFP`\n\t* **Holder Count:** 3\n\t\
-      * **Total Holding Value:** **$38.88M** (avg. $12.96M per holder)\n\t* **Price\
-      \ per Token:** $0.95\n3. **TROLOLOL**\n\t* Token Address: `13wJNmH9DedbaHfmyqMqur2Qr1cQamGRVSxLS3JYgG8H`\n\
-      \t* **Holder Count:** 3\n\t* **Total Holding Value:** **$27.44M** (avg. $9.15M\
-      \ per holder)\n\t* **Price per Token:** $2.57\n4. **$WIF**\n\t* Token Address:\
+    response: "**Wallet Overview: `4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump`**\n\
+      \n**Top Token Holdings:**\n\n1. **TRUMP**\n\t* **Token Address:** `6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN`\n\
+      \t* **Holder Count:** 7\n\t* **Total Holding Value:** **$66.19M** (avg. ~$9.46M\
+      \ per holder)\n\t* **Price per Token:** $10.94\n2. **TROLOLOL**\n\t* **Token\
+      \ Address:** `13wJNmH9DedbaHfmyqMqur2Qr1cQamGRVSxLS3JYgG8H`\n\t* **Holder Count:**\
+      \ 3\n\t* **Total Holding Value:** **$27.12M** (avg. ~$9.04M per holder)\n\t\
+      * **Price per Token:** $2.54\n3. **WOLVES**\n\t* **Token Address:** `3oEBc8fPY6UKfVtkL4WXdar9tGrdDsjWCpbo5hGEoiFP`\n\
+      \t* **Holder Count:** 2\n\t* **Total Holding Value:** **$25.61M** (avg. ~$12.80M\
+      \ per holder)\n\t* **Price per Token:** $0.95\n4. **$WIF**\n\t* **Token Address:**\
       \ `EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm`\n\t* **Holder Count:** 5\n\t\
-      * **Total Holding Value:** **$23.08M** (avg. $4.62M per holder)\n\t* **Price\
-      \ per Token:** $0.56\n5. **gork**\n\t* Token Address: `38PgzpJYu2HkiYvV8qePFakB8tuobPdGm2FFEn7Dpump`\n\
-      \t* **Holder Count:** 6\n\t* **Total Holding Value:** **$7.39M** (avg. $1.23M\
-      \ per holder)\n\t* **Price per Token:** $0.06"
+      * **Total Holding Value:** **$22.86M** (avg. ~$4.57M per holder)\n\t* **Price\
+      \ per Token:** $0.56\n5. **PENGU**\n\t* **Token Address:** `2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv`\n\
+      \t* **Holder Count:** 8\n\t* **Total Holding Value:** **$10.93M** (avg. ~$1.37M\
+      \ per"
     data: &id002
       common_tokens:
       - token_address: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN
         symbol: TRUMP
-        price_per_token: 11.187521
-        total_holding_value: 68634639.7978579
-        holder_count: 8
-      - token_address: 3oEBc8fPY6UKfVtkL4WXdar9tGrdDsjWCpbo5hGEoiFP
-        symbol: WOLVES
-        price_per_token: 0.9483858
-        total_holding_value: 38883816.77865982
-        holder_count: 3
+        price_per_token: 10.9373
+        total_holding_value: 66190120.2990541
+        holder_count: 7
       - token_address: 13wJNmH9DedbaHfmyqMqur2Qr1cQamGRVSxLS3JYgG8H
         symbol: TROLOLOL
-        price_per_token: 2.571684
-        total_holding_value: 27436578.202623248
+        price_per_token: 2.542068
+        total_holding_value: 27120614.647771943
         holder_count: 3
+      - token_address: 3oEBc8fPY6UKfVtkL4WXdar9tGrdDsjWCpbo5hGEoiFP
+        symbol: WOLVES
+        price_per_token: 0.9484976
+        total_holding_value: 25609435.02187729
+        holder_count: 2
       - token_address: EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm
         symbol: $WIF
-        price_per_token: 0.559095
-        total_holding_value: 23085150.397601124
+        price_per_token: 0.560284
+        total_holding_value: 22861250.91343939
         holder_count: 5
-      - token_address: 38PgzpJYu2HkiYvV8qePFakB8tuobPdGm2FFEn7Dpump
-        symbol: gork
-        price_per_token: 0.063918
-        total_holding_value: 7389905.177230808
-        holder_count: 6
+      - token_address: 2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv
+        symbol: PENGU
+        price_per_token: 0.011904
+        total_holding_value: 10930437.842594799
+        holder_count: 8
       analyzed_holders: 20
 natural_language_query_raw_data:
   input:
@@ -53,6 +53,15 @@ natural_language_query_raw_data:
     response: ''
     data: &id001
       transactions:
+      - account: DbDi7soBXALYRMZSyJMEAfpaK3rD1hr5HuCYzuDrcEEN
+        timestamp: 1746493659
+        description: DbDi7soBXALYRMZSyJMEAfpaK3rD1hr5HuCYzuDrcEEN swapped 500000 FLOYDAI
+          for 10.850436984 SOL
+        token_in_address: J7tYmq2JnQPvxyhcXpCDrvJnc9R5ts8rv7tgVHDPsw7U
+        token_in_amount: '500000.0'
+        token_out_address: So11111111111111111111111111111111111111112
+        token_out_amount: '10.850436984'
+        type: SELL
       - account: DbDi7soBXALYRMZSyJMEAfpaK3rD1hr5HuCYzuDrcEEN
         timestamp: 1746352883
         description: DbDi7soBXALYRMZSyJMEAfpaK3rD1hr5HuCYzuDrcEEN swapped 300000 FLOYDAI
@@ -206,7 +215,7 @@ natural_language_query_raw_data:
         token_out_address: So11111111111111111111111111111111111111112
         token_out_amount: '6.506383807'
         type: SELL
-      count: 17
+      count: 18
 get_wallet_assets_test:
   input:
     tool: get_wallet_assets
@@ -218,40 +227,40 @@ get_wallet_assets_test:
       assets:
       - token_address: AL7V8bYpnWezeWdYGmvUisWUqZUXgpJKW9Ce3LPKpump
         symbol: AUSTIN
-        price_per_token: 0.000245399
-        total_holding_value: 2637.1178402031373
+        price_per_token: 0.000302345
+        total_holding_value: 4838.581654298875
       - token_address: 9VbsZNJvcyyZ9LKo42Yyw4h5p9KZgtZ1BoTWFoPGpump
         symbol: ice
-        price_per_token: 0.000403257
-        total_holding_value: 5915.69832113059
+        price_per_token: 0.000181141
+        total_holding_value: 2657.301754285525
       - token_address: 9G8iT9bNZBQhT6mqAUKZiHPAm5ZxUFFBrW2qkqSwpump
         symbol: '@Gork'
-        price_per_token: 2.94668e-05
-        total_holding_value: 642.1381187576053
+        price_per_token: 1.86948e-05
+        total_holding_value: 407.39555807834085
       - token_address: 6U2wHsT77exPvch1aZjKyjq8FUE1U4iYF88F86D5pump
         symbol: DIDDYTRON
-        price_per_token: 1.59666e-05
-        total_holding_value: 453.50698398356894
+        price_per_token: 6.54267e-05
+        total_holding_value: 1858.3458849292224
       - token_address: BJEiFsTR94vbt4Kfm5kXWQewhbHCY12vWbFroZ9upump
         symbol: CoinCoin
-        price_per_token: 3.15494e-05
-        total_holding_value: 526.3484595112855
+        price_per_token: 2.63714e-05
+        total_holding_value: 439.9622615511196
       - token_address: 3M1t49FpyULfGEiEWowHyHjthWyfL7RpHgQ7mDbBpump
         symbol: AFFIRM
-        price_per_token: 1.34052e-05
-        total_holding_value: 201.07799628021894
+        price_per_token: 1.32317e-05
+        total_holding_value: 198.47549992846325
       - token_address: JyTYXrqcYkvRhotAaYBvFbm6zk7vimHc86hwLZzpump
         symbol: CATJAK
-        price_per_token: 2.29575e-05
-        total_holding_value: 773.5320465223172
+        price_per_token: 2.31212e-05
+        total_holding_value: 779.0477672835945
       - token_address: 4M79Qjv2Jfjmcq19M41V8QFYohBv2KrgEn9dJhVtpump
         symbol: FUJI
-        price_per_token: 0.000478179
-        total_holding_value: 966.9959455168472
+        price_per_token: 0.000501212
+        total_holding_value: 1013.5744241233773
       - token_address: J7tYmq2JnQPvxyhcXpCDrvJnc9R5ts8rv7tgVHDPsw7U
         symbol: FLOYDAI
-        price_per_token: 0.00322643
-        total_holding_value: 6493.915415047378
+        price_per_token: 0.00313342
+        total_holding_value: 4740.001890853512
 get_tx_history_test:
   input:
     tool: get_tx_history
