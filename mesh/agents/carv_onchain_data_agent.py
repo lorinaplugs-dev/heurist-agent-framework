@@ -1,9 +1,7 @@
-import json
 import logging
 import os
 from typing import Any, Dict, List
 
-from core.llm import call_llm_async
 from decorators import monitor_execution, with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
@@ -78,59 +76,6 @@ class CarvOnchainDataAgent(MeshAgent):
                 },
             }
         ]
-
-    # ------------------------------------------------------------------------
-    #                       SHARED / UTILITY METHODS
-    # ------------------------------------------------------------------------
-
-    # this has a different signature, that supports anthropic models better.
-    # todo: remove it from here, and edit all the other agents  to just use this one.
-    async def _respond_with_llm(
-        self,
-        query: str,
-        tool_call_id: str,
-        data: dict,
-        temperature: float,
-        tool_name: str = None,
-        tool_args: dict = None,
-    ) -> str:
-        """
-        Reusable helper to ask the LLM to generate a user-friendly explanation
-        given a piece of data from a tool call.
-
-        Args:
-            query: The original user query
-            tool_call_id: The ID of the tool call
-            data: The result data from the tool call
-            temperature: LLM temperature parameter
-            tool_name: The name of the tool that was called (defaults to "query_onchain_data")
-            tool_args: The arguments that were passed to the tool
-        """
-        tool_name = tool_name or "query_onchain_data"
-        tool_args = tool_args or {}
-
-        return await call_llm_async(
-            base_url=self.heurist_base_url,
-            api_key=self.heurist_api_key,
-            model_id=self.metadata["large_model_id"],
-            messages=[
-                {"role": "system", "content": self.get_system_prompt()},
-                {"role": "user", "content": query},
-                {
-                    "role": "assistant",
-                    "content": None,
-                    "tool_calls": [
-                        {
-                            "id": tool_call_id,
-                            "type": "function",
-                            "function": {"name": tool_name, "arguments": json.dumps(tool_args)},
-                        }
-                    ],
-                },
-                {"role": "tool", "content": str(data), "tool_call_id": tool_call_id},
-            ],
-            temperature=temperature,
-        )
 
     # ------------------------------------------------------------------------
     #                      CARV API-SPECIFIC METHODS
