@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 class MasaTwitterSearchAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.api_url = "https://api1.dev.masalabs.ai/v1"
+        self.api_url = "https://data.dev.masalabs.ai/api/v1"
         self.api_key = os.getenv("MASA_API_KEY")
         if not self.api_key:
             raise ValueError("MASA_API_KEY environment variable is required")
