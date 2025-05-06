@@ -1,3 +1,4 @@
+import logging
 import os
 from typing import Any, Dict, List
 
@@ -9,6 +10,7 @@ from core.tools.tools_mcp import Tools
 from core.workflows import ResearchWorkflow
 from mesh.mesh_agent import MeshAgent
 
+logger = logging.getLogger(__name__)
 load_dotenv()
 
 
@@ -69,15 +71,29 @@ class DeepResearchAgent(MeshAgent):
 
         self.search_model = os.getenv("SEARCH_MODEL", self.metadata["large_model_id"])
         self.research_model = os.getenv("RESEARCH_MODEL", self.metadata["large_model_id"])
+
+        if not os.getenv("SEARCH_MODEL"):
+            logger.info(f"SEARCH_MODEL not set, using {self.search_model}")
+        if not os.getenv("RESEARCH_MODEL"):
+            logger.info(f"RESEARCH_MODEL not set, using {self.research_model}")
+
         self.search_clients = {}
-        if os.getenv("FIRECRAWL_KEY", "") != "":
-            self.firecrawl_client = SearchClient(
-                client_type="firecrawl", api_key=os.getenv("FIRECRAWL_KEY", ""), rate_limit=1
-            )
+
+        self.firecrawl_key = os.getenv("FIRECRAWL_KEY", "")
+        self.exa_api_key = os.getenv("EXA_API_KEY", "")
+
+        if self.firecrawl_key:
+            self.firecrawl_client = SearchClient(client_type="firecrawl", api_key=self.firecrawl_key, rate_limit=1)
             self.search_clients["firecrawl"] = self.firecrawl_client
-        if os.getenv("EXA_API_KEY", "") != "":
-            self.exa_client = SearchClient(client_type="exa", api_key=os.getenv("EXA_API_KEY", ""), rate_limit=1)
+        else:
+            logger.warning("FIRECRAWL_KEY not found in environment variables")
+
+        if self.exa_api_key:
+            self.exa_client = SearchClient(client_type="exa", api_key=self.exa_api_key, rate_limit=1)
             self.search_clients["exa"] = self.exa_client
+        else:
+            logger.warning("EXA_API_KEY not found in environment variables")
+
         self.duckduckgo_client = SearchClient(client_type="duckduckgo", rate_limit=5)
         self.search_clients["duckduckgo"] = self.duckduckgo_client
         self.tools = Tools()
