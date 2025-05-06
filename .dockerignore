@@ -69,8 +69,8 @@ coverage.xml
 
 docs
 # Virtual environment
-.venv
-venv/
+**/.venv
+**/venv/
 
 # Environment variables
 .env
