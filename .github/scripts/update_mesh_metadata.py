@@ -35,8 +35,6 @@ def _convert_ast_node_to_python(node, default_model_id=None):
     elif isinstance(node, ast.Dict):
         # pass default_model_id down recursively
         return _convert_ast_dict_to_python_dict(node, default_model_id)
-    elif isinstance(node, ast.NameConstant):  # true, false, none
-        return node.value
     elif isinstance(node, ast.Name):
         if node.id == "DEFAULT_MODEL_ID" and default_model_id is not None:
             return default_model_id
