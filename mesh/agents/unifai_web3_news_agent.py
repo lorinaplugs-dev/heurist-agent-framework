@@ -2,7 +2,6 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import aiohttp
 from dotenv import load_dotenv
 
 from decorators import with_cache, with_retry
@@ -21,6 +20,7 @@ class UnifaiWeb3NewsAgent(MeshAgent):
 
         self.api_endpoint = "https://backend.unifai.network/api/v1/actions/call"
         self.web3news_id = 11
+        self.headers = {"Authorization": self.api_key, "Content-Type": "application/json"}
 
         self.metadata.update(
             {
@@ -29,33 +29,6 @@ class UnifaiWeb3NewsAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent fetches the latest Web3 and cryptocurrency news using UnifAI's API",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query for news retrieval",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, return only raw data without natural language response",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language summary of the latest Web3 news",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured data containing Web3 news articles",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["UnifAI"],
                 "tags": ["News"],
                 "recommended": True,
@@ -116,8 +89,6 @@ class UnifaiWeb3NewsAgent(MeshAgent):
         Returns:
             Dict containing the news articles or error information
         """
-
-        headers = {"Authorization": self.api_key, "Content-Type": "application/json"}
         try:
             if limit < 10:
                 limit = 10
@@ -128,19 +99,17 @@ class UnifaiWeb3NewsAgent(MeshAgent):
             if keyword:
                 payload["keyword"] = keyword
 
+            data = {"action": action, "payload": payload}
             logger.info(f"Fetching Web3 news with params: {payload}")
 
-            async with aiohttp.ClientSession() as session:
-                data = {"action": action, "payload": payload}
-                async with session.post(self.api_endpoint, headers=headers, json=data, timeout=30) as response:
-                    if response.status == 200:
-                        result = await response.json()
-                        logger.info("Successfully fetched Web3 news")
-                        return {"status": "success", "data": result}
-                    else:
-                        error_text = await response.text()
-                        logger.error(f"API error: {response.status} - {error_text}")
-                        return {"status": "error", "error": f"API error: {response.status} - {error_text}"}
+            result = await self._api_request(url=self.api_endpoint, method="POST", headers=self.headers, json_data=data)
+
+            if "error" in result:
+                logger.error(f"API error: {result['error']}")
+                return {"status": "error", "error": result["error"]}
+
+            logger.info("Successfully fetched Web3 news")
+            return {"status": "success", "data": result}
 
         except Exception as e:
             logger.error(f"Error fetching Web3 news: {str(e)}")
@@ -158,10 +127,9 @@ class UnifaiWeb3NewsAgent(MeshAgent):
             logger.info(f"Getting Web3 news with limit={limit}, keyword='{keyword}'")
             result = await self.get_web3_news(limit=limit, keyword=keyword)
 
-            errors = self._handle_error(result)
-            if errors:
-                return errors
+            if result.get("status") == "error":
+                return {"error": result.get("error", "Failed to get Web3 news")}
 
-            return result
+            return result.get("data", {})
         else:
             return {"error": f"Unsupported tool: {tool_name}"}

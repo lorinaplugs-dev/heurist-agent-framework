@@ -2,7 +2,7 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import requests
+import aiohttp
 from dotenv import load_dotenv
 from spaceandtime import SpaceAndTime
 
@@ -19,11 +19,11 @@ class SpaceTimeAgent(MeshAgent):
         self.api_key = os.getenv("SPACE_AND_TIME_API_KEY")
         if not self.api_key:
             raise ValueError("SPACE_AND_TIME_API_KEY environment variable is required")
-
-        # Initialize SxT client but don't authenticate yet (we'll do this on first request)
         self.client = None
         self.access_token = None
         self.refresh_token = None
+        self.sql_generate_url = "https://api.spaceandtime.dev/v1/ai/sql/generate"
+        self.sql_execute_url = "https://proxy.api.spaceandtime.dev/v1/sql"
 
         self.metadata.update(
             {
@@ -32,33 +32,6 @@ class SpaceTimeAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can analyze blockchain data by executing SQL queries from natural language using Space and Time, a database with ZK proofs.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query to generate SQL from",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, returns only raw data without analysis",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the query results",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured data from SQL execution including the generated query",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["Space and Time"],
                 "tags": ["Onchain Data"],
                 "recommended": True,
@@ -150,13 +123,14 @@ class SpaceTimeAgent(MeshAgent):
         await self._authenticate()
 
         try:
-            url_generate = "https://api.spaceandtime.dev/v1/ai/sql/generate"
             headers = {"Authorization": f"Bearer {self.access_token}", "Content-Type": "application/json"}
             payload = {"prompt": nl_query, "metadata": {}}
 
-            response = requests.post(url_generate, headers=headers, json=payload)
-            response.raise_for_status()
-            result = response.json()
+            result = await self._api_request(
+                url=self.sql_generate_url, method="POST", headers=headers, json_data=payload
+            )
+            if "error" in result:
+                return result
 
             # Check for both "sql" and "SQL" keys
             sql_query = result.get("sql") or result.get("SQL")
@@ -165,34 +139,30 @@ class SpaceTimeAgent(MeshAgent):
 
             return {"status": "success", "sql_query": sql_query}
 
-        except requests.exceptions.RequestException as e:
+        except Exception as e:
             logger.error(f"SQL generation error: {str(e)}")
             return {"error": f"Failed to generate SQL query: {str(e)}"}
-        except Exception as e:
-            logger.error(f"Unexpected error during SQL generation: {str(e)}")
-            return {"error": f"Unexpected error: {str(e)}"}
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def execute_sql(self, sql_query: str) -> Dict:
         """Execute SQL query using Space and Time API"""
         try:
-            url_execute = "https://proxy.api.spaceandtime.dev/v1/sql"
             headers = {"accept": "application/json", "apikey": self.api_key, "content-type": "application/json"}
             payload = {"sqlText": sql_query}
+            async with aiohttp.ClientSession() as session:
+                async with session.post(self.sql_execute_url, headers=headers, json=payload) as response:
+                    if response.status == 200:
+                        result = await response.json()
+                        return {"status": "success", "result": result}
+                    else:
+                        error_text = await response.text()
+                        logger.error(f"SQL execution error: {response.status}, {error_text}")
+                        return {"error": f"Failed to execute SQL query: HTTP {response.status}"}
 
-            response = requests.post(url_execute, headers=headers, json=payload)
-            response.raise_for_status()
-            result = response.json()
-
-            return {"status": "success", "result": result}
-
-        except requests.exceptions.RequestException as e:
+        except Exception as e:
             logger.error(f"SQL execution error: {str(e)}")
             return {"error": f"Failed to execute SQL query: {str(e)}"}
-        except Exception as e:
-            logger.error(f"Unexpected error during SQL execution: {str(e)}")
-            return {"error": f"Unexpected error: {str(e)}"}
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
@@ -200,16 +170,14 @@ class SpaceTimeAgent(MeshAgent):
         """Generate SQL from natural language and execute it"""
         # Generate SQL
         sql_result = await self.generate_sql(nl_query)
-        errors = self._handle_error(sql_result)
-        if errors:
+        if errors := self._handle_error(sql_result):
             return errors
 
         sql_query = sql_result.get("sql_query")
 
         # Execute SQL
         execution_result = await self.execute_sql(sql_query)
-        errors = self._handle_error(execution_result)
-        if errors:
+        if errors := self._handle_error(execution_result):
             return errors
 
         # Combine results
@@ -232,9 +200,10 @@ class SpaceTimeAgent(MeshAgent):
 
             logger.info(f"Generating and executing SQL for: {nl_query}")
             result = await self.generate_and_execute_sql(nl_query)
-            errors = self._handle_error(result)
-            if errors:
+
+            if errors := self._handle_error(result):
                 return errors
+
             return result
         else:
             return {"error": f"Unsupported tool '{tool_name}'"}

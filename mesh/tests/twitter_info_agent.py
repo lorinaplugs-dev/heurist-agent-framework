@@ -38,9 +38,13 @@ async def test_tweet_detail_fetching(agent):
             result = await agent.handle_message(test_case)
             results[f"case_{i + 1}"] = {"input": test_case, "output": result}
             logger.info(f"Tweet detail test case {i + 1} completed successfully")
+
+            await asyncio.sleep(4)
         except Exception as e:
             logger.error(f"Error in tweet detail test case {i + 1}: {e}")
             results[f"case_{i + 1}"] = {"input": test_case, "error": str(e)}
+
+            await asyncio.sleep(4)
 
     return results
 
@@ -72,9 +76,13 @@ async def test_general_search(agent):
             result = await agent.handle_message(test_case)
             results[f"case_{i + 1}"] = {"input": test_case, "output": result}
             logger.info(f"General search test case {i + 1} completed successfully")
+
+            await asyncio.sleep(4)
         except Exception as e:
             logger.error(f"Error in general search test case {i + 1}: {e}")
             results[f"case_{i + 1}"] = {"input": test_case, "error": str(e)}
+
+            await asyncio.sleep(4)
 
     return results
 
@@ -125,9 +133,13 @@ async def run_agent():
             try:
                 result = await agent.handle_message(test_case)
                 api_results[f"case_{i + 1}"] = {"input": test_case, "output": result}
+
+                await asyncio.sleep(4)
             except Exception as e:
                 logger.error(f"Error in test case {i + 1}: {e}")
                 api_results[f"case_{i + 1}"] = {"input": test_case, "error": str(e)}
+                #
+                await asyncio.sleep(4)
 
         script_dir = Path(__file__).parent
         current_file = Path(__file__).stem

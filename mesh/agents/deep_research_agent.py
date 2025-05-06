@@ -1,5 +1,6 @@
 import asyncio
 import json
+import logging
 import os
 from dataclasses import dataclass
 from typing import Any, Dict, List
@@ -12,6 +13,7 @@ from core.utils.text_splitter import trim_prompt
 from decorators import monitor_execution, with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
+logger = logging.getLogger(__name__)
 load_dotenv()
 
 
@@ -31,42 +33,6 @@ class DeepResearchAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "Advanced research agent that performs multi-level web searches with recursive exploration, analyzes content across sources, and produces comprehensive research reports with key insights",
-                "inputs": [
-                    {"name": "query", "description": "Research query or topic", "type": "str", "required": True},
-                    {
-                        "name": "depth",
-                        "description": "Research depth (1-3)",
-                        "type": "int",
-                        "required": False,
-                        "default": 2,
-                    },
-                    {
-                        "name": "breadth",
-                        "description": "Search breadth per level (1-5)",
-                        "type": "int",
-                        "required": False,
-                        "default": 3,
-                    },
-                    {
-                        "name": "concurrency",
-                        "description": "Number of concurrent searches",
-                        "type": "int",
-                        "required": False,
-                        "default": 2,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Detailed analysis and research findings",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Raw search results and metadata",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["Firecrawl"],
                 "tags": ["Research"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/DeepResearch.png",
@@ -97,6 +63,38 @@ class DeepResearchAgent(MeshAgent):
         Return your analysis in a clear, structured format with sections for key findings,
         detailed analysis, and recommendations for further research."""
 
+    def get_tool_schemas(self) -> List[Dict]:
+        return [
+            {
+                "type": "function",
+                "function": {
+                    "name": "deep_research",
+                    "description": "Perform comprehensive multi-level web research on a topic with recursive exploration. This function analyzes content across multiple sources, explores various research paths, and synthesizes findings into a structured report. It's slow and expensive, so use it sparingly and only when you need to explore a broad topic in depth.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "query": {"type": "string", "description": "Research query or topic"},
+                            "depth": {"type": "number", "description": "Research depth (1-3)", "default": 2},
+                            "breadth": {
+                                "type": "number",
+                                "description": "Search breadth per level (1-5)",
+                                "default": 3,
+                            },
+                            "concurrency": {
+                                "type": "number",
+                                "description": "Number of concurrent searches",
+                                "default": 2,
+                            },
+                        },
+                        "required": ["query"],
+                    },
+                },
+            }
+        ]
+
+    # ------------------------------------------------------------------------
+    #                      FIRECRAWL API-SPECIFIC METHODS
+    # ------------------------------------------------------------------------
     @monitor_execution()
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
@@ -132,12 +130,12 @@ class DeepResearchAgent(MeshAgent):
                         )
                 return {"data": formatted_data}
             else:
-                print(f"Unexpected response format from Firecrawl: {type(response)}")
+                logger.error(f"Unexpected response format from Firecrawl: {type(response)}")
                 return {"data": []}
 
         except Exception as e:
-            print(f"Search error: {e}")
-            print(f"Response type: {type(response) if 'response' in locals() else 'N/A'}")
+            logger.error(f"Search error: {e}")
+            logger.error(f"Response type: {type(response) if 'response' in locals() else 'N/A'}")
             return {"data": []}
 
     async def generate_search_queries(
@@ -182,23 +180,20 @@ class DeepResearchAgent(MeshAgent):
             tool_choice={"type": "function", "function": {"name": "generate_queries"}},
             temperature=0.7,
         )
-        # print("response: ", response)
+
         try:
             # Extract the arguments from tool_calls
             if isinstance(response, dict) and "tool_calls" in response:
                 tool_call = response["tool_calls"]
-                # print("tool_call: ", tool_call)
                 if hasattr(tool_call, "function"):
                     arguments = tool_call.function.arguments
-                    # print("arguments: ", arguments)
                     if isinstance(arguments, str):
                         result = json.loads(arguments)
-                        # print("result: ", result)
                         queries = result.get("queries", [])
                         return [SearchQuery(**q) for q in queries][:num_queries]
         except Exception as e:
-            print(f"Error generating queries: {e}")
-            print(f"Raw response: {response}")
+            logger.error(f"Error generating queries: {e}")
+            logger.error(f"Raw response: {response}")
             return [SearchQuery(query=query, research_goal="Main topic research")]
 
     @with_retry(max_retries=3)
@@ -240,11 +235,11 @@ class DeepResearchAgent(MeshAgent):
             temperature=0.3,
         )
         response = response.replace("```json", "").replace("```", "")
-        # print("response: ", response)
+
         try:
             return json.loads(response)
         except Exception as e:
-            print(f"Error analyzing results: {e}")
+            logger.error(f"Error analyzing results: {e}")
             return {"analysis": "Error processing search results.", "key_findings": [], "recommendations": []}
 
     async def deep_research(
@@ -264,7 +259,7 @@ class DeepResearchAgent(MeshAgent):
 
         # Generate search queries using previous learnings
         search_queries = await self.generate_search_queries(query=query, num_queries=breadth, learnings=learnings)
-        # print("search_queries: ", search_queries)
+
         # Create semaphore for concurrent execution
         semaphore = asyncio.Semaphore(concurrency)
 
@@ -282,7 +277,7 @@ class DeepResearchAgent(MeshAgent):
                     results = await self.search(search_query.query)
                     if not results.get("data"):
                         return {"results": [], "learnings": [], "urls": []}
-                    # print("results: ", results)
+
                     # Extract URLs and analyze results
                     new_urls = [item.get("url") for item in results["data"] if item.get("url")]
                     analysis = await self.analyze_results(search_query.query, results)
@@ -305,11 +300,11 @@ class DeepResearchAgent(MeshAgent):
                             results["data"].extend(sub_results.get("all_results", []))
                             analysis["key_findings"].extend(sub_results.get("learnings", []))
                             new_urls.extend(sub_results.get("visited_urls", []))
-                    # print("analysis: ", analysis)
+
                     return {"results": results["data"], "analysis": analysis, "urls": new_urls}
 
                 except Exception as e:
-                    print(f"Error processing query {search_query.query}: {e}")
+                    logger.error(f"Error processing query {search_query.query}: {e}")
                     return {"results": [], "learnings": [], "urls": []}
 
         # Process all queries concurrently
@@ -390,40 +385,11 @@ class DeepResearchAgent(MeshAgent):
 
         return report + sources
 
-    def get_tool_schemas(self) -> List[Dict]:
-        return [
-            {
-                "type": "function",
-                "function": {
-                    "name": "deep_research",
-                    "description": "Perform comprehensive multi-level web research on a topic with recursive exploration. This function analyzes content across multiple sources, explores various research paths, and synthesizes findings into a structured report. It's slow and expensive, so use it sparingly and only when you need to explore a broad topic in depth.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "query": {"type": "string", "description": "Research query or topic"},
-                            "depth": {"type": "number", "description": "Research depth (1-3)", "default": 2},
-                            "breadth": {
-                                "type": "number",
-                                "description": "Search breadth per level (1-5)",
-                                "default": 3,
-                            },
-                            "concurrency": {
-                                "type": "number",
-                                "description": "Number of concurrent searches",
-                                "default": 2,
-                            },
-                        },
-                        "required": ["query"],
-                    },
-                },
-            }
-        ]
-
-    async def _handle_tool_logic(
-        self, tool_name: str, function_args: dict, query: str, tool_call_id: str, raw_data_only: bool
-    ) -> Dict[str, Any]:
-        """Handle execution of specific tools and format responses"""
-
+    # ------------------------------------------------------------------------
+    #                      TOOL HANDLING LOGIC
+    # ------------------------------------------------------------------------
+    async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
+        """Handle execution of specific tools and return the raw data"""
         if tool_name == "deep_research":
             query = function_args.get("query")
             depth = min(max(function_args.get("depth", 2), 1), 3)
@@ -431,105 +397,34 @@ class DeepResearchAgent(MeshAgent):
             concurrency = min(max(function_args.get("concurrency", 2), 1), 3)
 
             if not query:
-                return {"error": "Missing 'query' in tool_arguments"}
+                return {"error": "Missing 'query' parameter"}
 
             # Execute deep research
             research_results = await self.deep_research(
                 query=query, breadth=breadth, depth=depth, concurrency=concurrency
             )
 
-            if raw_data_only:
-                return {
-                    "response": "",
-                    "data": {
-                        "query_info": {
-                            "query": query,
-                            "depth": depth,
-                            "breadth": breadth,
-                            "result_count": len(research_results["all_results"]),
-                        },
-                        "results": research_results["all_results"],
-                        "analyses": research_results["analyses"],
-                        "learnings": research_results["learnings"],
-                        "visited_urls": research_results["visited_urls"],
-                    },
-                }
-
             # Generate comprehensive report
             report = await self.generate_comprehensive_report(query=query, research_results=research_results)
 
             return {
-                "response": report,
-                "data": {
-                    "query_info": {
-                        "query": query,
-                        "depth": depth,
-                        "breadth": breadth,
-                        "result_count": len(research_results["all_results"]),
-                    },
-                    "results": [
-                        {
-                            **{k: v for k, v in result.items() if k not in ["markdown", "metadata"]},
-                            "content_length": len(result.get("markdown", "")),
-                        }
-                        for result in research_results["all_results"]
-                    ],
-                    "analyses": research_results["analyses"],
-                    "learnings": research_results["learnings"],
-                    "visited_urls": research_results["visited_urls"],
+                "report": report,
+                "query_info": {
+                    "query": query,
+                    "depth": depth,
+                    "breadth": breadth,
+                    "result_count": len(research_results["all_results"]),
                 },
+                "results": [
+                    {
+                        **{k: v for k, v in result.items() if k not in ["markdown", "metadata"]},
+                        "content_length": len(result.get("markdown", "")),
+                    }
+                    for result in research_results["all_results"]
+                ],
+                "analyses": research_results["analyses"],
+                "learnings": research_results["learnings"],
+                "visited_urls": research_results["visited_urls"],
             }
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
-
-    @monitor_execution()
-    @with_retry(max_retries=3)
-    async def handle_message(self, params: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Handle incoming messages, supporting both direct tool calls and natural language queries.
-        """
-        query = params.get("query")
-        tool_name = params.get("tool")
-        tool_args = params.get("tool_arguments", {})
-        raw_data_only = params.get("raw_data_only", False)
-
-        # Direct tool call
-        if tool_name:
-            return await self._handle_tool_logic(
-                tool_name=tool_name,
-                function_args=tool_args,
-                query=query or "Direct tool call without LLM.",
-                tool_call_id="direct_tool",
-                raw_data_only=raw_data_only,
-            )
-
-        # Natural language query (LLM decides the tool)
-        if query:
-            response = await call_llm_with_tools_async(
-                base_url=self.heurist_base_url,
-                api_key=self.heurist_api_key,
-                model_id=self.metadata["large_model_id"],
-                system_prompt=self.get_system_prompt(),
-                user_prompt=query,
-                temperature=0.1,
-                tools=self.get_tool_schemas(),
-            )
-
-            if not response:
-                return {"error": "Failed to process query"}
-            if not response.get("tool_calls"):
-                return {"response": response["content"], "data": {}}
-
-            tool_call = response["tool_calls"]
-            tool_call_name = tool_call.function.name
-            tool_call_args = json.loads(tool_call.function.arguments)
-
-            return await self._handle_tool_logic(
-                tool_name=tool_call_name,
-                function_args=tool_call_args,
-                query=query,
-                tool_call_id=tool_call.id,
-                raw_data_only=raw_data_only,
-            )
-
-        return {"error": "Either 'query' or 'tool' must be provided in the parameters."}

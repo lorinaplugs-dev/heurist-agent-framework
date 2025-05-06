@@ -1,8 +1,7 @@
 import logging
 import os
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
-import requests
 from dotenv import load_dotenv
 
 from decorators import with_cache, with_retry
@@ -29,33 +28,6 @@ class TokenMetricsAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent provides market insights, sentiment analysis, and resistance/support data for cryptocurrencies using TokenMetrics API.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about market sentiment or token analysis",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, returns only raw data without analysis",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language analysis of token metrics data",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured data from TokenMetrics API",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["TokenMetrics"],
                 "tags": ["Market Analysis"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/TokenMetrics.png",
@@ -72,16 +44,33 @@ class TokenMetricsAgent(MeshAgent):
         You are a cryptocurrency market analyst specializing in technical analysis and sentiment data.
         You provide insights based on data from TokenMetrics, a leading crypto analytics platform.
 
-        Your analysis should be:
-        - Clear and concise
-        - Focused on data rather than speculation
-        - Suitable for both beginner and advanced crypto traders
+        AVAILABLE TOOLS:
 
-        IMPORTANT: the get_sentiments tool only returns overviews of the sentiment of the market, not the sentiment of a specific token.
+        1. get_sentiments:
+           - This tool ONLY provides GENERAL MARKET SENTIMENT, not token-specific sentiment.
+           - Use when user asks about overall market mood or sentiment trends.
+           - The data includes Twitter sentiment grades, labels, and summaries about the crypto market as a whole.
+           - IMPORTANT: This tool cannot provide sentiment specifically about individual tokens.
 
-        When a user asks about a specific token other than BTC or ETH:
-        1. First use get_token_info internally to find the token's ID (don't explain this step)
-        2. Then use that ID for any further analysis with other tools
+        2. get_resistance_support_levels:
+           - This tool provides technical analysis data (support/resistance levels) for SPECIFIC tokens.
+           - Use when user asks about price targets, entry/exit points, or trading ranges.
+           - You can specify token_ids or symbols to get data for specific cryptocurrencies.
+
+        3. get_token_info:
+           - Use this tool to look up token information including their IDs.
+           - Helpful when user mentions tokens by name and you need to find their token_id for other tools.
+
+        RESPONSE GUIDELINES:
+
+        - Be transparent about limitations: If a user asks for token-specific sentiment but only general market sentiment is available, clearly explain this limitation.
+        - Properly interpret results: Distinguish between general market sentiment and token-specific data.
+        - Be clear and concise, focusing on data rather than speculation.
+        - Format your responses to be suitable for both beginner and advanced crypto traders.
+
+        When handling queries about specific tokens:
+        - If the query is about sentiment for a specific token, clearly explain that get_sentiments provides general market sentiment, not token-specific sentiment.
+        - When appropriate, suggest using get_resistance_support_levels instead for token-specific technical analysis.
         """
 
     def get_tool_schemas(self) -> List[Dict]:
@@ -90,7 +79,7 @@ class TokenMetricsAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_sentiments",
-                    "description": "Retrieves market sentiment data for cryptocurrencies from TokenMetrics. This only returns overviews of the sentiment of the market, not the sentiment of a specific token.",
+                    "description": "Retrieves GENERAL market sentiment data for the ENTIRE cryptocurrency market from TokenMetrics. IMPORTANT: This tool only returns general market sentiment, NOT the sentiment of any specific token. Use for questions about overall market mood.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -112,7 +101,7 @@ class TokenMetricsAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_resistance_support_levels",
-                    "description": "Retrieves resistance and support level data for specified cryptocurrencies. This tool provides technical analysis data showing key price levels where tokens might encounter buying or selling pressure. Use this for technical analysis and identifying potential trade entry/exit points.",
+                    "description": "Retrieves resistance and support level data for specified cryptocurrencies. This tool provides token-specific technical analysis data showing key price levels where tokens might encounter buying or selling pressure. Use this for technical analysis of specific tokens.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -141,12 +130,38 @@ class TokenMetricsAgent(MeshAgent):
                     },
                 },
             },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_token_info",
+                    "description": "Retrieves token information from TokenMetrics API using token name or symbol. Returns the token ID for use in other API calls.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "token_name": {
+                                "type": "string",
+                                "description": "Name of the token to search for (e.g., 'bitcoin')",
+                            },
+                            "token_symbol": {
+                                "type": "string",
+                                "description": "Symbol of the token to search for (e.g., 'BTC')",
+                            },
+                            "limit": {
+                                "type": "number",
+                                "description": "Maximum number of results to return (default: 20)",
+                                "default": 20,
+                            },
+                        },
+                        "required": [],
+                    },
+                },
+            },
         ]
 
     # ------------------------------------------------------------------------
     #                      API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
-    @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_token_info(
         self, token_name: Optional[str] = None, token_symbol: Optional[str] = None, limit: int = 20
@@ -154,7 +169,6 @@ class TokenMetricsAgent(MeshAgent):
         """
         Retrieves token information from TokenMetrics API using token name or symbol.
         Returns the token ID for use in other API calls.
-        This is an internal method and should not be exposed as a tool.
         """
         try:
             params = {"limit": limit}
@@ -166,17 +180,16 @@ class TokenMetricsAgent(MeshAgent):
 
             url = f"{self.base_url}/tokens"
 
-            response = requests.get(url, headers=self.headers, params=params)
-            response.raise_for_status()
-            token_data = response.json()
+            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
 
-            return {"status": "success", "data": token_data}
-        except requests.RequestException as e:
+            if "error" in response:
+                return response
+
+            return {"status": "success", "data": response}
+
+        except Exception as e:
             logger.error(f"Error getting token information: {e}")
             return {"error": f"Failed to get token information: {str(e)}"}
-        except Exception as e:
-            logger.error(f"Unexpected error: {e}")
-            return {"error": f"Unexpected error: {str(e)}"}
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
@@ -185,14 +198,15 @@ class TokenMetricsAgent(MeshAgent):
             params = {"limit": limit, "page": page}
             url = f"{self.base_url}/sentiments"
 
-            response = requests.get(url, headers=self.headers, params=params)
-            response.raise_for_status()
-            sentiments_data = response.json()
+            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+
+            if "error" in response:
+                return response
 
             # Extract only Twitter-related fields from each record
-            if "data" in sentiments_data and isinstance(sentiments_data["data"], list):
+            if "data" in response and isinstance(response["data"], list):
                 twitter_sentiments = []
-                for record in sentiments_data["data"]:
+                for record in response["data"]:
                     twitter_fields = {
                         "DATETIME": record.get("DATETIME"),
                         "TWITTER_SENTIMENT_GRADE": record.get("TWITTER_SENTIMENT_GRADE"),
@@ -203,18 +217,16 @@ class TokenMetricsAgent(MeshAgent):
                     if twitter_fields["TWITTER_SENTIMENT_GRADE"] is not None:
                         twitter_sentiments.append(twitter_fields)
 
-                sentiments_data["data"] = twitter_sentiments
+                response["data"] = twitter_sentiments
 
-                if "metadata" in sentiments_data and "record_count" in sentiments_data["metadata"]:
-                    sentiments_data["metadata"]["record_count"] = len(twitter_sentiments)
+                if "metadata" in response and "record_count" in response["metadata"]:
+                    response["metadata"]["record_count"] = len(twitter_sentiments)
 
-            return {"status": "success", "data": sentiments_data}
-        except requests.RequestException as e:
+            return {"status": "success", "data": response}
+
+        except Exception as e:
             logger.error(f"Error getting sentiments: {e}")
             return {"error": f"Failed to get market sentiments: {str(e)}"}
-        except Exception as e:
-            logger.error(f"Unexpected error: {e}")
-            return {"error": f"Unexpected error: {str(e)}"}
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
@@ -237,121 +249,16 @@ class TokenMetricsAgent(MeshAgent):
 
             url = f"{self.base_url}/resistance-support"
 
-            response = requests.get(url, headers=self.headers, params=params)
-            response.raise_for_status()
-            res_sup_data = response.json()
+            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
 
-            return {"status": "success", "data": res_sup_data}
-        except requests.RequestException as e:
+            if "error" in response:
+                return response
+
+            return {"status": "success", "data": response}
+
+        except Exception as e:
             logger.error(f"Error getting resistance & support data: {e}")
             return {"error": f"Failed to get resistance & support data: {str(e)}"}
-        except Exception as e:
-            logger.error(f"Unexpected error: {e}")
-            return {"error": f"Unexpected error: {str(e)}"}
-
-    # ------------------------------------------------------------------------
-    #                      HELPER METHODS FOR TOKEN HANDLING
-    # ------------------------------------------------------------------------
-    async def extract_token_id_from_response(
-        self, response_data: Dict, search_name: Optional[str] = None, search_symbol: Optional[str] = None
-    ) -> Optional[int]:
-        """
-        Extracts token ID from response data.
-        If multiple tokens match, returns the first one that matches the search criteria.
-        """
-        if "status" not in response_data or response_data["status"] != "success":
-            logger.error(f"Invalid response data: {response_data}")
-            return None
-        if "data" not in response_data or "data" not in response_data["data"]:
-            logger.error(f"No data in response: {response_data}")
-            return None
-        tokens = response_data["data"]["data"]
-        if not tokens:
-            logger.warning("No tokens found in response")
-            return None
-        for token in tokens:
-            if search_name and token.get("TOKEN_NAME") == search_name:
-                return token.get("TOKEN_ID")
-            if search_symbol and token.get("TOKEN_SYMBOL") == search_symbol:
-                return token.get("TOKEN_ID")
-        if tokens:
-            return tokens[0].get("TOKEN_ID")
-
-        return None
-
-    async def extract_tokens_from_query(self, query: str) -> List[str]:
-        """
-        Extracts token names or symbols from a user query.
-        Returns a list of possible token identifiers.
-        """
-        import re
-
-        default_tokens = {"btc", "bitcoin", "eth", "ethereum"}
-        pattern1 = r"(\w+)\s*\((\w+)\)"
-        pattern2 = r"\b(solana|cardano|ripple|xrp|bnb|ada|dot|avax|sol|heu|doge|shib|link|matic)\b"
-
-        tokens = []
-
-        for match in re.finditer(pattern1, query.lower()):
-            name, symbol = match.groups()
-            if name not in default_tokens and symbol not in default_tokens:
-                tokens.append({"name": name, "symbol": symbol})
-        for match in re.finditer(pattern2, query.lower()):
-            token = match.group(1)
-            if token not in default_tokens and not any(
-                t.get("name") == token or t.get("symbol") == token for t in tokens
-            ):
-                tokens.append({"name": token})
-
-        return tokens
-
-    async def process_custom_tokens(self, query: str) -> Tuple[Optional[str], Optional[str]]:
-        """
-        Processes a query to identify custom tokens.
-        Returns token_ids and symbols for use in API calls.
-        """
-        tokens = await self.extract_tokens_from_query(query)
-
-        if not tokens:
-            return None, None
-
-        token_ids = []
-        symbols = []
-
-        for token_info in tokens:
-            if "symbol" in token_info:
-                token_resp = await self.get_token_info(token_symbol=token_info["symbol"])
-                token_id = await self.extract_token_id_from_response(token_resp, search_symbol=token_info["symbol"])
-
-                if token_id:
-                    token_ids.append(str(token_id))
-                    symbols.append(token_info["symbol"].upper())
-                    continue
-
-            if "name" in token_info:
-                token_resp = await self.get_token_info(token_name=token_info["name"])
-                token_id = await self.extract_token_id_from_response(token_resp, search_name=token_info["name"])
-
-                if token_id:
-                    token_ids.append(str(token_id))
-                    # Get the symbol from response
-                    if "data" in token_resp and "data" in token_resp["data"] and token_resp["data"]["data"]:
-                        for t in token_resp["data"]["data"]:
-                            if t.get("TOKEN_ID") == token_id:
-                                symbols.append(t.get("TOKEN_SYMBOL", "").upper())
-                                break
-
-        if not token_ids:
-            return "3375,3306", "BTC,ETH"
-
-        if len(token_ids) == 1:
-            token_ids.append("3375")
-            symbols.append("BTC")
-
-        token_ids = token_ids[:2]
-        symbols = symbols[:2]
-
-        return ",".join(token_ids), ",".join(symbols)
 
     # ------------------------------------------------------------------------
     #                      MESH AGENT REQUIRED METHOD
@@ -368,8 +275,7 @@ class TokenMetricsAgent(MeshAgent):
             logger.info(f"Getting market sentiments with limit={limit}, page={page}")
             result = await self.get_sentiments(limit=limit, page=page)
 
-            errors = self._handle_error(result)
-            if errors:
+            if errors := self._handle_error(result):
                 return errors
 
             return result
@@ -385,50 +291,26 @@ class TokenMetricsAgent(MeshAgent):
                 token_ids=token_ids, symbols=symbols, limit=limit, page=page
             )
 
-            errors = self._handle_error(result)
-            if errors:
+            if errors := self._handle_error(result):
+                return errors
+
+            return result
+
+        elif tool_name == "get_token_info":
+            token_name = function_args.get("token_name")
+            token_symbol = function_args.get("token_symbol")
+            limit = function_args.get("limit", 20)
+
+            if not token_name and not token_symbol:
+                return {"error": "Either token_name or token_symbol must be provided"}
+
+            logger.info(f"Getting token info for name={token_name}, symbol={token_symbol}")
+            result = await self.get_token_info(token_name=token_name, token_symbol=token_symbol, limit=limit)
+
+            if errors := self._handle_error(result):
                 return errors
 
             return result
 
         else:
             return {"error": f"Unsupported tool '{tool_name}'"}
-
-    async def _before_handle_message(self, params: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Hook called before message handling.
-        Allows for modification of parameters before they're processed.
-        Processes custom tokens in the query if present.
-        """
-        query = params.get("query")
-
-        if query:
-            custom_token_ids, custom_symbols = await self.process_custom_tokens(query)
-            if custom_token_ids and custom_symbols:
-                logger.info(f"Detected custom tokens: IDs={custom_token_ids}, Symbols={custom_symbols}")
-                params["custom_token_ids"] = custom_token_ids
-                params["custom_symbols"] = custom_symbols
-
-        return await super()._before_handle_message(params)
-
-    def _should_use_sentiment_tool(self, query: str) -> bool:
-        """
-        Determines if the query is asking about sentiment, feeling, or mood.
-        """
-        query_lower = query.lower()
-        sentiment_keywords = [
-            "sentiment",
-            "feeling",
-            "mood",
-            "emotion",
-            "attitude",
-            "bullish",
-            "bearish",
-            "positive",
-            "negative",
-            "outlook",
-            "optimistic",
-            "pessimistic",
-            "market sentiment",
-        ]
-        return any(keyword in query_lower for keyword in sentiment_keywords)

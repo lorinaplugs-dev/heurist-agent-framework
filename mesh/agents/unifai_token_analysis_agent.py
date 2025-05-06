@@ -2,7 +2,6 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import aiohttp
 from dotenv import load_dotenv
 
 from decorators import monitor_execution, with_cache, with_retry
@@ -22,6 +21,7 @@ class UnifaiTokenAnalysisAgent(MeshAgent):
         self.api_endpoint = "https://backend.unifai.network/api/v1/actions/call"
         self.gmgn_trend_id = 39
         self.token_analysis_id = 25
+        self.headers = {"Authorization": self.api_key, "Content-Type": "application/json"}
 
         self.metadata.update(
             {
@@ -30,33 +30,6 @@ class UnifaiTokenAnalysisAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent provides token analysis using UnifAI's API, including GMGN trend analysis (GMGN is a memecoin trading platform) and comprehensive token analysis for various cryptocurrencies",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query for token analysis or trending tokens",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, return only raw data without natural language response",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language summary of token analysis",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured data containing token analysis results",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["UnifAI"],
                 "tags": ["Token Analysis"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Unifai.png",
@@ -156,24 +129,21 @@ class UnifaiTokenAnalysisAgent(MeshAgent):
         Returns:
             Dict containing trending tokens or error information
         """
-        headers = {"Authorization": self.api_key, "Content-Type": "application/json"}
         try:
             action = f"GMGNTrendTokenAnalysis/{self.gmgn_trend_id}/gmgntrend"
             payload = {"timeWindow": time_window, "limit": limit}
+            data = {"action": action, "payload": payload}
 
             logger.info(f"Fetching GMGN trends for {time_window} with limit {limit}")
 
-            async with aiohttp.ClientSession() as session:
-                data = {"action": action, "payload": payload}
-                async with session.post(self.api_endpoint, headers=headers, json=data, timeout=30) as response:
-                    if response.status == 200:
-                        result = await response.json()
-                        logger.info("Successfully fetched GMGN trends")
-                        return {"status": "success", "data": result}
-                    else:
-                        error_text = await response.text()
-                        logger.error(f"API error: {response.status} - {error_text}")
-                        return {"status": "error", "error": f"API error: {response.status} - {error_text}"}
+            result = await self._api_request(url=self.api_endpoint, method="POST", headers=self.headers, json_data=data)
+
+            if "error" in result:
+                logger.error(f"API error: {result['error']}")
+                return {"status": "error", "error": result["error"]}
+
+            logger.info("Successfully fetched GMGN trends")
+            return {"status": "success", "data": result}
 
         except Exception as e:
             logger.error(f"Error fetching GMGN trends: {str(e)}")
@@ -193,24 +163,21 @@ class UnifaiTokenAnalysisAgent(MeshAgent):
         Returns:
             Dict containing token information or error details
         """
-        headers = {"Authorization": self.api_key, "Content-Type": "application/json"}
         try:
             action = f"GMGNTrendTokenAnalysis/{self.gmgn_trend_id}/getgmgntokeninfo"
             payload = {"chain": chain, "address": address}
+            data = {"action": action, "payload": payload}
 
             logger.info(f"Fetching GMGN token info for {address} on {chain}")
 
-            async with aiohttp.ClientSession() as session:
-                data = {"action": action, "payload": payload}
-                async with session.post(self.api_endpoint, headers=headers, json=data, timeout=30) as response:
-                    if response.status == 200:
-                        result = await response.json()
-                        logger.info("Successfully fetched GMGN token info")
-                        return {"status": "success", "data": result}
-                    else:
-                        error_text = await response.text()
-                        logger.error(f"API error: {response.status} - {error_text}")
-                        return {"status": "error", "error": f"API error: {response.status} - {error_text}"}
+            result = await self._api_request(url=self.api_endpoint, method="POST", headers=self.headers, json_data=data)
+
+            if "error" in result:
+                logger.error(f"API error: {result['error']}")
+                return {"status": "error", "error": result["error"]}
+
+            logger.info("Successfully fetched GMGN token info")
+            return {"status": "success", "data": result}
 
         except Exception as e:
             logger.error(f"Error fetching GMGN token info: {str(e)}")
@@ -228,24 +195,21 @@ class UnifaiTokenAnalysisAgent(MeshAgent):
         Returns:
             Dict containing token analysis or error information
         """
-        headers = {"Authorization": self.api_key, "Content-Type": "application/json"}
         try:
             action = f"TokenAnalysis/{self.token_analysis_id}/analyzeToken"
             payload = {"ticker": ticker}
+            data = {"action": action, "payload": payload}
 
             logger.info(f"Analyzing token: {ticker}")
 
-            async with aiohttp.ClientSession() as session:
-                data = {"action": action, "payload": payload}
-                async with session.post(self.api_endpoint, headers=headers, json=data, timeout=30) as response:
-                    if response.status == 200:
-                        result = await response.json()
-                        logger.info(f"Successfully analyzed token: {ticker}")
-                        return {"status": "success", "data": result}
-                    else:
-                        error_text = await response.text()
-                        logger.error(f"API error: {response.status} - {error_text}")
-                        return {"status": "error", "error": f"API error: {response.status} - {error_text}"}
+            result = await self._api_request(url=self.api_endpoint, method="POST", headers=self.headers, json_data=data)
+
+            if "error" in result:
+                logger.error(f"API error: {result['error']}")
+                return {"status": "error", "error": result["error"]}
+
+            logger.info(f"Successfully analyzed token: {ticker}")
+            return {"status": "success", "data": result}
 
         except Exception as e:
             logger.error(f"Error analyzing token {ticker}: {str(e)}")
@@ -263,11 +227,10 @@ class UnifaiTokenAnalysisAgent(MeshAgent):
             logger.info(f"Getting GMGN trends for {time_window} with limit {limit}")
             result = await self.get_gmgn_trend(time_window=time_window, limit=limit)
 
-            errors = self._handle_error(result)
-            if errors:
-                return errors
+            if result.get("status") == "error":
+                return {"error": result.get("error", "Failed to get GMGN trends")}
 
-            return result
+            return result.get("data", {})
 
         elif tool_name == "get_gmgn_token_info":
             chain = function_args.get("chain")
@@ -279,11 +242,10 @@ class UnifaiTokenAnalysisAgent(MeshAgent):
             logger.info(f"Getting GMGN token info for {address} on {chain}")
             result = await self.get_gmgn_token_info(chain=chain, address=address)
 
-            errors = self._handle_error(result)
-            if errors:
-                return errors
+            if result.get("status") == "error":
+                return {"error": result.get("error", "Failed to get token info")}
 
-            return result
+            return result.get("data", {})
 
         elif tool_name == "analyze_token":
             ticker = function_args.get("ticker")
@@ -294,11 +256,10 @@ class UnifaiTokenAnalysisAgent(MeshAgent):
             logger.info(f"Analyzing token: {ticker}")
             result = await self.analyze_token(ticker=ticker)
 
-            errors = self._handle_error(result)
-            if errors:
-                return errors
+            if result.get("status") == "error":
+                return {"error": result.get("error", "Failed to analyze token")}
 
-            return result
+            return result.get("data", {})
 
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
