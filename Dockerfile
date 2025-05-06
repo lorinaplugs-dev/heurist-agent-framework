@@ -9,7 +9,7 @@ ENV UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     PATH="/app/mesh/.venv/bin:$PATH"
 
-# Install curl for healthchecks, git for dependency installation, libpq-dev and gcc for psycopg2
+# Install curl for healthchecks, git for dependency installation, libpq-dev, gcc, and libc6-dev for safe-eth-py
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \

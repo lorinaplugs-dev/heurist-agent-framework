@@ -12,7 +12,7 @@ dependencies = [
     "loguru==0.7.3",
     "mcp==1.6.0",
     "openai==1.71.0",
-    "psycopg2==2.9.10", # core embeddings
+    "psycopg2-binary==2.9.10", # core embeddings
     "pydash==8.0.5", # sol wallet agent
     "pyethash", # to build web3-ethereum-defi
     "python-dotenv==1.1.0",
