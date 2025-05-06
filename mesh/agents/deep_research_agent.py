@@ -23,7 +23,15 @@ class DeepResearchAgent(MeshAgent):
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "Advanced research agent that performs multi-level web searches with recursive exploration, analyzes content across sources, and produces comprehensive research reports with key insights",
                 "inputs": [
-                    {"name": "query", "description": "Research query or topic", "type": "str", "required": True},
+                    # fmt: off
+                    # keeping these here as they differ from the base class
+                    {
+                        "name": "query",
+                        "description": "Research query or topic",
+                        "type": "str",
+                        "required": True,
+                    },
+                    # fmt: on
                     {
                         "name": "depth",
                         "description": "Research depth (1-3)",
@@ -44,18 +52,6 @@ class DeepResearchAgent(MeshAgent):
                         "type": "int",
                         "required": False,
                         "default": 2,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Detailed analysis and research findings",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Raw search results and metadata",
-                        "type": "dict",
                     },
                 ],
                 "external_apis": ["Firecrawl"],

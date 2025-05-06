@@ -58,7 +58,13 @@ class MeshAgent(ABC):
                     "description": "The text response from the agent",
                     "type": "str",
                 },
-                {"name": "data", "description": "Structured data from the agent", "type": "dict"},
+                # fmt: off
+                {
+                    "name": "data",
+                    "description": "Structured data from the agent",
+                    "type": "dict",
+                },
+                # fmt: on
             ],
             "external_apis": [],
             "tags": [],
