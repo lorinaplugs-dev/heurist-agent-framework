@@ -4,32 +4,25 @@
 
 🧩 **Heurist Mesh** is an open network of modular and purpose-built AI agents. Each agent is a specialized unit that can process data, generate reports, or engage in conversations, while collectively forming an intelligent swarm to tackle complex tasks. Built on decentralized compute and powered by diverse open-source AI models, Mesh agents can be combined into powerful workflows for cost-efficient and highly flexible solutions. Once a Mesh agent is added to this Github main branch, it's automatically deployed and instantly available via REST API and MCP.
 
-➡️ Set up a self-hosted MCP server to use the agents at [heurist-mesh-mcp-server](https://github.com/heurist-network/heurist-mesh-mcp-server/blob/main/README.md)
+## Using Mesh Agents
 
-➡️ Use [Heurist Mesh MCP Portal](https://mcp.heurist.ai) to start a managed MCP server.
+> [!NOTE]
+> For detailed API documentation including examples of both synchronous and asynchronous usage, please refer to the [official Heurist Mesh documentation](https://docs.heurist.ai/dev-guide/heurist-mesh/).
 
-## Table of Contents
-1. [How It Works](#how-it-works)
-2. [Agent Deployment](#agent-deployment)
-3. [Using Mesh Agents](#using-mesh-agents)
-   - [Synchronous API](#synchronous-api)
-   - [Asynchronous API](#asynchronous-api)
-4. [Folder Structure](#folder-structure)
-5. [How to Build a New Mesh Agent](#how-to-build-a-new-mesh-agent)
-   - [Prerequisites](#prerequisites)
-   - [Creating a New Mesh Agent](#creating-a-new-mesh-agent)
-   - [Testing Your Agent](#testing-your-agent)
-   - [Start a Local Server](#start-a-local-server)
-6. [Contributor Guidelines](#contributor-guidelines)
-   - [Pull Request Checklist](#pull-request-checklist)
-   - [Coding Style and Best Practices](#coding-style-and-best-practices)
-   - [Metadata Requirements](#metadata-requirements)
-   - [Testing Requirements](#testing-requirements)
-7. [Examples](#examples)
-8. [Contact & Support](#contact--support)
-9. [Appendix: All Available Mesh Agents](#appendix-all-available-mesh-agents)
+Mesh agents hosted by Heurist can be accessed via two interfaces:
 
----
+- **Synchronous API** - Direct, immediate responses for quick queries and actions
+- **Asynchronous API** - For longer-running tasks or when you want to track the reasoning process
+
+To use any Mesh agent, you'll need a Heurist API key, get one at [https://heurist.ai/credits](https://www.heurist.ai/credits).
+
+## MCP (Model Context Protocol)
+
+Model Context Protocol allows AI assistants like Claude to directly interact with Heurist Mesh agents as tools.
+
+**[Heurist Mesh MCP Portal](https://mcp.heurist.ai)** - The fastest way to get started with our MCP integration with no setup required!
+
+For self-hosting with complete control, check out our [heurist-mesh-mcp-server](https://github.com/heurist-network/heurist-mesh-mcp-server/blob/main/README.md).
 
 ## How It Works
 
@@ -38,462 +31,95 @@
 - **Agent Developers** can contribute by adding specialized agents to the network. Each invocation of an agent can generate pay-per-use revenue for the agent's author.  
 - **Users or Developers** get access to a rich library of pre-built, purpose-driven AI agents they can seamlessly integrate into their products or workflows via REST APIs or frontend interface usage.
 
-## Agent Deployment
+## Building a New Mesh Agent
 
-### Production Deployment
+### Setup & Development
 
-Mesh agents are deployed on Heurist's compute layer using Docker Swarm for high availability. The deployment process is fully automated:
-
-1. When a pull request is merged into the main branch, a GitHub Action triggers automatically
-2. The action builds a Docker image and runs validation checks that attempt to import all agents
-3. After successful build, the image is pushed to GitHub Container Registry
-4. A webhook notifies the production server to update the deployment
-5. The deployment uses Docker Swarm with multiple replicas for zero-downtime updates
-6. A health check confirms the deployment's success
-
-Benefits of this deployment approach:
-- Zero downtime during updates (rolling updates with multiple replicas)
-- Easy rollbacks in case of deployment issues
-- Better dependency management through `uv` package manager
-- Proper health checks and monitoring
-
-### Viewing Production Logs
-
-To view logs from the production deployment:
+1. **Create virtual environment**:
 ```bash
-docker service logs mesh_mesh -f
+cd mesh
+uv sync
+source .venv/bin/activate  # Linux/Mac
+.venv\Scripts\activate     # Windows
 ```
 
-### Local Development Environment
+2. **Create your agent**:
+```python
+from .mesh_agent import MeshAgent
+from typing import Dict, Any
 
-For local development of mesh agents:
-
-1. Set up a Python virtual environment with `uv`:
-   ```bash
-   # Install uv (if not already installed)
-   # Then in the mesh folder:
-   uv venv
-
-   # Activate the virtual environment
-   # On Windows:
-   .venv\Scripts\activate
-   # On Linux/Mac:
-   source .venv/bin/activate
-
-   # Install dependencies
-   uv sync
-   ```
-
-2. When adding external dependencies:
-   ```bash
-   uv add package_name
-   ```
-
-3. Test your agent locally:
-   ```bash
-   python -m uvicorn mesh_api:app --reload
-   ```
-
-### Handling External Dependencies
-
-When creating agents that require external dependencies:
-1. Always use `uv add` instead of `pip install` to ensure proper dependency tracking
-2. Make sure to test that your agent loads correctly in the container environment
-3. Update the requirements file with `uv export requirements.txt`
-
-We plan to enable local hosting of agents in the future where you can deploy your agents on your own servers without giving up any sensitive data, while being composable with the Heurist Mesh.
-
-## Using Mesh Agents
-
-Mesh agents hosted by Heurist can be accessed via two interfaces:
-
-- Synchronous API - Direct, immediate responses
-- Asynchronous API - For longer-running tasks, or when you want to query the reasoning process of the agent execution
-
-To use any Mesh agent, you'll need a Heurist API key. Get one at https://www.heurist.ai/credits
-
-### Synchronous API
-
-Make a POST request to URL: `https://sequencer-v2.heurist.xyz/mesh_request`
-
-#### Natural Language Mode
-
-Use this mode to interact with agents using human language. The agent will interpret the query and return a response. Example:
-
-```bash
-curl -X POST https://sequencer-v2.heurist.xyz/mesh_request \
-  -H "Content-Type: application/json" \
-  -d '{
-    "agent_id": "CoinGeckoTokenInfoAgent",
-    "input": {
-      "query": "Get info about ADA"
-    },
-    "api_key": "YOUR_API_KEY"
-  }'
-```
-
-Response format:
-```json
-{
-  "response": "Natural language explanation of results",
-  "data": {
-    // Structured data specific to the agent
-  }
-}
-```
-
-#### Direct Tool Mode
-
-Some agents provides direct tool access. You can bypass the language model and call specific agent tools. Tools are typically functions that wrap external APIs. This mode is useful if you know the exact API schema and want to reduce the response time. Example:
-
-```bash
-curl -X POST https://sequencer-v2.heurist.xyz/mesh_request \
-  -H "Content-Type: application/json" \
-  -d '{
-    "agent_id": "CoinGeckoTokenInfoAgent",
-    "input": {
-      "tool": "get_token_info",
-      "tool_arguments": {
-        "coingecko_id": "cardano"
-      },
-      "raw_data_only": true
-    },
-    "api_key": "YOUR_API_KEY"
-  }'
-```
-
-You may set `raw_data_only: true` to receive only structured data without natural language explanations.
-
-### Asynchronous API
-
-For tasks that may take longer to complete, use the asynchronous API flow:
-
-1. Create a task:
-
-```bash
-curl -X POST https://sequencer-v2.heurist.xyz/mesh_task_create \
-  -H "Content-Type: application/json" \
-  -d '{
-    "agent_id": "ZkIgniteAnalystAgent",
-    "agent_type": "AGENT",
-    "task_details": {
-      "query": "Compare the TVL and yield of ZeroLend and Syncswap"
-    },
-    "api_key": "YOUR_API_KEY"
-  }'
-```
-
-Response format:
-```json
-{
-  "task_id": "RETURNED_TASK_ID",
-  "msg": "Task created successfully"
-}
-```
-
-2. Query task status using the returned task_id:
-
-```bash
-curl -X POST https://sequencer-v2.heurist.xyz/mesh_task_query \
-  -H "Content-Type: application/json" \
-  -d '{
-    "task_id": "RETURNED_TASK_ID"
-  }'
-```
-
-The response will vary based on the task's state:
-
-Initial state (waiting):
-```json
-{
-    "status": "waiting",
-    "reasoning_steps": null
-}
-```
-
-Processing state (with thinking steps):
-```json
-{
-    "status": "running",
-    "reasoning_steps": [
-        {
-            "timestamp": 1740097379,
-            "content": "ComposableEchoAgent is thinking...",
-            "is_sent": false
-        },
-        {
-            "timestamp": 1740097379,
-            "content": "EchoAgent is thinking...",
-            "is_sent": false
-        }
-    ]
-}
-```
-
-Completed state:
-```json
-{
-    "status": "finished",
-    "reasoning_steps": null,
-    "result": {
-        "response": "COMPOSABLE: Hello from ComposableEchoAgent!",
-        "success": "true"
-    }
-}
-```
-
-
----
-
-## Folder Structure
-
-Inside the `mesh` folder, you will find:
-
-```
-mesh/
-├─ __init__.py
-├─ mesh_agent.py            # Base class for all Mesh Agents
-├─ your_agent.py            # Your agent class
-├─ ...
-└─ tests/
-   ├─ your_agent.py         # Test script for your agent
-   └─ ...
-```
-
-- **`mesh_agent.py`** – The base `MeshAgent` class providing a common interface and shared utilities (metadata handling, lifecycle management, default model references, etc.).  
-- **`{your_agent_name}_agent.py`** – Individual agent classes extending `MeshAgent` to implement specialized functionalities.  
-- **`tests/`** – Contains test scripts for each agent, demonstrating example inputs and outputs.  
-
----
-
-## How to Build a New Mesh Agent
-
-### Prerequisites
-
-- Python 3.11+
-- Heurist API key
-
-### Creating a New Mesh Agent
-
-1. **Set Up Local Development Environment**
-   - Create a Python virtual environment using `uv`:
-     ```bash
-     # Navigate to the mesh directory
-     cd mesh
-
-     # Create virtual environment
-     uv venv
-
-     # Activate it (Windows)
-     .venv\Scripts\activate
-     # or (Linux/Mac)
-     source .venv/bin/activate
-
-     # Install dependencies
-     uv sync
-     ```
-
-2. **Create Your Agent File**  
-   - Name it logically, e.g., `my_special_agent.py`.  
-   - Place it inside the `mesh` folder at the same level as the other agent files.
-
-3. **Inherit from `MeshAgent`**  
-   ```python
-   from .mesh_agent import MeshAgent
-   from typing import Dict, Any
-
-   class MySpecialAgent(MeshAgent):
-       def __init__(self):
-           super().__init__()
-           self.metadata.update({
-               'name': 'My Special Agent',
-               'version': '1.0.0',
-               'author': 'Your Name',
-               'author_address': '0xYourEthereumAddress',
-               'description': 'This agent can do...',
-               'inputs': [
-                   {'name': 'query', 'description': 'User input or data', 'type': 'str'}
-                   # Add more inputs as needed
-               ],
-               'outputs': [
-                   {'name': 'response', 'description': 'Agent response', 'type': 'str'}
-                   # Add more outputs as needed. We recommend adding 'data' output for raw data from external APIs.
-               ],
-               'external_apis': [],
-               'tags': ['DeFi', 'Trading']
-           })
+class MySpecialAgent(MeshAgent):
+    def __init__(self):
+        super().__init__()
+        self.metadata.update({
+            'name': 'My Special Agent',
+            'version': '1.0.0',
+            'author': 'Your Name',
+            'author_address': '0xYourEthereumAddress',
+            'description': 'This agent can do...',
+            'external_apis': [],
+            'tags': ['DeFi', 'Trading']
+        })
 
        async def handle_message(self, params: Dict[str, Any]) -> Dict[str, Any]:
            # Implement your agent logic here
            user_input = params.get('query', '')
            response_text = f"This is a response from MySpecialAgent for query: {user_input}"
            return {"response": response_text}
-   ```
-
-4. **Implement Your Custom Logic**  
-   - You can call external APIs, orchestrate LLM calls, call other mesh agents, or do any specialized processing.
-   - You should use os.environ to store any sensitive information. Such data should not be hardcoded in the agent file and should not be committed to the repository.
-   - Make sure to wrap significant network operations with any relevant decorators (e.g., `@with_retry`, `@with_cache`) if needed.
-
-5. **Add Required Metadata**  
-   - Ensure you update `self.metadata` with all relevant fields (e.g., `name`, `description`, `inputs`, `outputs`, `tags`, and any external APIs used).
-
-6. **Add External Dependencies**
-   - If your agent requires external packages, add them using `uv add`:
-     ```bash
-     uv add package_name
-     ```
-   - Always ensure the agent loads properly with the added dependencies.
-   - The deployment CI pipeline will attempt to import your agent to validate dependencies.
-
-### Testing Your Agent
-
-1. **Create a Test Script**  
-   - In `mesh/tests`, create a file named `my_special_agent.py` (or similar).  
-   - Import your agent and run a small demonstration of `handle_message`.
-
-   ```python
-   # mesh/tests/my_special_agent.py
-   import sys
-   from pathlib import Path
-   import yaml
-   import asyncio
-
-   sys.path.append(str(Path(__file__).parent.parent.parent))
-
-   from mesh.my_special_agent import MySpecialAgent
-
-   async def run_agent():
-       agent = MySpecialAgent()
-       try:
-           input_data = {'query': 'Say something special'}
-           output_data = await agent.handle_message(input_data)
-
-           # Save to YAML as an example
-           test_dir = Path(__file__).parent
-           output_file = test_dir / "my_special_agent_example.yaml"
-
-           yaml_content = {
-               'input': input_data,
-               'output': output_data
-           }
-           with open(output_file, 'w', encoding='utf-8') as f:
-               yaml.dump(yaml_content, f, allow_unicode=True, sort_keys=False)
-
-           print(f"Results saved to {output_file}")
-       finally:
-           await agent.cleanup()
-
-   if __name__ == "__main__":
-       asyncio.run(run_agent())
-   ```
-
-2. **Run the Test**  
-   ```bash
-   cd mesh/tests
-   python my_special_agent.py
-   ```
-   - This will produce a YAML file (e.g., `my_special_agent_example.yaml`) showing the input and output.
-
-3. **Check and Update**  
-   - Verify the output is as expected.  
-   - Update your agent logic or test script if necessary.  
-
-### Start a local server
-
-`mesh_api.py` is a FastAPI server that you can use to test your agent with synchronous API. It will automatically reload the agent when you make changes to the code.
-
-```bash
-python3 -m uvicorn mesh_api:app --reload
 ```
 
-You can now test your agent by calling `http://localhost:8000/mesh_request` with the same input as in the test script.
+3. **Test your agent**:
+   - Create `mesh/tests/my_special_agent.py`
+   - Run: `python mesh/tests/my_special_agent.py`
 
----
+4. **Start local server**:
+```bash
+python -m mesh_api
+```
 
 ## Contributor Guidelines
 
-We welcome community contributions to develop the Heurist Mesh.
-
-### Pull Request Checklist
-
-1. **Fork the Repository**  
-   - Fork [heurist-agent-framework](https://github.com/YOUR-ORG/heurist-agent-framework) to your own GitHub account.  
-
-2. **Create a Branch**  
-   - For a new agent, use a descriptive branch name, such as `feature/my-special-agent`.  
-
-3. **Add Your Agent**  
-   - Create your `.py` agent file under `mesh/`.  
-   - Write a corresponding test script under `mesh/tests/`.  
-
-4. **Test**  
-   - Run your test script locally to confirm no errors occur and that your agent works as expected.
-   - If using external dependencies, ensure they are added using `uv add` and updated in the lock file.
-   - Test your agent with the local API server to verify it responds correctly:
-     ```bash
-     python -m uvicorn mesh_api:app --reload
-     ```
-
-5. **Open a Pull Request**  
-   - Summarize what your agent does and why it's valuable.  
-   - Include any relevant info (e.g., external APIs used, example test output).
-
-6. **Deployment Process** (after PR is merged)
-   - When your PR is merged to main, a GitHub Action workflow will automatically build and deploy.
+1. **Fork & branch** the repository
+2. **Add your agent** under `mesh/`
+3. **Test** locally and with external dependencies
+4. **Submit PR** with clear description of agent functionality
+5. **Deployment** happens automatically after merge
 
 ### Coding Style and Best Practices
 
-- Use Python **type hints** (`typing.Dict`, `typing.Any`, etc.) where feasible.  
-- Use **docstrings** for important methods or classes to clarify behavior.  
-- **Modularity** is key: break large tasks into smaller methods, especially if you rely on external services. Every agent should focus on a single domain.
-- Add proper [decorators](https://github.com/heurist-network/heurist-agent-framework/blob/main/decorators.py) to functions using external APIs for caching and retry.
-- `query` should be the first parameter of `handle_message`. It should support natural language queries and does not make assumptions on matching an exact format. (for example, your agent should accept both "tell me about "Ethereum" and "analyze ETH" - we don't strictly match the token name or ticker but let LLM do the job)
+- Use Python **type hints** and **docstrings** for clarity
+- Design for **modularity** with each agent focused on a single domain
+- Use [decorators](https://github.com/heurist-network/heurist-agent-framework/blob/main/decorators.py) for API caching and retry
+- Support natural language in `query` parameter (e.g., both "tell me about Ethereum" and "analyze ETH" should be accepted)
 
 ### Metadata Requirements
-
 Each agent's `metadata` dictionary should at least contain:
-- **`name`**: Human-readable name of the agent.  
-- **`version`**: Agent version (e.g., `1.0.0`).  
-- **`author`**: Name or handle of the contributor.  
-- **`author_address`**: Ethereum address (or any relevant address) for potential revenue share.  
-- **`description`**: Short, clear summary of your agent's purpose.  
-- **`inputs`**: List of inputs with `name`, `description`, and `type`.
-- **`outputs`**: List of outputs with `name`, `description`, and `type`.  
-- **`external_apis`**: Any external service your agent accesses (e.g., `['DefiLlama']`).  
-- **`tags`**: Keywords or categories to help users discover your agent.
-
-### Testing Requirements
-
-- Provide one **test script** in `mesh/tests/` that:  
-  1. Instantiates your agent.  
-  2. Calls its `handle_message` with example input.  
-  3. Outputs results to a `.yaml` file as an example.  
-
----
+- `name`: Human-readable name of the agent.  
+- `version`: Agent version (e.g., `1.0.0`).  
+- `author`: Name or handle of the contributor.  
+- `author_address`: Ethereum address (or any relevant address) for potential revenue share.  
+- `description`: Short, clear summary of your agent's purpose.  
+- `external_apis`: Any external service your agent accesses (e.g., `['DefiLlama']`).  
+- `tags`: Keywords or categories to help users discover your agent.
 
 ## Examples
 
 We have included example agents in this folder:
 
-1. **Allora Price Prediction Agent** (`allora_price_prediction_agent.py`)  
+1. **Allora Price Prediction Agent** ([allora_price_prediction_agent.py](./agents/allora_price_prediction_agent.py))  
    - Fetches and predicts short-term crypto prices using Allora's API.  
    - Demonstrates how to integrate external APIs, handle asynchronous calls, and structure multi-step logic.
 
-2. **Token Contract Security Agent** (`goplus_analysis_agent.py`)  
+2. **Token Contract Security Agent** ([goplus_analysis_agent.py](./agents/goplus_analysis_agent.py))  
    - Fetches security details for blockchain token contracts using the GoPlus API.  
    - Showcases best practices for validating user queries, calling external tools, and returning structured data.  
 
 Each example agent has a corresponding test script in `mesh/tests/` that demonstrates how to run the agent and produce an example output file (in YAML).
 
----
-
 ## Contact & Support
 
 - **Issues**: If you find bugs or have questions, open an issue on the [GitHub repository](https://github.com/heurist-network/heurist-agent-framework/issues).
 - **Community Chat**: Join our [Discord](https://discord.com/invite/heuristai) or [Telegram Builder Group](https://t.me/heuristsupport) for real-time support or to showcase your new agents.  
-
-Thank you for contributing to **Heurist Mesh** and helping build a diverse ecosystem of AI agents! We're excited to see the specialized solutions you create.
 
 > **Happy Hacking & Welcome to the Mesh!**  
 
