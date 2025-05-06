@@ -7,7 +7,7 @@ name = "heurist-core"
 version = "0.1.0"
 description = "Core components of the Heurist Agent Framework"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 license = "MIT"
 authors = [
     {name = "Heurist", email = "info@heurist.ai"}
@@ -19,12 +19,12 @@ classifiers = [
 dependencies = [
     "openai==1.71.0",
     "requests==2.32.3",
-    "numpy>=1.26.3",
+    "numpy==1.26.3",
     "scikit-learn==1.6.1",
     "psycopg2-binary==2.9.10",
     "smolagents==1.9.2",
     "python-dotenv==1.1.0",
-    "pyyaml>=6.0.2",
+    "pyyaml==6.0.2",
     "tenacity==8.5.0",
     "tiktoken==0.9.0",
     "aiohttp==3.11.15",
@@ -33,8 +33,8 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/heurist-ai/heuman-agent-framework"
-"Bug Tracker" = "https://github.com/heurist-ai/heuman-agent-framework/issues"
+"Homepage" = "https://github.com/heurist-network/heurist-agent-framework/"
+"Bug Tracker" = "https://github.com/heurist-network/heurist-agent-framework/issues"
 
 [tool.setuptools]
 package-dir = {heurist_core = "."}
