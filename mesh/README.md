@@ -28,7 +28,7 @@ For self-hosting with complete control, check out our [heurist-mesh-mcp-server](
 
 - **Mesh Agents** can process information from external APIs, or access other mesh agents.
 - Agents run on a decentralized compute layer, and each agent can optionally use external APIs, Large Language Models, or other tools provided by Heurist and 3rd parties.
-- **Agent Developers** can contribute by adding specialized agents to the network. Each invocation of an agent can generate pay-per-use revenue for the agent's author.  
+- **Agent Developers** can contribute by adding specialized agents to the network. Each invocation of an agent can generate pay-per-use revenue for the agent's author.
 - **Users or Developers** get access to a rich library of pre-built, purpose-driven AI agents they can seamlessly integrate into their products or workflows via REST APIs or frontend interface usage.
 
 ## Building a New Mesh Agent
@@ -36,6 +36,7 @@ For self-hosting with complete control, check out our [heurist-mesh-mcp-server](
 ### Setup & Development
 
 1. **Create virtual environment**:
+
 ```bash
 cd mesh
 uv sync
@@ -44,9 +45,10 @@ source .venv/bin/activate  # Linux/Mac
 ```
 
 2. **Create your agent**:
+
 ```python
-from .mesh_agent import MeshAgent
-from typing import Dict, Any
+from mesh.mesh_agent import MeshAgent
+from typing import Dict, Any, List
 
 class MySpecialAgent(MeshAgent):
     def __init__(self):
@@ -57,22 +59,97 @@ class MySpecialAgent(MeshAgent):
             'author': 'Your Name',
             'author_address': '0xYourEthereumAddress',
             'description': 'This agent can do...',
-            'external_apis': [],
-            'tags': ['DeFi', 'Trading']
+            'external_apis': ['API_Name'],
+            'tags': ['Category1', 'Category2'],
+            'image_url': 'https://example.com/image.png',
+            'examples': ['Example query 1', 'Example query 2'],
         })
 
-       async def handle_message(self, params: Dict[str, Any]) -> Dict[str, Any]:
-           # Implement your agent logic here
-           user_input = params.get('query', '')
-           response_text = f"This is a response from MySpecialAgent for query: {user_input}"
-           return {"response": response_text}
+    def get_system_prompt(self) -> str:
+        """Return the system prompt for the agent"""
+        return """
+        You are a helpful assistant that can [describe agent's purpose].
+        [Include any specific instructions for the LLM here]
+        """
+
+    def get_tool_schemas(self) -> List[Dict]:
+        """Define the tools that your agent exposes"""
+        return [
+            {
+                "type": "function",
+                "function": {
+                    "name": "my_tool_name",
+                    "description": "Description of what this tool does",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "param1": {"type": "string", "description": "Description of parameter 1"},
+                            "param2": {"type": "number", "description": "Description of parameter 2"},
+                        },
+                        "required": ["param1"]
+                    }
+                }
+            }
+        ]
+
+    async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
+        """Handle the execution of your agent's tools"""
+        if tool_name == "my_tool_name":
+            # Implement your tool logic here
+            param1 = function_args.get("param1")
+            param2 = function_args.get("param2", 0)  # Default value if not provided
+
+            # Call your API or process data here
+            result = await self._api_request(
+                url="https://api.example.com/endpoint",
+                method="GET",
+                headers={"Authorization": "Bearer your_api_key"},
+                params={"query": param1}
+            )
+
+            # Check for errors
+            if errors := self._handle_error(result):
+                return errors
+
+            # Return processed data
+            return {
+                "status": "success",
+                "data": {"result": result}
+            }
+
+        return {"error": f"Unsupported tool: {tool_name}"}
 ```
 
 3. **Test your agent**:
-   - Create `mesh/tests/my_special_agent.py`
+
+   - Create `mesh/tests/my_special_agent.py` with a basic test:
+
+   ```python
+   import asyncio
+   import yaml
+   from mesh.agents.my_special_agent import MySpecialAgent
+
+   async def test_agent():
+       agent = MySpecialAgent()
+       # Test natural language query
+       response = await agent.call_agent({"query": "Run a test query"})
+       print(yaml.dump(response))
+
+       # Test direct tool call
+       response = await agent.call_agent({
+           "tool": "my_tool_name",
+           "tool_arguments": {"param1": "test value", "param2": 123}
+       })
+       print(yaml.dump(response))
+
+   if __name__ == "__main__":
+       asyncio.run(test_agent())
+   ```
+
    - Run: `python mesh/tests/my_special_agent.py`
 
 4. **Start local server**:
+
 ```bash
 python -m mesh_api
 ```
@@ -93,35 +170,38 @@ python -m mesh_api
 - Support natural language in `query` parameter (e.g., both "tell me about Ethereum" and "analyze ETH" should be accepted)
 
 ### Metadata Requirements
+
 Each agent's `metadata` dictionary should at least contain:
-- `name`: Human-readable name of the agent.  
-- `version`: Agent version (e.g., `1.0.0`).  
-- `author`: Name or handle of the contributor.  
-- `author_address`: Ethereum address (or any relevant address) for potential revenue share.  
-- `description`: Short, clear summary of your agent's purpose.  
-- `external_apis`: Any external service your agent accesses (e.g., `['DefiLlama']`).  
+
+- `name`: Human-readable name of the agent.
+- `version`: Agent version (e.g., `1.0.0`).
+- `author`: Name or handle of the contributor.
+- `author_address`: Ethereum address (or any relevant address) for potential revenue share.
+- `description`: Short, clear summary of your agent's purpose.
+- `external_apis`: Any external service your agent accesses (e.g., `['DefiLlama']`).
 - `tags`: Keywords or categories to help users discover your agent.
 
 ## Examples
 
 We have included example agents in this folder:
 
-1. **Allora Price Prediction Agent** ([allora_price_prediction_agent.py](./agents/allora_price_prediction_agent.py))  
-   - Fetches and predicts short-term crypto prices using Allora's API.  
+1. **Allora Price Prediction Agent** ([allora_price_prediction_agent.py](./agents/allora_price_prediction_agent.py))
+
+   - Fetches and predicts short-term crypto prices using Allora's API.
    - Demonstrates how to integrate external APIs, handle asynchronous calls, and structure multi-step logic.
 
-2. **Token Contract Security Agent** ([goplus_analysis_agent.py](./agents/goplus_analysis_agent.py))  
-   - Fetches security details for blockchain token contracts using the GoPlus API.  
-   - Showcases best practices for validating user queries, calling external tools, and returning structured data.  
+2. **DuckDuckGo Search Agent** ([duckduckgo_search_agent.py](./agents/duckduckgo_search_agent.py))
+   - Fetches and analyzes web search results using DuckDuckGo's API.
+   - Shows how to process user queries, connect to external search services, and return structured results.
 
 Each example agent has a corresponding test script in `mesh/tests/` that demonstrates how to run the agent and produce an example output file (in YAML).
 
 ## Contact & Support
 
 - **Issues**: If you find bugs or have questions, open an issue on the [GitHub repository](https://github.com/heurist-network/heurist-agent-framework/issues).
-- **Community Chat**: Join our [Discord](https://discord.com/invite/heuristai) or [Telegram Builder Group](https://t.me/heuristsupport) for real-time support or to showcase your new agents.  
+- **Community Chat**: Join our [Discord](https://discord.com/invite/heuristai) or [Telegram Builder Group](https://t.me/heuristsupport) for real-time support or to showcase your new agents.
 
-> **Happy Hacking & Welcome to the Mesh!**  
+> **Happy Hacking & Welcome to the Mesh!**
 
 ---
 
@@ -161,4 +241,4 @@ Each example agent has a corresponding test script in `mesh/tests/` that demonst
 | ZkIgniteAnalystAgent | This agent analyzes zkSync Era DeFi opportunities in the zkIgnite program and has access to real-time yield and TVL data | - | [Source](./agents/zkignite_analyst_agent.py) | Merkl, DefiLlama |
 ---  
 
-*This document is a work-in-progress. Please feel free to update and improve it as the system evolves.*
+_This document is a work-in-progress. Please feel free to update and improve it as the system evolves._
