@@ -79,14 +79,14 @@ class DeepResearchAgent(MeshAgent):
 
         self.search_clients = {}
 
-        self.firecrawl_key = os.getenv("FIRECRAWL_KEY", "")
+        self.firecrawl_api_key = os.getenv("FIRECRAWL_API_KEY", "")
         self.exa_api_key = os.getenv("EXA_API_KEY", "")
 
-        if self.firecrawl_key:
-            self.firecrawl_client = SearchClient(client_type="firecrawl", api_key=self.firecrawl_key, rate_limit=1)
+        if self.firecrawl_api_key:
+            self.firecrawl_client = SearchClient(client_type="firecrawl", api_key=self.firecrawl_api_key, rate_limit=1)
             self.search_clients["firecrawl"] = self.firecrawl_client
         else:
-            logger.warning("FIRECRAWL_KEY not found in environment variables")
+            logger.warning("FIRECRAWL_API_KEY not found in environment variables")
 
         if self.exa_api_key:
             self.exa_client = SearchClient(client_type="exa", api_key=self.exa_api_key, rate_limit=1)
