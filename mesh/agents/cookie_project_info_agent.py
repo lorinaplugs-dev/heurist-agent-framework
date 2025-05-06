@@ -20,7 +20,6 @@ class CookieProjectInfoAgent(MeshAgent):
             raise ValueError("COOKIE_FUN_API_KEY environment variable is required")
 
         self.headers = {"x-api-key": self.api_key, "Content-Type": "application/json"}
-        logger.info(f"Base URL set to {self.base_url}")
 
         self.metadata.update(
             {
