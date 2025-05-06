@@ -2,7 +2,6 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import aiohttp
 from dotenv import load_dotenv
 
 from decorators import with_cache, with_retry
@@ -15,11 +14,13 @@ load_dotenv()
 class MoniTwitterInsightAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.session = None
         self.base_url = "https://api.discover.getmoni.io"
         self.api_key = os.getenv("MONI_API_KEY")
         if not self.api_key:
             raise ValueError("MONI_API_KEY environment variable is required")
+
+        # Set up headers for all API requests
+        self.headers = {"accept": "application/json", "Api-Key": self.api_key}
 
         self.metadata.update(
             {
@@ -28,33 +29,6 @@ class MoniTwitterInsightAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes Twitter accounts providing insights on smart followers, mentions, and account activity.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about a Twitter account or mentions",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw data without LLM explanation",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the Twitter data",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured Twitter data",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["Moni"],
                 "tags": ["Twitter"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Moni.png",
@@ -65,21 +39,6 @@ class MoniTwitterInsightAgent(MeshAgent):
                 ],
             }
         )
-
-    async def __aenter__(self):
-        self.session = aiohttp.ClientSession()
-        return self
-
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if self.session:
-            await self.session.close()
-            self.session = None
-
-    async def cleanup(self):
-        """Close the session if it exists"""
-        if self.session:
-            await self.session.close()
-            self.session = None
 
     def get_system_prompt(self) -> str:
         return """
@@ -192,60 +151,22 @@ class MoniTwitterInsightAgent(MeshAgent):
     @with_retry(max_retries=3)
     async def get_smart_followers_history(self, username: str, timeframe: str = "D7") -> Dict:
         """Get historical data on smart followers count"""
-        should_close = False
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-            should_close = True
+        clean_username = self._clean_username(username)
+        url = f"{self.base_url}/api/v2/twitters/{clean_username}/history/smart_followers_count/"
+        params = {"timeframe": timeframe}
 
-        try:
-            clean_username = self._clean_username(username)
-            url = f"{self.base_url}/api/v2/twitters/{clean_username}/history/smart_followers_count/"
-            params = {"timeframe": timeframe}
-
-            headers = {"accept": "application/json", "Api-Key": self.api_key}
-
-            async with self.session.get(url, headers=headers, params=params) as response:
-                if response.status != 200:
-                    return {"error": f"Failed to get followers history for {clean_username}: {response.status}"}
-
-                data = await response.json()
-                return data
-        except Exception as e:
-            logger.error(f"Error getting smart followers history: {str(e)}")
-            return {"error": f"Failed to fetch smart followers history: {str(e)}"}
-        finally:
-            if should_close and self.session:
-                await self.session.close()
-                self.session = None
+        # Use the base class's _api_request method
+        return await self._api_request(url=url, method="GET", headers=self.headers, params=params)
 
     @with_cache(ttl_seconds=3600)  # Cache for 1 hour
     @with_retry(max_retries=3)
     async def get_smart_followers_categories(self, username: str) -> Dict:
         """Get categories of smart followers"""
-        should_close = False
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-            should_close = True
+        clean_username = self._clean_username(username)
+        url = f"{self.base_url}/api/v2/twitters/{clean_username}/smart_followers/categories/"
 
-        try:
-            clean_username = self._clean_username(username)
-            url = f"{self.base_url}/api/v2/twitters/{clean_username}/smart_followers/categories/"
-
-            headers = {"accept": "application/json", "Api-Key": self.api_key}
-
-            async with self.session.get(url, headers=headers) as response:
-                if response.status != 200:
-                    return {"error": f"Failed to get follower categories for {clean_username}: {response.status}"}
-
-                data = await response.json()
-                return data
-        except Exception as e:
-            logger.error(f"Error getting smart followers categories: {str(e)}")
-            return {"error": f"Failed to fetch smart followers categories: {str(e)}"}
-        finally:
-            if should_close and self.session:
-                await self.session.close()
-                self.session = None
+        # Use the base class's _api_request method
+        return await self._api_request(url=url, method="GET", headers=self.headers)
 
     @with_cache(ttl_seconds=1800)  # Cache for 30 minutes
     @with_retry(max_retries=3)
@@ -253,39 +174,20 @@ class MoniTwitterInsightAgent(MeshAgent):
         self, username: str, limit: int = 100, fromDate: int = None, toDate: int = None
     ) -> Dict:
         """Get recent smart mentions feed"""
-        should_close = False
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-            should_close = True
+        clean_username = self._clean_username(username)
+        url = f"{self.base_url}/api/v2/twitters/{clean_username}/feed/smart_mentions/"
 
-        try:
-            clean_username = self._clean_username(username)
-            url = f"{self.base_url}/api/v2/twitters/{clean_username}/feed/smart_mentions/"
+        params = {"limit": limit}
+        if fromDate:
+            params["fromDate"] = fromDate
+        if toDate:
+            params["toDate"] = toDate
 
-            params = {"limit": limit}
-            if fromDate:
-                params["fromDate"] = fromDate
-            if toDate:
-                params["toDate"] = toDate
-
-            headers = {"accept": "application/json", "Api-Key": self.api_key}
-
-            async with self.session.get(url, headers=headers, params=params) as response:
-                if response.status != 200:
-                    return {"error": f"Failed to get mentions feed for {clean_username}: {response.status}"}
-
-                data = await response.json()
-                return data
-        except Exception as e:
-            logger.error(f"Error getting smart mentions feed: {str(e)}")
-            return {"error": f"Failed to fetch smart mentions feed: {str(e)}"}
-        finally:
-            if should_close and self.session:
-                await self.session.close()
-                self.session = None
+        # Use the base class's _api_request method
+        return await self._api_request(url=url, method="GET", headers=self.headers, params=params)
 
     # ------------------------------------------------------------------------
-    #                      COMMON HANDLER LOGIC
+    #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         """
@@ -309,8 +211,7 @@ class MoniTwitterInsightAgent(MeshAgent):
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
 
-        errors = self._handle_error(result)
-        if errors:
+        if errors := self._handle_error(result):
             return errors
 
         return {"tool": tool_name, "username": username, "data": result}
