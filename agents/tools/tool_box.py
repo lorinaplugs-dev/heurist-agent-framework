@@ -10,7 +10,7 @@ from core.tools.tools import ToolBox
 from .tool_decorator_example import DECORATED_TOOLS_EXAMPLES
 
 logger = logging.getLogger(__name__)
-## YOUR TOOLS GO HERE
+# YOUR TOOLS GO HERE
 
 
 class ToolBox(ToolBox):
