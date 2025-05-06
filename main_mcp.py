@@ -8,7 +8,7 @@ from typing import Any, Dict, List
 from dotenv import load_dotenv
 
 # Import the MCP client
-from clients.mcp_client import MCPClient
+from core.clients.mcp_client import MCPClient
 
 # Import simple LLM interface
 from core.llm import call_llm_async, call_llm_with_tools_async
