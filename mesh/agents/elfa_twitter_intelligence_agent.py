@@ -1,14 +1,15 @@
+import logging
 import os
 import random
 import time
 from typing import Any, Dict, List
 
-import requests
 from dotenv import load_dotenv
 
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
+logger = logging.getLogger(__name__)
 load_dotenv()
 
 
@@ -37,29 +38,6 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes a token or a topic or a Twitter account using Twitter data and Elfa API. It highlights smart influencers.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about token mentions, trends, topics, or a Twitter account",
-                        "type": "str",
-                        "required": True,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, return only raw data without natural language response",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the Twitter analysis",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured data from ELFA API", "type": "dict"},
-                ],
                 "external_apis": ["Elfa"],
                 "tags": ["Twitter"],
                 "recommended": True,
@@ -84,6 +62,7 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
             self.current_api_key = random.choice(self.api_keys)
             self._update_headers()
             self.last_rotation_time = current_time
+            logger.info("Rotated API key")
 
     def get_system_prompt(self) -> str:
         return (
@@ -166,32 +145,29 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
         ]
 
     # ------------------------------------------------------------------------
-    #                       SHARED / UTILITY METHODS
+    #                      ELFA API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def _make_request(self, endpoint: str, method: str = "GET", params: Dict = None) -> Dict:
         self._rotate_api_key()  # Check and rotate API key if needed
         url = f"{self.base_url}/{endpoint.lstrip('/')}"
-        try:
-            response = requests.request(method=method, url=url, headers=self.headers, params=params)
-            response.raise_for_status()
-            return response.json()
-        except requests.exceptions.RequestException as e:
-            return {"error": f"ELFA API request failed: {str(e)}"}
+        logger.info(f"Making request to ELFA API: {endpoint}")
+        return await self._api_request(url=url, method=method, headers=self.headers, params=params)
 
-    # ------------------------------------------------------------------------
-    #                      API-SPECIFIC METHODS
-    # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
     async def search_mentions(self, keywords: List[str], days_ago: int = 29, limit: int = 20) -> Dict:
         if limit < 20:
             limit = 20
+        elif limit > 30:
+            limit = 30
         if days_ago > 29:
             # The 'from' and 'to' timestamps must be within 30 days of each other and at least 1 day apart.
             days_ago = 29
         if len(keywords) > 5:
             keywords = keywords[:5]
+            logger.warning(f"Truncated keywords to 5: {keywords}")
 
         try:
             end_time = int(time.time() - 60)  # Current time minus 60 seconds
@@ -200,6 +176,9 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
             params = {"keywords": ",".join(keywords), "from": start_time, "to": end_time, "limit": limit}
 
             result = await self._make_request("mentions/search", params=params)
+            if "error" in result:
+                logger.error(f"Error searching mentions: {result['error']}")
+                return result
             if "data" in result:
                 for tweet in result["data"]:
                     if "id" in tweet:
@@ -212,23 +191,39 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
             if "metadata" in result:
                 # remove metadata from result
                 result.pop("metadata", None)
+            logger.info(f"Successfully retrieved mentions data with {len(result.get('data', []))} results")
             return {"status": "success", "data": result}
         except Exception as e:
+            logger.error(f"Exception in search_mentions: {str(e)}")
             return {"status": "error", "error": str(e)}
 
     @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
     async def get_account_stats(self, username: str) -> Dict:
+        logger.info(f"Getting account stats for username: {username}")
         try:
+            if username.startswith("@"):
+                username = username[1:]
             params = {"username": username}
             result = await self._make_request("account/smart-stats", params=params)
+            if "error" in result:
+                logger.error(f"Error getting account stats: {result['error']}")
+                return result
+            logger.info(f"Successfully retrieved account stats for {username}")
             return {"status": "success", "data": result}
         except Exception as e:
+            logger.error(f"Exception in get_account_stats: {str(e)}")
             return {"status": "error", "error": str(e)}
 
     @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
     async def search_account(self, username: str, days_ago: int = 29, limit: int = 20) -> Dict:
+        logger.info(f"Searching account for username: {username}, days_ago: {days_ago}, limit: {limit}")
+
         try:
             # Get account stats
+            if username.startswith("@"):
+                username = username[1:]
             account_stats_result = await self.get_account_stats(username)
             if "error" in account_stats_result:
                 return account_stats_result
@@ -239,6 +234,7 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
                 return mentions_result
 
             # Combine both results
+            logger.info(f"Successfully retrieved combined account data for {username}")
             return {
                 "status": "success",
                 "data": {
@@ -246,16 +242,26 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
                     "mentions": mentions_result.get("data", {}),
                 },
             }
+
         except Exception as e:
+            logger.error(f"Exception in search_account: {str(e)}")
             return {"status": "error", "error": str(e)}
 
     @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
     async def get_trending_tokens(self, time_window: str = "24h") -> Dict:
+        logger.info(f"Getting trending tokens for time window: {time_window}")
+
         try:
             params = {"timeWindow": time_window, "page": 1, "pageSize": 50, "minMentions": 5}
             result = await self._make_request("trending-tokens", params=params)
+            if "error" in result:
+                logger.error(f"Error getting trending tokens: {result['error']}")
+                return result
+            logger.info("Successfully retrieved trending tokens data")
             return {"status": "success", "data": result}
         except Exception as e:
+            logger.error(f"Exception in get_trending_tokens: {str(e)}")
             return {"status": "error", "error": str(e)}
 
     # ------------------------------------------------------------------------

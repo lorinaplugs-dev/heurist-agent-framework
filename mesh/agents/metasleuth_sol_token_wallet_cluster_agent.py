@@ -15,6 +15,11 @@ load_dotenv()
 class MetaSleuthSolTokenWalletClusterAgent(MeshAgent):
     def __init__(self):
         super().__init__()
+        self.base_url = "https://bot.metasleuth.io"
+        self.ms_bot_api_key = os.getenv("MS_BOT_API_KEY")
+        if not self.ms_bot_api_key:
+            raise ValueError("MS_BOT_API_KEY environment variable is required")
+
         self.metadata.update(
             {
                 "name": "MetaSleuth Agent",
@@ -22,25 +27,6 @@ class MetaSleuthSolTokenWalletClusterAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can analyze the wallet clusters holding a specific Solana token, and identify top holder behavior, concentration, and potential market manipulation.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "The query containing token address to analyze.",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, returns only raw data without analysis",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {"name": "response", "description": "Token wallet cluster analysis and explanation", "type": "str"},
-                    {"name": "data", "description": "The token wallet cluster details", "type": "dict"},
-                ],
                 "external_apis": ["MetaSleuth"],
                 "tags": ["Solana"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/MetaSleuth.png",
@@ -50,8 +36,6 @@ class MetaSleuthSolTokenWalletClusterAgent(MeshAgent):
                 ],
             }
         )
-        self.base_url = "https://bot.metasleuth.io"
-        self.ms_bot_api_key = os.getenv("MS_BOT_API_KEY")  # get from environment variable
 
     def get_system_prompt(self) -> str:
         return """You are a blockchain wallet cluster analyzer that provides factual analysis of Solana token holders based on MetaSleuth API data.

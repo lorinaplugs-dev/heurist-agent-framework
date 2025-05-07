@@ -394,11 +394,6 @@ def test_agent(
                     console.print(f"[red]Error: Agent {agent_id} not found[/red]")
                     continue
 
-                if agent_id in DISABLED_AGENTS and not include_disabled:
-                    console.print(f"[yellow]Skipping disabled agent: {agent_id}[/yellow]")
-                    skipped_tests.append(f"{agent_id}")
-                    continue
-
                 agent_tools = {t["function"]["name"] for t in agents_metadata["agents"][agent_id].get("tools", [])}
 
                 if tool:

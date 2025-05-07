@@ -1,46 +1,76 @@
 input_by_token_address:
   query: Get token info for HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
 output_by_token_address:
-  response: "**Token Info for [HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC](https://solscan.io/token/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC)**\n\
-    \n**Current Metrics (Last Updated: 2025-04-12T22:02:59.371526)**\n\n* **Current\
-    \ Price:** $0.15482366\n* **1-Hour Price Change:**\n\t+ Absolute: +$0.00203928\n\
-    \t+ Percentage: +1.33474406% \n* **1-Hour Price Range:**\n\t+ Highest: $0.15637204\n\
-    \t+ Lowest: $0.15132853\n* **Total Volume (Last 1 Hour):** 381,502.15166845825\n\
-    \n**Volume and Trading Activity**\n\n* **Total Trading Volume:** 380,466.21062294237\
-    \ (Note: Time frame for this metric not specified in provided data)\n\t+ **Buy\
-    \ Volume:** 194,570.55824095727\n\t+ **Sell Volume:** 185,895.6523819851\n\n**Market\
-    \ Capitalization**\n* **Note:** Market capitalization data is currently **unavailable**\
-    \ (empty list in provided data). To assess the token's market cap, the total supply\
-    \ of the token and its current price would be necessary.\n\n**Insights and Observations**\n\
-    \n* The token has seen a slight increase in price over the last hour, indicating\
-    \ short-term bullish activity.\n* The buy volume slightly exceeds the sell volume\
-    \ over the unspecified time frame, which might suggest a leaning towards buying\
-    \ pressure, though the time frame for this comparison is not clear.\n* Without\
-    \ market capitalization data, it's challenging to contextualize the token's overall\
-    \ market presence and size relative to other tokens in the Solana ecosystem.\n\
-    \n**Recommendations for Further Analysis**\n\n* Monitor the token's price movement\
-    \ over a more extended period to identify longer-term trends.\n* Investigate the\
-    \ reasons behind the slight price increase in the last hour (e.g., news, updates,\
-    \ or broader market movements).\n* Obtain the total supply of the token to calculate\
-    \ and analyze its market capitalization."
+  response: '**Token Info for [HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC](https://solscan.io/token/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC)**
+
+
+    ### **Current Market Overview**
+
+
+    * **Current Price**: $0.2674 (as of 2025-05-05T06:51:54.629704)
+
+    * **1-Hour Price Change**: +0.96% ($0.0026)
+
+    * ** Highest Price (Last 1h)**: $0.2702
+
+    * **Lowest Price (Last 1h)**: $0.2620
+
+
+    ### **Volume Metrics (Last 1h)**
+
+
+    * **Total Volume**: Approximately 682,924.33
+
+    * **Buy Volume (24h)**: 386,030.16 (Note: This is a 24-hour metric, unlike the
+    other 1-hour metrics)
+
+    * **Sell Volume (24h)**: 291,675.46 (Note: This is a 24-hour metric, unlike the
+    other 1-hour metrics)
+
+    * **Combined 24h Volume**: 677,705.62 (Sum of buy and sell volumes, provided for
+    context, though not directly labeled as such)
+
+
+    ### **Observations and Insights**
+
+
+    * The token has seen a slight increase in price over the last hour, indicating
+    a short-term bullish trend.
+
+    * The relatively high total volume over the last hour suggests active trading.
+
+    * **Market Capitalization**: *Not Available* (Insufficient data in the provided
+    response to calculate or report market cap. Typically, market capitalization would
+    require the total circulating supply of the token, which is not provided here.)
+
+
+    ### **Limitations and Next Steps**
+
+
+    * **Missing Data**: Market capitalization and circulating supply are not provided,
+    limiting a fuller market valuation analysis.
+
+    * **Recommendation**: For a more comprehensive analysis, obtaining the token''s
+    circulating supply would be beneficial to calculate the market capitalization,
+    offering a broader understanding of the token''s market stance.'
   data: &id007
     data:
       Solana:
         buyVolume:
-        - sum: '194570.55824095727'
+        - sum: '386030.15918891766'
         marketcap: []
         sellVolume:
-        - sum: '185895.6523819851'
+        - sum: '291675.46417310357'
         volume:
-        - sum: '380466.21062294237'
+        - sum: '677705.6233620213'
       price_movements:
-        current_price: 0.15482365769961534
-        price_change_1h: 0.0020392803954155936
-        price_change_percentage_1h: 1.3347440565571083
-        highest_price_1h: 0.15637204377101319
-        lowest_price_1h: 0.15132853451323786
-        total_volume_1h: 381502.15166845825
-        last_updated: '2025-04-12T22:02:59.371526'
+        current_price: 0.2674463062898337
+        price_change_1h: 0.0025570934588533545
+        price_change_percentage_1h: 0.9653445044155032
+        highest_price_1h: 0.2702501760331179
+        lowest_price_1h: 0.2620012153079315
+        total_volume_1h: 682924.3264866848
+        last_updated: '2025-05-05T06:51:54.629704'
 token_metrics:
   usdc_pair:
     natural_language_query:
@@ -48,99 +78,99 @@ token_metrics:
         query: Get market cap and trade volume for 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
           using usdc pair
       output:
-        response: "**Market Insights for [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)\
-          \ (Large Language Model - LLM) with USDC Pair**\n\n### **Market Capitalization\
-          \ (Market Cap)**\n* **Current Market Cap**: Approximately **$1,817,615.60**\
-          \ (based on the latest `PostBalanceInUSD` value)\n* **Market Cap Fluctuation\
-          \ (recent)**: \n\t+ **Highest**: $1,828,316.77\n\t+ **Lowest**: $1,817,615.60\
-          \ (latest)\n\t+ **Variation**: ~$10,701.17 decrease from the highest to\
-          \ the latest value\n\n### **Trade Volume (with USDC pair)**\n* **Total Volume\
-          \ (recent)**: **$3,724.19**\n* **Breakdown**:\n\t+ **Buy Volume**: **$2,221.75**\
-          \ (59.6% of total volume)\n\t+ **Sell Volume**: **$1,502.44** (40.4% of\
-          \ total volume)\n\n### **Additional Price Movement Insights (1h)**\n* **Current\
-          \ Price**: **$0.0018315825859981038**\n* **Price Change (1h)**: **+0.8141774761543289%**\
-          \ ($1.4791900549790014e-05)\n* **1h Price Range**:\n\t+ **Highest**: $0.0018333002805559543\n\
-          \t+ **Lowest**: $0.0018050287313402752\n* **Total Volume (1h)**: **$3,716.76**\
-          \ (very close to the reported total volume, indicating the data's recency)"
+        response: "**Token Insights for [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)**\n\
+          \n* **Token Name:** Large Language Model\n* **Token Symbol:** LLM\n\n**Market\
+          \ Data (with USDC pair, though noted as using SOL as fallback quote token)**\n\
+          \n* **Market Capitalization (Latest Available):** Approximately **$2,021,163.60\
+          \ USD** (Please note: Multiple market cap values were provided in the data,\
+          \ but the above is the most recent unique value)\n* **24h Trade Volume:**\n\
+          \t+ **Total Volume:** Approximately **$4,603.82 USD**\n\t+ **Buy Volume:**\
+          \ Approximately **$2,525.70 USD** (sum)\n\t+ **Sell Volume:** Approximately\
+          \ **$2,078.12 USD** (sum)\n\n**Price Movements (1h, with SOL as fallback\
+          \ quote token, assumed to be referenced against USDC for this answer)**\n\
+          \n* **Current Price (approx.):** **$0.00204858 USD** per LLM token\n* **1h\
+          \ Price Change:** An increase of **$0.00001369 USD** (or **0.6729%**)\n\
+          * **Highest/Lowest Price (1h):** **$0.00204997 USD** (high) / **$0.00202912\
+          \ USD** (low)\n* **Last Updated:** May 5, 2025, 06:52:11 UTC"
         data: &id001
           data:
             Solana:
               buyVolume:
-              - sum: '2221.752812192446'
+              - sum: '2525.7011110903322'
               marketcap:
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828127.0166173908'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828131.440272151'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828316.768124215'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828316.768124215'
+                  PostBalanceInUSD: '2021244.8592373836'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1827596.1780461518'
+                  PostBalanceInUSD: '2021244.8592373836'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1817615.5980230893'
+                  PostBalanceInUSD: '2021203.8824338766'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1817649.1246696939'
+                  PostBalanceInUSD: '2021163.6040986113'
               sellVolume:
-              - sum: '1502.4361672978362'
+              - sum: '2078.118688596163'
               volume:
-              - sum: '3724.188979490282'
+              - sum: '4603.819799686496'
             fallback_used: Used SOL as fallback quote token
             price_movements:
-              current_price: 0.0018315825859981038
-              price_change_1h: 1.4791900549790014e-05
-              price_change_percentage_1h: 0.8141774761543289
-              highest_price_1h: 0.0018333002805559543
-              lowest_price_1h: 0.0018050287313402752
-              total_volume_1h: 3716.761558450603
-              last_updated: '2025-04-12T22:03:18.123348'
+              current_price: 0.0020485842388207314
+              price_change_1h: 1.3693493483837946e-05
+              price_change_percentage_1h: 0.6729350710949777
+              highest_price_1h: 0.0020499679296791242
+              lowest_price_1h: 0.0020291181834074462
+              total_volume_1h: 4603.039925684964
+              last_updated: '2025-05-05T06:52:11.910555'
     direct_tool_call:
       input:
         tool: query_token_metrics
@@ -157,100 +187,101 @@ token_metrics:
         query: Get market cap and trade volume for 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
           using sol pair
       output:
-        response: "**Market Insights for [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)\
-          \ (Large Language Model - LLM) with SOL Pair**\n\n### **Market Cap:**\n\
-          The **latest market capitalization** (based on the most recent `PostBalanceInUSD`\
-          \ value) is approximately:\n* **$1,827,616.18** (USD)\n\n**Note:** Market\
-          \ capitalization values fluctuate over time. The provided data shows variations:\n\
-          \t+ Highest: $1,828,316.77\n\t+ Lowest (within the provided dataset): $1,817,615.60\n\
-          \n### **Trade Volume (with SOL pair):**\n* **Total Volume (latest available):**\
-          \ approximately **$3,724.19** (USD)\n* **Breakdown:**\n\t+ **Buy Volume:**\
-          \ approximately **$2,221.75** (USD) \n\t+ **Sell Volume:** approximately\
-          \ **$1,502.44** (USD)\n\n### **Additional Price Movement Insights (1h interval):**\n\
-          * **Current Price:** approximately **$0.0018320893126865434** (USD)\n* **1h\
-          \ Price Change:** +0.00842068784299659% (~ $1.5298627238229633e-05 USD)\n\
-          * **Highest Price (1h):** approximately **$0.0018336882773557076** (USD)\n\
-          * **Lowest Price (1h):** approximately **$0.0018050287313402752** (USD)\n\
-          * **Total Volume (1h):** approximately **$3,717.36** (USD)\n* **Last Updated:**\
-          \ April 12, 2025, 22:03:33 (UTC)"
+        response: "**Market Insights for [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)**\n\
+          \n* **Token Details:**\n\t+ Name: Large Language Model\n\t+ Symbol: LLM\n\
+          \n* **Market Cap ( Latest Available):**\n\t+ **$2,021,203.88** (based on\
+          \ the most recent `PostBalanceInUSD` value)\n\n* **Trade Volume (for the\
+          \ observed period, presumably 1h given the context):**\n\t+ **Total Volume:**\
+          \ $4,603.82\n\t+ **Buy Volume:** $2,525.70\n\t+ **Sell Volume:** $2,078.12\n\
+          \n* **Price Movement (1h):**\n\t+ **Current Price:** $0.0020485842388207314\n\
+          \t+ **Price Change (1h):** +$1.3693493483837946e-05\n\t+ **Price Change\
+          \ Percentage (1h):** +0.6729350710949777%\n\t+ **Highest Price (1h):** $0.0020499679296791242\n\
+          \t+ **Lowest Price (1h):** $0.0020291181834074462\n\t+ **Last Updated:**\
+          \ 2025-05-05T06:52:27.076767\n\n**Observations:**\n- The token has seen\
+          \ a slight increase in price over the last hour, indicating a minor upward\
+          \ trend.\n- The buy volume slightly exceeds the sell volume, which might\
+          \ suggest a mild buying pressure.\n- Market capitalization fluctuations\
+          \ are minimal based on the provided `PostBalanceInUSD` values, indicating\
+          \ relative stability in the token's overall market value during the observed\
+          \ period."
         data: &id002
           data:
             Solana:
               buyVolume:
-              - sum: '2221.752812192446'
+              - sum: '2525.7011110903322'
               marketcap:
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828127.0166173908'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828131.440272151'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828316.768124215'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828316.768124215'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1827596.1780461518'
+                  PostBalanceInUSD: '2021244.8592373836'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1817615.5980230893'
+                  PostBalanceInUSD: '2021244.8592373836'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1817649.1246696939'
+                  PostBalanceInUSD: '2021203.8824338766'
               sellVolume:
-              - sum: '1502.4361672978362'
+              - sum: '2078.118688596163'
               volume:
-              - sum: '3724.188979490282'
+              - sum: '4603.819799686496'
             price_movements:
-              current_price: 0.0018320893126865434
-              price_change_1h: 1.5298627238229633e-05
-              price_change_percentage_1h: 0.8420687842999659
-              highest_price_1h: 0.0018336882773557076
-              lowest_price_1h: 0.0018050287313402752
-              total_volume_1h: 3717.3570307597947
-              last_updated: '2025-04-12T22:03:33.455524'
+              current_price: 0.0020485842388207314
+              price_change_1h: 1.3693493483837946e-05
+              price_change_percentage_1h: 0.6729350710949777
+              highest_price_1h: 0.0020499679296791242
+              lowest_price_1h: 0.0020291181834074462
+              total_volume_1h: 4603.039925684964
+              last_updated: '2025-05-05T06:52:27.076767'
     direct_tool_call:
       input:
         tool: query_token_metrics
@@ -267,98 +298,125 @@ token_metrics:
         query: Get market cap and trade volume for 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
           using virtual pair
       output:
-        response: "**Market Insights for [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)\
-          \ (Large Language Model - LLM)**\n\n### Market Capitalization (Market Cap)\n\
-          \n* **Current Market Cap:** Approximately **$1,817,615.60** (derived from\
-          \ the most recent `PostBalanceInUSD` value: `1817649.1246696939`)\n* **Recent\
-          \ Market Cap Fluctuations:**\n\t+ Highest: ~$1,828,316.77\n\t+ Lowest: ~$1,817,615.60\
-          \ (within the provided data timeframe)\n\n### Trade Volume (using virtual\
-          \ pair, last update: **2025-04-12T22:03:49.732943**)\n\n* **Total Volume\
-          \ (last 1 hour):** Approximately **$3,717.36**\n* **Breakdown:**\n\t+ **Buy\
-          \ Volume:** ~$2,221.75 (59.7% of total volume)\n\t+ **Sell Volume:** ~$1,502.44\
-          \ (40.3% of total volume)\n\n### Additional Price Movement Insights (last\
-          \ 1 hour)\n\n* **Current Price:** $0.0018320893126865434\n* **Price Change\
-          \ (1h):** +1.5298627238229633e-05 (approx. +0.84%)\n* **Highest/Lowest Price\
-          \ (1h):** $0.0018336882773557076 / $0.0018050287313402752"
+        response: '**Token Insights for [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)**
+
+
+          * **Token Name:** Large Language Model
+
+          * **Token Symbol:** LLM
+
+
+          **Market Data (using virtual pair with SOL as fallback quote token)**
+
+
+          * **Market Capitalization (Latest Available):** Approximately **$2,021,203.88
+          USD** (based on the most recent `PostBalanceInUSD` value)
+
+          * **Trade Volume (Sum of Buy & Sell):** Approximately **$4,603.82 USD**
+          (within the last observed period, presumed to be 1 hour based on available
+          data)
+
+
+          **Breakdown of Observed Trade Volume:**
+
+
+          * **Buy Volume:** Approximately **$2,525.70 USD** (sum)
+
+          * **Sell Volume:** Approximately **$2,078.12 USD** (sum)
+
+
+          **Current Price Movement (1-hour snapshot):**
+
+
+          * **Current Price:** Approximately **$0.00204858 USD**
+
+          * **Price Change (1h):** +$0.00001369 (+0.67%)
+
+
+          **Note:** The data provided seems to have a high frequency of updates for
+          market capitalization, but for the purpose of this analysis, only the latest
+          value is highlighted. The time frame for the volume and price movements
+          appears to be 1 hour, but this is inferred based on the data structure and
+          may not reflect the actual time frame if not explicitly stated.'
         data: &id003
           data:
             Solana:
               buyVolume:
-              - sum: '2221.752812192446'
+              - sum: '2525.7011110903322'
               marketcap:
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828127.0166173908'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828131.440272151'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2030435.0715375606'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828146.3410039754'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828316.768124215'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1828316.768124215'
+                  PostBalanceInUSD: '2021113.0815624692'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1827596.1780461518'
+                  PostBalanceInUSD: '2021244.8592373836'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1817615.5980230893'
+                  PostBalanceInUSD: '2021244.8592373836'
               - TokenSupplyUpdate:
                   Currency:
                     MintAddress: 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
                     Name: Large Language Model
                     Symbol: LLM
-                  PostBalanceInUSD: '1817649.1246696939'
+                  PostBalanceInUSD: '2021203.8824338766'
               sellVolume:
-              - sum: '1502.4361672978362'
+              - sum: '2078.118688596163'
               volume:
-              - sum: '3724.188979490282'
+              - sum: '4603.819799686496'
             fallback_used: Used SOL as fallback quote token
             price_movements:
-              current_price: 0.0018320893126865434
-              price_change_1h: 1.5298627238229633e-05
-              price_change_percentage_1h: 0.8420687842999659
-              highest_price_1h: 0.0018336882773557076
-              lowest_price_1h: 0.0018050287313402752
-              total_volume_1h: 3717.3570307597947
-              last_updated: '2025-04-12T22:03:49.732943'
+              current_price: 0.0020485842388207314
+              price_change_1h: 1.3693493483837946e-05
+              price_change_percentage_1h: 0.6729350710949777
+              highest_price_1h: 0.0020499679296791242
+              lowest_price_1h: 0.0020291181834074462
+              total_volume_1h: 4603.039925684964
+              last_updated: '2025-05-05T06:52:44.861940'
     direct_tool_call:
       input:
         tool: query_token_metrics
@@ -374,35 +432,49 @@ token_holders:
     input:
       query: Show me the top token holders of HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
     output:
-      response: '**Top 10 Token Holders of [HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC](https://solscan.io/token/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC)
-        (ai16z)**
+      response: '**Top 10 Token Holders of [HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC](https://solscan.io/token/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC)**
 
 
-        Below is an analysis of the top holders based on the provided data. Note that
-        the **percentage of total supply** for each holder is not available as the
-        **total supply** is listed as **0** in the data. Therefore, the ranking is
-        based solely on the **holding amount**.
+        **Token Details:**
+
+        * **Name:** ai16z
+
+        * **Symbol:** ai16z
+
+        * **Decimals:** 9
 
 
-        | **Rank** | **Holder Address**                                                                                         |
-        **Holding (ai16z)**          |
+        **Insights:**
 
-        |----------|---------------------------------------------------------------------------------------------------------|-------------------------------|
+
+        * **Total Supply:** Not available (listed as 0)
+
+        * **Concentration of Holdings:** The top 10 holders collectively own an unknown
+        percentage of the total supply due to the unavailability of the total supply
+        figure.
+
+
+        **Top 10 Holders by Balance:**
+
+
+        | **Rank** | **Holder Address**                                                                 |
+        **Holding (ai16z)**            | **Notes**                                              |
+
+        |----------|-------------------------------------------------------------------------------------|---------------------------------|------------------------------------------------------|
 
         | 1        | [AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2](https://solscan.io/account/AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2)
-        | 87,436,469.19180812        |
+        | 90,256,251.88934624          | Largest holder with approximately 45% of
+        visible holdings |
 
         | 2        | [u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w](https://solscan.io/account/u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w)
-        | 70,084,350.16539526       |
+        | 61,932,026.52819677          |                                                      |
 
         | 3        | [5B7BwmRp9EJfFGLeyC6S6KWGBHRUHZ7WbaDgW8mnVpQY](https://solscan.io/account/5B7BwmRp9EJfFGLeyC6S6KWGBHRUHZ7WbaDgW8mnVpQY)
-        | 61,820,108.46              |
-
-        | 4        | [A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR](https://solscan.io/account/A'
+        | 51,615,495.58                |'
       data: &id004
         holders:
         - address: AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2
-          holding: 87436469.19180812
+          holding: 90256251.88934624
           percentage_of_supply: 0
           token_info:
             name: ai16z
@@ -410,7 +482,7 @@ token_holders:
             mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
             decimals: 9
         - address: u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w
-          holding: 70084350.16539526
+          holding: 61932026.52819677
           percentage_of_supply: 0
           token_info:
             name: ai16z
@@ -418,7 +490,7 @@ token_holders:
             mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
             decimals: 9
         - address: 5B7BwmRp9EJfFGLeyC6S6KWGBHRUHZ7WbaDgW8mnVpQY
-          holding: 61820108.46
+          holding: 51615495.58
           percentage_of_supply: 0
           token_info:
             name: ai16z
@@ -426,15 +498,7 @@ token_holders:
             mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
             decimals: 9
         - address: A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR
-          holding: 35344651.34770469
-          percentage_of_supply: 0
-          token_info:
-            name: ai16z
-            symbol: ai16z
-            mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
-            decimals: 9
-        - address: 8CaTuoD1r6CzR1mu6ueTDvjNpLj7sq5nWafDLymkQ4jH
-          holding: 26816585.16950433
+          holding: 32298801.052619915
           percentage_of_supply: 0
           token_info:
             name: ai16z
@@ -442,7 +506,23 @@ token_holders:
             mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
             decimals: 9
         - address: ASTyfSima4LLAdDgoFGkgqoKowG1LZFDr9fAQrg7iaJZ
-          holding: 20460042.54850663
+          holding: 23245886.06664337
+          percentage_of_supply: 0
+          token_info:
+            name: ai16z
+            symbol: ai16z
+            mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
+            decimals: 9
+        - address: 8CaTuoD1r6CzR1mu6ueTDvjNpLj7sq5nWafDLymkQ4jH
+          holding: 20516585.16950433
+          percentage_of_supply: 0
+          token_info:
+            name: ai16z
+            symbol: ai16z
+            mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
+            decimals: 9
+        - address: EdVMY8jyhkkzw8jGkQFUV8Bxdzex5NMF7QXuCW131Vvi
+          holding: 15459362.291560953
           percentage_of_supply: 0
           token_info:
             name: ai16z
@@ -450,31 +530,23 @@ token_holders:
             mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
             decimals: 9
         - address: FWznbcNXWQuHTawe9RxvQ2LdCENssh12dsznf4RiouN5
-          holding: 14539159.233695474
+          holding: 15093195.194672938
           percentage_of_supply: 0
           token_info:
             name: ai16z
             symbol: ai16z
             mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
             decimals: 9
-        - address: DBmae92YTQKLsNzXcPscxiwPqMcz9stQr2prB5ZCAHPd
-          holding: 14298120.75
+        - address: 9cNE6KBg2Xmf34FPMMvzDF8yUHMrgLRzBV3vD7b1JnUS
+          holding: 11980349.73148
           percentage_of_supply: 0
           token_info:
             name: ai16z
             symbol: ai16z
             mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
             decimals: 9
-        - address: CX3Nx8NPv8ZVqiBS7eLHBjrcRk69o7k1Z5q8Go1Uqc2z
-          holding: 14093177.355878578
-          percentage_of_supply: 0
-          token_info:
-            name: ai16z
-            symbol: ai16z
-            mint_address: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
-            decimals: 9
-        - address: HVh6wHNBAsG3pq1Bj5oCzRjoWKVogEDHwUHkRz3ekFgt
-          holding: 10753325.281622576
+        - address: 9ZPsRWGkukYeWg2Z7eZ8NaTBZ1DSuBUVzLcGQWZgE4Y4
+          holding: 10253793.592865072
           percentage_of_supply: 0
           token_info:
             name: ai16z
@@ -496,284 +568,307 @@ token_buyers:
     input:
       query: Show me the first 100 buyers of 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
     output:
-      response: "**First 100 Buyers of [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)**\n\
-        \n**Note:** The provided data contains 43 unique buyers, falling short of\
-        \ the requested 100 buyers. The analysis will focus on the available data.\n\
-        \n**Key Insights:**\n\n1. **Unique Buyers:** 43\n2. **Total Transactions:**\
-        \ 43 (one per buyer, assuming the data only includes one transaction per buyer)\n\
-        3. **Currency Pairs:**\n\t* **LLM/WSOL:** 39 transactions (91% of total)\n\
-        \t* **LLM/LEGIT:** 1 transaction (2% of total)\n\t* **LLM/degenai:** 3 transactions\
-        \ (7% of total)\n4. **Time Range:** 2025-04-12T14:05:31Z to 2025-04-12T15:03:27Z\
-        \ (approximately 58 minutes)\n\n**Top 5 Buyers by Amount (LLM):**\n\n| **Rank**\
-        \ | **Owner (shortened for brevity)** | **Amount (LLM)** | **Amount (USD)**\
-        \ |\n| --- | --- | --- | --- |\n| 1 | `m4XoTbr...` | 2,335,545.783797 | $4,228.965527675661\
-        \ |\n| 2 | `YpnnUu1...` | 341,765.733903 | $626.3922507779067 |\n| 3 | `6jvYtr9...`\
-        \ | 318,282.768072 | $583.3523952200186 |\n| 4 | `B11RRU7...` | 68,002.094355\
-        \ | $130.2813122424697 |\n| 5 | `CKBCxNx...` | 56,954.468247 | $109.14247302004503\
-        \ |\n\n**Additional Observations:**\n\n* The majority of transactions (91%)\
-        \ occurred in the LLM/WSOL currency pair.\n* The most significant transaction\
-        \ (by amount) accounts for approximately 5.4%"
+      response: '**Analysis of the First 100 Buyers of [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)**
+
+
+        **Key Insights:**
+
+
+        1. **Unique Buyers:** Despite the request for the first 100 buyers, the data
+        provided contains **45 unique buyers** who have made purchases of the token.
+
+        2. **Total Purchase Amount (USD):** The cumulative purchase amount in USD
+        for these buyers is approximately **$2,433.19**.
+
+        3. **Average Purchase Amount (USD):** The average purchase amount per buyer
+        is about **$54.07** (Total USD / Unique Buyers).
+
+        4. **Largest Purchase:** The largest single purchase was made by **[H5q7sM5SMdkzB4MkU3ai7ZLB2VPZmBdWaUXUmJkN3bse](https://solscan.io/account/H5q7sM5SMdkzB4MkU3ai7ZLB2VPZmBdWaUXUmJkN3bse)**
+        for **247,718.883255** tokens, valued at approximately **$505.20**.
+
+        5. **Smallest Purchase:** The smallest purchase was made by multiple buyers
+        (e.g., **[YcjUULpoURFD8TVwDZC8Wsk4RbAY5L62TH3rJoaFFTk](https://solscan.io/account/YcjUULpoURFD8TVwDZC8Wsk4RbAY5L62TH3rJoaFFTk)**
+        and **[Gn96hdr1mboNUMuPEg2DBmJNvwxJf8Z51hGahVNdkSxT](https://solscan.io/account/Gn96hdr1mboNUMuPEg2DBmJNvwxJf8Z51hGahVNdkSxT)**)
+        for **3.281162** tokens, each valued at approximately **$0.00673**.
+
+
+        **Top 5 Buyers by Amount (USD):**
+
+
+        | **Rank** |'
       data: &id005
         buyers:
-        - owner: EiB3WkdSPW8WiTxeL4mM3h7fmXn6S33SEoiEepLotqb1
-          amount: '111510.831718'
-          amount_usd: '201.76251081642553'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:05:31Z'
-          transaction_index: 16
-        - owner: 6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8
-          amount: '13011.130648'
-          amount_usd: '23.54173444549131'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:09:41Z'
-          transaction_index: 2037
-        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
-          amount: '100.763269'
-          amount_usd: '0.18327995189373242'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:17:35Z'
-          transaction_index: 1778
-        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
-          amount: '271.578235'
-          amount_usd: '0.4939780769338156'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:17:58Z'
-          transaction_index: 1125
-        - owner: EjwdVLEr4Gsnsu1YMVg3RVsBSfsxekrRjBGv2BPE6tSV
-          amount: '6559.282587'
-          amount_usd: '11.930785979192047'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:14Z'
-          transaction_index: 1196
-        - owner: FkdDHrM8j8psKbxuwjV1jBKCM2JGPygkj7WCX8sSCzNm
-          amount: '458.670282'
-          amount_usd: '0.8342828498353371'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:14Z'
-          transaction_index: 60
-        - owner: Awch9PiL7nwQqKNjXHzJd1KvTkFtauVqQDSjdUTqe28n
-          amount: '946.491895'
-          amount_usd: '1.7215895306394597'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:14Z'
-          transaction_index: 790
-        - owner: HTE6gdrpt4eej9eb4cZnpHei3Enf7Msz19rxvUh16pJS
-          amount: '65.364652'
-          amount_usd: '0.11889283062174731'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:15Z'
-          transaction_index: 1176
-        - owner: 2fWyMU2S5ZJMwq9Ay2bwvnfRfiugkJbjWZ8WqKMtD8my
-          amount: '6553.154411'
-          amount_usd: '11.919639340008713'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:15Z'
-          transaction_index: 1406
-        - owner: Cyx9uQ2p1tQyLWxTzosemWeQceAgaSFTDejtVyQbPrfi
-          amount: '6477.549589'
-          amount_usd: '11.782120497313224'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:16Z'
-          transaction_index: 352
-        - owner: FVjmN7fDC2BmiH1mMSoVVhK9VjH36xKhiUHt5HDc1r4t
-          amount: '8.545223'
-          amount_usd: '0.01554304535674816'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:16Z'
-          transaction_index: 1305
-        - owner: 4AisYaH6GT5jMB1M9LLhWvtHfHyk1trebuTEVua14av1
-          amount: '6549.849911'
-          amount_usd: '11.913628731112798'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:16Z'
-          transaction_index: 1827
-        - owner: 72RcnCMbA2H6FBDDekUJVrw6imcg74GxJKQRPZaM5zaE
-          amount: '71625.270767'
-          amount_usd: '130.2803721120969'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:18Z'
-          transaction_index: 43
-        - owner: BqYcewCZhYku5pYACUBiyqaZFf2i5i2RvaLKeSEKEvZY
-          amount: '22902.937237'
-          amount_usd: '41.65852573741462'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:18:52Z'
-          transaction_index: 44
-        - owner: ''
-          amount: '978.525972'
-          amount_usd: '1.7718139512537159'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:26:37Z'
-          transaction_index: 108
-        - owner: m4XoTbrdpKKsgTq96cXAvNfvcMgbfixZP7co6hXdPWz
-          amount: '2335545.783797'
-          amount_usd: '4228.965527675661'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:26:37Z'
-          transaction_index: 1468
-        - owner: 9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq
-          amount: '53184.128779'
-          amount_usd: '96.30033749978631'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:26:40Z'
-          transaction_index: 1503
-        - owner: CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps
-          amount: '11025.891447'
-          amount_usd: '19.96454754376578'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:26:42Z'
-          transaction_index: 821
-        - owner: GCvHhEUYQwTJ8jyf8Lc4bv8jBXyZU4LMMsZCobwEPzvM
-          amount: '27760.750000'
-          amount_usd: '50.26630417048'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:26:43Z'
-          transaction_index: 1014
-        - owner: Gn96hdr1mboNUMuPEg2DBmJNvwxJf8Z51hGahVNdkSxT
-          amount: '6.516197'
-          amount_usd: '0.011798857755527832'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:26:43Z'
-          transaction_index: 1317
-        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
-          amount: '53139.926586'
-          amount_usd: '96.2203007256235'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:26:44Z'
-          transaction_index: 1551
-        - owner: CpBawLhsjSXf3fzVmmTmTKgjfi9a649j8vSQjkFKsWcz
-          amount: '4731.490000'
-          amount_usd: '8.56729431011714'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:26:46Z'
-          transaction_index: 1647
-        - owner: Ha14JDD1c6vQHVqRgb4i36K4TpxAa71iJV6cbSjHCp67
-          amount: '1109.987697'
-          amount_usd: '2.034398486704205'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:30:55Z'
-          transaction_index: 16
-        - owner: 6jvYtr9G5WQnKs3cFsFtKmEfkbEnUXFhBKsmZad26QPV
-          amount: '318282.768072'
-          amount_usd: '583.3523952200186'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:30:57Z'
-          transaction_index: 1338
-        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
-          amount: '341765.733903'
-          amount_usd: '626.3922507779067'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:30:58Z'
-          transaction_index: 797
         - owner: 6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx
-          amount: '29491.472952'
-          amount_usd: '54.05231797287821'
+          amount: '39166.796665'
+          amount_usd: '81.10214070819337'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:31:02Z'
-          transaction_index: 1715
-        - owner: 2mgWFcYwETrUEQZisgveoKveaQzUcDEkUWRgWpqEYCkd
-          amount: '14462.833907'
-          amount_usd: '26.50765183558162'
+          time: '2025-05-04T18:51:23Z'
+          transaction_index: 1399
+        - owner: FkdDHrM8j8psKbxuwjV1jBKCM2JGPygkj7WCX8sSCzNm
+          amount: '455.736290'
+          amount_usd: '0.9398263212676695'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:31:50Z'
-          transaction_index: 495
-        - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
-          amount: '229704.794716'
-          amount_usd: '429.3054856706973'
+          time: '2025-05-04T18:57:42Z'
+          transaction_index: 231
+        - owner: 4qWht7gPqJSZtXkKFPG2F1SiU3rF9mLyGGkBpc65x89A
+          amount: '5.102100'
+          amount_usd: '0.010520960746449419'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:33:30Z'
-          transaction_index: 1255
-        - owner: F1eSPc1xhWikUiGv4jSUcXE7Vbm5iLwSK5dvzATXGi5p
-          amount: '24039.727161'
-          amount_usd: '44.92891302945578'
+          time: '2025-05-04T18:57:47Z'
+          transaction_index: 816
+        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
+          amount: '43909.205153'
+          amount_usd: '90.52198463106546'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:34:03Z'
-          transaction_index: 1255
-        - owner: 7ACsEkYSvVyCE5AuYC6hP1bNs4SpgCDwsfm3UdnyPERk
-          amount: '24030.390993'
-          amount_usd: '44.911464250720016'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:34:03Z'
-          transaction_index: 1992
-        - owner: 5CY89DZjc9nVdwTa8U1VadVsgAh64r78GBoDf3irmW7v
-          amount: '94.444599'
-          amount_usd: '0.17651170273915515'
-          currency_pair: LLM/WSOL
-          time: '2025-04-12T14:34:04Z'
-          transaction_index: 930
-        - owner: DhHfc8x2cQWdwpajhmFvF44LC7XE7gft1EiBcC2oZqt9
-          amount: '981.500081'
-          amount_usd: '1.8362450103406758'
-          currency_pair: LLM/LEGIT
-          time: '2025-04-12T14:34:59Z'
-          transaction_index: 751
-        - owner: kip312wW3Wh9TLMcU2xmu2eBSJp16JNLps6NwPLdrtq
-          amount: '926.230182'
-          amount_usd: '1.7340116385590068'
-          currency_pair: LLM/degenai
-          time: '2025-04-12T14:39:09Z'
-          transaction_index: 82
+          time: '2025-05-04T19:06:01Z'
+          transaction_index: 277
         - owner: 2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h
-          amount: '3633.552771'
-          amount_usd: '6.8029699187846715'
+          amount: '48563.714724'
+          amount_usd: '99.78756995198796'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:39:25Z'
-          transaction_index: 27
-        - owner: 3yhMBJ3hkucZ33zm4an5yosV8A9VHVEfHkJHLLVWsKJJ
-          amount: '578.051588'
-          amount_usd: '1.0823020353830333'
+          time: '2025-05-04T19:15:04Z'
+          transaction_index: 43
+        - owner: CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps
+          amount: '52190.791123'
+          amount_usd: '107.22389867342571'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:41:34Z'
-          transaction_index: 152
-        - owner: GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ
-          amount: '29349.765476'
-          amount_usd: '54.952380673486665'
+          time: '2025-05-04T19:17:32Z'
+          transaction_index: 1654
+        - owner: 7NAz53f8KHEJRtFeEV1tjQuLdP4MyfUB4XNZ5QBkCgFv
+          amount: '355.244226'
+          amount_usd: '0.7308170467975285'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:41:34Z'
-          transaction_index: 1930
-        - owner: EzdQH5zUfTMGb3vwU4oumxjVcxKMDpJ6dB78pbjfHmmb
-          amount: '2670.068389'
-          amount_usd: '4.99924316794126'
+          time: '2025-05-04T19:20:03Z'
+          transaction_index: 1549
+        - owner: CuaN6xuck9sSvUBWqgiW9Tj4HucXtNXHD2KC2JGn7RmU
+          amount: '40.316200'
+          amount_usd: '0.08291008465741762'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:41:35Z'
-          transaction_index: 1404
-        - owner: arb9FAg5n8u63sXrHSTxNrBBuGf4LnMMMDFFhzCXMXU
-          amount: '793.973542'
-          amount_usd: '1.4865787040219602'
-          currency_pair: LLM/degenai
-          time: '2025-04-12T14:42:22Z'
-          transaction_index: 651
-        - owner: 8B3Rud3NhQPDyik6a7EE44PA5FG7VxxRwtxVwAz3NyNs
-          amount: '15875.931706'
-          amount_usd: '30.266175047094954'
+          time: '2025-05-04T19:33:36Z'
+          transaction_index: 982
+        - owner: A6Tv5PSkQzAajH1tp7SzaSRC77dqWSKYs38VUg8FGLDe
+          amount: '142044.794902'
+          amount_usd: '292.0587573016277'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:50:42Z'
-          transaction_index: 98
-        - owner: HY63EjjUq4sKiBWeQz8uGkM7dXUw36hoJtFHkwexSRRG
-          amount: '163.142703'
-          amount_usd: '0.31101831993823165'
+          time: '2025-05-04T19:41:51Z'
+          transaction_index: 1784
+        - owner: F1eSPc1xhWikUiGv4jSUcXE7Vbm5iLwSK5dvzATXGi5p
+          amount: '24825.654918'
+          amount_usd: '51.04477901214664'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:51:07Z'
-          transaction_index: 1776
-        - owner: 4Lq5xrv9p91WpAtnmLgJHjqpxAfjC1hUTiCtoiudDCMy
-          amount: '67922.604411'
-          amount_usd: '129.58322533941762'
+          time: '2025-05-04T19:44:04Z'
+          transaction_index: 1389
+        - owner: 7ACsEkYSvVyCE5AuYC6hP1bNs4SpgCDwsfm3UdnyPERk
+          amount: '24816.090802'
+          amount_usd: '51.025113944325504'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:56:20Z'
-          transaction_index: 82
+          time: '2025-05-04T19:44:04Z'
+          transaction_index: 1396
+        - owner: J3H8GpTZEcMHjMZ2tFrxfre1vVTLSdxUeXwEJvbBmyy1
+          amount: '148.988017'
+          amount_usd: '0.30696260893739113'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:00:33Z'
+          transaction_index: 1848
+        - owner: 87ncsi58DTgmEWsA1yCMf23ZziKMQGcUx4jLY8fgbKDF
+          amount: '4281.029776'
+          amount_usd: '8.819676251071655'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:03:44Z'
+          transaction_index: 1151
+        - owner: kip312wW3Wh9TLMcU2xmu2eBSJp16JNLps6NwPLdrtq
+          amount: '534.962417'
+          amount_usd: '1.1021169137578992'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:03:44Z'
+          transaction_index: 1631
+        - owner: GX2cQPc5xvzYJxJAk6Ke7BQ5sn4z8oeXoEuQm7YC2uZX
+          amount: '3669.438753'
+          amount_usd: '7.559690896341966'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:03:45Z'
+          transaction_index: 74
+        - owner: HuTshmtwcQkWBLzgW3m4uwcmik7Lmz4YFpYcTqMJpXiP
+          amount: '4.812686'
+          amount_usd: '0.009914981824238785'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:03:45Z'
+          transaction_index: 1430
+        - owner: FaoqbZtEnpfSpbSm86VLcwSKiqgWAPfnkPeaEWvFJ5ec
+          amount: '4.651075'
+          amount_usd: '0.00958203466591658'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:03:45Z'
+          transaction_index: 1781
+        - owner: 5cwb6Zj2HEK1RTthxQ5J9UNeJJbHzRAguik13ckKTFBg
+          amount: '4811.794975'
+          amount_usd: '9.913146155616326'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:03:46Z'
+          transaction_index: 1420
+        - owner: Cyx9uQ2p1tQyLWxTzosemWeQceAgaSFTDejtVyQbPrfi
+          amount: '7246.925897'
+          amount_usd: '14.92994526348911'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:03:47Z'
+          transaction_index: 71
+        - owner: vh6SYhP3Ts563cvHmjvgwFaJFSfNsq66s7XPxu2cj3Z
+          amount: '6793.113504'
+          amount_usd: '13.99501170908533'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:03:52Z'
+          transaction_index: 1825
+        - owner: rLsi2DPwRLovHzLV5XYxa8B597bv8w8nX7fZHJJf8uy
+          amount: '1229.641326'
+          amount_usd: '2.5331305217189364'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:06:06Z'
+          transaction_index: 787
+        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
+          amount: '59546.081709'
+          amount_usd: '121.90838051411937'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:25:29Z'
+          transaction_index: 81
+        - owner: GCvHhEUYQwTJ8jyf8Lc4bv8jBXyZU4LMMsZCobwEPzvM
+          amount: '12033.890000'
+          amount_usd: '24.666521462334785'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:25:33Z'
+          transaction_index: 1414
+        - owner: GZJhTLSHcmpEDzG5waLgpRTV4oRnywT2G5wQxqxujMo1
+          amount: '23560.429926'
+          amount_usd: '48.293083316579384'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T20:28:34Z'
+          transaction_index: 1295
         - owner: CKBCxNxdsfZwTwKYHQmBs7J8zpPjCjMJAxcxoBUwExw6
-          amount: '56954.468247'
-          amount_usd: '109.14247302004503'
+          amount: '22815.259212'
+          amount_usd: '46.76566673338011'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T14:58:49Z'
-          transaction_index: 1505
-        - owner: B11RRU7wBgHpE3UDvRGWw1CpNoCKHkP2vafzCzdqzZ3R
-          amount: '68002.094355'
-          amount_usd: '130.2813122424697'
+          time: '2025-05-04T20:28:36Z'
+          transaction_index: 417
+        - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
+          amount: '117224.368495'
+          amount_usd: '240.4386178000708'
           currency_pair: LLM/WSOL
-          time: '2025-04-12T15:03:27Z'
-          transaction_index: 770
-        unique_buyer_count: 43
+          time: '2025-05-04T20:55:41Z'
+          transaction_index: 260
+        - owner: CRAB4EHXTDXechvDCXPV2tEi1nskdy7YPGPzR5JrrpPT
+          amount: '383.592072'
+          amount_usd: '0.786901498944193'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 10
+        - owner: 7C6bBJpKLwjs95L4x3uRF9rnHc2ztefnAgPqZU2qwHXb
+          amount: '2148.476573'
+          amount_usd: '4.4073888882150385'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 611
+        - owner: JD6rVaerbyz6wjQ433nrw6bFTgFrp46MiYmi8EtUAfsG
+          amount: '147.699950'
+          amount_usd: '0.30299195560272785'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 798
+        - owner: YcjUULpoURFD8TVwDZC8Wsk4RbAY5L62TH3rJoaFFTk
+          amount: '3.281162'
+          amount_usd: '0.006730981906421483'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1289
+        - owner: Gn96hdr1mboNUMuPEg2DBmJNvwxJf8Z51hGahVNdkSxT
+          amount: '3.281162'
+          amount_usd: '0.006730981906421483'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1291
+        - owner: 7FTBmxhxCroB3QG1aMFzxcYnkFczfqmoSTmja8fcJBTq
+          amount: '18060.540300'
+          amount_usd: '37.049426385986436'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1511
+        - owner: JBVpuKD4cEVUjZ7conFwKZKzdpY92C1hzwCHYr99L54z
+          amount: '8912.333888'
+          amount_usd: '18.282778523009537'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1545
+        - owner: C6GA4fZDTrxzqRh16F1XbGvYqodmgWT1JHCKHvKVnv8j
+          amount: '22126.727040'
+          amount_usd: '45.390809522531036'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1191
+        - owner: EjwdVLEr4Gsnsu1YMVg3RVsBSfsxekrRjBGv2BPE6tSV
+          amount: '9961.004398'
+          amount_usd: '20.434023182251533'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1492
+        - owner: HvFdDWS3RqymRAVx1ZdoL2RjiC38r5dtt19Z8op5jqDK
+          amount: '22466.320755'
+          amount_usd: '46.087452709060514'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1014
+        - owner: 6jvYtr9G5WQnKs3cFsFtKmEfkbEnUXFhBKsmZad26QPV
+          amount: '111937.707995'
+          amount_usd: '229.62922500036157'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1665
+        - owner: Dhn556mKa1M33SqZTkbk1R8ueAMqY7ujHdYVKGfVVDDx
+          amount: '599.102430'
+          amount_usd: '1.2289998532297834'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:03:31Z'
+          transaction_index: 1841
+        - owner: 9z455ph9g2TfbZDhJxEuB97JL2Dvd4fi7wkfWWCLdoUR
+          amount: '1448.700947'
+          amount_usd: '2.97186953761648'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:07:39Z'
+          transaction_index: 1749
+        - owner: AKV6MByJDNJtQ6gEgugo7wrA15FmdYYJXXYJC1qKAadu
+          amount: '20890.549720'
+          amount_usd: '42.60853400330199'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:20:05Z'
+          transaction_index: 1169
+        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
+          amount: '324582.500390'
+          amount_usd: '662.0204858205785'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:21:47Z'
+          transaction_index: 88
+        - owner: H5q7sM5SMdkzB4MkU3ai7ZLB2VPZmBdWaUXUmJkN3bse
+          amount: '247718.883255'
+          amount_usd: '505.2011605707645'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:22:51Z'
+          transaction_index: 1967
+        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
+          amount: '2471.033656'
+          amount_usd: '4.998548499517035'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:38:00Z'
+          transaction_index: 1351
+        - owner: HjHwfERg35qjkmSDxQZtZB1snwMYoXHTa9ooKg2g1X65
+          amount: '300000.000000'
+          amount_usd: '606.8127695471048'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T21:46:26Z'
+          transaction_index: 1539
+        - owner: AzAugGtGehNwbt1F8xeqPoSoFzTkhqTFSFmHgyxgxUFZ
+          amount: '71380.047076'
+          amount_usd: '143.75834893607535'
+          currency_pair: LLM/WSOL
+          time: '2025-05-04T23:01:31Z'
+          transaction_index: 73
+        unique_buyer_count: 45
   direct_tool_call:
     input:
       tool: query_token_buyers
@@ -790,44 +885,21 @@ holder_status:
       query: Check if these addresses ['5ZZnqunFJZr7QgL6ciFGJtbdy35GoVkvv672JTWhVgET',
         'DNZwmHYrS7bekmsJeFPxFvkWRfXRPu44phUqZgdK7Pxy'] are still holding 4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump
     output:
-      response: '**Holder Status Update for 4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump**
-
-
-        **Addresses Checked:**
-
-
-        1. [5ZZnqunFJZr7QgL6ciFGJtbdy35GoVkvv672JTWhVgET](https://solscan.io/token/4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump/address/5ZZnqunFJZr7QgL6ciFGJtbdy35GoVkvv672JTWhVgET)
-
-        2. [DNZwmHYrS7bekmsJeFPxFvkWRfXRPu44phUqZgdK7Pxy](https://solscan.io/token/4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump/address/DNZwmHYrS7bekmsJeFPxFvkWRfXRPu44phUqZgdK7Pxy)
-
-
-        **Key Findings:**
-
-
-        * **Neither address currently holds 4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump
-        tokens.**
-
-        * **Current Balance for Both Addresses:** 0
-
-        * **Status for Both Addresses:** `not_found` (indicating no holdings or recent
-        activity detected for this token)
-
-        * **Last Update for Both Addresses:** No recent updates available (`None`)
-
-
-        **Aggregate Summary:**
-
-
-        * **Holding:** 0 addresses
-
-        * **Sold:** 0 addresses (within the checked timeframe, but given the ''not_found''
-        status, this is not applicable)
-
-        * **Bought More:** 0 addresses
-
-        * **Not Found (No Holdings):** 2 addresses
-
-        * **Total Addresses Checked:** 2'
+      response: "**Token Holding Status Update**\n\n**Token Address:** [4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump](https://solscan.io/token/4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump)\n\
+        \n**Addresses Checked:**\n\n1. **[5ZZnqunFJZr7QgL6ciFGJtbdy35GoVkvv672JTWhVgET](https://solscan.io/token/5ZZnqunFJZr7QgL6ciFGJtbdy35GoVkvv672JTWhVgET)**\n\
+        \t* **Current Balance:** 0\n\t* **Status:** Not Found (last update: *None*)\n\
+        \t* **Insight:** This address is **no longer holding** the specified token.\n\
+        2. **[DNZwmHYrS7bekmsJeFPxFvkWRfXRPu44phUqZgdK7Pxy](https://solscan.io/token/DNZwmHYrS7bekmsJeFPxFvkWRfXRPu44phUqZgdK7Pxy)**\n\
+        \t* **Current Balance:** 0\n\t* **Status:** Not Found (last update: *None*)\n\
+        \t* **Insight:** This address is **no longer holding** the specified token.\n\
+        \n**Summary Insights:**\n\n* **Total Addresses Checked:** 2\n* **Holding the\
+        \ Token:** 0\n* **Sold/Bought More:** 0 (no transactions indicate buying more)\n\
+        * **Not Found (No Longer Holding):** 2 (both addresses)\n\n**Conclusion:**\
+        \ Based on the provided data, **neither** of the checked addresses currently\
+        \ holds the token with the mint address `4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump`.\
+        \ If you need to track token holdings in real-time or investigate historical\
+        \ transactions, consider leveraging more comprehensive blockchain analytics\
+        \ tools or the Bitquery API for deeper insights."
       data: &id006
         holder_statuses:
         - address: 5ZZnqunFJZr7QgL6ciFGJtbdy35GoVkvv672JTWhVgET
@@ -861,267 +933,255 @@ top_traders:
     input:
       query: List the top traders of 98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump
     output:
-      response: '**Top Traders Analysis for [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)**
-
-
-        ### Ranked by Total Volume (Descending)
-
-
-        | **Rank** | **Trader (Owner)** | **Total Volume** | **Volume (USD)** | **Transaction
-        Count** | **Side Currency** |
-
-        | --- | --- | --- | --- | --- | --- |
-
-        | 1️⃣ | [m4XoTbrdpKKsgTq96cXAvNfvcMgbfixZP7co6hXdPWz](https://solscan.io/account/m4XoTbrdpKKsgTq96cXAvNfvcMgbfixZP7co6hXdPWz)
-        | 2,335,545.783797 | $4,299.03 | 1 | WSOL |
-
-        | 2️⃣ | [CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps](https://solscan.io/account/CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps)
-        | 2,235,980.963341 | $4,180.93 | 7 | WSOL |
-
-        | 3️⃣ | [9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq](https://solscan.io/account/9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq)
-        | 2,132,713.387054 | $3,973.39 | 22 | WSOL |
-
-        | 4️⃣ | [YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9](https://solscan.io/account/YpnnUu'
+      response: "**Top Traders of [98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump](https://solscan.io/token/98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump)**\n\
+        \nBased on the provided data, here are the top traders, ranked by their total\
+        \ **Volume (USD)**:\n\n### Top 5 Traders by Volume (USD)\n\n1. **[BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV](https://solscan.io/account/BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV)**\n\
+        \t* Total Volume: **$5,350.54** (across 2 entries)\n\t* Transaction Count:\
+        \ 28\n2. **[9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8](https://solscan.io/account/9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8)**\n\
+        \t* Total Volume: **$3,359.19** (across 2 entries)\n\t* Transaction Count:\
+        \ 23\n3. **[6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB](https://solscan.io/account/6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB)**\n\
+        \t* Total Volume: **$3,266.74** (across 2 entries)\n\t* Transaction Count:\
+        \ 35\n4. **[4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71](https://solscan.io/account/4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71"
       data:
         traders:
-        - owner: m4XoTbrdpKKsgTq96cXAvNfvcMgbfixZP7co6hXdPWz
-          bought: '2335545.783797'
-          sold: '2335545.783797'
+        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
+          bought: '1692318.145493'
+          sold: '1692318.145493'
           buy_sell_ratio: 1.0
-          total_volume: '2335545.783797'
-          volume_usd: '4299.026094442869'
+          total_volume: '1692318.145493'
+          volume_usd: '3395.6993116973454'
+          transaction_count: '16'
+          side_currency_symbol: WSOL
+        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
+          bought: '1220388.662721'
+          sold: '1220388.662721'
+          buy_sell_ratio: 1.0
+          total_volume: '1220388.662721'
+          volume_usd: '2466.7789232203086'
+          transaction_count: '17'
+          side_currency_symbol: WSOL
+        - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
+          bought: '1214393.837717'
+          sold: '1214393.837717'
+          buy_sell_ratio: 1.0
+          total_volume: '1214393.837717'
+          volume_usd: '2432.450125995217'
+          transaction_count: '19'
+          side_currency_symbol: WSOL
+        - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
+          bought: '1132522.364489'
+          sold: '1132522.364489'
+          buy_sell_ratio: 1.0
+          total_volume: '1132522.364489'
+          volume_usd: '2294.292798261682'
+          transaction_count: '16'
+          side_currency_symbol: WSOL
+        - owner: CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps
+          bought: '1074352.972509'
+          sold: '1074352.972509'
+          buy_sell_ratio: 1.0
+          total_volume: '1074352.972509'
+          volume_usd: '2172.2207152242554'
+          transaction_count: '17'
+          side_currency_symbol: WSOL
+        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
+          bought: '1025712.987403'
+          sold: '1025712.987403'
+          buy_sell_ratio: 1.0
+          total_volume: '1025712.987403'
+          volume_usd: '2063.681626162682'
+          transaction_count: '12'
+          side_currency_symbol: WSOL
+        - owner: GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ
+          bought: '1016703.406396'
+          sold: '1016703.406396'
+          buy_sell_ratio: 1.0
+          total_volume: '1016703.406396'
+          volume_usd: '2026.604326604564'
+          transaction_count: '13'
+          side_currency_symbol: WSOL
+        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
+          bought: '962669.764363'
+          sold: '962669.764363'
+          buy_sell_ratio: 1.0
+          total_volume: '962669.764363'
+          volume_usd: '1954.84220758097'
+          transaction_count: '12'
+          side_currency_symbol: WSOL
+        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
+          bought: '845533.423265'
+          sold: '845533.423265'
+          buy_sell_ratio: 1.0
+          total_volume: '845533.423265'
+          volume_usd: '1708.130178096791'
+          transaction_count: '10'
+          side_currency_symbol: WSOL
+        - owner: 6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx
+          bought: '814085.775292'
+          sold: '814085.775292'
+          buy_sell_ratio: 1.0
+          total_volume: '814085.775292'
+          volume_usd: '1643.9634053005823'
+          transaction_count: '18'
+          side_currency_symbol: WSOL
+        - owner: 2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h
+          bought: '728149.711578'
+          sold: '728149.711578'
+          buy_sell_ratio: 1.0
+          total_volume: '728149.711578'
+          volume_usd: '1456.1961071664082'
+          transaction_count: '10'
+          side_currency_symbol: WSOL
+        - owner: 2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h
+          bought: '697783.880029'
+          sold: '697783.880029'
+          buy_sell_ratio: 1.0
+          total_volume: '697783.880029'
+          volume_usd: '1402.4920213090188'
+          transaction_count: '12'
+          side_currency_symbol: WSOL
+        - owner: 6HbjrNz5ES4SozvgTBHVAhF6nqG5Wz3tM384YuBvqpsg
+          bought: '636465.267702'
+          sold: '636465.267702'
+          buy_sell_ratio: 1.0
+          total_volume: '636465.267702'
+          volume_usd: '1300.4884240912843'
+          transaction_count: '13'
+          side_currency_symbol: WSOL
+        - owner: 6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx
+          bought: '632175.828398'
+          sold: '632175.828398'
+          buy_sell_ratio: 1.0
+          total_volume: '632175.828398'
+          volume_usd: '1265.5668843267251'
+          transaction_count: '16'
+          side_currency_symbol: WSOL
+        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
+          bought: '618359.665433'
+          sold: '618359.665433'
+          buy_sell_ratio: 1.0
+          total_volume: '618359.665433'
+          volume_usd: '1250.171012229991'
+          transaction_count: '6'
+          side_currency_symbol: WSOL
+        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
+          bought: '443595.473070'
+          sold: '443595.473070'
+          buy_sell_ratio: 1.0
+          total_volume: '443595.473070'
+          volume_usd: '892.4081045976958'
+          transaction_count: '6'
+          side_currency_symbol: WSOL
+        - owner: GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ
+          bought: '409440.380853'
+          sold: '409440.380853'
+          buy_sell_ratio: 1.0
+          total_volume: '409440.380853'
+          volume_usd: '828.4175084720532'
+          transaction_count: '6'
+          side_currency_symbol: WSOL
+        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
+          bought: '345949.800000'
+          sold: '345949.800000'
+          buy_sell_ratio: 1.0
+          total_volume: '345949.800000'
+          volume_usd: '699.1113693377109'
+          transaction_count: '7'
+          side_currency_symbol: WSOL
+        - owner: GCvHhEUYQwTJ8jyf8Lc4bv8jBXyZU4LMMsZCobwEPzvM
+          bought: '293958.360477'
+          sold: '293958.360477'
+          buy_sell_ratio: 1.0
+          total_volume: '293958.360477'
+          volume_usd: '593.4116151208243'
+          transaction_count: '10'
+          side_currency_symbol: WSOL
+        - owner: GZdu4kAwjcLdw8KHFvAeif4bimstd3gtGKuP4NHaHwaX
+          bought: '287483.558066'
+          sold: '287483.558066'
+          buy_sell_ratio: 1.0
+          total_volume: '287483.558066'
+          volume_usd: '573.5999366455078'
           transaction_count: '1'
           side_currency_symbol: WSOL
         - owner: CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps
-          bought: '2235980.963341'
-          sold: '2235980.963341'
+          bought: '278600.735821'
+          sold: '278600.735821'
           buy_sell_ratio: 1.0
-          total_volume: '2235980.963341'
-          volume_usd: '4180.928518027478'
-          transaction_count: '7'
+          total_volume: '278600.735821'
+          volume_usd: '554.9212295770759'
+          transaction_count: '8'
           side_currency_symbol: WSOL
-        - owner: 9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq
-          bought: '2132713.387054'
-          sold: '2132713.387054'
+        - owner: ERwUXJEJTy5ddhJwCy4MwefKK4BXEsF2AL1N6oowut7G
+          bought: '243739.059577'
+          sold: '243739.059577'
           buy_sell_ratio: 1.0
-          total_volume: '2132713.387054'
-          volume_usd: '3973.3928680174126'
-          transaction_count: '22'
-          side_currency_symbol: WSOL
-        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
-          bought: '2036782.640400'
-          sold: '2036782.640400'
-          buy_sell_ratio: 1.0
-          total_volume: '2036782.640400'
-          volume_usd: '3780.1576204842054'
-          transaction_count: '13'
-          side_currency_symbol: WSOL
-        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
-          bought: '2015871.987760'
-          sold: '2015871.987760'
-          buy_sell_ratio: 1.0
-          total_volume: '2015871.987760'
-          volume_usd: '3711.7757523347855'
-          transaction_count: '15'
-          side_currency_symbol: WSOL
-        - owner: Ha14JDD1c6vQHVqRgb4i36K4TpxAa71iJV6cbSjHCp67
-          bought: '1961706.429065'
-          sold: '1961706.429065'
-          buy_sell_ratio: 1.0
-          total_volume: '1961706.429065'
-          volume_usd: '3614.30922256952'
-          transaction_count: '31'
-          side_currency_symbol: WSOL
-        - owner: GCvHhEUYQwTJ8jyf8Lc4bv8jBXyZU4LMMsZCobwEPzvM
-          bought: '1728580.217562'
-          sold: '1728580.217562'
-          buy_sell_ratio: 1.0
-          total_volume: '1728580.217562'
-          volume_usd: '3152.228811996067'
-          transaction_count: '7'
-          side_currency_symbol: WSOL
-        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
-          bought: '1634244.416696'
-          sold: '1634244.416696'
-          buy_sell_ratio: 1.0
-          total_volume: '1634244.416696'
-          volume_usd: '2978.3785523307383'
-          transaction_count: '5'
-          side_currency_symbol: WSOL
-        - owner: 4a26SJUfwTvYuTP2ViBz8zekHj2gZRqchz44Ja1iiwfj
-          bought: '1275889.742669'
-          sold: '1275889.742669'
-          buy_sell_ratio: 1.0
-          total_volume: '1275889.742669'
-          volume_usd: '2369.369846652469'
-          transaction_count: '4'
-          side_currency_symbol: WSOL
-        - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
-          bought: '1239879.808460'
-          sold: '1239879.808460'
-          buy_sell_ratio: 1.0
-          total_volume: '1239879.808460'
-          volume_usd: '2270.46314478188'
-          transaction_count: '6'
-          side_currency_symbol: WSOL
-        - owner: 7gBvmDCo9wLNRB4EUDsvjGe7rx3ZMjbrECc9ppPUvh7k
-          bought: '1092854.100874'
-          sold: '1092854.100874'
-          buy_sell_ratio: 1.0
-          total_volume: '1092854.100874'
-          volume_usd: '1997.7861591239882'
+          total_volume: '243739.059577'
+          volume_usd: '495.29340317710876'
           transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: GCvHhEUYQwTJ8jyf8Lc4bv8jBXyZU4LMMsZCobwEPzvM
-          bought: '1048171.335843'
-          sold: '1048171.335843'
+        - owner: HYg2PYHj29k1x7be9UveVEZ4nUT8pJFDs37vVZGEiFAB
+          bought: '222858.735974'
+          sold: '222858.735974'
           buy_sell_ratio: 1.0
-          total_volume: '1048171.335843'
-          volume_usd: '1964.135335333033'
-          transaction_count: '15'
-          side_currency_symbol: WSOL
-        - owner: 6jvYtr9G5WQnKs3cFsFtKmEfkbEnUXFhBKsmZad26QPV
-          bought: '1010076.139116'
-          sold: '1010076.139116'
-          buy_sell_ratio: 1.0
-          total_volume: '1010076.139116'
-          volume_usd: '1885.659501236863'
-          transaction_count: '4'
-          side_currency_symbol: WSOL
-        - owner: BnyHPT6oMynTMTZfNKi5rvw3sw1gMoEKcnH9Dwm1cTWd
-          bought: '1005969.207480'
-          sold: '1005969.207480'
-          buy_sell_ratio: 1.0
-          total_volume: '1005969.207480'
-          volume_usd: '1880.3080096435547'
+          total_volume: '222858.735974'
+          volume_usd: '443.89897937484835'
           transaction_count: '1'
           side_currency_symbol: WSOL
         - owner: 9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq
-          bought: '984297.842367'
-          sold: '984297.842367'
+          bought: '198351.153329'
+          sold: '198351.153329'
           buy_sell_ratio: 1.0
-          total_volume: '984297.842367'
-          volume_usd: '1815.2516190086458'
-          transaction_count: '17'
-          side_currency_symbol: WSOL
-        - owner: 4a26SJUfwTvYuTP2ViBz8zekHj2gZRqchz44Ja1iiwfj
-          bought: '775889.742669'
-          sold: '775889.742669'
-          buy_sell_ratio: 1.0
-          total_volume: '775889.742669'
-          volume_usd: '1449.6227177354035'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 6jvYtr9G5WQnKs3cFsFtKmEfkbEnUXFhBKsmZad26QPV
-          bought: '690114.539921'
-          sold: '690114.539921'
-          buy_sell_ratio: 1.0
-          total_volume: '690114.539921'
-          volume_usd: '1298.22903332969'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 9ASeWA5aJv6iipgFtnGYjPUgx4PSJJ52dV5fY32x8UE5
-          bought: '682851.241197'
-          sold: '682851.241197'
-          buy_sell_ratio: 1.0
-          total_volume: '682851.241197'
-          volume_usd: '1256.0656684408862'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: CKBCxNxdsfZwTwKYHQmBs7J8zpPjCjMJAxcxoBUwExw6
-          bought: '554191.687172'
-          sold: '554191.687172'
-          buy_sell_ratio: 1.0
-          total_volume: '554191.687172'
-          volume_usd: '1019.6442831562645'
+          total_volume: '198351.153329'
+          volume_usd: '401.4930182041318'
           transaction_count: '4'
           side_currency_symbol: WSOL
-        - owner: 2G3dsv2TpQhsSRSEHkxyReHxtnaLHAFvn2ofgcD88ct2
-          bought: '491893.720296'
-          sold: '491893.720296'
+        - owner: 9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq
+          bought: '175937.179549'
+          sold: '175937.179549'
           buy_sell_ratio: 1.0
-          total_volume: '491893.720296'
-          volume_usd: '873.4235763800497'
-          transaction_count: '1'
+          total_volume: '175937.179549'
+          volume_usd: '357.0441789446495'
+          transaction_count: '3'
           side_currency_symbol: WSOL
-        - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
-          bought: '440709.682112'
-          sold: '440709.682112'
+        - owner: CKBCxNxdsfZwTwKYHQmBs7J8zpPjCjMJAxcxoBUwExw6
+          bought: '161216.534835'
+          sold: '161216.534835'
           buy_sell_ratio: 1.0
-          total_volume: '440709.682112'
-          volume_usd: '821.6652185922344'
+          total_volume: '161216.534835'
+          volume_usd: '323.7765809519458'
           transaction_count: '6'
           side_currency_symbol: WSOL
-        - owner: 6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx
-          bought: '415197.466314'
-          sold: '415197.466314'
+        - owner: 9PmK8gVH928Z36uUuzey2mCNTTeJ3iA1x8qFXtBWjFxh
+          bought: '145190.599103'
+          sold: '145190.599103'
           buy_sell_ratio: 1.0
-          total_volume: '415197.466314'
-          volume_usd: '752.774653359012'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h
-          bought: '407406.001120'
-          sold: '407406.001120'
-          buy_sell_ratio: 1.0
-          total_volume: '407406.001120'
-          volume_usd: '742.1338946315167'
-          transaction_count: '4'
-          side_currency_symbol: WSOL
-        - owner: 9dZASefSVyi2k2ZkDdNUzVg2wWVyLFNiN4SJ8n1M8Rmy
-          bought: '400000.174691'
-          sold: '400000.174691'
-          buy_sell_ratio: 1.0
-          total_volume: '400000.174691'
-          volume_usd: '716.7827670176526'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ
-          bought: '355821.798295'
-          sold: '355821.798295'
-          buy_sell_ratio: 1.0
-          total_volume: '355821.798295'
-          volume_usd: '646.5812624835326'
-          transaction_count: '5'
-          side_currency_symbol: WSOL
-        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
-          bought: '343544.000018'
-          sold: '343544.000018'
-          buy_sell_ratio: 1.0
-          total_volume: '343544.000018'
-          volume_usd: '633.5449484529001'
-          transaction_count: '4'
+          total_volume: '145190.599103'
+          volume_usd: '289.6492004394531'
+          transaction_count: '2'
           side_currency_symbol: WSOL
         - owner: CKBCxNxdsfZwTwKYHQmBs7J8zpPjCjMJAxcxoBUwExw6
-          bought: '333214.187068'
-          sold: '333214.187068'
+          bought: '111455.493327'
+          sold: '111455.493327'
           buy_sell_ratio: 1.0
-          total_volume: '333214.187068'
-          volume_usd: '618.7740193324838'
-          transaction_count: '9'
-          side_currency_symbol: WSOL
-        - owner: GZJhTLSHcmpEDzG5waLgpRTV4oRnywT2G5wQxqxujMo1
-          bought: '263310.008519'
-          sold: '263310.008519'
-          buy_sell_ratio: 1.0
-          total_volume: '263310.008519'
-          volume_usd: '502.6799755765902'
+          total_volume: '111455.493327'
+          volume_usd: '224.9993522234043'
           transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
-          bought: '250234.544022'
-          sold: '250234.544022'
+        - owner: 9PmK8gVH928Z36uUuzey2mCNTTeJ3iA1x8qFXtBWjFxh
+          bought: '72595.400534'
+          sold: '72595.400534'
           buy_sell_ratio: 1.0
-          total_volume: '250234.544022'
-          volume_usd: '457.9110816183595'
-          transaction_count: '3'
+          total_volume: '72595.400534'
+          volume_usd: '144.12015437730813'
+          transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: 4wifQArxRdQhHh2pkYUKT3fXJEqL5C5QrFnoHHU3XcJ4
-          bought: '206022.880675'
-          sold: '206022.880675'
+        - owner: 9PmK8gVH928Z36uUuzey2mCNTTeJ3iA1x8qFXtBWjFxh
+          bought: '72595.198569'
+          sold: '72595.198569'
           buy_sell_ratio: 1.0
-          total_volume: '206022.880675'
-          volume_usd: '362.9832744055023'
+          total_volume: '72595.198569'
+          volume_usd: '144.0834124060865'
           transaction_count: '1'
           side_currency_symbol: WSOL
         markets: []
@@ -1136,1081 +1196,824 @@ top_traders:
       response: ''
       data:
         traders:
-        - owner: m4XoTbrdpKKsgTq96cXAvNfvcMgbfixZP7co6hXdPWz
-          bought: '2335545.783797'
-          sold: '2335545.783797'
+        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
+          bought: '1692318.145493'
+          sold: '1692318.145493'
           buy_sell_ratio: 1.0
-          total_volume: '2335545.783797'
-          volume_usd: '4299.026094442869'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq
-          bought: '2132713.387054'
-          sold: '2132713.387054'
-          buy_sell_ratio: 1.0
-          total_volume: '2132713.387054'
-          volume_usd: '3973.3928680174126'
-          transaction_count: '22'
+          total_volume: '1692318.145493'
+          volume_usd: '3395.6993116973454'
+          transaction_count: '16'
           side_currency_symbol: WSOL
         - owner: CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps
-          bought: '1930602.321227'
-          sold: '1930602.321227'
+          bought: '1220664.229445'
+          sold: '1220664.229445'
           buy_sell_ratio: 1.0
-          total_volume: '1930602.321227'
-          volume_usd: '3632.2047065568627'
-          transaction_count: '6'
+          total_volume: '1220664.229445'
+          volume_usd: '2472.310947482352'
+          transaction_count: '18'
           side_currency_symbol: WSOL
-        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
-          bought: '1764327.933900'
-          sold: '1764327.933900'
+        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
+          bought: '1220388.662721'
+          sold: '1220388.662721'
           buy_sell_ratio: 1.0
-          total_volume: '1764327.933900'
-          volume_usd: '3291.0092754404886'
-          transaction_count: '11'
-          side_currency_symbol: WSOL
-        - owner: GCvHhEUYQwTJ8jyf8Lc4bv8jBXyZU4LMMsZCobwEPzvM
-          bought: '1728580.217562'
-          sold: '1728580.217562'
-          buy_sell_ratio: 1.0
-          total_volume: '1728580.217562'
-          volume_usd: '3152.2288119960667'
-          transaction_count: '7'
-          side_currency_symbol: WSOL
-        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
-          bought: '1634244.416696'
-          sold: '1634244.416696'
-          buy_sell_ratio: 1.0
-          total_volume: '1634244.416696'
-          volume_usd: '2978.3785523307383'
-          transaction_count: '5'
-          side_currency_symbol: WSOL
-        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
-          bought: '1596887.065868'
-          sold: '1596887.065868'
-          buy_sell_ratio: 1.0
-          total_volume: '1596887.065868'
-          volume_usd: '2956.63216014138'
-          transaction_count: '12'
-          side_currency_symbol: WSOL
-        - owner: Ha14JDD1c6vQHVqRgb4i36K4TpxAa71iJV6cbSjHCp67
-          bought: '1324191.192196'
-          sold: '1324191.192196'
-          buy_sell_ratio: 1.0
-          total_volume: '1324191.192196'
-          volume_usd: '2480.0391935862126'
-          transaction_count: '26'
-          side_currency_symbol: WSOL
-        - owner: 4a26SJUfwTvYuTP2ViBz8zekHj2gZRqchz44Ja1iiwfj
-          bought: '1275889.742669'
-          sold: '1275889.742669'
-          buy_sell_ratio: 1.0
-          total_volume: '1275889.742669'
-          volume_usd: '2369.369846652469'
-          transaction_count: '4'
-          side_currency_symbol: WSOL
-        - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
-          bought: '1239879.808460'
-          sold: '1239879.808460'
-          buy_sell_ratio: 1.0
-          total_volume: '1239879.808460'
-          volume_usd: '2270.46314478188'
-          transaction_count: '6'
-          side_currency_symbol: WSOL
-        - owner: 7gBvmDCo9wLNRB4EUDsvjGe7rx3ZMjbrECc9ppPUvh7k
-          bought: '1092854.100874'
-          sold: '1092854.100874'
-          buy_sell_ratio: 1.0
-          total_volume: '1092854.100874'
-          volume_usd: '1997.7861591239882'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: GCvHhEUYQwTJ8jyf8Lc4bv8jBXyZU4LMMsZCobwEPzvM
-          bought: '1048171.335843'
-          sold: '1048171.335843'
-          buy_sell_ratio: 1.0
-          total_volume: '1048171.335843'
-          volume_usd: '1964.135335333033'
-          transaction_count: '15'
-          side_currency_symbol: WSOL
-        - owner: BnyHPT6oMynTMTZfNKi5rvw3sw1gMoEKcnH9Dwm1cTWd
-          bought: '1005969.207480'
-          sold: '1005969.207480'
-          buy_sell_ratio: 1.0
-          total_volume: '1005969.207480'
-          volume_usd: '1880.3080096435547'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq
-          bought: '984297.842367'
-          sold: '984297.842367'
-          buy_sell_ratio: 1.0
-          total_volume: '984297.842367'
-          volume_usd: '1815.2516190086458'
+          total_volume: '1220388.662721'
+          volume_usd: '2466.7789232203086'
           transaction_count: '17'
           side_currency_symbol: WSOL
-        - owner: 6jvYtr9G5WQnKs3cFsFtKmEfkbEnUXFhBKsmZad26QPV
-          bought: '803733.478777'
-          sold: '803733.478777'
+        - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
+          bought: '1214393.837717'
+          sold: '1214393.837717'
           buy_sell_ratio: 1.0
-          total_volume: '803733.478777'
-          volume_usd: '1513.6349583817089'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 4a26SJUfwTvYuTP2ViBz8zekHj2gZRqchz44Ja1iiwfj
-          bought: '775889.742669'
-          sold: '775889.742669'
-          buy_sell_ratio: 1.0
-          total_volume: '775889.742669'
-          volume_usd: '1449.6227177354035'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 6jvYtr9G5WQnKs3cFsFtKmEfkbEnUXFhBKsmZad26QPV
-          bought: '690114.539921'
-          sold: '690114.539921'
-          buy_sell_ratio: 1.0
-          total_volume: '690114.539921'
-          volume_usd: '1298.22903332969'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 9ASeWA5aJv6iipgFtnGYjPUgx4PSJJ52dV5fY32x8UE5
-          bought: '682851.241197'
-          sold: '682851.241197'
-          buy_sell_ratio: 1.0
-          total_volume: '682851.241197'
-          volume_usd: '1256.0656684408862'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: CKBCxNxdsfZwTwKYHQmBs7J8zpPjCjMJAxcxoBUwExw6
-          bought: '554191.687172'
-          sold: '554191.687172'
-          buy_sell_ratio: 1.0
-          total_volume: '554191.687172'
-          volume_usd: '1019.6442831562645'
-          transaction_count: '4'
-          side_currency_symbol: WSOL
-        - owner: 2G3dsv2TpQhsSRSEHkxyReHxtnaLHAFvn2ofgcD88ct2
-          bought: '491893.720296'
-          sold: '491893.720296'
-          buy_sell_ratio: 1.0
-          total_volume: '491893.720296'
-          volume_usd: '873.4235763800497'
-          transaction_count: '1'
+          total_volume: '1214393.837717'
+          volume_usd: '2432.4501259952176'
+          transaction_count: '19'
           side_currency_symbol: WSOL
         - owner: 6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB
-          bought: '440709.682112'
-          sold: '440709.682112'
+          bought: '1132522.364489'
+          sold: '1132522.364489'
           buy_sell_ratio: 1.0
-          total_volume: '440709.682112'
-          volume_usd: '821.6652185922344'
+          total_volume: '1132522.364489'
+          volume_usd: '2294.292798261682'
+          transaction_count: '16'
+          side_currency_symbol: WSOL
+        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
+          bought: '1025712.987403'
+          sold: '1025712.987403'
+          buy_sell_ratio: 1.0
+          total_volume: '1025712.987403'
+          volume_usd: '2063.681626162682'
+          transaction_count: '12'
+          side_currency_symbol: WSOL
+        - owner: GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ
+          bought: '1016703.406396'
+          sold: '1016703.406396'
+          buy_sell_ratio: 1.0
+          total_volume: '1016703.406396'
+          volume_usd: '2026.6043266045638'
+          transaction_count: '13'
+          side_currency_symbol: WSOL
+        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
+          bought: '962669.764363'
+          sold: '962669.764363'
+          buy_sell_ratio: 1.0
+          total_volume: '962669.764363'
+          volume_usd: '1954.8422075809697'
+          transaction_count: '12'
+          side_currency_symbol: WSOL
+        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
+          bought: '847348.728069'
+          sold: '847348.728069'
+          buy_sell_ratio: 1.0
+          total_volume: '847348.728069'
+          volume_usd: '1711.8307190131075'
+          transaction_count: '11'
+          side_currency_symbol: WSOL
+        - owner: 6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx
+          bought: '814085.775292'
+          sold: '814085.775292'
+          buy_sell_ratio: 1.0
+          total_volume: '814085.775292'
+          volume_usd: '1643.9634053005823'
+          transaction_count: '18'
+          side_currency_symbol: WSOL
+        - owner: 2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h
+          bought: '728149.711578'
+          sold: '728149.711578'
+          buy_sell_ratio: 1.0
+          total_volume: '728149.711578'
+          volume_usd: '1456.1961071664082'
+          transaction_count: '10'
+          side_currency_symbol: WSOL
+        - owner: 6HbjrNz5ES4SozvgTBHVAhF6nqG5Wz3tM384YuBvqpsg
+          bought: '636465.267702'
+          sold: '636465.267702'
+          buy_sell_ratio: 1.0
+          total_volume: '636465.267702'
+          volume_usd: '1300.4884240912843'
+          transaction_count: '13'
+          side_currency_symbol: WSOL
+        - owner: 6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx
+          bought: '632175.828398'
+          sold: '632175.828398'
+          buy_sell_ratio: 1.0
+          total_volume: '632175.828398'
+          volume_usd: '1265.5668843267251'
+          transaction_count: '16'
+          side_currency_symbol: WSOL
+        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
+          bought: '618359.665433'
+          sold: '618359.665433'
+          buy_sell_ratio: 1.0
+          total_volume: '618359.665433'
+          volume_usd: '1250.1710122299912'
           transaction_count: '6'
           side_currency_symbol: WSOL
         - owner: 2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h
-          bought: '407406.001120'
-          sold: '407406.001120'
+          bought: '574780.744930'
+          sold: '574780.744930'
           buy_sell_ratio: 1.0
-          total_volume: '407406.001120'
-          volume_usd: '742.1338946315168'
-          transaction_count: '4'
+          total_volume: '574780.744930'
+          volume_usd: '1152.50142933664'
+          transaction_count: '11'
+          side_currency_symbol: WSOL
+        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
+          bought: '443595.473070'
+          sold: '443595.473070'
+          buy_sell_ratio: 1.0
+          total_volume: '443595.473070'
+          volume_usd: '892.4081045976958'
+          transaction_count: '6'
           side_currency_symbol: WSOL
         - owner: GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ
-          bought: '355821.798295'
-          sold: '355821.798295'
+          bought: '409440.380853'
+          sold: '409440.380853'
           buy_sell_ratio: 1.0
-          total_volume: '355821.798295'
-          volume_usd: '646.5812624835326'
-          transaction_count: '5'
+          total_volume: '409440.380853'
+          volume_usd: '828.4175084720531'
+          transaction_count: '6'
           side_currency_symbol: WSOL
-        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
-          bought: '343544.000018'
-          sold: '343544.000018'
+        - owner: GCvHhEUYQwTJ8jyf8Lc4bv8jBXyZU4LMMsZCobwEPzvM
+          bought: '293958.360477'
+          sold: '293958.360477'
           buy_sell_ratio: 1.0
-          total_volume: '343544.000018'
-          volume_usd: '633.5449484529001'
-          transaction_count: '4'
+          total_volume: '293958.360477'
+          volume_usd: '593.4116151208243'
+          transaction_count: '10'
           side_currency_symbol: WSOL
-        - owner: CKBCxNxdsfZwTwKYHQmBs7J8zpPjCjMJAxcxoBUwExw6
-          bought: '333214.187068'
-          sold: '333214.187068'
+        - owner: GZdu4kAwjcLdw8KHFvAeif4bimstd3gtGKuP4NHaHwaX
+          bought: '287483.558066'
+          sold: '287483.558066'
           buy_sell_ratio: 1.0
-          total_volume: '333214.187068'
-          volume_usd: '618.7740193324838'
-          transaction_count: '9'
-          side_currency_symbol: WSOL
-        - owner: GZJhTLSHcmpEDzG5waLgpRTV4oRnywT2G5wQxqxujMo1
-          bought: '263310.008519'
-          sold: '263310.008519'
-          buy_sell_ratio: 1.0
-          total_volume: '263310.008519'
-          volume_usd: '502.6799755765902'
+          total_volume: '287483.558066'
+          volume_usd: '573.5999366455078'
           transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
-          bought: '250234.544022'
-          sold: '250234.544022'
-          buy_sell_ratio: 1.0
-          total_volume: '250234.544022'
-          volume_usd: '457.9110816183595'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 9eUJVcLNYpMCUZVuxsGuKoEKhenCDasqQvasfzdGQ9Ak
-          bought: '156419.629862'
-          sold: '156419.629862'
-          buy_sell_ratio: 1.0
-          total_volume: '156419.629862'
-          volume_usd: '293.2218105635602'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 5BReujWzh4b6U87uJfahTkygJ9mUPJ16vRL4TzzGJyuM
-          bought: '140068.224861'
-          sold: '140068.224861'
-          buy_sell_ratio: 1.0
-          total_volume: '140068.224861'
-          volume_usd: '262.00555444335936'
-          transaction_count: '2'
-          side_currency_symbol: WSOL
-        - owner: 5BReujWzh4b6U87uJfahTkygJ9mUPJ16vRL4TzzGJyuM
-          bought: '140068.224861'
-          sold: '140068.224861'
-          buy_sell_ratio: 1.0
-          total_volume: '140068.224861'
-          volume_usd: '258.996807686778'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8
-          bought: '128362.372129'
-          sold: '128362.372129'
-          buy_sell_ratio: 1.0
-          total_volume: '128362.372129'
-          volume_usd: '237.83768699225675'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 86rvZ9ZVEFmCWo1bBUTX6kr8seo5PENz6HHtSaBSzw5w
-          bought: '114733.557321'
-          sold: '114733.557321'
-          buy_sell_ratio: 1.0
-          total_volume: '114733.557321'
-          volume_usd: '208.5209905505912'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: EiB3WkdSPW8WiTxeL4mM3h7fmXn6S33SEoiEepLotqb1
-          bought: '111510.831718'
-          sold: '111510.831718'
-          buy_sell_ratio: 1.0
-          total_volume: '111510.831718'
-          volume_usd: '202.62754803955076'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx
-          bought: '109818.824200'
-          sold: '109818.824200'
-          buy_sell_ratio: 1.0
-          total_volume: '109818.824200'
-          volume_usd: '201.78503857026735'
-          transaction_count: '2'
-          side_currency_symbol: WSOL
-        - owner: BBdwgfAdVSq8vcT7hy5edYptDsU6tBLKTCb7hgxjjDB5
-          bought: '108084.336598'
-          sold: '108084.336598'
-          buy_sell_ratio: 1.0
-          total_volume: '108084.336598'
-          volume_usd: '194.8839640020841'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 3CoW2HLiwNa7ZamFGR3r4hyZTUH3ThZLFwr68tvPRaMk
-          bought: '103541.620645'
-          sold: '103541.620645'
-          buy_sell_ratio: 1.0
-          total_volume: '103541.620645'
-          volume_usd: '191.07864664980764'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: D3J4bAbYqzfxkMas25pTzmknrHGPb5BeYxRxj6dtEGYm
-          bought: '84727.341521'
-          sold: '84727.341521'
-          buy_sell_ratio: 1.0
-          total_volume: '84727.341521'
-          volume_usd: '157.4502238990766'
-          transaction_count: '2'
-          side_currency_symbol: WSOL
-        - owner: Ha14JDD1c6vQHVqRgb4i36K4TpxAa71iJV6cbSjHCp67
-          bought: '75000.000000'
-          sold: '75000.000000'
-          buy_sell_ratio: 1.0
-          total_volume: '75000.000000'
-          volume_usd: '137.43387753771233'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: B11RRU7wBgHpE3UDvRGWw1CpNoCKHkP2vafzCzdqzZ3R
-          bought: '68002.094355'
-          sold: '68002.094355'
-          buy_sell_ratio: 1.0
-          total_volume: '68002.094355'
-          volume_usd: '130.68704223632812'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 4Lq5xrv9p91WpAtnmLgJHjqpxAfjC1hUTiCtoiudDCMy
-          bought: '67922.604411'
-          sold: '67922.604411'
-          buy_sell_ratio: 1.0
-          total_volume: '67922.604411'
-          volume_usd: '130.49026489257812'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 72RcnCMbA2H6FBDDekUJVrw6imcg74GxJKQRPZaM5zaE
-          bought: '71625.270767'
-          sold: '71625.270767'
-          buy_sell_ratio: 1.0
-          total_volume: '71625.270767'
-          volume_usd: '128.97048950195312'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: D3J4bAbYqzfxkMas25pTzmknrHGPb5BeYxRxj6dtEGYm
-          bought: '63666.941972'
-          sold: '63666.941972'
-          buy_sell_ratio: 1.0
-          total_volume: '63666.941972'
-          volume_usd: '118.14079490112304'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 25T5tQPmt3vQN9jKf3QGtbufSVSSiyBKGPd8v2DZyVGT
-          bought: '60329.701956'
-          sold: '60329.701956'
-          buy_sell_ratio: 1.0
-          total_volume: '60329.701956'
-          volume_usd: '113.05333748185043'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV
-          bought: '54995.390515'
-          sold: '54995.390515'
-          buy_sell_ratio: 1.0
-          total_volume: '54995.390515'
-          volume_usd: '100.01886816267648'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: DmmQcWTHwafuB9NkCNmXLQ4hZJeUyMxz3tnojwNB3NxT
-          bought: '52973.249892'
-          sold: '52973.249892'
-          buy_sell_ratio: 1.0
-          total_volume: '52973.249892'
-          volume_usd: '96.58767767663086'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: EjwdVLEr4Gsnsu1YMVg3RVsBSfsxekrRjBGv2BPE6tSV
-          bought: '51226.164961'
-          sold: '51226.164961'
-          buy_sell_ratio: 1.0
-          total_volume: '51226.164961'
-          volume_usd: '95.38051099974442'
-          transaction_count: '9'
-          side_currency_symbol: WSOL
-        - owner: F1eSPc1xhWikUiGv4jSUcXE7Vbm5iLwSK5dvzATXGi5p
-          bought: '48367.081094'
-          sold: '48367.081094'
-          buy_sell_ratio: 1.0
-          total_volume: '48367.081094'
-          volume_usd: '91.24980010986327'
-          transaction_count: '2'
-          side_currency_symbol: WSOL
-        - owner: 7ACsEkYSvVyCE5AuYC6hP1bNs4SpgCDwsfm3UdnyPERk
-          bought: '48348.241533'
-          sold: '48348.241533'
-          buy_sell_ratio: 1.0
-          total_volume: '48348.241533'
-          volume_usd: '91.24980010986327'
-          transaction_count: '2'
-          side_currency_symbol: WSOL
-        - owner: F1eSPc1xhWikUiGv4jSUcXE7Vbm5iLwSK5dvzATXGi5p
-          bought: '48367.081094'
-          sold: '48367.081094'
-          buy_sell_ratio: 1.0
-          total_volume: '48367.081094'
-          volume_usd: '88.88690599212552'
-          transaction_count: '2'
-          side_currency_symbol: WSOL
-        - owner: 7ACsEkYSvVyCE5AuYC6hP1bNs4SpgCDwsfm3UdnyPERk
-          bought: '48348.241533'
-          sold: '48348.241533'
-          buy_sell_ratio: 1.0
-          total_volume: '48348.241533'
-          volume_usd: '88.81816630963101'
-          transaction_count: '2'
           side_currency_symbol: WSOL
         - owner: CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps
-          bought: '38166.613462'
-          sold: '38166.613462'
+          bought: '278600.735821'
+          sold: '278600.735821'
           buy_sell_ratio: 1.0
-          total_volume: '38166.613462'
-          volume_usd: '71.25577085508084'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 3bXjyjpUKKMcTbk6Xk5aagU11LT59VLW1EgHWSUCyFQd
-          bought: '33029.345237'
-          sold: '33029.345237'
-          buy_sell_ratio: 1.0
-          total_volume: '33029.345237'
-          volume_usd: '60.356628285545945'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 3bXjyjpUKKMcTbk6Xk5aagU11LT59VLW1EgHWSUCyFQd
-          bought: '33029.345237'
-          sold: '33029.345237'
-          buy_sell_ratio: 1.0
-          total_volume: '33029.345237'
-          volume_usd: '60.268900745803585'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8
-          bought: '33396.234429'
-          sold: '33396.234429'
-          buy_sell_ratio: 1.0
-          total_volume: '33396.234429'
-          volume_usd: '60.157999916514406'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: EcEHNAaDTmo2LKSBzLk9ygCiXvd5dM3oEMaTJawjeaNu
-          bought: '33320.000000'
-          sold: '33320.000000'
-          buy_sell_ratio: 1.0
-          total_volume: '33320.000000'
-          volume_usd: '59.55307279210426'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8
-          bought: '32292.291548'
-          sold: '32292.291548'
-          buy_sell_ratio: 1.0
-          total_volume: '32292.291548'
-          volume_usd: '59.545450749171515'
-          transaction_count: '5'
-          side_currency_symbol: WSOL
-        - owner: EjwdVLEr4Gsnsu1YMVg3RVsBSfsxekrRjBGv2BPE6tSV
-          bought: '28475.846869'
-          sold: '28475.846869'
-          buy_sell_ratio: 1.0
-          total_volume: '28475.846869'
-          volume_usd: '51.81829825157446'
-          transaction_count: '5'
-          side_currency_symbol: WSOL
-        - owner: GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ
-          bought: '27301.397238'
-          sold: '27301.397238'
-          buy_sell_ratio: 1.0
-          total_volume: '27301.397238'
-          volume_usd: '50.95761318332715'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: HABPp3oLWGwcHeT6o2HvVnMazCgPYcGiy3mZ5c8u4P5j
-          bought: '24772.355485'
-          sold: '24772.355485'
-          buy_sell_ratio: 1.0
-          total_volume: '24772.355485'
-          volume_usd: '46.334476948104765'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: BqYcewCZhYku5pYACUBiyqaZFf2i5i2RvaLKeSEKEvZY
-          bought: '22902.937237'
-          sold: '22902.937237'
-          buy_sell_ratio: 1.0
-          total_volume: '22902.937237'
-          volume_usd: '41.270556640625'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: ExbtyXGsPQ7SgKcEDp9LykFiieStp6fTrABvXEwVrrpi
-          bought: '21612.436781'
-          sold: '21612.436781'
-          buy_sell_ratio: 1.0
-          total_volume: '21612.436781'
-          volume_usd: '40.571283111572264'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: E69hEVpMQjkKTQiaWNkke3wvxasXBu25GkioiEhSzxzx
-          bought: '21140.648699'
-          sold: '21140.648699'
-          buy_sell_ratio: 1.0
-          total_volume: '21140.648699'
-          volume_usd: '38.99230638656616'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: E69hEVpMQjkKTQiaWNkke3wvxasXBu25GkioiEhSzxzx
-          bought: '21140.648699'
-          sold: '21140.648699'
-          buy_sell_ratio: 1.0
-          total_volume: '21140.648699'
-          volume_usd: '38.95528596077728'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: BrhuuAE4M1jS1K62fvUrbYjNMqEp7xYjuobvprXbTDzt
-          bought: '19854.630870'
-          sold: '19854.630870'
-          buy_sell_ratio: 1.0
-          total_volume: '19854.630870'
-          volume_usd: '36.774361125863955'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 8B3Rud3NhQPDyik6a7EE44PA5FG7VxxRwtxVwAz3NyNs
-          bought: '15875.931706'
-          sold: '15875.931706'
-          buy_sell_ratio: 1.0
-          total_volume: '15875.931706'
-          volume_usd: '30.345763706185913'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 8B3Rud3NhQPDyik6a7EE44PA5FG7VxxRwtxVwAz3NyNs
-          bought: '15875.931706'
-          sold: '15875.931706'
-          buy_sell_ratio: 1.0
-          total_volume: '15875.931706'
-          volume_usd: '29.44062877354486'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 2mgWFcYwETrUEQZisgveoKveaQzUcDEkUWRgWpqEYCkd
-          bought: '14462.833907'
-          sold: '14462.833907'
-          buy_sell_ratio: 1.0
-          total_volume: '14462.833907'
-          volume_usd: '27.19960193710327'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: FcwJaLLK9dyhLGf3cdiVEqz6VG2Hq1EjytJ5nxf1GbqP
-          bought: '14126.914469'
-          sold: '14126.914469'
-          buy_sell_ratio: 1.0
-          total_volume: '14126.914469'
-          volume_usd: '26.276331922310852'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: FcwJaLLK9dyhLGf3cdiVEqz6VG2Hq1EjytJ5nxf1GbqP
-          bought: '14126.914469'
-          sold: '14126.914469'
-          buy_sell_ratio: 1.0
-          total_volume: '14126.914469'
-          volume_usd: '26.21962890625'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71
-          bought: '14186.317939'
-          sold: '14186.317939'
-          buy_sell_ratio: 1.0
-          total_volume: '14186.317939'
-          volume_usd: '26.09544839808296'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 4FxDgvzCZieK1LzvhitERnVX6fSRzBkpYKbpejYnr5YZ
-          bought: '14000.000000'
-          sold: '14000.000000'
-          buy_sell_ratio: 1.0
-          total_volume: '14000.000000'
-          volume_usd: '25.51108438882019'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: A4Ej7ZEZ2SLLEKG8b7As4jibwf8FGisk3CkqXXMj9ngQ
-          bought: '13679.328059'
-          sold: '13679.328059'
-          buy_sell_ratio: 1.0
-          total_volume: '13679.328059'
-          volume_usd: '24.97976313009494'
-          transaction_count: '16'
-          side_currency_symbol: WSOL
-        - owner: 6ZaWyb9PKP1ZGVsQcE9vjnGPCH6KiWE5XLUY7HdNEJ77
-          bought: '13011.130648'
-          sold: '13011.130648'
-          buy_sell_ratio: 1.0
-          total_volume: '13011.130648'
-          volume_usd: '24.42359347370123'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: FkdDHrM8j8psKbxuwjV1jBKCM2JGPygkj7WCX8sSCzNm
-          bought: '12135.868080'
-          sold: '12135.868080'
-          buy_sell_ratio: 1.0
-          total_volume: '12135.868080'
-          volume_usd: '22.019877465820315'
-          transaction_count: '13'
-          side_currency_symbol: WSOL
-        - owner: 5bx3jhSVCzGPgMnWiTpAe2BWghUVToTH2UZnb3ZBs1tX
-          bought: '11573.427727'
-          sold: '11573.427727'
-          buy_sell_ratio: 1.0
-          total_volume: '11573.427727'
-          volume_usd: '20.96256487813751'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 5bx3jhSVCzGPgMnWiTpAe2BWghUVToTH2UZnb3ZBs1tX
-          bought: '11573.427727'
-          sold: '11573.427727'
-          buy_sell_ratio: 1.0
-          total_volume: '11573.427727'
-          volume_usd: '20.935640289317323'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: FDj7TrLbhZNyEQ2e8zZSvhsgkgNDa7NDoAb4kNyxjCu5
-          bought: '11235.842020'
-          sold: '11235.842020'
-          buy_sell_ratio: 1.0
-          total_volume: '11235.842020'
-          volume_usd: '20.46607855964465'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 2fWyMU2S5ZJMwq9Ay2bwvnfRfiugkJbjWZ8WqKMtD8my
-          bought: '11027.811910'
-          sold: '11027.811910'
-          buy_sell_ratio: 1.0
-          total_volume: '11027.811910'
-          volume_usd: '20.04149426106476'
-          transaction_count: '14'
-          side_currency_symbol: WSOL
-        - owner: BfasNiZRpTrucGH21y3ZFMY8uhTZWKxAaPHfCALUTeoT
-          bought: '10500.000000'
-          sold: '10500.000000'
-          buy_sell_ratio: 1.0
-          total_volume: '10500.000000'
-          volume_usd: '19.46563141967633'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: EzdQH5zUfTMGb3vwU4oumxjVcxKMDpJ6dB78pbjfHmmb
-          bought: '9237.412439'
-          sold: '9237.412439'
-          buy_sell_ratio: 1.0
-          total_volume: '9237.412439'
-          volume_usd: '17.23509670893518'
-          transaction_count: '3'
-          side_currency_symbol: WSOL
-        - owner: 3yhMBJ3hkucZ33zm4an5yosV8A9VHVEfHkJHLLVWsKJJ
-          bought: '8832.725493'
-          sold: '8832.725493'
-          buy_sell_ratio: 1.0
-          total_volume: '8832.725493'
-          volume_usd: '16.74603439024968'
+          total_volume: '278600.735821'
+          volume_usd: '554.9212295770759'
           transaction_count: '8'
           side_currency_symbol: WSOL
-        - owner: FreeZRH1xDaark4YtXsdsqHi4bVuVjhx4JT1tvRFxD6a
-          bought: '8588.128983'
-          sold: '8588.128983'
+        - owner: YpnnUu1ZPHpAzy4xggEd5pBTbu1aDayXuARsYsavNs9
+          bought: '251971.200000'
+          sold: '251971.200000'
           buy_sell_ratio: 1.0
-          total_volume: '8588.128983'
-          volume_usd: '15.631459712807006'
+          total_volume: '251971.200000'
+          volume_usd: '509.0812478228787'
+          transaction_count: '5'
+          side_currency_symbol: WSOL
+        - owner: ERwUXJEJTy5ddhJwCy4MwefKK4BXEsF2AL1N6oowut7G
+          bought: '243739.059577'
+          sold: '243739.059577'
+          buy_sell_ratio: 1.0
+          total_volume: '243739.059577'
+          volume_usd: '495.29340317710876'
           transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: FreeZRH1xDaark4YtXsdsqHi4bVuVjhx4JT1tvRFxD6a
-          bought: '8588.128983'
-          sold: '8588.128983'
+        - owner: HYg2PYHj29k1x7be9UveVEZ4nUT8pJFDs37vVZGEiFAB
+          bought: '222858.735974'
+          sold: '222858.735974'
           buy_sell_ratio: 1.0
-          total_volume: '8588.128983'
-          volume_usd: '15.572717296529175'
+          total_volume: '222858.735974'
+          volume_usd: '443.89897937484835'
           transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: AqaCMkCFSYov7bVXbCMRPmD8oVSptenwwSmj9gBo28ka
-          bought: '7047.184880'
-          sold: '7047.184880'
+        - owner: 9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq
+          bought: '198351.153329'
+          sold: '198351.153329'
           buy_sell_ratio: 1.0
-          total_volume: '7047.184880'
-          volume_usd: '12.900569152832032'
+          total_volume: '198351.153329'
+          volume_usd: '401.49301820413183'
+          transaction_count: '4'
+          side_currency_symbol: WSOL
+        - owner: 9PHm2cYU8DhwBrbRsqqAjhW9uXVrNR1RaLsvo9oGVeaq
+          bought: '175937.179549'
+          sold: '175937.179549'
+          buy_sell_ratio: 1.0
+          total_volume: '175937.179549'
+          volume_usd: '357.0441789446495'
+          transaction_count: '3'
+          side_currency_symbol: WSOL
+        - owner: CKBCxNxdsfZwTwKYHQmBs7J8zpPjCjMJAxcxoBUwExw6
+          bought: '161216.534835'
+          sold: '161216.534835'
+          buy_sell_ratio: 1.0
+          total_volume: '161216.534835'
+          volume_usd: '323.7765809519458'
+          transaction_count: '6'
+          side_currency_symbol: WSOL
+        - owner: 9PmK8gVH928Z36uUuzey2mCNTTeJ3iA1x8qFXtBWjFxh
+          bought: '145190.599103'
+          sold: '145190.599103'
+          buy_sell_ratio: 1.0
+          total_volume: '145190.599103'
+          volume_usd: '289.6492004394531'
+          transaction_count: '2'
+          side_currency_symbol: WSOL
+        - owner: CKBCxNxdsfZwTwKYHQmBs7J8zpPjCjMJAxcxoBUwExw6
+          bought: '111455.493327'
+          sold: '111455.493327'
+          buy_sell_ratio: 1.0
+          total_volume: '111455.493327'
+          volume_usd: '224.9993522234043'
           transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: AqaCMkCFSYov7bVXbCMRPmD8oVSptenwwSmj9gBo28ka
-          bought: '7047.184880'
-          sold: '7047.184880'
+        - owner: 9PmK8gVH928Z36uUuzey2mCNTTeJ3iA1x8qFXtBWjFxh
+          bought: '72595.400534'
+          sold: '72595.400534'
           buy_sell_ratio: 1.0
-          total_volume: '7047.184880'
-          volume_usd: '12.834783985264343'
+          total_volume: '72595.400534'
+          volume_usd: '144.12015437730813'
           transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: A55ZSCqDccMdqgSMd4eyFBR4LGFP2UyVbnTWKA14B98J
-          bought: '6986.543360'
-          sold: '6986.543360'
+        - owner: 9PmK8gVH928Z36uUuzey2mCNTTeJ3iA1x8qFXtBWjFxh
+          bought: '72595.198569'
+          sold: '72595.198569'
           buy_sell_ratio: 1.0
-          total_volume: '6986.543360'
-          volume_usd: '12.682122468583222'
+          total_volume: '72595.198569'
+          volume_usd: '144.0834124060865'
           transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: 4z3seA34MT7D2Rj7JgLSSUdcXGnu8jETMYcjkwptj9in
-          bought: '6200.589212'
-          sold: '6200.589212'
+        - owner: AzAugGtGehNwbt1F8xeqPoSoFzTkhqTFSFmHgyxgxUFZ
+          bought: '71380.047076'
+          sold: '71380.047076'
           buy_sell_ratio: 1.0
-          total_volume: '6200.589212'
-          volume_usd: '11.595495340047409'
+          total_volume: '71380.047076'
+          volume_usd: '143.79254516601563'
           transaction_count: '1'
           side_currency_symbol: WSOL
-        - owner: AXEPszjhUVgdz4YXr4jjCFRwGwuG4a6qESJcX5FKqqKx
-          bought: '6104.354387'
-          sold: '6104.354387'
+        - owner: 7snwmnm9DzTp7u6CRjA6uKA511Kq3bhYo9AbeijQVeeA
+          bought: '55000.000000'
+          sold: '55000.000000'
           buy_sell_ratio: 1.0
-          total_volume: '6104.354387'
-          volume_usd: '11.040651569774079'
+          total_volume: '55000.000000'
+          volume_usd: '110.84899451447035'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: F1eSPc1xhWikUiGv4jSUcXE7Vbm5iLwSK5dvzATXGi5p
+          bought: '50279.895606'
+          sold: '50279.895606'
+          buy_sell_ratio: 1.0
+          total_volume: '50279.895606'
+          volume_usd: '102.16812210083008'
+          transaction_count: '2'
+          side_currency_symbol: WSOL
+        - owner: 7ACsEkYSvVyCE5AuYC6hP1bNs4SpgCDwsfm3UdnyPERk
+          bought: '50299.397223'
+          sold: '50299.397223'
+          buy_sell_ratio: 1.0
+          total_volume: '50299.397223'
+          volume_usd: '102.16812210083008'
+          transaction_count: '2'
+          side_currency_symbol: WSOL
+        - owner: GZJhTLSHcmpEDzG5waLgpRTV4oRnywT2G5wQxqxujMo1
+          bought: '50777.109859'
+          sold: '50777.109859'
+          buy_sell_ratio: 1.0
+          total_volume: '50777.109859'
+          volume_usd: '101.74741150917947'
+          transaction_count: '2'
+          side_currency_symbol: WSOL
+        - owner: 5iHtDB17U3Lce8jAEUfyXtup1U8zkdzrPaP1naGwSpKE
+          bought: '48192.297133'
+          sold: '48192.297133'
+          buy_sell_ratio: 1.0
+          total_volume: '48192.297133'
+          volume_usd: '98.33210016312722'
+          transaction_count: '2'
+          side_currency_symbol: WSOL
+        - owner: ETE6PisgZYHKyXb7E9fyRRr8kdR5ZaL5H8yZZrbRTpL4
+          bought: '49925.261644'
+          sold: '49925.261644'
+          buy_sell_ratio: 1.0
+          total_volume: '49925.261644'
+          volume_usd: '98.08909100408007'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 7sdqw6m11y6YUqvUfDF5TZx5L8djAmjoDM65MUNgfxC8
+          bought: '32979.557858'
+          sold: '32979.557858'
+          buy_sell_ratio: 1.0
+          total_volume: '32979.557858'
+          volume_usd: '66.72408233642578'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 7sdqw6m11y6YUqvUfDF5TZx5L8djAmjoDM65MUNgfxC8
+          bought: '32979.557858'
+          sold: '32979.557858'
+          buy_sell_ratio: 1.0
+          total_volume: '32979.557858'
+          volume_usd: '66.39096337072765'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 7ACsEkYSvVyCE5AuYC6hP1bNs4SpgCDwsfm3UdnyPERk
+          bought: '25216.599683'
+          sold: '25216.599683'
+          buy_sell_ratio: 1.0
+          total_volume: '25216.599683'
+          volume_usd: '50.525173546280136'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: F1eSPc1xhWikUiGv4jSUcXE7Vbm5iLwSK5dvzATXGi5p
+          bought: '25206.809251'
+          sold: '25206.809251'
+          buy_sell_ratio: 1.0
+          total_volume: '25206.809251'
+          volume_usd: '50.48591840162842'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 5iHtDB17U3Lce8jAEUfyXtup1U8zkdzrPaP1naGwSpKE
+          bought: '24223.189124'
+          sold: '24223.189124'
+          buy_sell_ratio: 1.0
+          total_volume: '24223.189124'
+          volume_usd: '49.172654190189576'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 5iHtDB17U3Lce8jAEUfyXtup1U8zkdzrPaP1naGwSpKE
+          bought: '23969.108009'
+          sold: '23969.108009'
+          buy_sell_ratio: 1.0
+          total_volume: '23969.108009'
+          volume_usd: '48.75609857570607'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: HVLCW1i93pAFN4uSgrnPefhAKXTYB3RwbZfxgX8EdU6M
+          bought: '21600.278834'
+          sold: '21600.278834'
+          buy_sell_ratio: 1.0
+          total_volume: '21600.278834'
+          volume_usd: '44.018714904785156'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 2dJcXLx4xoh2MV2FKMxJNYmgrmPaxRWcy7ue9AnWi8R3
+          bought: '21257.676234'
+          sold: '21257.676234'
+          buy_sell_ratio: 1.0
+          total_volume: '21257.676234'
+          volume_usd: '43.0497664622078'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: AKV6MByJDNJtQ6gEgugo7wrA15FmdYYJXXYJC1qKAadu
+          bought: '20890.549720'
+          sold: '20890.549720'
+          buy_sell_ratio: 1.0
+          total_volume: '20890.549720'
+          volume_usd: '41.560960975839656'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 84JhwNrPPsF3BxWkTq1g29FWmZQd2fhw3tR9NBg9Q32s
+          bought: '19615.000000'
+          sold: '19615.000000'
+          buy_sell_ratio: 1.0
+          total_volume: '19615.000000'
+          volume_usd: '38.38421712524881'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: DAaZtcB29HmuQbgTdHv4Fj99qUFbg9soAqzhMs1AgB7V
+          bought: '18451.566160'
+          sold: '18451.566160'
+          buy_sell_ratio: 1.0
+          total_volume: '18451.566160'
+          volume_usd: '37.13959448806763'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: Ey2NVVkswpFYLTApyHBMUp5SE7aUQTriT3R5XnQat1VJ
+          bought: '18052.023365'
+          sold: '18052.023365'
+          buy_sell_ratio: 1.0
+          total_volume: '18052.023365'
+          volume_usd: '36.70860310662607'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 9igqvp7ej2RgUujsd9zicn9wqAmUdF452q8toh8AJQpw
+          bought: '10895.050464'
+          sold: '10895.050464'
+          buy_sell_ratio: 1.0
+          total_volume: '10895.050464'
+          volume_usd: '21.676929473876953'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 54Ah8wx833pXQQHSFw1yaMVbDNwbuLavNe3T72bvBzfr
+          bought: '8619.786446'
+          sold: '8619.786446'
+          buy_sell_ratio: 1.0
+          total_volume: '8619.786446'
+          volume_usd: '17.581988525390624'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: D8gMKwvrgqzXmGoxes5hmjv9irEk1ThD27ULsuRZazdh
+          bought: '8575.166054'
+          sold: '8575.166054'
+          buy_sell_ratio: 1.0
+          total_volume: '8575.166054'
+          volume_usd: '17.522265910555785'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: CsFMwYcTUX8YooJvmmhDhKiMa4T3wvGRynBy9mo7hDBa
+          bought: '7395.822226'
+          sold: '7395.822226'
+          buy_sell_ratio: 1.0
+          total_volume: '7395.822226'
+          volume_usd: '14.662231140650787'
           transaction_count: '1'
           side_currency_symbol: WSOL
         - owner: PNLCQcVCD26aC7ZWgRyr5ptfaR7bBrWdTFgRWwu2tvF
-          bought: '5597.556936'
-          sold: '5597.556936'
+          bought: '5016.280569'
+          sold: '5016.280569'
           buy_sell_ratio: 1.0
-          total_volume: '5597.556936'
-          volume_usd: '10.280005804019348'
+          total_volume: '5016.280569'
+          volume_usd: '10.140965797339112'
           transaction_count: '2'
           side_currency_symbol: WSOL
-        - owner: 31CT1L4RGUBHqRzJwqkys9pmTJ4qHX5Ek8cfgZ4Cbuu7
-          bought: '5425.247371'
-          sold: '5425.247371'
+        - owner: 6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8
+          bought: '4907.379398'
+          sold: '4907.379398'
           buy_sell_ratio: 1.0
-          total_volume: '5425.247371'
-          volume_usd: '9.985794752952561'
+          total_volume: '4907.379398'
+          volume_usd: '10.001846472251588'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: GiyBr6Pnuhywc62N6wASoCT7tCF4DZszgruGFfVKadRj
+          bought: '5060.640348'
+          sold: '5060.640348'
+          buy_sell_ratio: 1.0
+          total_volume: '5060.640348'
+          volume_usd: '9.927586771528809'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: DCp2gWo1suvQJRztrQXqnRnDCR5RrG6wqutWoow5KWQH
+          bought: '2200.000000'
+          sold: '2200.000000'
+          buy_sell_ratio: 1.0
+          total_volume: '2200.000000'
+          volume_usd: '4.325174860936417'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: rLsi2DPwRLovHzLV5XYxa8B597bv8w8nX7fZHJJf8uy
+          bought: '1452.672685'
+          sold: '1452.672685'
+          buy_sell_ratio: 1.0
+          total_volume: '1452.672685'
+          volume_usd: '2.892762673007889'
           transaction_count: '2'
           side_currency_symbol: WSOL
-        - owner: CpBawLhsjSXf3fzVmmTmTKgjfi9a649j8vSQjkFKsWcz
-          bought: '4731.490000'
-          sold: '4731.490000'
+        - owner: A4Ej7ZEZ2SLLEKG8b7As4jibwf8FGisk3CkqXXMj9ngQ
+          bought: '1377.050429'
+          sold: '1377.050429'
           buy_sell_ratio: 1.0
-          total_volume: '4731.490000'
-          volume_usd: '8.884726663420897'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 2CkUz5hnyFKuWi2rXArh49yjtWWS9TKGcPhL7f2HKfP5
-          bought: '4155.536196'
-          sold: '4155.536196'
-          buy_sell_ratio: 1.0
-          total_volume: '4155.536196'
-          volume_usd: '7.95038646605603'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: AXEPszjhUVgdz4YXr4jjCFRwGwuG4a6qESJcX5FKqqKx
-          bought: '4092.276791'
-          sold: '4092.276791'
-          buy_sell_ratio: 1.0
-          total_volume: '4092.276791'
-          volume_usd: '7.512926123781876'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 8B3Rud3NhQPDyik6a7EE44PA5FG7VxxRwtxVwAz3NyNs
-          bought: '4114.944027'
-          sold: '4114.944027'
-          buy_sell_ratio: 1.0
-          total_volume: '4114.944027'
-          volume_usd: '7.289018319255798'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: B34ZsCxWsae5MXR9r8kgbpboFKDzN7XbVWtoSp9ESm6t
-          bought: '3876.520875'
-          sold: '3876.520875'
-          buy_sell_ratio: 1.0
-          total_volume: '3876.520875'
-          volume_usd: '7.116735893971679'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: EzdQH5zUfTMGb3vwU4oumxjVcxKMDpJ6dB78pbjfHmmb
-          bought: '3897.275661'
-          sold: '3897.275661'
-          buy_sell_ratio: 1.0
-          total_volume: '3897.275661'
-          volume_usd: '7.067562929149658'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 2fWyMU2S5ZJMwq9Ay2bwvnfRfiugkJbjWZ8WqKMtD8my
-          bought: '3772.618069'
-          sold: '3772.618069'
-          buy_sell_ratio: 1.0
-          total_volume: '3772.618069'
-          volume_usd: '7.055414888326782'
-          transaction_count: '6'
-          side_currency_symbol: WSOL
-        - owner: 2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h
-          bought: '3633.552771'
-          sold: '3633.552771'
-          buy_sell_ratio: 1.0
-          total_volume: '3633.552771'
-          volume_usd: '6.886189149351318'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: 4LpH1p3c3g2HaPuRzDqe1mK9yRhtt4P7dEoktSjD9YSs
-          bought: '3626.410889'
-          sold: '3626.410889'
-          buy_sell_ratio: 1.0
-          total_volume: '3626.410889'
-          volume_usd: '6.771087222172364'
-          transaction_count: '1'
-          side_currency_symbol: WSOL
-        - owner: Awch9PiL7nwQqKNjXHzJd1KvTkFtauVqQDSjdUTqe28n
-          bought: '3148.843235'
-          sold: '3148.843235'
-          buy_sell_ratio: 1.0
-          total_volume: '3148.843235'
-          volume_usd: '5.890411174712487'
+          total_volume: '1377.050429'
+          volume_usd: '2.771633085802002'
           transaction_count: '2'
-          side_currency_symbol: degenai
+          side_currency_symbol: WSOL
+        - owner: 2RHinPLcnvVvBh6qPCeKttQH1fboDhpoNPx9mRWV8EN1
+          bought: '1216.176440'
+          sold: '1216.176440'
+          buy_sell_ratio: 1.0
+          total_volume: '1216.176440'
+          volume_usd: '2.4695895601005553'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: FkdDHrM8j8psKbxuwjV1jBKCM2JGPygkj7WCX8sSCzNm
+          bought: '911.760386'
+          sold: '911.760386'
+          buy_sell_ratio: 1.0
+          total_volume: '911.760386'
+          volume_usd: '1.8591897954414673'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: FkdDHrM8j8psKbxuwjV1jBKCM2JGPygkj7WCX8sSCzNm
+          bought: '465.290043'
+          sold: '465.290043'
+          buy_sell_ratio: 1.0
+          total_volume: '465.290043'
+          volume_usd: '0.9188066406250001'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: 5aE4K7f6HTnuPYKFqzkd5gCxR5oJp4VRiivN8awXXaka
+          bought: '116.488388'
+          sold: '116.488388'
+          buy_sell_ratio: 1.0
+          total_volume: '116.488388'
+          volume_usd: '0.23646824442451478'
+          transaction_count: '1'
+          side_currency_symbol: WSOL
+        - owner: CuaN6xuck9sSvUBWqgiW9Tj4HucXtNXHD2KC2JGn7RmU
+          bought: '89.397327'
+          sold: '89.397327'
+          buy_sell_ratio: 1.0
+          total_volume: '89.397327'
+          volume_usd: '0.1802322837230835'
+          transaction_count: '2'
+          side_currency_symbol: WSOL
+        - owner: Baxje9U9FJUUF5k1zmnuR4rbEguLA7kot2gKZ3JBei9c
+          bought: '89.397327'
+          sold: '89.397327'
+          buy_sell_ratio: 1.0
+          total_volume: '89.397327'
+          volume_usd: '0.17966684048566875'
+          transaction_count: '2'
+          side_currency_symbol: Butthole
+        - owner: HuTshmtwcQkWBLzgW3m4uwcmik7Lmz4YFpYcTqMJpXiP
+          bought: '85.090400'
+          sold: '85.090400'
+          buy_sell_ratio: 1.0
+          total_volume: '85.090400'
+          volume_usd: '0.17349016940313722'
+          transaction_count: '2'
+          side_currency_symbol: WSOL
+        - owner: rLsi2DPwRLovHzLV5XYxa8B597bv8w8nX7fZHJJf8uy
+          bought: '1452.672685'
+          sold: '1452.672685'
+          buy_sell_ratio: 1.0
+          total_volume: '1452.672685'
+          volume_usd: '0'
+          transaction_count: '2'
+          side_currency_symbol: LEGIT
         markets: []
 input_trending:
   query: Get trending tokens
 output_trending:
-  response: "**Trending Solana Tokens**\n\nBelow is a concise analysis of the top\
-    \ trending Solana tokens based on the provided data, focusing on key insights\
-    \ rather than raw data repetition.\n\n### **Top 3 Trending Tokens by Trading Volume**\n\
-    \n1. **[Mutumbo](https://solscan.io/token/4StuLHHsHobhBh4BCNhreFtQ5EvSZHvbAMxJ44JWpump)\
-    \ (MUTUMBO)**\n\t* **Total Traded Volume:** 15,315,789.47 WSOL\n\t* **Price Movement:**\
-    \ Significant increase from 5.60e-05 to 0.00237678 WSOL\n\t* **DEX:** Pumpswap\
-    \ (pump_amm)\n2. **[Jabba](https://solscan.io/token/GfYwz7ytcm1hG9r4noq54ha43iJvAdMofyjht7Bgpump)\
-    \ (Jabba)**\n\t* **Total Traded Volume:** 4,835,851.62 WSOL\n\t* **Price Movement:**\
-    \ Increase from 7.75778568339125e-05 to 8.835804990195079e-05 WSOL\n\t* **DEX:**\
-    \ Pumpswap (pump_amm)\n3. **[Gay Bomb](https://solscan.io/token/7aWrHxawgS7q4zgSHED6n6iF7xC9SHWskisxWJ84PUMP)\
-    \ (GAYBOMB)**\n\t* **Total Traded Volume:** 2,403,097.62 WSOL\n\t* **Price Movement:**\
-    \ Sharp decline from 0.00017884726712785767 to 2.3760696042953864e-08 WSOL\n\t\
-    * **DEX:** Raydium (amm_v3)\n\n### **Insights and Observations**\n\n- **Market\
-    \ Dominance:** Pumpswap (pump_amm) dominates the trending tokens list, indicating\
-    \ strong liquidity and user preference on this DEX.\n- **Price Volatility:** Tokens\
-    \ like Mutumbo and Gay Bomb show significant price swings, highlighting the high-risk,\
-    \ high-reward nature of these assets.\n- **Trading Activity:** The top trending\
-    \ tokens are characterized by high trading volumes and a substantial number of\
-    \ trades, suggesting strong market interest.\n\n### **Recommendations"
+  response: '**Trending Solana Tokens**
+
+
+    Below is a concise analysis of the trending Solana tokens based on the provided
+    data. This overview highlights key insights into each token''s performance, focusing
+    on price movements, trading volumes, and market activities.
+
+
+    ### **Token Performance Summary**
+
+
+    | **Token** | **Mint Address** | **Price Change** | **Total Trades** | **Total
+    Traded Volume (WSOL)** |
+
+    | --- | --- | --- | --- | --- |
+
+    | **LISTEN AI** [BHHr3kg75qqgPpw8qdER7po4gwqcXfbnmVVfdGxqPUMP](https://solscan.io/token/BHHr3kg75qqgPpw8qdER7po4gwqcXfbnmVVfdGxqPUMP)
+    | **-58.5%** (8.297e-5 → 3.448e-5) | 42,829 | 2,025,815.50 |
+
+    | **PIKO** [7EyyvkabQf5eEn6MQQrinRDAoxkuadYj6zDTronSpump](https://solscan.io/token/7EyyvkabQf5eEn6MQQrinRDAoxkuadYj6zDTronSpump)
+    | **+37.1%** (0.0015887 → 0.0021759) | 33,779 | 1,456,095.44 |
+
+    | **TKNZ.fun** [49h3yVsDeGeNsUSk1j7qTwSQfT6T6n5brSMd6sjbpump](https://solscan.io/token/49h3yVsDeGeNsUSk1j7qTwSQfT6T6n5brSMd6sjbpump)
+    | **-92.5%** (0.0004585 → 3.416e-8) | 29,104 | 1,308,047.93 |
+
+    | **gorklon rust** [2ivzYvjnKqA4X3dVvPKr7bctGpbxwrXbbxm44TJCpump](https://solscan.io/token/2ivzYvjnKqA4X3dVvPKr7bctGpbxwrX'
   data: &id008
     trending_tokens:
     - currency:
-        Name: mutumbo
-        MintAddress: 4StuLHHsHobhBh4BCNhreFtQ5EvSZHvbAMxJ44JWpump
-        Symbol: MUTUMBO
+        Name: LISTEN AI
+        MintAddress: BHHr3kg75qqgPpw8qdER7po4gwqcXfbnmVVfdGxqPUMP
+        Symbol: LlSTEN
       price:
-        start: 5.604194357866903e-05
-        min5: 5.604194357866903e-05
-        end: 0.002376782398278445
-      dex:
-        ProtocolName: pump_amm
-        ProtocolFamily: Pumpswap
-        ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
-      market:
-        MarketAddress: HqaFjeFEy6rF1aJzxoT7YVgX9AB3Lk2HWKTjxfe1gdX8
-      side_currency:
-        Name: Wrapped Solana
-        MintAddress: So11111111111111111111111111111111111111112
-        Symbol: WSOL
-      makers: 8815
-      total_trades: 60587
-      total_traded_volume: 15315789.469229212
-      total_buy_volume: 7683855.923119101
-      total_sell_volume: 7631933.546110113
-      total_buys: 31634
-      total_sells: 28953
-    - currency:
-        Name: PETCOIN
-        MintAddress: dNA6xRxrGLAZ329KmR7uM8VE7tyKaYALhwehWkWpump
-        Symbol: PETCOIN
-      price:
-        start: 7.107880167959112e-05
-        min5: 7.107880167959112e-05
-        end: 4.394621256330011e-06
-      dex:
-        ProtocolName: pump_amm
-        ProtocolFamily: Pumpswap
-        ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
-      market:
-        MarketAddress: HULfiksdcoyCSZFhAiuKxRAZ2kDNs8pAVqcPZoPSFeJg
-      side_currency:
-        Name: Wrapped Solana
-        MintAddress: So11111111111111111111111111111111111111112
-        Symbol: WSOL
-      makers: 45940
-      total_trades: 46021
-      total_traded_volume: 116265.00913203212
-      total_buy_volume: 53195.11509503489
-      total_sell_volume: 63069.894036997255
-      total_buys: 45647
-      total_sells: 374
-    - currency:
-        Name: PETCOIN
-        MintAddress: HF3nA6JSgytoSc8neRxvB3P9x3yJgpEVrrev8jsSpump
-        Symbol: PETCOIN
-      price:
-        start: 4.766852033904968e-06
-        min5: 4.766852033904968e-06
-        end: 4.759490052107947e-06
-      dex:
-        ProtocolName: pump_amm
-        ProtocolFamily: Pumpswap
-        ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
-      market:
-        MarketAddress: 87MBHroFLW5aaHTu34Xkh72GkMyD9gF4TWccRjWppEjq
-      side_currency:
-        Name: Wrapped Solana
-        MintAddress: So11111111111111111111111111111111111111112
-        Symbol: WSOL
-      makers: 45902
-      total_trades: 45969
-      total_traded_volume: 43865.44548270793
-      total_buy_volume: 21908.378720801502
-      total_sell_volume: 21957.06676190635
-      total_buys: 45610
-      total_sells: 359
-    - currency:
-        Name: PETCOIN
-        MintAddress: ABvrNjWeUw1KeUmDKNS8GX1W654qecyfZ1JM45E8pump
-        Symbol: PETCOIN
-      price:
-        start: 8.492459669911654e-06
-        min5: 8.492459669911654e-06
-        end: 8.94406060402576e-06
-      dex:
-        ProtocolName: pump_amm
-        ProtocolFamily: Pumpswap
-        ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
-      market:
-        MarketAddress: HaNwBALAVDysRoN6mcf9zMcKM1pJJMztRLByurhUdo6D
-      side_currency:
-        Name: Wrapped Solana
-        MintAddress: So11111111111111111111111111111111111111112
-        Symbol: WSOL
-      makers: 43373
-      total_trades: 43450
-      total_traded_volume: 86965.6250370654
-      total_buy_volume: 43564.220483143115
-      total_sell_volume: 43401.40455392229
-      total_buys: 43082
-      total_sells: 368
-    - currency:
-        Name: Pugg
-        MintAddress: H4zej4MPNaxbLdD18yAkhWMPNYTB9FDve46mKV82kmuE
-        Symbol: PUGG
-      price:
-        start: 0.0002845882255958397
-        min5: 0.0002845882255958397
-        end: 0.0002979175577452753
-      dex:
-        ProtocolName: raydium_cp_swap
-        ProtocolFamily: Raydium
-        ProgramAddress: CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C
-      market:
-        MarketAddress: Bj3PHsPc1dt3ae4KcYipQTQ39hN2mjZNgjPamjEGcRJP
-      side_currency:
-        Name: Wrapped Solana
-        MintAddress: So11111111111111111111111111111111111111112
-        Symbol: WSOL
-      makers: 42497
-      total_trades: 42582
-      total_traded_volume: 318292.6357367784
-      total_buy_volume: 159480.4874389191
-      total_sell_volume: 158812.14829785872
-      total_buys: 42005
-      total_sells: 577
-    - currency:
-        Name: mutumbo
-        MintAddress: DvJkWb1SgTsH29eXszPcG3bCRKWesxmtL5gk82E8Pump
-        Symbol: MUTUMBO
-      price:
-        start: 0.000527907792904129
-        min5: 0.000527907792904129
-        end: 0.001019316587369549
+        start: 8.297110229013384e-05
+        min5: 8.297110229013384e-05
+        end: 3.448076888860741e-05
       dex:
         ProtocolName: amm_v3
         ProtocolFamily: Raydium
         ProgramAddress: CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK
       market:
-        MarketAddress: 3u4pDCFNCU1CNRVn9GKtHP5zpgX541NbVMcbfRxQuHnz
+        MarketAddress: 7LzGzebwaLgqLXJay2P9te1GMoerhx28SQ998iYRNa9U
       side_currency:
         Name: Wrapped Solana
         MintAddress: So11111111111111111111111111111111111111112
         Symbol: WSOL
-      makers: 266
-      total_trades: 42024
-      total_traded_volume: 1921798.6103029049
-      total_buy_volume: 966054.2355064764
-      total_sell_volume: 955744.3747964291
-      total_buys: 21031
-      total_sells: 20993
+      makers: 270
+      total_trades: 42829
+      total_traded_volume: 2025815.4960386574
+      total_buy_volume: 1007492.1534273709
+      total_sell_volume: 1018323.3426112866
+      total_buys: 21469
+      total_sells: 21360
     - currency:
-        Name: PIPE
-        MintAddress: 3T721bpRc5FNY84W36vWffxoKs4FLXhBpSaqwUCRpump
-        Symbol: PIPE
+        Name: PIKO
+        MintAddress: 7EyyvkabQf5eEn6MQQrinRDAoxkuadYj6zDTronSpump
+        Symbol: PIKO
       price:
-        start: 0.00015037406480102698
-        min5: 0.00015037406480102698
-        end: 0.00014816278453534069
+        start: 0.0015887187838578836
+        min5: 0.0015887187838578836
+        end: 0.0021759825790751432
       dex:
-        ProtocolName: raydium_amm
+        ProtocolName: amm_v3
         ProtocolFamily: Raydium
-        ProgramAddress: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8
+        ProgramAddress: CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK
       market:
-        MarketAddress: FqhMBGJX6wHL7m2cYxQvhBKoprQguGXx6bzUKLE1qB2F
+        MarketAddress: 48cY76PosWz2xkaAScGkrTfFEA32Vntp4da9P8pq8Y8u
       side_currency:
         Name: Wrapped Solana
         MintAddress: So11111111111111111111111111111111111111112
         Symbol: WSOL
-      makers: 12
-      total_trades: 38759
-      total_traded_volume: 1512.6863237774417
-      total_buy_volume: 697.8401949170584
-      total_sell_volume: 814.8461288603825
-      total_buys: 19349
-      total_sells: 19410
+      makers: 206
+      total_trades: 33779
+      total_traded_volume: 1456095.440801201
+      total_buy_volume: 731874.6133048318
+      total_sell_volume: 724220.8274963686
+      total_buys: 16986
+      total_sells: 16793
     - currency:
-        Name: Jabba
-        MintAddress: GfYwz7ytcm1hG9r4noq54ha43iJvAdMofyjht7Bgpump
-        Symbol: Jabba
+        Name: TKNZ.fun
+        MintAddress: 49h3yVsDeGeNsUSk1j7qTwSQfT6T6n5brSMd6sjbpump
+        Symbol: TKNZ
       price:
-        start: 7.75778568339125e-05
-        min5: 7.75778568339125e-05
-        end: 8.835804990195079e-05
+        start: 0.0004585506869320019
+        min5: 0.0004585506869320019
+        end: 3.416678160219886e-08
+      dex:
+        ProtocolName: amm_v3
+        ProtocolFamily: Raydium
+        ProgramAddress: CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK
+      market:
+        MarketAddress: FmZTR3zbNUif5MWYP87awhupp3eNiGgcRXAyJvtcBwoZ
+      side_currency:
+        Name: Wrapped Solana
+        MintAddress: So11111111111111111111111111111111111111112
+        Symbol: WSOL
+      makers: 312
+      total_trades: 29104
+      total_traded_volume: 1308047.930606349
+      total_buy_volume: 642921.4830057721
+      total_sell_volume: 665126.4476005773
+      total_buys: 14533
+      total_sells: 14571
+    - currency:
+        Name: gorklon rust
+        MintAddress: 2ivzYvjnKqA4X3dVvPKr7bctGpbxwrXbbxm44TJCpump
+        Symbol: gorklon
+      price:
+        start: 0.0007317427293891138
+        min5: 0.0007317427293891138
+        end: 0.0006295547522301066
       dex:
         ProtocolName: pump_amm
         ProtocolFamily: Pumpswap
         ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
       market:
-        MarketAddress: BGKoXNhMjVh5Gjkk8M2PXjak44nJxJ2W7N8AWd82S4xy
+        MarketAddress: BYBYDmUc6Qxbt3tTJ3ovVTAGQcPWQrVePEYUwq2A4pzw
       side_currency:
         Name: Wrapped Solana
         MintAddress: So11111111111111111111111111111111111111112
         Symbol: WSOL
-      makers: 5594
-      total_trades: 35012
-      total_traded_volume: 4835851.621322088
-      total_buy_volume: 2414780.9664674187
-      total_sell_volume: 2421070.65485467
-      total_buys: 17688
-      total_sells: 17324
+      makers: 18770
+      total_trades: 28764
+      total_traded_volume: 1550738.1651187069
+      total_buy_volume: 772456.814603497
+      total_sell_volume: 778281.35051521
+      total_buys: 19083
+      total_sells: 9681
     - currency:
-        Name: gay bomb
-        MintAddress: 7aWrHxawgS7q4zgSHED6n6iF7xC9SHWskisxWJ84PUMP
-        Symbol: GAYBOMB
+        Name: QUANT OF THE UNITED STATES
+        MintAddress: F9PS2ugy3oJMMsAurBxEAV2669GJWsdQWKnb7uJWpump
+        Symbol: QOTUS
       price:
-        start: 0.00017884726712785767
-        min5: 0.00017884726712785767
-        end: 2.3760696042953864e-08
+        start: 0.002502517220408692
+        min5: 0.002502517220408692
+        end: 0.0002302841739949769
+      dex:
+        ProtocolName: pump_amm
+        ProtocolFamily: Pumpswap
+        ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
+      market:
+        MarketAddress: 8G36iWPEB4vDGuKeTTpD2AjxvyNKgwQaxCsiSt1d1oM5
+      side_currency:
+        Name: Wrapped Solana
+        MintAddress: So11111111111111111111111111111111111111112
+        Symbol: WSOL
+      makers: 2178
+      total_trades: 19790
+      total_traded_volume: 3322129.623703808
+      total_buy_volume: 1623192.3435128946
+      total_sell_volume: 1698937.280190915
+      total_buys: 14850
+      total_sells: 4940
+    - currency:
+        Name: elon ma
+        MintAddress: HwcFmaNZmAjJyj4aEJuC52QrSpU9gawFhsJeehEwpump
+        Symbol: elonma
+      price:
+        start: 0.07127696607066608
+        min5: 0.07127696607066608
+        end: 0.014165436691806917
+      dex:
+        ProtocolName: pump_amm
+        ProtocolFamily: Pumpswap
+        ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
+      market:
+        MarketAddress: CNKEQqS9Lszs1WeZ8gb4BBH751AnTy5onJJG3kPaVSMt
+      side_currency:
+        Name: Wrapped Solana
+        MintAddress: So11111111111111111111111111111111111111112
+        Symbol: WSOL
+      makers: 2202
+      total_trades: 18052
+      total_traded_volume: 2584543.411357084
+      total_buy_volume: 1156608.4896213554
+      total_sell_volume: 1427934.9217357284
+      total_buys: 16672
+      total_sells: 1380
+    - currency:
+        Name: elon ma
+        MintAddress: AHX5wENa8b62sdQpA66ufCbxCW7Cqh86K3pAXvWMPUMP
+        Symbol: elonma
+      price:
+        start: 4.8376867623582854e-05
+        min5: 4.8376867623582854e-05
+        end: 2.86333708357394e-07
       dex:
         ProtocolName: amm_v3
         ProtocolFamily: Raydium
         ProgramAddress: CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK
       market:
-        MarketAddress: 8Qbow6ZxrhtqNfrEdaJXUbb72gNZ6EqL4N1BsEeSRqwq
+        MarketAddress: 8wuNEQu1jSEkG5sy5MyK31s3RALpSZQTW9BFevk5iWF
       side_currency:
         Name: Wrapped Solana
         MintAddress: So11111111111111111111111111111111111111112
         Symbol: WSOL
-      makers: 202
-      total_trades: 32341
-      total_traded_volume: 2403097.624672398
-      total_buy_volume: 1193233.9670475952
-      total_sell_volume: 1209863.6576248026
-      total_buys: 16186
-      total_sells: 16155
+      makers: 311
+      total_trades: 17879
+      total_traded_volume: 1276585.0921380096
+      total_buy_volume: 623265.3402590804
+      total_sell_volume: 653319.7518789296
+      total_buys: 8821
+      total_sells: 9058
     - currency:
-        Name: This will run to 500M
-        MintAddress: CPashuYJrk7TreAMUCyyDmTxzBDECHgdXMdJUh6hpump
-        Symbol: 500M
+        Name: ''
+        MintAddress: 9FUXEMsTdLa6QGQzy8ptnEQMdCU4d2Rcae3jf54CPT61
+        Symbol: ''
       price:
-        start: 0.000660035559718765
-        min5: 0.000660035559718765
-        end: 1.9868776341718454e-08
+        start: 0.00031241080836907393
+        min5: 0.00031241080836907393
+        end: 0.0007232836179018203
+      dex:
+        ProtocolName: pump_amm
+        ProtocolFamily: Pumpswap
+        ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
+      market:
+        MarketAddress: 9wU16o3rQTYdFvdykrpRXsJGGexrfdEksyxWq3MXwkT4
+      side_currency:
+        Name: Wrapped Solana
+        MintAddress: So11111111111111111111111111111111111111112
+        Symbol: WSOL
+      makers: 200
+      total_trades: 17646
+      total_traded_volume: 1428053.45404067
+      total_buy_volume: 718466.509801336
+      total_sell_volume: 709586.944239334
+      total_buys: 8991
+      total_sells: 8655
+    - currency:
+        Name: Deep Fried Memes
+        MintAddress: BpRMSjbQqm26f51HYKeBLfKEs43yXUhaKA8DXvCxpump
+        Symbol: fried
+      price:
+        start: 9.412306645147333e-05
+        min5: 9.412306645147333e-05
+        end: 0.0007449637341045305
+      dex:
+        ProtocolName: pump_amm
+        ProtocolFamily: Pumpswap
+        ProgramAddress: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
+      market:
+        MarketAddress: HheMTs1xEyeD514q4bDb2rKQiynC2qHBYWkA1qRFkj8K
+      side_currency:
+        Name: Wrapped Solana
+        MintAddress: So11111111111111111111111111111111111111112
+        Symbol: WSOL
+      makers: 11501
+      total_trades: 17107
+      total_traded_volume: 1127435.7297536929
+      total_buy_volume: 578686.3804063434
+      total_sell_volume: 548749.3493473495
+      total_buys: 10079
+      total_sells: 7028
+    - currency:
+        Name: meowmeowcat
+        MintAddress: 3c7rzFv5cXDcTdpWf3VuJCqZ1ndth4hJFh8xLkFnPUMP
+        Symbol: MEOW
+      price:
+        start: 0.00010661693494439436
+        min5: 0.00010661693494439436
+        end: 8.665963070947031e-05
       dex:
         ProtocolName: amm_v3
         ProtocolFamily: Raydium
         ProgramAddress: CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK
       market:
-        MarketAddress: HTYSvwrjm65D5ReH9Hkg2vnUHAe1PtdKTSEfXsYSE2a9
+        MarketAddress: Fxi3pbfrSLwXMVpbZwHdJoVcJH2QjayGNfYrwJ32B4u5
       side_currency:
         Name: Wrapped Solana
         MintAddress: So11111111111111111111111111111111111111112
         Symbol: WSOL
-      makers: 315
-      total_trades: 30997
-      total_traded_volume: 1792149.5701557223
-      total_buy_volume: 879557.392737181
-      total_sell_volume: 912592.1774185412
-      total_buys: 15465
-      total_sells: 15532
+      makers: 299
+      total_trades: 16292
+      total_traded_volume: 2336777.955312559
+      total_buy_volume: 1165695.5757033862
+      total_sell_volume: 1171082.3796091732
+      total_buys: 8125
+      total_sells: 8167
 input_direct_tool:
   tool: query_token_metrics
   tool_arguments:

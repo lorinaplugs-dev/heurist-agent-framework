@@ -4,7 +4,6 @@ import os
 import uuid
 from typing import Any, Dict, List
 
-import aiohttp
 import pydash as _py
 from dotenv import load_dotenv
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
@@ -20,7 +19,16 @@ class SolWalletAgent(MeshAgent):
     def __init__(self):
         super().__init__()
         self.api_url = "https://mainnet.helius-rpc.com"
+        self.api_key = os.getenv("HELIUS_API_KEY")
+        if not self.api_key:
+            raise ValueError("HELIUS_API_KEY environment variable is required")
+
+        # Set up headers for all API requests
+        self.headers = {"Content-Type": "application/json"}
+
+        # Create a semaphore for rate limiting
         self.request_semaphore = asyncio.Semaphore(2)
+
         self.metadata.update(
             {
                 "name": "SolWallet Agent",
@@ -28,82 +36,12 @@ class SolWalletAgent(MeshAgent):
                 "author": "QuantVela",
                 "author_address": "0x53cc700f818DD0b440598c666De2D630F9d47273",
                 "description": "This agent can query Solana wallet assets and recent swap transactions using Helius API.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about Solana wallet assets and transactions",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw data without LLM explanation",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the wallet data",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured wallet data including assets and transactions",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["Helius"],
                 "tags": ["Solana"],
                 "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Solana.png",
             }
         )
-
-    async def _request(self, method, url, data=None, json=None, headers=None, params=None, timeout=30):
-        """Make a request to the Helius API using a new session for each request with rate limiting"""
-        try:
-            async with self.request_semaphore:  # Use semaphore to limit concurrent requests
-                async with aiohttp.ClientSession() as session:
-                    await asyncio.sleep(0.5)
-
-                    async with session.request(
-                        method,
-                        url,
-                        data=data,
-                        json=json,
-                        headers=headers,
-                        params=params,
-                        timeout=aiohttp.ClientTimeout(total=timeout),
-                    ) as response:
-                        match response.status:
-                            case 200:
-                                return await response.json()
-                            case 429:
-                                logger.warning("Rate limit hit, waiting before retry...")
-                                await asyncio.sleep(2.0)
-                                raise aiohttp.ClientError("Rate limit exceeded")
-                            case _:
-                                # should add better error log
-                                txt = await response.text()
-                                logger.error(txt)
-                                return {}
-
-        except aiohttp.ClientResponseError as e:
-            error_msg = f"HTTP error {e.status}: {e.message}"
-            raise aiohttp.ClientResponseError(e.request_info, e.history, status=e.status, message=error_msg)
-        except aiohttp.ClientError as e:
-            raise aiohttp.ClientError(f"Request failed: {str(e)}")
-
-    async def _post(self, url: str, json: dict):
-        headers = {"Content-Type": "application/json"}
-        return await self._request("POST", url=url, json=json, headers=headers, timeout=10)
-
-    async def _get(self, url: str, params: dict):
-        headers = {"Content-Type": "application/json"}
-        return await self._request("GET", url=url, params=params, headers=headers, timeout=10)
 
     def _format_amount(self, amount: int, decimals: int) -> str:
         """Helper function to format token amounts"""
@@ -184,9 +122,15 @@ class SolWalletAgent(MeshAgent):
     # ------------------------------------------------------------------------
     #                      HELIUS API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
+    async def _rate_limited_request(self, method, url, **kwargs):
+        """Helper method to apply rate limiting to API requests"""
+        async with self.request_semaphore:
+            await asyncio.sleep(0.5)  # Rate limiting delay
+            return await self._api_request(url=url, method=method, **kwargs)
+
     @with_cache(ttl_seconds=600)
     @retry(
-        retry=retry_if_exception_type((aiohttp.ClientError, asyncio.TimeoutError)),
+        retry=retry_if_exception_type(Exception),
         wait=wait_exponential(multiplier=1.0, min=1.0, max=20.0),
         stop=stop_after_attempt(5),
     )
@@ -207,7 +151,13 @@ class SolWalletAgent(MeshAgent):
                     "params": {"mint": token_address, "limit": 1000, "cursor": cursor},
                 }
 
-                data = await self._post(url=f"{self.api_url}/?api-key={os.getenv('HELIUS_API_KEY')}", json=payload)
+                data = await self._rate_limited_request(
+                    "POST", url=f"{self.api_url}/?api-key={self.api_key}", headers=self.headers, json_data=payload
+                )
+
+                if "error" in data:
+                    logger.error(f"API error: {data['error']}")
+                    return []
 
                 if not data.get("result", {}).get("token_accounts"):
                     break
@@ -240,7 +190,7 @@ class SolWalletAgent(MeshAgent):
 
     @with_cache(ttl_seconds=600)
     @retry(
-        retry=retry_if_exception_type((aiohttp.ClientError, asyncio.TimeoutError)),
+        retry=retry_if_exception_type(Exception),
         wait=wait_exponential(multiplier=1.0, min=1.0, max=20.0),
         stop=stop_after_attempt(5),
     )
@@ -264,7 +214,13 @@ class SolWalletAgent(MeshAgent):
                 },
             }
 
-            data = await self._post(url=f"{self.api_url}/?api-key={os.getenv('HELIUS_API_KEY')}", json=payload)
+            data = await self._rate_limited_request(
+                "POST", url=f"{self.api_url}/?api-key={self.api_key}", headers=self.headers, json_data=payload
+            )
+
+            if "error" in data:
+                logger.error(f"API error: {data['error']}")
+                return []
 
             if data is None:
                 return []
@@ -290,11 +246,6 @@ class SolWalletAgent(MeshAgent):
                 [
                     {
                         "token_address": asset["id"],
-                        # "token_img": (
-                        #     asset.get("content", {}).get("files", [{}])[0]
-                        #     if asset.get("content", {}).get("files")
-                        #     else {}
-                        # ).get("cdn_uri", ""),
                         "symbol": asset.get("token_info", {}).get("symbol", ""),
                         "price_per_token": asset.get("token_info", {}).get("price_info", {}).get("price_per_token", 0),
                         "total_holding_value": asset.get("token_info", {}).get("price_info", {}).get("total_price", 0),
@@ -311,7 +262,7 @@ class SolWalletAgent(MeshAgent):
 
     @with_cache(ttl_seconds=600)
     @retry(
-        retry=retry_if_exception_type((aiohttp.ClientError, asyncio.TimeoutError)),
+        retry=retry_if_exception_type(Exception),
         wait=wait_exponential(multiplier=1.0, min=1.0, max=20.0),
         stop=stop_after_attempt(5),
     )
@@ -375,7 +326,7 @@ class SolWalletAgent(MeshAgent):
 
     @with_cache(ttl_seconds=600)
     @retry(
-        wait=wait_exponential(multiplier=1.0, min=1.0, max=20.0),  # Increased wait times
+        wait=wait_exponential(multiplier=1.0, min=1.0, max=20.0),
         stop=stop_after_attempt(5),
     )
     async def get_tx_history(self, owner_address: str) -> Dict:
@@ -385,15 +336,14 @@ class SolWalletAgent(MeshAgent):
         try:
             logger.info(f"Querying transaction history for address: {owner_address}")
 
-            api_key = os.getenv("HELIUS_API_KEY")
-            if not api_key:
-                return {"error": "HELIUS_API_KEY not set in environment variables"}
-
-            params = {"api-key": api_key, "type": ["SWAP"], "limit": 100}
-
+            params = {"api-key": self.api_key, "type": ["SWAP"], "limit": 100}
             url = f"https://api.helius.xyz/v0/addresses/{owner_address}/transactions"
 
-            data = await self._get(url=url, params=params)
+            data = await self._rate_limited_request("GET", url=url, headers=self.headers, params=params)
+
+            if "error" in data:
+                logger.error(f"API error: {data['error']}")
+                return {"error": data["error"]}
 
             if not data:
                 logger.warning(f"No data returned for address: {owner_address}")
@@ -503,6 +453,10 @@ class SolWalletAgent(MeshAgent):
 
                 top_n = function_args.get("top_n", 20)
                 result = await self.analyze_common_holdings_of_top_holders(token_address, top_n)
+
+                if errors := self._handle_error(result):
+                    return errors
+
                 return result
 
             elif tool_name == "get_tx_history":
@@ -511,6 +465,9 @@ class SolWalletAgent(MeshAgent):
                     return {"error": "owner_address is required"}
 
                 result = await self.get_tx_history(owner_address)
+
+                if errors := self._handle_error(result):
+                    return errors
 
                 return result
 

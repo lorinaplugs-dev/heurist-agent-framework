@@ -44,7 +44,7 @@ class MeshClient:
         self,
         api_key: Optional[str] = None,
         base_url: str = "https://sequencer-v2.heurist.xyz",
-        timeout: int = 30,
+        timeout: int = 90,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key or os.getenv("HEURIST_API_KEY")

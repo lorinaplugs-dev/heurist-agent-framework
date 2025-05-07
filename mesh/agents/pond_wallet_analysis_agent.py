@@ -2,8 +2,6 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import requests
-
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
@@ -32,29 +30,6 @@ class PondWalletAnalysisAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes cryptocurrency wallet activities across Ethereum, Solana, and Base networks using the Cryptopond API.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about wallet analysis",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, return only raw data without natural language response",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of wallet analysis",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured wallet analysis data", "type": "dict"},
-                ],
                 "external_apis": ["Cryptopond"],
                 "tags": ["Wallet Analysis"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/CryptoPond.png",
@@ -133,85 +108,71 @@ class PondWalletAnalysisAgent(MeshAgent):
     # ------------------------------------------------------------------------
     #                      CRYPTOPOND API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
-    @with_cache(ttl_seconds=3600)  # Cache for 1 hour
+    @with_cache(ttl_seconds=3600)
     @with_retry(max_retries=3)
     async def analyze_wallet(self, address: str, network: str) -> Dict:
-        """
-        Generic method to analyze wallet across different networks
-        """
-        if network not in self.model_ids:
+        """Analyze a wallet on a specified network."""
+        model_id = self.model_ids.get(network)
+        if not model_id:
             return {"error": f"Unsupported network: {network}"}
-        model_id = self.model_ids[network]
 
-        try:
-            payload = {
-                "req_type": "1",
-                "access_token": self.api_key,
-                "input_keys": [address],
-                "model_id": model_id,
-            }
+        payload = {
+            "req_type": "1",
+            "access_token": self.api_key,
+            "input_keys": [address],
+            "model_id": model_id,
+        }
 
-            response = requests.post(f"{self.base_url}/predict", headers=self.headers, json=payload)
-            response.raise_for_status()
-            result = response.json()
+        result = await self._api_request(
+            url=f"{self.base_url}/predict", method="POST", headers=self.headers, json_data=payload
+        )
+        if "error" in result:
+            return result
 
-            if result.get("code") != 200 or "resp_items" not in result:
-                return {"error": f"API returned unexpected response: {result}"}
-            resp_items = result.get("resp_items", [])
-            if not resp_items or "analysis_result" not in resp_items[0]:
-                return {"error": "No analysis results found in response"}
+        if result.get("code") != 200 or "resp_items" not in result:
+            return {"error": f"API returned unexpected response: {result}"}
 
-            analysis_result = resp_items[0]["analysis_result"]
-            formatted_result = {
-                "network": network,
-                "address": address,
-                "analysis": analysis_result,
-                "updated_at": resp_items[0].get("debug_info", {}).get("UPDATED_AT"),
-            }
+        resp_items = result.get("resp_items", [])
+        if not resp_items or "analysis_result" not in resp_items[0]:
+            return {"error": "No analysis results found in response"}
 
-            return formatted_result
-
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Error analyzing {network} wallet: {str(e)}")
-            return {"error": f"Failed to analyze wallet: {str(e)}"}
-        except Exception as e:
-            logger.error(f"Unexpected error during {network} wallet analysis: {str(e)}")
-            return {"error": f"Unexpected error: {str(e)}"}
+        return {
+            "network": network,
+            "address": address,
+            "analysis": resp_items[0]["analysis_result"],
+            "updated_at": resp_items[0].get("debug_info", {}).get("UPDATED_AT"),
+        }
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
-        """
-        Handle execution of specific tools and return the raw data
-        """
+        """Dispatch tool requests based on tool name."""
         address = function_args.get("address")
         if not address:
             return {"error": "Missing 'address' parameter"}
 
-        if tool_name == "analyze_ethereum_wallet":
-            if not address.startswith("0x"):
-                return {"error": "Invalid Ethereum address format. Address should start with '0x'"}
-            address = address.lower()
-            logger.info(f"Analyzing Ethereum wallet: {address}")
-            result = await self.analyze_wallet(address, "ethereum")
+        tool_map = {
+            "analyze_ethereum_wallet": ("ethereum", True),
+            "analyze_solana_wallet": ("solana", False),
+            "analyze_base_wallet": ("base", True),
+        }
 
-        elif tool_name == "analyze_solana_wallet":
-            logger.info(f"Analyzing Solana wallet: {address}")
-            result = await self.analyze_wallet(address, "solana")
-
-        elif tool_name == "analyze_base_wallet":
-            if not address.startswith("0x"):
-                return {"error": "Invalid Base address format. Address should start with '0x'"}
-            address = address.lower()
-            logger.info(f"Analyzing Base wallet: {address}")
-            result = await self.analyze_wallet(address, "base")
-
-        else:
+        tool = tool_map.get(tool_name)
+        if not tool:
             return {"error": f"Unsupported tool: {tool_name}"}
 
-        errors = self._handle_error(result)
-        if errors:
+        network, requires_0x = tool
+
+        if requires_0x and not address.startswith("0x"):
+            return {"error": f"Invalid {network.capitalize()} address format. Address should start with '0x'"}
+
+        address = address.lower() if requires_0x else address
+        logger.info(f"Analyzing {network.capitalize()} wallet: {address}")
+
+        result = await self.analyze_wallet(address, network)
+
+        if errors := self._handle_error(result):
             return errors
 
         return result

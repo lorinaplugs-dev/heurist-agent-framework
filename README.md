@@ -13,6 +13,7 @@ Grab a Heurist API Key instantly for free by using the code 'agent' while submit
 ## Overview
 
 The Heurist Agent Framework is built on a modular architecture that allows an AI agent to:
+
 - Process text and voice messages
 - Generate images and videos
 - Interact across multiple platforms with consistent behavior
@@ -36,6 +37,7 @@ The Heurist Agent Framework is built on a modular architecture that allows an AI
     - [Tool Management](#tool-management)
     - [External Clients](#external-clients)
   - [Agent Usage and Development Guide](#agent-usage-and-development-guide)
+- [Development Setup](#development-setup)
 - [How to Use GitHub Issues](#how-to-use-github-issues)
 - [License](#license)
 - [Contributing](#contributing)
@@ -61,6 +63,7 @@ The Heurist Agent Framework is built on a modular architecture that allows an AI
   - MCP integration
 
 ## Heurist Mesh
+
 ![mesh](https://github.com/user-attachments/assets/77a2ab3b-e35c-4313-8a5b-a0e751cac879)
 
 **Heurist Mesh** is an open network where AI agents are contributed by the community and used modularly—similar to DeFi smart contracts. Each agent is a specialized unit that can process data, generate reports, or perform actions while collectively forming an intelligent swarm to tackle complex tasks. Each agent is accessible via a unified REST API interface, and can be used in conjunction with any agent framework or application.
@@ -68,6 +71,7 @@ The Heurist Agent Framework is built on a modular architecture that allows an AI
 Want to contribute your own agent? Check out the [Mesh README](./mesh/README.md) for detailed guidelines, examples, and best practices.
 
 ### MCP Support
+
 **Just In:** All Heurist Mesh agents are accessible via MCP! This means you can access them from your favorite MCP client, including [Claude Desktop](https://claude.ai/download), [Cursor](https://www.cursor.com/), and [Windsurf](https://codeium.com/windsurf).
 
 Head to [heurist-mesh-mcp-server](https://github.com/heurist-network/heurist-mesh-mcp-server) to set up a server and give your AI assistant a powerup.
@@ -100,7 +104,6 @@ Head to [heurist-mesh-mcp-server](https://github.com/heurist-network/heurist-mes
 
 [Read the Mesh documentation](./mesh/README.md)
 
-
 ## Heurist Agent Framework Architecture
 
 The framework follows a modular, component-based architecture:
@@ -112,6 +115,7 @@ The framework follows a modular, component-based architecture:
 ### Agent Structure
 
 1. **BaseAgent** (Abstract Base Class)
+
    - Defines the interface and common functionality
    - Manages component initialization and lifecycle
    - Implements core messaging patterns
@@ -169,36 +173,58 @@ Workflows provide higher-level reasoning patterns:
 - **MCPClient**: Client for MCP Protocol for local or remote servers.
 
 ### Agent Usage and Development Guide
-Read the [Agent Usage and Development Guide](./agents/README.md)  
 
+Read the [Agent Usage and Development Guide](./agents/README.md)
+
+## Development Setup
+
+To set up your development environment:
+
+1.  **Install dependencies using uv:**
+
+```bash
+   uv sync
+```
+
+2.  **Activate the virtual environment:**
+
+```bash
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+> [!NOTE]
+> To run a file, you can use either `python <filename>.py` or `uv run <filename>.py`.
 
 ## How to Use GitHub Issues
 
 We encourage the community to open **GitHub issues** whenever you have a new idea or find something that needs attention. When creating an issue, please use our [Issue Template](./.github/ISSUE_TEMPLATE/general_issue_template.md) and select one of the following categories:
 
-1. **Integration Request**  
-   - For requests to integrate with a new data source (e.g., CoinGecko, arXiv) or a new AI use case.  
-   - **Most important** for the community, as these issues help drive the direction of our framework's evolution.  
+1. **Integration Request**
+
+   - For requests to integrate with a new data source (e.g., CoinGecko, arXiv) or a new AI use case.
+   - **Most important** for the community, as these issues help drive the direction of our framework's evolution.
    - If you have an idea but aren't sure how to implement it, open an issue under this label so others can pick it up or offer suggestions.
 
-2. **Bug**  
-   - For reporting errors or unexpected behavior in the framework.  
+2. **Bug**
+
+   - For reporting errors or unexpected behavior in the framework.
    - Provide as much detail as possible (logs, steps to reproduce, environment, etc.).
 
-3. **Question**  
+3. **Question**
+
    - For inquiries about usage, best practices, or clarifications on existing features.
 
-4. **Bounty**  
-   - For tasks with a **reward** (e.g., tokens, NFTs, or other benefits).  
-   - The bounty label indicates that Heurist team or another community member are offering a reward to whoever resolves the issue.  
+4. **Bounty**
+   - For tasks with a **reward** (e.g., tokens, NFTs, or other benefits).
+   - The bounty label indicates that Heurist team or another community member are offering a reward to whoever resolves the issue.
    - **Bounty Rules**:
-     - Make sure to read the issue description carefully for scope and acceptance criteria.  
-     - Once your Pull Request addressing the bounty is merged, we'll follow up on fulfilling the reward.  
+     - Make sure to read the issue description carefully for scope and acceptance criteria.
+     - Once your Pull Request addressing the bounty is merged, we'll follow up on fulfilling the reward.
      - Additional instructions (e.g., contact method) may be included in the issue itself.
 
 ### Picking Up an Issue
 
-- Look for **Integration Requests** or **Bounty** issues if you want to contribute new features or earn rewards.  
+- Look for **Integration Requests** or **Bounty** issues if you want to contribute new features or earn rewards.
 - Feel free to discuss approaches in the comments. If you're ready to tackle it, mention "I'm working on this!" so others know it's in progress.
 
 This process helps us stay organized, encourages community involvement, and keeps development transparent.
@@ -220,7 +246,6 @@ For Heurist Mesh agents or to learn about contributing specialized community age
 ## Support
 
 For support, please open an issue in the GitHub repository or contact the maintainers. Join the Heurist Ecosystem Builder telegram https://t.me/heuristsupport
-
 
 ## Star History
 

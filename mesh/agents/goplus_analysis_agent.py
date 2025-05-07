@@ -1,7 +1,6 @@
 import logging
 from typing import Any, Dict, List
 
-import requests
 from dotenv import load_dotenv
 
 from decorators import monitor_execution, with_cache, with_retry
@@ -21,25 +20,6 @@ class GoplusAnalysisAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can fetch and analyze security details of blockchain token contracts using GoPlus API.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "The query containing token contract address and chain ID or chain name",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, returns only raw data without analysis",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {"name": "response", "description": "Security analysis and explanation", "type": "str"},
-                    {"name": "data", "description": "The security details of the token contract", "type": "dict"},
-                ],
                 "external_apis": ["GoPlus"],
                 "tags": ["Security"],
                 "recommended": True,
@@ -129,11 +109,18 @@ class GoplusAnalysisAgent(MeshAgent):
             }
         ]
 
+    # ------------------------------------------------------------------------
+    #                      GOPLUS API-SPECIFIC METHODS
+    # ------------------------------------------------------------------------
     @monitor_execution()
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def fetch_security_details(self, contract_address: str, chain_id: int = 1) -> Dict:
-        """Fetch security details from GoPlus API"""
+    async def fetch_security_details(self, contract_address: str, chain_id: str = "1") -> Dict[str, Any]:
+        """
+        Fetch security details of a blockchain token contract from GoPlus API.
+        """
+        logger.info(f"Fetching security details for token: {contract_address} on chain: {chain_id}")
+
         try:
             # Handle Solana tokens specifically
             if chain_id == "solana":
@@ -144,12 +131,21 @@ class GoplusAnalysisAgent(MeshAgent):
             params = {"contract_addresses": contract_address}
             headers = {"accept": "*/*"}
 
-            response = requests.get(base_url, params=params, headers=headers)
-            response.raise_for_status()
-            data = response.json()
+            response = await self._api_request(url=base_url, method="GET", params=params, headers=headers)
+
+            if "error" in response:
+                logger.error(f"Error fetching security details: {response['error']}")
+                return {"status": "error", "error": response["error"]}
 
             # Process the response data
-            token_data = data.get("result", {}).get(contract_address.lower(), {})
+            token_data = response.get("result", {}).get(contract_address.lower(), {})
+
+            if not token_data:
+                logger.warning(f"No data found for token: {contract_address} on chain: {chain_id}")
+                return {
+                    "status": "no_data",
+                    "error": f"No data found for token: {contract_address} on chain: {chain_id}",
+                }
 
             essential_security_info = {
                 "token_info": {
@@ -179,34 +175,40 @@ class GoplusAnalysisAgent(MeshAgent):
                     "top_holders": token_data.get("holders", [])[:3],
                 },
             }
-            return essential_security_info
 
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Error fetching security details: {e}")
-            return {"error": f"Failed to fetch security details: {str(e)}"}
+            logger.info(f"Successfully retrieved security details for token: {contract_address}")
+            return {"status": "success", "data": essential_security_info}
+
         except Exception as e:
-            logger.error(f"Unexpected error: {e}")
-            return {"error": f"Unexpected error: {str(e)}"}
+            logger.error(f"Exception in fetch_security_details: {str(e)}")
+            return {"status": "error", "error": f"Failed to fetch security details: {str(e)}"}
 
     @monitor_execution()
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def _fetch_solana_security_details(self, contract_address: str) -> Dict:
-        """Fetch Solana token security details from GoPlus API"""
+    async def _fetch_solana_security_details(self, contract_address: str) -> Dict[str, Any]:
+        """
+        Fetch Solana token security details from GoPlus API.
+        """
+        logger.info(f"Fetching Solana token security details for: {contract_address}")
+
         try:
             base_url = "https://api.gopluslabs.io/api/v1/solana/token_security"
             params = {"contract_addresses": contract_address}
             headers = {"accept": "*/*"}
 
-            response = requests.get(base_url, params=params, headers=headers)
-            response.raise_for_status()
-            data = response.json()
+            response = await self._api_request(url=base_url, method="GET", params=params, headers=headers)
+
+            if "error" in response:
+                logger.error(f"Error fetching Solana token details: {response['error']}")
+                return {"status": "error", "error": response["error"]}
 
             # Process the response data
-            token_data = data.get("result", {}).get(contract_address, {})
+            token_data = response.get("result", {}).get(contract_address, {})
 
             if not token_data:
-                return {"error": f"No data found for Solana token: {contract_address}"}
+                logger.warning(f"No data found for Solana token: {contract_address}")
+                return {"status": "no_data", "error": f"No data found for Solana token: {contract_address}"}
 
             # Extract metadata
             metadata = token_data.get("metadata", {})
@@ -264,29 +266,37 @@ class GoplusAnalysisAgent(MeshAgent):
                     ),
                 },
             }
-            return essential_security_info
 
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Error fetching Solana token details: {e}")
-            return {"error": f"Failed to fetch Solana token details: {str(e)}"}
+            logger.info(f"Successfully retrieved security details for Solana token: {contract_address}")
+            return {"status": "success", "data": essential_security_info}
+
         except Exception as e:
-            logger.error(f"Unexpected error: {e}")
-            return {"error": f"Unexpected error: {str(e)}"}
+            logger.error(f"Exception in _fetch_solana_security_details: {str(e)}")
+            return {"status": "error", "error": f"Failed to fetch Solana token details: {str(e)}"}
 
+    # ------------------------------------------------------------------------
+    #                      TOOL HANDLING LOGIC
+    # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
-        """Handle direct tool calls with proper error handling and response formatting"""
+        """
+        Handle execution of specific tools and return the raw data.
+        """
+        logger.info(f"Handling tool call: {tool_name} with args: {function_args}")
 
         if tool_name != "fetch_security_details":
-            return {"error": f"Unsupported tool '{tool_name}'"}
+            logger.error(f"Unsupported tool: {tool_name}")
+            return {"status": "error", "error": f"Unsupported tool: {tool_name}"}
 
         contract_address = function_args.get("contract_address")
-        chain_id = function_args.get("chain_id", 1)
+        chain_id = function_args.get("chain_id", "1")
 
         if not contract_address:
-            return {"error": "Missing 'contract_address' in tool_arguments"}
+            logger.error("Missing 'contract_address' parameter")
+            return {"status": "error", "error": "Missing 'contract_address' parameter"}
 
         if str(chain_id) not in self.supported_blockchains:
-            return {"error": f"Unsupported chain ID: {chain_id}"}
+            logger.error(f"Unsupported chain ID: {chain_id}")
+            return {"status": "error", "error": f"Unsupported chain ID: {chain_id}"}
 
         logger.info(f"Fetching security details for {contract_address} on chain {chain_id}")
         result = await self.fetch_security_details(contract_address, chain_id)

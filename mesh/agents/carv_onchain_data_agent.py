@@ -1,25 +1,23 @@
-import json
 import logging
 import os
 from typing import Any, Dict, List
 
-import aiohttp
-from dotenv import load_dotenv
-
-from core.llm import call_llm_async
 from decorators import monitor_execution, with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
-load_dotenv()
 
 
 class CarvOnchainDataAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.session = None
         self.api_url = "https://interface.carv.io/ai-agent-backend/sql_query_by_llm"
         self.supported_chains = ["ethereum", "base", "bitcoin", "solana"]
+
+        self.api_key = os.getenv("CARV_API_KEY")
+        if not self.api_key:
+            raise ValueError("CARV_API_KEY environment variable is required")
+        self.headers = {"Content-Type": "application/json", "Authorization": self.api_key}
 
         self.metadata.update(
             {
@@ -28,33 +26,6 @@ class CarvOnchainDataAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can query blockchain metrics of Ethereum, Base, Bitcoin, or Solana using natural language through the CARV API.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about blockchain metrics.",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw data without LLM explanation",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the blockchain metrics",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured blockchain metrics response",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["CARV"],
                 "tags": ["Onchain Data"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Carv.png",
@@ -66,15 +37,6 @@ class CarvOnchainDataAgent(MeshAgent):
                 "large_model_id": "openai/gpt-4o-mini",
             }
         )
-
-    async def __aenter__(self):
-        self.session = aiohttp.ClientSession()
-        return self
-
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if self.session:
-            await self.session.close()
-            self.session = None
 
     def get_system_prompt(self) -> str:
         return """You are a blockchain data analyst that can access blockchain metrics from various blockchain networks.
@@ -116,59 +78,6 @@ class CarvOnchainDataAgent(MeshAgent):
         ]
 
     # ------------------------------------------------------------------------
-    #                       SHARED / UTILITY METHODS
-    # ------------------------------------------------------------------------
-
-    # this has a different signature, that supports anthropic models better.
-    # todo: remove it from here, and edit all the other agents  to just use this one.
-    async def _respond_with_llm(
-        self,
-        query: str,
-        tool_call_id: str,
-        data: dict,
-        temperature: float,
-        tool_name: str = None,
-        tool_args: dict = None,
-    ) -> str:
-        """
-        Reusable helper to ask the LLM to generate a user-friendly explanation
-        given a piece of data from a tool call.
-
-        Args:
-            query: The original user query
-            tool_call_id: The ID of the tool call
-            data: The result data from the tool call
-            temperature: LLM temperature parameter
-            tool_name: The name of the tool that was called (defaults to "query_onchain_data")
-            tool_args: The arguments that were passed to the tool
-        """
-        tool_name = tool_name or "query_onchain_data"
-        tool_args = tool_args or {}
-
-        return await call_llm_async(
-            base_url=self.heurist_base_url,
-            api_key=self.heurist_api_key,
-            model_id=self.metadata["large_model_id"],
-            messages=[
-                {"role": "system", "content": self.get_system_prompt()},
-                {"role": "user", "content": query},
-                {
-                    "role": "assistant",
-                    "content": None,
-                    "tool_calls": [
-                        {
-                            "id": tool_call_id,
-                            "type": "function",
-                            "function": {"name": tool_name, "arguments": json.dumps(tool_args)},
-                        }
-                    ],
-                },
-                {"role": "tool", "content": str(data), "tool_call_id": tool_call_id},
-            ],
-            temperature=temperature,
-        )
-
-    # ------------------------------------------------------------------------
     #                      CARV API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
     @monitor_execution()
@@ -178,24 +87,12 @@ class CarvOnchainDataAgent(MeshAgent):
         """
         Query the CARV API with a natural language question about blockchain metrics.
         """
-        should_close = False
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-            should_close = True
-
         try:
-            # Validate blockchain
             blockchain = blockchain.lower()
             if blockchain not in self.supported_chains:
                 return {
                     "error": f"Unsupported blockchain '{blockchain}'. Supported chains are {', '.join(self.supported_chains)}."
                 }
-
-            # Prepare request
-            headers = {
-                "Content-Type": "application/json",
-                "Authorization": os.getenv("CARV_API_KEY"),
-            }
 
             processed_query = query
             if blockchain not in query.lower():
@@ -205,21 +102,21 @@ class CarvOnchainDataAgent(MeshAgent):
 
             logger.info(f"Querying CARV API for blockchain {blockchain}: {processed_query}")
 
-            async with self.session.post(self.api_url, json=data, headers=headers) as response:
-                if response.status != 200:
-                    error_text = await response.text()
-                    return {"error": f"CARV API error ({response.status}): {error_text}"}
+            response = await self._api_request(
+                url=self.api_url,
+                method="POST",
+                headers=self.headers,
+                json_data=data,
+            )
 
-                result = await response.json()
-                return result
+            if "error" in response:
+                return {"error": response["error"]}
+
+            return response
 
         except Exception as e:
             logger.error(f"Error querying CARV API: {str(e)}")
             return {"error": f"Failed to query blockchain metrics: {str(e)}"}
-        finally:
-            if should_close and self.session:
-                await self.session.close()
-                self.session = None
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC

@@ -3,451 +3,408 @@ natural_language_query:
     query: What are the latest developments in Web3?
     raw_data_only: false
   output:
-    response: '**Web3 News Update - April 17, 2025**
+    response: '**Latest Web3 Developments Summary (as of May 6, 2025)**
 
 
-      ### **Market-Moving Events:**
+      ### **Market-Moving Events**
 
 
-      1. **Babylon''s TVL Drops 32%**: A massive unstaking event saw $1.26 billion
-      in Bitcoin (BTC) withdrawn from the Babylon platform, reducing its Total Value
-      Locked (TVL) by 32%. ([Source: Cointelegraph](https://cointelegraph.com/news/babylon-unstaking-1-billion-tvl-drops-30-percent))
+      1. **Bitcoin Core to Remove OP_RETURN Limit**: Bitcoin developers plan to remove
+      the OP_RETURN limit in the next release, allowing more data to be included in
+      transactions. (Source: CoinDesk, Cointelegraph)
 
-      2. **Solana''s Price Surge**: Solana (SOL) has seen a 40% price increase over
-      the last 10 days, driven by factors like the launch of the first spot Solana
-      ETF in Canada and growing institutional adoption. ([Source: Cointelegraph](https://cointelegraph.com/news/why-is-solana-price-up-this-week))
+      2. **SEC Delays Litecoin ETF, Seeks Public Comments**: The SEC has further delayed
+      the Litecoin ETF, requesting public comments. (Source: CoinDesk)
 
-
-      ### **DeFi News:**
-
-
-      1. **Lombard Finance''s Toolkit Launch**: Lombard Finance has launched a toolkit
-      aimed at unlocking Bitcoin''s $154 billion DeFi opportunity. ([Source: CoinDesk](https://www.coindesk.com/markets/2025/04/17/lombard-finance-launches-toolkit-to-unlock-bitcoin-s-usd154b-defi-opportunity))
-
-      2. **Auradine''s $153M Series C Funding**: Auradine has raised $153 million
-      in a Series C funding round for Bitcoin mining, AI, and data center networking.
-      ([Source: CoinDesk](https://www.coindesk.com/business/2025/04/17/auradine-raises-usd153m-series-c-for-bitcoin-mining-ai-data-center-networking))
+      3. **eToro Aims for $4 Billion Valuation in US IPO**: eToro seeks to raise $500
+      million in its initial public offering, valuing the company up to $4 billion.
+      (Source: Cointelegraph)
 
 
-      ### **Regulation and Adoption:**
+      ### **Regulatory Updates**
 
 
-      1. **Binance Advises Governments on Bitcoin Reserves**: Binance is working with
-      several countries to establish strategic digital asset reserves and formulate
-      crypto asset regulations. ([Source: Cointelegraph](https://cointelegraph.com/news/binance-advises-governments-on-bitcoin-reserves))
+      1. **Florida Drops Strategic Bitcoin Reserve Bills**: Florida''s legislative
+      session ended without passing bills to establish a state crypto reserve. (Source:
+      Cointelegraph, Decrypt)
 
-      2. **Hong Kong Approves Ethereum Staking ETF**: Hong Kong has approved an Ethereum
-      ETF with a staking component, marking a shift in the region''s crypto regulations.
-      ([Source: Decrypt](https://decrypt.co/315216/hong-kong-approves-ethereum-staking-etf))
+      2. **Arizona''s Bitcoin Reserve Legislation Faces Veto**: Arizona''s governor
+      vetoed a bill to create a state Bitcoin reserve, but other bills remain in consideration.
+      (Source: Cointelegraph)
 
-      3. **VanEck''s Onchain Economy ETF Cleared for Launch**: VanEck''s new'
-    data:
-      status: success
-      data:
-        payload:
-          results:
-          - link: https://www.coindesk.com/markets/2025/04/17/lombard-finance-launches-toolkit-to-unlock-bitcoin-s-usd154b-defi-opportunity
-            published: Thu, 17 Apr 2025 12:00:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Lombard co-founder Jacob Phillips (Lombard)
-            title: Lombard Finance Launches Toolkit to Unlock Bitcoin’s $154B DeFi
-              Opportunity
-          - link: https://www.coindesk.com/markets/2025/04/17/xrp-downside-fears-persist-despite-etf-optimism-options-data-show
-            published: Thu, 17 Apr 2025 11:35:57 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: XRP options skew. (Amberdata/Deribit)
-            title: XRP Downside Fears Persist Despite ETF Optimism, Options Data Show
-          - link: https://www.coindesk.com/daybook-us/2025/04/17/crypto-daybook-americas-bitcoin-loses-allure-to-gold-as-economic-concerns-rise
-            published: Thu, 17 Apr 2025 11:15:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Jerome Powell, Federal Reserve
-            title: 'Crypto Daybook Americas: Bitcoin Loses Allure to Gold as Economic
-              Concerns Rise'
-          - link: https://www.coindesk.com/markets/2025/04/17/bitcoin-gold-and-the-minsky-moment-novogratz-on-the-end-of-fiscal-complacency
-            published: Thu, 17 Apr 2025 10:32:59 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Mike Novogratz, Galaxy Founder and CEO, speaks at Consensus 2024
-              (CoinDesk/Shutterstock/Suzanne Cordiero)
-            title: 'Bitcoin, Gold, and the Minsky Moment: Novogratz on the End of
-              Fiscal Complacency'
-          - link: https://www.coindesk.com/business/2025/04/17/auradine-raises-usd153m-series-c-for-bitcoin-mining-ai-data-center-networking
-            published: Thu, 17 Apr 2025 09:05:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: 16:9 Mining rigs in Plattsburgh, NY. (Fran Velasquez/CoinDesk)
-            title: Auradine Raises $153M Series C for Bitcoin Mining, AI Data Center
-              Networking
-          - link: https://cointelegraph.com/news/mantra-om-crash-critical-liquidity-concentration-issues?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:59:30 +0100
-            source: Cointelegraph.com News
-            summary: 'Mantra’s recent token collapse highlights deeper-rooted issues
-              within the crypto industry around fluctuating liquidity levels, creating
-              additional downside volatility over the weekend, which may have exacerbated
-              the token’s crash.The Mantra (OM) token’s price collapsed by over 90%
-              on April 13, from roughly $6.30 to below $0.50, triggering market manipulation
-              allegations among disillusioned investors, Cointelegraph reported.While
-              blockchain analysts are still piecing together the reasons behind the
-              OM collapse, the event highlights critical issues for the crypto industry,
-              according to Gracy Chen, the CEO of cryptocurrency exchange Bitget.“The
-              Om token crash exposed several critical issues that we are seeing not
-              just in OM, but also as an industry,” Chen said during Cointelegraph’s
-              Chainreaction daily X show, adding:“When it’s a token that’s too concentrated,
-              the wealth concentration and the very opaque governance, together with
-              sudden exchange inflows and outflows, [...] combined with the forced
-              liquidation during very low liquidity hours in our industry, created
-              the big drop off.”🎙️ CEXs hit with outages as AWS runs into trouble.
-              The question is, do we need more decentralization? Today, @RKBaggs and
-              @ZVardai are joined by @GracyBitget, CEO of @Bitgetglobal on #CHAINREACTION
-              to unpack the problem!https://t.co/OPoyu1IORC— Cointelegraph (@Cointelegraph)
-              April 15, 2025Related: Google to enforce MiCA rules for crypto ads in
-              Europe starting April 23At least two wallets linked to Laser Digital
-              were among 17 wallets that moved a combined 43.6 million OM tokens —
-              worth about $227 million at the time — to exchanges before the crash,
-              the blockchain analytics platform Lookonchain reported on April 13,
-              citing Arkham Intelligence data.However, Mantra CEO John Mullin denied
-              the allegations related to large-scale token transfers from Mantra investors,
-              Cointelegraph reported on April 14.Mantra released a post-crash statement
-              on April 16, reiterating that the OM crash didn’t involve token sales
-              by the project itself and that the Mantra team continues investigating
-              the incident. The report did not explain the rapid movement of OM tokens
-              to exchanges and subsequent liquidations.Related: UFC boss Dana White
-              becomes VeChain adviser to push blockchain mainstreamExchange movements
-              point to strong “insider dumping” signalWhile the exact reason behind
-              the collapse remains unclear, Mullin attributed the crash to “massive
-              forced liquidations” on centralized exchanges during low-liquidity hours
-              on Sunday.Mullin told an X user that the Mantra team believes one exchange
-              “in particular” is to blame, but said the team was still “figuring out
-              the details,” specifying that the exchange in question is not Binance.
-              “I think OKX was the main exchange being accused of so-called liquidations,”
-              said Chen, adding that the large transfers to multiple exchanges raised
-              significant red flags. She added:“I did look at the onchain data, which
-              revealed that there were millions of OM tokens moved to centralized
-              exchanges. That’s a very strong signal of insider dumping.”Weekend liquidity
-              issues have impacted even major cryptocurrencies like Bitcoin (BTC).The
-              lack of weekend trading volume, combined with Bitcoin’s 24/7 liquidity,
-              resulted in Bitcoin’s correction below $75,000 on Sunday, April 6, Cointelegraph
-              reported.The April 6 correction may have occurred due to Bitcoin being
-              the only large tradable asset over the weekend available for de-risking
-              amid global trade war concerns, Lucas Outumuro, head of research at
-              crypto intelligence platform IntoTheBlock, told Cointelegraph.Magazine:
-              Illegal arcade disguised as … a fake Bitcoin mine? Soldier scams in
-              China: Asia Express'
-            title: Mantra OM token crash exposes ‘critical’ liquidity issues in crypto
-          - link: https://cointelegraph.com/news/why-is-solana-price-up-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:28:34 +0100
-            source: Cointelegraph.com News
-            summary: 'Solana (SOL) has seen a remarkable price surge over the last
-              10 days, climbing 40% from its April 7 low of $95 to around $133 on
-              April 17. The altcoin is up 8% over the last 24 hours.Its daily trading
-              volume has jumped by 41% over the same period to $4.64 billion, reinforcing
-              the intensity of the demand-side activity.SOL/USD daily chart. Source:
-              Cointelegraph/TradingViewSeveral factors are driving the SOL price up
-              today, including:The launch of the first spot Solana ETF in Canada.Growth
-              in Solana network deposits.SOL’s strengthening price technicals are
-              targeting $200.Growing institutional adoption of SolanaInstitutional
-              interest in Solana is accelerating, evidenced by significant recent
-              developments surrounding Solana exchange-traded funds (ETFs).On April
-              16, Canada launched the first spot Solana ETFs in North America, issued
-              by asset managers like 3iQ, Purpose, Evolve, and CI. These ETFs, which
-              include staking options to generate yield, provide traditional investors
-              with regulated exposure to SOL, boosting demand and liquidity. Source:
-              Eric Balchunas3iQ’s ETF, for instance, leverages Figment as a staking
-              provider to enhance returns, signaling confidence in Solana’s infrastructure.Additionally,
-              real estate fintech firm Janover doubled its Solana holdings to 163,651
-              SOL, valued at $21.2 million, after purchasing 80,567 SOL for $10.5
-              million on April 15. Janover’s strategy, inspired by MicroStrategy’s
-              Bitcoin playbook, includes staking and potentially running validators,
-              reflecting its confidence in Solana’s long-term value.These moves underscore
-              Solana’s growing appeal as a corporate treasury asset and investment
-              vehicle.Increased Solana network inflowsSolana’s network activity has
-              surged, driving capital inflows. Crypto market participants have bridged
-              more than $120 million in liquidity from other blockchains to Solana
-              over the last 30 days, according to data from deBridge. The highest
-              amount was transferred from Ethereum at $41.5 million, followed by a
-              $37.3 million influx from Arbitrum. Meanwhile, Base, BNB Chain, and
-              Sonic users moved $16 million, $14 million, and $6.6 million, respectively.Total
-              transferred amount from other chains to Solana. Source: deBridgeThe
-              current liquidity influx to Solana coincides with the return of double-digit
-              price rallies from memecoins as Popcat (POPCAT), Fartcoin (FARTCOIN),
-              and Bonk (BONK) rose 50%, 26% and 13%, respectively, over the past seven
-              days.Solana memecoins performance. Source: CoinGeckoFurther analysis
-              reveals that the total value locked (TVL) on Solana has increased by
-              12% over the last seven days to rest at $7.08 billion on April 17, pulling
-              ahead of competitors such as Tron, Base, and Berachain, according to
-              data from DefiLlama. Related: Solana rallies 20% against Ethereum, but
-              is $300 SOL price within reach?Promising signs for Solana include a
-              30% increase in deposits on Sanctum, a liquid staking application, and
-              15% growth on Jito and Jupiter. These inflows and growing TVL reflect
-              heightened investor optimism and network adoption, supporting SOL’s
-              recovery from a 14-month low below $100.SOL price validates falling
-              wedge patternSOL price technicals, meanwhile, gained momentum after
-              breaking out of a falling wedge pattern.A falling wedge is a bullish
-              reversal pattern in technical analysis comprising two converging trend
-              lines connecting lower lows and lower highs. The pattern resolves when
-              the price breaks above the upper trendline, hinting at a price rally.
-              After rebounding from a multi-year support trendline near $95, SOL broke
-              above the upper trending line of the wedge at $120, with traders eying
-              the technical target of the wedge at $200, representing a 50% increase
-              from the current price.SOL/USD daily chart. Source: Cointelegraph/TradingViewThe
-              relative strength index (RSI) has increased from 33 to 55 since April
-              7, indicating an increasing bullish momentum.However, to sustain the
-              ongoing recovery, Solana price has to first hold above the 50-day simple
-              moving average (SMA), currently at $130, and then overcome the resistance
-              between $160 and $180, where the 100-day and 200-day SMAs are.As Contelegraph
-              reported, a decisive close above the 50-EMA ($135) will increase the
-              likelihood of a rally toward the aforementioned targets. This article
-              does not contain investment advice or recommendations. Every investment
-              and trading move involves risk, and readers should conduct their own
-              research when making a decision.'
-            title: Why is Solana (SOL) price up today?
-          - link: https://cointelegraph.com/news/polygon-jio-web3-blockchain-india-decentralization?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:20:21 +0100
-            source: Cointelegraph.com News
-            summary: 'As Polygon lays the groundwork for mainstream Web3 adoption
-              in India by bringing blockchain access to over 450 million Reliance
-              Jio users, it remains focused on balancing speed, scalability and affordability,
-              without compromising on decentralization.Polygon is working with Jio,
-              a telecom giant owned by India’s richest man, Mukesh Ambani, to find
-              ways to infuse blockchain technology into its existing services. The
-              duo is currently adding blockchain-based capabilities to the JioSphere
-              web browser, which would have been expensive, cumbersome and time-consuming
-              via traditional methods.“We’re building at an insane pace, onboarding
-              massive partners, and pushing blockchain into the mainstream, but with
-              that growth comes the responsibility to make sure we’re doing it the
-              right way,” Polygon’s co-founder, Sandeep Nailwal, said while discussing
-              Polygon’s India-focused initiatives with Cointelegraph. Preserving decentralization
-              while ensuring system scalability“Scalability and decentralization don’t
-              have to be either-or, and that’s exactly the balance we’re focused on
-              at Polygon,” Nailwal said as he underscored the importance of keeping
-              the core values of blockchain intact: security, transparency and decentralization.At
-              the same time, Nailwal revealed that Polygon is investing heavily in
-              zero-knowledge technology to make scaling more seamless across the ecosystem.
-              “The goal is to give developers and users the best of both worlds: faster,
-              cheaper transactions without compromising trust or decentralization,”
-              he added.As a result of delivering the combination of low fees, fast
-              transactions and decentralized security, Polygon is already powering
-              some of the most active use cases in Web3, from stablecoin payments
-              on Polygon PoS to real-world tokenization with major institutions: “The
-              key challenge is making blockchain as seamless and accessible as Web2
-              without compromising what makes it special. That’s why we’re all-in
-              on ZK technology and Agglayer, which let us scale while keeping the
-              ecosystem trustless and interoperable.”Bringing blockchain tech to millions
-              of usersAccording to Nailwal, a one-size-fits-all approach does not
-              work when onboarding 450 million users from India’s diverse population.
-              “We’ll be working closely with Jio to develop use cases that truly resonate
-              with their users, and gradually onboard them onto the chain based on
-              these real-world applications,” he added.Nailwal said that developers
-              never have to compromise on the fundamentals, as Polygon’s infrastructure
-              can scale without sacrificing what makes blockchain powerful in the
-              first place:“What excites me most is that we''re moving beyond technical
-              discussions about blockchain to solving real problems for real people.
-              These are the use cases that will drive the next wave of adoption.”“At
-              the end of the day, it’s about more than just technology. We’re here
-              to create a decentralized future that billions of people can actually
-              use. And while that’s a massive challenge, it’s also what excites me
-              the most,” Nailwal said.Related: Indian town adopts Avalanche blockchain
-              for tamper-proof land recordsReal-world problem solving will drive the
-              next wave of adoptionRising threats driven by artificial intelligence
-              tools, including deepfakes and other misinformation campaigns, are another
-              use case blockchain technology can help solve. Nailwal said that the
-              escalating threat of misinformation and growing consumer insistence
-              on trusted sources will eventually result in an uptick of blockchain-based
-              verification tools.Additionally, Nailwal highlighted the growing relevance
-              of Polymarket, a cryptocurrency-based prediction market, in mainstream
-              finance and reporting. “Polymarket’s success is exactly what we’ve been
-              working toward,” he said, adding:“Prediction markets are proving to
-              be incredibly valuable tools for finance, risk assessment, journalism
-              and even governance. They pull in insights from a wide range of sources,
-              often making them more reliable than traditional polling.”Nailwal is
-              placing his full bet on blockchain’s immutable nature to transform economic
-              forecasting, policy-making and journalism, among others.Magazine: Your
-              AI ‘digital twin’ can take meetings and comfort your loved ones'
-            title: 'Polygon’s Nailwal: Jio partnership to drive real-world Web3 adoption
-              for 450M users'
-          - link: https://cointelegraph.com/news/babylon-unstaking-1-billion-tvl-drops-30-percent?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:05:53 +0100
-            source: Cointelegraph.com News
-            summary: 'Bitcoin staking protocol Babylon saw $1.26 billion in BTC unstaked
-              from its platform, reducing the protocol’s total value locked by 32%.
-              On April 17, blockchain analytics firm Lookonchain flagged several addresses
-              that had unstaked a total of 14,929 Bitcoin (BTC) from the staking platform.
-              The security firm flagged four addresses that had unstaked 299 BTC,
-              499 BTC, 1,000 BTC and 13,129 BTC. One address held a majority of the
-              unstaked assets worth $1.1 billion. With BTC prices hovering at around
-              $84,400, the total unstaked BTC was worth about $1.26 billion.The unstaking
-              event saw Babylon’s total value locked (TVL) drop by 32%. According
-              to data tracker DefiLlama, Babylon’s TVL declined from $3.97 billion
-              to $2.68 billion after the unstaking.Source: LookonchainUnstaked Bitcoin
-              may be “staked back” to Babylon Community members are speculating on
-              who was behind the unstaking. One X user suspected that the Bitcoin
-              may belong to the Chinese government, while another said the move may
-              simply be a rotation, risk-off, or a trader getting liquid.While it’s
-              unclear who’s behind the four addresses cited by Lookonchain, the fund
-              movements could be related to a transition initiated by the decentralized
-              finance (DeFi) protocol Lombard Finance. At the time of the unstaking,
-              Babylon Labs retweeted an announcement from Lombard, saying it was unstaking
-              Bitcoin as part of a transition to a new set of finality providers.
-              Lombard Finance said it timed the unstaking with the end of Babylon’s
-              phase 1 cap 1 on April 24 so users would not miss out on rewards. The
-              protocol said it would stake the assets back. “All of this BTC will
-              be staked back into Babylon as soon as the unbonding is complete,” Lombard
-              Finance wrote. Cointelegraph reached out to Babylon Labs for comments
-              but did not get a response by publication.Related: Bitcoin L2 ’honeymoon
-              phase’ is over, most projects will fail — Muneeb AliBitcoin unstaking
-              follows BABY airdropThe massive unstaking event follows a Babylon airdrop
-              for early adopters. On April 3, Babylon announced the details of its
-              early adopters airdrop program. The airdrop was allocated for its Phase
-              1 stakers, non-fungible token (NFT) holders and developers. The protocol
-              allocated 600 million BABY tokens for the airdrop event. Following the
-              airdrop, $21 million in BTC was unstaked from the protocol. Bitlayer
-              co-founder Kevin He previously told Cointelegraph that this was a common
-              short-term market behavior representing early redemption. Babylon is
-              one of the largest Bitcoin DeFi players in the space, with a TVL reaching
-              over $6 billion in December. Babylon co-founder Fisher Yu previously
-              told Cointelegraph that the platform allows staking to be a native use
-              case for Bitcoin, eliminating the need to trust another party while
-              staking. Magazine: Your AI ‘digital twin’ can take meetings and comfort
-              your loved ones'
-            title: Babylon total value locked drops 32% as wallets unstake $1.2B in
-              Bitcoin
-          - link: https://cointelegraph.com/news/binance-advises-governments-on-bitcoin-reserves?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 11:11:09 +0100
-            source: Cointelegraph.com News
-            summary: 'Cryptocurrency exchange Binance is involved in discussions on
-              establishing strategic digital asset reserves with several countries,
-              its CEO, Richard Teng, reportedly said.Binance has been advising multiple
-              governments on establishing strategic Bitcoin (BTC) reserves and formulating
-              crypto asset regulations, Teng said in an interview with the Financial
-              Times on April 17.“We have actually received quite a number of approaches
-              by a few governments and sovereign wealth funds on the establishment
-              of their own crypto reserves,” Teng told the FT.Teng did not identify
-              any countries but said that the United States is “way ahead on that
-              front.”US fuels global crypto reserve spreeAccording to Teng, the main
-              reason for governments approaching Binance for help in handling potential
-              strategic reserves is the new crypto-friendly agenda in the US.Teng
-              referred to key US crypto policy developments, such as discussions around
-              creating a national Bitcoin reserve and digital asset stockpile. Earlier
-              this year, Trump signed an executive order to establish a Strategic
-              Bitcoin Reserve seeded with BTC forfeited in federal criminal and civil
-              cases.Binance founder Changpeng Zhao (on the left) next to Pakistan’s
-              deputy prime minister Mohammad Ishaq Dar and Pakistan Crypto Council
-              CEO Bilal bin Saqib. Source: Pakistan governmentWhile governments of
-              Pakistan and Kyrgyzstan have announced collaboration with Binance and
-              former CEO Changpeng Zhao on crypto regulations in the past few weeks,
-              none of the jurisdictions mentioned crypto reserve plans on their agenda.Binance
-              shifts stance on headquartersAs Binance deepens its involvement in efforts
-              to help countries set up crypto reserves and regulations, it appears
-              to have shifted away from its no-formal-headquarters approach under
-              Zhao.According to Teng, Binance is “working very hard” on plans for
-              a global headquarters for the exchange.Related: Crypto Biz: Ripple’s
-              ‘defining moment,’ Binance’s ongoing purge“It requires serious deliberation
-              and the board and the senior management are spending a lot of time doing
-              the evaluation,” Teng reportedly said, adding: “Hopefully we are able
-              to announce our intentions on that front.”Source: Changpeng “CZ” ZhaoIn
-              2019, Zhao said that offices and headquarters are “old concepts like
-              SMS and MMS.”The shift comes as more jurisdictions adopt clearer frameworks
-              for regulating crypto businesses. Binance was subject to heavy scrutiny
-              and investigations by multiple governments in 2020.Cointelegraph approached
-              Binance for comment regarding its crypto policy collaboration with governments
-              worldwide, but had not received a response by the time of publication.Magazine:
-              How crypto laws are changing across the world in 2025'
-            title: Binance helps countries with Bitcoin reserves, crypto policies,
-              says CEO
-          - link: https://decrypt.co/314700/how-solana-copy-trading-platform-odinbot-is-achieving-zero-block-latency
-            published: Thu, 17 Apr 2025 12:01:02 +0000
-            source: Decrypt
-            summary: The Solana copy trading bot has focused on speed, with a claimed
-              15% of trades completed in the same block as the mirrored wallet.
-            title: How Solana Copy Trading Platform Odinbot is Achieving ‘Zero Block
-              Latency’
-          - link: https://decrypt.co/315244/secret-service-canadian-officials-disrupt-4-3m-ethereum-approval-phishing-scam
-            published: Thu, 17 Apr 2025 11:22:57 +0000
-            source: Decrypt
-            summary: The operation reached out to Ethereum wallet holders who had
-              been compromised, whether or not they had already lost crypto.
-            title: Secret Service, Canadian Officials Disrupt $4.3M Ethereum “Approval
-              Phishing” Scam
-          - link: https://decrypt.co/315224/pump-fun-co-founder-says-no-plan-to-launch-token-speaks-out-against-base-promoted-meme-coin
-            published: Thu, 17 Apr 2025 07:22:32 +0000
-            source: Decrypt
-            summary: 'After a Base-promoted memecoin 90% crashed, Pump.fun seized
-              an opportunity to tell its community: no stealth coins, no hype-fueled
-              drops.'
-            title: Pump.Fun Co-Founder Says No Plan to Launch Token, Speaks Out Against
-              Base-Promoted Meme Coin
-          - link: https://decrypt.co/315216/hong-kong-approves-ethereum-staking-etf
-            published: Thu, 17 Apr 2025 06:59:40 +0000
-            source: Decrypt
-            summary: Hong Kong is changing its tune following a new law, approving
-              for the second time an Ethereum ETF with a staking component.
-            title: Hong Kong Approves Latest Ethereum Staking ETF as New Rules Take
-              Root
-          - link: https://decrypt.co/315213/a16z-sec-update-crypto-custody-rules-registered-investment-advisers
-            published: Thu, 17 Apr 2025 05:37:48 +0000
-            source: Decrypt
-            summary: A16z has penned a letter to the SEC calling for revised custody
-              rules to allow RIAs to hold crypto assets directly.
-            title: A16z Calls on SEC to Update Crypto Custody Rules for Registered
-              Investment Advisers
-          - link: https://cryptoslate.com/coinbase-backed-base-draws-fire-for-role-in-pump-and-dump-style-content-coin-token-launch/
-            published: Thu, 17 Apr 2025 10:50:05 +0000
-            source: CryptoSlate
-            summary: Coinbase-backed Layer-2 network Base is under fire from the crypto
-              community after promoting a so-called “Content Coin” that lost nearly
-              all its value shortly after launch. The controversy began on April 16
-              when Base shared a tokenized version of its “Base is for Everyone” post
-              on Zora, a decentralized content-sharing platform, through its official
-              X […] The post Coinbase-backed Base draws fire for role in ‘pump-and-dump’
-              style ‘Content Coin’ token launch appeared first on CryptoSlate.
-            title: Coinbase-backed Base draws fire for role in ‘pump-and-dump’ style
-              ‘Content Coin’ token launch
-          - link: https://cryptoslate.com/cz-says-he-cant-tell-the-difference-in-ai-video-of-himself/
-            published: Thu, 17 Apr 2025 10:33:05 +0000
-            source: CryptoSlate
-            summary: Changpeng “CZ” Zhao, former CEO of Binance, stated Thursday that
-              he had encountered an AI-generated video that replicated his voice so
-              accurately that he could not distinguish it from a real recording. The
-              post, shared via X, featured an AI voice-over of Zhao speaking Mandarin,
-              matching his facial movements with a precision he described as […] The
-              post AI deepfake perfectly clones ex-Binance CEO CZ’s voice, reigniting
-              fraud fears appeared first on CryptoSlate.
-            title: AI deepfake perfectly clones ex-Binance CEO CZ’s voice, reigniting
-              fraud fears
-          - link: https://cryptoslate.com/insights/bitcoin-historically-the-best-performing-asset-60-days-after-major-global-crisis/
-            published: Thu, 17 Apr 2025 08:36:40 +0000
-            source: CryptoSlate
-            summary: Bitcoin has delivered the strongest 60-day returns following
-              major global disruptions since 2020, outperforming both equities and
-              gold across several high-volatility periods. The top digital asset posted
-              an average 37% two‑month return across events since 2020, versus 3.5%
-              for the equity gauge and 6.2% for gold. BlackRock data shared by Bitcoin
-              analyst and Marathon Digital advisor […] The post Bitcoin historically
-              the best performing asset 60 days after major global crisis appeared
-              first on CryptoSlate.
-            title: Bitcoin historically the best performing asset 60 days after major
-              global crisis
-          - link: https://cryptoslate.com/short-term-holder-supply-sees-profitability-crash-to-2-as-tariff-fears-bite/
-            published: Thu, 17 Apr 2025 00:00:51 +0000
-            source: CryptoSlate
-            summary: 'Short‑term holder supply in profit measures the share of coins
-              held for fewer than 155 days whose last on‑chain movement occurred at
-              a price below the current spot. Since these coins are statistically
-              the most mobile, the metric is an effective thermometer for near‑term
-              selling pressure: when the percentage is high, a larger share of speculative
-              […] The post Short-term holder supply sees profitability crash to 2%
-              as tariff fears bite appeared first on CryptoSlate.'
-            title: Short-term holder supply sees profitability crash to 2% as tariff
-              fears bite
-          - link: https://cryptoslate.com/vanecks-onchain-economy-etf-node-cleared-for-may-14-launch/
-            published: Wed, 16 Apr 2025 23:00:16 +0000
-            source: CryptoSlate
-            summary: VanEck received regulatory effectiveness for its new Onchain
-              Economy ETF, an actively managed fund designed to give investors broad
-              exposure to companies powering the digital asset ecosystem. Regulatory
-              effectiveness means the SEC has approved the fund’s registration, allowing
-              it to begin offering shares to the public. Matthew Sigel, VanEck’s head
-              of digital assets research and […] The post VanEck’s Onchain Economy
-              ETF ‘NODE’ cleared for May 14 launch appeared first on CryptoSlate.
-            title: VanEck’s Onchain Economy ETF ‘NODE’ cleared for May 14 launch
+      3. **Kenyan Court Orders Sam Altman''s Crypto Project to Delete Biometric User
+      Data**: The project faces global scrutiny, with Kenya and Indonesia taking action
+      against it. (Source: Decrypt)
+
+      4. **Democratic Opposition Threatens GENIUS Act, Jeopardizing 2025 Crypto Agenda**:
+      Resistance from Democrats may hinder the passage of the stablecoin regulation
+      bill. (Source: CryptoSlate)
+
+
+      ### **Industry Developments**
+
+
+      1. **Ripple to Expand XRP Markets Report as Institutional Usage Jumps**: Ripple
+      will enhance its quarterly report due to increased institutional engagement.
+      (Source: CoinDesk)
+
+      2. **Ripple''s RLUSD in Focus Amid $25M Pledge to US Educational Initiatives**:
+      Ripple''s stablecoin gains attention as the company commits to educational initiatives.
+      (Source: CoinDesk)
+
+      3. **Spark Commits Additional $1 Billion to Tokenized Treasuries**: Spark''s
+      total deployment in tokenized U.S. Treasuries now stands at $2.4 billion. (Source:
+      Decrypt)
+
+      4. **VanEck Files First BNB ETF Application in the US**: If approved, the ETF
+      would list on a national exchange, marking a first for BNB in the US market.
+      (Source: CryptoSlate)
+
+
+      ### **Notable Mentions**
+
+
+      1'
+    data: &id001
+      payload:
+        results:
+        - link: https://www.coindesk.com/tech/2025/05/06/bitcoin-developers-plan-op_return-removal-in-next-release
+          published: Tue, 06 May 2025 06:25:22 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: Bitcoin Developers Plan OP_RETURN Removal in Next Release
+        - link: https://www.coindesk.com/markets/2025/05/06/ripples-rlusd-in-focus-as-firm-pledges-25m-to-us-educational-initiatives
+          published: Tue, 06 May 2025 06:14:04 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: Ripple’s RLUSD in Focus as Firm Pledges $25M to U.S. Educational
+            Initiatives
+        - link: https://www.coindesk.com/markets/2025/05/06/ripple-to-expand-its-quarterly-xrp-markets-report-as-institutional-usage-jumps
+          published: Tue, 06 May 2025 04:34:18 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: Ripple to Expand Its Quarterly XRP Markets Report as Institutional
+            Usage Jumps
+        - link: https://www.coindesk.com/policy/2025/05/05/sec-further-delays-litecoin-etf-requests-public-comments
+          published: Tue, 06 May 2025 00:54:31 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: SEC Further Delays Litecoin ETF, Requests Public Comments
+        - link: https://www.coindesk.com/news-analysis/2025/05/05/trumps-ties-make-cryptos-democrat-allies-stomp-brakes-on-bills
+          published: Mon, 05 May 2025 21:43:21 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: Trump’s Ties Make Crypto’s Democrat Allies Stomp Brakes on Bills
+        - link: https://cointelegraph.com/news/bitcoin-core-unilaterally-remove-controversial-op-return-limit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 07:04:53 +0100
+          source: Cointelegraph.com News
+          summary: 'Bitcoin Core developers have decided to remove a limit on transaction
+            data in the next network upgrade, enabling more data to be included in
+            a more efficient way. “Bitcoin Core’s next release will, by default, relay
+            and mine transactions whose OP_RETURN outputs exceed 80 bytes and allow
+            any number of these outputs,” read the announcement on GitHub by Bitcoin
+            developer Greg Sanders on May 5. The long-standing limit was originally
+            a “gentle signal that block space should be used sparingly for non-payment
+            proof of publication data,” has outlived its utility, he added. The proposal
+            (PR 32359) was created by Bitcoin pioneer Peter Todd at the request of
+            Chaincode Labs. OP_RETURN is a special type of Bitcoin (BTC) transaction
+            output that allows storing small amounts of data on the blockchain, popularized
+            during the ordinals inscriptions craze in early 2024.Unlike regular transaction
+            outputs, OP_RETURN outputs are not spendable and don’t bloat unspent transaction
+            outputs (UTXOs).The original limit is no longer effective as people found
+            ways around it, such as using fake output addresses, which are actually
+            worse for the network, while some mining services were already ignoring
+            the limit, said Sanders. “Large-data inscriptions are happening regardless
+            and can be done in more or less abusive ways; the cap merely channels
+            them into more opaque forms that cause damage to the network.” Related:
+            Bitcoin block size could grow to 4 MB with inscriptions: ResearchBenefits
+            of removing the limit include a cleaner UTXO set, or database of spendable
+            outputs, more consistent behavior across the network, and better alignment
+            with how Bitcoin is actually being used, he added. Three possible paths
+            were considered: keeping the cap, raising the cap and removing the cap,
+            which was ultimately decided upon after earning “broad, though not perhaps
+            unanimous, support.” A controversial change to Bitcoin “Many users find
+            this to be an undesirable change for a number of reasons,” said Bitcoiner
+            Samson Mow on X on May 5. He added that users “can refuse to upgrade and
+            stay on 29.0 or run another implementation” of the network. Critics said
+            that the proposal was introduced without a proper consensus process. “I
+            think one thing is pretty clear, there is no consensus at the moment on
+            this OP_RETURN issue,” said Ten31 Fund managing partner Marty Bent.Some
+            also expressed concerns about deprioritizing Bitcoin’s financial utility
+            and raised questions about undisclosed conflicts of interest.Critics of
+            OP_RETURN limit removal. Source: moonsettlerMagazine: Bitcoin to $1M ‘by
+            2029,’ CIA tips its hat to Bitcoin: Hodler’s Digest'
+          title: Bitcoin Core to unilaterally remove controversial OP-Return limit
+        - link: https://cointelegraph.com/news/celsius-mashinsky-lashes-govt-death-in-prison-sentence?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 07:01:33 +0100
+          source: Cointelegraph.com News
+          summary: 'Alex Mashinsky, the founder and former CEO of bankrupt crypto
+            lending platform Celsius, has blasted the government''s 20-year “venom-laced”
+            sentence request, declaring it a “death-in-prison sentence.”The US Department
+            of Justice requested Mashinsky receive at least 20 years behind bars in
+            the May 8 sentencing for his role in misleading Celsius users and profiting
+            from the price manipulation of Celsius (CEL), which would make the 59-year-old
+            79 if he serves the whole sentence.Lawyers acting for Mashinsky argued
+            in a May 5 reply memorandum filed in a New York district court that he
+            should receive no more than 366 days, because the DOJ hasn''t taken into
+            account his status as a nonviolent first-time offender with a previously
+            unblemished 30-year history in business. “The government''s venom-laced
+            submission recasts this case as one involving a predator with an intent
+            to target victims, harm them, and steal their money,” they said.“It concludes
+            by recommending that a first time, nonviolent offender who pled guilty
+            and accepts responsibility receive a death-in-prison sentence.”Lawyers
+            acting for Mashinsky argue the DOJ has ignored their client''s background
+            in its sentencing request. Source: Court ListenerMashinsky pleaded guilty
+            to two out of seven charges As part of a plea agreement, Mashinsky pleaded
+            guilty in December 2024 to commodities fraud and manipulating the price
+            of CEL, earning $48 million by selling his holdings before Celsius collapsed
+            in June 2022. Prosecutors initially filed seven charges in July 2023.Lawyers
+            acting for Mashinsky allege the DOJ’s push for a 20-year sentence is because
+            their client is unwilling to “capitulate to the government’s exaggerated
+            characterizations of his actions,” specifically that he was a “fraud from
+            the get-go.” “Alex is inserted as the scapegoat for every corporate action,
+            every group decision, every unanimous vote, every market fluctuation,
+            and every employee''s watercooler speculation,” they said.As part of its
+            April 28 sentencing request, the DOJ said Mashinsky’s guilty plea showed
+            that his crimes were deliberate, calculated decisions to lie, deceive
+            and steal.Days earlier on April 23, US federal prosecutors also filed
+            statements from hundreds of victims who lost money due to the Celsius
+            collapse. They detailed how some had entrusted their life savings to the
+            protocol, believing Mashinsky’s assurances that it was safe.Related: What
+            do crypto users want to happen to Alex Mashinsky?Celsius filed for Chapter
+            11 bankruptcy on July 13, 2022, owing $4.7 billion to creditors after
+            halting withdrawals in June, citing volatile market conditions.In November
+            2023, a US bankruptcy court approved Celsius'' restructuring plan to repay
+            customers, and in August 2024, $2.53 billion was paid to 251,000 creditors.Former
+            Celsius chief revenue officer Roni Cohen-Pavon also pleaded guilty in
+            September 2023 to similar charges, but his Dec. 11 sentencing has been
+            delayed until after Mashinsky is sentenced.Magazine: Crypto wanted to
+            overthrow banks, now it’s becoming them in stablecoin fight'
+          title: Celsius’ Mashinsky lashes out at ‘death-in-prison sentence’
+        - link: https://cointelegraph.com/news/etoro-us-ipo-4-billion-valuation-500-million-raise?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 06:51:30 +0100
+          source: Cointelegraph.com News
+          summary: 'The Israel-based eToro Group says it’s looking for a valuation
+            of up to $4 billion with its initial public offering in the US, as the
+            stock and crypto trading platform forges ahead with listing on the Nasdaq.The
+            company and existing stockholders are aiming to raise $500 million through
+            offering a total of 10 million shares priced between $46 to $50 apiece,
+            eToro said on May 5.A filing with the US Securities and Exchange Commission
+            shows eToro is offering 5 million shares, with a further 5 million being
+            put up by the likes of the company’s co-founder and CEO, Yoni Assia; his
+            brother and executive director, Ronen Assia; along with venture firms
+            Spark Capital, BRM Group and Andalusian Private Capital, among others.The
+            company offers stock and crypto trading targeting retail and plans to
+            list on the tech-heavy Nasdaq Global Select Market under the ticker “ETOR.”It''s
+            slated to compete with Robinhood Markets Inc. (HOOD), which saw crypto
+            trading dip in the first quarter but whose shares have climbed by nearly
+            30% so far this year, according to Google Finance.In the filing, eToro
+            said some BlackRock funds and accounts indicated interest in buying up
+            to $100 million worth of shares at IPO. eToro has also put aside 500,000
+            shares to sell through a directed share program, typically targeted at
+            employees.The company reported that its revenue from crypto in 2024 was
+            $12.1 billion, up from $3.4 billion in 2023. It expected crypto to account
+            for 37% of its commission from trading activity in the first quarter of
+            2025, down from 43% in the year-ago quarter.Source: Matthew SigelIn a
+            section of its filing listing possible risks to the business, eToro warned
+            its users could leave, or it could struggle to get more users, due to
+            negative perceptions of the cryptocurrencies it lists, “either as a result
+            of media coverage or by experiencing significant losses.”Other crypto-related
+            risks the eToro flagged included US state-level crypto regulation, which
+            it said “may place strain on our resources and make it difficult to operate
+            in certain jurisdictions, if at all.”It also said it expects “to continue
+            to incur significant costs” due to the European Union’s Markets in Crypto-Assets
+            (MiCA) laws “on an ongoing basis.”IPOs ready to push after Trump tariff
+            jolt EToro initially made confidential filings with the SEC in January
+            for a public offering, before publicly announcing the plans on March 24.The
+            company reportedly delayed its IPO after President Donald Trump’s April
+            2 “Liberation Day” tariff announcements tanked global markets and stopped
+            many in-the-works public offerings.Related: Are Donald Trump’s tariffs
+            a legal house of cards?Crypto companies are also lining up to go public,
+            with stablecoin issuer Circle filing on April 1 but then pausing its plans
+            amid the uncertainty.Crypto exchange Kraken is also reportedly considering
+            a public offering for early next year, which has accelerated its plan
+            with Trump’s election.EToro’s public offering is led by Goldman Sachs,
+            Jefferies, UBS Investment Bank and Citigroup.Legal Panel: Crypto wanted
+            to overthrow banks, now it’s becoming them in stablecoin fight'
+          title: eToro aims for $4B valuation, $500M raise for US IPO
+        - link: https://cointelegraph.com/news/suspect-behind-190-million-nomad-bridge-hack-extradited-us?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 06:16:37 +0100
+          source: Cointelegraph.com News
+          summary: 'A Russian-Israeli citizen allegedly involved in the $190 million
+            Nomad bridge hack will soon be extradited to the US after he was reportedly
+            arrested at an Israeli airport while boarding a flight to Russia. Alexander
+            Gurevich will be investigated for his alleged involvement in several “computer
+            crimes,” including laundering millions of dollars and transferring stolen
+            property allegedly connected to the Nomad Bridge hack in 2022, The Jerusalem
+            Post reported on May 5.Gurevich returned to Israel from an overseas trip
+            on April 19 but was ordered to appear before the Jerusalem District Court
+            for an extradition hearing soon after, according to the report. On April
+            29, Gurevich changed his name in Israel’s Population Registry to “Alexander
+            Block” and received a passport under that name at Israel’s Ben-Gurion
+            Airport the next day.He was arrested at the same airport two days later,
+            on May 1, while waiting to board a flight to Russia. Gurevich allegedly
+            identified a vulnerability in the Nomad bridge, which he exploited and
+            stole roughly $2.89 million worth of tokens from in August 2022.Dozens
+            of copycat hackers discovered and capitalized on the security vulnerability
+            soon after, leading to a total loss of $190 million.Gurevich allegedly
+            reached out to a Nomad executive on TelegramProsecutors allege that shortly
+            after the hack, Gurevich messaged Nomad’s chief technology officer, James
+            Prestwich, on Telegram using a fake identity, admitting that he had been
+            “amateurishly” seeking a crypto protocol to exploit.He allegedly apologized
+            for “the trouble he caused Prestwich and his team” and voluntarily transferred
+            about $162,000 into a recovery wallet the company had set up.Prestwich
+            told Gurevich that Nomad would pay him 10% of the value of the assets
+            he had stolen, to which Gurevich responded that he would consult his lawyer.
+            However, Nomad never heard back from him after that.Alleged messages between
+            Gurevich and Nomad’s James Prestwich were shared on X by Israel-based
+            Walla News journalist Yoav Itiel. Source: Yoav ItielAt some point during
+            the negotiations, Gurevich demanded a reward of $500,000 for identifying
+            the vulnerability.Related: Do Kwon is in US custody after extradition
+            battleUS federal authorities filed an eight-count indictment against Gurevich
+            in the Northern District of California on Aug. 16, 2023, in addition to
+            obtaining a warrant for his arrest. California is where the team behind
+            the Nomad bridge is based.The US submitted a formal extradition request
+            in December 2024, the Post noted.The money laundering charges that Gurevich
+            faces carry a maximum of 20 years, significantly harsher than the penalties
+            he would face in Israel.Gurevich is believed to have arrived in Israel
+            a few days before the $190 million exploit occurred, prompting Israeli
+            officials to believe he carried out the attack while in Israel.Magazine:
+            Financial nihilism in crypto is over — It’s time to dream big again'
+          title: 'Suspect in $190M Nomad hack to be extradited to the US: Report'
+        - link: https://cointelegraph.com/news/florida-takes-strategic-bitcoin-reserve-bills-off-the-table?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 05:24:02 +0100
+          source: Cointelegraph.com News
+          summary: 'Two Florida crypto bills have been removed from the legislative
+            process in the latest blow to American state-level strategic Bitcoin reserve
+            ambitions. Florida’s House Bill 487 and Senate Bill 550 have been “indefinitely
+            postponed and withdrawn from consideration” on May 3, according to the
+            Florida Senate. Florida’s legislative session adjourned on May 2 without
+            the passage of these two bills, which would have advanced legislation
+            to establish a crypto reserve for the state. The Senate and House agreed
+            to extend the session until June 6 to address budget plans. Lawmakers
+            passed about 230 bills during the session, dealing with things like prohibiting
+            putting fluoride in the water, protecting state parks, and a school smartphone
+            ban, but diversifying state treasury portfolios was not among them. State
+            strategic Bitcoin reserve legislation race. Source: Bitcoin LawsHB 487,
+            which was introduced in February, would have allowed Florida’s chief financial
+            officer and the State Board of Administration to invest up to 10% of certain
+            state funds into Bitcoin (BTC).SB 550 was also filed in February to enable
+            investments of public funds in Bitcoin.Related: Alabama, Minnesota lawmakers
+            join US states pushing for Bitcoin reservesFlorida has now dropped out
+            of the race to pass state-level crypto investment legislation, along with
+            Wyoming, South Dakota, North Dakota, Pennsylvania, Montana and Oklahoma,
+            which have all seen Bitcoin bills fail to pass House or Senate votes,
+            according to Bitcoin Laws. Arizona has two more chances It came just days
+            after Arizona advanced its strategic Bitcoin reserve legislation further
+            than any other state, until House Bill 1025 was vetoed by Governor Katie
+            Hobbs, who labelled digital assets “untested investments” on May 3.The
+            Digital Assets Strategic Reserve bill would have permitted Arizona to
+            invest seized funds into Bitcoin and create a reserve managed by state
+            officials. The move drew the ire of crypto advocates and Bitcoiners, including
+            entrepreneur Anthony Pompliano, who said: “Imagine the ignorance of a
+            politician to believe they can make investment decisions.”“Arizona has
+            two more chances to be the first in the nation to establish a Bitcoin
+            reserve,” said Satoshi Action Fund founder Dennis Porter on May 5, citing
+            an article from Fox’s Eleanor Terrett. He added that the most likely to
+            pass is HB 2749, which offers a budget-neutral method to fund the reserve
+            using profit from the unclaimed property fund.Source: Dennis PorterThere
+            is also a related bill, SB 1373, which would authorize the state treasurer
+            to allocate up to 10% of Arizona state funds into digital assets. It has
+            yet to reach a final vote.Magazine: Bitcoin to $1M ‘by 2029,’ CIA tips
+            its hat to Bitcoin: Hodler’s Digest'
+          title: Florida takes strategic Bitcoin reserve bills off the table
+        - link: https://decrypt.co/318035/spark-commits-additional-1-billion-to-lead-tokenized-treasuries-sector
+          published: Tue, 06 May 2025 06:30:32 +0000
+          source: Decrypt
+          summary: Spark has allocated another $1 billion to tokenized U.S. Treasuries,
+            bringing its total deployment to $2.4 billion across three funds.
+          title: Spark Commits Additional $1 Billion to Lead Tokenized Treasuries
+            Sector
+        - link: https://decrypt.co/318033/florida-joins-growing-list-states-knocking-back-bitcoin-reserve-bills
+          published: Tue, 06 May 2025 05:11:47 +0000
+          source: Decrypt
+          summary: The push for state-level digital asset reserves is hitting resistance
+            nationally, despite early-year optimism among Bitcoin advocates.
+          title: Florida Joins Growing List of States Knocking Back Bitcoin Reserve
+            Bills
+        - link: https://decrypt.co/318031/trump-host-two-crypto-dinners-this-month-amid-growing-ethics-concerns
+          published: Tue, 06 May 2025 03:33:58 +0000
+          source: Decrypt
+          summary: President Trump will host a gala for the largest holders of his
+            meme coin later this month, as lawmakers flag potential conflicts of interest.
+          title: Trump to Host Two Crypto Dinners This Month Amid Growing Ethics Concerns
+        - link: https://decrypt.co/318029/kenyan-court-orders-sam-altmans-crypto-project-delete-biometric-user-data
+          published: Tue, 06 May 2025 02:34:35 +0000
+          source: Decrypt
+          summary: The Sam Altman startup faces rising global scrutiny as Kenya joins
+            Indonesia in clamping down on the company this month.
+          title: Kenyan Court Orders Sam Altman's Crypto Project to Delete Biometric
+            User Data
+        - link: https://decrypt.co/318026/openai-ends-profit-cap-restructure-microsoft-yet-to-sign-off
+          published: Tue, 06 May 2025 01:56:36 +0000
+          source: Decrypt
+          summary: OpenAI lifts its profit cap and restructures as a public benefit
+            company, but Microsoft approval remains uncertain.
+          title: OpenAI Ends Profit Cap in Restructure, Microsoft Yet to Sign Off
+        - link: https://cryptoslate.com/melania-memecoin-insiders-reportedly-make-over-150-million-including-pre-sale-trades/
+          published: Tue, 06 May 2025 07:17:03 +0000
+          source: CryptoSlate
+          summary: According to Financial Times analysis, a small cohort of traders
+            secured nearly $100 million in profits from Melania Trump’s MELANIA token
+            within minutes of its market debut. Insider trading allegations Its on-chain
+            analysis suggests that two dozen digital wallets purchased $2.6 million
+            worth of tokens less than three minutes before Trump’s Jan. 19 post on
+            […] The post MELANIA memecoin insiders reportedly make over $150 million
+            including pre-sale trades appeared first on CryptoSlate.
+          title: MELANIA memecoin insiders reportedly make over $150 million including
+            pre-sale trades
+        - link: https://cryptoslate.com/president-trump-confirms-may-22-gala-dinner-for-top-trump-holders/
+          published: Mon, 05 May 2025 23:00:07 +0000
+          source: CryptoSlate
+          summary: President Donald Trump confirmed that a private dinner will be
+            held on May 22 at Trump National Golf Club in Washington for the top 220
+            holders of his memecoin, TRUMP. Trump made the announcement in a social
+            media post on May 5. The event, organized by Fight Fight Fight LLC, a
+            Trump-affiliated entity, will admit holders […] The post President Trump
+            confirms May 22 gala dinner for top TRUMP holders appeared first on CryptoSlate.
+          title: President Trump confirms May 22 gala dinner for top TRUMP holders
+        - link: https://cryptoslate.com/xrp-trading-volume-steady-at-3-2b-in-q1-but-xrpl-activity-contracts-sharply/
+          published: Mon, 05 May 2025 22:00:35 +0000
+          source: CryptoSlate
+          summary: Ripple’s XRP trading volume on top-tier exchanges throughout the
+            first quarter, with average daily volume (ADV) holding nearly $3.2 billion,
+            while XRP Ledger (XRPL) activity decreased. According to a May 5 report
+            by Ripple, the volume trend reflects sustained institutional and retail
+            engagement despite sharp price swings and moderating on-chain activity.
+            Spot market data shows […] The post XRP trading volume steady at $3.2B
+            in Q1, but XRPL activity contracts sharply appeared first on CryptoSlate.
+          title: XRP trading volume steady at $3.2B in Q1, but XRPL activity contracts
+            sharply
+        - link: https://cryptoslate.com/vaneck-officially-files-first-bnb-etf-application-in-the-us/
+          published: Mon, 05 May 2025 21:06:09 +0000
+          source: CryptoSlate
+          summary: Asset manager VanEck filed a registration statement with the Securities
+            and Exchange Commission on May 2 to launch a BNB exchange-traded fund
+            (ETF). The filing marks the first known attempt to bring a spot BNB ETF
+            to the US market. If approved, the fund would list on an unspecified national
+            exchange under a yet-to-be-disclosed ticker symbol. […] The post VanEck
+            officially files first BNB ETF application in the US appeared first on
+            CryptoSlate.
+          title: VanEck officially files first BNB ETF application in the US
+        - link: https://cryptoslate.com/democratic-opposition-threatens-genius-act-jeopardizing-2025-crypto-agenda-galaxy/
+          published: Mon, 05 May 2025 20:11:21 +0000
+          source: CryptoSlate
+          summary: The Senate GENIUS Act bill, designed to establish federal rules
+            for stablecoins, is facing resistance from key Democrats, jeopardizing
+            the prospects for broader crypto legislation in 2025. The Guiding and
+            Establishing National Innovation for US Stablecoins Act (GENIUS Act) advanced
+            from the Senate Banking Committee in March with bipartisan support. However,
+            nine Senate Democrats announced […] The post Democratic opposition threatens
+            GENIUS Act, jeopardizing 2025 crypto agenda – Galaxy appeared first on
+            CryptoSlate.
+          title: Democratic opposition threatens GENIUS Act, jeopardizing 2025 crypto
+            agenda – Galaxy
 default_parameters:
   input:
     tool: get_web3_news
@@ -455,413 +412,7 @@ default_parameters:
     raw_data_only: false
   output:
     response: ''
-    data:
-      status: success
-      data:
-        payload:
-          results:
-          - link: https://www.coindesk.com/markets/2025/04/17/lombard-finance-launches-toolkit-to-unlock-bitcoin-s-usd154b-defi-opportunity
-            published: Thu, 17 Apr 2025 12:00:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Lombard co-founder Jacob Phillips (Lombard)
-            title: Lombard Finance Launches Toolkit to Unlock Bitcoin’s $154B DeFi
-              Opportunity
-          - link: https://www.coindesk.com/markets/2025/04/17/xrp-downside-fears-persist-despite-etf-optimism-options-data-show
-            published: Thu, 17 Apr 2025 11:35:57 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: XRP options skew. (Amberdata/Deribit)
-            title: XRP Downside Fears Persist Despite ETF Optimism, Options Data Show
-          - link: https://www.coindesk.com/daybook-us/2025/04/17/crypto-daybook-americas-bitcoin-loses-allure-to-gold-as-economic-concerns-rise
-            published: Thu, 17 Apr 2025 11:15:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Jerome Powell, Federal Reserve
-            title: 'Crypto Daybook Americas: Bitcoin Loses Allure to Gold as Economic
-              Concerns Rise'
-          - link: https://www.coindesk.com/markets/2025/04/17/bitcoin-gold-and-the-minsky-moment-novogratz-on-the-end-of-fiscal-complacency
-            published: Thu, 17 Apr 2025 10:32:59 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Mike Novogratz, Galaxy Founder and CEO, speaks at Consensus 2024
-              (CoinDesk/Shutterstock/Suzanne Cordiero)
-            title: 'Bitcoin, Gold, and the Minsky Moment: Novogratz on the End of
-              Fiscal Complacency'
-          - link: https://www.coindesk.com/business/2025/04/17/auradine-raises-usd153m-series-c-for-bitcoin-mining-ai-data-center-networking
-            published: Thu, 17 Apr 2025 09:05:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: 16:9 Mining rigs in Plattsburgh, NY. (Fran Velasquez/CoinDesk)
-            title: Auradine Raises $153M Series C for Bitcoin Mining, AI Data Center
-              Networking
-          - link: https://cointelegraph.com/news/mantra-om-crash-critical-liquidity-concentration-issues?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:59:30 +0100
-            source: Cointelegraph.com News
-            summary: 'Mantra’s recent token collapse highlights deeper-rooted issues
-              within the crypto industry around fluctuating liquidity levels, creating
-              additional downside volatility over the weekend, which may have exacerbated
-              the token’s crash.The Mantra (OM) token’s price collapsed by over 90%
-              on April 13, from roughly $6.30 to below $0.50, triggering market manipulation
-              allegations among disillusioned investors, Cointelegraph reported.While
-              blockchain analysts are still piecing together the reasons behind the
-              OM collapse, the event highlights critical issues for the crypto industry,
-              according to Gracy Chen, the CEO of cryptocurrency exchange Bitget.“The
-              Om token crash exposed several critical issues that we are seeing not
-              just in OM, but also as an industry,” Chen said during Cointelegraph’s
-              Chainreaction daily X show, adding:“When it’s a token that’s too concentrated,
-              the wealth concentration and the very opaque governance, together with
-              sudden exchange inflows and outflows, [...] combined with the forced
-              liquidation during very low liquidity hours in our industry, created
-              the big drop off.”🎙️ CEXs hit with outages as AWS runs into trouble.
-              The question is, do we need more decentralization? Today, @RKBaggs and
-              @ZVardai are joined by @GracyBitget, CEO of @Bitgetglobal on #CHAINREACTION
-              to unpack the problem!https://t.co/OPoyu1IORC— Cointelegraph (@Cointelegraph)
-              April 15, 2025Related: Google to enforce MiCA rules for crypto ads in
-              Europe starting April 23At least two wallets linked to Laser Digital
-              were among 17 wallets that moved a combined 43.6 million OM tokens —
-              worth about $227 million at the time — to exchanges before the crash,
-              the blockchain analytics platform Lookonchain reported on April 13,
-              citing Arkham Intelligence data.However, Mantra CEO John Mullin denied
-              the allegations related to large-scale token transfers from Mantra investors,
-              Cointelegraph reported on April 14.Mantra released a post-crash statement
-              on April 16, reiterating that the OM crash didn’t involve token sales
-              by the project itself and that the Mantra team continues investigating
-              the incident. The report did not explain the rapid movement of OM tokens
-              to exchanges and subsequent liquidations.Related: UFC boss Dana White
-              becomes VeChain adviser to push blockchain mainstreamExchange movements
-              point to strong “insider dumping” signalWhile the exact reason behind
-              the collapse remains unclear, Mullin attributed the crash to “massive
-              forced liquidations” on centralized exchanges during low-liquidity hours
-              on Sunday.Mullin told an X user that the Mantra team believes one exchange
-              “in particular” is to blame, but said the team was still “figuring out
-              the details,” specifying that the exchange in question is not Binance.
-              “I think OKX was the main exchange being accused of so-called liquidations,”
-              said Chen, adding that the large transfers to multiple exchanges raised
-              significant red flags. She added:“I did look at the onchain data, which
-              revealed that there were millions of OM tokens moved to centralized
-              exchanges. That’s a very strong signal of insider dumping.”Weekend liquidity
-              issues have impacted even major cryptocurrencies like Bitcoin (BTC).The
-              lack of weekend trading volume, combined with Bitcoin’s 24/7 liquidity,
-              resulted in Bitcoin’s correction below $75,000 on Sunday, April 6, Cointelegraph
-              reported.The April 6 correction may have occurred due to Bitcoin being
-              the only large tradable asset over the weekend available for de-risking
-              amid global trade war concerns, Lucas Outumuro, head of research at
-              crypto intelligence platform IntoTheBlock, told Cointelegraph.Magazine:
-              Illegal arcade disguised as … a fake Bitcoin mine? Soldier scams in
-              China: Asia Express'
-            title: Mantra OM token crash exposes ‘critical’ liquidity issues in crypto
-          - link: https://cointelegraph.com/news/why-is-solana-price-up-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:28:34 +0100
-            source: Cointelegraph.com News
-            summary: 'Solana (SOL) has seen a remarkable price surge over the last
-              10 days, climbing 40% from its April 7 low of $95 to around $133 on
-              April 17. The altcoin is up 8% over the last 24 hours.Its daily trading
-              volume has jumped by 41% over the same period to $4.64 billion, reinforcing
-              the intensity of the demand-side activity.SOL/USD daily chart. Source:
-              Cointelegraph/TradingViewSeveral factors are driving the SOL price up
-              today, including:The launch of the first spot Solana ETF in Canada.Growth
-              in Solana network deposits.SOL’s strengthening price technicals are
-              targeting $200.Growing institutional adoption of SolanaInstitutional
-              interest in Solana is accelerating, evidenced by significant recent
-              developments surrounding Solana exchange-traded funds (ETFs).On April
-              16, Canada launched the first spot Solana ETFs in North America, issued
-              by asset managers like 3iQ, Purpose, Evolve, and CI. These ETFs, which
-              include staking options to generate yield, provide traditional investors
-              with regulated exposure to SOL, boosting demand and liquidity. Source:
-              Eric Balchunas3iQ’s ETF, for instance, leverages Figment as a staking
-              provider to enhance returns, signaling confidence in Solana’s infrastructure.Additionally,
-              real estate fintech firm Janover doubled its Solana holdings to 163,651
-              SOL, valued at $21.2 million, after purchasing 80,567 SOL for $10.5
-              million on April 15. Janover’s strategy, inspired by MicroStrategy’s
-              Bitcoin playbook, includes staking and potentially running validators,
-              reflecting its confidence in Solana’s long-term value.These moves underscore
-              Solana’s growing appeal as a corporate treasury asset and investment
-              vehicle.Increased Solana network inflowsSolana’s network activity has
-              surged, driving capital inflows. Crypto market participants have bridged
-              more than $120 million in liquidity from other blockchains to Solana
-              over the last 30 days, according to data from deBridge. The highest
-              amount was transferred from Ethereum at $41.5 million, followed by a
-              $37.3 million influx from Arbitrum. Meanwhile, Base, BNB Chain, and
-              Sonic users moved $16 million, $14 million, and $6.6 million, respectively.Total
-              transferred amount from other chains to Solana. Source: deBridgeThe
-              current liquidity influx to Solana coincides with the return of double-digit
-              price rallies from memecoins as Popcat (POPCAT), Fartcoin (FARTCOIN),
-              and Bonk (BONK) rose 50%, 26% and 13%, respectively, over the past seven
-              days.Solana memecoins performance. Source: CoinGeckoFurther analysis
-              reveals that the total value locked (TVL) on Solana has increased by
-              12% over the last seven days to rest at $7.08 billion on April 17, pulling
-              ahead of competitors such as Tron, Base, and Berachain, according to
-              data from DefiLlama. Related: Solana rallies 20% against Ethereum, but
-              is $300 SOL price within reach?Promising signs for Solana include a
-              30% increase in deposits on Sanctum, a liquid staking application, and
-              15% growth on Jito and Jupiter. These inflows and growing TVL reflect
-              heightened investor optimism and network adoption, supporting SOL’s
-              recovery from a 14-month low below $100.SOL price validates falling
-              wedge patternSOL price technicals, meanwhile, gained momentum after
-              breaking out of a falling wedge pattern.A falling wedge is a bullish
-              reversal pattern in technical analysis comprising two converging trend
-              lines connecting lower lows and lower highs. The pattern resolves when
-              the price breaks above the upper trendline, hinting at a price rally.
-              After rebounding from a multi-year support trendline near $95, SOL broke
-              above the upper trending line of the wedge at $120, with traders eying
-              the technical target of the wedge at $200, representing a 50% increase
-              from the current price.SOL/USD daily chart. Source: Cointelegraph/TradingViewThe
-              relative strength index (RSI) has increased from 33 to 55 since April
-              7, indicating an increasing bullish momentum.However, to sustain the
-              ongoing recovery, Solana price has to first hold above the 50-day simple
-              moving average (SMA), currently at $130, and then overcome the resistance
-              between $160 and $180, where the 100-day and 200-day SMAs are.As Contelegraph
-              reported, a decisive close above the 50-EMA ($135) will increase the
-              likelihood of a rally toward the aforementioned targets. This article
-              does not contain investment advice or recommendations. Every investment
-              and trading move involves risk, and readers should conduct their own
-              research when making a decision.'
-            title: Why is Solana (SOL) price up today?
-          - link: https://cointelegraph.com/news/polygon-jio-web3-blockchain-india-decentralization?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:20:21 +0100
-            source: Cointelegraph.com News
-            summary: 'As Polygon lays the groundwork for mainstream Web3 adoption
-              in India by bringing blockchain access to over 450 million Reliance
-              Jio users, it remains focused on balancing speed, scalability and affordability,
-              without compromising on decentralization.Polygon is working with Jio,
-              a telecom giant owned by India’s richest man, Mukesh Ambani, to find
-              ways to infuse blockchain technology into its existing services. The
-              duo is currently adding blockchain-based capabilities to the JioSphere
-              web browser, which would have been expensive, cumbersome and time-consuming
-              via traditional methods.“We’re building at an insane pace, onboarding
-              massive partners, and pushing blockchain into the mainstream, but with
-              that growth comes the responsibility to make sure we’re doing it the
-              right way,” Polygon’s co-founder, Sandeep Nailwal, said while discussing
-              Polygon’s India-focused initiatives with Cointelegraph. Preserving decentralization
-              while ensuring system scalability“Scalability and decentralization don’t
-              have to be either-or, and that’s exactly the balance we’re focused on
-              at Polygon,” Nailwal said as he underscored the importance of keeping
-              the core values of blockchain intact: security, transparency and decentralization.At
-              the same time, Nailwal revealed that Polygon is investing heavily in
-              zero-knowledge technology to make scaling more seamless across the ecosystem.
-              “The goal is to give developers and users the best of both worlds: faster,
-              cheaper transactions without compromising trust or decentralization,”
-              he added.As a result of delivering the combination of low fees, fast
-              transactions and decentralized security, Polygon is already powering
-              some of the most active use cases in Web3, from stablecoin payments
-              on Polygon PoS to real-world tokenization with major institutions: “The
-              key challenge is making blockchain as seamless and accessible as Web2
-              without compromising what makes it special. That’s why we’re all-in
-              on ZK technology and Agglayer, which let us scale while keeping the
-              ecosystem trustless and interoperable.”Bringing blockchain tech to millions
-              of usersAccording to Nailwal, a one-size-fits-all approach does not
-              work when onboarding 450 million users from India’s diverse population.
-              “We’ll be working closely with Jio to develop use cases that truly resonate
-              with their users, and gradually onboard them onto the chain based on
-              these real-world applications,” he added.Nailwal said that developers
-              never have to compromise on the fundamentals, as Polygon’s infrastructure
-              can scale without sacrificing what makes blockchain powerful in the
-              first place:“What excites me most is that we''re moving beyond technical
-              discussions about blockchain to solving real problems for real people.
-              These are the use cases that will drive the next wave of adoption.”“At
-              the end of the day, it’s about more than just technology. We’re here
-              to create a decentralized future that billions of people can actually
-              use. And while that’s a massive challenge, it’s also what excites me
-              the most,” Nailwal said.Related: Indian town adopts Avalanche blockchain
-              for tamper-proof land recordsReal-world problem solving will drive the
-              next wave of adoptionRising threats driven by artificial intelligence
-              tools, including deepfakes and other misinformation campaigns, are another
-              use case blockchain technology can help solve. Nailwal said that the
-              escalating threat of misinformation and growing consumer insistence
-              on trusted sources will eventually result in an uptick of blockchain-based
-              verification tools.Additionally, Nailwal highlighted the growing relevance
-              of Polymarket, a cryptocurrency-based prediction market, in mainstream
-              finance and reporting. “Polymarket’s success is exactly what we’ve been
-              working toward,” he said, adding:“Prediction markets are proving to
-              be incredibly valuable tools for finance, risk assessment, journalism
-              and even governance. They pull in insights from a wide range of sources,
-              often making them more reliable than traditional polling.”Nailwal is
-              placing his full bet on blockchain’s immutable nature to transform economic
-              forecasting, policy-making and journalism, among others.Magazine: Your
-              AI ‘digital twin’ can take meetings and comfort your loved ones'
-            title: 'Polygon’s Nailwal: Jio partnership to drive real-world Web3 adoption
-              for 450M users'
-          - link: https://cointelegraph.com/news/babylon-unstaking-1-billion-tvl-drops-30-percent?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:05:53 +0100
-            source: Cointelegraph.com News
-            summary: 'Bitcoin staking protocol Babylon saw $1.26 billion in BTC unstaked
-              from its platform, reducing the protocol’s total value locked by 32%.
-              On April 17, blockchain analytics firm Lookonchain flagged several addresses
-              that had unstaked a total of 14,929 Bitcoin (BTC) from the staking platform.
-              The security firm flagged four addresses that had unstaked 299 BTC,
-              499 BTC, 1,000 BTC and 13,129 BTC. One address held a majority of the
-              unstaked assets worth $1.1 billion. With BTC prices hovering at around
-              $84,400, the total unstaked BTC was worth about $1.26 billion.The unstaking
-              event saw Babylon’s total value locked (TVL) drop by 32%. According
-              to data tracker DefiLlama, Babylon’s TVL declined from $3.97 billion
-              to $2.68 billion after the unstaking.Source: LookonchainUnstaked Bitcoin
-              may be “staked back” to Babylon Community members are speculating on
-              who was behind the unstaking. One X user suspected that the Bitcoin
-              may belong to the Chinese government, while another said the move may
-              simply be a rotation, risk-off, or a trader getting liquid.While it’s
-              unclear who’s behind the four addresses cited by Lookonchain, the fund
-              movements could be related to a transition initiated by the decentralized
-              finance (DeFi) protocol Lombard Finance. At the time of the unstaking,
-              Babylon Labs retweeted an announcement from Lombard, saying it was unstaking
-              Bitcoin as part of a transition to a new set of finality providers.
-              Lombard Finance said it timed the unstaking with the end of Babylon’s
-              phase 1 cap 1 on April 24 so users would not miss out on rewards. The
-              protocol said it would stake the assets back. “All of this BTC will
-              be staked back into Babylon as soon as the unbonding is complete,” Lombard
-              Finance wrote. Cointelegraph reached out to Babylon Labs for comments
-              but did not get a response by publication.Related: Bitcoin L2 ’honeymoon
-              phase’ is over, most projects will fail — Muneeb AliBitcoin unstaking
-              follows BABY airdropThe massive unstaking event follows a Babylon airdrop
-              for early adopters. On April 3, Babylon announced the details of its
-              early adopters airdrop program. The airdrop was allocated for its Phase
-              1 stakers, non-fungible token (NFT) holders and developers. The protocol
-              allocated 600 million BABY tokens for the airdrop event. Following the
-              airdrop, $21 million in BTC was unstaked from the protocol. Bitlayer
-              co-founder Kevin He previously told Cointelegraph that this was a common
-              short-term market behavior representing early redemption. Babylon is
-              one of the largest Bitcoin DeFi players in the space, with a TVL reaching
-              over $6 billion in December. Babylon co-founder Fisher Yu previously
-              told Cointelegraph that the platform allows staking to be a native use
-              case for Bitcoin, eliminating the need to trust another party while
-              staking. Magazine: Your AI ‘digital twin’ can take meetings and comfort
-              your loved ones'
-            title: Babylon total value locked drops 32% as wallets unstake $1.2B in
-              Bitcoin
-          - link: https://cointelegraph.com/news/binance-advises-governments-on-bitcoin-reserves?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 11:11:09 +0100
-            source: Cointelegraph.com News
-            summary: 'Cryptocurrency exchange Binance is involved in discussions on
-              establishing strategic digital asset reserves with several countries,
-              its CEO, Richard Teng, reportedly said.Binance has been advising multiple
-              governments on establishing strategic Bitcoin (BTC) reserves and formulating
-              crypto asset regulations, Teng said in an interview with the Financial
-              Times on April 17.“We have actually received quite a number of approaches
-              by a few governments and sovereign wealth funds on the establishment
-              of their own crypto reserves,” Teng told the FT.Teng did not identify
-              any countries but said that the United States is “way ahead on that
-              front.”US fuels global crypto reserve spreeAccording to Teng, the main
-              reason for governments approaching Binance for help in handling potential
-              strategic reserves is the new crypto-friendly agenda in the US.Teng
-              referred to key US crypto policy developments, such as discussions around
-              creating a national Bitcoin reserve and digital asset stockpile. Earlier
-              this year, Trump signed an executive order to establish a Strategic
-              Bitcoin Reserve seeded with BTC forfeited in federal criminal and civil
-              cases.Binance founder Changpeng Zhao (on the left) next to Pakistan’s
-              deputy prime minister Mohammad Ishaq Dar and Pakistan Crypto Council
-              CEO Bilal bin Saqib. Source: Pakistan governmentWhile governments of
-              Pakistan and Kyrgyzstan have announced collaboration with Binance and
-              former CEO Changpeng Zhao on crypto regulations in the past few weeks,
-              none of the jurisdictions mentioned crypto reserve plans on their agenda.Binance
-              shifts stance on headquartersAs Binance deepens its involvement in efforts
-              to help countries set up crypto reserves and regulations, it appears
-              to have shifted away from its no-formal-headquarters approach under
-              Zhao.According to Teng, Binance is “working very hard” on plans for
-              a global headquarters for the exchange.Related: Crypto Biz: Ripple’s
-              ‘defining moment,’ Binance’s ongoing purge“It requires serious deliberation
-              and the board and the senior management are spending a lot of time doing
-              the evaluation,” Teng reportedly said, adding: “Hopefully we are able
-              to announce our intentions on that front.”Source: Changpeng “CZ” ZhaoIn
-              2019, Zhao said that offices and headquarters are “old concepts like
-              SMS and MMS.”The shift comes as more jurisdictions adopt clearer frameworks
-              for regulating crypto businesses. Binance was subject to heavy scrutiny
-              and investigations by multiple governments in 2020.Cointelegraph approached
-              Binance for comment regarding its crypto policy collaboration with governments
-              worldwide, but had not received a response by the time of publication.Magazine:
-              How crypto laws are changing across the world in 2025'
-            title: Binance helps countries with Bitcoin reserves, crypto policies,
-              says CEO
-          - link: https://decrypt.co/314700/how-solana-copy-trading-platform-odinbot-is-achieving-zero-block-latency
-            published: Thu, 17 Apr 2025 12:01:02 +0000
-            source: Decrypt
-            summary: The Solana copy trading bot has focused on speed, with a claimed
-              15% of trades completed in the same block as the mirrored wallet.
-            title: How Solana Copy Trading Platform Odinbot is Achieving ‘Zero Block
-              Latency’
-          - link: https://decrypt.co/315244/secret-service-canadian-officials-disrupt-4-3m-ethereum-approval-phishing-scam
-            published: Thu, 17 Apr 2025 11:22:57 +0000
-            source: Decrypt
-            summary: The operation reached out to Ethereum wallet holders who had
-              been compromised, whether or not they had already lost crypto.
-            title: Secret Service, Canadian Officials Disrupt $4.3M Ethereum “Approval
-              Phishing” Scam
-          - link: https://decrypt.co/315224/pump-fun-co-founder-says-no-plan-to-launch-token-speaks-out-against-base-promoted-meme-coin
-            published: Thu, 17 Apr 2025 07:22:32 +0000
-            source: Decrypt
-            summary: 'After a Base-promoted memecoin 90% crashed, Pump.fun seized
-              an opportunity to tell its community: no stealth coins, no hype-fueled
-              drops.'
-            title: Pump.Fun Co-Founder Says No Plan to Launch Token, Speaks Out Against
-              Base-Promoted Meme Coin
-          - link: https://decrypt.co/315216/hong-kong-approves-ethereum-staking-etf
-            published: Thu, 17 Apr 2025 06:59:40 +0000
-            source: Decrypt
-            summary: Hong Kong is changing its tune following a new law, approving
-              for the second time an Ethereum ETF with a staking component.
-            title: Hong Kong Approves Latest Ethereum Staking ETF as New Rules Take
-              Root
-          - link: https://decrypt.co/315213/a16z-sec-update-crypto-custody-rules-registered-investment-advisers
-            published: Thu, 17 Apr 2025 05:37:48 +0000
-            source: Decrypt
-            summary: A16z has penned a letter to the SEC calling for revised custody
-              rules to allow RIAs to hold crypto assets directly.
-            title: A16z Calls on SEC to Update Crypto Custody Rules for Registered
-              Investment Advisers
-          - link: https://cryptoslate.com/coinbase-backed-base-draws-fire-for-role-in-pump-and-dump-style-content-coin-token-launch/
-            published: Thu, 17 Apr 2025 10:50:05 +0000
-            source: CryptoSlate
-            summary: Coinbase-backed Layer-2 network Base is under fire from the crypto
-              community after promoting a so-called “Content Coin” that lost nearly
-              all its value shortly after launch. The controversy began on April 16
-              when Base shared a tokenized version of its “Base is for Everyone” post
-              on Zora, a decentralized content-sharing platform, through its official
-              X […] The post Coinbase-backed Base draws fire for role in ‘pump-and-dump’
-              style ‘Content Coin’ token launch appeared first on CryptoSlate.
-            title: Coinbase-backed Base draws fire for role in ‘pump-and-dump’ style
-              ‘Content Coin’ token launch
-          - link: https://cryptoslate.com/cz-says-he-cant-tell-the-difference-in-ai-video-of-himself/
-            published: Thu, 17 Apr 2025 10:33:05 +0000
-            source: CryptoSlate
-            summary: Changpeng “CZ” Zhao, former CEO of Binance, stated Thursday that
-              he had encountered an AI-generated video that replicated his voice so
-              accurately that he could not distinguish it from a real recording. The
-              post, shared via X, featured an AI voice-over of Zhao speaking Mandarin,
-              matching his facial movements with a precision he described as […] The
-              post AI deepfake perfectly clones ex-Binance CEO CZ’s voice, reigniting
-              fraud fears appeared first on CryptoSlate.
-            title: AI deepfake perfectly clones ex-Binance CEO CZ’s voice, reigniting
-              fraud fears
-          - link: https://cryptoslate.com/insights/bitcoin-historically-the-best-performing-asset-60-days-after-major-global-crisis/
-            published: Thu, 17 Apr 2025 08:36:40 +0000
-            source: CryptoSlate
-            summary: Bitcoin has delivered the strongest 60-day returns following
-              major global disruptions since 2020, outperforming both equities and
-              gold across several high-volatility periods. The top digital asset posted
-              an average 37% two‑month return across events since 2020, versus 3.5%
-              for the equity gauge and 6.2% for gold. BlackRock data shared by Bitcoin
-              analyst and Marathon Digital advisor […] The post Bitcoin historically
-              the best performing asset 60 days after major global crisis appeared
-              first on CryptoSlate.
-            title: Bitcoin historically the best performing asset 60 days after major
-              global crisis
-          - link: https://cryptoslate.com/short-term-holder-supply-sees-profitability-crash-to-2-as-tariff-fears-bite/
-            published: Thu, 17 Apr 2025 00:00:51 +0000
-            source: CryptoSlate
-            summary: 'Short‑term holder supply in profit measures the share of coins
-              held for fewer than 155 days whose last on‑chain movement occurred at
-              a price below the current spot. Since these coins are statistically
-              the most mobile, the metric is an effective thermometer for near‑term
-              selling pressure: when the percentage is high, a larger share of speculative
-              […] The post Short-term holder supply sees profitability crash to 2%
-              as tariff fears bite appeared first on CryptoSlate.'
-            title: Short-term holder supply sees profitability crash to 2% as tariff
-              fears bite
-          - link: https://cryptoslate.com/vanecks-onchain-economy-etf-node-cleared-for-may-14-launch/
-            published: Wed, 16 Apr 2025 23:00:16 +0000
-            source: CryptoSlate
-            summary: VanEck received regulatory effectiveness for its new Onchain
-              Economy ETF, an actively managed fund designed to give investors broad
-              exposure to companies powering the digital asset ecosystem. Regulatory
-              effectiveness means the SEC has approved the fund’s registration, allowing
-              it to begin offering shares to the public. Matthew Sigel, VanEck’s head
-              of digital assets research and […] The post VanEck’s Onchain Economy
-              ETF ‘NODE’ cleared for May 14 launch appeared first on CryptoSlate.
-            title: VanEck’s Onchain Economy ETF ‘NODE’ cleared for May 14 launch
+    data: *id001
 limit_parameter:
   input:
     tool: get_web3_news
@@ -870,413 +421,7 @@ limit_parameter:
     raw_data_only: true
   output:
     response: ''
-    data:
-      status: success
-      data:
-        payload:
-          results:
-          - link: https://www.coindesk.com/markets/2025/04/17/lombard-finance-launches-toolkit-to-unlock-bitcoin-s-usd154b-defi-opportunity
-            published: Thu, 17 Apr 2025 12:00:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Lombard co-founder Jacob Phillips (Lombard)
-            title: Lombard Finance Launches Toolkit to Unlock Bitcoin’s $154B DeFi
-              Opportunity
-          - link: https://www.coindesk.com/markets/2025/04/17/xrp-downside-fears-persist-despite-etf-optimism-options-data-show
-            published: Thu, 17 Apr 2025 11:35:57 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: XRP options skew. (Amberdata/Deribit)
-            title: XRP Downside Fears Persist Despite ETF Optimism, Options Data Show
-          - link: https://www.coindesk.com/daybook-us/2025/04/17/crypto-daybook-americas-bitcoin-loses-allure-to-gold-as-economic-concerns-rise
-            published: Thu, 17 Apr 2025 11:15:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Jerome Powell, Federal Reserve
-            title: 'Crypto Daybook Americas: Bitcoin Loses Allure to Gold as Economic
-              Concerns Rise'
-          - link: https://www.coindesk.com/markets/2025/04/17/bitcoin-gold-and-the-minsky-moment-novogratz-on-the-end-of-fiscal-complacency
-            published: Thu, 17 Apr 2025 10:32:59 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Mike Novogratz, Galaxy Founder and CEO, speaks at Consensus 2024
-              (CoinDesk/Shutterstock/Suzanne Cordiero)
-            title: 'Bitcoin, Gold, and the Minsky Moment: Novogratz on the End of
-              Fiscal Complacency'
-          - link: https://www.coindesk.com/business/2025/04/17/auradine-raises-usd153m-series-c-for-bitcoin-mining-ai-data-center-networking
-            published: Thu, 17 Apr 2025 09:05:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: 16:9 Mining rigs in Plattsburgh, NY. (Fran Velasquez/CoinDesk)
-            title: Auradine Raises $153M Series C for Bitcoin Mining, AI Data Center
-              Networking
-          - link: https://cointelegraph.com/news/mantra-om-crash-critical-liquidity-concentration-issues?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:59:30 +0100
-            source: Cointelegraph.com News
-            summary: 'Mantra’s recent token collapse highlights deeper-rooted issues
-              within the crypto industry around fluctuating liquidity levels, creating
-              additional downside volatility over the weekend, which may have exacerbated
-              the token’s crash.The Mantra (OM) token’s price collapsed by over 90%
-              on April 13, from roughly $6.30 to below $0.50, triggering market manipulation
-              allegations among disillusioned investors, Cointelegraph reported.While
-              blockchain analysts are still piecing together the reasons behind the
-              OM collapse, the event highlights critical issues for the crypto industry,
-              according to Gracy Chen, the CEO of cryptocurrency exchange Bitget.“The
-              Om token crash exposed several critical issues that we are seeing not
-              just in OM, but also as an industry,” Chen said during Cointelegraph’s
-              Chainreaction daily X show, adding:“When it’s a token that’s too concentrated,
-              the wealth concentration and the very opaque governance, together with
-              sudden exchange inflows and outflows, [...] combined with the forced
-              liquidation during very low liquidity hours in our industry, created
-              the big drop off.”🎙️ CEXs hit with outages as AWS runs into trouble.
-              The question is, do we need more decentralization? Today, @RKBaggs and
-              @ZVardai are joined by @GracyBitget, CEO of @Bitgetglobal on #CHAINREACTION
-              to unpack the problem!https://t.co/OPoyu1IORC— Cointelegraph (@Cointelegraph)
-              April 15, 2025Related: Google to enforce MiCA rules for crypto ads in
-              Europe starting April 23At least two wallets linked to Laser Digital
-              were among 17 wallets that moved a combined 43.6 million OM tokens —
-              worth about $227 million at the time — to exchanges before the crash,
-              the blockchain analytics platform Lookonchain reported on April 13,
-              citing Arkham Intelligence data.However, Mantra CEO John Mullin denied
-              the allegations related to large-scale token transfers from Mantra investors,
-              Cointelegraph reported on April 14.Mantra released a post-crash statement
-              on April 16, reiterating that the OM crash didn’t involve token sales
-              by the project itself and that the Mantra team continues investigating
-              the incident. The report did not explain the rapid movement of OM tokens
-              to exchanges and subsequent liquidations.Related: UFC boss Dana White
-              becomes VeChain adviser to push blockchain mainstreamExchange movements
-              point to strong “insider dumping” signalWhile the exact reason behind
-              the collapse remains unclear, Mullin attributed the crash to “massive
-              forced liquidations” on centralized exchanges during low-liquidity hours
-              on Sunday.Mullin told an X user that the Mantra team believes one exchange
-              “in particular” is to blame, but said the team was still “figuring out
-              the details,” specifying that the exchange in question is not Binance.
-              “I think OKX was the main exchange being accused of so-called liquidations,”
-              said Chen, adding that the large transfers to multiple exchanges raised
-              significant red flags. She added:“I did look at the onchain data, which
-              revealed that there were millions of OM tokens moved to centralized
-              exchanges. That’s a very strong signal of insider dumping.”Weekend liquidity
-              issues have impacted even major cryptocurrencies like Bitcoin (BTC).The
-              lack of weekend trading volume, combined with Bitcoin’s 24/7 liquidity,
-              resulted in Bitcoin’s correction below $75,000 on Sunday, April 6, Cointelegraph
-              reported.The April 6 correction may have occurred due to Bitcoin being
-              the only large tradable asset over the weekend available for de-risking
-              amid global trade war concerns, Lucas Outumuro, head of research at
-              crypto intelligence platform IntoTheBlock, told Cointelegraph.Magazine:
-              Illegal arcade disguised as … a fake Bitcoin mine? Soldier scams in
-              China: Asia Express'
-            title: Mantra OM token crash exposes ‘critical’ liquidity issues in crypto
-          - link: https://cointelegraph.com/news/why-is-solana-price-up-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:28:34 +0100
-            source: Cointelegraph.com News
-            summary: 'Solana (SOL) has seen a remarkable price surge over the last
-              10 days, climbing 40% from its April 7 low of $95 to around $133 on
-              April 17. The altcoin is up 8% over the last 24 hours.Its daily trading
-              volume has jumped by 41% over the same period to $4.64 billion, reinforcing
-              the intensity of the demand-side activity.SOL/USD daily chart. Source:
-              Cointelegraph/TradingViewSeveral factors are driving the SOL price up
-              today, including:The launch of the first spot Solana ETF in Canada.Growth
-              in Solana network deposits.SOL’s strengthening price technicals are
-              targeting $200.Growing institutional adoption of SolanaInstitutional
-              interest in Solana is accelerating, evidenced by significant recent
-              developments surrounding Solana exchange-traded funds (ETFs).On April
-              16, Canada launched the first spot Solana ETFs in North America, issued
-              by asset managers like 3iQ, Purpose, Evolve, and CI. These ETFs, which
-              include staking options to generate yield, provide traditional investors
-              with regulated exposure to SOL, boosting demand and liquidity. Source:
-              Eric Balchunas3iQ’s ETF, for instance, leverages Figment as a staking
-              provider to enhance returns, signaling confidence in Solana’s infrastructure.Additionally,
-              real estate fintech firm Janover doubled its Solana holdings to 163,651
-              SOL, valued at $21.2 million, after purchasing 80,567 SOL for $10.5
-              million on April 15. Janover’s strategy, inspired by MicroStrategy’s
-              Bitcoin playbook, includes staking and potentially running validators,
-              reflecting its confidence in Solana’s long-term value.These moves underscore
-              Solana’s growing appeal as a corporate treasury asset and investment
-              vehicle.Increased Solana network inflowsSolana’s network activity has
-              surged, driving capital inflows. Crypto market participants have bridged
-              more than $120 million in liquidity from other blockchains to Solana
-              over the last 30 days, according to data from deBridge. The highest
-              amount was transferred from Ethereum at $41.5 million, followed by a
-              $37.3 million influx from Arbitrum. Meanwhile, Base, BNB Chain, and
-              Sonic users moved $16 million, $14 million, and $6.6 million, respectively.Total
-              transferred amount from other chains to Solana. Source: deBridgeThe
-              current liquidity influx to Solana coincides with the return of double-digit
-              price rallies from memecoins as Popcat (POPCAT), Fartcoin (FARTCOIN),
-              and Bonk (BONK) rose 50%, 26% and 13%, respectively, over the past seven
-              days.Solana memecoins performance. Source: CoinGeckoFurther analysis
-              reveals that the total value locked (TVL) on Solana has increased by
-              12% over the last seven days to rest at $7.08 billion on April 17, pulling
-              ahead of competitors such as Tron, Base, and Berachain, according to
-              data from DefiLlama. Related: Solana rallies 20% against Ethereum, but
-              is $300 SOL price within reach?Promising signs for Solana include a
-              30% increase in deposits on Sanctum, a liquid staking application, and
-              15% growth on Jito and Jupiter. These inflows and growing TVL reflect
-              heightened investor optimism and network adoption, supporting SOL’s
-              recovery from a 14-month low below $100.SOL price validates falling
-              wedge patternSOL price technicals, meanwhile, gained momentum after
-              breaking out of a falling wedge pattern.A falling wedge is a bullish
-              reversal pattern in technical analysis comprising two converging trend
-              lines connecting lower lows and lower highs. The pattern resolves when
-              the price breaks above the upper trendline, hinting at a price rally.
-              After rebounding from a multi-year support trendline near $95, SOL broke
-              above the upper trending line of the wedge at $120, with traders eying
-              the technical target of the wedge at $200, representing a 50% increase
-              from the current price.SOL/USD daily chart. Source: Cointelegraph/TradingViewThe
-              relative strength index (RSI) has increased from 33 to 55 since April
-              7, indicating an increasing bullish momentum.However, to sustain the
-              ongoing recovery, Solana price has to first hold above the 50-day simple
-              moving average (SMA), currently at $130, and then overcome the resistance
-              between $160 and $180, where the 100-day and 200-day SMAs are.As Contelegraph
-              reported, a decisive close above the 50-EMA ($135) will increase the
-              likelihood of a rally toward the aforementioned targets. This article
-              does not contain investment advice or recommendations. Every investment
-              and trading move involves risk, and readers should conduct their own
-              research when making a decision.'
-            title: Why is Solana (SOL) price up today?
-          - link: https://cointelegraph.com/news/polygon-jio-web3-blockchain-india-decentralization?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:20:21 +0100
-            source: Cointelegraph.com News
-            summary: 'As Polygon lays the groundwork for mainstream Web3 adoption
-              in India by bringing blockchain access to over 450 million Reliance
-              Jio users, it remains focused on balancing speed, scalability and affordability,
-              without compromising on decentralization.Polygon is working with Jio,
-              a telecom giant owned by India’s richest man, Mukesh Ambani, to find
-              ways to infuse blockchain technology into its existing services. The
-              duo is currently adding blockchain-based capabilities to the JioSphere
-              web browser, which would have been expensive, cumbersome and time-consuming
-              via traditional methods.“We’re building at an insane pace, onboarding
-              massive partners, and pushing blockchain into the mainstream, but with
-              that growth comes the responsibility to make sure we’re doing it the
-              right way,” Polygon’s co-founder, Sandeep Nailwal, said while discussing
-              Polygon’s India-focused initiatives with Cointelegraph. Preserving decentralization
-              while ensuring system scalability“Scalability and decentralization don’t
-              have to be either-or, and that’s exactly the balance we’re focused on
-              at Polygon,” Nailwal said as he underscored the importance of keeping
-              the core values of blockchain intact: security, transparency and decentralization.At
-              the same time, Nailwal revealed that Polygon is investing heavily in
-              zero-knowledge technology to make scaling more seamless across the ecosystem.
-              “The goal is to give developers and users the best of both worlds: faster,
-              cheaper transactions without compromising trust or decentralization,”
-              he added.As a result of delivering the combination of low fees, fast
-              transactions and decentralized security, Polygon is already powering
-              some of the most active use cases in Web3, from stablecoin payments
-              on Polygon PoS to real-world tokenization with major institutions: “The
-              key challenge is making blockchain as seamless and accessible as Web2
-              without compromising what makes it special. That’s why we’re all-in
-              on ZK technology and Agglayer, which let us scale while keeping the
-              ecosystem trustless and interoperable.”Bringing blockchain tech to millions
-              of usersAccording to Nailwal, a one-size-fits-all approach does not
-              work when onboarding 450 million users from India’s diverse population.
-              “We’ll be working closely with Jio to develop use cases that truly resonate
-              with their users, and gradually onboard them onto the chain based on
-              these real-world applications,” he added.Nailwal said that developers
-              never have to compromise on the fundamentals, as Polygon’s infrastructure
-              can scale without sacrificing what makes blockchain powerful in the
-              first place:“What excites me most is that we''re moving beyond technical
-              discussions about blockchain to solving real problems for real people.
-              These are the use cases that will drive the next wave of adoption.”“At
-              the end of the day, it’s about more than just technology. We’re here
-              to create a decentralized future that billions of people can actually
-              use. And while that’s a massive challenge, it’s also what excites me
-              the most,” Nailwal said.Related: Indian town adopts Avalanche blockchain
-              for tamper-proof land recordsReal-world problem solving will drive the
-              next wave of adoptionRising threats driven by artificial intelligence
-              tools, including deepfakes and other misinformation campaigns, are another
-              use case blockchain technology can help solve. Nailwal said that the
-              escalating threat of misinformation and growing consumer insistence
-              on trusted sources will eventually result in an uptick of blockchain-based
-              verification tools.Additionally, Nailwal highlighted the growing relevance
-              of Polymarket, a cryptocurrency-based prediction market, in mainstream
-              finance and reporting. “Polymarket’s success is exactly what we’ve been
-              working toward,” he said, adding:“Prediction markets are proving to
-              be incredibly valuable tools for finance, risk assessment, journalism
-              and even governance. They pull in insights from a wide range of sources,
-              often making them more reliable than traditional polling.”Nailwal is
-              placing his full bet on blockchain’s immutable nature to transform economic
-              forecasting, policy-making and journalism, among others.Magazine: Your
-              AI ‘digital twin’ can take meetings and comfort your loved ones'
-            title: 'Polygon’s Nailwal: Jio partnership to drive real-world Web3 adoption
-              for 450M users'
-          - link: https://cointelegraph.com/news/babylon-unstaking-1-billion-tvl-drops-30-percent?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:05:53 +0100
-            source: Cointelegraph.com News
-            summary: 'Bitcoin staking protocol Babylon saw $1.26 billion in BTC unstaked
-              from its platform, reducing the protocol’s total value locked by 32%.
-              On April 17, blockchain analytics firm Lookonchain flagged several addresses
-              that had unstaked a total of 14,929 Bitcoin (BTC) from the staking platform.
-              The security firm flagged four addresses that had unstaked 299 BTC,
-              499 BTC, 1,000 BTC and 13,129 BTC. One address held a majority of the
-              unstaked assets worth $1.1 billion. With BTC prices hovering at around
-              $84,400, the total unstaked BTC was worth about $1.26 billion.The unstaking
-              event saw Babylon’s total value locked (TVL) drop by 32%. According
-              to data tracker DefiLlama, Babylon’s TVL declined from $3.97 billion
-              to $2.68 billion after the unstaking.Source: LookonchainUnstaked Bitcoin
-              may be “staked back” to Babylon Community members are speculating on
-              who was behind the unstaking. One X user suspected that the Bitcoin
-              may belong to the Chinese government, while another said the move may
-              simply be a rotation, risk-off, or a trader getting liquid.While it’s
-              unclear who’s behind the four addresses cited by Lookonchain, the fund
-              movements could be related to a transition initiated by the decentralized
-              finance (DeFi) protocol Lombard Finance. At the time of the unstaking,
-              Babylon Labs retweeted an announcement from Lombard, saying it was unstaking
-              Bitcoin as part of a transition to a new set of finality providers.
-              Lombard Finance said it timed the unstaking with the end of Babylon’s
-              phase 1 cap 1 on April 24 so users would not miss out on rewards. The
-              protocol said it would stake the assets back. “All of this BTC will
-              be staked back into Babylon as soon as the unbonding is complete,” Lombard
-              Finance wrote. Cointelegraph reached out to Babylon Labs for comments
-              but did not get a response by publication.Related: Bitcoin L2 ’honeymoon
-              phase’ is over, most projects will fail — Muneeb AliBitcoin unstaking
-              follows BABY airdropThe massive unstaking event follows a Babylon airdrop
-              for early adopters. On April 3, Babylon announced the details of its
-              early adopters airdrop program. The airdrop was allocated for its Phase
-              1 stakers, non-fungible token (NFT) holders and developers. The protocol
-              allocated 600 million BABY tokens for the airdrop event. Following the
-              airdrop, $21 million in BTC was unstaked from the protocol. Bitlayer
-              co-founder Kevin He previously told Cointelegraph that this was a common
-              short-term market behavior representing early redemption. Babylon is
-              one of the largest Bitcoin DeFi players in the space, with a TVL reaching
-              over $6 billion in December. Babylon co-founder Fisher Yu previously
-              told Cointelegraph that the platform allows staking to be a native use
-              case for Bitcoin, eliminating the need to trust another party while
-              staking. Magazine: Your AI ‘digital twin’ can take meetings and comfort
-              your loved ones'
-            title: Babylon total value locked drops 32% as wallets unstake $1.2B in
-              Bitcoin
-          - link: https://cointelegraph.com/news/binance-advises-governments-on-bitcoin-reserves?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 11:11:09 +0100
-            source: Cointelegraph.com News
-            summary: 'Cryptocurrency exchange Binance is involved in discussions on
-              establishing strategic digital asset reserves with several countries,
-              its CEO, Richard Teng, reportedly said.Binance has been advising multiple
-              governments on establishing strategic Bitcoin (BTC) reserves and formulating
-              crypto asset regulations, Teng said in an interview with the Financial
-              Times on April 17.“We have actually received quite a number of approaches
-              by a few governments and sovereign wealth funds on the establishment
-              of their own crypto reserves,” Teng told the FT.Teng did not identify
-              any countries but said that the United States is “way ahead on that
-              front.”US fuels global crypto reserve spreeAccording to Teng, the main
-              reason for governments approaching Binance for help in handling potential
-              strategic reserves is the new crypto-friendly agenda in the US.Teng
-              referred to key US crypto policy developments, such as discussions around
-              creating a national Bitcoin reserve and digital asset stockpile. Earlier
-              this year, Trump signed an executive order to establish a Strategic
-              Bitcoin Reserve seeded with BTC forfeited in federal criminal and civil
-              cases.Binance founder Changpeng Zhao (on the left) next to Pakistan’s
-              deputy prime minister Mohammad Ishaq Dar and Pakistan Crypto Council
-              CEO Bilal bin Saqib. Source: Pakistan governmentWhile governments of
-              Pakistan and Kyrgyzstan have announced collaboration with Binance and
-              former CEO Changpeng Zhao on crypto regulations in the past few weeks,
-              none of the jurisdictions mentioned crypto reserve plans on their agenda.Binance
-              shifts stance on headquartersAs Binance deepens its involvement in efforts
-              to help countries set up crypto reserves and regulations, it appears
-              to have shifted away from its no-formal-headquarters approach under
-              Zhao.According to Teng, Binance is “working very hard” on plans for
-              a global headquarters for the exchange.Related: Crypto Biz: Ripple’s
-              ‘defining moment,’ Binance’s ongoing purge“It requires serious deliberation
-              and the board and the senior management are spending a lot of time doing
-              the evaluation,” Teng reportedly said, adding: “Hopefully we are able
-              to announce our intentions on that front.”Source: Changpeng “CZ” ZhaoIn
-              2019, Zhao said that offices and headquarters are “old concepts like
-              SMS and MMS.”The shift comes as more jurisdictions adopt clearer frameworks
-              for regulating crypto businesses. Binance was subject to heavy scrutiny
-              and investigations by multiple governments in 2020.Cointelegraph approached
-              Binance for comment regarding its crypto policy collaboration with governments
-              worldwide, but had not received a response by the time of publication.Magazine:
-              How crypto laws are changing across the world in 2025'
-            title: Binance helps countries with Bitcoin reserves, crypto policies,
-              says CEO
-          - link: https://decrypt.co/314700/how-solana-copy-trading-platform-odinbot-is-achieving-zero-block-latency
-            published: Thu, 17 Apr 2025 12:01:02 +0000
-            source: Decrypt
-            summary: The Solana copy trading bot has focused on speed, with a claimed
-              15% of trades completed in the same block as the mirrored wallet.
-            title: How Solana Copy Trading Platform Odinbot is Achieving ‘Zero Block
-              Latency’
-          - link: https://decrypt.co/315244/secret-service-canadian-officials-disrupt-4-3m-ethereum-approval-phishing-scam
-            published: Thu, 17 Apr 2025 11:22:57 +0000
-            source: Decrypt
-            summary: The operation reached out to Ethereum wallet holders who had
-              been compromised, whether or not they had already lost crypto.
-            title: Secret Service, Canadian Officials Disrupt $4.3M Ethereum “Approval
-              Phishing” Scam
-          - link: https://decrypt.co/315224/pump-fun-co-founder-says-no-plan-to-launch-token-speaks-out-against-base-promoted-meme-coin
-            published: Thu, 17 Apr 2025 07:22:32 +0000
-            source: Decrypt
-            summary: 'After a Base-promoted memecoin 90% crashed, Pump.fun seized
-              an opportunity to tell its community: no stealth coins, no hype-fueled
-              drops.'
-            title: Pump.Fun Co-Founder Says No Plan to Launch Token, Speaks Out Against
-              Base-Promoted Meme Coin
-          - link: https://decrypt.co/315216/hong-kong-approves-ethereum-staking-etf
-            published: Thu, 17 Apr 2025 06:59:40 +0000
-            source: Decrypt
-            summary: Hong Kong is changing its tune following a new law, approving
-              for the second time an Ethereum ETF with a staking component.
-            title: Hong Kong Approves Latest Ethereum Staking ETF as New Rules Take
-              Root
-          - link: https://decrypt.co/315213/a16z-sec-update-crypto-custody-rules-registered-investment-advisers
-            published: Thu, 17 Apr 2025 05:37:48 +0000
-            source: Decrypt
-            summary: A16z has penned a letter to the SEC calling for revised custody
-              rules to allow RIAs to hold crypto assets directly.
-            title: A16z Calls on SEC to Update Crypto Custody Rules for Registered
-              Investment Advisers
-          - link: https://cryptoslate.com/coinbase-backed-base-draws-fire-for-role-in-pump-and-dump-style-content-coin-token-launch/
-            published: Thu, 17 Apr 2025 10:50:05 +0000
-            source: CryptoSlate
-            summary: Coinbase-backed Layer-2 network Base is under fire from the crypto
-              community after promoting a so-called “Content Coin” that lost nearly
-              all its value shortly after launch. The controversy began on April 16
-              when Base shared a tokenized version of its “Base is for Everyone” post
-              on Zora, a decentralized content-sharing platform, through its official
-              X […] The post Coinbase-backed Base draws fire for role in ‘pump-and-dump’
-              style ‘Content Coin’ token launch appeared first on CryptoSlate.
-            title: Coinbase-backed Base draws fire for role in ‘pump-and-dump’ style
-              ‘Content Coin’ token launch
-          - link: https://cryptoslate.com/cz-says-he-cant-tell-the-difference-in-ai-video-of-himself/
-            published: Thu, 17 Apr 2025 10:33:05 +0000
-            source: CryptoSlate
-            summary: Changpeng “CZ” Zhao, former CEO of Binance, stated Thursday that
-              he had encountered an AI-generated video that replicated his voice so
-              accurately that he could not distinguish it from a real recording. The
-              post, shared via X, featured an AI voice-over of Zhao speaking Mandarin,
-              matching his facial movements with a precision he described as […] The
-              post AI deepfake perfectly clones ex-Binance CEO CZ’s voice, reigniting
-              fraud fears appeared first on CryptoSlate.
-            title: AI deepfake perfectly clones ex-Binance CEO CZ’s voice, reigniting
-              fraud fears
-          - link: https://cryptoslate.com/insights/bitcoin-historically-the-best-performing-asset-60-days-after-major-global-crisis/
-            published: Thu, 17 Apr 2025 08:36:40 +0000
-            source: CryptoSlate
-            summary: Bitcoin has delivered the strongest 60-day returns following
-              major global disruptions since 2020, outperforming both equities and
-              gold across several high-volatility periods. The top digital asset posted
-              an average 37% two‑month return across events since 2020, versus 3.5%
-              for the equity gauge and 6.2% for gold. BlackRock data shared by Bitcoin
-              analyst and Marathon Digital advisor […] The post Bitcoin historically
-              the best performing asset 60 days after major global crisis appeared
-              first on CryptoSlate.
-            title: Bitcoin historically the best performing asset 60 days after major
-              global crisis
-          - link: https://cryptoslate.com/short-term-holder-supply-sees-profitability-crash-to-2-as-tariff-fears-bite/
-            published: Thu, 17 Apr 2025 00:00:51 +0000
-            source: CryptoSlate
-            summary: 'Short‑term holder supply in profit measures the share of coins
-              held for fewer than 155 days whose last on‑chain movement occurred at
-              a price below the current spot. Since these coins are statistically
-              the most mobile, the metric is an effective thermometer for near‑term
-              selling pressure: when the percentage is high, a larger share of speculative
-              […] The post Short-term holder supply sees profitability crash to 2%
-              as tariff fears bite appeared first on CryptoSlate.'
-            title: Short-term holder supply sees profitability crash to 2% as tariff
-              fears bite
-          - link: https://cryptoslate.com/vanecks-onchain-economy-etf-node-cleared-for-may-14-launch/
-            published: Wed, 16 Apr 2025 23:00:16 +0000
-            source: CryptoSlate
-            summary: VanEck received regulatory effectiveness for its new Onchain
-              Economy ETF, an actively managed fund designed to give investors broad
-              exposure to companies powering the digital asset ecosystem. Regulatory
-              effectiveness means the SEC has approved the fund’s registration, allowing
-              it to begin offering shares to the public. Matthew Sigel, VanEck’s head
-              of digital assets research and […] The post VanEck’s Onchain Economy
-              ETF ‘NODE’ cleared for May 14 launch appeared first on CryptoSlate.
-            title: VanEck’s Onchain Economy ETF ‘NODE’ cleared for May 14 launch
+    data: *id001
 keyword_parameter:
   input:
     tool: get_web3_news
@@ -1287,409 +432,342 @@ keyword_parameter:
   output:
     response: ''
     data:
-      status: success
-      data:
-        payload:
-          results:
-          - link: https://www.coindesk.com/markets/2025/04/17/lombard-finance-launches-toolkit-to-unlock-bitcoin-s-usd154b-defi-opportunity
-            published: Thu, 17 Apr 2025 12:00:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Lombard co-founder Jacob Phillips (Lombard)
-            title: Lombard Finance Launches Toolkit to Unlock Bitcoin’s $154B DeFi
-              Opportunity
-          - link: https://www.coindesk.com/markets/2025/04/17/xrp-downside-fears-persist-despite-etf-optimism-options-data-show
-            published: Thu, 17 Apr 2025 11:35:57 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: XRP options skew. (Amberdata/Deribit)
-            title: XRP Downside Fears Persist Despite ETF Optimism, Options Data Show
-          - link: https://www.coindesk.com/daybook-us/2025/04/17/crypto-daybook-americas-bitcoin-loses-allure-to-gold-as-economic-concerns-rise
-            published: Thu, 17 Apr 2025 11:15:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Jerome Powell, Federal Reserve
-            title: 'Crypto Daybook Americas: Bitcoin Loses Allure to Gold as Economic
-              Concerns Rise'
-          - link: https://www.coindesk.com/markets/2025/04/17/bitcoin-gold-and-the-minsky-moment-novogratz-on-the-end-of-fiscal-complacency
-            published: Thu, 17 Apr 2025 10:32:59 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: Mike Novogratz, Galaxy Founder and CEO, speaks at Consensus 2024
-              (CoinDesk/Shutterstock/Suzanne Cordiero)
-            title: 'Bitcoin, Gold, and the Minsky Moment: Novogratz on the End of
-              Fiscal Complacency'
-          - link: https://www.coindesk.com/business/2025/04/17/auradine-raises-usd153m-series-c-for-bitcoin-mining-ai-data-center-networking
-            published: Thu, 17 Apr 2025 09:05:00 +0000
-            source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-            summary: 16:9 Mining rigs in Plattsburgh, NY. (Fran Velasquez/CoinDesk)
-            title: Auradine Raises $153M Series C for Bitcoin Mining, AI Data Center
-              Networking
-          - link: https://cointelegraph.com/news/mantra-om-crash-critical-liquidity-concentration-issues?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:59:30 +0100
-            source: Cointelegraph.com News
-            summary: 'Mantra’s recent token collapse highlights deeper-rooted issues
-              within the crypto industry around fluctuating liquidity levels, creating
-              additional downside volatility over the weekend, which may have exacerbated
-              the token’s crash.The Mantra (OM) token’s price collapsed by over 90%
-              on April 13, from roughly $6.30 to below $0.50, triggering market manipulation
-              allegations among disillusioned investors, Cointelegraph reported.While
-              blockchain analysts are still piecing together the reasons behind the
-              OM collapse, the event highlights critical issues for the crypto industry,
-              according to Gracy Chen, the CEO of cryptocurrency exchange Bitget.“The
-              Om token crash exposed several critical issues that we are seeing not
-              just in OM, but also as an industry,” Chen said during Cointelegraph’s
-              Chainreaction daily X show, adding:“When it’s a token that’s too concentrated,
-              the wealth concentration and the very opaque governance, together with
-              sudden exchange inflows and outflows, [...] combined with the forced
-              liquidation during very low liquidity hours in our industry, created
-              the big drop off.”🎙️ CEXs hit with outages as AWS runs into trouble.
-              The question is, do we need more decentralization? Today, @RKBaggs and
-              @ZVardai are joined by @GracyBitget, CEO of @Bitgetglobal on #CHAINREACTION
-              to unpack the problem!https://t.co/OPoyu1IORC— Cointelegraph (@Cointelegraph)
-              April 15, 2025Related: Google to enforce MiCA rules for crypto ads in
-              Europe starting April 23At least two wallets linked to Laser Digital
-              were among 17 wallets that moved a combined 43.6 million OM tokens —
-              worth about $227 million at the time — to exchanges before the crash,
-              the blockchain analytics platform Lookonchain reported on April 13,
-              citing Arkham Intelligence data.However, Mantra CEO John Mullin denied
-              the allegations related to large-scale token transfers from Mantra investors,
-              Cointelegraph reported on April 14.Mantra released a post-crash statement
-              on April 16, reiterating that the OM crash didn’t involve token sales
-              by the project itself and that the Mantra team continues investigating
-              the incident. The report did not explain the rapid movement of OM tokens
-              to exchanges and subsequent liquidations.Related: UFC boss Dana White
-              becomes VeChain adviser to push blockchain mainstreamExchange movements
-              point to strong “insider dumping” signalWhile the exact reason behind
-              the collapse remains unclear, Mullin attributed the crash to “massive
-              forced liquidations” on centralized exchanges during low-liquidity hours
-              on Sunday.Mullin told an X user that the Mantra team believes one exchange
-              “in particular” is to blame, but said the team was still “figuring out
-              the details,” specifying that the exchange in question is not Binance.
-              “I think OKX was the main exchange being accused of so-called liquidations,”
-              said Chen, adding that the large transfers to multiple exchanges raised
-              significant red flags. She added:“I did look at the onchain data, which
-              revealed that there were millions of OM tokens moved to centralized
-              exchanges. That’s a very strong signal of insider dumping.”Weekend liquidity
-              issues have impacted even major cryptocurrencies like Bitcoin (BTC).The
-              lack of weekend trading volume, combined with Bitcoin’s 24/7 liquidity,
-              resulted in Bitcoin’s correction below $75,000 on Sunday, April 6, Cointelegraph
-              reported.The April 6 correction may have occurred due to Bitcoin being
-              the only large tradable asset over the weekend available for de-risking
-              amid global trade war concerns, Lucas Outumuro, head of research at
-              crypto intelligence platform IntoTheBlock, told Cointelegraph.Magazine:
-              Illegal arcade disguised as … a fake Bitcoin mine? Soldier scams in
-              China: Asia Express'
-            title: Mantra OM token crash exposes ‘critical’ liquidity issues in crypto
-          - link: https://cointelegraph.com/news/why-is-solana-price-up-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:28:34 +0100
-            source: Cointelegraph.com News
-            summary: 'Solana (SOL) has seen a remarkable price surge over the last
-              10 days, climbing 40% from its April 7 low of $95 to around $133 on
-              April 17. The altcoin is up 8% over the last 24 hours.Its daily trading
-              volume has jumped by 41% over the same period to $4.64 billion, reinforcing
-              the intensity of the demand-side activity.SOL/USD daily chart. Source:
-              Cointelegraph/TradingViewSeveral factors are driving the SOL price up
-              today, including:The launch of the first spot Solana ETF in Canada.Growth
-              in Solana network deposits.SOL’s strengthening price technicals are
-              targeting $200.Growing institutional adoption of SolanaInstitutional
-              interest in Solana is accelerating, evidenced by significant recent
-              developments surrounding Solana exchange-traded funds (ETFs).On April
-              16, Canada launched the first spot Solana ETFs in North America, issued
-              by asset managers like 3iQ, Purpose, Evolve, and CI. These ETFs, which
-              include staking options to generate yield, provide traditional investors
-              with regulated exposure to SOL, boosting demand and liquidity. Source:
-              Eric Balchunas3iQ’s ETF, for instance, leverages Figment as a staking
-              provider to enhance returns, signaling confidence in Solana’s infrastructure.Additionally,
-              real estate fintech firm Janover doubled its Solana holdings to 163,651
-              SOL, valued at $21.2 million, after purchasing 80,567 SOL for $10.5
-              million on April 15. Janover’s strategy, inspired by MicroStrategy’s
-              Bitcoin playbook, includes staking and potentially running validators,
-              reflecting its confidence in Solana’s long-term value.These moves underscore
-              Solana’s growing appeal as a corporate treasury asset and investment
-              vehicle.Increased Solana network inflowsSolana’s network activity has
-              surged, driving capital inflows. Crypto market participants have bridged
-              more than $120 million in liquidity from other blockchains to Solana
-              over the last 30 days, according to data from deBridge. The highest
-              amount was transferred from Ethereum at $41.5 million, followed by a
-              $37.3 million influx from Arbitrum. Meanwhile, Base, BNB Chain, and
-              Sonic users moved $16 million, $14 million, and $6.6 million, respectively.Total
-              transferred amount from other chains to Solana. Source: deBridgeThe
-              current liquidity influx to Solana coincides with the return of double-digit
-              price rallies from memecoins as Popcat (POPCAT), Fartcoin (FARTCOIN),
-              and Bonk (BONK) rose 50%, 26% and 13%, respectively, over the past seven
-              days.Solana memecoins performance. Source: CoinGeckoFurther analysis
-              reveals that the total value locked (TVL) on Solana has increased by
-              12% over the last seven days to rest at $7.08 billion on April 17, pulling
-              ahead of competitors such as Tron, Base, and Berachain, according to
-              data from DefiLlama. Related: Solana rallies 20% against Ethereum, but
-              is $300 SOL price within reach?Promising signs for Solana include a
-              30% increase in deposits on Sanctum, a liquid staking application, and
-              15% growth on Jito and Jupiter. These inflows and growing TVL reflect
-              heightened investor optimism and network adoption, supporting SOL’s
-              recovery from a 14-month low below $100.SOL price validates falling
-              wedge patternSOL price technicals, meanwhile, gained momentum after
-              breaking out of a falling wedge pattern.A falling wedge is a bullish
-              reversal pattern in technical analysis comprising two converging trend
-              lines connecting lower lows and lower highs. The pattern resolves when
-              the price breaks above the upper trendline, hinting at a price rally.
-              After rebounding from a multi-year support trendline near $95, SOL broke
-              above the upper trending line of the wedge at $120, with traders eying
-              the technical target of the wedge at $200, representing a 50% increase
-              from the current price.SOL/USD daily chart. Source: Cointelegraph/TradingViewThe
-              relative strength index (RSI) has increased from 33 to 55 since April
-              7, indicating an increasing bullish momentum.However, to sustain the
-              ongoing recovery, Solana price has to first hold above the 50-day simple
-              moving average (SMA), currently at $130, and then overcome the resistance
-              between $160 and $180, where the 100-day and 200-day SMAs are.As Contelegraph
-              reported, a decisive close above the 50-EMA ($135) will increase the
-              likelihood of a rally toward the aforementioned targets. This article
-              does not contain investment advice or recommendations. Every investment
-              and trading move involves risk, and readers should conduct their own
-              research when making a decision.'
-            title: Why is Solana (SOL) price up today?
-          - link: https://cointelegraph.com/news/polygon-jio-web3-blockchain-india-decentralization?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:20:21 +0100
-            source: Cointelegraph.com News
-            summary: 'As Polygon lays the groundwork for mainstream Web3 adoption
-              in India by bringing blockchain access to over 450 million Reliance
-              Jio users, it remains focused on balancing speed, scalability and affordability,
-              without compromising on decentralization.Polygon is working with Jio,
-              a telecom giant owned by India’s richest man, Mukesh Ambani, to find
-              ways to infuse blockchain technology into its existing services. The
-              duo is currently adding blockchain-based capabilities to the JioSphere
-              web browser, which would have been expensive, cumbersome and time-consuming
-              via traditional methods.“We’re building at an insane pace, onboarding
-              massive partners, and pushing blockchain into the mainstream, but with
-              that growth comes the responsibility to make sure we’re doing it the
-              right way,” Polygon’s co-founder, Sandeep Nailwal, said while discussing
-              Polygon’s India-focused initiatives with Cointelegraph. Preserving decentralization
-              while ensuring system scalability“Scalability and decentralization don’t
-              have to be either-or, and that’s exactly the balance we’re focused on
-              at Polygon,” Nailwal said as he underscored the importance of keeping
-              the core values of blockchain intact: security, transparency and decentralization.At
-              the same time, Nailwal revealed that Polygon is investing heavily in
-              zero-knowledge technology to make scaling more seamless across the ecosystem.
-              “The goal is to give developers and users the best of both worlds: faster,
-              cheaper transactions without compromising trust or decentralization,”
-              he added.As a result of delivering the combination of low fees, fast
-              transactions and decentralized security, Polygon is already powering
-              some of the most active use cases in Web3, from stablecoin payments
-              on Polygon PoS to real-world tokenization with major institutions: “The
-              key challenge is making blockchain as seamless and accessible as Web2
-              without compromising what makes it special. That’s why we’re all-in
-              on ZK technology and Agglayer, which let us scale while keeping the
-              ecosystem trustless and interoperable.”Bringing blockchain tech to millions
-              of usersAccording to Nailwal, a one-size-fits-all approach does not
-              work when onboarding 450 million users from India’s diverse population.
-              “We’ll be working closely with Jio to develop use cases that truly resonate
-              with their users, and gradually onboard them onto the chain based on
-              these real-world applications,” he added.Nailwal said that developers
-              never have to compromise on the fundamentals, as Polygon’s infrastructure
-              can scale without sacrificing what makes blockchain powerful in the
-              first place:“What excites me most is that we''re moving beyond technical
-              discussions about blockchain to solving real problems for real people.
-              These are the use cases that will drive the next wave of adoption.”“At
-              the end of the day, it’s about more than just technology. We’re here
-              to create a decentralized future that billions of people can actually
-              use. And while that’s a massive challenge, it’s also what excites me
-              the most,” Nailwal said.Related: Indian town adopts Avalanche blockchain
-              for tamper-proof land recordsReal-world problem solving will drive the
-              next wave of adoptionRising threats driven by artificial intelligence
-              tools, including deepfakes and other misinformation campaigns, are another
-              use case blockchain technology can help solve. Nailwal said that the
-              escalating threat of misinformation and growing consumer insistence
-              on trusted sources will eventually result in an uptick of blockchain-based
-              verification tools.Additionally, Nailwal highlighted the growing relevance
-              of Polymarket, a cryptocurrency-based prediction market, in mainstream
-              finance and reporting. “Polymarket’s success is exactly what we’ve been
-              working toward,” he said, adding:“Prediction markets are proving to
-              be incredibly valuable tools for finance, risk assessment, journalism
-              and even governance. They pull in insights from a wide range of sources,
-              often making them more reliable than traditional polling.”Nailwal is
-              placing his full bet on blockchain’s immutable nature to transform economic
-              forecasting, policy-making and journalism, among others.Magazine: Your
-              AI ‘digital twin’ can take meetings and comfort your loved ones'
-            title: 'Polygon’s Nailwal: Jio partnership to drive real-world Web3 adoption
-              for 450M users'
-          - link: https://cointelegraph.com/news/babylon-unstaking-1-billion-tvl-drops-30-percent?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 12:05:53 +0100
-            source: Cointelegraph.com News
-            summary: 'Bitcoin staking protocol Babylon saw $1.26 billion in BTC unstaked
-              from its platform, reducing the protocol’s total value locked by 32%.
-              On April 17, blockchain analytics firm Lookonchain flagged several addresses
-              that had unstaked a total of 14,929 Bitcoin (BTC) from the staking platform.
-              The security firm flagged four addresses that had unstaked 299 BTC,
-              499 BTC, 1,000 BTC and 13,129 BTC. One address held a majority of the
-              unstaked assets worth $1.1 billion. With BTC prices hovering at around
-              $84,400, the total unstaked BTC was worth about $1.26 billion.The unstaking
-              event saw Babylon’s total value locked (TVL) drop by 32%. According
-              to data tracker DefiLlama, Babylon’s TVL declined from $3.97 billion
-              to $2.68 billion after the unstaking.Source: LookonchainUnstaked Bitcoin
-              may be “staked back” to Babylon Community members are speculating on
-              who was behind the unstaking. One X user suspected that the Bitcoin
-              may belong to the Chinese government, while another said the move may
-              simply be a rotation, risk-off, or a trader getting liquid.While it’s
-              unclear who’s behind the four addresses cited by Lookonchain, the fund
-              movements could be related to a transition initiated by the decentralized
-              finance (DeFi) protocol Lombard Finance. At the time of the unstaking,
-              Babylon Labs retweeted an announcement from Lombard, saying it was unstaking
-              Bitcoin as part of a transition to a new set of finality providers.
-              Lombard Finance said it timed the unstaking with the end of Babylon’s
-              phase 1 cap 1 on April 24 so users would not miss out on rewards. The
-              protocol said it would stake the assets back. “All of this BTC will
-              be staked back into Babylon as soon as the unbonding is complete,” Lombard
-              Finance wrote. Cointelegraph reached out to Babylon Labs for comments
-              but did not get a response by publication.Related: Bitcoin L2 ’honeymoon
-              phase’ is over, most projects will fail — Muneeb AliBitcoin unstaking
-              follows BABY airdropThe massive unstaking event follows a Babylon airdrop
-              for early adopters. On April 3, Babylon announced the details of its
-              early adopters airdrop program. The airdrop was allocated for its Phase
-              1 stakers, non-fungible token (NFT) holders and developers. The protocol
-              allocated 600 million BABY tokens for the airdrop event. Following the
-              airdrop, $21 million in BTC was unstaked from the protocol. Bitlayer
-              co-founder Kevin He previously told Cointelegraph that this was a common
-              short-term market behavior representing early redemption. Babylon is
-              one of the largest Bitcoin DeFi players in the space, with a TVL reaching
-              over $6 billion in December. Babylon co-founder Fisher Yu previously
-              told Cointelegraph that the platform allows staking to be a native use
-              case for Bitcoin, eliminating the need to trust another party while
-              staking. Magazine: Your AI ‘digital twin’ can take meetings and comfort
-              your loved ones'
-            title: Babylon total value locked drops 32% as wallets unstake $1.2B in
-              Bitcoin
-          - link: https://cointelegraph.com/news/binance-advises-governments-on-bitcoin-reserves?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-            published: Thu, 17 Apr 2025 11:11:09 +0100
-            source: Cointelegraph.com News
-            summary: 'Cryptocurrency exchange Binance is involved in discussions on
-              establishing strategic digital asset reserves with several countries,
-              its CEO, Richard Teng, reportedly said.Binance has been advising multiple
-              governments on establishing strategic Bitcoin (BTC) reserves and formulating
-              crypto asset regulations, Teng said in an interview with the Financial
-              Times on April 17.“We have actually received quite a number of approaches
-              by a few governments and sovereign wealth funds on the establishment
-              of their own crypto reserves,” Teng told the FT.Teng did not identify
-              any countries but said that the United States is “way ahead on that
-              front.”US fuels global crypto reserve spreeAccording to Teng, the main
-              reason for governments approaching Binance for help in handling potential
-              strategic reserves is the new crypto-friendly agenda in the US.Teng
-              referred to key US crypto policy developments, such as discussions around
-              creating a national Bitcoin reserve and digital asset stockpile. Earlier
-              this year, Trump signed an executive order to establish a Strategic
-              Bitcoin Reserve seeded with BTC forfeited in federal criminal and civil
-              cases.Binance founder Changpeng Zhao (on the left) next to Pakistan’s
-              deputy prime minister Mohammad Ishaq Dar and Pakistan Crypto Council
-              CEO Bilal bin Saqib. Source: Pakistan governmentWhile governments of
-              Pakistan and Kyrgyzstan have announced collaboration with Binance and
-              former CEO Changpeng Zhao on crypto regulations in the past few weeks,
-              none of the jurisdictions mentioned crypto reserve plans on their agenda.Binance
-              shifts stance on headquartersAs Binance deepens its involvement in efforts
-              to help countries set up crypto reserves and regulations, it appears
-              to have shifted away from its no-formal-headquarters approach under
-              Zhao.According to Teng, Binance is “working very hard” on plans for
-              a global headquarters for the exchange.Related: Crypto Biz: Ripple’s
-              ‘defining moment,’ Binance’s ongoing purge“It requires serious deliberation
-              and the board and the senior management are spending a lot of time doing
-              the evaluation,” Teng reportedly said, adding: “Hopefully we are able
-              to announce our intentions on that front.”Source: Changpeng “CZ” ZhaoIn
-              2019, Zhao said that offices and headquarters are “old concepts like
-              SMS and MMS.”The shift comes as more jurisdictions adopt clearer frameworks
-              for regulating crypto businesses. Binance was subject to heavy scrutiny
-              and investigations by multiple governments in 2020.Cointelegraph approached
-              Binance for comment regarding its crypto policy collaboration with governments
-              worldwide, but had not received a response by the time of publication.Magazine:
-              How crypto laws are changing across the world in 2025'
-            title: Binance helps countries with Bitcoin reserves, crypto policies,
-              says CEO
-          - link: https://decrypt.co/314700/how-solana-copy-trading-platform-odinbot-is-achieving-zero-block-latency
-            published: Thu, 17 Apr 2025 12:01:02 +0000
-            source: Decrypt
-            summary: The Solana copy trading bot has focused on speed, with a claimed
-              15% of trades completed in the same block as the mirrored wallet.
-            title: How Solana Copy Trading Platform Odinbot is Achieving ‘Zero Block
-              Latency’
-          - link: https://decrypt.co/315244/secret-service-canadian-officials-disrupt-4-3m-ethereum-approval-phishing-scam
-            published: Thu, 17 Apr 2025 11:22:57 +0000
-            source: Decrypt
-            summary: The operation reached out to Ethereum wallet holders who had
-              been compromised, whether or not they had already lost crypto.
-            title: Secret Service, Canadian Officials Disrupt $4.3M Ethereum “Approval
-              Phishing” Scam
-          - link: https://decrypt.co/315224/pump-fun-co-founder-says-no-plan-to-launch-token-speaks-out-against-base-promoted-meme-coin
-            published: Thu, 17 Apr 2025 07:22:32 +0000
-            source: Decrypt
-            summary: 'After a Base-promoted memecoin 90% crashed, Pump.fun seized
-              an opportunity to tell its community: no stealth coins, no hype-fueled
-              drops.'
-            title: Pump.Fun Co-Founder Says No Plan to Launch Token, Speaks Out Against
-              Base-Promoted Meme Coin
-          - link: https://decrypt.co/315216/hong-kong-approves-ethereum-staking-etf
-            published: Thu, 17 Apr 2025 06:59:40 +0000
-            source: Decrypt
-            summary: Hong Kong is changing its tune following a new law, approving
-              for the second time an Ethereum ETF with a staking component.
-            title: Hong Kong Approves Latest Ethereum Staking ETF as New Rules Take
-              Root
-          - link: https://decrypt.co/315213/a16z-sec-update-crypto-custody-rules-registered-investment-advisers
-            published: Thu, 17 Apr 2025 05:37:48 +0000
-            source: Decrypt
-            summary: A16z has penned a letter to the SEC calling for revised custody
-              rules to allow RIAs to hold crypto assets directly.
-            title: A16z Calls on SEC to Update Crypto Custody Rules for Registered
-              Investment Advisers
-          - link: https://cryptoslate.com/coinbase-backed-base-draws-fire-for-role-in-pump-and-dump-style-content-coin-token-launch/
-            published: Thu, 17 Apr 2025 10:50:05 +0000
-            source: CryptoSlate
-            summary: Coinbase-backed Layer-2 network Base is under fire from the crypto
-              community after promoting a so-called “Content Coin” that lost nearly
-              all its value shortly after launch. The controversy began on April 16
-              when Base shared a tokenized version of its “Base is for Everyone” post
-              on Zora, a decentralized content-sharing platform, through its official
-              X […] The post Coinbase-backed Base draws fire for role in ‘pump-and-dump’
-              style ‘Content Coin’ token launch appeared first on CryptoSlate.
-            title: Coinbase-backed Base draws fire for role in ‘pump-and-dump’ style
-              ‘Content Coin’ token launch
-          - link: https://cryptoslate.com/cz-says-he-cant-tell-the-difference-in-ai-video-of-himself/
-            published: Thu, 17 Apr 2025 10:33:05 +0000
-            source: CryptoSlate
-            summary: Changpeng “CZ” Zhao, former CEO of Binance, stated Thursday that
-              he had encountered an AI-generated video that replicated his voice so
-              accurately that he could not distinguish it from a real recording. The
-              post, shared via X, featured an AI voice-over of Zhao speaking Mandarin,
-              matching his facial movements with a precision he described as […] The
-              post AI deepfake perfectly clones ex-Binance CEO CZ’s voice, reigniting
-              fraud fears appeared first on CryptoSlate.
-            title: AI deepfake perfectly clones ex-Binance CEO CZ’s voice, reigniting
-              fraud fears
-          - link: https://cryptoslate.com/insights/bitcoin-historically-the-best-performing-asset-60-days-after-major-global-crisis/
-            published: Thu, 17 Apr 2025 08:36:40 +0000
-            source: CryptoSlate
-            summary: Bitcoin has delivered the strongest 60-day returns following
-              major global disruptions since 2020, outperforming both equities and
-              gold across several high-volatility periods. The top digital asset posted
-              an average 37% two‑month return across events since 2020, versus 3.5%
-              for the equity gauge and 6.2% for gold. BlackRock data shared by Bitcoin
-              analyst and Marathon Digital advisor […] The post Bitcoin historically
-              the best performing asset 60 days after major global crisis appeared
-              first on CryptoSlate.
-            title: Bitcoin historically the best performing asset 60 days after major
-              global crisis
-          - link: https://cryptoslate.com/short-term-holder-supply-sees-profitability-crash-to-2-as-tariff-fears-bite/
-            published: Thu, 17 Apr 2025 00:00:51 +0000
-            source: CryptoSlate
-            summary: 'Short‑term holder supply in profit measures the share of coins
-              held for fewer than 155 days whose last on‑chain movement occurred at
-              a price below the current spot. Since these coins are statistically
-              the most mobile, the metric is an effective thermometer for near‑term
-              selling pressure: when the percentage is high, a larger share of speculative
-              […] The post Short-term holder supply sees profitability crash to 2%
-              as tariff fears bite appeared first on CryptoSlate.'
-            title: Short-term holder supply sees profitability crash to 2% as tariff
-              fears bite
-          - link: https://cryptoslate.com/vanecks-onchain-economy-etf-node-cleared-for-may-14-launch/
-            published: Wed, 16 Apr 2025 23:00:16 +0000
-            source: CryptoSlate
-            summary: VanEck received regulatory effectiveness for its new Onchain
-              Economy ETF, an actively managed fund designed to give investors broad
-              exposure to companies powering the digital asset ecosystem. Regulatory
-              effectiveness means the SEC has approved the fund’s registration, allowing
-              it to begin offering shares to the public. Matthew Sigel, VanEck’s head
-              of digital assets research and […] The post VanEck’s Onchain Economy
-              ETF ‘NODE’ cleared for May 14 launch appeared first on CryptoSlate.
-            title: VanEck’s Onchain Economy ETF ‘NODE’ cleared for May 14 launch
+      payload:
+        results:
+        - link: https://www.coindesk.com/tech/2025/05/06/bitcoin-developers-plan-op_return-removal-in-next-release
+          published: Tue, 06 May 2025 06:25:22 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: Bitcoin Developers Plan OP_RETURN Removal in Next Release
+        - link: https://www.coindesk.com/markets/2025/05/06/ripples-rlusd-in-focus-as-firm-pledges-25m-to-us-educational-initiatives
+          published: Tue, 06 May 2025 06:14:04 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: Ripple’s RLUSD in Focus as Firm Pledges $25M to U.S. Educational
+            Initiatives
+        - link: https://www.coindesk.com/markets/2025/05/06/ripple-to-expand-its-quarterly-xrp-markets-report-as-institutional-usage-jumps
+          published: Tue, 06 May 2025 04:34:18 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: Ripple to Expand Its Quarterly XRP Markets Report as Institutional
+            Usage Jumps
+        - link: https://www.coindesk.com/policy/2025/05/05/sec-further-delays-litecoin-etf-requests-public-comments
+          published: Tue, 06 May 2025 00:54:31 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: SEC Further Delays Litecoin ETF, Requests Public Comments
+        - link: https://www.coindesk.com/news-analysis/2025/05/05/trumps-ties-make-cryptos-democrat-allies-stomp-brakes-on-bills
+          published: Mon, 05 May 2025 21:43:21 +0000
+          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
+          summary: ''
+          title: Trump’s Ties Make Crypto’s Democrat Allies Stomp Brakes on Bills
+        - link: https://cointelegraph.com/news/bitcoin-core-unilaterally-remove-controversial-op-return-limit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 07:04:53 +0100
+          source: Cointelegraph.com News
+          summary: 'Bitcoin Core developers have decided to remove a limit on transaction
+            data in the next network upgrade, enabling more data to be included in
+            a more efficient way. “Bitcoin Core’s next release will, by default, relay
+            and mine transactions whose OP_RETURN outputs exceed 80 bytes and allow
+            any number of these outputs,” read the announcement on GitHub by Bitcoin
+            developer Greg Sanders on May 5. The long-standing limit was originally
+            a “gentle signal that block space should be used sparingly for non-payment
+            proof of publication data,” has outlived its utility, he added. The proposal
+            (PR 32359) was created by Bitcoin pioneer Peter Todd at the request of
+            Chaincode Labs. OP_RETURN is a special type of Bitcoin (BTC) transaction
+            output that allows storing small amounts of data on the blockchain, popularized
+            during the ordinals inscriptions craze in early 2024.Unlike regular transaction
+            outputs, OP_RETURN outputs are not spendable and don’t bloat unspent transaction
+            outputs (UTXOs).The original limit is no longer effective as people found
+            ways around it, such as using fake output addresses, which are actually
+            worse for the network, while some mining services were already ignoring
+            the limit, said Sanders. “Large-data inscriptions are happening regardless
+            and can be done in more or less abusive ways; the cap merely channels
+            them into more opaque forms that cause damage to the network.” Related:
+            Bitcoin block size could grow to 4 MB with inscriptions: ResearchBenefits
+            of removing the limit include a cleaner UTXO set, or database of spendable
+            outputs, more consistent behavior across the network, and better alignment
+            with how Bitcoin is actually being used, he added. Three possible paths
+            were considered: keeping the cap, raising the cap and removing the cap,
+            which was ultimately decided upon after earning “broad, though not perhaps
+            unanimous, support.” A controversial change to Bitcoin “Many users find
+            this to be an undesirable change for a number of reasons,” said Bitcoiner
+            Samson Mow on X on May 5. He added that users “can refuse to upgrade and
+            stay on 29.0 or run another implementation” of the network. Critics said
+            that the proposal was introduced without a proper consensus process. “I
+            think one thing is pretty clear, there is no consensus at the moment on
+            this OP_RETURN issue,” said Ten31 Fund managing partner Marty Bent.Some
+            also expressed concerns about deprioritizing Bitcoin’s financial utility
+            and raised questions about undisclosed conflicts of interest.Critics of
+            OP_RETURN limit removal. Source: moonsettlerMagazine: Bitcoin to $1M ‘by
+            2029,’ CIA tips its hat to Bitcoin: Hodler’s Digest'
+          title: Bitcoin Core to unilaterally remove controversial OP-Return limit
+        - link: https://cointelegraph.com/news/celsius-mashinsky-lashes-govt-death-in-prison-sentence?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 07:01:33 +0100
+          source: Cointelegraph.com News
+          summary: 'Alex Mashinsky, the founder and former CEO of bankrupt crypto
+            lending platform Celsius, has blasted the government''s 20-year “venom-laced”
+            sentence request, declaring it a “death-in-prison sentence.”The US Department
+            of Justice requested Mashinsky receive at least 20 years behind bars in
+            the May 8 sentencing for his role in misleading Celsius users and profiting
+            from the price manipulation of Celsius (CEL), which would make the 59-year-old
+            79 if he serves the whole sentence.Lawyers acting for Mashinsky argued
+            in a May 5 reply memorandum filed in a New York district court that he
+            should receive no more than 366 days, because the DOJ hasn''t taken into
+            account his status as a nonviolent first-time offender with a previously
+            unblemished 30-year history in business. “The government''s venom-laced
+            submission recasts this case as one involving a predator with an intent
+            to target victims, harm them, and steal their money,” they said.“It concludes
+            by recommending that a first time, nonviolent offender who pled guilty
+            and accepts responsibility receive a death-in-prison sentence.”Lawyers
+            acting for Mashinsky argue the DOJ has ignored their client''s background
+            in its sentencing request. Source: Court ListenerMashinsky pleaded guilty
+            to two out of seven charges As part of a plea agreement, Mashinsky pleaded
+            guilty in December 2024 to commodities fraud and manipulating the price
+            of CEL, earning $48 million by selling his holdings before Celsius collapsed
+            in June 2022. Prosecutors initially filed seven charges in July 2023.Lawyers
+            acting for Mashinsky allege the DOJ’s push for a 20-year sentence is because
+            their client is unwilling to “capitulate to the government’s exaggerated
+            characterizations of his actions,” specifically that he was a “fraud from
+            the get-go.” “Alex is inserted as the scapegoat for every corporate action,
+            every group decision, every unanimous vote, every market fluctuation,
+            and every employee''s watercooler speculation,” they said.As part of its
+            April 28 sentencing request, the DOJ said Mashinsky’s guilty plea showed
+            that his crimes were deliberate, calculated decisions to lie, deceive
+            and steal.Days earlier on April 23, US federal prosecutors also filed
+            statements from hundreds of victims who lost money due to the Celsius
+            collapse. They detailed how some had entrusted their life savings to the
+            protocol, believing Mashinsky’s assurances that it was safe.Related: What
+            do crypto users want to happen to Alex Mashinsky?Celsius filed for Chapter
+            11 bankruptcy on July 13, 2022, owing $4.7 billion to creditors after
+            halting withdrawals in June, citing volatile market conditions.In November
+            2023, a US bankruptcy court approved Celsius'' restructuring plan to repay
+            customers, and in August 2024, $2.53 billion was paid to 251,000 creditors.Former
+            Celsius chief revenue officer Roni Cohen-Pavon also pleaded guilty in
+            September 2023 to similar charges, but his Dec. 11 sentencing has been
+            delayed until after Mashinsky is sentenced.Magazine: Crypto wanted to
+            overthrow banks, now it’s becoming them in stablecoin fight'
+          title: Celsius’ Mashinsky lashes out at ‘death-in-prison sentence’
+        - link: https://cointelegraph.com/news/etoro-us-ipo-4-billion-valuation-500-million-raise?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 06:51:30 +0100
+          source: Cointelegraph.com News
+          summary: 'The Israel-based eToro Group says it’s looking for a valuation
+            of up to $4 billion with its initial public offering in the US, as the
+            stock and crypto trading platform forges ahead with listing on the Nasdaq.The
+            company and existing stockholders are aiming to raise $500 million through
+            offering a total of 10 million shares priced between $46 to $50 apiece,
+            eToro said on May 5.A filing with the US Securities and Exchange Commission
+            shows eToro is offering 5 million shares, with a further 5 million being
+            put up by the likes of the company’s co-founder and CEO, Yoni Assia; his
+            brother and executive director, Ronen Assia; along with venture firms
+            Spark Capital, BRM Group and Andalusian Private Capital, among others.The
+            company offers stock and crypto trading targeting retail and plans to
+            list on the tech-heavy Nasdaq Global Select Market under the ticker “ETOR.”It''s
+            slated to compete with Robinhood Markets Inc. (HOOD), which saw crypto
+            trading dip in the first quarter but whose shares have climbed by nearly
+            30% so far this year, according to Google Finance.In the filing, eToro
+            said some BlackRock funds and accounts indicated interest in buying up
+            to $100 million worth of shares at IPO. eToro has also put aside 500,000
+            shares to sell through a directed share program, typically targeted at
+            employees.The company reported that its revenue from crypto in 2024 was
+            $12.1 billion, up from $3.4 billion in 2023. It expected crypto to account
+            for 37% of its commission from trading activity in the first quarter of
+            2025, down from 43% in the year-ago quarter.Source: Matthew SigelIn a
+            section of its filing listing possible risks to the business, eToro warned
+            its users could leave, or it could struggle to get more users, due to
+            negative perceptions of the cryptocurrencies it lists, “either as a result
+            of media coverage or by experiencing significant losses.”Other crypto-related
+            risks the eToro flagged included US state-level crypto regulation, which
+            it said “may place strain on our resources and make it difficult to operate
+            in certain jurisdictions, if at all.”It also said it expects “to continue
+            to incur significant costs” due to the European Union’s Markets in Crypto-Assets
+            (MiCA) laws “on an ongoing basis.”IPOs ready to push after Trump tariff
+            jolt EToro initially made confidential filings with the SEC in January
+            for a public offering, before publicly announcing the plans on March 24.The
+            company reportedly delayed its IPO after President Donald Trump’s April
+            2 “Liberation Day” tariff announcements tanked global markets and stopped
+            many in-the-works public offerings.Related: Are Donald Trump’s tariffs
+            a legal house of cards?Crypto companies are also lining up to go public,
+            with stablecoin issuer Circle filing on April 1 but then pausing its plans
+            amid the uncertainty.Crypto exchange Kraken is also reportedly considering
+            a public offering for early next year, which has accelerated its plan
+            with Trump’s election.EToro’s public offering is led by Goldman Sachs,
+            Jefferies, UBS Investment Bank and Citigroup.Legal Panel: Crypto wanted
+            to overthrow banks, now it’s becoming them in stablecoin fight'
+          title: eToro aims for $4B valuation, $500M raise for US IPO
+        - link: https://cointelegraph.com/news/suspect-behind-190-million-nomad-bridge-hack-extradited-us?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 06:16:37 +0100
+          source: Cointelegraph.com News
+          summary: 'A Russian-Israeli citizen allegedly involved in the $190 million
+            Nomad bridge hack will soon be extradited to the US after he was reportedly
+            arrested at an Israeli airport while boarding a flight to Russia. Alexander
+            Gurevich will be investigated for his alleged involvement in several “computer
+            crimes,” including laundering millions of dollars and transferring stolen
+            property allegedly connected to the Nomad Bridge hack in 2022, The Jerusalem
+            Post reported on May 5.Gurevich returned to Israel from an overseas trip
+            on April 19 but was ordered to appear before the Jerusalem District Court
+            for an extradition hearing soon after, according to the report. On April
+            29, Gurevich changed his name in Israel’s Population Registry to “Alexander
+            Block” and received a passport under that name at Israel’s Ben-Gurion
+            Airport the next day.He was arrested at the same airport two days later,
+            on May 1, while waiting to board a flight to Russia. Gurevich allegedly
+            identified a vulnerability in the Nomad bridge, which he exploited and
+            stole roughly $2.89 million worth of tokens from in August 2022.Dozens
+            of copycat hackers discovered and capitalized on the security vulnerability
+            soon after, leading to a total loss of $190 million.Gurevich allegedly
+            reached out to a Nomad executive on TelegramProsecutors allege that shortly
+            after the hack, Gurevich messaged Nomad’s chief technology officer, James
+            Prestwich, on Telegram using a fake identity, admitting that he had been
+            “amateurishly” seeking a crypto protocol to exploit.He allegedly apologized
+            for “the trouble he caused Prestwich and his team” and voluntarily transferred
+            about $162,000 into a recovery wallet the company had set up.Prestwich
+            told Gurevich that Nomad would pay him 10% of the value of the assets
+            he had stolen, to which Gurevich responded that he would consult his lawyer.
+            However, Nomad never heard back from him after that.Alleged messages between
+            Gurevich and Nomad’s James Prestwich were shared on X by Israel-based
+            Walla News journalist Yoav Itiel. Source: Yoav ItielAt some point during
+            the negotiations, Gurevich demanded a reward of $500,000 for identifying
+            the vulnerability.Related: Do Kwon is in US custody after extradition
+            battleUS federal authorities filed an eight-count indictment against Gurevich
+            in the Northern District of California on Aug. 16, 2023, in addition to
+            obtaining a warrant for his arrest. California is where the team behind
+            the Nomad bridge is based.The US submitted a formal extradition request
+            in December 2024, the Post noted.The money laundering charges that Gurevich
+            faces carry a maximum of 20 years, significantly harsher than the penalties
+            he would face in Israel.Gurevich is believed to have arrived in Israel
+            a few days before the $190 million exploit occurred, prompting Israeli
+            officials to believe he carried out the attack while in Israel.Magazine:
+            Financial nihilism in crypto is over — It’s time to dream big again'
+          title: 'Suspect in $190M Nomad hack to be extradited to the US: Report'
+        - link: https://cointelegraph.com/news/florida-takes-strategic-bitcoin-reserve-bills-off-the-table?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Tue, 06 May 2025 05:24:02 +0100
+          source: Cointelegraph.com News
+          summary: 'Two Florida crypto bills have been removed from the legislative
+            process in the latest blow to American state-level strategic Bitcoin reserve
+            ambitions. Florida’s House Bill 487 and Senate Bill 550 have been “indefinitely
+            postponed and withdrawn from consideration” on May 3, according to the
+            Florida Senate. Florida’s legislative session adjourned on May 2 without
+            the passage of these two bills, which would have advanced legislation
+            to establish a crypto reserve for the state. The Senate and House agreed
+            to extend the session until June 6 to address budget plans. Lawmakers
+            passed about 230 bills during the session, dealing with things like prohibiting
+            putting fluoride in the water, protecting state parks, and a school smartphone
+            ban, but diversifying state treasury portfolios was not among them. State
+            strategic Bitcoin reserve legislation race. Source: Bitcoin LawsHB 487,
+            which was introduced in February, would have allowed Florida’s chief financial
+            officer and the State Board of Administration to invest up to 10% of certain
+            state funds into Bitcoin (BTC).SB 550 was also filed in February to enable
+            investments of public funds in Bitcoin.Related: Alabama, Minnesota lawmakers
+            join US states pushing for Bitcoin reservesFlorida has now dropped out
+            of the race to pass state-level crypto investment legislation, along with
+            Wyoming, South Dakota, North Dakota, Pennsylvania, Montana and Oklahoma,
+            which have all seen Bitcoin bills fail to pass House or Senate votes,
+            according to Bitcoin Laws. Arizona has two more chances It came just days
+            after Arizona advanced its strategic Bitcoin reserve legislation further
+            than any other state, until House Bill 1025 was vetoed by Governor Katie
+            Hobbs, who labelled digital assets “untested investments” on May 3.The
+            Digital Assets Strategic Reserve bill would have permitted Arizona to
+            invest seized funds into Bitcoin and create a reserve managed by state
+            officials. The move drew the ire of crypto advocates and Bitcoiners, including
+            entrepreneur Anthony Pompliano, who said: “Imagine the ignorance of a
+            politician to believe they can make investment decisions.”“Arizona has
+            two more chances to be the first in the nation to establish a Bitcoin
+            reserve,” said Satoshi Action Fund founder Dennis Porter on May 5, citing
+            an article from Fox’s Eleanor Terrett. He added that the most likely to
+            pass is HB 2749, which offers a budget-neutral method to fund the reserve
+            using profit from the unclaimed property fund.Source: Dennis PorterThere
+            is also a related bill, SB 1373, which would authorize the state treasurer
+            to allocate up to 10% of Arizona state funds into digital assets. It has
+            yet to reach a final vote.Magazine: Bitcoin to $1M ‘by 2029,’ CIA tips
+            its hat to Bitcoin: Hodler’s Digest'
+          title: Florida takes strategic Bitcoin reserve bills off the table
+        - link: https://decrypt.co/318035/spark-commits-additional-1-billion-to-lead-tokenized-treasuries-sector
+          published: Tue, 06 May 2025 06:30:32 +0000
+          source: Decrypt
+          summary: Spark has allocated another $1 billion to tokenized U.S. Treasuries,
+            bringing its total deployment to $2.4 billion across three funds.
+          title: Spark Commits Additional $1 Billion to Lead Tokenized Treasuries
+            Sector
+        - link: https://decrypt.co/318033/florida-joins-growing-list-states-knocking-back-bitcoin-reserve-bills
+          published: Tue, 06 May 2025 05:11:47 +0000
+          source: Decrypt
+          summary: The push for state-level digital asset reserves is hitting resistance
+            nationally, despite early-year optimism among Bitcoin advocates.
+          title: Florida Joins Growing List of States Knocking Back Bitcoin Reserve
+            Bills
+        - link: https://decrypt.co/318031/trump-host-two-crypto-dinners-this-month-amid-growing-ethics-concerns
+          published: Tue, 06 May 2025 03:33:58 +0000
+          source: Decrypt
+          summary: President Trump will host a gala for the largest holders of his
+            meme coin later this month, as lawmakers flag potential conflicts of interest.
+          title: Trump to Host Two Crypto Dinners This Month Amid Growing Ethics Concerns
+        - link: https://decrypt.co/318029/kenyan-court-orders-sam-altmans-crypto-project-delete-biometric-user-data
+          published: Tue, 06 May 2025 02:34:35 +0000
+          source: Decrypt
+          summary: The Sam Altman startup faces rising global scrutiny as Kenya joins
+            Indonesia in clamping down on the company this month.
+          title: Kenyan Court Orders Sam Altman's Crypto Project to Delete Biometric
+            User Data
+        - link: https://decrypt.co/318026/openai-ends-profit-cap-restructure-microsoft-yet-to-sign-off
+          published: Tue, 06 May 2025 01:56:36 +0000
+          source: Decrypt
+          summary: OpenAI lifts its profit cap and restructures as a public benefit
+            company, but Microsoft approval remains uncertain.
+          title: OpenAI Ends Profit Cap in Restructure, Microsoft Yet to Sign Off
+        - link: https://cryptoslate.com/melania-memecoin-insiders-reportedly-make-over-150-million-including-pre-sale-trades/
+          published: Tue, 06 May 2025 07:17:03 +0000
+          source: CryptoSlate
+          summary: According to Financial Times analysis, a small cohort of traders
+            secured nearly $100 million in profits from Melania Trump’s MELANIA token
+            within minutes of its market debut. Insider trading allegations Its on-chain
+            analysis suggests that two dozen digital wallets purchased $2.6 million
+            worth of tokens less than three minutes before Trump’s Jan. 19 post on
+            […] The post MELANIA memecoin insiders reportedly make over $150 million
+            including pre-sale trades appeared first on CryptoSlate.
+          title: MELANIA memecoin insiders reportedly make over $150 million including
+            pre-sale trades
+        - link: https://cryptoslate.com/president-trump-confirms-may-22-gala-dinner-for-top-trump-holders/
+          published: Mon, 05 May 2025 23:00:07 +0000
+          source: CryptoSlate
+          summary: President Donald Trump confirmed that a private dinner will be
+            held on May 22 at Trump National Golf Club in Washington for the top 220
+            holders of his memecoin, TRUMP. Trump made the announcement in a social
+            media post on May 5. The event, organized by Fight Fight Fight LLC, a
+            Trump-affiliated entity, will admit holders […] The post President Trump
+            confirms May 22 gala dinner for top TRUMP holders appeared first on CryptoSlate.
+          title: President Trump confirms May 22 gala dinner for top TRUMP holders
+        - link: https://cryptoslate.com/xrp-trading-volume-steady-at-3-2b-in-q1-but-xrpl-activity-contracts-sharply/
+          published: Mon, 05 May 2025 22:00:35 +0000
+          source: CryptoSlate
+          summary: Ripple’s XRP trading volume on top-tier exchanges throughout the
+            first quarter, with average daily volume (ADV) holding nearly $3.2 billion,
+            while XRP Ledger (XRPL) activity decreased. According to a May 5 report
+            by Ripple, the volume trend reflects sustained institutional and retail
+            engagement despite sharp price swings and moderating on-chain activity.
+            Spot market data shows […] The post XRP trading volume steady at $3.2B
+            in Q1, but XRPL activity contracts sharply appeared first on CryptoSlate.
+          title: XRP trading volume steady at $3.2B in Q1, but XRPL activity contracts
+            sharply
+        - link: https://cryptoslate.com/vaneck-officially-files-first-bnb-etf-application-in-the-us/
+          published: Mon, 05 May 2025 21:06:09 +0000
+          source: CryptoSlate
+          summary: Asset manager VanEck filed a registration statement with the Securities
+            and Exchange Commission on May 2 to launch a BNB exchange-traded fund
+            (ETF). The filing marks the first known attempt to bring a spot BNB ETF
+            to the US market. If approved, the fund would list on an unspecified national
+            exchange under a yet-to-be-disclosed ticker symbol. […] The post VanEck
+            officially files first BNB ETF application in the US appeared first on
+            CryptoSlate.
+          title: VanEck officially files first BNB ETF application in the US
+        - link: https://cryptoslate.com/democratic-opposition-threatens-genius-act-jeopardizing-2025-crypto-agenda-galaxy/
+          published: Mon, 05 May 2025 20:11:21 +0000
+          source: CryptoSlate
+          summary: The Senate GENIUS Act bill, designed to establish federal rules
+            for stablecoins, is facing resistance from key Democrats, jeopardizing
+            the prospects for broader crypto legislation in 2025. The Guiding and
+            Establishing National Innovation for US Stablecoins Act (GENIUS Act) advanced
+            from the Senate Banking Committee in March with bipartisan support. However,
+            nine Senate Democrats announced […] The post Democratic opposition threatens
+            GENIUS Act, jeopardizing 2025 crypto agenda – Galaxy appeared first on
+            CryptoSlate.
+          title: Democratic opposition threatens GENIUS Act, jeopardizing 2025 crypto
+            agenda – Galaxy

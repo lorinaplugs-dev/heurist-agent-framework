@@ -1,12 +1,11 @@
-import asyncio
 import logging
 import os
 from typing import Any, Dict, List
 
-import requests
+import aiohttp
 from dotenv import load_dotenv
 
-from decorators import with_cache, with_retry
+from decorators import monitor_execution, with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
@@ -30,33 +29,6 @@ class TwitterInfoAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent fetches a Twitter user's profile information and recent tweets. It's useful for getting project updates or tracking key opinion leaders (KOLs) in the space.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Twitter username (with or without @) or user ID to fetch profile and tweets for",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, return only raw data without natural language response",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language summary of the user's profile and recent tweets",
-                        "type": "str",
-                    },
-                    {
-                        "name": "data",
-                        "description": "Structured data containing user profile and recent tweets",
-                        "type": "dict",
-                    },
-                ],
                 "external_apis": ["Twitter API"],
                 "tags": ["Twitter"],
                 "recommended": True,
@@ -169,67 +141,40 @@ class TwitterInfoAgent(MeshAgent):
         """Check if the input is a numeric ID"""
         return input_str.strip().isdigit()
 
-    async def _make_api_request(self, endpoint: str, params: Dict, max_retries: int = 3) -> Dict:
-        """
-        Make API request with retry logic for 429 errors
+    @monitor_execution()
+    @with_retry(max_retries=3)
+    async def make_request(self, endpoint: str, params: Dict = None) -> Dict:
+        """Make API request to Twitter API"""
+        should_close = False
+        if not self.session:
+            self.session = aiohttp.ClientSession()
+            should_close = True
 
-        Args:
-            endpoint: API endpoint URL
-            params: Request parameters
-            max_retries: Maximum number of retries (default: 3)
+        try:
+            async with self.session.get(endpoint, params=params, headers=self.headers) as response:
+                if response.status == 200:
+                    return await response.json()
 
-        Returns:
-            API response as dictionary
-        """
-        retries = 0
-        backoff_time = 2
+                error_text = await response.text()
+                logger.error(f"API error {response.status}: {error_text[:200]}")
+                return {"error": f"API returned error {response.status}: {error_text[:200]}"}
 
-        while retries <= max_retries:
-            try:
-                response = requests.get(endpoint, params=params, headers=self.headers)
+        except Exception as e:
+            logger.error(f"API request error: {str(e)}")
+            return {"error": f"API request failed: {str(e)}"}
 
-                if response.status_code == 200:
-                    return response.json()
-                if response.status_code == 429:
-                    retries += 1
-                    if retries > max_retries:
-                        response.raise_for_status()
-                    wait_time = (
-                        backoff_time
-                        * (2 ** (retries - 1))
-                        * (0.8 + 0.4 * asyncio.get_event_loop().create_future().get_loop().time() % 1)
-                    )
-                    logger.warning(
-                        f"Rate limit hit. Retrying in {wait_time:.2f} seconds (Attempt {retries}/{max_retries})"
-                    )
-                    await asyncio.sleep(wait_time)
-                    continue
-                response.raise_for_status()
-
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Request error: {str(e)}")
-                retries += 1
-                if retries > max_retries:
-                    return {"status": "error", "error": f"API request failed after {max_retries} retries: {str(e)}"}
-
-                wait_time = backoff_time * (2 ** (retries - 1))
-                logger.warning(f"Request failed. Retrying in {wait_time} seconds (Attempt {retries}/{max_retries})")
-                await asyncio.sleep(wait_time)
-
-        return {"status": "error", "error": "Maximum retries exceeded"}
+        finally:
+            if should_close and self.session:
+                await self.session.close()
+                self.session = None
 
     # ------------------------------------------------------------------------
     #                      TWITTER API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def apidance_get_user_id(self, identifier: str) -> Dict:
-        """
-        Fetch Twitter user ID and profile information using screen name or user ID
-
-        Args:
-            identifier: Either a screen name or numeric user ID
-        """
+    async def get_user_id(self, identifier: str) -> Dict:
+        """Fetch Twitter user ID and profile information"""
         try:
             params = {}
             if self._is_numeric_id(identifier):
@@ -238,9 +183,9 @@ class TwitterInfoAgent(MeshAgent):
                 clean_username = self._clean_username(identifier)
                 params = {"screen_name": clean_username}
 
-            user_data = await self._make_api_request(endpoint=self.get_twitter_user_endpoint(), params=params)
+            user_data = await self.make_request(endpoint=self.get_twitter_user_endpoint(), params=params)
 
-            if "status" in user_data and user_data["status"] == "error":
+            if "error" in user_data:
                 return user_data
 
             profile_info = {
@@ -256,27 +201,27 @@ class TwitterInfoAgent(MeshAgent):
                 "created_at": user_data.get("created_at"),
             }
 
-            return {"status": "success", "profile": profile_info}
+            return {"profile": profile_info}
 
         except Exception as e:
-            logger.error(f"Unexpected error in apidance_get_user_id: {e}")
-            return {"status": "error", "error": f"Unexpected error: {str(e)}"}
+            logger.error(f"Error in get_user_id: {e}")
+            return {"error": f"Failed to fetch user profile: {str(e)}"}
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def apidance_get_tweets(self, user_id: str, limit: int = 10) -> Dict:
+    async def get_tweets(self, user_id: str, limit: int = 10) -> Dict:
         """Fetch recent tweets for a user by ID"""
         try:
-            params = {"user_id": user_id, "count": limit}
+            params = {"user_id": user_id, "count": min(limit, 50)}
 
-            tweets_data = await self._make_api_request(endpoint=self.get_twitter_tweets_endpoint(), params=params)
+            tweets_data = await self.make_request(endpoint=self.get_twitter_tweets_endpoint(), params=params)
 
-            if "status" in tweets_data and tweets_data["status"] == "error":
+            if "error" in tweets_data:
                 return tweets_data
 
             tweets = tweets_data.get("tweets", [])
-
             cleaned_tweets = []
+
             for tweet in tweets:
                 cleaned_tweet = {
                     "text": tweet.get("text", ""),
@@ -289,58 +234,59 @@ class TwitterInfoAgent(MeshAgent):
                 }
                 cleaned_tweets.append(cleaned_tweet)
 
-            return {"status": "success", "tweets": cleaned_tweets}
+            return {"tweets": cleaned_tweets}
+
         except Exception as e:
-            logger.error(f"Unexpected error in apidance_get_tweets: {e}")
-            return {"status": "error", "error": f"Unexpected error: {str(e)}"}
+            logger.error(f"Error in get_tweets: {e}")
+            return {"error": f"Failed to fetch user tweets: {str(e)}"}
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def apidance_get_tweet_detail(self, tweet_id: str, cursor: str = "") -> Dict:
+    async def get_tweet_detail(self, tweet_id: str, cursor: str = "") -> Dict:
         """Fetch detailed information about a specific tweet"""
         try:
             params = {"tweet_id": tweet_id}
             if cursor:
                 params["cursor"] = cursor
 
-            tweet_data = await self._make_api_request(endpoint=self.get_twitter_detail_endpoint(), params=params)
+            tweet_data = await self.make_request(endpoint=self.get_twitter_detail_endpoint(), params=params)
 
-            if "status" in tweet_data and tweet_data["status"] == "error":
+            if "error" in tweet_data:
                 return tweet_data
 
             return {
-                "status": "success",
                 "pinned_tweet": tweet_data.get("pinned_tweet"),
                 "tweets": tweet_data.get("tweets", []),
-                "next_cursor_str": tweet_data.get("next_cursor_str"),
+                "next_cursor": tweet_data.get("next_cursor_str"),
             }
+
         except Exception as e:
-            logger.error(f"Unexpected error in apidance_get_tweet_detail: {e}")
-            return {"status": "error", "error": f"Unexpected error: {str(e)}"}
+            logger.error(f"Error in get_tweet_detail: {e}")
+            return {"error": f"Failed to fetch tweet details: {str(e)}"}
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def apidance_general_search(self, query: str, cursor: str = "") -> Dict:
+    async def general_search(self, query: str, cursor: str = "") -> Dict:
         """Search for tweets using a query term"""
         try:
             params = {"q": query}
             if cursor:
                 params["cursor"] = cursor
 
-            search_data = await self._make_api_request(endpoint=self.get_twitter_search_endpoint(), params=params)
+            search_data = await self.make_request(endpoint=self.get_twitter_search_endpoint(), params=params)
 
-            if "status" in search_data and search_data["status"] == "error":
+            if "error" in search_data:
                 return search_data
 
             return {
-                "status": "success",
-                "pinned_tweet": search_data.get("pinned_tweet"),
+                "query": query,
                 "tweets": search_data.get("tweets", []),
-                "next_cursor_str": search_data.get("next_cursor_str"),
+                "next_cursor": search_data.get("next_cursor_str"),
             }
+
         except Exception as e:
-            logger.error(f"Unexpected error in apidance_general_search: {e}")
-            return {"status": "error", "error": f"Unexpected error: {str(e)}"}
+            logger.error(f"Error in general_search: {e}")
+            return {"error": f"Failed to search tweets: {str(e)}"}
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
@@ -349,56 +295,64 @@ class TwitterInfoAgent(MeshAgent):
         """Handle tool execution logic"""
         if tool_name == "get_user_tweets":
             identifier = function_args.get("username")
-            limit = max(function_args.get("limit", 10), 10)
+            limit = min(function_args.get("limit", 10), 50)  # Cap at 50
 
             if not identifier:
-                return {"error": "Missing 'username' in tool_arguments"}
+                return {"error": "Missing 'username' parameter"}
 
             logger.info(f"Fetching tweets for identifier '{identifier}' with limit={limit}")
             self.push_update(
                 {"identifier": identifier}, f"Looking up Twitter user: @{self._clean_username(identifier)}..."
             )
 
-            profile_result = await self.apidance_get_user_id(identifier)
-            if profile_result.get("status") == "error":
-                return {"error": profile_result.get("error", "Failed to fetch user profile")}
+            profile_result = await self.get_user_id(identifier)
+            if "error" in profile_result:
+                return profile_result
 
             user_id = profile_result.get("profile", {}).get("id_str")
             if not user_id:
                 return {"error": "Could not retrieve user ID"}
 
-            tweets_result = await self.apidance_get_tweets(user_id, limit)
-            if tweets_result.get("status") == "error":
-                return {"error": tweets_result.get("error", "Failed to fetch user tweets")}
+            tweets_result = await self.get_tweets(user_id, limit)
+            if "error" in tweets_result:
+                return tweets_result
 
-            return {"profile": profile_result.get("profile", {}), "tweets": tweets_result.get("tweets", [])}
+            return {
+                "twitter_data": {
+                    "profile": profile_result.get("profile", {}),
+                    "tweets": tweets_result.get("tweets", []),
+                }
+            }
+
         elif tool_name == "get_twitter_detail":
             tweet_id = function_args.get("tweet_id")
             cursor = function_args.get("cursor", "")
 
             if not tweet_id:
-                return {"error": "Missing 'tweet_id' in tool_arguments"}
+                return {"error": "Missing 'tweet_id' parameter"}
 
             logger.info(f"Fetching tweet details for tweet_id '{tweet_id}'")
 
-            tweet_detail_result = await self.apidance_get_tweet_detail(tweet_id, cursor)
-            if tweet_detail_result.get("status") == "error":
-                return {"error": tweet_detail_result.get("error", "Failed to fetch tweet details")}
+            tweet_detail_result = await self.get_tweet_detail(tweet_id, cursor)
+            if "error" in tweet_detail_result:
+                return tweet_detail_result
 
-            return tweet_detail_result
+            return {"tweet_data": tweet_detail_result}
+
         elif tool_name == "get_general_search":
             query = function_args.get("q")
             cursor = function_args.get("cursor", "")
 
             if not query:
-                return {"error": "Missing 'q' in tool_arguments"}
+                return {"error": "Missing 'q' parameter"}
 
             logger.info(f"Performing general search for query '{query}'")
 
-            search_result = await self.apidance_general_search(query, cursor)
-            if search_result.get("status") == "error":
-                return {"error": search_result.get("error", "Failed to perform search")}
+            search_result = await self.general_search(query, cursor)
+            if "error" in search_result:
+                return search_result
 
-            return search_result
+            return {"search_data": search_result}
+
         else:
             return {"error": f"Unsupported tool: {tool_name}"}

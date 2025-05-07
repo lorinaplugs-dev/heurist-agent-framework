@@ -61,8 +61,15 @@ class AgentLoader:
                     for attr_name in dir(mod):
                         attr = getattr(mod, attr_name)
                         if isinstance(attr, type) and issubclass(attr, MeshAgent) and attr is not MeshAgent:
-                            agents_dict[attr.__name__] = attr
-                            found_agents.append(f"{attr.__name__} ({module_name})")
+                            # try to instantiate concrete agents only to check for config errors (ValueError)
+                            try:
+                                _ = attr()  # attempt instantiation, ignore result
+                                # if successful, add the class to the dict
+                                agents_dict[attr.__name__] = attr
+                                found_agents.append(f"{attr.__name__} ({module_name})")
+                            except Exception as e:
+                                logger.error(f"Unexpected error processing module {module_name}: {e}", exc_info=True)
+                                continue
 
                 except ImportError as e:
                     import_errors.append(f"{module_name}: {str(e)}")

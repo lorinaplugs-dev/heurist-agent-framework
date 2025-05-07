@@ -2,7 +2,6 @@ import logging
 import os
 from typing import Any, Dict, List
 
-import requests
 from dotenv import load_dotenv
 
 from decorators import monitor_execution, with_cache, with_retry
@@ -15,6 +14,13 @@ load_dotenv()
 class ZerionWalletAnalysisAgent(MeshAgent):
     def __init__(self):
         super().__init__()
+        self.api_key = os.getenv("ZERION_API_KEY")
+        if not self.api_key:
+            raise ValueError("ZERION_API_KEY environment variable is required")
+
+        self.base_url = "https://api.zerion.io/v1"
+        self.headers = {"accept": "application/json", "authorization": f"Basic {self.api_key}"}
+
         self.metadata.update(
             {
                 "name": "Zerion Agent",
@@ -22,25 +28,6 @@ class ZerionWalletAnalysisAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can fetch and analyze the token and NFT holdings of a crypto wallet (must be EVM chain)",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "The query containing wallet address and a natural language request for analysis containing the wallet address and a request for token or NFT holdings",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, returns only raw data without analysis",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {"name": "response", "description": "Wallet holding details and analysis", "type": "str"},
-                    {"name": "data", "description": "The wallet details", "type": "dict"},
-                ],
                 "external_apis": ["Zerion"],
                 "tags": ["EVM Wallet"],
                 "recommended": True,
@@ -54,9 +41,6 @@ class ZerionWalletAnalysisAgent(MeshAgent):
                 ],
             }
         )
-
-        # Zerion API credentials - should be loaded from environment variables in production
-        self.zerion_auth_key = "Basic " + os.getenv("ZERION_API_KEY")
 
     def get_system_prompt(self) -> str:
         return """You are a crypto wallet analyst that provides factual analysis of wallet holdings based on Zerion API data.
@@ -115,18 +99,18 @@ class ZerionWalletAnalysisAgent(MeshAgent):
     async def fetch_wallet_tokens(self, wallet_address: str) -> Dict:
         """Fetch fungible token holdings from Zerion API"""
         try:
-            base_url = f"https://api.zerion.io/v1/wallets/{wallet_address}/positions/"
+            url = f"{self.base_url}/wallets/{wallet_address}/positions/"
             params = {
                 "filter[positions]": "no_filter",
                 "currency": "usd",
                 "filter[trash]": "only_non_trash",
                 "sort": "value",
             }
-            headers = {"accept": "application/json", "authorization": self.zerion_auth_key}
 
-            response = requests.get(base_url, params=params, headers=headers)
-            response.raise_for_status()
-            data = response.json()
+            data = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+
+            if "error" in data:
+                return {"error": data["error"]}
 
             # Process the response data to extract relevant information
             tokens = []
@@ -187,12 +171,9 @@ class ZerionWalletAnalysisAgent(MeshAgent):
 
             return {"total_value": total_value, "token_count": len(tokens), "tokens": tokens}
 
-        except requests.exceptions.RequestException as e:
+        except Exception as e:
             logger.error(f"Error fetching wallet tokens: {e}")
             return {"error": f"Failed to fetch wallet tokens: {str(e)} for wallet address {wallet_address}"}
-        except Exception as e:
-            logger.error(f"Unexpected error: {e}")
-            return {"error": f"Unexpected error: {str(e)} for wallet address {wallet_address}"}
 
     @monitor_execution()
     @with_cache(ttl_seconds=300)
@@ -200,13 +181,13 @@ class ZerionWalletAnalysisAgent(MeshAgent):
     async def fetch_wallet_nfts(self, wallet_address: str) -> Dict:
         """Fetch NFT collections from Zerion API"""
         try:
-            base_url = f"https://api.zerion.io/v1/wallets/{wallet_address}/nft-collections/"
+            url = f"{self.base_url}/wallets/{wallet_address}/nft-collections/"
             params = {"currency": "usd"}
-            headers = {"accept": "application/json", "authorization": self.zerion_auth_key}
 
-            response = requests.get(base_url, params=params, headers=headers)
-            response.raise_for_status()
-            data = response.json()
+            data = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+
+            if "error" in data:
+                return {"error": data["error"]}
 
             # Process the response data to extract relevant information
             collections = []
@@ -244,12 +225,9 @@ class ZerionWalletAnalysisAgent(MeshAgent):
                 "collections": collections,
             }
 
-        except requests.exceptions.RequestException as e:
+        except Exception as e:
             logger.error(f"Error fetching wallet NFTs: {e}")
             return {"error": f"Failed to fetch wallet NFTs: {str(e)} for wallet address {wallet_address}"}
-        except Exception as e:
-            logger.error(f"Unexpected error: {e}")
-            return {"error": f"Unexpected error: {str(e)} for wallet address {wallet_address}"}
 
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
         if tool_name not in ["fetch_wallet_tokens", "fetch_wallet_nfts"]:
@@ -270,7 +248,7 @@ class ZerionWalletAnalysisAgent(MeshAgent):
         else:  # fetch_wallet_nfts
             result = await self.fetch_wallet_nfts(wallet_address)
 
-        errors = self._handle_error(result)
-        if errors:
-            return errors
+        if "error" in result:
+            return {"error": result["error"]}
+
         return result

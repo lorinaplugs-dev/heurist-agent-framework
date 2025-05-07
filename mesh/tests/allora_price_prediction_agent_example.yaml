@@ -1,24 +1,19 @@
 input:
   query: Predict ETH price in 5 minutes
 output:
-  response: "ETH price predicted in 5 minutes: $1542.80\n Confidence Intervals:\n\
-    \  - 2.28%: No deviation indicated\n  - 15.87% to 84.13%: No range indicated,\
-    \ stable at $1542.80\n  - 97.72%: No deviation indicated, confirming stability\
-    \ at $1542.80"
+  response: 'ETH Price Prediction (5-minute timeframe):
+
+    Expected Price: $1,820.91
+
+    Token: Ethereum (ETH)
+
+    Timeframe: 5 minutes
+
+    **Note:** Confidence intervals not provided by the model for this prediction.'
   data:
     prediction_data:
       token: ETH
       timeframe: 5m
-      prediction: 1542.7982177734375
-      confidence_intervals:
-      - '2.28'
-      - '15.87'
-      - '50.0'
-      - '84.13'
-      - '97.72'
-      confidence_interval_values:
-      - '1542.7982177734375'
-      - '1542.7982177734375'
-      - '1542.7982177734375'
-      - '1542.7982177734375'
-      - '1542.7982177734375'
+      prediction: 1820.90771484375
+      confidence_intervals: []
+      confidence_interval_values: []

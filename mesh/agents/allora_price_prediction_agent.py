@@ -1,18 +1,22 @@
 import os
 from typing import Any, Dict, List
 
-import aiohttp
-from dotenv import load_dotenv
-
 from decorators import monitor_execution, with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
-
-load_dotenv()
 
 
 class AlloraPricePredictionAgent(MeshAgent):
     def __init__(self):
         super().__init__()
+
+        self.api_key = os.getenv("ALLORA_API_KEY")
+        if not self.api_key:
+            raise ValueError("ALLORA_API_KEY environment variable is required")
+        self.headers = {
+            "accept": "application/json",
+            "x-api-key": self.api_key,
+        }
+
         self.metadata.update(
             {
                 "name": "Allora Agent",
@@ -20,29 +24,6 @@ class AlloraPricePredictionAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can predict the price of ETH/BTC with confidence intervals using Allora price prediction API",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query about price prediction for ETH or BTC",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw data without LLM explanation",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "The price prediction with confidence intervals",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured prediction data", "type": "dict"},
-                ],
                 "external_apis": ["Allora"],
                 "tags": ["Prediction"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Allora.png",
@@ -52,15 +33,6 @@ class AlloraPricePredictionAgent(MeshAgent):
                 ],
             }
         )
-
-    async def __aenter__(self):
-        self.session = aiohttp.ClientSession()
-        return self
-
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
-        if self.session:
-            await self.session.close()
-            self.session = None
 
     def get_system_prompt(self) -> str:
         return """You are a helpful assistant that can access external tools to provide Bitcoin and Ethereum price prediction data.
@@ -103,72 +75,49 @@ class AlloraPricePredictionAgent(MeshAgent):
     @monitor_execution()
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def get_allora_prediction(self, token: str, timeframe: str) -> Dict:
-        """Fetch price prediction data from Allora API"""
-        should_close = False
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-            should_close = True
+    async def get_allora_prediction(self, token: str, timeframe: str) -> Dict[str, Any]:
+        """Fetch normalized price prediction data from Allora API."""
+        if not token or not timeframe:
+            return {"error": "Both 'token' and 'timeframe' are required"}
+
+        url = f"https://api.upshot.xyz/v2/allora/consumer/price/ethereum-11155111/{token.upper()}/{timeframe}"
 
         try:
-            base_url = "https://api.upshot.xyz/v2/allora/consumer/price/ethereum-11155111"
-            url = f"{base_url}/{token.upper()}/{timeframe}"
+            response = await self._api_request(url=url, method="GET", headers=self.headers)
 
-            headers = {
-                "accept": "application/json",
-                "x-api-key": os.getenv("ALLORA_API_KEY"),
+            if "error" in response:
+                return {"error": response["error"]}
+
+            inference = response["data"]["inference_data"]
+
+            return {
+                "prediction": float(inference["network_inference_normalized"]),
+                "confidence_intervals": inference["confidence_interval_percentiles_normalized"],
+                "confidence_interval_values": inference["confidence_interval_values_normalized"],
             }
-
-            async with self.session.get(url, headers=headers) as response:
-                response.raise_for_status()
-                data = await response.json()
-
-                prediction = float(data["data"]["inference_data"]["network_inference_normalized"])
-                confidence_intervals = data["data"]["inference_data"]["confidence_interval_percentiles_normalized"]
-                confidence_interval_values_normalized = data["data"]["inference_data"][
-                    "confidence_interval_values_normalized"
-                ]
-
-                return {
-                    "prediction": prediction,
-                    "confidence_intervals": confidence_intervals,
-                    "confidence_interval_values_normalized": confidence_interval_values_normalized,
-                }
         except Exception as e:
-            return {"error": f"Failed to fetch prediction: {str(e)}"}
-        finally:
-            if should_close and self.session:
-                await self.session.close()
-                self.session = None
+            return {"error": f"Allora API error: {e}"}
 
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
     async def _handle_tool_logic(self, tool_name: str, function_args: dict) -> Dict[str, Any]:
-        """Handle execution of tools and return the raw data"""
+        """Handle Allora prediction tool logic."""
         if tool_name != "get_allora_prediction":
             return {"error": f"Unsupported tool '{tool_name}'"}
 
         token = function_args.get("token")
         timeframe = function_args.get("timeframe")
 
-        if not token or not timeframe:
-            return {"error": "Both 'token' and 'timeframe' are required in tool_arguments"}
-
         result = await self.get_allora_prediction(token, timeframe)
 
-        errors = self._handle_error(result)
-        if errors:
+        if errors := self._handle_error(result):
             return errors
 
-        formatted_data = {
+        return {
             "prediction_data": {
                 "token": token,
                 "timeframe": timeframe,
-                "prediction": result["prediction"],
-                "confidence_intervals": result["confidence_intervals"],
-                "confidence_interval_values": result["confidence_interval_values_normalized"],
+                **{k: result[k] for k in ("prediction", "confidence_intervals", "confidence_interval_values")},
             }
         }
-
-        return formatted_data

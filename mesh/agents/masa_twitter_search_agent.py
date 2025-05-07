@@ -14,8 +14,12 @@ logger = logging.getLogger(__name__)
 class MasaTwitterSearchAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.api_url = "https://api1.dev.masalabs.ai/v1"
-        self.headers = {"Authorization": f"Bearer {os.getenv('MASA_API_KEY')}", "Content-Type": "application/json"}
+        self.api_url = "https://data.dev.masalabs.ai/api/v1"
+        self.api_key = os.getenv("MASA_API_KEY")
+        if not self.api_key:
+            raise ValueError("MASA_API_KEY environment variable is required")
+
+        self.headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
 
         self.metadata.update(
             {
@@ -24,36 +28,6 @@ class MasaTwitterSearchAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent can search on Twitter through Masa API and analyze the results by identifying trending topics and sentiment related to a topic.",
-                "inputs": [
-                    {
-                        "name": "query",
-                        "description": "Natural language query to search Twitter.",
-                        "type": "str",
-                        "required": False,
-                    },
-                    {
-                        "name": "max_results",
-                        "description": "Maximum number of results to return.",
-                        "type": "int",
-                        "required": False,
-                        "default": 25,
-                    },
-                    {
-                        "name": "raw_data_only",
-                        "description": "If true, the agent will only return the raw or base structured data without additional LLM explanation.",
-                        "type": "bool",
-                        "required": False,
-                        "default": False,
-                    },
-                ],
-                "outputs": [
-                    {
-                        "name": "response",
-                        "description": "Natural language explanation of the Twitter search results (empty if a direct tool call).",
-                        "type": "str",
-                    },
-                    {"name": "data", "description": "Structured Twitter search results data.", "type": "dict"},
-                ],
                 "external_apis": ["Masa"],
                 "tags": ["Twitter"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Masa.png",
