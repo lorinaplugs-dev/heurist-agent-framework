@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 
-class AixbtProjectInfoAgent(MeshAgent):
+class AIXBTProjectInfoAgent(MeshAgent):
     def __init__(self):
         super().__init__()
         self.session = None

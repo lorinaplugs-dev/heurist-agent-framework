@@ -5,11 +5,11 @@ from pathlib import Path
 import yaml
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from mesh.agents.aixbt_project_info_agent import AixbtProjectInfoAgent  # noqa: E402
+from mesh.agents.aixbt_project_info_agent import AIXBTProjectInfoAgent  # noqa: E402
 
 
 async def run_agent():
-    agent = AixbtProjectInfoAgent()
+    agent = AIXBTProjectInfoAgent()
     try:
         # Test 1: Natural language query mode
         query_input = {"query": "Tell me about HEU token"}
