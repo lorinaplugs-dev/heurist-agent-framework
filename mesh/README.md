@@ -238,7 +238,6 @@ Each example agent has a corresponding test script in `mesh/tests/` that demonst
 | UnifaiTokenAnalysisAgent | This agent provides token analysis using UnifAI's API, including GMGN trend analysis (GMGN is a memecoin trading platform) and comprehensive token analysis for various cryptocurrencies | • get_gmgn_trend<br>• get_gmgn_token_info<br>• analyze_token | [Source](./agents/unifai_token_analysis_agent.py) | UnifAI |
 | UnifaiWeb3NewsAgent | This agent fetches the latest Web3 and cryptocurrency news using UnifAI's API | • get_web3_news | [Source](./agents/unifai_web3_news_agent.py) | UnifAI |
 | ZerionWalletAnalysisAgent | This agent can fetch and analyze the token and NFT holdings of a crypto wallet (must be EVM chain) | • fetch_wallet_tokens<br>• fetch_wallet_nfts | [Source](./agents/zerion_wallet_analysis_agent.py) | Zerion |
-| ZkIgniteAnalystAgent | This agent analyzes zkSync Era DeFi opportunities in the zkIgnite program and has access to real-time yield and TVL data | - | [Source](./agents/zkignite_analyst_agent.py) | Merkl, DefiLlama |
 ---  
 
 _This document is a work-in-progress. Please feel free to update and improve it as the system evolves._
