@@ -87,8 +87,8 @@ class MasaTwitterSearchAgent(MeshAgent):
     @with_retry(max_retries=3)
     async def search_twitter(self, search_term: str, max_results: int = 25) -> dict:
         try:
-            # Note: The API still expects 'query' as the parameter name
-            payload = {"query": search_term, "max_results": max_results}
+            # https://data.dev.masalabs.ai/endpoints
+            payload = {"type": "twitter-scraper", "arguments": {"query": search_term, "max_results": max_results}}
 
             response = requests.post(f"{self.api_url}/search/live/twitter", headers=self.headers, json=payload)
             response.raise_for_status()
