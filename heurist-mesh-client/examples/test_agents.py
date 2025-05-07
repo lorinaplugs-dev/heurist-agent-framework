@@ -13,7 +13,9 @@ from rich.table import Table
 
 load_dotenv()
 MESH_METADATA_URL = "https://mesh.heurist.ai/metadata.json"
-TEST_INPUTS_FILE = "test_inputs.json"
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+TEST_INPUTS_FILE = os.path.join(SCRIPT_DIR, "test_inputs.json")
 
 DISABLED_AGENTS = {"DeepResearchAgent"}  # slow and times out frequently
 
