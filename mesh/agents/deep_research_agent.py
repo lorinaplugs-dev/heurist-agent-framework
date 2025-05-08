@@ -53,7 +53,7 @@ class DeepResearchAgent(MeshAgent):
                         "description": "Number of concurrent searches",
                         "type": "int",
                         "required": False,
-                        "default": 2,
+                        "default": 9,
                     },
                 ],
                 "external_apis": ["Firecrawl"],
@@ -119,8 +119,17 @@ class DeepResearchAgent(MeshAgent):
                     "parameters": {
                         "type": "object",
                         "properties": {
-                            "query": {"type": "string", "description": "Research query or topic"},
-                            "depth": {"type": "number", "description": "Research depth (1-3)", "default": 2},
+                            # fmt: off
+                            "query": {
+                                "type": "string",
+                                "description": "Research query or topic",
+                            },
+                            "depth": {
+                                "type": "number",
+                                "description": "Research depth (1-3)",
+                                "default": 2,
+                            },
+                            # fmt: on
                             "breadth": {
                                 "type": "number",
                                 "description": "Search breadth per level (1-5)",
