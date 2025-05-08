@@ -19,6 +19,7 @@ class ReasoningStep(BaseModel):
 class TaskResult(BaseModel):
     response: Any
     success: bool
+    data: Optional[Dict[str, Any]] = None
 
     def model_dump(self) -> Dict[str, Any]:
         data = super().model_dump()

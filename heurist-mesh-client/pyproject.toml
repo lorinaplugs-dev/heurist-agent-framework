@@ -1,7 +1,7 @@
 [project]
 name = "heurist-mesh-client"
 requires-python = ">=3.11"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python client for Heurist Mesh API"
 authors = []
 dependencies = [
@@ -10,7 +10,7 @@ dependencies = [
     "python-dotenv==1.0.0",
     "click==8.0.0",
     "rich==13.0.0",
-    "pyyaml==6.0.0"
+    "pyyaml==6.0.2"
 ]
 
 [build-system]
