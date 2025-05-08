@@ -205,7 +205,7 @@ class MeshManager:
                         self.active_tasks[agent_id].add(task_id)
 
                         try:
-                            logger.info(f"Task started | Agent: {agent_id} | Task: {task_id}")
+                            logger.info(f"Task started | Agent: {agent_id} | Task: {task_id} | Data: {resp_data}")
                             result = await self.process_task(agent_id, agent_cls, resp_data)
                             await self.submit_result(agent_id, task_id, result)
                             logger.info(f"Task completed | Agent: {agent_id} | Task: {task_id}")
