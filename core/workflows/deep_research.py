@@ -265,6 +265,10 @@ class ResearchWorkflow:
     ) -> ResearchResult:
         """Conduct deep research using SearchClient with improved handling and parallelization"""
 
+        logger.info(
+            f"Starting deep research with query: {query}, depth: {depth}, breadth: {breadth}, concurrency: {concurrency}"
+        )
+
         learnings = learnings or []
         visited_urls = visited_urls or []
         analyses = analyses or []
