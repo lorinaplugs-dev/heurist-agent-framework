@@ -160,6 +160,10 @@ class DeepResearchAgent(MeshAgent):
                 "multi_provider": True,
             }
 
+            logger.info(
+                f"Starting deep research with query: {query}, depth: {depth}, breadth: {breadth}, concurrency: {concurrency}"
+            )
+
             # Run the research workflow
             report, _, research_result = await self.research_workflow.process(
                 message=query, workflow_options=workflow_options
