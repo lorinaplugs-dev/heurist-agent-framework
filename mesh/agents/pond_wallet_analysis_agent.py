@@ -56,7 +56,7 @@ class PondWalletAnalysisAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "analyze_ethereum_wallet",
-                    "description": "Analyze an Ethereum wallet address for trading activity, volume, and transaction metrics over the last 30 days",
+                    "description": "Analyze an Ethereum wallet address for trading activity, volume, and transaction metrics over the last 30 days. The unit of gas fees is in GWEI.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -90,7 +90,7 @@ class PondWalletAnalysisAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "analyze_base_wallet",
-                    "description": "Analyze a Base network wallet address for trading activity, volume, and transaction metrics over the last 30 days",
+                    "description": "Analyze a Base network wallet address for trading activity, volume, and transaction metrics over the last 30 days. Ignore the gas fee results.",
                     "parameters": {
                         "type": "object",
                         "properties": {
