@@ -4,6 +4,9 @@
 
 Heurist Mesh provides a powerful REST API that enables developers to seamlessly interact with various AI agents and tools programmatically. This document outlines how to use the API client to submit jobs and retrieve results from different specialized agents.
 
+> [!NOTE]
+> For a complete and up-to-date list of available agents and their capabilities, refer to the [Mesh README](../mesh/README.md) or visit the [Mesh Agents Metadata Endpoint](https://mesh.heurist.ai/metadata.json).
+
 ### Installation
 
 You can install the Heurist Mesh client directly from GitHub:
@@ -163,23 +166,3 @@ The API returns responses in JSON format containing:
     }
 }
 ```
-
-### Available Agents
-
-The Mesh API provides access to a growing ecosystem of specialized AI agents:
-
-| Agent                        | Description                                           |
-| ---------------------------- | ----------------------------------------------------- |
-| AlloraPricePredictionAgent   | ETH/BTC price predictions with confidence intervals   |
-| BitquerySolanaTokenInfoAgent | Solana token trading data and trending tokens         |
-| CoinGeckoTokenInfoAgent      | Token information, market data, and trending coins    |
-| DexScreenerTokenInfoAgent    | Real-time DEX trading data across multiple chains     |
-| ExaSearchAgent               | Web search with content relevance assessment          |
-| ElfaTwitterIntelligenceAgent | Twitter mentions and trends for crypto tokens         |
-| FirecrawlSearchAgent         | Advanced search with intelligent query analysis       |
-| GoplusAnalysisAgent          | Security analysis of blockchain token contracts       |
-| PumpFunTokenAgent            | Solana token analysis with market cap and holder data |
-| ZkIgniteAnalystAgent         | zkSync Era DeFi analysis with yield and TVL data      |
-| ZerionWalletAnalysisAgent    | Token and NFT holdings of a crypto wallet             |
-
-For a complete and up-to-date list of available agents and their capabilities, visit the [Mesh Agents Metadata Endpoint](https://mesh.heurist.ai/metadata.json).
