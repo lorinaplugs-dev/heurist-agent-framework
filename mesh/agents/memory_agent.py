@@ -1,11 +1,10 @@
-import json
 import logging
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-logger = logging.getLogger(__name__)
-
 from mesh.context_agent import ContextAgent
+
+logger = logging.getLogger(__name__)
 
 
 class MemoryAgent(ContextAgent):

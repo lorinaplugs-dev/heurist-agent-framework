@@ -9,12 +9,11 @@ import boto3
 from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+from mesh.mesh_agent import MeshAgent
+
 load_dotenv()
 
 logger = logging.getLogger(__name__)
-
-from mesh.mesh_agent import MeshAgent
 
 
 class ContextStorage(ABC):
