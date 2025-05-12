@@ -68,9 +68,19 @@ def with_cache(ttl_seconds: int = 300):
             # Execute function
             result = await func(self, *args, **kwargs)
 
-            # Update cache
-            cache[cache_key] = result
-            cache_ttl[cache_key] = datetime.now() + timedelta(seconds=ttl_seconds)
+            # Only cache successful responses
+            # Check if result is a dict with error key or has a status that indicates error
+            should_cache = True
+            if isinstance(result, dict):
+                if "error" in result or result.get("status") == "error":
+                    # Don't cache error responses
+                    should_cache = False
+                    logger.debug(f"Skipping cache for error response from {func.__name__}")
+
+            # Update cache only for successful responses
+            if should_cache:
+                cache[cache_key] = result
+                cache_ttl[cache_key] = datetime.now() + timedelta(seconds=ttl_seconds)
 
             # Limit cache size to prevent memory issues (keep last 100 entries)
             if len(cache) > 10000:
