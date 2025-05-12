@@ -154,7 +154,7 @@ class MySpecialAgent(MeshAgent):
 uvicorn mesh.mesh_api:app --reload
 ```
 
-## Contributor Guidelines
+### Contributor Guidelines
 
 1. **Fork & branch** the repository
 2. **Add your agent** under `mesh/`
@@ -186,7 +186,6 @@ Each agent's `metadata` dictionary should at least contain:
 We have included example agents in this folder:
 
 1. **Allora Price Prediction Agent** ([allora_price_prediction_agent.py](./agents/allora_price_prediction_agent.py))
-
    - Fetches and predicts short-term crypto prices using Allora's API.
    - Demonstrates how to integrate external APIs, handle asynchronous calls, and structure multi-step logic.
 
@@ -195,6 +194,65 @@ We have included example agents in this folder:
    - Shows how to process user queries, connect to external search services, and return structured results.
 
 Each example agent has a corresponding test script in `mesh/tests/` that demonstrates how to run the agent and produce an example output file (in YAML).
+
+## Testing Locally with Docker
+
+Follow the steps below to test Mesh agents in a local development environment which is similar to the production environment, to ensure that your agent works as expected before getting it merged into the main branch.
+
+1. **Start the local Mesh API server with Docker:**
+
+```bash
+# From the repository root
+docker compose -f docker-compose.dev.yml up --build mesh-api
+```
+
+This will build and start the Mesh API service locally at http://localhost:8000.
+
+2. **Install the heurist-mesh-client:**
+
+```bash
+# In a separate terminal
+cd heurist-mesh-client
+pip install -e .
+```
+
+3. **Set up your API key as an environment variable:**
+
+```bash
+# Windows
+set HEURIST_API_KEY=your_api_key
+
+# Linux/Mac
+export HEURIST_API_KEY=your_api_key
+```
+
+Or use a `.env` file in your project directory:
+
+```
+# .env file
+HEURIST_API_KEY=your_api_key
+```
+
+4. **Test agents against your local server:**
+
+```bash
+# This will test all agents and save results to test_results.json
+# `--dev` will make it test against the local server
+python examples/test_agents.py test-agent --dev
+
+# Test a specific agent and tool
+python examples/test_agents.py test-agent "CoinGeckoTokenInfoAgent,get_token_info" --dev
+```
+
+5. **Additional options:**
+
+```
+--include-disabled     Include agents that are marked as disabled
+--no-trim              Disable trimming of long output strings
+--json FILE            Save test results to a JSON file (automatically disables trimming for stored results)
+```
+
+Test inputs are stored in [test_inputs.json](../heurist-mesh-client/examples/test_inputs.json), which maps agent IDs to tool names and their test inputs.
 
 ## Contact & Support
 
