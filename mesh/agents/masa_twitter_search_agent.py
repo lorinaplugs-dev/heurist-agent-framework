@@ -95,6 +95,7 @@ class MasaTwitterSearchAgent(MeshAgent):
 
             search_data = response.json()
             uuid = search_data.get("uuid")
+            logger.info(f"Initialized search with UUID: {uuid}")
 
             if not uuid:
                 return {"error": "Failed to initialize search: No UUID returned"}
@@ -106,7 +107,14 @@ class MasaTwitterSearchAgent(MeshAgent):
                 status_response = requests.get(
                     f"{self.api_url}/search/live/twitter/status/{uuid}", headers=self.headers
                 )
-                status_response.raise_for_status()
+                try:
+                    status_response.raise_for_status()
+                except requests.RequestException as e:
+                    logger.warning(
+                        f"Status check failed for UUID {uuid} attempt {attempt + 1}/{max_attempts}: {e}, body: {status_response.text}"
+                    )
+                    time.sleep(wait_time)
+                    continue
                 status_data = status_response.json()
                 if status_data.get("status") == "done":
                     break
