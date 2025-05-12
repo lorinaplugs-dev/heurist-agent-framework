@@ -32,6 +32,7 @@ class TruthSocialAgent(MeshAgent):
                 "description": "This agent can retrieve and analyze posts from Donald Trump on Truth Social.",
                 "external_apis": ["Apify"],
                 "tags": ["Politics"],
+                "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Trump.png",
                 "examples": [
                     "Get the latest posts from Donald Trump",

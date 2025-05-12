@@ -36,6 +36,7 @@ class AIXBTProjectInfoAgent(MeshAgent):
                 "description": "This agent can retrieve trending project information including fundamental analysis, social activity, and recent developments using the aixbt API",
                 "external_apis": ["aixbt"],
                 "tags": ["Project Analysis"],
+                "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Aixbt.png",
                 "examples": [
                     "Tell me about Heurist",
