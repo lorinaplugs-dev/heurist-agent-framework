@@ -1438,7 +1438,7 @@ requires-dist = [
     { name = "pytest", specifier = "==7.4.3" },
     { name = "python-dotenv", specifier = "==1.1.0" },
     { name = "python-telegram-bot", specifier = "==22.0" },
-    { name = "pyyaml", specifier = ">=6.0.2" },
+    { name = "pyyaml", specifier = "==6.0.2" },
     { name = "requests", specifier = "==2.32.3" },
     { name = "ruff", specifier = "==0.11.8" },
     { name = "safe-eth-py", specifier = "==6.0.0b42" },
