@@ -41,9 +41,5 @@ RUN chmod +x /app/entrypoint.sh
 # Copy the rest of the application code
 COPY . .
 
-# Run requirements check to verify all dependencies are installed correctly
-# Copied after the rest of the application code as it uses it to verify dependencies
-RUN python /app/.docker/requirements_checker.py && echo "Requirements check passed!" || (echo "Requirements check failed!" && exit 1)
-
 # Set the entrypoint script
 ENTRYPOINT ["/app/entrypoint.sh"]

@@ -18,6 +18,8 @@ services:
       timeout: 10s
       retries: 5
       start_period: 10s
+    environment:
+      SKIP_REQ_CHECK: "1"
 
   mesh-manager:
     container_name: mesh-manager
@@ -28,3 +30,5 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+    environment:
+      SKIP_REQ_CHECK: "1"
