@@ -65,7 +65,7 @@ class ZerionWalletAnalysisAgent(ContextAgent):
                         "properties": {
                             "wallet_address": {
                                 "type": "string",
-                                "description": "The EVM wallet address （starting with 0x and 42-character long) to analyze. You can also use 'SELF' for wallet_address to use the user's own wallet address.",
+                                "description": "The EVM wallet address (starting with 0x and 42-character long) to analyze. You can also use 'SELF' for wallet_address to use the user's own wallet address.",
                             },
                         },
                         "required": ["wallet_address"],
@@ -82,7 +82,7 @@ class ZerionWalletAnalysisAgent(ContextAgent):
                         "properties": {
                             "wallet_address": {
                                 "type": "string",
-                                "description": "The EVM wallet address （starting with 0x and 42-character long) to analyze. You can also use 'SELF' for wallet_address to use the user's own wallet address.",
+                                "description": "The EVM wallet address (starting with 0x and 42-character long) to analyze. You can also use 'SELF' for wallet_address to use the user's own wallet address.",
                             },
                         },
                         "required": ["wallet_address"],
