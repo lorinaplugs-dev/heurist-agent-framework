@@ -50,7 +50,7 @@ class DeepResearchAgent(MeshAgent):
                     },
                     {
                         "name": "concurrency",
-                        "description": "Number of concurrent searches",
+                        "description": "Number of concurrent searches (1-9)",
                         "type": "int",
                         "required": False,
                         "default": 9,
@@ -137,7 +137,7 @@ class DeepResearchAgent(MeshAgent):
                             },
                             "concurrency": {
                                 "type": "number",
-                                "description": "Number of concurrent searches",
+                                "description": "Number of concurrent searches (1-9)",
                                 "default": 9,
                             },
                         },
