@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 import os
@@ -43,7 +44,8 @@ class LLMProvider:
             # Determine which model to use
             use_model = model_id or self.large_model_id
             if not skip_tools and tools:
-                response = call_llm_with_tools(
+                response = await asyncio.to_thread(
+                    call_llm_with_tools,
                     base_url=self.base_url,
                     api_key=self.api_key,
                     model_id=use_model,
@@ -55,7 +57,8 @@ class LLMProvider:
                     tool_choice=tool_choice,
                 )
             else:
-                response = call_llm(
+                response = await asyncio.to_thread(
+                    call_llm,
                     base_url=self.base_url,
                     api_key=self.api_key,
                     model_id=use_model,

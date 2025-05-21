@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Dict, List, Optional, Tuple, TypedDict
 
 from ..utils.text_splitter import trim_prompt
@@ -76,7 +77,10 @@ class ResearchWorkflow:
         self, message: str, personality_provider=None, chat_id: str = None, workflow_options: Dict = None, **kwargs
     ) -> Tuple[Optional[str], Optional[str], Optional[Dict]]:
         """Main research workflow processor with enhanced depth and analysis"""
-
+        start_time = datetime.now()
+        print("--------------------------------")
+        print(f"Starting deep research for query: {message} at time {start_time}")
+        print("--------------------------------")
         # Set default options
         options = {
             "interactive": False,  # Whether to ask clarifying questions first
@@ -121,6 +125,12 @@ class ResearchWorkflow:
             report = await self._generate_report(
                 original_query=message, research_result=research_result, personality_provider=personality_provider
             )
+
+            end_time = datetime.now()
+            print("--------------------------------")
+            print(f"Deep research completed for query: {message} at time {end_time}")
+            print(f"Total time taken: {end_time - start_time}")
+            print("--------------------------------")
 
             return report, None, research_result
 
@@ -370,13 +380,21 @@ class ResearchWorkflow:
         else:
             # Multiple providers case - search each query with each provider
             async def search_with_provider(research_query: ResearchQuery, provider: str, search_client) -> Dict:
+                # Variables to store results outside the semaphore block
+                search_result = None
+                urls = []
+
+                # Only use semaphore for the search operation
                 async with semaphore:
                     try:
                         # Search using this provider's client
                         for attempt in range(3):
                             try:
                                 print(f"Searching with {provider} for {research_query.query}")
-                                result = await search_client.search(research_query.query, timeout=20000)
+                                search_result = await search_client.search(research_query.query, timeout=20000)
+                                print(
+                                    f"Search finished from {provider} for {research_query.query} at time {datetime.now()}"
+                                )
                                 break
                             except Exception as e:
                                 if attempt == 2:  # Last attempt
@@ -385,11 +403,28 @@ class ResearchWorkflow:
                                 await asyncio.sleep(2)  # Wait before retrying
 
                         # Extract URLs
-                        urls = [item.get("url") for item in result.get("data", []) if item.get("url")]
+                        urls = [item.get("url") for item in search_result.get("data", []) if item.get("url")]
+                    except Exception as e:
+                        logger.error(f"Error searching with {provider} for {research_query.query}: {str(e)}")
 
-                        # Process content to extract learnings
-                        processed_result = await self._process_search_result(
-                            query=f"{research_query.query} [{provider}]", search_result=result
+                # Process results outside the semaphore block
+                if search_result:
+                    try:
+                        print(
+                            f"Creating processing task for {provider} for {research_query.query} at time {datetime.now()}"
+                        )
+
+                        # Create a separate task for processing to avoid blocking the event loop
+                        processing_task = asyncio.create_task(
+                            self._process_search_result(
+                                query=f"{research_query.query} [{provider}]", search_result=search_result
+                            )
+                        )
+
+                        # Wait for the processing task to complete
+                        processed_result = await processing_task
+                        print(
+                            f"Processed from {provider} content to extract learnings for {research_query.query} at time {datetime.now()}"
                         )
 
                         return {
@@ -400,14 +435,16 @@ class ResearchWorkflow:
                             "provider": provider,
                         }
                     except Exception as e:
-                        logger.error(f"Error processing query {research_query.query} with {provider}: {str(e)}")
-                        return {
-                            "learnings": [],
-                            "urls": [],
-                            "follow_up_questions": [],
-                            "analysis": f"Error with {provider}: {str(e)}",
-                            "provider": provider,
-                        }
+                        logger.error(f"Error processing results for {research_query.query} with {provider}: {str(e)}")
+
+                # Return empty results if there was an error
+                return {
+                    "learnings": [],
+                    "urls": urls,
+                    "follow_up_questions": [],
+                    "analysis": f"Error with {provider}: {str(e) if 'e' in locals() else 'Unknown error'}",
+                    "provider": provider,
+                }
 
             async def process_query_with_providers(research_query: ResearchQuery) -> Dict:
                 try:
