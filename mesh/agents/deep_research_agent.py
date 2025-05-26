@@ -65,6 +65,7 @@ class DeepResearchAgent(MeshAgent):
                     "Search for articles about the latest trends in AI",
                     "What are the latest developments in zero knowledge proofs?",
                 ],
+                "credits": 10,
             }
         )
         self._last_request_time = 0

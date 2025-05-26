@@ -34,6 +34,7 @@ class MetaSleuthSolTokenWalletClusterAgent(MeshAgent):
                     "Analyze the wallet clusters of this Solana token: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
                     "What percentage of the supply of 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN is held by the top wallet clusters?",
                 ],
+                "credits": 10,
             }
         )
 

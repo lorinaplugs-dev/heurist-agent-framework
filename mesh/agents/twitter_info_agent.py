@@ -38,6 +38,7 @@ class TwitterInfoAgent(MeshAgent):
                     "What has @elonmusk been tweeting lately?",
                     "Get the recent tweets from cz_binance",
                 ],
+                "credits": 2,
             }
         )
 

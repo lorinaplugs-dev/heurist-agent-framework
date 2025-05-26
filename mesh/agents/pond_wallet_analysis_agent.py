@@ -39,6 +39,7 @@ class PondWalletAnalysisAgent(MeshAgent):
                     "What's the trading volume for Solana wallet 8gc59zf1ZQCxzkSuepV8WmuuobHCPpydJ2RLqwXyCASS?",
                     "Check the transaction activity for Base wallet 0x97224Dd2aFB28F6f442E773853F229B3d8A0999a",
                 ],
+                "credits": 0,
             }
         )
 

@@ -43,6 +43,7 @@ class AIXBTProjectInfoAgent(MeshAgent):
                     "What are the latest developments for Ethereum?",
                     "Trending projects in the crypto space",
                 ],
+                "credits": 0,
             }
         )
 

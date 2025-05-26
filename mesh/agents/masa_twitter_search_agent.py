@@ -36,6 +36,7 @@ class MasaTwitterSearchAgent(MeshAgent):
                     "What are people saying about $BTC on Twitter?",
                     "Find recent discussions about Elon Musk",
                 ],
+                "credits": 0,
             }
         )
 

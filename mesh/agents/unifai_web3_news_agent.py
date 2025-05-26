@@ -38,6 +38,7 @@ class UnifaiWeb3NewsAgent(MeshAgent):
                     "Get me the most recent Web3 developments",
                     "Show the top blockchain news",
                 ],
+                "credits": 0,
             }
         )
 
