@@ -162,31 +162,6 @@ class NillionContextStorage(ContextStorage):
         except Exception as e:
             logger.error(f"Error writing context to Nillion: {e}")
 
-    async def send_context_to_nillion(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
-        """Send context data to Nillion using the specified format"""
-        try:
-            context = {"content": content, "metadata": metadata}
-            payload = [
-                {
-                    "user_id": user_id,
-                    "content": context,  # Direct context object
-                }
-            ]
-
-            async with aiohttp.ClientSession() as session:
-                url = f"{self.base_url}/{user_id}"
-                headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
-                async with session.put(url, headers=headers, json=payload) as response:
-                    if response.status in [200, 201]:
-                        logger.info(f"Successfully sent context to Nillion for user {user_id}")
-                        return True
-                    else:
-                        logger.error(f"Failed to send context to Nillion: {response.status} - {await response.text()}")
-                        return False
-        except Exception as e:
-            logger.error(f"Error sending context to Nillion: {e}")
-            return False
-
 
 def _has_s3_env():
     return all(os.getenv(k) for k in ["S3_ACCESS_KEY", "S3_SECRET_KEY", "S3_ENDPOINT"])
@@ -237,16 +212,6 @@ class ContextAgent(MeshAgent, ABC):
         context.update(updates)
         await self.set_user_context(context, user_id)
         return context
-
-    async def send_to_nillion_context(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
-        """
-        Convenience method to send context to Nillion if using NillionContextStorage
-        """
-        if isinstance(self.storage, NillionContextStorage):
-            return await self.storage.send_context_to_nillion(user_id, content, metadata)
-        else:
-            logger.warning("send_to_nillion_context called but not using NillionContextStorage")
-            return False
 
     @abstractmethod
     def get_system_prompt(self) -> str:
