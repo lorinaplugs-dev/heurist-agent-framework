@@ -117,12 +117,12 @@ class NillionContextStorage(ContextStorage):
             raise ValueError("CONTEXT_API_KEY environment variable is required for Nillion storage")
         logger.info("Nillion context storage initialized")
 
-    def _create_nillion_payload(self, user_id: str, content: str, metadata: Dict[str, Any]) -> List[Dict[str, Any]]:
+    def _create_nillion_payload(self, user_id: str, context: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Create payload in Nillion format"""
         conversation_entry = {
             "timestamp": datetime.utcnow().isoformat() + "Z",
-            "content": content,
-            "metadata": metadata,
+            "content": context,
+            "metadata": context.get("metadata", {}),
         }
         return [
             {
@@ -139,7 +139,9 @@ class NillionContextStorage(ContextStorage):
                 headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
                 async with session.get(url, headers=headers) as response:
                     if response.status == 200:
-                        return await response.json()
+                        data = await response.json()
+                        conversations = data.get("content", {}).get("conversations", [])
+                        return conversations[0]["content"] if conversations else {}
                     elif response.status == 404:
                         return {}
                     else:
@@ -154,9 +156,7 @@ class NillionContextStorage(ContextStorage):
     async def set_context(self, user_id: str, context: Dict[str, Any]) -> None:
         """Set context in Nillion API"""
         try:
-            content = context.get("content", "")
-            metadata = context.get("metadata", {})
-            payload = self._create_nillion_payload(user_id, content, metadata)
+            payload = self._create_nillion_payload(user_id, context)
             async with aiohttp.ClientSession() as session:
                 url = f"{self.base_url}/{user_id}"
                 headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
@@ -169,7 +169,8 @@ class NillionContextStorage(ContextStorage):
     async def send_context_to_nillion(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
         """Send context data to Nillion using the specified format"""
         try:
-            payload = self._create_nillion_payload(user_id, content, metadata)
+            context = {"content": content, "metadata": metadata}
+            payload = self._create_nillion_payload(user_id, context)
             async with aiohttp.ClientSession() as session:
                 url = f"{self.base_url}/{user_id}"
                 headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
@@ -216,7 +217,6 @@ class ContextAgent(MeshAgent, ABC):
         """Extract user_id from API key"""
         if not api_key:
             return None
-
         try:
             user_id = api_key.split("-", 1)[0]
             return user_id
