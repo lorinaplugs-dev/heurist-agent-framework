@@ -2,7 +2,6 @@ import json
 import logging
 import os
 from abc import ABC, abstractmethod
-from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -126,15 +125,7 @@ class NillionContextStorage(ContextStorage):
                 async with session.get(url, headers=headers) as response:
                     if response.status == 200:
                         data = await response.json()
-                        conversations = data.get("content", {}).get("conversations", [])
-                        if conversations:
-                            content_str = conversations[0]["content"]
-                            try:
-                                return json.loads(content_str)
-                            except json.JSONDecodeError:
-                                # If it's not JSON, return as is (backward compatibility)
-                                return {"content": content_str, "metadata": conversations[0]["metadata"]}
-                        return {}
+                        return data.get("content", {})
                     elif response.status == 404:
                         return {}
                     else:
@@ -149,20 +140,11 @@ class NillionContextStorage(ContextStorage):
     async def set_context(self, user_id: str, context: Dict[str, Any]) -> None:
         """Set context in Nillion API"""
         try:
+            # Use the exact Nillion schema format
             payload = [
                 {
                     "user_id": user_id,
-                    "content": {
-                        "conversations": [
-                            {
-                                "timestamp": datetime.utcnow().isoformat() + "Z",
-                                "content": json.dumps(context),  # Store arbitrary context as JSON string
-                                "metadata": {},
-                            }
-                        ],
-                        "preference": "concise",
-                        "language": "en",
-                    },
+                    "content": context,
                 }
             ]
 
@@ -178,20 +160,11 @@ class NillionContextStorage(ContextStorage):
     async def send_context_to_nillion(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
         """Send context data to Nillion using the specified format"""
         try:
+            context = {"content": content, "metadata": metadata}
             payload = [
                 {
                     "user_id": user_id,
-                    "content": {
-                        "conversations": [
-                            {
-                                "timestamp": datetime.utcnow().isoformat() + "Z",
-                                "content": content,
-                                "metadata": metadata,
-                            }
-                        ],
-                        "preference": "concise",
-                        "language": "en",
-                    },
+                    "content": context,  # Direct context object
                 }
             ]
 
