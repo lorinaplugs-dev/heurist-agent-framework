@@ -2,7 +2,6 @@ import json
 import logging
 import os
 from abc import ABC, abstractmethod
-from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -117,29 +116,7 @@ class NillionContextStorage(ContextStorage):
             raise ValueError("CONTEXT_API_KEY environment variable is required for Nillion storage")
         logger.info("Nillion context storage initialized")
 
-    def _create_nillion_payload(self, user_id: str, context: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """Create payload in Nillion format"""
-        payload = [
-            {
-                "user_id": user_id,
-                "content": {
-                    "conversations": [
-                        {
-                            "timestamp": datetime.utcnow().isoformat() + "Z",
-                            "content": context.get("content", ""),
-                            "metadata": context.get("metadata", {}),
-                        }
-                    ],
-                    "preference": "concise",
-                    "language": "en",
-                },
-            }
-        ]
-        # print(f"Payload created for user {user_id}: {json.dumps(payload, indent=2)}")
-        return payload
-
     async def get_context(self, user_id: str) -> Dict[str, Any]:
-        """Get context from Nillion API"""
         try:
             async with aiohttp.ClientSession() as session:
                 url = f"{self.base_url}/{user_id}"
@@ -147,10 +124,7 @@ class NillionContextStorage(ContextStorage):
                 async with session.get(url, headers=headers) as response:
                     if response.status == 200:
                         data = await response.json()
-                        conversations = data.get("content", {}).get("conversations", [])
-                        if conversations:
-                            return {"content": conversations[0]["content"], "metadata": conversations[0]["metadata"]}
-                        return {}
+                        return data.get("content", {})
                     elif response.status == 404:
                         return {}
                     else:
@@ -163,10 +137,8 @@ class NillionContextStorage(ContextStorage):
             return {}
 
     async def set_context(self, user_id: str, context: Dict[str, Any]) -> None:
-        """Set context in Nillion API"""
         try:
-            # print(f"set_context content for user {user_id}: {context.get('content', '')}")
-            payload = self._create_nillion_payload(user_id, context)
+            payload = {"user_id": user_id, "content": context}
             async with aiohttp.ClientSession() as session:
                 url = f"{self.base_url}/{user_id}"
                 headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
@@ -176,12 +148,9 @@ class NillionContextStorage(ContextStorage):
         except Exception as e:
             logger.error(f"Error writing context to Nillion: {e}")
 
-    async def send_context_to_nillion(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
-        """Send context data to Nillion using the specified format"""
+    async def send_context_to_nillion(self, user_id: str, content: Dict[str, Any]) -> bool:
         try:
-            context = {"content": content, "metadata": metadata}
-            # print(f"send_context_to_nillion content for user {user_id}: {content}")
-            payload = self._create_nillion_payload(user_id, context)
+            payload = {"user_id": user_id, "content": content}
             async with aiohttp.ClientSession() as session:
                 url = f"{self.base_url}/{user_id}"
                 headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
@@ -202,17 +171,10 @@ def _has_s3_env():
 
 
 def _has_nillion_env():
-    """Check if Nillion environment variables are present"""
     return os.getenv("CONTEXT_API_KEY") is not None
 
 
 class ContextAgent(MeshAgent, ABC):
-    """
-    Base class for agents that need to maintain context for each user.
-
-    Context is stored using a pluggable storage backend, defaulting to local file storage.
-    """
-
     def __init__(self, storage: Optional[ContextStorage] = None):
         super().__init__()
         if storage:
@@ -225,7 +187,6 @@ class ContextAgent(MeshAgent, ABC):
             self.storage = FileContextStorage()
 
     def _extract_user_id(self, api_key: str) -> Optional[str]:
-        """Extract user_id from API key"""
         if not api_key:
             return None
         try:
@@ -247,12 +208,9 @@ class ContextAgent(MeshAgent, ABC):
         await self.set_user_context(context, user_id)
         return context
 
-    async def send_to_nillion_context(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
-        """
-        Convenience method to send context to Nillion if using NillionContextStorage
-        """
+    async def send_to_nillion_context(self, user_id: str, content: Dict[str, Any]) -> bool:
         if isinstance(self.storage, NillionContextStorage):
-            return await self.storage.send_context_to_nillion(user_id, content, metadata)
+            return await self.storage.send_context_to_nillion(user_id, content)
         else:
             logger.warning("send_to_nillion_context called but not using NillionContextStorage")
             return False
