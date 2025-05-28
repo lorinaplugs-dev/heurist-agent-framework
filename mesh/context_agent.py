@@ -119,17 +119,24 @@ class NillionContextStorage(ContextStorage):
 
     def _create_nillion_payload(self, user_id: str, context: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Create payload in Nillion format"""
-        conversation_entry = {
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "content": context,
-            "metadata": context.get("metadata", {}),
-        }
-        return [
+        payload = [
             {
                 "user_id": user_id,
-                "content": {"conversations": [conversation_entry], "preference": "concise", "language": "en"},
+                "content": {
+                    "conversations": [
+                        {
+                            "timestamp": datetime.utcnow().isoformat() + "Z",
+                            "content": context.get("content", ""),
+                            "metadata": context.get("metadata", {}),
+                        }
+                    ],
+                    "preference": "concise",
+                    "language": "en",
+                },
             }
         ]
+        print(f"Payload created for user {user_id}: {json.dumps(payload, indent=2)}")
+        return payload
 
     async def get_context(self, user_id: str) -> Dict[str, Any]:
         """Get context from Nillion API"""
@@ -141,7 +148,9 @@ class NillionContextStorage(ContextStorage):
                     if response.status == 200:
                         data = await response.json()
                         conversations = data.get("content", {}).get("conversations", [])
-                        return conversations[0]["content"] if conversations else {}
+                        if conversations:
+                            return {"content": conversations[0]["content"], "metadata": conversations[0]["metadata"]}
+                        return {}
                     elif response.status == 404:
                         return {}
                     else:
@@ -156,6 +165,7 @@ class NillionContextStorage(ContextStorage):
     async def set_context(self, user_id: str, context: Dict[str, Any]) -> None:
         """Set context in Nillion API"""
         try:
+            print(f"set_context content for user {user_id}: {context.get('content', '')}")
             payload = self._create_nillion_payload(user_id, context)
             async with aiohttp.ClientSession() as session:
                 url = f"{self.base_url}/{user_id}"
@@ -170,6 +180,7 @@ class NillionContextStorage(ContextStorage):
         """Send context data to Nillion using the specified format"""
         try:
             context = {"content": content, "metadata": metadata}
+            print(f"send_context_to_nillion content for user {user_id}: {content}")
             payload = self._create_nillion_payload(user_id, context)
             async with aiohttp.ClientSession() as session:
                 url = f"{self.base_url}/{user_id}"
