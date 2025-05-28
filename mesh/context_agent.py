@@ -6,8 +6,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+import aiohttp
 import boto3
-import requests
 from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 
@@ -124,31 +124,29 @@ class NillionContextStorage(ContextStorage):
             "content": content,
             "metadata": metadata,
         }
-
-        payload = [
+        return [
             {
                 "user_id": user_id,
-                "content": {"conversations": [conversation_entry], "language": "en"},
+                "content": {"conversations": [conversation_entry], "preference": "concise", "language": "en"},
             }
         ]
-        return payload
 
     async def get_context(self, user_id: str) -> Dict[str, Any]:
         """Get context from Nillion API"""
         try:
-            url = f"{self.base_url}/{user_id}"
-            headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
-
-            response = requests.get(url, headers=headers)
-
-            if response.status_code == 200:
-                return response.json()
-            elif response.status_code == 404:
-                return {}
-            else:
-                logger.error(f"Error fetching context from Nillion: {response.status_code} - {response.text}")
-                return {}
-
+            async with aiohttp.ClientSession() as session:
+                url = f"{self.base_url}/{user_id}"
+                headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
+                async with session.get(url, headers=headers) as response:
+                    if response.status == 200:
+                        return await response.json()
+                    elif response.status == 404:
+                        return {}
+                    else:
+                        logger.error(
+                            f"Error fetching context from Nillion: {response.status} - {await response.text()}"
+                        )
+                        return {}
         except Exception as e:
             logger.error(f"Error fetching context from Nillion: {e}")
             return {}
@@ -159,38 +157,29 @@ class NillionContextStorage(ContextStorage):
             content = context.get("content", "")
             metadata = context.get("metadata", {})
             payload = self._create_nillion_payload(user_id, content, metadata)
-
-            url = f"{self.base_url}/{user_id}"
-            headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
-
-            response = requests.put(url, headers=headers, json=payload)
-
-            if response.status_code not in [200, 201]:
-                logger.error(f"Error writing context to Nillion: {response.status_code} - {response.text}")
-
+            async with aiohttp.ClientSession() as session:
+                url = f"{self.base_url}/{user_id}"
+                headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
+                async with session.put(url, headers=headers, json=payload) as response:
+                    if response.status not in [200, 201]:
+                        logger.error(f"Error writing context to Nillion: {response.status} - {await response.text()}")
         except Exception as e:
             logger.error(f"Error writing context to Nillion: {e}")
 
-    def send_context_to_nillion(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
-        """
-        Send context data to Nillion using the specified format
-        Returns True if successful, False otherwise
-        """
+    async def send_context_to_nillion(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
+        """Send context data to Nillion using the specified format"""
         try:
             payload = self._create_nillion_payload(user_id, content, metadata)
-
-            url = f"{self.base_url}/{user_id}"
-            headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
-
-            response = requests.put(url, headers=headers, json=payload)
-
-            if response.status_code in [200, 201]:
-                logger.info(f"Successfully sent context to Nillion for user {user_id}")
-                return True
-            else:
-                logger.error(f"Failed to send context to Nillion: {response.status_code} - {response.text}")
-                return False
-
+            async with aiohttp.ClientSession() as session:
+                url = f"{self.base_url}/{user_id}"
+                headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
+                async with session.put(url, headers=headers, json=payload) as response:
+                    if response.status in [200, 201]:
+                        logger.info(f"Successfully sent context to Nillion for user {user_id}")
+                        return True
+                    else:
+                        logger.error(f"Failed to send context to Nillion: {response.status} - {await response.text()}")
+                        return False
         except Exception as e:
             logger.error(f"Error sending context to Nillion: {e}")
             return False
@@ -252,7 +241,7 @@ class ContextAgent(MeshAgent, ABC):
         Convenience method to send context to Nillion if using NillionContextStorage
         """
         if isinstance(self.storage, NillionContextStorage):
-            return self.storage.send_context_to_nillion(user_id, content, metadata)
+            return await self.storage.send_context_to_nillion(user_id, content, metadata)
         else:
             logger.warning("send_to_nillion_context called but not using NillionContextStorage")
             return False
