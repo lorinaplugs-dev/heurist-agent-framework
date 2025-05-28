@@ -2,10 +2,12 @@ import json
 import logging
 import os
 from abc import ABC, abstractmethod
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import boto3
+import requests
 from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 
@@ -107,8 +109,100 @@ class S3ContextStorage(ContextStorage):
             logger.error(f"Error writing context to S3: {e}")
 
 
+class NillionContextStorage(ContextStorage):
+    def __init__(self):
+        self.api_key = os.getenv("CONTEXT_API_KEY")
+        self.base_url = "https://yhxy0iuhih.execute-api.us-east-1.amazonaws.com/staging/nillion-context"
+        if not self.api_key:
+            raise ValueError("CONTEXT_API_KEY environment variable is required for Nillion storage")
+        logger.info("Nillion context storage initialized")
+
+    def _create_nillion_payload(self, user_id: str, content: str, metadata: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Create payload in Nillion format"""
+        conversation_entry = {
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "content": content,
+            "metadata": metadata,
+        }
+
+        payload = [
+            {
+                "user_id": user_id,
+                "content": {"conversations": [conversation_entry], "language": "en"},
+            }
+        ]
+        return payload
+
+    async def get_context(self, user_id: str) -> Dict[str, Any]:
+        """Get context from Nillion API"""
+        try:
+            url = f"{self.base_url}/{user_id}"
+            headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
+
+            response = requests.get(url, headers=headers)
+
+            if response.status_code == 200:
+                return response.json()
+            elif response.status_code == 404:
+                return {}
+            else:
+                logger.error(f"Error fetching context from Nillion: {response.status_code} - {response.text}")
+                return {}
+
+        except Exception as e:
+            logger.error(f"Error fetching context from Nillion: {e}")
+            return {}
+
+    async def set_context(self, user_id: str, context: Dict[str, Any]) -> None:
+        """Set context in Nillion API"""
+        try:
+            content = context.get("content", "")
+            metadata = context.get("metadata", {})
+            payload = self._create_nillion_payload(user_id, content, metadata)
+
+            url = f"{self.base_url}/{user_id}"
+            headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
+
+            response = requests.put(url, headers=headers, json=payload)
+
+            if response.status_code not in [200, 201]:
+                logger.error(f"Error writing context to Nillion: {response.status_code} - {response.text}")
+
+        except Exception as e:
+            logger.error(f"Error writing context to Nillion: {e}")
+
+    def send_context_to_nillion(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
+        """
+        Send context data to Nillion using the specified format
+        Returns True if successful, False otherwise
+        """
+        try:
+            payload = self._create_nillion_payload(user_id, content, metadata)
+
+            url = f"{self.base_url}/{user_id}"
+            headers = {"Content-Type": "application/json", "x-api-key": self.api_key}
+
+            response = requests.put(url, headers=headers, json=payload)
+
+            if response.status_code in [200, 201]:
+                logger.info(f"Successfully sent context to Nillion for user {user_id}")
+                return True
+            else:
+                logger.error(f"Failed to send context to Nillion: {response.status_code} - {response.text}")
+                return False
+
+        except Exception as e:
+            logger.error(f"Error sending context to Nillion: {e}")
+            return False
+
+
 def _has_s3_env():
     return all(os.getenv(k) for k in ["S3_ACCESS_KEY", "S3_SECRET_KEY", "S3_ENDPOINT"])
+
+
+def _has_nillion_env():
+    """Check if Nillion environment variables are present"""
+    return os.getenv("CONTEXT_API_KEY") is not None
 
 
 class ContextAgent(MeshAgent, ABC):
@@ -122,6 +216,8 @@ class ContextAgent(MeshAgent, ABC):
         super().__init__()
         if storage:
             self.storage = storage
+        elif _has_nillion_env():
+            self.storage = NillionContextStorage()
         elif _has_s3_env():
             self.storage = S3ContextStorage()
         else:
@@ -150,6 +246,16 @@ class ContextAgent(MeshAgent, ABC):
         context.update(updates)
         await self.set_user_context(context, user_id)
         return context
+
+    async def send_to_nillion_context(self, user_id: str, content: str, metadata: Dict[str, Any]) -> bool:
+        """
+        Convenience method to send context to Nillion if using NillionContextStorage
+        """
+        if isinstance(self.storage, NillionContextStorage):
+            return self.storage.send_context_to_nillion(user_id, content, metadata)
+        else:
+            logger.warning("send_to_nillion_context called but not using NillionContextStorage")
+            return False
 
     @abstractmethod
     def get_system_prompt(self) -> str:
