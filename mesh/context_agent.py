@@ -125,7 +125,12 @@ class NillionContextStorage(ContextStorage):
                 async with session.get(url, headers=headers) as response:
                     if response.status == 200:
                         data = await response.json()
-                        return data.get("content", {})
+                        if isinstance(data, list) and len(data) > 0:
+                            return data[0].get("content", {})
+                        elif isinstance(data, dict):
+                            return data.get("content", {})
+                        else:
+                            return {}
                     elif response.status == 404:
                         return {}
                     else:
