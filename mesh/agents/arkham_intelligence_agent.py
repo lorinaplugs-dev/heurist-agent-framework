@@ -185,7 +185,7 @@ class ArkhamIntelligenceAgent(MeshAgent):
                             "groupByEntity": {
                                 "type": "boolean",
                                 "description": "Whether to group holders by known entities (e.g., exchanges, institutions)",
-                                "default": False,
+                                "default": True,
                             },
                         },
                         "required": ["chain", "address"],
