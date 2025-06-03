@@ -47,9 +47,9 @@ async def run_agent():
         agent_input_5 = {
             "tool": "get_token_holders",
             "tool_arguments": {
-                "chain": "ethereum",
-                "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                "groupByEntity": True,
+                "chain": "solana",
+                "address": "38PgzpJYu2HkiYvV8qePFakB8tuobPdGm2FFEn7Dpump",
+                "groupByEntity": False,
             },
         }
         agent_output_5 = await agent.handle_message(agent_input_5)
@@ -82,7 +82,7 @@ async def run_agent():
             "address_intelligence_solana": {"input": agent_input_2, "output": agent_output_2},
             "contract_metadata_base": {"input": agent_input_3, "output": agent_output_3},
             "portfolio_snapshot_nlp": {"input": agent_input_4, "output": agent_output_4},
-            "token_holders_ethereum": {"input": agent_input_5, "output": agent_output_5},
+            "token_holders_solana": {"input": agent_input_5, "output": agent_output_5},
             "token_holders_solana_nlp": {"input": agent_input_6, "output": agent_output_6},
             "portfolio_with_timestamp": {"input": agent_input_7, "output": agent_output_7},
         }
