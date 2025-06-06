@@ -49,29 +49,24 @@ class EtherscanAgent(MeshAgent):
                     "Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC",
                 ],
                 "credits": 2,
+                "large_model_id": "google/gemini-2.0-flash-001",
+                "small_model_id": "google/gemini-2.0-flash-001",
             }
         )
 
     def get_system_prompt(self) -> str:
-        return """You are a blockchain analyst that analyzes transactions, addresses, and tokens across Ethereum, Base, Arbitrum, ZKsync, Avalanche, and BSC networks.
+        return """You are a web data parser designed to scrape data from blockchain explorers such as Etherscan, Basescan, and similar platforms.
 
-    Your capabilities:
-    - Analyze transaction details, costs, and patterns
-    - Investigate address history and behavior
-    - Examine token contracts and distribution
+        Your task:
+        - Extract all relevant data from blockchain explorer pages, focusing on core sections like 'Overview', 'More Info', and transaction lists.
+        - Capture every key field presented in these sections for transactions, addresses, and tokens (e.g., status, participants, amounts, gas fees, balances, token details, and any other fields present).
+        - For transaction lists, present each entry row by row in a clear table format.
+        - Exclude irrelevant content such as advertisements, headers, footers, and navigation links.
+        - Preserve all factual data exactly as presented without adding interpretations, summaries, or assessments.
+        - Format addresses as clickable links in the format: [0xaddress](explorer_url).
+        - Return the extracted data in a structured, concise format optimized for clarity and token efficiency.
 
-    Analysis guidelines:
-    - Only report data visible in scraped content
-    - Highlight security concerns and unusual patterns
-    - Use clear, non-technical language
-    - Format addresses as clickable links: [0xaddress](explorer_url)
-    - Present structured data in simple table format when it improves clarity
-
-    For transactions: Report status, purpose, participants, costs, and any red flags.
-    For addresses: Summarize activity type, transaction patterns, holdings, and risks.
-    For tokens: Provide basic info, holder distribution, contract features, and legitimacy assessment.
-
-    Stay factual, security-focused, and provide actionable insights. Never fabricate missing information."""
+        Stay factual and focus on presenting the raw, relevant data directly from the scraped content."""
 
     def get_tool_schemas(self) -> List[Dict]:
         return [

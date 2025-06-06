@@ -4,27 +4,41 @@ natural_language_transaction:
       on Ethereum
     raw_data_only: false
   output:
-    response: "**Transaction Analysis: 0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd**\n\
-      \n**Transaction Details:**\n\n* **Status:** Success\n* **Chain:** Ethereum\n\
-      * **Transaction Hash (TxID):** [0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd](https://etherscan.io/tx/0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd)\n\
-      * **Block:** [22207195](https://etherscan.io/block/22207195) (387,392 Block\
-      \ Confirmations)\n* **Timestamp:** 54 days ago (Apr-06-2025 03:29:47 AM UTC)\
-      \ - Confirmed within 8 seconds\n\n**Transaction Action:**\n* **Type:** Swap\
-      \ on Uniswap V2\n* **Details:**\n\t+ **From:** [0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E](https://etherscan.io/address/0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\n\
-      \t+ **To:** [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
-      \ (Uniswap V4: Universal Router)\n\t+ **Assets:**\n\t\t- **0.026 ETH** ($67.94)\
-      \ for **892,155,118.330137431 MONKEYS** on Uniswap V2\n\n**Transaction Fees\
-      \ & Gas:**\n\n| **Category** | **Value** |\n| --- | --- |\n| **Transaction Fee**\
-      \ | 0.00047794244038612 ETH ($1.25) |\n| **Gas Price** | 2.42311484 Gwei (0.00000000242311484\
-      \ ETH) |\n| **Ether Price** | $"
+    response: 'Transaction Details:
+
+
+      *   **Transaction Action:** Swap 0.026 ($64.11) ETH for 892,155,118.330137431
+      MONKEYS on Uniswap V2
+
+      *   **Transaction Hash:** 0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd
+
+      *   **Status:** Success
+
+      *   **Block:** [22207195](https://etherscan.io/block/22207195) 437421 Block
+      Confirmations
+
+      *   **Timestamp:** 61 days ago (Apr-06-2025 03:29:47 AM UTC) | Confirmed within
+      8 secs
+
+      *   **From:** [0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E](https://etherscan.io/address/0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)
+
+      *   **To:** [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)
+      (Uniswap V4: Universal Router)
+
+
+      Internal Transactions:
+
+
+      *   Transfer 0.026 ETH $64.11 From [Uniswap V4: Universal Router](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)
+      To [Wrapped Ether](https://etherscan.io/address/0xc02aaa3'
     data: &id001
       status: success
       data:
         chain: ethereum
         txid: '0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd'
         explorer_url: https://etherscan.io/tx/0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd
-        scraped_content: "ETH Price: [$2,613.26](https://etherscan.io/chart/etherprice)\
-          \ (-4.54%)\n\nGas: [2.234 Gwei](https://etherscan.io/gastracker)\n\n[![Ads](https://etherscan.io/images/gen/moonpay_20.png)\\\
+        scraped_content: "ETH Price: [$2,465.91](https://etherscan.io/chart/etherprice)\
+          \ (-5.54%)\n\nGas: [1.78 Gwei](https://etherscan.io/gastracker)\n\n[![Ads](https://etherscan.io/images/gen/moonpay_20.png)\\\
           \\\n\\\\\n**MoonPay: Buy & Sell Crypto with a credit card.  SponsoredAd**](https://moonpay-affiliate-program.sjv.io/GmG56B)\n\
           \nNavigate\n\nClose\n\nEnter\n\n`/`\n\nNew alerts\n\n[Understanding an Ethereum\
           \ Transaction](https://info.etherscan.com/understanding-an-ethereum-transaction/)\
@@ -62,7 +76,7 @@ natural_language_transaction:
           \ \"Links to an External Advertiser site\")\n\nGaming\n\nSponsored\n\n[![ads](https://etherscan.io/images/gen/bcgames_20.png)BC.GAME\
           \ \\\\\n\\- The Best ETH Casino Claim Now!\\\\\n\\\\\n5000+ Slots & Live\
           \ Casino Games, 50+cryptos. Register with Etherscan and get 760% deposit\
-          \ bonus. Win Big$, withdraw it fast.](https://goto.etherscan.com/rd/DIVSGE6K9C8Z83PJ5NZIXHK\
+          \ bonus. Win Big$, withdraw it fast.](https://goto.etherscan.com/rd/DIVSGE6K9C8Z83PJ5NZIXH\
           \ \"Links to an External Advertiser site\")\n\n* * *\n\n[![ads](https://etherscan.io/images/gen/cryptoslots.png)CryptoSlots\\\
           \\\n\\\\\nPlay & Get 25 Free Spins at CryptoSlots Play Now\\\\\n\\\\\nAnonymous\
           \ play on awesome games - sign up now for 25 free jackpot spins - worth\
@@ -71,10 +85,10 @@ natural_language_transaction:
           \\\n\\\\\n200% More Funds to Play on Us up to 4 BTC! Claim Now!\\\\\n\\\\\
           \n100s of games, generous bonuses, 20+ years of trusted gaming. Join CryptoWins\
           \ & start winning today!](https://goto.etherscan.com/rd/879KU3SJP9B5MBY6JWJMN7D\
-          \ \"Links to an External Advertiser site\")\n\n**Sponsored:**![](https://etherscan.io/images/gen/lightchainai_20.png)\
-          \ Join **Lightchain Protocol AI** Presale Today Before Tokens Sell Out.\
-          \ [**Explore Now!**](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/Y3Cs=.php?YmFubmVyaWQ=8116&em9uZWlk=6&sig=9b5eddfa65fd4ad0e85f489ab6d03fd9fd06ec222f728ebd88702e85572cd840&oadest=https%3A%2F%2Flightchain.ai%2F%3Futm_source%3Detherscan%26utm_medium%3Dtxad%26utm_campaign%3Dw1\
-          \ \"Links to an External Advertiser site\")\n\n![](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/bGc=.php?YmFubmVyaWQ=8116&Y2FtcGFpZ25pZA=3561&em9uZWlk=6&loc=https%3A%2F%2Fetherscan.io%2Ftx%2F0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd&cb=ffa54700dc)\n\
+          \ \"Links to an External Advertiser site\")\n\n**Sponsored:**![](https://etherscan.io/images/gen/betpanda_20.png?v=2)\
+          \ **Betpanda**: Anon crypto casino with instant wd's & 10% weekly cashback.\
+          \ [**Play now**.](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/Y3Cs=.php?YmFubmVyaWQ=8089&em9uZWlk=6&sig=72aa8bbc2a10be2e8c60b2b9a3e924ded5a5c8c6d117f7766d29d3af59aba40a&oadest=https%3A%2F%2Fbetpanda1.io%2F%3Fref%3DEtherscan\
+          \ \"Links to an External Advertiser site\")\n\n![](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/bGc=.php?YmFubmVyaWQ=8089&Y2FtcGFpZ25pZA=3548&em9uZWlk=6&loc=https%3A%2F%2Fetherscan.io%2Ftx%2F0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd&cb=3c5e640c46)\n\
           \n- [Overview](https://etherscan.io/tx/0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd#home)\n\
           - [Internal Txns](https://etherscan.io/tx/0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd#internal)\n\
           - [Logs (7)](https://etherscan.io/tx/0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd#eventlog)\n\
@@ -86,26 +100,23 @@ natural_language_transaction:
           \ [Parity Trace](https://etherscan.io/vmtrace?txhash=0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd&type=parity)\
           \ [Transaction Decoder](https://etherscan.io/tx-decoder?tx=0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd)\n\
           \n* * *\n\n[Get Raw Tx Hex](https://etherscan.io/getRawTx?tx=0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd)\n\
-          \n\nTransaction Action\n\n[Swap](https://etherscan.io/dex/uniswapv2/0xdf30850e09e33f07ba82e893dc7b2eed86f34787)0.026($67.94)ETHfor892,155,118.330137431[![](https://etherscan.io/images/main/empty-token.png)MONKEYS](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)on![](https://etherscan.io/images/uniswap_ta.png)Uniswap\
+          \n\nTransaction Action\n\n[Swap](https://etherscan.io/dex/uniswapv2/0xdf30850e09e33f07ba82e893dc7b2eed86f34787)0.026($64.11)ETHfor892,155,118.330137431[![](https://etherscan.io/images/main/empty-token.png)MONKEYS](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)on![](https://etherscan.io/images/uniswap_ta.png)Uniswap\
           \ V2\n\nTransaction Hash:\n\n\n0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd\n\
-          \nStatus:\n\nSuccess\n\nBlock:\n\n\n[22207195](https://etherscan.io/block/22207195)387392\
-          \ Block Confirmations\n\nTimestamp:\n\n\n54 days ago (Apr-06-2025 03:29:47\
-          \ AM UTC)\\|Confirmed within 8 secs\n\n* * *\n\nSponsored:\n\n\nCoinzilla\
-          \ Offer [![](https://cdn.coinzilla.com/base/728x90/728X90Retina.png)](https://cdn.coinzilla.com/base/click.html?type=728x90&zone=1775ebb9d466c9d4408)\
-          \ [Coinzilla Ads![](https://cdn.coinzilla.com/defaults/information.png)](https://hello.coinzilla.com/?utm_campaign=internal&utm_medium=infobutton)\n\
-          \n[![](https://etherscan.io/images/gen/etherscan-md.gif)](https://etherscan.io/contactusadvertise)[![](https://etherscan.io/images/gen/etherscan-sm.gif)](https://etherscan.io/contactusadvertise)\n\
+          \nStatus:\n\nSuccess\n\nBlock:\n\n\n[22207195](https://etherscan.io/block/22207195)437421\
+          \ Block Confirmations\n\nTimestamp:\n\n\n61 days ago (Apr-06-2025 03:29:47\
+          \ AM UTC)\\|Confirmed within 8 secs\n\n* * *\n\nSponsored:\n\n\n[![](https://etherscan.io/images/gen/etherscan-md.gif)](https://etherscan.io/contactusadvertise)[![](https://etherscan.io/images/gen/etherscan-sm.gif)](https://etherscan.io/contactusadvertise)\n\
           \n* * *\n\nFrom:\n\n\n[0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E](https://etherscan.io/address/0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\n\
           \nTo:\n\n\n[0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\n\
           (Uniswap V4: Universal Router)\n\n* * *\n\nInternal Transactions:\n\n- All\
-          \ Transfers\n- Net Transfers\n\nTransfer0 **.** 026 ETH$67.94From [Uniswap\
+          \ Transfers\n- Net Transfers\n\nTransfer0 **.** 026 ETH$64.11From [Uniswap\
           \ V4: Universal Router](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
           \ To [Wrapped Ether](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
           \n[0x01eEbDB7...Ed462eC5E](https://etherscan.io/token/ETH?a=0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\
-          \ sent 0.026 $67.94ETH\n\n[Wrapped Ether](https://etherscan.io/token/ETH?a=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\
-          \ received 0.026 $67.94ETH\n\n* * *\n\nERC-20 Tokens Transferred: 4\n\n\
+          \ sent 0.026 $64.11ETH\n\n[Wrapped Ether](https://etherscan.io/token/ETH?a=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\
+          \ received 0.026 $64.11ETH\n\n* * *\n\nERC-20 Tokens Transferred: 4\n\n\
           - All Transfers\n- Net Transfers\n\nFrom [Uniswap V4: Universal Router](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
           \ To [0xdF30850e...D86F34787](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
-          \ For0.026($67.98) [![](https://etherscan.io/token/images/weth_28.png?v=2)Wrapped\
+          \ For0.026($64.17) [![](https://etherscan.io/token/images/weth_28.png?v=2)Wrapped\
           \ Ethe... (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
           \nFrom [0xdF30850e...D86F34787](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
           \ To [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
@@ -123,10 +134,10 @@ natural_language_transaction:
           \ received 889,924,730.534312088 [![](https://etherscan.io/images/main/empty-token.png)ERC-20:\
           \ Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
           \n[Uniswap V4: Universal Router](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
-          \ sent 0.026 ($67.98) [![](https://etherscan.io/token/images/weth_28.png?v=2)Wrapped\
+          \ sent 0.026 ($64.17) [![](https://etherscan.io/token/images/weth_28.png?v=2)Wrapped\
           \ Ethe... (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
           \n[0xdF30850e...D86F34787](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
-          \ received 0.026 ($67.98) [![](https://etherscan.io/token/images/weth_28.png?v=2)Wrapped\
+          \ received 0.026 ($64.17) [![](https://etherscan.io/token/images/weth_28.png?v=2)Wrapped\
           \ Ethe... (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
           \n[0xdF30850e...D86F34787](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
           \ sent 892,155,118.330137431 [![](https://etherscan.io/images/main/empty-token.png)ERC-20:\
@@ -134,13 +145,13 @@ natural_language_transaction:
           \n[Uniswap: Fee Collector](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x000000fee13a103a10d593b9ae06b3e05f2e7e1c)\
           \ received 2,230,387.795825343 [![](https://etherscan.io/images/main/empty-token.png)ERC-20:\
           \ Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
-          \n* * *\n\nValue:\n\n\n0 **.** 026 ETH$67.94\n\nTransaction Fee:\n\n\n0\
-          \ **.** 00047794244038612 ETH$1.25\n\nGas Price:\n\n\n2 **.** 42311484 Gwei(0\
+          \n* * *\n\nValue:\n\n\n0 **.** 026 ETH$64.11\n\nTransaction Fee:\n\n\n0\
+          \ **.** 00047794244038612 ETH$1.18\n\nGas Price:\n\n\n2 **.** 42311484 Gwei(0\
           \ **.** 00000000242311484 ETH)\n\nEther Price:\n\n\n$1,579.65 / ETH\n\n\
           Gas Limit & Usage by Txn:\n\n\n279,361\\|197,243 (70.61%)\n\nGas Fees:\n\
           \n\nBase: 0 **.** 42311484 Gwei\\|Max: 2 **.** 506431645 Gwei\\|Max Priority:\
           \ 2 Gwei\n\nBurnt & Txn Savings Fees:\n\n\n\U0001F525 Burnt: 0 **.** 00008345644038612\
-          \ ETH ($0.22)\U0001F4B8 Txn Savings: 0 **.** 000016433656568615 ETH ($0.04)\n\
+          \ ETH ($0.21)\U0001F4B8 Txn Savings: 0 **.** 000016433656568615 ETH ($0.04)\n\
           \n* * *\n\nOther Attributes:\n\n\nTxn Type: 2 (EIP-1559)\nNonce: 844\nPosition\
           \ In Block: 5\n\n\nInput Data:\n\n\n0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000067f1fc2500000000000000000000000000000000000000000000000000000000000000040b080604000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000005c5edcbc29000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000005c5edcbc290000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf750800000000000000000000000000000000000000000000000000000000000000600000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf7508000000000000000000000000000000fee13a103a10d593b9ae06b3e05f2e7e1c000000000000000000000000000000000000000000000000000000000000001900000000000000000000000000000000000000000000000000000000000000600000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf750800000000000000000000000001eebdb7f6855f1ddfd38c1131d67e8ed462ec5e0000000000000000000000000000000000000000000000000c59a485d6251fd50c\n\
           \nView Input As\n\n\n- Default View\n- UTF-8\n- Original\n\nDecode Input\
@@ -247,37 +258,30 @@ natural_language_address:
     query: Get address history for 0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B on Base
     raw_data_only: false
   output:
-    response: "**Address Analysis Report**\n\n**Address:** [0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B](https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
-      \n**Network:** Base\n\n**Summary:**\n\n* **Activity Type:** Inactive (no transactions\
-      \ found)\n* **Transaction Patterns:** N/A\n* **Holdings:**\n\t+ **ETH Balance:**\
-      \ 0 ETH\n\t+ **ETH Value:** $0.00\n\t+ **Multichain Portfolio:** No assets found\
-      \ across 34 scanned chains\n* **Risks:**\n\t+ **Security Concerns:** None identified\
-      \ from scraped content\n\t+ **Unusual Patterns:** None detected (likely due\
-      \ to inactivity)\n\n**Detailed Findings:**\n\n| **Category** | **Details** |\n\
-      | --- | --- |\n| **ETH Balance** | 0 ETH |\n| **ETH Value** | $0.00 |\n| **Transactions\
-      \ Sent** | Latest: N/A, First: N/A |\n| **Funded By** | N/A |\n| **Multichain\
-      \ Portfolio** | No assets found across 34 scanned chains (including Ethereum,\
-      \ BNB Chain, Polygon, Arbitrum, etc.) |\n| **Contract Information** | No contract\
-      \ name, compiler version, or optimization settings available |\n| **Internal\
-      \ Transactions** | No internal transactions found |\n| **Blocks Produced** |\
-      \ No blocks produced found |\n| **Uncles** | No uncles found |\n| **Withdrawals**\
-      \ | No withdrawals found |\n| **Deposits** | No deposits found |\n\n**Recommendations:**\n\
-      \n* Monitor the address for future activity, as current inactivity limits the\
-      \ scope of analysis.\n* If you are the owner of this address, consider securing\
-      \ your private key and exploring best practices for wallet management.\n* For\
-      \ multichain portfolio management, consider integrating additional chains or\
-      \ exploring alternative portfolio tracking solutions.\n\n**Disclaimer:**\nThis\
-      \ report is based solely on the provided scraped content and may not reflect\
-      \ the complete or up-to-date picture of the address's activity. Always verify\
-      \ information through multiple sources when making critical decisions."
+    response: "Here's the structured data from the Basescan page for address [0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B](https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B):\n\
+      \n**Overview**\n\n*   **ETH Balance:** 0 ETH\n*   **ETH Value:** $0.00\n\n**More\
+      \ Info**\n\n*   **Private Name Tags:** \\[Add](https://basescan.org/login?msg=NeedLogin&ref=address&ret=0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
+      *   **Transactions Sent:**\n    *   Latest: N/A\n    *   First: N/A\n*   **Funded\
+      \ By:** N/A\n\n**Multichain Info**\n\n*   [$0 (Multichain Portfolio)](javascript:;)\n\
+      *   No addresses found\n\n**Transactions**\n\nNo matching entries found.\n\n\
+      **Internal Transactions**\n\nNo internal transactions to display.\n\n**Solidity\
+      \ Compiler**\n\n*   Contract Name: 0 ETH\n*   Compiler Version: 0\n*   Optimization\
+      \ Enabled: 0 ETH\n*   Other Settings: -NA-\n\n**Blocks Produced**\n\nNo blocks\
+      \ produced.\n\n**Uncles**\n\nNo uncles.\n\n**Validator Withdrawals**\n\nNo withdrawals.\n\
+      \n**Deposits**\n\nNo deposits.\n\n**Multichain Portfolio**\n\nPortfolio last\
+      \ updated 1 min ago.\n\n*Chains with balances of 0:*\nEthereum (0), BNB Chain\
+      \ (0), Polygon (0), Arbitrum One (0), Optimism (0), Base (0), BTTC (0), Celo\
+      \ (0), Gnosis (0), Polygon zkEVM (0), Linea (0), Moonbeam (0), Moonriver (0),\
+      \ Arbitrum Nova (0), Scroll (0), Wemix (0), Avax C-Chain (0), zkSync Era (0),\
+      \ opBNB (0), Fraxtal ("
     data: &id002
       status: success
       data:
         chain: base
         address: '0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B'
         explorer_url: https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B
-        scraped_content: 'ETH Price: [$2,614.43](https://basescan.org/chart/price)
-          (-4.50%)
+        scraped_content: 'ETH Price: [$2,466.48](https://basescan.org/chart/price)
+          (-5.51%)
 
 
           [![Ad](https://etherscan.io/images/gen/betpanda_2_20.png?v=3)\\
@@ -406,6 +410,22 @@ natural_language_address:
           \\
 
           Join MetaWin today & Experience the Ultimate Web3 Casino.](https://goto.etherscan.com/rd/XWRE6I4GTMNJDUYGBR14CHH9F
+          "Links to an External Advertiser site")
+
+
+          * * *
+
+
+          [![ads](https://etherscan.io/images/gen/rainbet_20a.png)Rainbet\\
+
+          \\
+
+          Crypto Casino & Sportsbook Play Now!\\
+
+          \\
+
+          20k Weekly Raffle ticket, Use Base on Rainbet, Instant Withdrawals, Originals,
+          slots, sports - Provably Fair.](https://goto.etherscan.com/rd/JH4F14GIQZE6RC6NQN6WCIPJA
           "Links to an External Advertiser site")
 
 
@@ -760,7 +780,7 @@ natural_language_address:
 
           Last updated:
 
-          less than 1 sec ago
+          1 min ago
 
 
           [![Ethereum](https://images.blockscan.com/chain-logos/eth.svg)\\
@@ -1190,100 +1210,39 @@ natural_language_token:
     query: Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC
     raw_data_only: false
   output:
-    response: '**Token Details for [0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955)**
-
-
-      **Basic Information**
-
-
-      * **Token Name:** Binance-Peg BSC-USD (BSC-USD)
-
-      * **Token Type:** BEP-20, Stablecoin, Binance-Peg
-
-      * **Decimals:** 18
-
-      * **Chain:** Binance Smart Chain (BSC)
-
-
-      **Holder Distribution and Supply**
-
-
-      * **Total Supply:** 5,984,993,799.547009 BSC-USD
-
-      * **Circulating Supply:** 153,083,661,571.00 BSC-USD
-
-      * **Holders:** 29,538,295 (as of the last update)
-
-
-      **Market Information**
-
-
-      | **Metric** | **Value** |
-
-      | --- | --- |
-
-      | **Volume (24H)** | $67,687,400,894.00 |
-
-      | **Market Capitalization** | $153,127,676,616.00 |
-
-      | **Circulating Supply** | 153,083,661,571.00 BSC-USD |
-
-      | **Market Data Source** | CoinMarketCap |
-
-
-      **Contract Features and Security**
-
-
-      * **Contract Address:** [0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)
-
-      * **Contract Name:** BEP20USDT
-
-      * **Compiler Version:** v0.5.16+commit.9c3226ce
-
-      * **Optimization Enabled:** Yes with 200 runs
-
-      * **License:** Apache-2.0
-
-      * **Audited:** Yes
-
-      * **Security Audit Report:** Available (Etherauthority - Apr 3th, 2025) - [Security
-      Audit Report](https://etherauthority.io/wp-content/uploads/2025/04/Binance-BSC-USD.pdf)
-
-
-      **Legitimacy Assessment**
-
-
-      * **Reputation:** Evaluated to be a token of public interest by BscScan.
-
-      * **Transparency:** High (audited, clear documentation, and transparent supply)
-
-      * **Security:** Audited by a reputable firm with no critical issues disclosed
-      in the'
+    response: "```json\n{\n  \"Token\": \"Binance-Peg BSC-USD (BSC-USD)\",\n  \"Reputation\"\
+      : \"OK: Evaluated to be a token of public interest by BscScan.\",\n  \"Type\"\
+      : \"BEP-20Cross-Chain Stablecoin Binance-Peg\",\n  \"Website\": \"[binance.com/en/trade/BNB\\\
+      \\_USDT](https://www.binance.com/en/trade/BNB_USDT)\",\n  \"API\": \"[API](https://docs.etherscan.io/etherscan-v2/api-endpoints/tokens)\"\
+      ,\n  \"Overview\": {\n    \"Max Total Supply\": \"5,984,993,799.547009 BSC-USD\
+      \ (CSupply: 5,983,363,620.635615)\",\n    \"Holders\": \"29,760,287 ( 0.015%)\"\
+      ,\n    \"Total Transfers\": \"-\"\n  },\n  \"Market\": {\n    \"Price\": \"\
+      $1.00 @ 0.001553 BNB(-0.01%)\",\n    \"Onchain Market Cap\": \"$5,984,993,799.55\"\
+      ,\n    \"Circulating Supply Market Cap\": \"$153,883,062,846.00\"\n  },\n  \"\
+      Other Info\": {\n    \"Token Contract (WITH 18 Decimals)\": \"[0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)\"\
+      \n  },\n  \"Additional Market Data\": {\n    \"Volume (24H)\": \"$59,994,086,056.00\"\
+      ,\n    \"Market Capitalization\": \"$153,883,062"
     data: &id003
       status: success
       data:
         chain: bsc
         token_address: '0x55d398326f99059ff775485246999027b3197955'
         explorer_url: https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955
-        scraped_content: "BNB Price: [$667.51](https://bscscan.com/chart/bnbprice)\
-          \ (-3.01%)\n\nGas: [0.1 GWei](https://bscscan.com/gastracker)\n\n[![Lightchain](https://bscscan.com/images/gen/lightchainai_20.png)\\\
-          \\\n\\\\\n**Lightchain Protocol AI Presale Live  SponsoredAd**](https://goto.bscscan.com/rd/29SHA1672YEQK9NGSQ4B35PMR)\n\
-          \nNavigate\n\nClose\n\nEnter\n\n`/`\n\n- Light\n\n- Dim\n\n- Dark\n\n- *\
-          \ * *\n\n- [Site Settings](https://bscscan.com/settings)\n\n![BNB Smart\
-          \ Chain Logo](https://bscscan.com/assets/bsc/images/svg/logos/chain-light.svg?v=25.5.4.3)![BNB\
-          \ Smart Chain Logo](https://bscscan.com/assets/bsc/images/svg/logos/chain-dim.svg?v=25.5.4.3)![BNB\
-          \ Smart Chain Logo](https://bscscan.com/assets/bsc/images/svg/logos/chain-dark.svg?v=25.5.4.3)\n\
+        scraped_content: "BNB Price: [$643.77](https://bscscan.com/chart/bnbprice)\
+          \ (-3.73%)\n\nGas: [0.1 GWei](https://bscscan.com/gastracker)\n\n`/`\n\n\
+          - Light\n\n- Dim\n\n- Dark\n\n- * * *\n\n- [Site Settings](https://bscscan.com/settings)\n\
+          \n![BNB Smart Chain Logo](https://bscscan.com/assets/bsc/images/svg/logos/chain-light.svg?v=25.5.5.1)![BNB\
+          \ Smart Chain Logo](https://bscscan.com/assets/bsc/images/svg/logos/chain-dim.svg?v=25.5.5.1)![BNB\
+          \ Smart Chain Logo](https://bscscan.com/assets/bsc/images/svg/logos/chain-dark.svg?v=25.5.5.1)\n\
           \n- [Bsc Mainnet](https://bscscan.com/)\n- [opBNB Mainnet](https://opbnb.bscscan.com/)\n\
           - * * *\n\n- [Bsc Testnet](https://testnet.bscscan.com/)\n- [opBNB Testnet](https://opbnb-testnet.bscscan.com/)\n\
           \n![](https://bscscan.com/token/images/busdt_32.png)\n\n# Token\n\nBinance-Peg\
           \ BSC-USD (BSC-USD)[Reputation OK: Evaluated to be a token of public interest\
-          \ by BscScan. Click for more info.](https://info.bscscan.com/token-reputation/)\n\
-          \nBuy\n\nSponsored\n\n[![ads](https://bscscan.com/images/gen/etoro_20.png?v2)eToro\\\
+          \ by BscScan. Click for more info.](https://info.bscscan.com/token-reputation/\
+          \ \"Reputation OK: Evaluated to be a token of public interest by BscScan.\
+          \ Click for more info.\")\n\nBuy\n\nSponsored\n\n[![ads](https://bscscan.com/images/gen/etoro_20.png?v2)eToro\\\
           \\\n\\\\\nOne-stop crypto shop: trusted, simple & safe. \\\\\n\\\\\nDon’t\
           \ invest unless you’re prepared to lose all the money you invest.](https://goto.bscscan.com/rd/8Z17CCBU2XINM6UWKSPKI2UXZ\
-          \ \"Links to an External Advertiser site\")\n\n* * *\n\n[![ads](https://bscscan.com/images/gen/maestro_20.png?v=2)Maestro\\\
-          \\\n\\\\\nTrade on Telegram Multichain\\\\\n\\\\\nTrade with @Maestro, the\
-          \ #1 Telegram trading bot. 9 Blockchains available. No strings attached!](https://goto.bscscan.com/rd/N9TJXHZ1BU1AYEFXBS71G5RIA\
           \ \"Links to an External Advertiser site\")\n\nPlay\n\nSponsored\n\n[![ads](https://bscscan.com/images/gen/coinsgame_20a.png)\
           \ Сoins.game\\\\\n\\\\\n\\- 100 free spins for registration. Spin Now!\\\
           \\\n\\\\\nEveryday giveaways up to 8.88BTC, Lucky Spins.\\\\\nDeposit BONUS\
@@ -1298,7 +1257,7 @@ natural_language_token:
           \ \"Links to an External Advertiser site\")\n\nGaming\n\nSponsored\n\n[![ads](https://bscscan.com/images/gen/bcgames_20.png)\
           \ BC.GAME \\\\\n\\\\\nThe Best BNB Casino with 1,000,000 BNB Daily Bonus.\
           \ Claim Now\\\\\n\\\\\n5000+ Slots, Live casino games, 50+ cryptos, 100%\
-          \ bet insurance. Register with Bscscan and get 240% first deposit bonus.](https://goto.bscscan.com/rd/ZIY1R87N9WJ6RFB3A46A4MN\
+          \ bet insurance. Register with Bscscan and get 240% first deposit bonus.](https://goto.bscscan.com/rd/ZIY1R87N9WJ6RFB3A46A4M\
           \ \"Links to an External Advertiser site\")\n\n* * *\n\n[![ads](https://bscscan.com/images/gen/whale_20.png)Whale.io\
           \ Casino\\\\\n\\\\\nNo BS Up to 20% DAILY CashBack Get Started!\\\\\n\\\\\
           \nCasino \\| Sportsbook \\| Lootboxes \\| Tribes \\| Battlepass](https://goto.bscscan.com/rd/4USUQ6HDPGWJVE5W973BXIQM\
@@ -1306,16 +1265,13 @@ natural_language_token:
           \\\n\\\\\n200% Bonus, Instant Withdrawals, 100K Daily Giveaways, Best VIP\
           \ Club  Claim Now!\\\\\n\\\\\n3000+ Slots, 20+ Cryptos, 75K Raffle, Sports\
           \ Promos - World's largest Crypto Casino & Sportsbook - Provably Fair!](https://goto.bscscan.com/rd/GDIMQMWDM53HP8JN9S3YC92H\
-          \ \"Links to an External Advertiser site\")\n\n**Sponsored:**![](https://etherscan.io/images/gen/winna_20.png)\
-          \ **Winna**: Best New Crypto Gaming Site Of 2025! Instant Withdrawals &\
-          \ Highest Rewards. [**Play Now!**](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/Y3Cs=.php?YmFubmVyaWQ=8033&em9uZWlk=10&sig=85bb0d0e6b1477388e446b5747c864d8c1a9eeb879336192f61f6fec88a9d2ff&oadest=https%3A%2F%2Flink.winna.com%2Fpw3\
-          \ \"Links to an External Advertiser site\")\n\n![](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/bGc=.php?YmFubmVyaWQ=8033&Y2FtcGFpZ25pZA=3521&em9uZWlk=10&loc=https%3A%2F%2Fbscscan.com%2Ftoken%2F0x55d398326f99059ff775485246999027b3197955&referer=https%3A%2F%2Fbscscan.com%2Ftoken%2F0x55d398326f99059ff775485246999027b3197955%3F__cf_chl_tk%3DKc.NEbdvgs4eOkbMyGY74zguKCXTn6K8Qvd11gWTRtY-1748596485-1.0.1.1-R4g0clvuUeVDs2dvhgHegrO_YupPXIOaX5QSRHoUWLU&cb=a65e708f04)\n\
-          \nBinance-Peg tokens are BEP20 tokens that are backed by tokens vaults in\
-          \ Binance public addresses and is part of a new intiative known as [Project\
-          \ Token Canal](https://www.binance.com/en/blog/421499824684901158/Token-Canal-Upgrade-Binance-Wrapped-BTokens-on-Ethereum-Panama-Turns-into-Bridge).\
+          \ \"Links to an External Advertiser site\")\n\nBinance-Peg tokens are BEP20\
+          \ tokens that are backed by tokens vaults in Binance public addresses and\
+          \ is part of a new intiative known as [Project Token Canal](https://www.binance.com/en/blog/421499824684901158/Token-Canal-Upgrade-Binance-Wrapped-BTokens-on-Ethereum-Panama-Turns-into-Bridge).\
           \ Note: This token's displayed name symbol does not match its contract's\
           \ Name and Symbol function.\n\nBEP-20Cross-Chain [Stablecoin](https://bscscan.com/tokens/label/stablecoin)\
-          \ [Binance-Peg](https://bscscan.com/tokens/label/binance-pegged)\n\nbinance.com/en/trade/BNB\\\
+          \ [Binance-Peg](https://bscscan.com/tokens/label/binance-pegged \"Wrapped\
+          \ tokens that are backed by tokens vaults in Binance\")\n\nbinance.com/en/trade/BNB\\\
           _USDT\n\n- [https://www.binance.com/en/trade/BNB\\_USDT](https://www.binance.com/en/trade/BNB_USDT)\n\
           - * * *\n\n- [![](https://bscscan.com/images/cmc_new.svg)CoinMarketCap](https://coinmarketcap.com/currencies/tether/)\n\
           - [![](https://bscscan.com/images/coingecko_new.svg)CoinGecko](https://www.coingecko.com/en/coins/tether/)\n\
@@ -1326,25 +1282,22 @@ natural_language_token:
           - [Update Name Tag or Label](https://bscscan.com/contactus?id=5&a=0x55d398326f99059ff775485246999027b3197955)\n\
           - [Submit Burn Details](https://bscscan.com/contactus)\n- [Report/Flag Address](https://bscscan.com/contactus?id=6)\n\
           \n### Overview\n\n#### Max Total Supply\n\n5,984,993,799.547009 **BSC-USD**(CSupply:\
-          \ 5,983,363,560.598562)\n\n\n\n#### Holders\n\n29,538,295 (0.00%)\n\nCreated\
-          \ with Highcharts 10.2.1\n\n#### Total Transfers\n\n-\n\n### Market\n\n\
-          #### Price\n\n$1.00 @ 0.001498 BNB(+0.01%)\n\n#### Onchain Market Cap\n\n\
-          $5,984,993,799.55\n\n\n#### Circulating Supply Market Cap\n\n$153,127,676,616.00\n\
-          \n\n### Other Info\n\n#### Token Contract (WITH **18** Decimals)\n\n[0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)\
-          \ [Copy Address](javascript:;)\n\n[Ad![Ads](https://bscscan.com/images/gen/stake_14b_321x101.gif)](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/Y3Cs=.php?YmFubmVyaWQ=7925&em9uZWlk=42&sig=5353522123bf7a4efbf881061dd0b8f6536b55341c1174ffbb2987f4e797adc9&oadest=https%3A%2F%2Fvip.stakeclick.com%2Fgo%2Fe39b4671-d482-47a2-99d5-3eae733b6766)\
-          \ [Ad![Ads](https://bscscan.com/images/gen/stake_14b_730x90.gif)](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/Y3Cs=.php?YmFubmVyaWQ=7925&em9uZWlk=42&sig=5353522123bf7a4efbf881061dd0b8f6536b55341c1174ffbb2987f4e797adc9&oadest=https%3A%2F%2Fvip.stakeclick.com%2Fgo%2Fe39b4671-d482-47a2-99d5-3eae733b6766)\
-          \ [Ad![Ads](https://bscscan.com/images/gen/stake_14b_321x101.gif)](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/Y3Cs=.php?YmFubmVyaWQ=7925&em9uZWlk=42&sig=5353522123bf7a4efbf881061dd0b8f6536b55341c1174ffbb2987f4e797adc9&oadest=https%3A%2F%2Fvip.stakeclick.com%2Fgo%2Fe39b4671-d482-47a2-99d5-3eae733b6766)\n\
-          \n![](https://xuv.etherscan.com/d3d3/ZGVsaXZlcnk/bGc=.php?YmFubmVyaWQ=7925&Y2FtcGFpZ25pZA=3474&em9uZWlk=42&loc=https%3A%2F%2Fbscscan.com%2Ftoken%2F0x55d398326f99059ff775485246999027b3197955&referer=https%3A%2F%2Fbscscan.com%2Ftoken%2F0x55d398326f99059ff775485246999027b3197955%3F__cf_chl_tk%3DKc.NEbdvgs4eOkbMyGY74zguKCXTn6K8Qvd11gWTRtY-1748596485-1.0.1.1-R4g0clvuUeVDs2dvhgHegrO_YupPXIOaX5QSRHoUWLU&cb=e3b81f039d)\n\
-          \n- [Transfers](javascript:;)\n- [Holders](javascript:;)\n- [Info](javascript:;)\n\
-          - [Contract](javascript:;)\n- [Analytics](javascript:;)\n\nFind\n\nLoading...\n\
-          \nLoading\n\n[iframe](/token/generic-tokentxns2?m=light&contractAddress=0x55d398326f99059ff775485246999027b3197955&a=&sid=689f3fb8e6e076110aa864b54bd32185&p=1)\n\
-          \nLoading...\n\nLoading\n\n[iframe]()\n\nLoading...\n\nLoading\n\n[iframe]()\n\
-          \n**OVERVIEW**\n\nA pegged token by Binance which gives you the joint benefits\
-          \ of open blockchain technology and traditional currency by converting your\
-          \ cash into a stable digital currency equivalent.\n\n**Market**\n\n|   \
-          \  |     |     |\n| --- | --- | --- |\n| Volume (24H) | : | $67,687,400,894.00\
-          \ |\n| Market Capitalization | : | $153,127,676,616.00 |\n| Circulating\
-          \ Supply | : | 153,083,661,571.00 BSC-USD |\n| Market Data Source: [Coinmarketcap](https://coinmarketcap.com/)\
+          \ 5,983,363,620.635615)\n\n\n\n#### Holders\n\n29,760,287 ( 0.015%)\n\n\
+          #### Total Transfers\n\n-\n\n### Market\n\n#### Price\n\n$1.00 @ 0.001553\
+          \ BNB(-0.01%)\n\n#### Onchain Market Cap\n\n$5,984,993,799.55\n\n\n####\
+          \ Circulating Supply Market Cap\n\n$153,883,062,846.00\n\n\n### Other Info\n\
+          \n#### Token Contract (WITH **18** Decimals)\n\n[0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955\
+          \ \"0x55d398326f99059ff775485246999027b3197955\") [Copy Address](javascript:;\
+          \ \"Copy Address\")\n\n- [Transfers](javascript:;)\n- [Holders](javascript:;)\n\
+          - [Info](javascript:;)\n- [Contract](javascript:;)\n- [Analytics](javascript:;)\n\
+          \nFind\n\nLoading...\n\nLoading\n\n[iframe]()\n\nLoading...\n\nLoading\n\
+          \n[iframe]()\n\nLoading...\n\nLoading\n\n[iframe]()\n\n**OVERVIEW**\n\n\
+          A pegged token by Binance which gives you the joint benefits of open blockchain\
+          \ technology and traditional currency by converting your cash into a stable\
+          \ digital currency equivalent.\n\n**Market**\n\n|     |     |     |\n| ---\
+          \ | --- | --- |\n| Volume (24H) | : | $59,994,086,056.00 |\n| Market Capitalization\
+          \ | : | $153,883,062,846.00 |\n| Circulating Supply | : | 153,833,369,632.00\
+          \ BSC-USD |\n| Market Data Source: [Coinmarketcap](https://coinmarketcap.com/)\
           \ |\n\nUpdate? Click here to [update](https://bscscan.com/contactus) the\
           \ token ICO / general information\n\n[iframe]()\n\n[iframe]()\n\n- [Code](javascript:;)\n\
           - [Read Contract](javascript:;)\n- [Write Contract](javascript:;)\n\n###\
@@ -1353,9 +1306,9 @@ natural_language_token:
           # \"Solidity Compiler Bugs, click for more info\")\n\nContract Name:\n\n\
           BEP20USDT\n\n* * *\n\nCompiler Version\n\nv0.5.16+commit.9c3226ce\n\n* *\
           \ *\n\nOptimization Enabled:\n\nYes with 200 runs\n\n* * *\n\nOther Settings:\n\
-          \ndefault evmVersion, **Apache-2.0** [license](https://bscscan.com/contract-license-types),\
-          \ Audited\n\n#### Contract Source Code (Solidity) [Audit Report](javascript:;)\n\
-          \n[![blockscan-logo](https://bscscan.com/images/brands/bs-logo.png)![blockscan-logo](https://bscscan.com/images/brands/bs-logo-light.png)![blockscan-logo](https://bscscan.com/images/brands/bs-logo-light.png)IDE](https://vscode.blockscan.com/56/0x55d398326f99059ff775485246999027b3197955)\n\
+          \ndefault evmVersion, **Apache-2.0** [license](https://bscscan.com/contract-license-types\
+          \ \"Click to learn more, open source license\"), Audited\n\n#### Contract\
+          \ Source Code (Solidity) [Audit Report](javascript:;)\n\n[![blockscan-logo](https://bscscan.com/images/brands/bs-logo.png)![blockscan-logo](https://bscscan.com/images/brands/bs-logo-light.png)![blockscan-logo](https://bscscan.com/images/brands/bs-logo-light.png)IDE](https://vscode.blockscan.com/56/0x55d398326f99059ff775485246999027b3197955)\n\
           \n- [![blockscan-logo](https://bscscan.com/images/brands/bs-logo.png)![blockscan-logo](https://bscscan.com/images/brands/bs-logo-light.png)![blockscan-logo](https://bscscan.com/images/brands/bs-logo-light.png)Blockscan\
           \ IDE](https://vscode.blockscan.com/56/0x55d398326f99059ff775485246999027b3197955)\n\
           - [\U0001F916 Code ReaderBeta](https://bscscan.com/code-reader?a=0x55d398326f99059ff775485246999027b3197955)\n\
@@ -1397,10 +1350,11 @@ natural_language_token:
           - [\\- function \\_burn(address account, uint2 ...](javascript:;)\n- [\\\
           - function \\_approve(address owner, addr ...](javascript:;)\n- [\\- function\
           \ \\_burnFrom(address account, u ...](javascript:;)\n\n[Copy source code\
-          \ to clipboard](javascript:;) [Copy Permalink](javascript:;) [Toggle Fullscreen](javascript:;)\n\
-          \n```\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n\
-          19\n20\n21\n22\n23\n24\n25\n26\n\n/**\n\n *Submitted for verification at\
-          \ BscScan.com on 2020-09-04\n\n*/\n\npragma solidity 0.5.16;\n\ninterface\
+          \ to clipboard](javascript:; \"Copy source code to clipboard\") [Copy Permalink](javascript:;\
+          \ \"Copy Permalink\") [Toggle Fullscreen](javascript:; \"Toggle Fullscreen\"\
+          )\n\n```\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n\
+          18\n19\n20\n21\n22\n23\n24\n25\n26\n\n/**\n\n *Submitted for verification\
+          \ at BscScan.com on 2020-09-04\n\n*/\n\npragma solidity 0.5.16;\n\ninterface\
           \ IBEP20 {\n\n  /**\n\n   * @dev Returns the amount of tokens in existence.\n\
           \n   */\n\n  function totalSupply() external view returns (uint256);\n\n\
           \  /**\n\n   * @dev Returns the token decimals.\n\n   */\n\n  function decimals()\
@@ -1410,16 +1364,17 @@ natural_language_token:
           \ name() external view returns (string memory);\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n\
           ```\n\n#### Contract Security Audit\n\n- Etherauthority- Apr 3th, 2025 -\
           \ [Security Audit Report](https://etherauthority.io/wp-content/uploads/2025/04/Binance-BSC-USD.pdf)\n\
-          \n#### Contract ABI\n\n[API](https://docs.bscscan.com/api-endpoints/contracts#get-contract-abi-for-verified-contract-source-codes)\n\
-          \n[Copy ABI to clipboard](javascript:;)[Toggle Fullscreen](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955#)\n\
-          \n```\n[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\"\
-          ,\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\"\
-          :true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"\
-          },{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"\
-          type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\"\
-          :\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"\
-          },{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"\
-          address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\"\
+          \n#### Contract ABI\n\n[API](https://docs.bscscan.com/api-endpoints/contracts#get-contract-abi-for-verified-contract-source-codes\
+          \ \"Get this info via an API endpoint\")\n\n[Copy ABI to clipboard](javascript:;\
+          \ \"Copy ABI to clipboard\")[Toggle Fullscreen](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955#\
+          \ \"Toggle Fullscreen\")\n\n```\n[{\"inputs\":[],\"payable\":false,\"stateMutability\"\
+          :\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\"\
+          :[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\"\
+          :\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"\
+          spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\"\
+          ,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\"\
+          :\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\"\
+          :\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\"\
           :true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"\
           }],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\"\
           :false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\"\
@@ -1497,19 +1452,21 @@ natural_language_token:
           :\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\"\
           ,\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"\
           type\":\"function\"}]\n```\n\n#### Contract Creation Code\n\n[Decompile\
-          \ Bytecode](https://bscscan.com/bytecode-decompiler?a=0x55d398326f99059ff775485246999027b3197955)\
-          \ [Switch to Opcodes View](javascript:;)\n\n```\n\n60806040523480156200001157600080fd5b506000620000276001600160e01b036200014016565b600080546001600160a01b0319166001600160a01b0383169081178255604051929350917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a35060408051808201909152600a8082526915195d1a195c881554d160b21b6020909201918252620000a49160069162000145565b50604080518082019091526004808252631554d11560e21b6020909201918252620000d29160059162000145565b506004805460ff191660121790556a18d0bf423c03d8de0000006003819055336000818152600160209081526040808320859055805194855251929391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a3620001e7565b335b90565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106200018857805160ff1916838001178555620001b8565b82800160010185558215620001b8579182015b82811115620001b85782518255916020019190600101906200019b565b50620001c6929150620001ca565b5090565b6200014291905b80821115620001c65760008155600101620001d1565b61113d80620001f76000396000f3fe608060405234801561001057600080fd5b506004361061012c5760003560e01c8063893d20e8116100ad578063a9059cbb11610071578063a9059cbb1461035a578063b09f126614610386578063d28d88521461038e578063dd62ed3e14610396578063f2fde38b146103c45761012c565b8063893d20e8146102dd5780638da5cb5b1461030157806395d89b4114610309578063a0712d6814610311578063a457c2d71461032e5761012c565b806332424aa3116100f457806332424aa31461025c578063395093511461026457806342966c681461029057806370a08231146102ad578063715018a6146102d35761012c565b806306fdde0314610131578063095ea7b3146101ae57806318160ddd146101ee57806323b872dd14610208578063313ce5671461023e575b600080fd5b6101396103ea565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561017357818101518382015260200161015b565b50505050905090810190601f1680156101a05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101da600480360360408110156101c457600080fd5b506001600160a01b038135169060200135610480565b604080519115158252519081900360200190f35b6101f661049d565b60408051918252519081900360200190f35b6101da6004803603606081101561021e57600080fd5b506001600160a01b038135811691602081013590911690604001356104a3565b610246610530565b6040805160ff9092168252519081900360200190f35b610246610539565b6101da6004803603604081101561027a57600080fd5b506001600160a01b038135169060200135610542565b6101da600480360360208110156102a657600080fd5b5035610596565b6101f6600480360360208110156102c357600080fd5b50356001600160a01b03166105b1565b6102db6105cc565b005b6102e5610680565b604080516001600160a01b039092168252519081900360200190f35b6102e561068f565b61013961069e565b6101da6004803603602081101561032757600080fd5b50356106ff565b6101da6004803603604081101561034457600080fd5b506001600160a01b03813516906020013561077c565b6101da6004803603604081101561037057600080fd5b506001600160a01b0381351690602001356107ea565b6101396107fe565b61013961088c565b6101f6600480360360408110156103ac57600080fd5b506001600160a01b03813581169160200135166108e7565b6102db600480360360208110156103da57600080fd5b50356001600160a01b0316610912565b60068054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156104765780601f1061044b57610100808354040283529160200191610476565b820191906000526020600020905b81548152906001019060200180831161045957829003601f168201915b5050505050905090565b600061049461048d610988565b848461098c565b50600192915050565b60035490565b60006104b0848484610a78565b610526846104bc610988565b6105218560405180606001604052806028815260200161100e602891396001600160a01b038a166000908152600260205260408120906104fa610988565b6001600160a01b03168152602081019190915260400160002054919063ffffffff610bd616565b61098c565b5060019392505050565b60045460ff1690565b60045460ff1681565b600061049461054f610988565b846105218560026000610560610988565b6001600160a01b03908116825260208083019390935260409182016000908120918c16815292529020549063ffffffff610c6d16565b60006105a96105a3610988565b83610cce565b506001919050565b6001600160a01b031660009081526001602052604090205490565b6105d4610988565b6000546001600160a01b03908116911614610636576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b600061068a61068f565b905090565b6000546001600160a01b031690565b60058054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156104765780601f1061044b57610100808354040283529160200191610476565b6000610709610988565b6000546001600160a01b0390811691161461076b576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6105a9610776610988565b83610dca565b6000610494610789610988565b846105218560405180606001604052806025815260200161107f60259139600260006107b3610988565b6001600160a01b03908116825260208083019390935260409182016000908120918d1681529252902054919063ffffffff610bd616565b60006104946107f7610988565b8484610a78565b6005805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156108845780601f1061085957610100808354040283529160200191610884565b820191906000526020600020905b81548152906001019060200180831161086757829003601f168201915b505050505081565b6006805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156108845780601f1061085957610100808354040283529160200191610884565b6001600160a01b03918216600090815260026020908152604080832093909416825291909152205490565b61091a610988565b6000546001600160a01b0390811691161461097c576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b61098581610ebc565b50565b3390565b6001600160a01b0383166109d15760405162461bcd60e51b8152600401808060200182810382526024815260200180610fc46024913960400191505060405180910390fd5b6001600160a01b038216610a165760405162461bcd60e51b81526004018080602001828103825260228152602001806110e76022913960400191505060405180910390fd5b6001600160a01b03808416600081815260026020908152604080832094871680845294825291829020859055815185815291517f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259281900390910190a3505050565b6001600160a01b038316610abd5760405162461bcd60e51b8152600401808060200182810382526025815260200180610f9f6025913960400191505060405180910390fd5b6001600160a01b038216610b025760405162461bcd60e51b815260040180806020018281038252602381526020018061105c6023913960400191505060405180910390fd5b610b4581604051806060016040528060268152602001611036602691396001600160a01b038616600090815260016020526040902054919063ffffffff610bd616565b6001600160a01b038085166000908152600160205260408082209390935590841681522054610b7a908263ffffffff610c6d16565b6001600160a01b0380841660008181526001602090815260409182902094909455805185815290519193928716927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef92918290030190a3505050565b60008184841115610c655760405162461bcd60e51b81526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610c2a578181015183820152602001610c12565b50505050905090810190601f168015610c575780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b505050900390565b600082820183811015610cc7576040805162461bcd60e51b815260206004820152601b60248201527f536166654d6174683a206164646974696f6e206f766572666c6f770000000000604482015290519081900360640190fd5b9392505050565b6001600160a01b038216610d135760405162461bcd60e51b81526004018080602001828103825260218152602001806110a46021913960400191505060405180910390fd5b610d56816040518060600160405280602281526020016110c5602291396001600160a01b038516600090815260016020526040902054919063ffffffff610bd616565b6001600160a01b038316600090815260016020526040902055600354610d82908263ffffffff610f5c16565b6003556040805182815290516000916001600160a01b038516917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9181900360200190a35050565b6001600160a01b038216610e25576040805162461bcd60e51b815260206004820152601f60248201527f42455032303a206d696e7420746f20746865207a65726f206164647265737300604482015290519081900360640190fd5b600354610e38908263ffffffff610c6d16565b6003556001600160a01b038216600090815260016020526040902054610e64908263ffffffff610c6d16565b6001600160a01b03831660008181526001602090815260408083209490945583518581529351929391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a35050565b6001600160a01b038116610f015760405162461bcd60e51b8152600401808060200182810382526026815260200180610fe86026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000610cc783836040518060400160405280601e81526020017f536166654d6174683a207375627472616374696f6e206f766572666c6f770000815250610bd656fe42455032303a207472616e736665722066726f6d20746865207a65726f206164647265737342455032303a20617070726f76652066726f6d20746865207a65726f20616464726573734f776e61626c653a206e6577206f776e657220697320746865207a65726f206164647265737342455032303a207472616e7366657220616d6f756e74206578636565647320616c6c6f77616e636542455032303a207472616e7366657220616d6f756e7420657863656564732062616c616e636542455032303a207472616e7366657220746f20746865207a65726f206164647265737342455032303a2064656372656173656420616c6c6f77616e63652062656c6f77207a65726f42455032303a206275726e2066726f6d20746865207a65726f206164647265737342455032303a206275726e20616d6f756e7420657863656564732062616c616e636542455032303a20617070726f766520746f20746865207a65726f2061646472657373a265627a7a72315820cbbd570ae478f6b7abf9c9a5c8c6884cf3f64dded74f7ec3e9b6d0b41122eaff64736f6c63430005100032\n\
+          \ Bytecode](https://bscscan.com/bytecode-decompiler?a=0x55d398326f99059ff775485246999027b3197955\
+          \ \"Opens up the Runtime Bytecode Decompiler page\") [Switch to Opcodes\
+          \ View](javascript:;)\n\n```\n\n60806040523480156200001157600080fd5b506000620000276001600160e01b036200014016565b600080546001600160a01b0319166001600160a01b0383169081178255604051929350917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a35060408051808201909152600a8082526915195d1a195c881554d160b21b6020909201918252620000a49160069162000145565b50604080518082019091526004808252631554d11560e21b6020909201918252620000d29160059162000145565b506004805460ff191660121790556a18d0bf423c03d8de0000006003819055336000818152600160209081526040808320859055805194855251929391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a3620001e7565b335b90565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106200018857805160ff1916838001178555620001b8565b82800160010185558215620001b8579182015b82811115620001b85782518255916020019190600101906200019b565b50620001c6929150620001ca565b5090565b6200014291905b80821115620001c65760008155600101620001d1565b61113d80620001f76000396000f3fe608060405234801561001057600080fd5b506004361061012c5760003560e01c8063893d20e8116100ad578063a9059cbb11610071578063a9059cbb1461035a578063b09f126614610386578063d28d88521461038e578063dd62ed3e14610396578063f2fde38b146103c45761012c565b8063893d20e8146102dd5780638da5cb5b1461030157806395d89b4114610309578063a0712d6814610311578063a457c2d71461032e5761012c565b806332424aa3116100f457806332424aa31461025c578063395093511461026457806342966c681461029057806370a08231146102ad578063715018a6146102d35761012c565b806306fdde0314610131578063095ea7b3146101ae57806318160ddd146101ee57806323b872dd14610208578063313ce5671461023e575b600080fd5b6101396103ea565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561017357818101518382015260200161015b565b50505050905090810190601f1680156101a05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101da600480360360408110156101c457600080fd5b506001600160a01b038135169060200135610480565b604080519115158252519081900360200190f35b6101f661049d565b60408051918252519081900360200190f35b6101da6004803603606081101561021e57600080fd5b506001600160a01b038135811691602081013590911690604001356104a3565b610246610530565b6040805160ff9092168252519081900360200190f35b610246610539565b6101da6004803603604081101561027a57600080fd5b506001600160a01b038135169060200135610542565b6101da600480360360208110156102a657600080fd5b5035610596565b6101f6600480360360208110156102c357600080fd5b50356001600160a01b03166105b1565b6102db6105cc565b005b6102e5610680565b604080516001600160a01b039092168252519081900360200190f35b6102e561068f565b61013961069e565b6101da6004803603602081101561032757600080fd5b50356106ff565b6101da6004803603604081101561034457600080fd5b506001600160a01b03813516906020013561077c565b6101da6004803603604081101561037057600080fd5b506001600160a01b0381351690602001356107ea565b6101396107fe565b61013961088c565b6101f6600480360360408110156103ac57600080fd5b506001600160a01b03813581169160200135166108e7565b6102db600480360360208110156103da57600080fd5b50356001600160a01b0316610912565b60068054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156104765780601f1061044b57610100808354040283529160200191610476565b820191906000526020600020905b81548152906001019060200180831161045957829003601f168201915b5050505050905090565b600061049461048d610988565b848461098c565b50600192915050565b60035490565b60006104b0848484610a78565b610526846104bc610988565b6105218560405180606001604052806028815260200161100e602891396001600160a01b038a166000908152600260205260408120906104fa610988565b6001600160a01b03168152602081019190915260400160002054919063ffffffff610bd616565b61098c565b5060019392505050565b60045460ff1690565b60045460ff1681565b600061049461054f610988565b846105218560026000610560610988565b6001600160a01b03908116825260208083019390935260409182016000908120918c16815292529020549063ffffffff610c6d16565b60006105a96105a3610988565b83610cce565b506001919050565b6001600160a01b031660009081526001602052604090205490565b6105d4610988565b6000546001600160a01b03908116911614610636576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b600061068a61068f565b905090565b6000546001600160a01b031690565b60058054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156104765780601f1061044b57610100808354040283529160200191610476565b6000610709610988565b6000546001600160a01b0390811691161461076b576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6105a9610776610988565b83610dca565b6000610494610789610988565b846105218560405180606001604052806025815260200161107f60259139600260006107b3610988565b6001600160a01b03908116825260208083019390935260409182016000908120918d1681529252902054919063ffffffff610bd616565b60006104946107f7610988565b8484610a78565b6005805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156108845780601f1061085957610100808354040283529160200191610884565b820191906000526020600020905b81548152906001019060200180831161086757829003601f168201915b505050505081565b6006805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156108845780601f1061085957610100808354040283529160200191610884565b6001600160a01b03918216600090815260026020908152604080832093909416825291909152205490565b61091a610988565b6000546001600160a01b0390811691161461097c576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b61098581610ebc565b50565b3390565b6001600160a01b0383166109d15760405162461bcd60e51b8152600401808060200182810382526024815260200180610fc46024913960400191505060405180910390fd5b6001600160a01b038216610a165760405162461bcd60e51b81526004018080602001828103825260228152602001806110e76022913960400191505060405180910390fd5b6001600160a01b03808416600081815260026020908152604080832094871680845294825291829020859055815185815291517f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259281900390910190a3505050565b6001600160a01b038316610abd5760405162461bcd60e51b8152600401808060200182810382526025815260200180610f9f6025913960400191505060405180910390fd5b6001600160a01b038216610b025760405162461bcd60e51b815260040180806020018281038252602381526020018061105c6023913960400191505060405180910390fd5b610b4581604051806060016040528060268152602001611036602691396001600160a01b038616600090815260016020526040902054919063ffffffff610bd616565b6001600160a01b038085166000908152600160205260408082209390935590841681522054610b7a908263ffffffff610c6d16565b6001600160a01b0380841660008181526001602090815260409182902094909455805185815290519193928716927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef92918290030190a3505050565b60008184841115610c655760405162461bcd60e51b81526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610c2a578181015183820152602001610c12565b50505050905090810190601f168015610c575780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b505050900390565b600082820183811015610cc7576040805162461bcd60e51b815260206004820152601b60248201527f536166654d6174683a206164646974696f6e206f766572666c6f770000000000604482015290519081900360640190fd5b9392505050565b6001600160a01b038216610d135760405162461bcd60e51b81526004018080602001828103825260218152602001806110a46021913960400191505060405180910390fd5b610d56816040518060600160405280602281526020016110c5602291396001600160a01b038516600090815260016020526040902054919063ffffffff610bd616565b6001600160a01b038316600090815260016020526040902055600354610d82908263ffffffff610f5c16565b6003556040805182815290516000916001600160a01b038516917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9181900360200190a35050565b6001600160a01b038216610e25576040805162461bcd60e51b815260206004820152601f60248201527f42455032303a206d696e7420746f20746865207a65726f206164647265737300604482015290519081900360640190fd5b600354610e38908263ffffffff610c6d16565b6003556001600160a01b038216600090815260016020526040902054610e64908263ffffffff610c6d16565b6001600160a01b03831660008181526001602090815260408083209490945583518581529351929391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a35050565b6001600160a01b038116610f015760405162461bcd60e51b8152600401808060200182810382526026815260200180610fe86026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000610cc783836040518060400160405280601e81526020017f536166654d6174683a207375627472616374696f6e206f766572666c6f770000815250610bd656fe42455032303a207472616e736665722066726f6d20746865207a65726f206164647265737342455032303a20617070726f76652066726f6d20746865207a65726f20616464726573734f776e61626c653a206e6577206f776e657220697320746865207a65726f206164647265737342455032303a207472616e7366657220616d6f756e74206578636565647320616c6c6f77616e636542455032303a207472616e7366657220616d6f756e7420657863656564732062616c616e636542455032303a207472616e7366657220746f20746865207a65726f206164647265737342455032303a2064656372656173656420616c6c6f77616e63652062656c6f77207a65726f42455032303a206275726e2066726f6d20746865207a65726f206164647265737342455032303a206275726e20616d6f756e7420657863656564732062616c616e636542455032303a20617070726f766520746f20746865207a65726f2061646472657373a265627a7a72315820cbbd570ae478f6b7abf9c9a5c8c6884cf3f64dded74f7ec3e9b6d0b41122eaff64736f6c63430005100032\n\
           ```\n\n#### Deployed Bytecode\n\n```\n0x608060405234801561001057600080fd5b506004361061012c5760003560e01c8063893d20e8116100ad578063a9059cbb11610071578063a9059cbb1461035a578063b09f126614610386578063d28d88521461038e578063dd62ed3e14610396578063f2fde38b146103c45761012c565b8063893d20e8146102dd5780638da5cb5b1461030157806395d89b4114610309578063a0712d6814610311578063a457c2d71461032e5761012c565b806332424aa3116100f457806332424aa31461025c578063395093511461026457806342966c681461029057806370a08231146102ad578063715018a6146102d35761012c565b806306fdde0314610131578063095ea7b3146101ae57806318160ddd146101ee57806323b872dd14610208578063313ce5671461023e575b600080fd5b6101396103ea565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561017357818101518382015260200161015b565b50505050905090810190601f1680156101a05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101da600480360360408110156101c457600080fd5b506001600160a01b038135169060200135610480565b604080519115158252519081900360200190f35b6101f661049d565b60408051918252519081900360200190f35b6101da6004803603606081101561021e57600080fd5b506001600160a01b038135811691602081013590911690604001356104a3565b610246610530565b6040805160ff9092168252519081900360200190f35b610246610539565b6101da6004803603604081101561027a57600080fd5b506001600160a01b038135169060200135610542565b6101da600480360360208110156102a657600080fd5b5035610596565b6101f6600480360360208110156102c357600080fd5b50356001600160a01b03166105b1565b6102db6105cc565b005b6102e5610680565b604080516001600160a01b039092168252519081900360200190f35b6102e561068f565b61013961069e565b6101da6004803603602081101561032757600080fd5b50356106ff565b6101da6004803603604081101561034457600080fd5b506001600160a01b03813516906020013561077c565b6101da6004803603604081101561037057600080fd5b506001600160a01b0381351690602001356107ea565b6101396107fe565b61013961088c565b6101f6600480360360408110156103ac57600080fd5b506001600160a01b03813581169160200135166108e7565b6102db600480360360208110156103da57600080fd5b50356001600160a01b0316610912565b60068054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156104765780601f1061044b57610100808354040283529160200191610476565b820191906000526020600020905b81548152906001019060200180831161045957829003601f168201915b5050505050905090565b600061049461048d610988565b848461098c565b50600192915050565b60035490565b60006104b0848484610a78565b610526846104bc610988565b6105218560405180606001604052806028815260200161100e602891396001600160a01b038a166000908152600260205260408120906104fa610988565b6001600160a01b03168152602081019190915260400160002054919063ffffffff610bd616565b61098c565b5060019392505050565b60045460ff1690565b60045460ff1681565b600061049461054f610988565b846105218560026000610560610988565b6001600160a01b03908116825260208083019390935260409182016000908120918c16815292529020549063ffffffff610c6d16565b60006105a96105a3610988565b83610cce565b506001919050565b6001600160a01b031660009081526001602052604090205490565b6105d4610988565b6000546001600160a01b03908116911614610636576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b600061068a61068f565b905090565b6000546001600160a01b031690565b60058054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156104765780601f1061044b57610100808354040283529160200191610476565b6000610709610988565b6000546001600160a01b0390811691161461076b576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6105a9610776610988565b83610dca565b6000610494610789610988565b846105218560405180606001604052806025815260200161107f60259139600260006107b3610988565b6001600160a01b03908116825260208083019390935260409182016000908120918d1681529252902054919063ffffffff610bd616565b60006104946107f7610988565b8484610a78565b6005805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156108845780601f1061085957610100808354040283529160200191610884565b820191906000526020600020905b81548152906001019060200180831161086757829003601f168201915b505050505081565b6006805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156108845780601f1061085957610100808354040283529160200191610884565b6001600160a01b03918216600090815260026020908152604080832093909416825291909152205490565b61091a610988565b6000546001600160a01b0390811691161461097c576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b61098581610ebc565b50565b3390565b6001600160a01b0383166109d15760405162461bcd60e51b8152600401808060200182810382526024815260200180610fc46024913960400191505060405180910390fd5b6001600160a01b038216610a165760405162461bcd60e51b81526004018080602001828103825260228152602001806110e76022913960400191505060405180910390fd5b6001600160a01b03808416600081815260026020908152604080832094871680845294825291829020859055815185815291517f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259281900390910190a3505050565b6001600160a01b038316610abd5760405162461bcd60e51b8152600401808060200182810382526025815260200180610f9f6025913960400191505060405180910390fd5b6001600160a01b038216610b025760405162461bcd60e51b815260040180806020018281038252602381526020018061105c6023913960400191505060405180910390fd5b610b4581604051806060016040528060268152602001611036602691396001600160a01b038616600090815260016020526040902054919063ffffffff610bd616565b6001600160a01b038085166000908152600160205260408082209390935590841681522054610b7a908263ffffffff610c6d16565b6001600160a01b0380841660008181526001602090815260409182902094909455805185815290519193928716927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef92918290030190a3505050565b60008184841115610c655760405162461bcd60e51b81526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610c2a578181015183820152602001610c12565b50505050905090810190601f168015610c575780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b505050900390565b600082820183811015610cc7576040805162461bcd60e51b815260206004820152601b60248201527f536166654d6174683a206164646974696f6e206f766572666c6f770000000000604482015290519081900360640190fd5b9392505050565b6001600160a01b038216610d135760405162461bcd60e51b81526004018080602001828103825260218152602001806110a46021913960400191505060405180910390fd5b610d56816040518060600160405280602281526020016110c5602291396001600160a01b038516600090815260016020526040902054919063ffffffff610bd616565b6001600160a01b038316600090815260016020526040902055600354610d82908263ffffffff610f5c16565b6003556040805182815290516000916001600160a01b038516917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9181900360200190a35050565b6001600160a01b038216610e25576040805162461bcd60e51b815260206004820152601f60248201527f42455032303a206d696e7420746f20746865207a65726f206164647265737300604482015290519081900360640190fd5b600354610e38908263ffffffff610c6d16565b6003556001600160a01b038216600090815260016020526040902054610e64908263ffffffff610c6d16565b6001600160a01b03831660008181526001602090815260408083209490945583518581529351929391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a35050565b6001600160a01b038116610f015760405162461bcd60e51b8152600401808060200182810382526026815260200180610fe86026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000610cc783836040518060400160405280601e81526020017f536166654d6174683a207375627472616374696f6e206f766572666c6f770000815250610bd656fe42455032303a207472616e736665722066726f6d20746865207a65726f206164647265737342455032303a20617070726f76652066726f6d20746865207a65726f20616464726573734f776e61626c653a206e6577206f776e657220697320746865207a65726f206164647265737342455032303a207472616e7366657220616d6f756e74206578636565647320616c6c6f77616e636542455032303a207472616e7366657220616d6f756e7420657863656564732062616c616e636542455032303a207472616e7366657220746f20746865207a65726f206164647265737342455032303a2064656372656173656420616c6c6f77616e63652062656c6f77207a65726f42455032303a206275726e2066726f6d20746865207a65726f206164647265737342455032303a206275726e20616d6f756e7420657863656564732062616c616e636542455032303a20617070726f766520746f20746865207a65726f2061646472657373a265627a7a72315820cbbd570ae478f6b7abf9c9a5c8c6884cf3f64dded74f7ec3e9b6d0b41122eaff64736f6c63430005100032\n\
           ```\n\n#### Deployed Bytecode Sourcemap\n\n```\n11306:8013:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;11306:8013:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12351:79;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;12351:79:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;13391:144;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;13391:144:0;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;12486:87;;;:::i;:::-;;;;;;;;;;;;;;;;13980:292;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;13980:292:0;;;;;;;;;;;;;;;;;:::i;12079:79::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;;11553:22;;;:::i;14654:200::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;14654:200:0;;;;;;;;:::i;15982:110::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;15982:110:0;;:::i;12627:106::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;12627:106:0;-1:-1:-1;;;;;12627:106:0;;:::i;10608:130::-;;;:::i;:::-;;11941:79;;;:::i;:::-;;;;-1:-1:-1;;;;;11941:79:0;;;;;;;;;;;;;;10006:73;;;:::i;12215:83::-;;;:::i;15777:120::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;15777:120:0;;:::i;15326:251::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;15326:251:0;;;;;;;;:::i;12927:150::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;12927:150:0;;;;;;;;:::i;11580:21::-;;;:::i;11606:19::-;;;:::i;13131:130::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;13131:130:0;;;;;;;;;;:::i;10883:103::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;10883:103:0;-1:-1:-1;;;;;10883:103:0;;:::i;12351:79::-;12419:5;12412:12;;;;;;;;-1:-1:-1;;12412:12:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12390:13;;12412:12;;12419:5;;12412:12;;12419:5;12412:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12351:79;:::o;13391:144::-;13459:4;13472:39;13481:12;:10;:12::i;:::-;13495:7;13504:6;13472:8;:39::i;:::-;-1:-1:-1;13525:4:0;13391:144;;;;:::o;12486:87::-;12555:12;;12486:87;:::o;13980:292::-;14071:4;14084:36;14094:6;14102:9;14113:6;14084:9;:36::i;:::-;14127:121;14136:6;14144:12;:10;:12::i;:::-;14158:89;14196:6;14158:89;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;14158:19:0;;;;;;:11;:19;;;;;;14178:12;:10;:12::i;:::-;-1:-1:-1;;;;;14158:33:0;;;;;;;;;;;;-1:-1:-1;14158:33:0;;;:89;;:37;:89;:::i;:::-;14127:8;:121::i;:::-;-1:-1:-1;14262:4:0;13980:292;;;;;:::o;12079:79::-;12143:9;;;;12079:79;:::o;11553:22::-;;;;;;:::o;14654:200::-;14734:4;14747:83;14756:12;:10;:12::i;:::-;14770:7;14779:50;14818:10;14779:11;:25;14791:12;:10;:12::i;:::-;-1:-1:-1;;;;;14779:25:0;;;;;;;;;;;;;;;;;-1:-1:-1;14779:25:0;;;:34;;;;;;;;;;;:50;:38;:50;:::i;15982:110::-;16028:4;16041:27;16047:12;:10;:12::i;:::-;16061:6;16041:5;:27::i;:::-;-1:-1:-1;16082:4:0;15982:110;;;:::o;12627:106::-;-1:-1:-1;;;;;12709:18:0;12686:7;12709:18;;;:9;:18;;;;;;;12627:106::o;10608:130::-;10210:12;:10;:12::i;:::-;10200:6;;-1:-1:-1;;;;;10200:6:0;;;:22;;;10192:67;;;;;-1:-1:-1;;;10192:67:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10703:1;10687:6;;10666:40;;-1:-1:-1;;;;;10687:6:0;;;;10666:40;;10703:1;;10666:40;10730:1;10713:19;;-1:-1:-1;;;;;;10713:19:0;;;10608:130::o;11941:79::-;11984:7;12007;:5;:7::i;:::-;12000:14;;11941:79;:::o;10006:73::-;10044:7;10067:6;-1:-1:-1;;;;;10067:6:0;10006:73;:::o;12215:83::-;12285:7;12278:14;;;;;;;;-1:-1:-1;;12278:14:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12256:13;;12278:14;;12285:7;;12278:14;;12285:7;12278:14;;;;;;;;;;;;;;;;;;;;;;;;15777:120;15833:4;10210:12;:10;:12::i;:::-;10200:6;;-1:-1:-1;;;;;10200:6:0;;;:22;;;10192:67;;;;;-1:-1:-1;;;10192:67:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;15846:27;15852:12;:10;:12::i;:::-;15866:6;15846:5;:27::i;15326:251::-;15411:4;15424:129;15433:12;:10;:12::i;:::-;15447:7;15456:96;15495:15;15456:96;;;;;;;;;;;;;;;;;:11;:25;15468:12;:10;:12::i;:::-;-1:-1:-1;;;;;15456:25:0;;;;;;;;;;;;;;;;;-1:-1:-1;15456:25:0;;;:34;;;;;;;;;;;:96;;:38;:96;:::i;12927:150::-;12998:4;13011:42;13021:12;:10;:12::i;:::-;13035:9;13046:6;13011:9;:42::i;11580:21::-;;;;;;;;;;;;;;;-1:-1:-1;;11580:21:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;11606:19::-;;;;;;;;;;;;;;;-1:-1:-1;;11606:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;13131:130;-1:-1:-1;;;;;13228:18:0;;;13205:7;13228:18;;;:11;:18;;;;;;;;:27;;;;;;;;;;;;;13131:130::o;10883:103::-;10210:12;:10;:12::i;:::-;10200:6;;-1:-1:-1;;;;;10200:6:0;;;:22;;;10192:67;;;;;-1:-1:-1;;;10192:67:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10952:28;10971:8;10952:18;:28::i;:::-;10883:103;:::o;3703:92::-;3779:10;3703:92;:::o;18602:320::-;-1:-1:-1;;;;;18692:19:0;;18684:68;;;;-1:-1:-1;;;18684:68:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;18767:21:0;;18759:68;;;;-1:-1:-1;;;18759:68:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;18836:18:0;;;;;;;:11;:18;;;;;;;;:27;;;;;;;;;;;;;:36;;;18884:32;;;;;;;;;;;;;;;;;18602:320;;;:::o;16552:449::-;-1:-1:-1;;;;;16646:20:0;;16638:70;;;;-1:-1:-1;;;16638:70:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;16723:23:0;;16715:71;;;;-1:-1:-1;;;16715:71:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;16815;16837:6;16815:71;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;16815:17:0;;;;;;:9;:17;;;;;;;:71;;:21;:71;:::i;:::-;-1:-1:-1;;;;;16795:17:0;;;;;;;:9;:17;;;;;;:91;;;;16916:20;;;;;;;:32;;16941:6;16916:32;:24;:32;:::i;:::-;-1:-1:-1;;;;;16893:20:0;;;;;;;:9;:20;;;;;;;;;:55;;;;16960:35;;;;;;;16893:20;;16960:35;;;;;;;;;;;;;16552:449;;;:::o;5662:178::-;5748:7;5780:12;5772:6;;;;5764:29;;;;-1:-1:-1;;;5764:29:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;5764:29:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;5812:5:0;;;5662:178::o;4835:167::-;4893:7;4921:5;;;4941:6;;;;4933:46;;;;;-1:-1:-1;;;4933:46:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;4995:1;4835:167;-1:-1:-1;;;4835:167:0:o;17860:330::-;-1:-1:-1;;;;;17932:21:0;;17924:67;;;;-1:-1:-1;;;17924:67:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;18021:68;18044:6;18021:68;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;18021:18:0;;;;;;:9;:18;;;;;;;:68;;:22;:68;:::i;:::-;-1:-1:-1;;;;;18000:18:0;;;;;;:9;:18;;;;;:89;18111:12;;:24;;18128:6;18111:24;:16;:24;:::i;:::-;18096:12;:39;18147:37;;;;;;;;18173:1;;-1:-1:-1;;;;;18147:37:0;;;;;;;;;;;;17860:330;;:::o;17262:290::-;-1:-1:-1;;;;;17334:21:0;;17326:65;;;;;-1:-1:-1;;;17326:65:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;17415:12;;:24;;17432:6;17415:24;:16;:24;:::i;:::-;17400:12;:39;-1:-1:-1;;;;;17467:18:0;;;;;;:9;:18;;;;;;:30;;17490:6;17467:30;:22;:30;:::i;:::-;-1:-1:-1;;;;;17446:18:0;;;;;;:9;:18;;;;;;;;:51;;;;17509:37;;;;;;;17446:18;;;;17509:37;;;;;;;;;;17262:290;;:::o;11084:215::-;-1:-1:-1;;;;;11154:22:0;;11146:73;;;;-1:-1:-1;;;11146:73:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;11252:6;;;11231:38;;-1:-1:-1;;;;;11231:38:0;;;;11252:6;;;11231:38;;;11276:6;:17;;-1:-1:-1;;;;;;11276:17:0;-1:-1:-1;;;;;11276:17:0;;;;;;;;;;11084:215::o;5257:130::-;5315:7;5338:43;5342:1;5345;5338:43;;;;;;;;;;;;;;;;;:3;:43::i\n\
           ```\n\n#### Swarm Source\n\n```\nbzzr://cbbd570ae478f6b7abf9c9a5c8c6884cf3f64dded74f7ec3e9b6d0b41122eaff\n\
           ```\n\nLoading...\n\nLoading\n\n[iframe]()\n\nLoading...\n\nLoading\n\n\
           [iframe]()\n\nLoading...\n\nLoading\n\n[iframe]()\n\nLoading...\n\nLoading\n\
           \n[iframe]()\n\nLoading...\n\nLoading\n\n[iframe]()\n\n\\[ Download: [CSV\
-          \ Export](https://bscscan.com/exportData?type=tokentxns&contract=0x55d398326f99059ff775485246999027b3197955&a=&decimal=18) \\\
-          ]\n\n\n\\[ Download: [CSV Export](https://bscscan.com/exportData?type=tokenholders&contract=0x55d398326f99059ff775485246999027b3197955&decimal=18) \\\
-          ]\n\n\nA token is a representation of an on-chain or off-chain asset. The\
-          \ token page shows information such as price, total supply, holders, transfers\
-          \ and social links. Learn more about this page in our [Knowledge Base](https://info.bscscan.com/token/).\n\
+          \ Export](https://bscscan.com/exportData?type=tokentxns&contract=0x55d398326f99059ff775485246999027b3197955&a=&decimal=18\
+          \ \"Export records in CSV format\") \\]\n\n\n\\[ Download: [CSV Export](https://bscscan.com/exportData?type=tokenholders&contract=0x55d398326f99059ff775485246999027b3197955&decimal=18\
+          \ \"Export records in CSV format\") \\]\n\n\nA token is a representation\
+          \ of an on-chain or off-chain asset. The token page shows information such\
+          \ as price, total supply, holders, transfers and social links. Learn more\
+          \ about this page in our [Knowledge Base](https://info.bscscan.com/token/).\n\
           \nThis website [uses cookies to improve your experience](https://bscscan.com/terms#cookiestatement).\
           \ By continuing to use this website, you agree to its [Terms](https://bscscan.com/terms)\
           \ and [Privacy Policy](https://bscscan.com/privacyPolicy).\n\n\nGot it!"
@@ -1534,8 +1491,8 @@ raw_data_only:
         chain: arbitrum
         txid: '0xabc123'
         explorer_url: https://arbiscan.io/tx/0xabc123
-        scraped_content: 'ETH Price: [$2,614.49](https://arbiscan.io/chart/price)
-          (-4.49%)
+        scraped_content: 'ETH Price: [$2,466.48](https://arbiscan.io/chart/price)
+          (-5.51%)
 
 
           Navigate
