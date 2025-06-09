@@ -115,7 +115,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
 
     For trending coins requests, use the get_trending_coins tool to fetch the current top trending cryptocurrencies.
 
-    For trending pools requests, use the get_trending_pools tool to fetch trending on-chain pools.
+    For trending pools requests, use the get_trending_pools tool to fetch trending on-chain pools. The 'include' parameter must be one of: base_token, quote_token, dex, or network.
 
     For top token holders requests, use the get_top_token_holders tool to analyze token holder distribution for a specific token and network.
 
@@ -302,14 +302,15 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_trending_pools",
-                    "description": "Get up to 10 trending on-chain pools with token data from CoinGecko.",
+                    "description": "Get up to 10 trending on-chain pools with token data from CoinGecko. The 'include' parameter must be one of: base_token, quote_token, dex, or network.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "include": {
                                 "type": "string",
-                                "description": "Attributes to include (e.g., base_token,quote_token,dex,network)",
-                                "default": "base_token,quote_token,dex,network",
+                                "description": "Single attribute to include: base_token, quote_token, dex, or network",
+                                "enum": ["base_token", "quote_token", "dex", "network"],
+                                "default": "base_token",
                             },
                             "pools": {
                                 "type": "integer",
@@ -638,16 +639,21 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
 
     def get_trending_pools_tool(self):
         @tool
-        def get_trending_pools(include: str = "base_token,quote_token,dex,network", pools: int = 4) -> Dict[str, Any]:
+        def get_trending_pools(include: str = "base_token", pools: int = 4) -> Dict[str, Any]:
             """Get trending on-chain pools from CoinGecko.
 
             Args:
-                include: Attributes to include (e.g., base_token,quote_token,dex,network)
+                include: Single attribute to include: base_token, quote_token, dex, or network
                 pools: Number of pools to return (1-10, default: 4)
 
             Returns:
                 Dictionary with trending pools data or error message
             """
+            valid_includes = ["base_token", "quote_token", "dex", "network"]
+            if include not in valid_includes:
+                logger.error(f"Invalid include parameter: {include}. Must be one of {valid_includes}")
+                return {"error": f"Invalid include parameter: {include}. Must be one of {valid_includes}"}
+
             logger.info(f"Getting trending pools with include: {include}, pools: {pools}")
             max_attempts = 3
             for attempt in range(max_attempts):
@@ -1130,7 +1136,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
 
         elif tool_name == "get_trending_pools":
             return await self._handle_trending_pools(
-                include=function_args.get("include", "base_token,quote_token,dex,network"),
+                include=function_args.get("include", "base_token"),
                 pools=function_args.get("pools", 4),
             )
 
@@ -1146,6 +1152,11 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     async def _handle_trending_pools(self, include: str, pools: int) -> Dict[str, Any]:
         """Handle trending pools API call"""
+        valid_includes = ["base_token", "quote_token", "dex", "network"]
+        if include not in valid_includes:
+            logger.error(f"Invalid include parameter: {include}. Must be one of {valid_includes}")
+            return {"error": f"Invalid include parameter: {include}. Must be one of {valid_includes}"}
+
         max_attempts = 3
         for attempt in range(max_attempts):
             try:

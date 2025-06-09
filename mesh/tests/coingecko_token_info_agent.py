@@ -101,10 +101,10 @@ async def run_agent():
         trending_pools_input = {
             "tool": "get_trending_pools",
             "tool_arguments": {
-                "include": "base_token,quote_token,dex,network",
+                "include": "base_token",
                 "pools": 4,
             },
-            "raw_data_only": True,
+            "raw_data_only": False,
         }
         trending_pools_result = await agent.handle_message(trending_pools_input)
         print(f"Get Trending Pools Tool Result: {trending_pools_result}")

@@ -2,15 +2,39 @@ natural_language_query:
   input:
     query: Get information about MONA
   output:
-    response: "### Token Information for MONA (AS Monaco Fan Token)\n- **Name:** AS\
-      \ Monaco Fan Token  \n- **Symbol:** ASM  \n- **Market Cap Rank:** 3,566  \n\
-      - **Categories:** Sports, Fan Token, Chiliz Ecosystem  \n\n### Market Metrics\
-      \  \n- **Current Price:** $0.25  \n- **Market Cap:** $1.1M  \n- **Fully Diluted\
-      \ Valuation:** $2.5M  \n- **Total Volume (24h):** $83.5K  \n\n### Price Performance\
-      \  \n- **All-Time High (ATH):** $7.16 (Achieved on May 20, 2022)  \n- **ATH\
-      \ Change:** -96.48%  \n- **Price Change (24h):** +0.00027  \n- **24h High:**\
-      \ $0.26  \n- **24h Low:** $0.25  \n\n### Supply Information  \n- **Total Supply:**\
-      \ 10,000,000  \n- **Circulating Supply:** 4,400,000"
+    response: 'The agent is repeatedly hitting the CoinGecko API rate limit while
+      trying to get information on "MONA". It''s also mistakenly identifying "MONA"
+      as "AS Monaco Fan Token" which has the symbol ASM, not MONA. This suggests the
+      agent is failing to correctly identify the token based on the provided ID. Since
+      the agent failed due to rate limiting and incorrect identification, I will provide
+      information on what is likely the intended "MONA" which is "MonaCoin".
+
+
+      **MonaCoin (MONA) - Analysis**
+
+
+      Due to API access issues, real-time data is unavailable. However, general information
+      can be provided:
+
+
+      *   **Purpose:** MonaCoin is a decentralized open-source cryptocurrency. It
+      is one of the first altcoins created as a fork of Litecoin.
+
+
+      *   **Key Features:** MonaCoin is known for its early adoption of SegWit and
+      lightning network.
+
+
+      *   **Market Presence:** It has been around for several years and maintains
+      a community and presence on several exchanges.
+
+
+      **Disclaimer:**  Cryptocurrency investments are highly volatile. This is not
+      financial advice. Always conduct thorough research and/or consult a financial
+      advisor before investing in cryptocurrency. Since the data calls failed, I am
+      unable to provide current price or market capitalization information. Please
+      consult a reliable source like CoinGecko or CoinMarketCap for the most up-to-date
+      information.'
     data: {}
 token_info_tool:
   input:
@@ -36,18 +60,18 @@ token_info_tool:
         - GMCI Index
         - Coinbase 50 Index
       market_metrics:
-        current_price_usd: 105627
-        market_cap_usd: 2099415294764
-        fully_diluted_valuation_usd: 2099415294764
-        total_volume_usd: 19254181778
+        current_price_usd: 105629
+        market_cap_usd: 2099507228214
+        fully_diluted_valuation_usd: 2099507228214
+        total_volume_usd: 19398516385
       price_metrics:
         ath_usd: 111814
-        ath_change_percentage: -5.54997
+        ath_change_percentage: -5.52734
         ath_date: '2025-05-22T18:41:28.492Z'
         high_24h_usd: 106365
         low_24h_usd: 105112
-        price_change_24h: 147.996
-        price_change_percentage_24h: 0.14031
+        price_change_24h: 177.521
+        price_change_percentage_24h: 0.16834
       supply_info:
         total_supply: 19876393.0
         max_supply: 21000000.0
@@ -64,43 +88,43 @@ trending_coins_tool:
       - name: Keeta
         symbol: KTA
         market_cap_rank: 128
-        price_usd: 1.678997655113907
+        price_usd: 1.6700057804320172
       - name: Plume
         symbol: PLUME
         market_cap_rank: 233
-        price_usd: 0.12173259065423213
+        price_usd: 0.12174416014465057
       - name: Bittensor
         symbol: TAO
         market_cap_rank: 41
-        price_usd: 384.14544643423784
+        price_usd: 385.31885954768745
       - name: GIZA
         symbol: GIZA
-        market_cap_rank: 883
-        price_usd: 0.44149543912561434
+        market_cap_rank: 884
+        price_usd: 0.44425935957582574
       - name: Sui
         symbol: SUI
         market_cap_rank: 14
-        price_usd: 3.204162637689478
-      - name: Avalon
-        symbol: AVL
-        market_cap_rank: 834
-        price_usd: 0.20270457899341368
+        price_usd: 3.21122665246769
       - name: XRP
         symbol: XRP
         market_cap_rank: 4
-        price_usd: 2.229729146391805
-      - name: Ethereum
-        symbol: ETH
-        market_cap_rank: 2
-        price_usd: 2491.113318158824
+        price_usd: 2.231052706073362
       - name: Hamster Kombat
         symbol: HMSTR
         market_cap_rank: 459
-        price_usd: 0.001600179987169797
+        price_usd: 0.0016207442102030999
+      - name: Virtuals Protocol
+        symbol: VIRTUAL
+        market_cap_rank: 88
+        price_usd: 1.7887760074744488
       - name: Huma Finance
         symbol: HUMA
-        market_cap_rank: 514
-        price_usd: 0.04972817143850631
+        market_cap_rank: 522
+        price_usd: 0.04919696475838335
+      - name: Avalon
+        symbol: AVL
+        market_cap_rank: 835
+        price_usd: 0.2043632673734173
 price_multi_tool:
   input:
     tool: get_token_price_multi
@@ -116,15 +140,15 @@ price_multi_tool:
     data:
       price_data:
         bitcoin:
-          usd: 105627
-          usd_market_cap: 2099489472544.1426
-          usd_24h_vol: 19249767397.328796
-          usd_24h_change: 0.14046673811170474
+          usd: 105628
+          usd_market_cap: 2099507228214.1018
+          usd_24h_vol: 19410265411.32878
+          usd_24h_change: 0.16793558624137353
         ethereum:
-          usd: 2492.14
-          usd_market_cap: 300851506568.6478
-          usd_24h_vol: 11686267629.048187
-          usd_24h_change: -0.994792773276567
+          usd: 2490.65
+          usd_market_cap: 300712120888.35254
+          usd_24h_vol: 11875374873.51135
+          usd_24h_change: -1.0838179420533471
 categories_list_tool:
   input:
     tool: get_categories_list
@@ -1430,140 +1454,140 @@ category_data_tool:
       category_data:
       - id: smart-contract-platform
         name: Smart Contract Platform
-        market_cap: 2827649151371.413
-        market_cap_change_24h: -0.1786675980153386
+        market_cap: 2828062319855.354
+        market_cap_change_24h: -0.1640819735741
         content: Smart contract platforms are usually blockchains that host smart
           contracts or decentralized applications. Users can interact with different
           smart contracts on these platforms to perform various actions such as lending
           and borrowing funds, staking their assets or minting NFTs. Smart contracts
           are programs that are stored on the blockchain and are automatically executed
           when certain conditions are met.
-        volume_24h: 49366738565.51185
+        volume_24h: 49276799038.30176
       - id: layer-1
         name: Layer 1 (L1)
-        market_cap: 2752080918160.029
-        market_cap_change_24h: -0.14314192120842426
+        market_cap: 2751665926864.402
+        market_cap_change_24h: -0.15819951876593358
         content: Layer 1 serves as the primary and autonomous chain on which transactions
           are directly executed and confirmed, as well as providing the essential
           infrastructure for the blockchain network.
-        volume_24h: 38983417608.875885
+        volume_24h: 38809351117.01893
       - id: proof-of-work-pow
         name: Proof of Work (PoW)
-        market_cap: 2158669611979.1697
-        market_cap_change_24h: 0.0015572940302259826
+        market_cap: 2157880294474.6777
+        market_cap_change_24h: -0.035008273581698925
         content: Proof of Work (PoW) is a blockchain consensus mechanism to validate
           transactions and create new blocks through computational efforts by miners.
-        volume_24h: 20854513040.765217
+        volume_24h: 20910175377.639736
       - id: world-liberty-financial-portfolio
         name: World Liberty Financial Portfolio
-        market_cap: 590205608438.8704
-        market_cap_change_24h: -0.7562058102024025
+        market_cap: 590099804894.2831
+        market_cap_change_24h: -0.7739968054986777
         content: The World Liberty Financial portfolio includes purchases made by
           the World Liberty Financial project. World Liberty Financial is a DeFi project
           associated with U.S. presidential candidate Donald Trump and his family
           members.
-        volume_24h: 51487414467.16094
+        volume_24h: 37559415413.12438
       - id: proof-of-stake-pos
         name: Proof of Stake (PoS)
-        market_cap: 572485925728.7986
-        market_cap_change_24h: -0.8230413515500721
+        market_cap: 572502783111.5181
+        market_cap_change_24h: -0.8201209933827287
         content: Proof of Stake (PoS) is a blockchain consensus mechanism where validators
           are selected to create new blocks based on the amount of cryptocurrency
           they hold and are willing to stake as collateral.
-        volume_24h: 17293306757.334328
+        volume_24h: 17048677008.43229
       - id: made-in-usa
         name: Made in USA
-        market_cap: 413321583710.92487
-        market_cap_change_24h: 0.47709034817451307
+        market_cap: 413494202745.72266
+        market_cap_change_24h: 0.5190534564145192
         content: Refers to cryptocurrencies that have significant connections to the
           United States, either through their founding team or company headquarters.
-        volume_24h: 13031840311.936182
+        volume_24h: 13309672226.540905
       - id: stablecoins
         name: Stablecoins
-        market_cap: 253950321664.23868
-        market_cap_change_24h: 0.14355933657026798
+        market_cap: 253779666151.4041
+        market_cap_change_24h: 0.07626251109801407
         content: A stablecoin is a type of cryptocurrency that is designed to maintain
           a stable value by being pegged to an external reference, such as a fiat
           currency.
-        volume_24h: 40727407874.743706
+        volume_24h: 30590501202.641068
       - id: alleged-sec-securities
         name: Alleged SEC Securities
-        market_cap: 249804120067.00583
-        market_cap_change_24h: 0.0016452863169365446
+        market_cap: 249791597475.28824
+        market_cap_change_24h: -0.003367760604274905
         content: "Tokens and cryptocurrencies alleged to be securities by the U.S.\
           \ Securities and Exchange Commission (SEC). \r\n\r\nNote: The labeling of\
           \ these cryptocurrencies as securities by the SEC doesn't equate to the\
           \ legal classification till proven in a court."
-        volume_24h: 4628428120.443463
+        volume_24h: 4641746062.813514
       - id: usd-stablecoin
         name: USD Stablecoin
-        market_cap: 246117613842.4905
-        market_cap_change_24h: -1.0449868084497838
+        market_cap: 246082296320.67654
+        market_cap_change_24h: -1.0591867097995116
         content: A USD stablecoin is a type of cryptocurrency that is designed to
           maintain a stable value by being pegged to the United States dollar.
-        volume_24h: 41591969958.47943
+        volume_24h: 27873375678.74813
       - id: fiat-backed-stablecoin
         name: Fiat-backed Stablecoin
-        market_cap: 244558631097.3055
-        market_cap_change_24h: -1.0500412171835276
+        market_cap: 244391752115.77643
+        market_cap_change_24h: -1.1175615016647205
         content: 'A fiat-backed stablecoin is designed to maintain a stable value
           by being pegged to a reserve of fiat currency, such as the US dollar, euro,
           or other national currencies. '
-        volume_24h: 39966237501.97609
+        volume_24h: 29770266270.43778
       - id: exchange-based-tokens
         name: Exchange-based Tokens
-        market_cap: 134442316650.36166
-        market_cap_change_24h: -0.3193765229593323
+        market_cap: 134362435047.26512
+        market_cap_change_24h: -0.37860376776884386
         content: These tokens are associated with both centralized and decentralized
           exchanges which share the same purposes such as enjoy discounted trading
           fees and gain access to exclusive token sales on the exchange. While decentralized
           exchanges tokens also function as governance as a governance tokens, centralized
           exchange token does not.
-        volume_24h: 1225497958.1319067
+        volume_24h: 1232179047.4797018
       - id: centralized-exchange-token-cex
         name: Centralized Exchange (CEX) Token
-        market_cap: 126596713311.55478
-        market_cap_change_24h: -0.185889615527731
+        market_cap: 126505937554.7198
+        market_cap_change_24h: -0.2574609950363121
         content: These utility tokens are issued by a centralized exchange and can
           be used for a variety of purposes. Although holders are not able to exercise
           governance, they still carry many other benefits such as enjoy discounted
           trading fees and gain access to exclusive token sales on the exchange.
-        volume_24h: 691440418.3774323
+        volume_24h: 697100760.0836382
       - id: decentralized-finance-defi
         name: Decentralized Finance (DeFi)
-        market_cap: 113041555304.73657
-        market_cap_change_24h: -1.288706438491797
+        market_cap: 113115303215.06909
+        market_cap_change_24h: -1.2243075401684642
         content: Decentralized Finance, is a financial system that operates without
           central authorities or intermediaries, using blockchain technology and smart
           contracts to provide a range of financial services such as lending, borrowing,
           and trading.
-        volume_24h: 4565099856.196406
+        volume_24h: 4572605726.936592
       - id: meme-token
         name: Meme
-        market_cap: 62227660277.2635
-        market_cap_change_24h: -0.7223001761105422
+        market_cap: 62182492089.48932
+        market_cap_change_24h: -0.7943612783190128
         content: Meme coins derive their relevance from memes, thriving on hype and
           picking up momentum as the community grows.
-        volume_24h: 4714243584.90261
+        volume_24h: 4711398942.960437
       - id: liquid-staking
         name: Liquid Staking
-        market_cap: 53191127773.49506
-        market_cap_change_24h: -1.1229849603163364
+        market_cap: 53154504431.6111
+        market_cap_change_24h: -1.1910641095625134
         content: Liquid staking is a process in which users can stake their cryptocurrency
           tokens to earn rewards while maintaining the ability to use or trade those
           tokens in DeFi applications.
-        volume_24h: 447405980.8849648
+        volume_24h: 446260049.1119302
       - id: asset-backed-tokens
         name: Crypto-Backed Tokens
-        market_cap: 47827291531.23508
-        market_cap_change_24h: -0.5079506490395704
+        market_cap: 47770596619.971016
+        market_cap_change_24h: -0.6258894394004766
         content: 'Crypto-backed tokens are digital tokens that are collateralized
           or backed by other cryptocurrencies. '
-        volume_24h: 1516662151.4833107
+        volume_24h: 2273419732.4953136
       - id: wrapped-tokens
         name: Wrapped-Tokens
-        market_cap: 45496411950.12223
-        market_cap_change_24h: -0.5139950559026096
+        market_cap: 45475376436.54029
+        market_cap_change_24h: -0.5599929515280657
         content: Wrapped tokens offer a way to circumvent the lack of interoperability
           between different blockchains. The wrapping of a token happens when the
           original asset is put into a “wrapper” and deployed on a different blockchain.
@@ -1572,342 +1596,342 @@ category_data_tool:
           be Wrapped Bitcoin (WBTC). It is an ERC-20 version of Bitcoin, which allows
           it to be used on protocols based on Ethereum. Watch this video to learn
           more about Wrapped tokens.
-        volume_24h: 2267731059.8318353
+        volume_24h: 2298301649.217574
       - id: liquid-staking-tokens
         name: Liquid Staking Tokens
-        market_cap: 43673075670.48472
-        market_cap_change_24h: -0.9173394249537259
+        market_cap: 43640982243.47146
+        market_cap_change_24h: -0.9901509246391924
         content: Liquid staking token is a tokenized representation of staked tokens
           that can be traded or used in various DeFi applications.
-        volume_24h: 166895230.82830504
+        volume_24h: 177116847.10018387
       - id: dog-themed-coins
         name: Dog-Themed
-        market_cap: 39535417593.61984
-        market_cap_change_24h: -1.8536255703342723
+        market_cap: 39509353584.426125
+        market_cap_change_24h: -1.918329275547638
         content: Meme coins which are inspired by dog.
-        volume_24h: 1577713202.834843
+        volume_24h: 1572720058.7130752
       - id: real-world-assets-rwa
         name: Real World Assets (RWA)
-        market_cap: 38631035434.859474
-        market_cap_change_24h: -0.10521534353905428
+        market_cap: 38615759074.88731
+        market_cap_change_24h: -0.14471800435505863
         content: Real World Assets (RWAs) refer to tangible or physical assets that
           have value in the real world. The tokenization of RWAs involves representing
           these assets digitally on a blockchain, allowing for fractional ownership,
           increased liquidity, and more efficient management and trading of these
           assets.
-        volume_24h: 1465648882.1295311
+        volume_24h: 1480812922.654502
       - id: 4chan-themed
         name: 4chan-Themed
-        market_cap: 35428446709.97248
-        market_cap_change_24h: -1.2780274068240858
+        market_cap: 35388658776.887886
+        market_cap_change_24h: -1.3888971627485203
         content: 4chan-themed coins are tokens inspired by 4chan’s meme culture.
-        volume_24h: 1613375779.9470713
+        volume_24h: 1610659012.614812
       - id: made-in-china
         name: Made in China
-        market_cap: 33740679700.96047
-        market_cap_change_24h: -1.0564860879792144
+        market_cap: 33795946694.145504
+        market_cap_change_24h: -0.8944173164682635
         content: Refers to cryptocurrencies that have significant connections to the
           China, either through their founding team or company headquarters.
-        volume_24h: 594805171.5605904
+        volume_24h: 599771418.1127998
       - id: liquid-staked-eth
         name: Liquid Staked ETH
-        market_cap: 28806406541.333004
-        market_cap_change_24h: -1.4519087958984849
+        market_cap: 28789717328.812664
+        market_cap_change_24h: -1.5090033882149267
         content: Liquid staked ETH is a tokenized representation of staked Ethereum
           that can be traded or used in various DeFi applications.
-        volume_24h: 19091432.474407513
+        volume_24h: 19244877.04893328
       - id: elon-musk-inspired-coins
         name: Elon Musk-Inspired
-        market_cap: 27341010846.683647
-        market_cap_change_24h: -1.9663228229192906
+        market_cap: 27318057265.639244
+        market_cap_change_24h: -2.0486249721259617
         content: Meme coins inspired by Elon Musk, none of these projects are (necessarily)
           endorsed or created by Elon Musk.
-        volume_24h: 751134729.4288961
+        volume_24h: 747876160.4011989
       - id: artificial-intelligence
         name: Artificial Intelligence (AI)
-        market_cap: 26788426536.721798
-        market_cap_change_24h: -0.11519964723482445
+        market_cap: 26839087091.307205
+        market_cap_change_24h: 0.07369608255308137
         content: 'Artificial Intelligence (AI) tokens are cryptocurrencies that power
           AI-related projects, such as AI-powered portfolio management, image generation,
           path finding, and more. '
-        volume_24h: 2188791854.577974
+        volume_24h: 2198660469.543787
       - id: decentralized-exchange
         name: Decentralized Exchange (DEX)
-        market_cap: 25346811134.373333
-        market_cap_change_24h: -0.49316363666765967
+        market_cap: 25390410139.513763
+        market_cap_change_24h: -0.32200210289075365
         content: Decentralized exchanges (DEXs) allow users to trade with one another
           in a permissionless manner and without any intermediaries.
-        volume_24h: 1181019543.2712798
+        volume_24h: 1189587714.8443384
       - id: infrastructure
         name: Infrastructure
-        market_cap: 24096199087.628178
-        market_cap_change_24h: -0.2728640189152649
+        market_cap: 24130884782.0853
+        market_cap_change_24h: -0.12931005195373418
         content: Fundamental systems and networks that support the functioning and
           development of the technology.
-        volume_24h: 1402681215.380295
+        volume_24h: 1404051646.3398495
       - id: tokenized-btc
         name: Tokenized BTC
-        market_cap: 19396631522.254307
-        market_cap_change_24h: 0.13463051118298003
+        market_cap: 19373777004.97704
+        market_cap_change_24h: 0.016644630982857126
         content: ''
-        volume_24h: 266745346.64799383
+        volume_24h: 261525900.28955457
       - id: depin
         name: DePIN
-        market_cap: 18760564042.474014
-        market_cap_change_24h: -1.2704672804241777
+        market_cap: 18763052585.027924
+        market_cap_change_24h: -1.2573710513905518
         content: DePIN refers to Decentralized Physical Infrastructure Networks which
           utilize blockchain and tokenized incentives to build real-world infrastructure
           across areas like wireless networks, storage, geolocation, transportation
           and energy.
-        volume_24h: 857693863.0877508
+        volume_24h: 861006919.744898
       - id: bridged-tokens
         name: Bridged-Tokens
-        market_cap: 17337861744.42932
-        market_cap_change_24h: 0.9290987933796685
+        market_cap: 17324066599.512177
+        market_cap_change_24h: 0.8487929537821844
         content: Bridged-tokens refers to a token that has been transferred or "bridged"
           from one blockchain to another, typically through the use of a blockchain
           bridge.
-        volume_24h: 6327006876.29367
+        volume_24h: 5720429210.547381
       - id: non-fungible-tokens-nft
         name: NFT
-        market_cap: 16766001393.943817
-        market_cap_change_24h: -1.227721883022623
+        market_cap: 16768171493.197245
+        market_cap_change_24h: -1.214937341141432
         content: Non-fungible tokens (NFTs) are collectible elements that represent
           something unique and therefore are not mutually interchangeable. In other
           words, no non-fungible token is the same. NFT creators can also encrypt
           details such as rich metadata or secure file links allowing people to create
           all sorts of digital assets which are verifiable such as videos and songs.
-        volume_24h: 1433969331.5211067
+        volume_24h: 1395617559.338626
       - id: defi-pulse-index-dpi
         name: Index Coop Defi Index
-        market_cap: 15938340496.497082
-        market_cap_change_24h: -1.4226427730062199
+        market_cap: 15931915401.671724
+        market_cap_change_24h: -1.462381469011351
         content: The DeFi Pulse Index (DPI) is a capitalization-weighted index that
           tracks the performance of some of the largest protocols in the DeFi space.
-        volume_24h: 852136584.3095453
+        volume_24h: 772128522.0422318
       - id: binance-launchpool
         name: Binance Launchpool
-        market_cap: 15836754675.619745
-        market_cap_change_24h: -1.0241454505291392
+        market_cap: 15838712458.580917
+        market_cap_change_24h: -1.0119097844742302
         content: Tokens and coins launched on Binance Launchpool, a platform that
           allows crypto holders to earn new tokens by locking some of their existing
           assets.
-        volume_24h: 1218361116.5749693
+        volume_24h: 1202237232.2391129
       - id: restaking
         name: Restaking
-        market_cap: 14647853727.122862
-        market_cap_change_24h: -1.5437004201702589
+        market_cap: 14636997898.313211
+        market_cap_change_24h: -1.6166684299129552
         content: Restaking allows users who have staked their tokens to participate
           in extending the underlying security of the base network to other protocols
           and networks.
-        volume_24h: 370527666.4284635
+        volume_24h: 369887304.94354594
       - id: yield-farming
         name: Yield Farming
-        market_cap: 13658891434.43445
-        market_cap_change_24h: -1.1991459669465414
+        market_cap: 13664077478.76379
+        market_cap_change_24h: -1.1616329951763487
         content: Yield farming involves putting cryptocurrency into a DeFi protocol
           to collect interest on trading fees. Liquidity providers can profit by providing
           liquidity in DeFi protocols like Uniswap, utilizing assets that would otherwise
           sit idle on an exchange or hot wallet.
-        volume_24h: 980798883.9878472
+        volume_24h: 981902359.970423
       - id: layer-2
         name: Layer 2 (L2)
-        market_cap: 13314370686.838531
-        market_cap_change_24h: -1.6377437599463065
+        market_cap: 13319019028.304537
+        market_cap_change_24h: -1.603403319445994
         content: Layer 2s are off-chain vertical scaling solutions that run on top
           of Layer 1 blockchains like Ethereum to improve scalability, while maintaining
           the decentralization and security standards of the Layer 1.
-        volume_24h: 1258431214.5905948
+        volume_24h: 1255023704.4996407
       - id: decentralized-perpetuals
         name: Perpetuals
-        market_cap: 13136499257.509356
-        market_cap_change_24h: 0.07209971509594695
+        market_cap: 13178601783.224886
+        market_cap_change_24h: 0.3928311420210817
         content: 'Perpetuals offer traders the ability to take leveraged positions
           on the price of an asset without owning the underlying asset. '
-        volume_24h: 446203177.40844655
+        volume_24h: 457073986.13845605
       - id: chain-abstraction
         name: Chain Abstraction
-        market_cap: 12201724315.309439
-        market_cap_change_24h: -1.1729448871497983
+        market_cap: 12195844400.894293
+        market_cap_change_24h: -1.2205688631509088
         content: Chain abstraction is the concept of creating a seamless, unified
           user experience across multiple blockchains, allowing users and developers
           to interact with different chains without needing to manually bridge assets,
           switch networks, or handle chain-specific complexities.
-        volume_24h: 353712193.2305618
+        volume_24h: 355084903.32005364
       - id: liquid-restaking-tokens
         name: Liquid Restaking Tokens
-        market_cap: 12018853857.729584
-        market_cap_change_24h: -1.2559039845703457
+        market_cap: 11989658160.942451
+        market_cap_change_24h: -1.4957690100471221
         content: Liquid Restaking Tokens are a liquid representation of restaking
           positions. Restaking enable users who have staked their tokens to extend
           the security of the base network to other protocols and networks.
-        volume_24h: 29798934.6692397
+        volume_24h: 29435189.027519092
       - id: gaming
         name: Gaming (GameFi)
-        market_cap: 11945328982.05081
-        market_cap_change_24h: 0.45117445866328965
+        market_cap: 11948530546.384914
+        market_cap_change_24h: 0.4780971912183336
         content: GameFi combines blockchain technology, gaming, and decentralized
           finance (DeFi), allowing players to earn cryptocurrency and NFT rewards
           while also offering true ownership and control over in-game assets.
-        volume_24h: 1258568428.19388
+        volume_24h: 1241477905.7429295
       - id: bridged-stablecoins
         name: Bridged Stablecoin
-        market_cap: 11849840140.899323
-        market_cap_change_24h: 0.5679000548673949
+        market_cap: 11845534141.38406
+        market_cap_change_24h: 0.5313556522646462
         content: Bridged stablecoin refers to a stablecoin that has been transferred,
           or “bridged,” from one blockchain to another, typically through the use
           of a blockchain bridge.
-        volume_24h: 5185452116.866101
+        volume_24h: 1629159017.4254014
       - id: layer-0-l0
         name: Layer 0 (L0)
-        market_cap: 11376091306.8238
-        market_cap_change_24h: 1.1185146560181078
+        market_cap: 11418091811.637817
+        market_cap_change_24h: 1.4918439962150294
         content: Layer 0 is the foundational infrastructure upon which multiple Layer
           1 blockchains can be built.
-        volume_24h: 388100303.5321924
+        volume_24h: 390364100.97742325
       - id: cross-chain-communication
         name: Cross-chain Communication
-        market_cap: 11116035843.38098
-        market_cap_change_24h: -1.2079453394066004
+        market_cap: 11104223227.339937
+        market_cap_change_24h: -1.3129281431734792
         content: 'Cross-chain communication allows different blockchain networks to
           interact and exchange data and assets. '
-        volume_24h: 580037543.3173851
+        volume_24h: 576124834.1784904
       - id: oracle
         name: Oracle
-        market_cap: 10924875077.884937
-        market_cap_change_24h: -1.1068073161869247
+        market_cap: 10911758820.028618
+        market_cap_change_24h: -1.2255371511944932
         content: 'Oracles are used by protocols in their smart contracts in order
           to obtain external data. This allows the closed-off blockchain environment
           to communicate with data points on the outside world. For example, a protocol
           offering synthetic Nasdaq-listed stock on the blockchain will need to pull
           external data from the stock market. With an oracle, the protocol will be
           able to do so. '
-        volume_24h: 465799025.2539544
+        volume_24h: 466187073.4417074
       - id: binance-alpha-spotlight
         name: Binance Alpha Spotlight
-        market_cap: 10516640187.193945
-        market_cap_change_24h: -0.405693270484001
+        market_cap: 10515677830.35272
+        market_cap_change_24h: -0.4148069475445596
         content: "\r\nBinance Alpha is a platform within Binance Wallet that highlights\
           \ promising early-stage crypto projects before they potentially list on\
           \ Binance."
-        volume_24h: 13872500513.851562
+        volume_24h: 13941553254.605804
       - id: solana-meme-coins
         name: Solana Meme
-        market_cap: 10382324122.686974
-        market_cap_change_24h: 0.6977824983339065
+        market_cap: 10375943308.694563
+        market_cap_change_24h: 0.6358952164519954
         content: Meme coins native to the Solana network.
-        volume_24h: 1596008868.6933212
+        volume_24h: 1586624228.297018
       - id: directed-acyclic-graph-dag
         name: Directed Acyclic Graph (DAG)
-        market_cap: 10298250420.253256
-        market_cap_change_24h: -1.2245624321031532
+        market_cap: 10302729268.931042
+        market_cap_change_24h: -1.181603655622185
         content: A DAG-based blockchain is a type of distributed ledger that uses
           a graph-like structure instead of a linear chain, allowing faster and parallel
           transaction processing by linking each transaction to multiple previous
           ones.
-        volume_24h: 153716525.82891423
-      - id: bridged-usdt
-        name: Bridged USDT
-        market_cap: 9397076173.650309
-        market_cap_change_24h: 0.21233781951097078
-        content: Bridged USDT refers to Tether tokens that have been transferred from
-          their native blockchain to a different blockchain through "bridging".
-        volume_24h: 4015449314.634457
+        volume_24h: 153221653.93561146
       - id: bitcoin-fork
         name: Bitcoin Fork
-        market_cap: 9381439525.352915
-        market_cap_change_24h: 1.663713892053753
+        market_cap: 9412209897.613533
+        market_cap_change_24h: 1.9971627527964542
         content: A Bitcoin fork is a change to the underlying rules of the Bitcoin
           network that results in a split into a separate versions of the blockchain.
-        volume_24h: 200296521.33630037
+        volume_24h: 207869251.4319993
+      - id: bridged-usdt
+        name: Bridged USDT
+        market_cap: 9393466984.87579
+        market_cap_change_24h: 0.17384869395288943
+        content: Bridged USDT refers to Tether tokens that have been transferred from
+          their native blockchain to a different blockchain through "bridging".
+        volume_24h: 4145733953.2562695
       - id: automated-market-maker-amm
         name: Automated Market Maker (AMM)
-        market_cap: 8797054344.051151
-        market_cap_change_24h: -0.941389323333771
+        market_cap: 8797513249.849897
+        market_cap_change_24h: -0.9362218469175322
         content: Automated market makers (AMMs) make use of liquidity pools containing
           2 or more assets, and prices are derived based on the proportion of each
           asset in that pool as well as the mathematical function used. Orders through
           an AMM are executed automatically via a smart contract that will calculate
           the trade prices algorithmically, including any slippage from the trade
           execution.
-        volume_24h: 584638706.3295256
+        volume_24h: 586425442.341398
       - id: privacy-coins
         name: Privacy
-        market_cap: 8784296336.808891
-        market_cap_change_24h: -0.1525079799267868
+        market_cap: 8787621316.541023
+        market_cap_change_24h: -0.11471429964305055
         content: Privacy coins are cryptocurrencies which allow users to conduct transactions
           privately and anonymously. This ensures untraceable transactions and the
           identity of the parties involved are kept private.This is done by hiding
           the origin and destination of transactions. In some cases, multiple transactions
           are mixed together in order to make onchain analysis tougher.
-        volume_24h: 125374318.91226785
+        volume_24h: 181202904.01475894
       - id: yield-bearing-stablecoins
         name: Yield-Bearing Stablecoin
-        market_cap: 7981956191.4635105
-        market_cap_change_24h: 0.53024576999999
+        market_cap: 7978202659.960585
+        market_cap_change_24h: 0.4829712128058358
         content: Yield-bearing stablecoins are stablecoins that passively earn interest
           or yield for holders, either through DeFi lending, staking rewards, or real-world
           asset backing.
-        volume_24h: 34097813.47695414
+        volume_24h: 34102543.23382986
       - id: lending-borrowing
         name: Lending/Borrowing Protocols
-        market_cap: 7797949905.537351
-        market_cap_change_24h: -1.6675583616869976
+        market_cap: 7792926204.673016
+        market_cap_change_24h: -1.7309074185589561
         content: Lending/borrowing protocols allow users to offer crypto loans by
           staking their assets in them without the need for a bank account. Users
           are given rewards, usually in the form of the protocol’s native token.
-        volume_24h: 551284753.8685721
+        volume_24h: 553487839.2011302
       - id: binance-launchpad
         name: Binance Launchpad
-        market_cap: 7527474921.49455
-        market_cap_change_24h: -1.5196676168195926
+        market_cap: 7533005523.952959
+        market_cap_change_24h: -1.447311936586354
         content: Tokens and coins launched on Binance Launchpad, a platform that assists
           blockchain and crypto startups in raising funds.
-        volume_24h: 453358006.7592455
+        volume_24h: 462151884.6823963
       - id: ether-fi-ecosystem
         name: Ether.fi Ecosystem
-        market_cap: 7269133215.820228
-        market_cap_change_24h: -1.3110244281732222
+        market_cap: 7264986629.393452
+        market_cap_change_24h: -1.3673203240426148
         content: Interconnected platforms and services built around Ether.fi.
-        volume_24h: 86750927.9646247
+        volume_24h: 85296548.66025859
       - id: ai-agents
         name: AI Agents
-        market_cap: 6689818405.726236
-        market_cap_change_24h: -0.3761913093340915
+        market_cap: 6693117681.542986
+        market_cap_change_24h: -0.32705897077849533
         content: An AI agent is a smart computer program that can act on its own to
           achieve goals.
-        volume_24h: 842569529.4652861
+        volume_24h: 850710782.3931288
       - id: play-to-earn
         name: Play To Earn
-        market_cap: 6532450927.211001
-        market_cap_change_24h: -1.5086439568770462
+        market_cap: 6531201405.196264
+        market_cap_change_24h: -1.5274833050801162
         content: Play to Earn games are built on the blockchain, giving players full
           control over their gaming accounts and related assets, which they can sell
           on exchanges or secondary marketplaces.
-        volume_24h: 546929512.045117
+        volume_24h: 550659095.3140612
       - id: synthetic-dollar
         name: Synthetic Dollar
-        market_cap: 6495074577.944669
-        market_cap_change_24h: 0.6134045897715846
+        market_cap: 6492056608.745072
+        market_cap_change_24h: 0.5666540632803939
         content: ''
-        volume_24h: 86649604.24051517
+        volume_24h: 87234162.41156246
       - id: liquid-staked-sol
         name: Liquid Staked SOL
-        market_cap: 6321342265.462455
-        market_cap_change_24h: 0.5797306829445452
+        market_cap: 6319334496.033436
+        market_cap_change_24h: 0.5477847923466717
         content: Liquid staked SOL is a tokenized representation of staked SOL that
           can be traded or used in various DeFi applications.
-        volume_24h: 59962114.89799851
+        volume_24h: 59844714.34954862
       - id: frog-themed-coins
         name: Frog-Themed
-        market_cap: 6096689362.078089
-        market_cap_change_24h: -0.8786684815727317
+        market_cap: 6090563926.795334
+        market_cap_change_24h: -0.9782571706624551
         content: Meme coins which are inspired by frogs.
-        volume_24h: 778663787.3590863
+        volume_24h: 779613181.0046167
       - id: zero-knowledge-zk
         name: Zero Knowledge (ZK)
-        market_cap: 6008119386.871292
-        market_cap_change_24h: -0.9570967268918084
+        market_cap: 6012054151.860658
+        market_cap_change_24h: -0.8922327448118704
         content: "Zero-knowledge proof or Zero-knowledge protocol is a method by which\
           \ one party (the prover) can prove to another party (the verifier) that\
           \ a given statement is true while the prover avoids conveying any additional\
@@ -1915,64 +1939,64 @@ category_data_tool:
           \r\nThis category tracks cryptocurrency that utilises Zero Knowledge implementation\
           \ to execute transactions, which may include smart contract execution, value\
           \ transfer, and others."
-        volume_24h: 7742712781.093648
+        volume_24h: 7842462849.157959
       - id: metaverse
         name: Metaverse
-        market_cap: 5910933115.161788
-        market_cap_change_24h: -1.031449667330022
+        market_cap: 5909890600.966309
+        market_cap_change_24h: -1.0489047994754315
         content: The metaverse refers to a digital world where participants can interact
           with each other in a shared virtual reality.
-        volume_24h: 330981877.89946735
+        volume_24h: 328147284.0455828
       - id: the-boy-s-club
         name: The Boy’s Club
-        market_cap: 5620693885.8147135
-        market_cap_change_24h: -0.9772130789532957
+        market_cap: 5614995649.527563
+        market_cap_change_24h: -1.0776019720599483
         content: Meme coins which are inspired by The Boy's Club.
-        volume_24h: 700033996.6591902
+        volume_24h: 701617062.717879
       - id: rollup
         name: Rollup
-        market_cap: 5296432904.066872
-        market_cap_change_24h: -2.0405279201570687
+        market_cap: 5302280787.583532
+        market_cap_change_24h: -1.9323691664349871
         content: Rollup is a layer 2 solution that aggregates and processes transactions
           outside of a main blockchain, before submitting them as a single batch,
           to enhance scalability and reduce fees.
-        volume_24h: 574205754.8080252
+        volume_24h: 571843873.6783421
       - id: crypto-backed-stablecoin
         name: Crypto-backed Stablecoin
-        market_cap: 5270374185.855879
-        market_cap_change_24h: 0.34992667232475416
+        market_cap: 5267228554.863003
+        market_cap_change_24h: 0.2900326632199638
         content: A crypto-backed stablecoin is designed to maintain a stable value
           by being backed by a reserve of other cryptocurrencies.
-        volume_24h: 84409737.0800866
+        volume_24h: 83035737.97918588
       - id: mobile-mining
         name: Mobile Mining
-        market_cap: 4870020592.815854
-        market_cap_change_24h: -2.0412651395805184
+        market_cap: 4874564482.447218
+        market_cap_change_24h: -1.949866413199278
         content: Mobile mining allows users to use a smartphone or mobile device to
           mine cryptocurrencies.
-        volume_24h: 57441122.582350336
+        volume_24h: 57284676.48598486
       - id: data-availability
         name: Data Availability
-        market_cap: 4838558098.725795
-        market_cap_change_24h: -1.6434186128491124
+        market_cap: 4844229901.67182
+        market_cap_change_24h: -1.5281241105015042
         content: Data availability on the blockchain ensures that all participants
           have the transaction data needed to verify blocks, even with resource limitations
           and scalability needs. Without it, independent verification crumbles, compromising
           the entire system. Data availability centric protocols aim to allow nodes
           to verify data availability more efficiently.
-        volume_24h: 409870973.01680386
+        volume_24h: 409524024.6273868
       - id: stablecoin-protocol
         name: Stablecoin Protocol
-        market_cap: 4552474686.428658
-        market_cap_change_24h: -5.451249544770284
+        market_cap: 4558635553.195427
+        market_cap_change_24h: -5.323296663174766
         content: Stablecoin protocols maintain the value of a cryptocurrency relative
           to a stable asset such as a fiat currency through mechanisms like collateralization
           or supply adjustment.
-        volume_24h: 395153243.2612241
+        volume_24h: 397035530.2670084
       - id: storage
         name: Storage
-        market_cap: 4511784627.443405
-        market_cap_change_24h: -1.5502238012918244
+        market_cap: 4513134663.478981
+        market_cap_change_24h: -1.5207652263513913
         content: Storage protocols allow users to store their data on the blockchain
           network in a decentralized manner. This negates the need for a centralized
           storage host such as Amazon, OneDrive, DropBox, and others. This removes
@@ -1980,1702 +2004,1606 @@ category_data_tool:
           independent nodes which in turn use spare storage space on computers. Users
           are able to rent out their spare storage on  In exchange for storage space,
           users are able to use a storage protocol’s token to pay for the service.
-        volume_24h: 174713905.43532398
+        volume_24h: 174725369.59690827
       - id: rwa-protocol
         name: RWA Protocol
-        market_cap: 4171851015.2396116
-        market_cap_change_24h: -1.9808508177540853
+        market_cap: 4170668619.652757
+        market_cap_change_24h: -2.008631629915629
         content: RWA Protocol refer to protocol that facilitates the tokenization
           of real-world assets.
-        volume_24h: 334806620.7128193
+        volume_24h: 341500552.81835485
       - id: gaming-blockchains
         name: Gaming Blockchains
-        market_cap: 4101661042.7028174
-        market_cap_change_24h: -0.834209039584963
+        market_cap: 4102846571.349251
+        market_cap_change_24h: -0.805546533174554
         content: Gaming blockchains refer to blockchain platforms specialized in gaming.
-        volume_24h: 298724621.4114217
+        volume_24h: 279145516.8455319
       - id: internet-of-things-iot
         name: Internet of Things (IOT)
-        market_cap: 3954632927.698666
-        market_cap_change_24h: -1.4691781934058985
+        market_cap: 3954698449.2855964
+        market_cap_change_24h: -1.4675457041396776
         content: The Internet of Things (IoT) ecosystem consists of interconnected
           computing devices, with the ability to transfer data over a network without
           the need for any human interaction.
-        volume_24h: 77575250.67244473
+        volume_24h: 79258112.21795104
       - id: ai-agent-launchpad
         name: AI Agent Launchpad
-        market_cap: 3881640854.3070188
-        market_cap_change_24h: -2.0396293285940197
+        market_cap: 3882461721.002754
+        market_cap_change_24h: -2.018913242587033
         content: Platforms that allow users to deploy and launch their own AI agents.
-        volume_24h: 411142871.7370735
+        volume_24h: 419392572.154394
       - id: pump-fun
         name: Pump.fun Ecosystem
-        market_cap: 3844355816.1272655
-        market_cap_change_24h: -2.5890341464382174
+        market_cap: 3844084064.808664
+        market_cap_change_24h: -2.595919970665494
         content: Pump.fun Ecosystem consists of tokens launched via pump.fun.
-        volume_24h: 948437187.144114
+        volume_24h: 946412495.3807365
       - id: tokenized-products
         name: Tokenized Assets
-        market_cap: 3448397560.1244226
-        market_cap_change_24h: 0.26908726115268244
+        market_cap: 3449358622.5127635
+        market_cap_change_24h: 0.2970320809711066
         content: Tokenized products refers to digital representation of assets on
           a blockchain platform.
-        volume_24h: 186892171.74920523
+        volume_24h: 186890623.4921004
       - id: liquid-staked-btc
         name: Liquid Staked BTC
-        market_cap: 3254078221.3799233
-        market_cap_change_24h: 0.005057880993329564
+        market_cap: 3251645688.724236
+        market_cap_change_24h: -0.06969925527681792
         content: Liquid staked BTC is a tokenized representation of staked Bitcoin
           that can be traded or used in various DeFi applications.
-        volume_24h: 11953855.493606074
+        volume_24h: 11953655.258133216
       - id: identity
         name: Decentralized Identifier (DID)
-        market_cap: 3216894419.5353646
-        market_cap_change_24h: -3.1773092231018887
+        market_cap: 3213030834.2525234
+        market_cap_change_24h: -3.2935961366104576
         content: 'Decentralized Identifier (DID) allows individuals or entities to
           create and manage their own identifiers independently of any centralized
           registry, identity provider, or intermediary. '
-        volume_24h: 214410289.84971237
+        volume_24h: 211242161.72084928
       - id: superchain-ecosystem
         name: Optimism Superchain Ecosystem
-        market_cap: 3171989562.539309
-        market_cap_change_24h: -3.2020217526346375
+        market_cap: 3170487859.4140067
+        market_cap_change_24h: -3.247848456534837
         content: The Optimism Superchain is a unified network of chains built using
           the open-source OP Stack. This framework provides a standardized, modular
           architectural framework for creating Layer 2 chains that share a common
           security and communication layer.
-        volume_24h: 303939755.6455324
+        volume_24h: 303323131.9890189
       - id: ai-meme-coins
         name: AI Meme
-        market_cap: 2999306672.453901
-        market_cap_change_24h: 2.7906430306938157
+        market_cap: 3002064213.488452
+        market_cap_change_24h: 2.8851480103707123
         content: Meme coins related or inspired by AI. They either leverage AI-powered
           agents, are created using AI tools, or derive their concept from AI technologies
           and trends.
-        volume_24h: 524814740.6944774
+        volume_24h: 523500917.2161992
       - id: gaming-utility-token
         name: Gaming Utility Token
-        market_cap: 2921411490.657397
-        market_cap_change_24h: -0.891554283327029
+        market_cap: 2921618876.938803
+        market_cap_change_24h: -0.8845187349015916
         content: Gaming Utility Tokens provide holders with benefits such as making
           in-game purchases, accessing special content, participating in events, or
           earning rewards.
-        volume_24h: 212418868.7835891
+        volume_24h: 213319521.8672171
       - id: payment-solutions
         name: Payment Solutions
-        market_cap: 2809869657.7922807
-        market_cap_change_24h: 5.004238826501119
+        market_cap: 2805973101.870707
+        market_cap_change_24h: 4.858625350283433
         content: Platforms or services that enable the acceptance and processing of
           cryptocurrency payments for goods and services.
-        volume_24h: 958175326.8748577
+        volume_24h: 965790062.3075331
       - id: sidechain
         name: SideChain
-        market_cap: 2557110368.62008
-        market_cap_change_24h: -2.634143643981052
+        market_cap: 2557315624.6985927
+        market_cap_change_24h: -2.6263282074234784
         content: A sidechain is a separate blockchain that runs parallel to a main
           blockchain. It allows transactions and applications to operate independently
           to enhance scalability and functionality.
-        volume_24h: 71866104.29385859
+        volume_24h: 71493547.13704464
       - id: binance-peg-tokens
         name: Binance-Peg Tokens
-        market_cap: 2537720200.649825
-        market_cap_change_24h: -1.2478154278942106
+        market_cap: 2538390006.7944627
+        market_cap_change_24h: -1.2217507656017152
         content: 'Binance-Peg Tokens are wrapped versions of cryptocurrencies pegged
           by Binance on a 1:1 ratio. '
-        volume_24h: 52656855.918152064
+        volume_24h: 52589429.34192764
       - id: analytics
         name: Analytics
-        market_cap: 2513771443.503996
-        market_cap_change_24h: -2.9002055876635904
+        market_cap: 2516715344.5337505
+        market_cap_change_24h: -2.7864911187137062
         content: Projects that provide advanced insights and charting tools to track
           historical token prices, real-time trades, volume, and many more.
-        volume_24h: 337077275.2069662
+        volume_24h: 334976598.0082547
       - id: decentralized-derivatives
         name: Derivatives
-        market_cap: 2458363326.416845
-        market_cap_change_24h: -1.5276549908365307
+        market_cap: 2458315827.4495263
+        market_cap_change_24h: -1.5295576122461119
         content: Derivatives are financial instruments whose value is derived from
           an underlying asset (e.g. Crude Oil, Gold, Bitcoin etc). Compared to spot
           markets where the underlying asset changes ownership, in derivatives markets,
           traders trade contracts rather than the actual assets.
-        volume_24h: 458569216.22832626
+        volume_24h: 459354312.8495723
       - id: cat-themed-coins
         name: Cat-Themed
-        market_cap: 2444335062.8749046
-        market_cap_change_24h: 0.549569194216447
+        market_cap: 2445256808.234078
+        market_cap_change_24h: 0.5874858858268993
         content: Meme coins which are inspired by cat.
-        volume_24h: 177583526.2806264
+        volume_24h: 188969697.03714713
       - id: binance-hodler-airdrops
         name: Binance HODLer Airdrops
-        market_cap: 2392397477.7852845
-        market_cap_change_24h: -0.7786472396384461
+        market_cap: 2394100432.26397
+        market_cap_change_24h: -0.7080195748655758
         content: Binance HODLer Airdrops is an airdrop program by Binance. Users who
           subscribe to Simple Earn using BNB will receive airdropped tokens issued
           by projects with a large token circulating supply that intend to soon list
           on Binance.
-        volume_24h: 674236998.1478153
+        volume_24h: 650636968.5353812
       - id: politifi
         name: PolitiFi
-        market_cap: 2370968064.3573565
-        market_cap_change_24h: -0.720638621485321
+        market_cap: 2371211945.2791443
+        market_cap_change_24h: -0.7104266146129075
         content: "Political Finance (PolitiFi) are meme coins inspired by political\
           \ figures.\r\n\r\nNote: Most of these tokens have no official affiliation\
           \ to any political figures."
-        volume_24h: 252981292.90236247
+        volume_24h: 252096074.8631249
       - id: liquid-staking-governance-tokens
         name: Liquid Staking Governance Tokens
-        market_cap: 2300532739.4860573
-        market_cap_change_24h: -1.1990967061186892
+        market_cap: 2301796958.5574684
+        market_cap_change_24h: -1.144802331571046
         content: Liquid Staking Governance Tokens facilitate decision-making and policy
           formation in Liquid Staking Token Protocols, allowing holders to influence
           asset allocation and platform strategy.
-        volume_24h: 183660236.59306413
+        volume_24h: 182350981.6270729
       - id: murad-picks
         name: Murad Picks
-        market_cap: 2246118464.0619974
-        market_cap_change_24h: 4.3858774707179125
+        market_cap: 2237265112.5525513
+        market_cap_change_24h: 3.9744277272351343
         content: Tokens promoted by a memecoin KOL @MustStopMurad.
-        volume_24h: 156685359.44760224
+        volume_24h: 156936700.26696384
       - id: bridged-usdc
         name: Bridged USDC
-        market_cap: 2227873801.6631
-        market_cap_change_24h: 2.1017018622235923
+        market_cap: 2227206364.1818438
+        market_cap_change_24h: 2.071113728069852
         content: Bridged USDC refers to USDC that have been transferred from their
           native blockchain to a different blockchain through "bridging".
-        volume_24h: 810217148.3253951
+        volume_24h: 821170283.9809455
       - id: tokenized-commodities
         name: Tokenized Commodities
-        market_cap: 2042258307.9065454
-        market_cap_change_24h: 0.3425749020941422
+        market_cap: 2043061245.3467097
+        market_cap_change_24h: 0.38202574429146124
         content: 'Tokenized Commodities refers to digital representation of commodities
           such as oil, gold, silver on a blockchain platform. '
-        volume_24h: 149139747.03769645
+        volume_24h: 149552174.03715196
       - id: wallets
         name: Wallets
-        market_cap: 1958421958.6809866
-        market_cap_change_24h: -1.0427536312324015
+        market_cap: 1959114147.490466
+        market_cap_change_24h: -1.007777972258736
         content: Crypto wallets are digital tools that allow you to interact with
           blockchain networks to store and manage cryptocurrencies.
-        volume_24h: 120867221.55492833
+        volume_24h: 118708896.98737723
       - id: launchpad
         name: Launchpad
-        market_cap: 1904205494.4502447
-        market_cap_change_24h: 2.395570871608463
+        market_cap: 1905181445.6981542
+        market_cap_change_24h: 2.4480510715993824
         content: Launchpad is a platform for crypto projects to hold Initial DEX Offerings
           (IDOs). Participants are able to gain early access to public and special
           token sales on the platform.
-        volume_24h: 240437395.9881286
+        volume_24h: 241044136.53700253
       - id: modular-blockchain
         name: Modular Blockchain
-        market_cap: 1889011883.1867926
-        market_cap_change_24h: -3.0460277966196356
+        market_cap: 1888493992.0766692
+        market_cap_change_24h: -3.0726086777364734
         content: A modular blockchain is a type of blockchain architecture that separates
           the core functions of a blockchain into distinct modules or layers. Each
           module is designed to handle specific tasks independently.
-        volume_24h: 119164264.06289718
-      - id: bitcoin-layer-2
-        name: Bitcoin Sidechains
-        market_cap: 1888542600.2139602
-        market_cap_change_24h: -2.2203505471261686
-        content: Bitcoin Sidechains are designed to enhance the Bitcoin blockchain's
-          capacity by creating a new layer that improves transaction processing speed
-          by handling transactions off the primary chain.
-        volume_24h: 52416744.881001316
+        volume_24h: 119622162.34426913
       - id: tokenized-gold
         name: Tokenized Gold
-        market_cap: 1886911744.1545715
-        market_cap_change_24h: 0.4526801869816614
+        market_cap: 1887654820.1906824
+        market_cap_change_24h: 0.4922389949870142
         content: Tokenized gold refers to digital representation of physical gold
           on a blockchain platform. These tokens are backed by an equivalent amount
           of real gold held in custody by the issuing institution.
-        volume_24h: 148132152.98010394
+        volume_24h: 148545842.84972417
+      - id: bitcoin-layer-2
+        name: Bitcoin Sidechains
+        market_cap: 1887075250.384909
+        market_cap_change_24h: -2.296322861382204
+        content: Bitcoin Sidechains are designed to enhance the Bitcoin blockchain's
+          capacity by creating a new layer that improves transaction processing speed
+          by handling transactions off the primary chain.
+        volume_24h: 54660962.83963561
       - id: dex-aggregator
         name: Dex Aggregator
-        market_cap: 1869369122.7168336
-        market_cap_change_24h: -1.9117912025482415
+        market_cap: 1868794156.3770785
+        market_cap_change_24h: -1.9419604279302443
         content: A DEX aggregator is designed to enhance the efficiency and accessibility
           of cryptocurrency trading. It searches across multiple decentralized exchanges
           (DEXs) to combine their liquidity, helping users avoid slippage on large
           orders, lower trading fees, and secure the best prices for tokens.
-        volume_24h: 103379971.22340764
+        volume_24h: 103937350.23166803
       - id: gaming-governance-token
         name: Gaming Governance Token
-        market_cap: 1836256377.8931355
-        market_cap_change_24h: -0.9711721583059927
+        market_cap: 1837096697.0819552
+        market_cap_change_24h: -0.9258539634811654
         content: Gaming Governance Token gives holders the right to participate in
           development and decision making process of the game.
-        volume_24h: 174655856.94038802
+        volume_24h: 174239639.5476412
       - id: virtuals-protocol-ecosystem
         name: Virtuals Protocol Ecosystem
-        market_cap: 1759197673.250362
-        market_cap_change_24h: -1.5998964612919258
+        market_cap: 1760669289.4892335
+        market_cap_change_24h: -1.5175821242074208
         content: ''
-        volume_24h: 248432584.41213557
+        volume_24h: 249771393.88856795
       - id: privacy-blockchain
         name: Privacy Blockchain
-        market_cap: 1742554033.1555316
-        market_cap_change_24h: -0.6927301801884496
+        market_cap: 1748617415.5709348
+        market_cap_change_24h: -0.34718109413988213
         content: 'A privacy blockchain is a smart contract platform designed to prioritize
           transaction confidentiality and anonymity while maintaining decentralization
           and security. '
-        volume_24h: 33084682.65175255
+        volume_24h: 35048357.21633808
       - id: bridged-weth
         name: Bridged WETH
-        market_cap: 1710371148.5403514
-        market_cap_change_24h: -0.3039123204421608
+        market_cap: 1709695904.1617365
+        market_cap_change_24h: -0.343271744174823
         content: Bridged WETH refers to WETH that have been transferred from their
           native blockchain to a different blockchain through "bridging".
-        volume_24h: 563139744.4496685
+        volume_24h: 588445443.7572085
       - id: lp-tokens
         name: LP Tokens
-        market_cap: 1677408596.8590941
-        market_cap_change_24h: -0.9728051903417058
+        market_cap: 1678213601.400005
+        market_cap_change_24h: -0.925281085812423
         content: ''
-        volume_24h: 34966923.3541072
+        volume_24h: 34856351.413832344
       - id: telegram_apps
         name: Telegram Apps
-        market_cap: 1569129348.2725208
-        market_cap_change_24h: -2.9251031698705487
+        market_cap: 1569364035.9554098
+        market_cap_change_24h: -2.9105841102220684
         content: Applications built on the Telegram platform that integrate cryptocurrency
           or blockchain technology.
-        volume_24h: 295628419.10655975
+        volume_24h: 297723558.7719063
       - id: curve-ecosystem
         name: Curve Ecosystem
-        market_cap: 1464023060.4506385
-        market_cap_change_24h: -2.092606821244223
+        market_cap: 1464737595.1999295
+        market_cap_change_24h: -2.0448218945387797
         content: Interconnected platforms and services built around Curve Finance.
-        volume_24h: 106593338.17823145
+        volume_24h: 106696483.28016497
       - id: bridged-wbtc
         name: Bridged WBTC
-        market_cap: 1427735546.8981152
-        market_cap_change_24h: 0.03413384421436337
+        market_cap: 1428000230.522305
+        market_cap_change_24h: 0.05267887319126606
         content: Bridged WBTC refers to WBTC that have been transferred from their
           native blockchain to a different blockchain through "bridging".
-        volume_24h: 54894510.570259884
+        volume_24h: 54597320.098090276
       - id: airdropped-tokens-by-nft-projects
         name: Airdropped Tokens by NFT Projects
-        market_cap: 1423027607.5413408
-        market_cap_change_24h: -0.319586425949295
+        market_cap: 1422491679.5662074
+        market_cap_change_24h: -0.3571271749299157
         content: Airdropped tokens by NFT Projects refer to tokens distributed by
           NFT projects as part of their community engagement or ecosystem expansion
           initiatives. Airdrops are often tied to ownership of specific NFT collections
           or eligibility within certain user groups.
-        volume_24h: 341226665.02449554
+        volume_24h: 336073240.03185487
       - id: us-treasury-backed-stablecoin
         name: US Treasury-backed Stablecoin
-        market_cap: 1389035214.8297615
-        market_cap_change_24h: 0.2738363808081753
+        market_cap: 1388541135.4811206
+        market_cap_change_24h: 0.2381690116617223
         content: A stablecoin that is 1:1 backed by U.S. Treasuries. This includes
           direct holdings of Treasury bills (T-bills), short-maturity Treasury notes
           (T-Notes), and repurchase agreements (repos) that are fully collateralized
           by U.S. Treasuries.
-        volume_24h: 3780335.3081403044
+        volume_24h: 3304118.942158529
       - id: ai-framework
         name: AI Framework
-        market_cap: 1348647509.8072631
-        market_cap_change_24h: 0.42940673979848565
+        market_cap: 1348331416.6102474
+        market_cap_change_24h: 0.4058683044253198
         content: 'An AI Framework/ AI agent framework is a set of tools, libraries,
           and methodologies designed to facilitate the development, management, and
           operation of AI agents. '
-        volume_24h: 197004599.1881735
+        volume_24h: 199574839.99925125
       - id: rpg
         name: RPG
-        market_cap: 1341340554.9192405
-        market_cap_change_24h: -0.7231208778411348
+        market_cap: 1342513259.3900104
+        market_cap_change_24h: -0.636325291467735
         content: Role-playing game (RPG) is a video game genre where players control
           a single or group of character in a fictional world. RPG games typically
           include elements of storytelling, character development, exploration, quests,
           and inventory management.
-        volume_24h: 145479084.99717832
+        volume_24h: 144426689.9631976
       - id: base-meme-coins
         name: Base Meme
-        market_cap: 1320581879.9060955
-        market_cap_change_24h: -5.013352912069072
+        market_cap: 1319234129.5738814
+        market_cap_change_24h: -5.110293728171871
         content: Meme coins native to the Base network.
-        volume_24h: 116423080.26641163
+        volume_24h: 117403686.44502154
       - id: bridge-governance-tokens
         name: Bridge Governance Tokens
-        market_cap: 1309691025.5527544
-        market_cap_change_24h: -1.5742470614506041
+        market_cap: 1309720603.5933957
+        market_cap_change_24h: -1.5720242158604858
         content: A bridge governance token is a type of cryptocurrency token that
           is used to manage and govern a blockchain bridge.
-        volume_24h: 195519645.98827866
+        volume_24h: 195306381.85964572
       - id: simulation-games
         name: Simulation Games
-        market_cap: 1295887632.937389
-        market_cap_change_24h: -1.443567561138733
+        market_cap: 1295682820.2494173
+        market_cap_change_24h: -1.4591442263770138
         content: Simulation game replicates real-world activities, offering players
           the opportunity to experience different skills or activities in a virtual
           environment.
-        volume_24h: 71951873.83815081
+        volume_24h: 72132006.4283421
       - id: gaming-platform
         name: Gaming Platform
-        market_cap: 1291902637.240152
-        market_cap_change_24h: -0.17211938168305052
+        market_cap: 1293018937.9349086
+        market_cap_change_24h: -0.08586061165036306
         content: Gaming platform allows users to play, download, and manage video
           games. They often provide features like multiplayer matchmaking, community
           forums, and in-game purchases.
-        volume_24h: 118630728.27746354
+        volume_24h: 117768113.6387739
       - id: defai
         name: DeFAI
-        market_cap: 1267390538.3149614
-        market_cap_change_24h: 1.697721954032486
+        market_cap: 1267530880.1559184
+        market_cap_change_24h: 1.7089832386079018
         content: DeFAI or AIFI projects leverage AI to streamline and automate DeFi
           activities such as trading, staking, yield farming, market analysis, and
           investment optimization.
-        volume_24h: 246452739.3458777
+        volume_24h: 246505399.73932523
       - id: stock-market-themed
         name: Stock market-themed
-        market_cap: 1239592116.6107624
-        market_cap_change_24h: 8.116226075403231
+        market_cap: 1232615148.460617
+        market_cap_change_24h: 7.507700532417015
         content: Meme coins related to the stock market.
-        volume_24h: 68031530.17890908
+        volume_24h: 67676085.35024032
       - id: name-service
         name: Name Service
-        market_cap: 1225634309.2188942
-        market_cap_change_24h: -1.8624597266273544
+        market_cap: 1225533258.5730882
+        market_cap_change_24h: -1.8705509343781914
         content: Name Service is a decentralized naming system that allows users to
           map human-readable domain names to machine-readable information.
-        volume_24h: 50409487.411668174
+        volume_24h: 46638637.02718321
       - id: masternodes
         name: Masternodes
-        market_cap: 1215553133.6420164
-        market_cap_change_24h: -0.984727558322612
+        market_cap: 1215354910.0964444
+        market_cap_change_24h: -1.0008742472874659
         content: Masternodes are needed to verify new blocks in certain cryptocurrencies.
           However, unlike other nodes, they do not add new blocks to the network.
           In order to maintain a masternode, one would need to hold a certain amount
           of the protocol’s cryptocurrency, and it’s usually a significant amount.
           In return for operating a masternode, the operator is rewarded with the
           native currency.
-        volume_24h: 40316231.86619156
+        volume_24h: 40468773.99473977
       - id: sports
         name: Sports
-        market_cap: 1203879505.702844
-        market_cap_change_24h: -1.06075772297074
+        market_cap: 1204373527.0894353
+        market_cap_change_24h: -1.0201572297930874
         content: "These projects have introduced a new way for sports teams to engage\
           \ with their fans and has made it easier for ordinary sports fans to show\
           \ their support to their favorite teams and players. \r\nWith Fan Tokens\
           \ and NFTs, fans have the power to influence their favourite sports teams\
           \ in minor decisions and enter an exclusive club of like-minded supporters\
           \ and VIP benefits."
-        volume_24h: 98799251.79012163
+        volume_24h: 96626991.54459558
       - id: terminal-of-truths
         name: Terminal of Truths
-        market_cap: 1187826106.9731677
-        market_cap_change_24h: 5.322088521225849
+        market_cap: 1186270821.2427742
+        market_cap_change_24h: 5.184184546552565
         content: Terminal of Truths refers to tokens mentioned by https://x.com/truth_terminal.
-        volume_24h: 168964793.8264126
+        volume_24h: 170977493.72504142
       - id: ai-applications
         name: AI Applications
-        market_cap: 1144818635.4699373
-        market_cap_change_24h: 2.701130606551443
+        market_cap: 1144454612.0957284
+        market_cap_change_24h: 2.668474244276975
         content: ''
-        volume_24h: 237540549.80118954
+        volume_24h: 235858046.5626596
       - id: btcfi
         name: BTCfi Protocol
-        market_cap: 1110419227.545172
-        market_cap_change_24h: -2.100520559473569
+        market_cap: 1111040118.5454967
+        market_cap_change_24h: -2.0457800576763545
         content: BTCfi Protocol refers to DeFi protocols built on or around the Bitcoin
           ecosystem. It aims to bring DeFi activities such as lending, borrowing,
           and yield farming to Bitcoin holders.
-        volume_24h: 149954464.49111897
+        volume_24h: 149780191.28821647
       - id: liquid-restaking-governance-token
         name: Liquid Restaking Governance Tokens
-        market_cap: 1103462936.8123477
-        market_cap_change_24h: -3.028179280449236
+        market_cap: 1102711110.300831
+        market_cap_change_24h: -3.0942494521376473
         content: Liquid Restaking Governance Tokens facilitate decision-making and
           policy formation in Liquid Restaking Token Protocols, allowing holders to
           influence asset allocation and platform strategy.
-        volume_24h: 170393457.01590958
+        volume_24h: 169405744.55377823
       - id: entertainment
         name: Entertainment
-        market_cap: 1072590982.6652606
-        market_cap_change_24h: -0.1115385534801561
+        market_cap: 1071784289.6110148
+        market_cap_change_24h: -0.1866644209827599
         content: Projects that are specifically designed to be used within the entertainment
           sector, which may include areas such as music, film, gaming, and other forms
           of digital media.
-        volume_24h: 72672110.15153511
+        volume_24h: 73858557.88685071
       - id: parallel-evm
         name: Parallelized EVM
-        market_cap: 1059565987.8256639
-        market_cap_change_24h: -0.8089082028411323
+        market_cap: 1059599405.7849245
+        market_cap_change_24h: -0.8057797862037764
         content: Parallel EVM refers to the capability of processing and executing
           multiple blockchain transactions simultaneously rather than in a sequential
           manner.
-        volume_24h: 43088452.58478208
+        volume_24h: 43328582.83593212
       - id: socialfi
         name: SocialFi
-        market_cap: 1034966930.4907508
-        market_cap_change_24h: 0.3127525971472341
+        market_cap: 1034104569.6139201
+        market_cap_change_24h: 0.2291694499582141
         content: 'SocialFi combines social media and DeFi. It aims to bring a more
           decentralized and user-centric approach to social media platforms, allowing
           users to monetize their interactions and content directly. '
-        volume_24h: 158778580.94896427
+        volume_24h: 158016834.64357287
       - id: gaming-marketplace
         name: Gaming Marketplace
-        market_cap: 1003639751.2126479
-        market_cap_change_24h: -2.5226169612845313
+        market_cap: 1003737922.7522076
+        market_cap_change_24h: -2.5130821608209173
         content: A platform where players can buy, sell, or trade in-game assets,
           currencies, or digital items.
-        volume_24h: 60646764.53790576
+        volume_24h: 60439565.53342529
       - id: lsdfi
         name: LSDFi
-        market_cap: 974901589.6226898
-        market_cap_change_24h: -2.5181354911465537
+        market_cap: 974912490.9885579
+        market_cap_change_24h: -2.5170454473084614
         content: Liquid Staking Derivatives Finance (LSDFi) combines the principles
           of liquid staking derivatives with traditional DeFi applications to offer
           enhanced financial opportunities and flexibility to cryptocurrency users.
-        volume_24h: 93618652.45697439
+        volume_24h: 94267885.0205854
       - id: tokenfi-launchpad
         name: TokenFi Launchpad
-        market_cap: 886168890.9361496
-        market_cap_change_24h: -1.2213580137891775
+        market_cap: 886868821.2900516
+        market_cap_change_24h: -1.1433388342055564
         content: TokenFi Launchpad is a platform for crypto projects to hold Initial
           DEX Offerings (IDOs). Participants are able to gain early access to public
           and special token sales on the platform.
-        volume_24h: 73454222.73227978
+        volume_24h: 73220445.92808893
       - id: account-abstraction
         name: Account Abstraction
-        market_cap: 873077020.7030864
-        market_cap_change_24h: -1.2847454775853944
+        market_cap: 872620890.1797278
+        market_cap_change_24h: -1.3363182937757974
         content: Account abstraction aims to simplify the way users interact with
           dApps by doing away with the complexities of gas fees and transaction management.
-        volume_24h: 81687534.74626684
+        volume_24h: 81655666.04331475
       - id: on-chain-gaming
         name: On-chain Gaming
-        market_cap: 836743697.2920668
-        market_cap_change_24h: -1.2182630153743235
+        market_cap: 835386012.9596505
+        market_cap_change_24h: -1.378544374011293
         content: On-chain games refer to games where all components, including game
           logic, assets, interactions, and characteristics, are stored directly on
           the blockchain.
-        volume_24h: 67681402.68236269
+        volume_24h: 67579518.94641285
       - id: morpho-ecosystem
         name: Morpho Ecosystem
-        market_cap: 826750213.8925753
-        market_cap_change_24h: -0.16698358949121242
+        market_cap: 827162187.3200021
+        market_cap_change_24h: -0.11723633905223174
         content: Vault tokens within the Morpho Protocol.
-        volume_24h: 7824395.88484381
+        volume_24h: 7729089.716558753
       - id: liquid-restaked-eth
         name: Liquid Restaked ETH
-        market_cap: 795795475.8781639
-        market_cap_change_24h: -1.229981283900891
+        market_cap: 795553752.3920894
+        market_cap_change_24h: -1.259982752830278
         content: Liquid Restaked ETH is a tokenized representation of restaked Ethereum
           that can be traded or used in various DeFi applications.
-        volume_24h: 15910942.546917193
+        volume_24h: 15994890.226662774
       - id: mev-protection
         name: MEV Protection
-        market_cap: 726973548.4952023
-        market_cap_change_24h: -2.9253950942927
+        market_cap: 733989355.3400728
+        market_cap_change_24h: -1.9885567747000437
         content: MEV (Maximal Extractable Value) protection is a set of rules and
           mechanisms designed to prevent or mitigate the negative impacts of MEV in
           decentralized finance (DeFi) environments.
-        volume_24h: 45649027.085865766
+        volume_24h: 44315381.72557899
       - id: card-games
         name: Card Games
-        market_cap: 705880951.5610543
-        market_cap_change_24h: -1.1447032572418694
+        market_cap: 706508324.8536977
+        market_cap_change_24h: -1.0568425877117167
         content: Crypto card games are digital card games that utilize blockchain
           technology allowing players to collect, trade, and play with unique digital
           cards often represented as NFTs.
-        volume_24h: 38968834.30688901
+        volume_24h: 39455283.324998625
       - id: tokenized-treasury-bonds-t-bonds
         name: Tokenized Treasury Bonds (T-Bonds)
-        market_cap: 691404487.1128472
-        market_cap_change_24h: 0.03464748012773248
+        market_cap: 691423149.0713246
+        market_cap_change_24h: 0.03734755291055285
         content: 'A Tokenized Treasury Bond (T-Bond) is a digital version of a U.S.
           government debt security represented on a blockchain. '
-        volume_24h: 14477.560659048744
+        volume_24h: 14479.614858523373
       - id: lrtfi
         name: LRTfi
-        market_cap: 684028823.320892
-        market_cap_change_24h: -3.492807223715376
+        market_cap: 683560190.9090872
+        market_cap_change_24h: -3.5589249032126973
         content: LRTfi refers to DeFi protocols that are built upon Liquid Restaking
           Tokens, allowing users to earn additional yield from their staked assets
           by restaking them.
-        volume_24h: 52638493.541254945
+        volume_24h: 53225689.60726966
       - id: fixed-interest
         name: Fixed Interest
-        market_cap: 677730017.9939744
-        market_cap_change_24h: -3.390578878924624
+        market_cap: 677690814.7007406
+        market_cap_change_24h: -3.396167250938267
         content: Protocols that involved in providing financial products that include
           fixed interest.
-        volume_24h: 53880665.03695238
+        volume_24h: 54449209.17309025
       - id: yield-tokenization
         name: Yield Tokenization Protocol
-        market_cap: 668422845.2054622
-        market_cap_change_24h: -3.8974087184740864
+        market_cap: 672112174.4580686
+        market_cap_change_24h: -3.3669748713825416
         content: "Yield tokenization protocol refers to protocol taking a yield-bearing\
           \ asset and splitting the future yield stream out to distinct token.\r\n"
-        volume_24h: 52831050.074077755
+        volume_24h: 52636186.04777589
       - id: seigniorage
         name: Seigniorage
-        market_cap: 641467265.9490335
-        market_cap_change_24h: -0.5886523806041409
+        market_cap: 641682591.6428462
+        market_cap_change_24h: -0.5552822952774402
         content: In the case of algorithmic stablecoins, seigniorage is generated
           when the stablecoin's value rises above its peg (e.g., $1). The protocol
           can then mint new tokens and sell them on the open market, generating revenue.
           This revenue is used to maintain the stablecoin's peg to its target value.
           If the stablecoin's value falls below its peg, the protocol can buy back
           tokens, reducing the supply and helping to restore the peg.
-        volume_24h: 15995075.531460421
+        volume_24h: 15893382.591733735
       - id: yield-aggregator
         name: Yield Aggregator
-        market_cap: 640410162.8189735
-        market_cap_change_24h: -1.0507517683303194
+        market_cap: 640937956.5213331
+        market_cap_change_24h: -0.9692027969023777
         content: Yield aggregators are protocols that collate multiple yield farms
           in a single place in order to ease the process of farming. With many new
           farms popping up on the market, it can be tedious for one to hop from farm
           to farm. However, with yield aggregators, that isn’t necessary as it’s done
           automatically in order to maximize the yield generated for users.
-        volume_24h: 46952724.65614592
+        volume_24h: 46819913.30985772
       - id: decentralized-science-desci
         name: Decentralized Science (DeSci)
-        market_cap: 638501315.2147658
-        market_cap_change_24h: 3.4410557559703783
+        market_cap: 636399164.9470628
+        market_cap_change_24h: 3.100494761235784
         content: 'Decentralized Science aims to leverage the blockchain and Web3 tools
           to create an open ecosystem to conduct, and disseminate scientific research. '
-        volume_24h: 37495368.37122251
+        volume_24h: 37521173.27354995
       - id: appchains
         name: Appchains
-        market_cap: 632487188.289534
-        market_cap_change_24h: -1.1059105768120958
+        market_cap: 632322676.6596723
+        market_cap_change_24h: -1.1316331971843694
         content: An appchain (application-specific blockchain) is a specialized blockchain
           designed to optimize performance and efficiency, tailored for particular
           tasks or specific use cases.
-        volume_24h: 45496604.66646387
+        volume_24h: 45506151.13863825
       - id: impossible-launchpad
         name: Impossible Finance Launchpad
-        market_cap: 622276381.9497471
-        market_cap_change_24h: -4.506388419013621
+        market_cap: 621115970.6378239
+        market_cap_change_24h: -4.6844634196231105
         content: Impossible Finance Launchpad is a platform for crypto projects to
           hold Initial DEX Offerings (IDOs). Participants are able to gain early access
           to public and special token sales on the platform.
-        volume_24h: 42086213.195654094
+        volume_24h: 41816085.55221436
       - id: yield-bearing-tokens
         name: Yield-Bearing
-        market_cap: 601373465.7527025
-        market_cap_change_24h: 0.3740552186948723
+        market_cap: 601114216.7300638
+        market_cap_change_24h: 0.3307844773076423
         content: Yield-bearing tokens generate passive income for holders by accruing
           rewards or interest over time, typically through staking, lending, or yield-generating
           protocols.
-        volume_24h: 2686952.5276644677
+        volume_24h: 2207924.3624041644
       - id: algorithmic-stablecoin
         name: Algorithmic Stablecoin
-        market_cap: 584179905.3248259
-        market_cap_change_24h: 2.9829150857014772
+        market_cap: 584097711.074348
+        market_cap_change_24h: 2.9684253652568944
         content: An algorithmic stablecoin is a type of stablecoin that maintains
           its peg to a specific value, such as a fiat currency or other assets through
           algorithmic mechanisms. These mechanisms adjust the supply of the stablecoin
           based on market demand often by issuing more coins when the price is above
           the peg and buying back or burning coins when the price is below the peg.
-        volume_24h: 38896122.940785915
+        volume_24h: 38923267.93852602
       - id: communication
         name: Communication
-        market_cap: 582424186.1184586
-        market_cap_change_24h: -0.5111293838255746
+        market_cap: 582222008.7125826
+        market_cap_change_24h: -0.545665040575626
         content: ''
-        volume_24h: 11407535.049810179
+        volume_24h: 11418155.776381118
       - id: prediction-markets
         name: Prediction Markets
-        market_cap: 557600572.0320725
-        market_cap_change_24h: -3.536453115786546
+        market_cap: 557907137.7156366
+        market_cap_change_24h: -3.483417995894538
         content: A crypto prediction market is a marketplace where people can bet
           on the outcome of future events using crypto.
-        volume_24h: 46470434.51653677
+        volume_24h: 46007309.386813626
       - id: zoo-themed
         name: Zoo-Themed
-        market_cap: 536607182.7996451
-        market_cap_change_24h: -2.0865168073824014
+        market_cap: 535492558.9260831
+        market_cap_change_24h: -2.289899671809797
         content: Meme coins related to animals in the zoo.
-        volume_24h: 173234073.28177541
+        volume_24h: 171950178.6039191
       - id: runes
         name: Runes
-        market_cap: 535338107.8506157
-        market_cap_change_24h: -0.3759422762635002
+        market_cap: 535441455.32077783
+        market_cap_change_24h: -0.356709768466933
         content: Runes is a token standard on Bitcoin that improve the creation of
           fungible tokens on the blockchain.
-        volume_24h: 12987821.749829061
+        volume_24h: 12926830.859933646
       - id: synthetic-assets
         name: Synthetic Issuer
-        market_cap: 515293205.75992227
-        market_cap_change_24h: 1.5019703647877038
+        market_cap: 515490342.632148
+        market_cap_change_24h: 1.5408022002142103
         content: Issuer of synthetic asset.
-        volume_24h: 99415643.17680337
+        volume_24h: 100412254.48667356
       - id: infofi
         name: InfoFi
-        market_cap: 512232453.1742064
-        market_cap_change_24h: -2.7630423053993267
+        market_cap: 511735832.97320646
+        market_cap_change_24h: -2.857315593192144
         content: "InfoFi combines blockchain and AI to monetise and trade attention,\
           \ influence, and data as assets. It uses decentralised platforms to aggregate,\
           \ verify, and distribute information, enabling users to be rewarded from\
           \ their engagement or content.\r\n\r\n"
-        volume_24h: 80725553.35958037
+        volume_24h: 80738096.14897491
       - id: gambling
         name: Gambling (GambleFi)
-        market_cap: 492736492.0109813
-        market_cap_change_24h: -1.2931231348952483
+        market_cap: 493155035.68680054
+        market_cap_change_24h: -1.2092788494778102
         content: GambleFi refers to decentralized gambling platforms and tokens leveraging
           blockchain technology and smart contracts.
-        volume_24h: 15834367.713744786
+        volume_24h: 19058976.48501185
       - id: nft-marketplace
         name: NFT Marketplace
-        market_cap: 488269970.22240746
-        market_cap_change_24h: -2.033024237209062
+        market_cap: 488575387.37141424
+        market_cap_change_24h: -1.9717450345977292
         content: A NFT marketplace is a platform where users can buy, sell, and trade
           NFTs.
-        volume_24h: 48892417.293514915
+        volume_24h: 49203292.589185975
       - id: eur-stablecoin
         name: EUR Stablecoin
-        market_cap: 480222860.1647179
-        market_cap_change_24h: 0.16256962164800137
+        market_cap: 480163728.8686884
+        market_cap_change_24h: 0.1502363009199078
         content: A EUR stablecoin is a type of cryptocurrency that is designed to
           maintain a stable value by being pegged to the Euro.
-        volume_24h: 57677722.89286155
+        volume_24h: 57929802.778802544
       - id: axie-infinity
         name: Axie Infinity Ecosystem
-        market_cap: 445129075.82283247
-        market_cap_change_24h: -2.062565683905158
+        market_cap: 445776005.6605952
+        market_cap_change_24h: -1.9202279847200676
         content: ''
-        volume_24h: 29664672.366462186
+        volume_24h: 31032951.645702444
       - id: intent
         name: Intent
-        market_cap: 406748840.2789062
-        market_cap_change_24h: -2.684105233571374
+        market_cap: 406896599.7998747
+        market_cap_change_24h: -2.648753319639798
         content: Intents are signed messages that simplify on-chain goals. They are
           handled by solvers to enhance user experiences, optimize transactions, and
           incentivize efficient execution paths.
-        volume_24h: 68639033.74052592
+        volume_24h: 68315730.84001265
       - id: tap-to-earn
         name: Tap to Earn
-        market_cap: 403825040.6827358
-        market_cap_change_24h: -5.641771459052156
+        market_cap: 403446409.1953489
+        market_cap_change_24h: -5.730242932636973
         content: 'Tap-to-earn (T2E) combines simple and addictive gameplay with the
           potential to earn cryptocurrency. These games, often hosted on platforms
           like Telegram, allow users to earn digital assets by performing actions
           such as repeatedly tapping on a screen. '
-        volume_24h: 138146295.22275072
+        volume_24h: 140287931.83526865
       - id: breeding
         name: Breeding
-        market_cap: 399684703.0634114
-        market_cap_change_24h: -1.9405805106731122
+        market_cap: 400349857.4126976
+        market_cap_change_24h: -1.7773902537984139
         content: Breeding games involve players using blockchain technology to breed
           unique digital creatures or items, represented as NFTs, creating offspring
           with potentially enhanced value and rarity.
-        volume_24h: 27080038.672098506
+        volume_24h: 27306802.594195526
       - id: avalanche-subnet
         name: Avalanche L1
-        market_cap: 393911776.1377743
-        market_cap_change_24h: 0.5329232221727089
+        market_cap: 394567252.18058515
+        market_cap_change_24h: 0.7002117539652427
         content: Avalanche L1 are specialized sets of validators on Avalanche that
           allow the creation of customized independent networks with specific rules
           and governance to enable scalable and tailored blockchain solutions for
           various applications.
-        volume_24h: 13863527.142982386
+        volume_24h: 13056626.565716546
       - id: rebase-tokens
         name: Rebase Tokens
-        market_cap: 387687526.45640695
-        market_cap_change_24h: -0.1120460311451622
+        market_cap: 387580502.0122874
+        market_cap_change_24h: -0.13962095171449918
         content: 'Rebase tokens are cryptocurrencies that are usually pegged to a
           certain value, and they control their prices by algorithmically adjusting
           their token’s circulating supply.  '
-        volume_24h: 1885254.5442987815
+        volume_24h: 1884521.499162143
       - id: layer-3-l3
         name: Layer 3 (L3)
-        market_cap: 367364075.46554005
-        market_cap_change_24h: -0.9976941351680821
+        market_cap: 366940253.46838313
+        market_cap_change_24h: -1.1119114955389904
         content: Layer 3 protocols are built on Layer 2, enabling hosting of application-specific
           decentralized applications while addressing issues such as scalability,
           interoperability and customization.
-        volume_24h: 38956708.50582494
+        volume_24h: 38364145.270654924
       - id: inscriptions
         name: Inscriptions
-        market_cap: 363433227.9720176
-        market_cap_change_24h: -1.4666062739065195
+        market_cap: 363392905.07056123
+        market_cap_change_24h: -1.4775385498229183
         content: Inscriptions are metadata added to units of cryptocurrencies
-        volume_24h: 67238210.56309937
+        volume_24h: 67117832.35845625
       - id: rollups-as-a-service-raas
         name: Rollups-as-a-Service (RaaS)
-        market_cap: 358458593.98987263
-        market_cap_change_24h: -1.0567028441774737
+        market_cap: 358478924.04575276
+        market_cap_change_24h: -1.0510912539021435
         content: Rollups-as-a-Service (RaaS) streamlines the deployment and maintenance
           of custom application-specific rollups by offering a simplified interface
           including no-code deployment options.
-        volume_24h: 24189896.57092356
+        volume_24h: 23050530.234718893
       - id: massively-multiplayer-online-mmo
         name: MMO
-        market_cap: 357442093.2863713
-        market_cap_change_24h: -1.2013417155590682
+        market_cap: 357734358.5797134
+        market_cap_change_24h: -1.120558228142058
         content: Online games that host large numbers of players.
-        volume_24h: 62658137.50274658
+        volume_24h: 61927488.383216426
       - id: four-meme-ecosystem
         name: Four.meme Ecosystem
-        market_cap: 355884827.14355165
-        market_cap_change_24h: 1.7328772589202603
+        market_cap: 355933140.2195357
+        market_cap_change_24h: 1.7466879860269395
         content: Four.meme Ecosystem consists of tokens launched via four.meme.
-        volume_24h: 212866972.51063326
+        volume_24h: 211399623.81692484
       - id: action-games
         name: Action Games
-        market_cap: 350993540.30662405
-        market_cap_change_24h: -0.5677572332836966
+        market_cap: 351238760.970816
+        market_cap_change_24h: -0.49828917244118104
         content: Fast-paced games that emphasize combat, reflexes, and real-time challenges.
-        volume_24h: 65726059.572419085
+        volume_24h: 66291120.45108286
       - id: brc-20
         name: BRC-20
-        market_cap: 336467082.9538275
-        market_cap_change_24h: -1.5079020855357572
+        market_cap: 336368508.1277546
+        market_cap_change_24h: -1.5367573344244068
         content: 'BRC-20 is a token standard on the Bitcoin blockchain that allows
           for the creation of tokens that represent ownership of assets. '
-        volume_24h: 66159000.6477771
+        volume_24h: 66024479.85037112
       - id: ton-meme-coins
         name: TON Meme
-        market_cap: 328396454.5940877
-        market_cap_change_24h: -0.5787120645558369
+        market_cap: 328277658.52611226
+        market_cap_change_24h: -0.6146773069162811
         content: Meme coins native to the TON network.
-        volume_24h: 37132675.26955669
+        volume_24h: 36481230.34843401
       - id: tokenized-t-bills
         name: Tokenized Treasury Bills (T-Bills)
-        market_cap: 326187617.2223567
-        market_cap_change_24h: 0.17060163671550757
+        market_cap: 326047580.95419663
+        market_cap_change_24h: 0.1275971923653414
         content: A Tokenized Treasury Bill (T-Bill) is a digital version of a U.S.
           government short-term debt security represented on a blockchain.
-        volume_24h: 305365.1120978631
+        volume_24h: 307672.61934710987
       - id: nftfi
         name: NFTFi
-        market_cap: 318636090.6258243
-        market_cap_change_24h: -2.1990743397251973
+        market_cap: 319039221.5037945
+        market_cap_change_24h: -2.0753389117945757
         content: NFTFi combines NFTs with DeFi to provide financial utility and liquidity
           to NFTs.
-        volume_24h: 25571185.117467713
+        volume_24h: 25795862.1726555
       - id: bridged-dai
         name: Bridged DAI
-        market_cap: 317319869.8909513
-        market_cap_change_24h: 0.809953847412706
+        market_cap: 317238649.44605976
+        market_cap_change_24h: 0.7841507695789938
         content: Bridged DAI refers to DAI that has been transferred from its native
           blockchain to a different blockchain through "bridging'.
-        volume_24h: 32646994.687350716
+        volume_24h: 32976556.542378858
       - id: tourism
         name: Tourism
-        market_cap: 312349146.8569301
-        market_cap_change_24h: -0.2926439511199037
+        market_cap: 312907219.4487352
+        market_cap_change_24h: -0.11449733803592466
         content: A coin or token that leverages blockchain technology to improve various
           aspects of the tourism industry.
-        volume_24h: 5878626.303128847
+        volume_24h: 5855441.603332665
       - id: yearn-yfi-partnerships-mergers
         name: Yearn Ecosystem
-        market_cap: 310469779.0501046
-        market_cap_change_24h: -2.375769845948612
+        market_cap: 310534277.491935
+        market_cap_change_24h: -2.355488932459727
         content: "Interconnected platforms and services built around Yearn.\r\n"
-        volume_24h: 30410822.631395146
+        volume_24h: 30372986.896541886
       - id: real-estate
         name: Tokenized Real Estate
-        market_cap: 308803255.6305373
-        market_cap_change_24h: 0.386136716115877
+        market_cap: 308751834.9261269
+        market_cap_change_24h: 0.3694208111865756
         content: Tokenized real estate in crypto refers to the integration of blockchain
           technology and cryptocurrencies into the real estate market. This can involve
           tokenizing real estate assets, which means dividing the ownership of a property
           into digital tokens that can be bought, sold, or traded on a blockchain.
           This allows for fractional ownership, where multiple investors can own a
           portion of a property.
-        volume_24h: 35320526.34574612
+        volume_24h: 34954137.47904187
       - id: retail
         name: Retail
-        market_cap: 302508005.34524983
-        market_cap_change_24h: 2.845792217408718
+        market_cap: 302181735.2901548
+        market_cap_change_24h: 2.7348678725975186
         content: Retail involves the sale of goods and services to consumers for their
           personal use, rather than for resale on blockchain.
-        volume_24h: 43673569.888705134
+        volume_24h: 43736511.21419735
       - id: daomaker-ecosystem
         name: DaoMaker Launchpad
-        market_cap: 298944258.08181185
-        market_cap_change_24h: -2.128307390971235
+        market_cap: 298938012.16628903
+        market_cap_change_24h: -2.1303522481898796
         content: DaoMaker Launchpad is a platform for crypto projects to hold Initial
           DEX Offerings (IDOs). Participants are able to gain early access to public
           and special token sales on the platform.
-        volume_24h: 28713491.486713525
+        volume_24h: 26813569.712271582
       - id: yield-optimizer
         name: Yield Optimizer
-        market_cap: 293345854.4609004
-        market_cap_change_24h: -0.291878638324386
+        market_cap: 293490781.44130415
+        market_cap_change_24h: -0.24261802416901704
         content: Yield optimizer passively maximizing return by using an automated
           service that actively managing the fund.
-        volume_24h: 15575142.433486264
+        volume_24h: 15769752.440894919
       - id: binance-wallet-ido
         name: Binance Wallet IDO
-        market_cap: 289422139.53175145
-        market_cap_change_24h: -0.9862219088778348
+        market_cap: 289541166.824751
+        market_cap_change_24h: -0.9455016585372313
         content: Tokens and coins launched on Binance Wallet IDO.
-        volume_24h: 605867259.5760835
-      - id: marketing
-        name: Marketing
-        market_cap: 280994155.21687394
-        market_cap_change_24h: 1.3907684120714099
-        content: It combines the existing Web2 and Web3 marketing channels to identify
-          the most valuable audiences and reward them through on and off-chain rewards.
-        volume_24h: 38088380.238460325
+        volume_24h: 601712311.7501819
       - id: anime-themed-coins
         name: Anime-Themed
-        market_cap: 280986389.5858701
-        market_cap_change_24h: 5.29145261063531
+        market_cap: 281132953.12196815
+        market_cap_change_24h: 5.34637302026177
         content: Meme coins which are inspired by anime.
-        volume_24h: 251821572.38400778
+        volume_24h: 228766961.35899135
+      - id: marketing
+        name: Marketing
+        market_cap: 280317133.54446334
+        market_cap_change_24h: 1.1464795315985854
+        content: It combines the existing Web2 and Web3 marketing channels to identify
+          the most valuable audiences and reward them through on and off-chain rewards.
+        volume_24h: 38030938.25986504
       - id: tiktok-meme
         name: TikTok Meme
-        market_cap: 272342887.4005379
-        market_cap_change_24h: -2.4002489553018607
+        market_cap: 272056778.7559267
+        market_cap_change_24h: -2.5027819524082577
         content: 'TikTok Meme Coins are tokens inspired by viral TikTok trends. '
-        volume_24h: 123311531.06331226
+        volume_24h: 122627486.7552583
       - id: healthcare
         name: Healthcare
-        market_cap: 268822436.33092123
-        market_cap_change_24h: 0.5772835247354071
+        market_cap: 268897929.86049324
+        market_cap_change_24h: 0.6055286899518256
         content: A coin or token that leverages blockchain technology to improve various
           aspects of the healthcare industry.
-        volume_24h: 3638300.7883219705
+        volume_24h: 3663200.1148876897
       - id: memorial-themed
         name: Memorial Themed
-        market_cap: 267329616.6988882
-        market_cap_change_24h: -1.4430483736619337
+        market_cap: 266903113.29574785
+        market_cap_change_24h: -1.6002882477575915
         content: Meme coins dedicated to animals that died too soon or were tragically
           killed.
-        volume_24h: 76202046.39717112
+        volume_24h: 75653430.2314865
       - id: olympus-pro
         name: Olympus Pro Ecosystem
-        market_cap: 266359191.22196668
-        market_cap_change_24h: -1.4977943149200785
+        market_cap: 266358236.21275115
+        market_cap_change_24h: -1.4981474865667865
         content: Olympus Pro designed to provide liquidity management solutions for
           DeFi protocols. They offers a service called "bonds-as-a-service," which
           allows protocols to own their liquidity by offering discounted OHM tokens
           in exchange for liquidity provider (LP) tokens. This helps protocols to
           reduce their reliance on liquidity mining incentives and gain more control
           over their liquidity.
-        volume_24h: 12319046.816285813
+        volume_24h: 12779958.804965891
       - id: aave-tokens
         name: Aave Tokens
-        market_cap: 256457881.77019915
-        market_cap_change_24h: -0.24247446818472193
+        market_cap: 256366069.14480382
+        market_cap_change_24h: -0.2781879360602165
         content: Aave Tokens are balance tokens on the Aave Protocol which represents
           a lending balance on the Aave money market.
-        volume_24h: 13838909.627083119
+        volume_24h: 13842310.15110869
       - id: token-2022
         name: Solana Token-2022
-        market_cap: 255916107.77425486
-        market_cap_change_24h: 0.36466694227073465
+        market_cap: 256303569.05226684
+        market_cap_change_24h: 0.5166207307950644
         content: Solana Token-2022 is a new token standard on Solana that provides
           additional fungible and non-fungible token functionality.
-        volume_24h: 44662673.25834143
+        volume_24h: 45677385.29231429
       - id: discord-bots
         name: Discord Bots
-        market_cap: 255561939.5204635
-        market_cap_change_24h: -2.7299785266985754
+        market_cap: 255327141.8679184
+        market_cap_change_24h: -2.819345404833077
         content: Discord bots are tools that automate tasks to the Discord server,
           making them more engaging and interactive for users.
-        volume_24h: 27059199.03216357
+        volume_24h: 27142914.181397814
       - id: cybersecurity
         name: Cybersecurity
-        market_cap: 251969524.72316137
-        market_cap_change_24h: 0.17032498747045907
+        market_cap: 251532720.05519328
+        market_cap_change_24h: -0.0033264316623966166
         content: Cybersecurity projects enhance measures through services like smart
           contract auditing, security analysis, and bug bounty programs.
-        volume_24h: 53598134.62772071
+        volume_24h: 53360186.48105379
       - id: metagovernance
         name: Metagovernance
-        market_cap: 250430937.7464149
-        market_cap_change_24h: -0.27234433519626
+        market_cap: 250438637.75634348
+        market_cap_change_24h: -0.2692780050308114
         content: Metagovernance refers to projects or protocols that primarily hold
           DAO tokens and actively participates in the governance process of those
           DAOs.
-        volume_24h: 6615536.590210278
+        volume_24h: 6626051.712474436
       - id: believe-app-ecosystem
         name: Believe.app Ecosystem
-        market_cap: 235927356.77332053
-        market_cap_change_24h: 15.764611551660984
+        market_cap: 236599486.88230246
+        market_cap_change_24h: 16.09441171575653
         content: Believe.app Ecosystem consists of tokens launched via believe.app.
-        volume_24h: 80738227.9890975
+        volume_24h: 80685992.3877637
       - id: parody-meme-coins
         name: Parody Meme
-        market_cap: 230014566.6305563
-        market_cap_change_24h: 78.80409454199332
+        market_cap: 229106325.1081765
+        market_cap_change_24h: 78.0980640265634
         content: Meme coins which are inspired by the names of well-known brands,
           individuals, or cultural icons.
-        volume_24h: 46574006.12693884
+        volume_24h: 46814737.925719745
       - id: insurance
         name: Insurance
-        market_cap: 227579106.14601028
-        market_cap_change_24h: -1.4047063825804242
+        market_cap: 226294419.07396954
+        market_cap_change_24h: -1.9612781224882798
         content: Decentralized insurance provides the infrastructure for members to
           buy cover, underwrite risk, assess claims, and build risk management businesses.
-        volume_24h: 1358225.5136511517
+        volume_24h: 1356798.0827852527
       - id: e-commerce
         name: E-commerce
-        market_cap: 217543729.5992571
-        market_cap_change_24h: 33.42445515173091
+        market_cap: 219569449.80900204
+        market_cap_change_24h: 34.66687485177447
         content: Tokens or projects that facilitate online shopping, digital marketplaces,
           and payment solutions within the e-commerce industry.
-        volume_24h: 30206749.056319553
+        volume_24h: 35804520.756046936
       - id: move-to-earn
         name: Move To Earn
-        market_cap: 213397864.2738265
-        market_cap_change_24h: 1.0262709931621337
+        market_cap: 213304348.94447878
+        market_cap_change_24h: 0.9819992051719045
         content: The move-to-earn model is often implemented through mobile applications
           that use technologies such as GPS tracking to monitor users' physical activity.
           These apps then reward users with tradable tokens or NFTs based on the distance
           they cover or the number of steps they take.
-        volume_24h: 32844358.91971332
+        volume_24h: 32657301.174439896
       - id: sports-games
         name: Sports Games
-        market_cap: 206075952.0366465
-        market_cap_change_24h: 0.654690372072639
+        market_cap: 206217270.60742676
+        market_cap_change_24h: 0.723715296354843
         content: Sports game simulates the playing of real-world sports including
           sports such as football, badminton and basketball.
-        volume_24h: 19659864.7597739
+        volume_24h: 19726248.100608982
       - id: poolz-finance-launchpad
         name: Poolz Finance Launchpad
-        market_cap: 205198470.582188
-        market_cap_change_24h: 5.885901841038921
+        market_cap: 205514001.36140898
+        market_cap_change_24h: 6.048721091209872
         content: Poolz Finance Launchpad is a platform for crypto projects to hold
           Initial DEX Offerings (IDOs). Participants are able to gain early access
           to public and special token sales on the platform.
-        volume_24h: 98711295.51013361
+        volume_24h: 98909883.7658848
       - id: energy
         name: Energy
-        market_cap: 202420938.95984778
-        market_cap_change_24h: -0.7139338763708093
+        market_cap: 202373694.24296096
+        market_cap_change_24h: -0.7371070822106817
         content: Projects focused on renewable energy, green technology, and sustainable
           practices within the cryptocurrency ecosystem.
-        volume_24h: 7794853.9149656175
+        volume_24h: 7775810.665199532
       - id: compound-tokens
         name: Compound Tokens
-        market_cap: 202361828.74205294
-        market_cap_change_24h: -1.1580138108788252
+        market_cap: 202285961.72148946
+        market_cap_change_24h: -1.195070438827687
         content: Compound Tokens are balance tokens on the Compound Finance Protocol
           which represents a lending balance on the Compound money market.
-        volume_24h: 300.17963194125065
-      - id: cefi
-        name: CeFi
-        market_cap: 195350393.1131543
-        market_cap_change_24h: -0.182211891698349
-        content: ''
-        volume_24h: 916743.1868562144
+        volume_24h: 300.0771561021416
       - id: defi-index
         name: DeFi Index
-        market_cap: 195297920.88056087
-        market_cap_change_24h: -0.4670157642896164
+        market_cap: 195248960.9670265
+        market_cap_change_24h: -0.4919680335202692
         content: A DeFi index is an indicator that tracks the performance of a group
           of DeFi cryptocurrencies.
-        volume_24h: 1482485.840759926
+        volume_24h: 1482544.7875897922
+      - id: cefi
+        name: CeFi
+        market_cap: 194444354.40804273
+        market_cap_change_24h: -0.645168623156578
+        content: ''
+        volume_24h: 906337.9310249501
       - id: fan-token
         name: Fan Token
-        market_cap: 190155113.43772626
-        market_cap_change_24h: 0.2963707232398595
+        market_cap: 189978683.21480545
+        market_cap_change_24h: 0.20331347789450122
         content: Fan tokens let sporting organizations and other celebrities engage
           with their communities, where holders can access exclusive benefits.
-        volume_24h: 37559402.284881435
+        volume_24h: 36819633.14874465
       - id: chaingpt-pad
         name: ChainGPT Launchpad
-        market_cap: 187867744.46878606
-        market_cap_change_24h: -0.907544771786164
+        market_cap: 187788243.05534878
+        market_cap_change_24h: -0.949478475061779
         content: ChainGPT Lauchpad is a platform for crypto projects to hold Initial
           DEX Offerings (IDOs). Participants are able to gain early access to public
           and special token sales on the platform.
-        volume_24h: 33146265.773960464
+        volume_24h: 33116593.69217316
       - id: guild-scholarship
         name: Guild and Scholarship
-        market_cap: 183964740.3415099
-        market_cap_change_24h: -1.2969190629337723
+        market_cap: 183906188.1218911
+        market_cap_change_24h: -1.3283342377186276
         content: Guilds are decentralized autonomous organizations (DAOs) that invests
           in NFTs like game assets and rent them out to players. Players who receive
           rented game items are known as scholars and can be said to receive a scholarship.
           Guilds are an important component in the play to earn (P2E) ecosystem as
           these games require an upfront investment capital for players to participate
           in.
-        volume_24h: 22473305.294335846
+        volume_24h: 22289753.22938466
       - id: farcaster-ecosystem
         name: Farcaster Ecosystem
-        market_cap: 172758365.59499213
-        market_cap_change_24h: -3.841203635138113
+        market_cap: 172574059.07955107
+        market_cap_change_24h: -3.943790231312347
         content: It consists of native tokens on Farcaster Ecosystem.
-        volume_24h: 14843869.872895097
+        volume_24h: 14575113.737353547
       - id: sui-meme
         name: Sui Meme
-        market_cap: 172150741.4874565
-        market_cap_change_24h: -0.661111382849564
+        market_cap: 172180730.50954577
+        market_cap_change_24h: -0.6438063390296941
         content: Meme coins native to the Sui network.
-        volume_24h: 27913574.266998038
+        volume_24h: 28013018.90943385
       - id: arcade-games
         name: Arcade Games
-        market_cap: 166771365.61550736
-        market_cap_change_24h: -13.755988574219211
+        market_cap: 166528903.95099458
+        market_cap_change_24h: -13.881375006640498
         content: Classic-style games with simple mechanics, high replayability, and
           score-based progression.
-        volume_24h: 106649035.46291444
+        volume_24h: 108900482.33586264
       - id: eco-friendly
         name: Regenerative Finance (ReFi)
-        market_cap: 162124454.80944872
-        market_cap_change_24h: 1.3144528121933174
+        market_cap: 161684166.36320537
+        market_cap_change_24h: 1.039308738073812
         content: 'Regenerative finance (ReFi) aims to create economic systems that
           go beyond generating financial returns to focus on restoring and enhancing
           social, environmental, and economic well-being. '
-        volume_24h: 2805622.0664551603
+        volume_24h: 2809564.930865626
+      - id: liquid-restaked-sol
+        name: Liquid Restaked SOL
+        market_cap: 158183970.0842558
+        market_cap_change_24h: 0.6046988098540312
+        content: Liquid Restaked SOL is a tokenized representation of restaked Ethereum
+          that can be traded or used in various DeFi applications.
+        volume_24h: 943584.5104688641
       - id: adventure-games
         name: Adventure Games
-        market_cap: 159347029.00872028
-        market_cap_change_24h: -2.0081607859072497
+        market_cap: 157837199.64641887
+        market_cap_change_24h: -2.9366434631918024
         content: 'Adventure game is a video game genre where players embark on a journey
           in a narrative-driven world, solving puzzles, interacting with characters,
           and making decisions that can influence the outcome of the story. '
-        volume_24h: 10978261.900368208
-      - id: liquid-restaked-sol
-        name: Liquid Restaked SOL
-        market_cap: 158097697.95193827
-        market_cap_change_24h: 0.5498299006790542
-        content: Liquid Restaked SOL is a tokenized representation of restaked Ethereum
-          that can be traded or used in various DeFi applications.
-        volume_24h: 939760.919347817
+        volume_24h: 10984372.218649631
       - id: celebrity-themed-coins
         name: Celebrity-Themed
-        market_cap: 156369653.7231241
-        market_cap_change_24h: 170.26715976025375
+        market_cap: 155520176.08753
+        market_cap_change_24h: 168.79893429332017
         content: Meme coins which are inspired by celebrity.
-        volume_24h: 21737334.061172593
+        volume_24h: 19072369.27808639
       - id: synths
         name: Synthetic Asset
-        market_cap: 155383411.53915966
-        market_cap_change_24h: 2.950454271524384
+        market_cap: 155515292.9972743
+        market_cap_change_24h: 3.0378333288407626
         content: Synthetic assets are financial instruments that mimic the value of
           assets, such as stocks, bonds, commodities, or cryptocurrencies.
-        volume_24h: 6277749.204346852
+        volume_24h: 6283273.036588221
       - id: strategy-games
         name: Strategy Games
-        market_cap: 150190299.36535138
-        market_cap_change_24h: -0.15841353921553072
+        market_cap: 149937304.92147076
+        market_cap_change_24h: -0.3265959501271642
         content: Strategy game is a video game genre where players engage in planning,
           resource management, and decision-making to achieve specific objectives.
-        volume_24h: 25029351.614718176
+        volume_24h: 25052156.81297404
       - id: binance-megadrop
         name: Binance Megadrop
-        market_cap: 147688492.11916193
-        market_cap_change_24h: -0.798955528312379
+        market_cap: 147602071.3420232
+        market_cap_change_24h: -0.8570035944359116
         content: "Binance Megadrop is an airdrop program by Binance. It allows users\
           \ to earn rewards by subscribing to BNB to Locked Products and completing\
           \ tasks within their Binance Web3 Wallet.\r\n"
-        volume_24h: 25648559.56301512
+        volume_24h: 25664095.20382475
       - id: music
         name: Music
-        market_cap: 146301620.59565544
-        market_cap_change_24h: -1.4413507563059618
+        market_cap: 146074121.61063215
+        market_cap_change_24h: -1.5946094322995528
         content: Cryptocurrency projects that are related to music is aimed at disrupting
           the record publishing industry. The goal is to simplify the process of tracking,
           collecting, and distributing song royalties to musicians in a decentralized
           manner. Fans are also able to directly support their favorite artists directly
           without going through an intermediary.
-        volume_24h: 8910741.876976686
+        volume_24h: 8904703.259650713
       - id: wojak-themed
         name: Wojak-Themed
-        market_cap: 143753692.74968994
-        market_cap_change_24h: -3.1058337945643184
+        market_cap: 143847867.2358262
+        market_cap_change_24h: -3.042357454322494
         content: Meme coins related to Wojak.
-        volume_24h: 16231728.963624448
+        volume_24h: 16229863.986883778
       - id: quest-to-earn
         name: Quest-to-Earn
-        market_cap: 143530883.8266622
-        market_cap_change_24h: -4.023460540136171
+        market_cap: 143510745.42661747
+        market_cap_change_24h: -4.03692672870146
         content: Quest-to-Earn refers to a gamified system in which users complete
           specific tasks or challenges to earn rewards, which can be in the form of
           points, tokens, or other incentives.
-        volume_24h: 7820180.825827833
+        volume_24h: 7821204.127280952
       - id: tokenized-silver
         name: Tokenized Silver
-        market_cap: 138925189.06056195
-        market_cap_change_24h: -1.2688365781175266
+        market_cap: 138988523.88520393
+        market_cap_change_24h: -1.2238258715328698
         content: 'Tokenized silver refers to digital representation of physical silver
           on a blockchain platform. '
-        volume_24h: 501988.5418198178
+        volume_24h: 501981.13820964337
       - id: charity
         name: Charity
-        market_cap: 132865156.05877027
-        market_cap_change_24h: -1.1925126154794683
+        market_cap: 132967744.6754192
+        market_cap_change_24h: -1.1162208039464987
         content: 'Charity tokens and coins involves using cryptocurrencies to support
           charitable causes. '
-        volume_24h: 3248129.9435709165
+        volume_24h: 3447777.6497145826
       - id: hybrid-token-standards
         name: Hybrid Token Standards
-        market_cap: 114724046.3410453
-        market_cap_change_24h: -2.7466867821196863
+        market_cap: 114671003.55402797
+        market_cap_change_24h: -2.791651956765031
         content: Hybrid Token Standards allow tokens to have characteristics of both
           fungible assets and non-fungible tokens.
-        volume_24h: 3797958.255613535
+        volume_24h: 3798286.62371128
       - id: virtual-reality
         name: Virtual Reality
-        market_cap: 110100825.83360033
-        market_cap_change_24h: -4.981252906198011
+        market_cap: 110082845.18779945
+        market_cap_change_24h: -4.996770486770192
         content: Virtual reality (VR) uses computer-generated environments to create
           a simulated experience for users.
-        volume_24h: 12453364.438260278
+        volume_24h: 12437050.914788608
       - id: decentralized-options
         name: Options
-        market_cap: 108591785.6466207
-        market_cap_change_24h: 0.7659042946571052
+        market_cap: 108774945.69327621
+        market_cap_change_24h: 0.9358645510613426
         content: 'Options refer to financial instruments that give holders the right,
           but not the obligation, to buy or sell a cryptocurrency at a predetermined
           price, known as the strike price, before a specific date, known as the expiry
           date. '
-        volume_24h: 2308177.235378896
+        volume_24h: 2298907.9675318487
       - id: paal-ai
         name: PAAL AI Launchpad
-        market_cap: 102909349.87378551
-        market_cap_change_24h: -5.818472036685339
+        market_cap: 102838194.35869107
+        market_cap_change_24h: -5.883592797265701
         content: Projects incubated by PAAL AI, an AI-centric ecosystem built using
           Custom Data Feed and LLMs.
-        volume_24h: 12032555.964768091
+        volume_24h: 12015497.957905317
       - id: liquid-staked-apt
         name: "Liquid Staked APT\t"
-        market_cap: 92064872.20876245
-        market_cap_change_24h: -5.659010461477424
+        market_cap: 92107220.20167771
+        market_cap_change_24h: -5.615615500285966
         content: Liquid staked APT is a tokenized representation of staked Aptos that
           can be traded or used in various DeFi applications.
-        volume_24h: 54448.426466820805
+        volume_24h: 55128.6573820839
       - id: education
         name: Education
-        market_cap: 89135057.22831212
-        market_cap_change_24h: -2.721896567762904
+        market_cap: 88559358.77495933
+        market_cap_change_24h: -3.3501886834855132
         content: Decentralized educational platform built on blockchain technology.
-        volume_24h: 16337026.726165248
+        volume_24h: 16441209.33772384
       - id: clanker-ecosystem
         name: Clanker Ecosystem
-        market_cap: 84659274.5387837
-        market_cap_change_24h: 24.369670081682447
+        market_cap: 84962871.0048863
+        market_cap_change_24h: 24.815671922979202
         content: Clanker Ecosystem consists of tokens launched via Clanker, an autonomous
           memecoin launcher.
-        volume_24h: 12365012.79288091
+        volume_24h: 13067378.921769511
       - id: tron-meme
         name: TRON Meme
-        market_cap: 79841937.17658319
-        market_cap_change_24h: -0.8504660758268721
+        market_cap: 79791968.70706846
+        market_cap_change_24h: -0.9125180580117752
         content: Meme coins native to the TRON network.
-        volume_24h: 23690501.38407694
+        volume_24h: 23812477.90386643
       - id: country-themed-meme-coins
         name: Country-Themed Meme
-        market_cap: 76747695.80731508
-        market_cap_change_24h: -20.116226224921515
+        market_cap: 76557558.88391614
+        market_cap_change_24h: -20.314132557031133
         content: Meme Coins which are inspired by countries but are not affiliated
           with any specific nation.
-        volume_24h: 1760257.92385566
+        volume_24h: 1761059.106294324
       - id: racing-games
         name: Racing Games
-        market_cap: 74851339.99664263
-        market_cap_change_24h: -3.1681043680662304
+        market_cap: 74840723.83460452
+        market_cap_change_24h: -3.181838031278309
         content: Racing game involves competing in races with various vehicles. These
           games can range from realistic simulations to arcade-style fast-paced action.
-        volume_24h: 2903104.35567846
+        volume_24h: 2912653.8108103964
       - id: shooting-games
         name: Shooting Games
-        market_cap: 68212323.41288467
-        market_cap_change_24h: -5.390287491869801
+        market_cap: 68155115.72908607
+        market_cap_change_24h: -5.469633895080262
         content: Shooting games allow players to engage in combat by shooting enemies
           and objects. They can be presented in various perspectives including first-person
           or third-person views.
-        volume_24h: 34080236.09677837
+        volume_24h: 34284482.41501308
       - id: desci-meme
         name: Desci Meme
-        market_cap: 67968118.10424432
-        market_cap_change_24h: -4.350413727039696
+        market_cap: 68074636.828935
+        market_cap_change_24h: -4.200512976052885
         content: ''
-        volume_24h: 7010291.05380593
+        volume_24h: 7149507.517586484
       - id: sun-pump-ecosystem
         name: Sun Pump Ecosystem
-        market_cap: 66843009.54865184
-        market_cap_change_24h: -0.8449847781545325
+        market_cap: 66779357.86738266
+        market_cap_change_24h: -0.939405772477768
         content: Sun Pump Ecosystem consists of tokens launched via sunpump.meme.
-        volume_24h: 22920083.346816853
+        volume_24h: 23040236.11359256
       - id: wall-street-bets-themed-coins
         name: Wall Street Bets Themed
-        market_cap: 57135517.46457136
-        market_cap_change_24h: -7.255743249144891
+        market_cap: 57102718.20651408
+        market_cap_change_24h: -7.308984086814517
         content: Meme coins which are inspired by the popular subreddit r/WallStreetBets.
-        volume_24h: 5134551.467135242
+        volume_24h: 5131448.48060388
       - id: mascot-themed
         name: Mascot-Themed
-        market_cap: 54686154.19957399
-        market_cap_change_24h: -6.287457613547187
+        market_cap: 54734773.2763043
+        market_cap_change_24h: -6.2041418756686175
         content: Meme coins related to Mascot.
-        volume_24h: 9460011.133838411
+        volume_24h: 9316108.679014497
       - id: fractionalized-nft
         name: Fractionalized NFT
-        market_cap: 47264138.14370426
-        market_cap_change_24h: -3.9052617517546824
+        market_cap: 47317512.20460816
+        market_cap_change_24h: -3.7967446685443265
         content: NFT that is being divided into smaller pieces which have more affordable
           pieces.
-        volume_24h: 2657424.754226183
+        volume_24h: 2664406.6786565594
       - id: augmented-reality
         name: Augmented Reality
-        market_cap: 42922894.65465641
-        market_cap_change_24h: -2.1631649565884046
+        market_cap: 42904831.03462406
+        market_cap_change_24h: -2.2043384941051696
         content: Augmented Reality (AR) offers interactive experiences without disconnecting
           users from the real world, allowing them to interact with digital elements
           in a real-world context.
-        volume_24h: 1047645.1774850197
+        volume_24h: 1048224.461740323
       - id: vpn
         name: VPN
-        market_cap: 40488863.19131474
-        market_cap_change_24h: -2.7423448422769
+        market_cap: 40607400.389971904
+        market_cap_change_24h: -2.45760852019528
         content: A Virtual Private Network (VPN) is a technology that creates an encrypted
           connection, allowing users to securely access and transmit data as though
           their devices were directly connected to a private network.
-        volume_24h: 3735521.9488302213
+        volume_24h: 3745429.880193305
       - id: ohm-fork
         name: Ohm Fork
-        market_cap: 38799627.94726277
-        market_cap_change_24h: -1.7333866009627577
+        market_cap: 38695830.55183913
+        market_cap_change_24h: -1.9962710425812689
         content: An Ohm fork is a change to the underlying code of the Olympus DAO's
           OHM protocol that results in a split into a separate versions of the protocol.
-        volume_24h: 47859.458425283345
+        volume_24h: 47806.93445916893
       - id: animal-racing
         name: Animal Racing
-        market_cap: 35864729.25799458
-        market_cap_change_24h: 3.63805924746584
+        market_cap: 35822537.89733418
+        market_cap_change_24h: 3.516139165359583
         content: Animal racing tokens are digital tokens used in virtual animal racing
           games.
-        volume_24h: 714813.8867266012
+        volume_24h: 718046.9303672482
       - id: creatorbid-ecosystem
         name: CreatorBid Ecosystem
-        market_cap: 29538944.324063644
-        market_cap_change_24h: -1.1747063447700963
+        market_cap: 29453524.478900105
+        market_cap_change_24h: -1.4604864048040667
         content: CreatorBid Ecosystem consists of tokens launched via creator.bid.
-        volume_24h: 579752.2032881485
+        volume_24h: 586271.457623201
       - id: nft-lending-borrowing
         name: NFT Lending/Borrowing
-        market_cap: 29141731.996411063
-        market_cap_change_24h: 1.332782257233402
+        market_cap: 29162051.794269048
+        market_cap_change_24h: 1.4034390614380308
         content: Individuals can use their NFTs as collateral to secure loans, or
           lend out their NFTs to others in exchange for interest, creating liquidity
           without the need to sell the NFTs themselves.
-        volume_24h: 2368598.8644585977
+        volume_24h: 2368071.3193976367
       - id: camelot-launchpad
         name: Camelot Launchpad
-        market_cap: 27075553.438280087
-        market_cap_change_24h: -1.8732519610192326
+        market_cap: 27060387.34819144
+        market_cap_change_24h: -1.9282166399225669
         content: Camelot Launchpad is a platform for crypto projects to hold Initial
           DEX Offerings (IDOs). Participants are able to gain early access to public
           and special token sales on the platform.
-        volume_24h: 915086.4431273728
+        volume_24h: 911184.7594317764
       - id: liquid-staked-sui
         name: Liquid Staked SUI
-        market_cap: 26986299.510429453
-        market_cap_change_24h: -1.0917942166205874
+        market_cap: 26827541.843250923
+        market_cap_change_24h: -1.6736611750346069
         content: Liquid staked SUI is a tokenized representation of staked Sui that
           can be traded or used in various DeFi applications.
-        volume_24h: 5028296.002795177
+        volume_24h: 4586986.147885705
       - id: market-making-solution
         name: Market-Making Solution
-        market_cap: 26484237.763178445
-        market_cap_change_24h: -5.294941845242981
+        market_cap: 26499181.092018463
+        market_cap_change_24h: -5.241505954828679
         content: A Market-Making Solution refers to a service that enhances liquidity
           in markets by consistently offering buy and sell orders.
-        volume_24h: 515360.1796136793
+        volume_24h: 513224.6641800529
       - id: realt-tokens
         name: RealT Tokens
-        market_cap: 25298033.999589924
-        market_cap_change_24h: -1.4582166706450683
+        market_cap: 25277211.412447196
+        market_cap_change_24h: -1.5393255374688144
         content: ''
-        volume_24h: 280.64582908778254
+        volume_24h: 280.64582516154684
       - id: tokensets
         name: TokenSets Ecosystem
-        market_cap: 24166792.30024835
-        market_cap_change_24h: -1.8462837414503714
+        market_cap: 24169145.208451007
+        market_cap_change_24h: -1.8367273766156595
         content: Interconnected platforms and services built around TokenSets.
-        volume_24h: 30108.00269631648
+        volume_24h: 30103.278657434017
       - id: fighting-games
         name: Fighting Games
-        market_cap: 22746305.396480024
-        market_cap_change_24h: -2.912951581835463
+        market_cap: 22711166.2420043
+        market_cap_change_24h: -3.06293447938707
         content: Fighting game centered around combat between two or more number of
           characters.
-        volume_24h: 6438813.833535046
+        volume_24h: 6440190.134379142
       - id: chinese-meme
         name: Chinese Meme
-        market_cap: 20195341.389132716
-        market_cap_change_24h: 0.2841548517007665
+        market_cap: 20244201.74260287
+        market_cap_change_24h: 0.5267810672767239
         content: Chinese meme coins are inspired by China memes, cultural elements,
           or internet phenomena.
-        volume_24h: 2592379.624956914
+        volume_24h: 2606224.474461924
       - id: gotchiverse
         name: Gotchiverse
-        market_cap: 19973218.569593493
-        market_cap_change_24h: 0.23850092077563265
+        market_cap: 19981713.77629087
+        market_cap_change_24h: 0.2811353505441878
         content: Assets and tokens that are used in Gotchiverse, a metaverse game
           based on the Aavegotchi project.
-        volume_24h: 2267214.4608442835
+        volume_24h: 2263343.3125706255
       - id: idr-stablecoin
         name: IDR Stablecoin
-        market_cap: 14871980.397983622
-        market_cap_change_24h: -0.5199243571095115
+        market_cap: 14857774.395124642
+        market_cap_change_24h: -0.6149496463565319
         content: A IDR stablecoin is a type of cryptocurrency that is designed to
           maintain a stable value by being pegged to the Indonesian rupiah.
-        volume_24h: 14594.548010809862
+        volume_24h: 14523.23007696627
       - id: nft-launchpad
         name: NFT Launchpad
-        market_cap: 13655753.05452772
-        market_cap_change_24h: -1.9215571450148627
+        market_cap: 13879747.104539093
+        market_cap_change_24h: -0.3127855491772402
         content: Platforms that enable users to deploy and launch their own NFT projects.
-        volume_24h: 81875.21580434965
+        volume_24h: 82351.11220204405
       - id: legal
         name: Legal
-        market_cap: 11254405.619075555
-        market_cap_change_24h: -2.3540412740157257
+        market_cap: 11266492.922774248
+        market_cap_change_24h: -2.2491688891009267
         content: Legal industry handles subjective disputes that cannot be solved
           by smart contracts.
-        volume_24h: 311368.1651985901
+        volume_24h: 311342.7265190152
       - id: jpy-stablecoin
         name: JPY Stablecoin
-        market_cap: 11171971.461640492
-        market_cap_change_24h: 10.763424953993333
+        market_cap: 11169356.622545645
+        market_cap_change_24h: 10.737500385993552
         content: A JPY stablecoin is a type of cryptocurrency that is designed to
           maintain a stable value by being pegged to the Japanese yen.
-        volume_24h: 25214.737335147194
+        volume_24h: 25210.601823055033
       - id: erc-404
         name: ERC 404
-        market_cap: 10995730.158064384
-        market_cap_change_24h: -0.7301501593533304
+        market_cap: 10999159.16268366
+        market_cap_change_24h: -0.6991929815429258
         content: ERC-404 is an experimental token standard that aims to bridge fungible
           tokens and NFTs to enable liquidity and fractionalization.
-        volume_24h: 1807433.9295358167
+        volume_24h: 1807413.183055778
       - id: sgd-stablcoin
         name: SGD Stablcoin
-        market_cap: 10524539.055410437
-        market_cap_change_24h: 0.30379875660876643
+        market_cap: 10526265.722617697
+        market_cap_change_24h: 0.32025470581136617
         content: A SGD stablecoin is a type of cryptocurrency that is designed to
           maintain a stable value by being pegged to the Singapore dollar.
-        volume_24h: 20302852.718332294
+        volume_24h: 20313920.872421026
       - id: leveraged-token
         name: Leveraged Token
-        market_cap: 9524713.588250546
-        market_cap_change_24h: -0.7149753820500532
+        market_cap: 9519653.218501158
+        market_cap_change_24h: -0.7677243629499787
         content: Leveraged crypto token is a type of financial instrument hat allows
           traders to amplify their exposure to the price movements of an underlying
           cryptocurrency.
-        volume_24h: 3622.589372366136
+        volume_24h: 3620.7556224733735
       - id: recruitment-solutions
         name: Recruitment
-        market_cap: 6725486.984689015
-        market_cap_change_24h: -8.231648187521156
+        market_cap: 6738378.563834053
+        market_cap_change_24h: -8.055744349911542
         content: 'Recruitment solutions designed to streamline and optimize the process
           of sourcing, screening, and hiring candidates for businesses. '
-        volume_24h: 10189509.831713602
+        volume_24h: 10180740.573642356
       - id: tokenized-stock
         name: Tokenized Stock
-        market_cap: 6712646.555559127
-        market_cap_change_24h: -2.7371218087480367
+        market_cap: 6632029.6978481095
+        market_cap_change_24h: -3.9052195995090515
         content: Tokenized stock refers to digital representation of stock on a blockchain
           platform.
-        volume_24h: 40252.875527143166
+        volume_24h: 40247.82040691643
       - id: time-fun-ecosystem
         name: Time.fun Ecosystem
-        market_cap: 5979071.179993063
-        market_cap_change_24h: -5.285214031185591
+        market_cap: 6097128.721456379
+        market_cap_change_24h: -3.4150582101412703
         content: Time.fun Ecosystem consists of tokens launched via time.fun.
-        volume_24h: 1299668.1299545
+        volume_24h: 1342800.7343942337
       - id: zodiac-themed
         name: Zodiac-Themed
-        market_cap: 5706674.577140837
-        market_cap_change_24h: -6.261488882371584
+        market_cap: 5743919.113293331
+        market_cap_change_24h: -5.649705729327193
         content: Meme coins related to zodiac signs.
-        volume_24h: 101941.99921910158
+        volume_24h: 102859.52588650212
       - id: bridged-frax
         name: Bridged FRAX
-        market_cap: 5503185.015786706
-        market_cap_change_24h: 0.6464150691543433
+        market_cap: 5504301.3386598425
+        market_cap_change_24h: 0.6668312272370953
         content: Bridged FRAX refers to Wrapped FRAX that has been transferred from
           its native blockchain to a different blockchain through "bridging".
-        volume_24h: 43229.57762216738
+        volume_24h: 43229.59411063626
       - id: daos-fun-ecosystem
         name: daos.fun Ecosystem
-        market_cap: 5216456.065198215
-        market_cap_change_24h: 1.1873920891722434
+        market_cap: 5220120.098792582
+        market_cap_change_24h: 1.2584660135583072
         content: daos.fun Ecosystem consists of tokens that have active hedge funds
           on daos.fun.
-        volume_24h: 3266026.9230450788
+        volume_24h: 3271858.9285931215
       - id: pump-science-ecosystem
         name: Pump Science Ecosystem
-        market_cap: 4715194.373545607
-        market_cap_change_24h: -8.880027264534613
+        market_cap: 4734642.104922457
+        market_cap_change_24h: -8.504204634026017
         content: Pump Science Ecosystem consists of tokens launched via pump.science.
-        volume_24h: 10147778.920882925
+        volume_24h: 10093422.520745203
       - id: kommunitas
         name: Kommunitas Launchpad
-        market_cap: 4206668.787481437
-        market_cap_change_24h: 4.351131728904026
+        market_cap: 4205685.188613857
+        market_cap_change_24h: 4.326732457132329
         content: Kommunitas Launchpad is a platform for crypto projects to hold Initial
           DEX Offerings (IDOs). Participants are able to gain early access to public
           and special token sales on the platform.
-        volume_24h: 983237.1321369548
+        volume_24h: 987488.333105123
       - id: emoji-themed
         name: Emoji-Themed
-        market_cap: 3991434.562381953
-        market_cap_change_24h: -1.2950353570247488
+        market_cap: 4077341.551880282
+        market_cap_change_24h: 0.8293753600976564
         content: Meme coins related to emoji.
-        volume_24h: 84021.26326475109
+        volume_24h: 84463.44484168691
       - id: farming-as-a-service-faas
         name: Farming-as-a-Service (FaaS)
-        market_cap: 3877492.6273372346
-        market_cap_change_24h: 0.09745356537309989
+        market_cap: 3876362.475888706
+        market_cap_change_24h: 0.06827871115329154
         content: Farming-as-a Service simplifies the process of yield farming by handling
           the technical aspects, such as choosing the right liquidity pools, managing
           the staking or lending process, and optimizing the yield.
-        volume_24h: 8476.927060052503
+        volume_24h: 9353.819519781688
       - id: drc-20
         name: DRC-20
-        market_cap: 3736068.1343733617
-        market_cap_change_24h: -0.24848733556993782
+        market_cap: 3734659.658534911
+        market_cap_change_24h: -0.2860930725060833
         content: 'DRC-20 is a token standard on the Dogecoin blockchain that allows
           for the creation of tokens that represent ownership of assets. '
-        volume_24h: 173884.1463202239
+        volume_24h: 173552.93053347574
       - id: reddit-points
         name: Reddit Points
-        market_cap: 3291277.6684260624
-        market_cap_change_24h: -6.20487463523255
+        market_cap: 3288017.125707331
+        market_cap_change_24h: -6.297793873252002
         content: Reddit Community Points are blockchain tokens that are owned and
           controlled by a specific Reddit community. With these point tokens, a community
           member can own a piece of their favorite subreddit. The points can be earned
           through contributions in the community such as post creation, comments,
           and content moderations.
-        volume_24h: 85156.5607149864
+        volume_24h: 85057.00984907841
       - id: cny-stablecoin
         name: CNY Stablecoin
-        market_cap: 2868547.273353705
-        market_cap_change_24h: 0.028524098220812394
+        market_cap: 2867450.473006107
+        market_cap_change_24h: -0.009722201925534388
         content: A CNY stablecoin is a type of cryptocurrency that is designed to
           maintain a stable value by being pegged to the Chinese Yuan Renminbi.
-        volume_24h: 281.0598291401224
+        volume_24h: 280.9523648075105
       - id: decentralized-lottery
         name: Decentralized Lottery
-        market_cap: 2521624.762395039
-        market_cap_change_24h: -0.7571799825428746
+        market_cap: 2524461.713764819
+        market_cap_change_24h: -0.6455269489956045
         content: A decentralized lottery is a blockchain-based lottery system that
           conducts draws through smart contracts.
-        volume_24h: 325181.5100396962
+        volume_24h: 325281.2969879975
       - id: etf
         name: ETF
-        market_cap: 2324971.7841116213
-        market_cap_change_24h: -1.7196986796361453
+        market_cap: 2321166.054551774
+        market_cap_change_24h: -1.8805729966672708
         content: Exchange Traded Fund (ETF) is product that holds a basket of assets
           such as stocks, bonds, commodities, or crypto.
-        volume_24h: 735831.801466488
+        volume_24h: 738076.2101948886
       - id: christmas-themed
         name: Christmas Themed
-        market_cap: 2190706.902645818
-        market_cap_change_24h: 6.480315761746448
+        market_cap: 2197041.354316981
+        market_cap_change_24h: 6.788204696276372
         content: Meme coins themed around Christmas, inspired by holiday traditions,
           symbols, and celebrations.
-        volume_24h: 468865.83973239834
+        volume_24h: 469436.25936288194
       - id: nft-index
         name: NFT Index
-        market_cap: 1940879.587589013
-        market_cap_change_24h: -7.8812433362343
+        market_cap: 1939863.1196202077
+        market_cap_change_24h: -7.929487321112928
         content: A NFT index is an indicator that tracks the performance of a group
           of NFT cryptocurrencies.
-        volume_24h: 23.69047052168384
+        volume_24h: 23.687205423412575
       - id: wormhole-assets
         name: Wormhole Assets
-        market_cap: 1900338.549833015
-        market_cap_change_24h: -5.075351151924492
+        market_cap: 1921115.2049158416
+        market_cap_change_24h: -4.037527292513657
         content: The Wormhole project is a bidirectional, decentralized SPL token
           bridge between Solana and EVM chains.
-        volume_24h: 23125671.64590579
+        volume_24h: 23097099.62248125
       - id: flaunch-ecosystem
         name: Flaunch Ecosystem
-        market_cap: 1446259.9152093283
-        market_cap_change_24h: 59.68913620832977
+        market_cap: 1449996.5714215164
+        market_cap_change_24h: 60.10172000226382
         content: Flaunch Ecosystem consists of tokens launched via flaunch.gg.
-        volume_24h: 56220.85288699326
+        volume_24h: 56818.09661131056
       - id: duck-themed-coins
         name: Duck-Themed
-        market_cap: 1040623.5674023352
-        market_cap_change_24h: -0.47631228787939445
+        market_cap: 1041060.4926702715
+        market_cap_change_24h: -0.43452540616560004
         content: Meme coins which are inspired by duck.
-        volume_24h: 46974.50240315032
+        volume_24h: 47414.842216434874
       - id: trading-bots
         name: Trading Bots
-        market_cap: 970493.1226282736
-        market_cap_change_24h: 60.22440864031458
+        market_cap: 979901.8247836147
+        market_cap_change_24h: 61.777746529850354
         content: Trading bots are automated software programs that execute cryptocurrency
           trades based on predefined rules or algorithms. They analyze market data
           like price, volume, and order book activity to make buy or sell decisions
           without human intervention.
-        volume_24h: 765254.9070050452
+        volume_24h: 754861.0404239438
       - id: spl22
         name: SPL22
-        market_cap: 762030.3175852116
-        market_cap_change_24h: -0.4348279428927809
+        market_cap: 767366.8904090886
+        market_cap_change_24h: 0.26243669231010797
         content: 'SPL22 is a hybrid token extension of the Solana blockchain that
           combines the features of both fungible and non-fungible tokens. '
-        volume_24h: 1855.215782543641
+        volume_24h: 1868.870095652144
       - id: dn-404
         name: ' DN-404'
-        market_cap: 742111.1419897851
-        market_cap_change_24h: 0.027271306793240118
+        market_cap: 740997.4785620888
+        market_cap_change_24h: -0.12283655107822612
         content: The "Divisible NFT" standard (DN-404) aims to be a hybrid of ERC20
           and ERC721 that could act as an NFT with native fractionalization built
           in.
-        volume_24h: 310.82633860325427
+        volume_24h: 310.4317965234433
       - id: spore-fun-ecosystem
         name: Spore.fun Ecosystem
-        market_cap: 583863.6146705139
-        market_cap_change_24h: -0.7457363779032972
+        market_cap: 589869.4893324741
+        market_cap_change_24h: 0.27523607525404203
         content: Spore.fun Ecosystem consists of tokens launched via spore.fun.
-        volume_24h: 600431.5904373232
+        volume_24h: 601160.5378536747
       - id: stx-city-ecosystem
         name: STX.CITY Ecosystem
-        market_cap: 536624.5539384043
-        market_cap_change_24h: -0.6125551639741537
+        market_cap: 536644.417542985
+        market_cap_change_24h: -0.6088762549678225
         content: STX.CITY Ecosystem consists of tokens launched via STX.CITY.
-        volume_24h: 1705.682482099654
+        volume_24h: 1704.1341249302793
       - id: gbp-stablecoin
         name: GBP Stablecoin
-        market_cap: 388056.17216655076
-        market_cap_change_24h: 0.14422194922585
+        market_cap: 387921.1521122389
+        market_cap_change_24h: 0.10937782289457702
         content: A GBP stablecoin is a type of cryptocurrency that is designed to
           maintain a stable value by being pegged to the British pound sterling.
-        volume_24h: 7158.148871643691
+        volume_24h: 7517.187132504214
       - id: sticker-themed-coin
         name: Sticker-Themed Coins
-        market_cap: 217407.6974848986
-        market_cap_change_24h: 10.782212926790725
+        market_cap: 217307.01886002134
+        market_cap_change_24h: 10.730911151428769
         content: Meme coins inspired by Telegram Sticker Packs
-        volume_24h: 8674.437233459248
+        volume_24h: 8673.515958977545
       - id: krw-stablecoin
         name: KRW Stablecoin
-        market_cap: 207539.19671487503
-        market_cap_change_24h: 0.9915485348285504
+        market_cap: 207353.4642188299
+        market_cap_change_24h: 0.9011684394742958
         content: A KRW stablecoin is a type of cryptocurrency that is designed to
           maintain a stable value by being pegged to the Korean won.
-        volume_24h: 231849.73553939525
+        volume_24h: 233629.08496213844
       - id: erc20i
         name: ERC20i
-        market_cap: 79312.59921725401
-        market_cap_change_24h: -2.0574958381549884
+        market_cap: 79176.55702590938
+        market_cap_change_24h: -2.2254932688716407
         content: ERC20i is a token standard on Base blockchain that extends the capabilities
           of ERC-20 tokens by adding native inscriptions.
-        volume_24h: 8628.137226314662
+        volume_24h: 8633.553520734557
       - id: hyperxpad-launchpad
         name: HyperXpad Launchpad
-        market_cap: 16602.948105907748
-        market_cap_change_24h: 0.028663437001490134
+        market_cap: 16598.10893594532
+        market_cap_change_24h: -0.0004913673379718636
         content: HyperXpad Launchpad is a platform for crypto projects to hold Initial
           DEX Offerings (IDOs). Participants are able to gain early access to public
           and special token sales on the platform.
-        volume_24h: 15.195785479418358
+        volume_24h: 15.191356447406791
       - id: commodity-backed-stablecoin
         name: Commodity-backed Stablecoin
-        market_cap: 0.01373233426100542
-        market_cap_change_24h: 0.028524098220797125
+        market_cap: 0.013727083648916606
+        market_cap_change_24h: -0.009722201925545067
         content: A commodity-backed stablecoin is a type of stablecoin designed to
           maintain a stable value by being pegged to a reserve of physical commodities
           such as gold.
-        volume_24h: 1320690.8868545904
-      - id: friend-tech
-        name: Friend.tech Ecosystem
+        volume_24h: 1328496.4202135985
+      - id: bridged-wsteth
+        name: Bridged wstETH
         market_cap: 0.0
         market_cap_change_24h: 0
-        content: Interconnected platforms and services built around Friend.tech.
-        volume_24h: 0.0
-      - id: token-standards
-        name: Token Standards
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: A set of rules or protocols defining how tokens operate on a blockchain,
-          including their creation, functionality, and interaction with smart contracts
-          and wallets.
-        volume_24h: 0.0
-      - id: centralized-exchange-cex-product
-        name: Centralized Exchange (CEX) Product
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: 'A centralized exchange (CEX) product refers to services or features
-          offered by centralized cryptocurrency exchanges, such as launchpads or launchpools. '
-        volume_24h: 0.0
-      - id: yearn-vault-tokens
-        name: Yearn Vault Tokens
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: Yearn Vault Tokens (yVault Token), is a type of token that represents
-          a user's share in a Yearn Vault.
-        volume_24h: 616.9009373216519
-      - id: farming-games
-        name: Farming Games
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: Farming game allows players to simulate farming life, focusing on
-          activities such as planting and harvesting crops, raising livestock, and
-          managing resources.
-        volume_24h: 4400.302311502328
-      - id: asc-20
-        name: ASC-20
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: ASC-20 is a token standard on the Avalanche blockchain that allows
-          for the creation of tokens that represent ownership of assets.
-        volume_24h: 0.0
-      - id: flooring-protocol
-        name: Floor Protocol Tokens
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: Floor Protocol is a fractionalized NFT platform. It allows the fragmentation
-          of NFTs from prominent collections into μTokens, which can then be traded
-          like any other cryptocurrency.
-        volume_24h: 0.0
-      - id: index-coop-metaverse-index
-        name: Index Coop Metaverse Index
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: The Metaverse Index (MVI) is designed to capture the trend of entertainment,
-          social activity and business moving to take place in virtual economies,
-          powered by NFTs and blockchain technology.
-        volume_24h: 0.0
-      - id: tower-defense-games
-        name: Tower Defense Games
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: 'A tower defense game is a strategy game where players build and
-          place defensive structures or "towers" to stop enemies from reaching the
-          base. '
-        volume_24h: 50293.25424195923
-      - id: bitstarters-launchpad
-        name: BitStarters Launchpad
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: BitStarters Launchpad is a platform for crypto projects to hold Initial
-          DEX Offerings (IDOs). Participants are able to gain early access to public
-          and special token sales on the platform.
-        volume_24h: 172953.00196756423
-      - id: src-20
-        name: SRC-20
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: The SRC-20 standard issues fungible tokens on the Bitcoin blockchain,
-          attaching data via UTXOs for immutable and non-prunable storage.
-        volume_24h: 10706.157906455042
-      - id: dinari-ecosystem
-        name: Dinari Ecosystem
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: The Dinari Ecosystem comprises tokens tokenized by Dinari.
-        volume_24h: 0.0
-      - id: puzzle-games
-        name: ' Puzzle Games'
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: A puzzle game challenges players to solve problems and use logic
-          or creativity to progress. These games often involve tasks like pattern
-          recognition, spatial reasoning, wordplay, or strategic planning.
-        volume_24h: 8029.851753424432
-      - id: nft-aggregator
-        name: NFT Aggregator
-        market_cap: 0.0
-        market_cap_change_24h: 0
-        content: NFT aggregators work by pulling together listings, sales data, and
-          other relevant information from multiple NFT marketplaces into one unified
-          interface.
-        volume_24h: 0.0
+        content: Bridged wstETH refers to Wrapped Staked ETH (wstETH) that has been
+          transferred from its native blockchain to a different blockchain through
+          "bridging".
+        volume_24h: 3716816.555235201
       - id: nft-amm
         name: NFT AMM
         market_cap: 0.0
@@ -3684,13 +3612,28 @@ category_data_tool:
           liquidity pools to facilitate the trading of NFTs without the need for a
           traditional order book.
         volume_24h: 0.0
-      - id: bridged-wavax
-        name: Bridged WAVAX
+      - id: atomicals-arc-20
+        name: Atomicals (ARC-20)
         market_cap: 0.0
         market_cap_change_24h: 0
-        content: Bridged WAVAX refers to Wrapped AVAX that has been transferred from
-          its native blockchain to a different blockchain through "bridging".
-        volume_24h: 400.75845909678566
+        content: ARC-20 is a token standard on the Bitcoin blockchain that allows
+          for the creation of fungible tokens, also known as colored coins.
+        volume_24h: 49710.994359933946
+      - id: tower-defense-games
+        name: Tower Defense Games
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: 'A tower defense game is a strategy game where players build and
+          place defensive structures or "towers" to stop enemies from reaching the
+          base. '
+        volume_24h: 50566.70775643502
+      - id: yearn-vault-tokens
+        name: Yearn Vault Tokens
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: Yearn Vault Tokens (yVault Token), is a type of token that represents
+          a user's share in a Yearn Vault.
+        volume_24h: 617.0441073563882
       - id: yield-tokenization-product
         name: Yield Tokenization Product
         market_cap: 0.0
@@ -3700,28 +3643,109 @@ category_data_tool:
           for the trading, management, and optimization of yield independently from
           the underlying asset.
         volume_24h: 0.0
-      - id: bridged-wsteth
-        name: Bridged wstETH
+      - id: bitstarters-launchpad
+        name: BitStarters Launchpad
         market_cap: 0.0
         market_cap_change_24h: 0
-        content: Bridged wstETH refers to Wrapped Staked ETH (wstETH) that has been
-          transferred from its native blockchain to a different blockchain through
-          "bridging".
-        volume_24h: 3613792.8784910925
-      - id: atomicals-arc-20
-        name: Atomicals (ARC-20)
+        content: BitStarters Launchpad is a platform for crypto projects to hold Initial
+          DEX Offerings (IDOs). Participants are able to gain early access to public
+          and special token sales on the platform.
+        volume_24h: 174633.19665326716
+      - id: puzzle-games
+        name: ' Puzzle Games'
         market_cap: 0.0
         market_cap_change_24h: 0
-        content: ARC-20 is a token standard on the Bitcoin blockchain that allows
-          for the creation of fungible tokens, also known as colored coins.
-        volume_24h: 49723.7754082717
+        content: A puzzle game challenges players to solve problems and use logic
+          or creativity to progress. These games often involve tasks like pattern
+          recognition, spatial reasoning, wordplay, or strategic planning.
+        volume_24h: 8031.59572621603
+      - id: centralized-exchange-cex-product
+        name: Centralized Exchange (CEX) Product
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: 'A centralized exchange (CEX) product refers to services or features
+          offered by centralized cryptocurrency exchanges, such as launchpads or launchpools. '
+        volume_24h: 0.0
+      - id: asc-20
+        name: ASC-20
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: ASC-20 is a token standard on the Avalanche blockchain that allows
+          for the creation of tokens that represent ownership of assets.
+        volume_24h: 0.0
+      - id: dinari-ecosystem
+        name: Dinari Ecosystem
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: The Dinari Ecosystem comprises tokens tokenized by Dinari.
+        volume_24h: 0.0
+      - id: bridged-wavax
+        name: Bridged WAVAX
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: Bridged WAVAX refers to Wrapped AVAX that has been transferred from
+          its native blockchain to a different blockchain through "bridging".
+        volume_24h: 395.93332288891304
+      - id: farming-games
+        name: Farming Games
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: Farming game allows players to simulate farming life, focusing on
+          activities such as planting and harvesting crops, raising livestock, and
+          managing resources.
+        volume_24h: 4402.927348631232
+      - id: flooring-protocol
+        name: Floor Protocol Tokens
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: Floor Protocol is a fractionalized NFT platform. It allows the fragmentation
+          of NFTs from prominent collections into μTokens, which can then be traded
+          like any other cryptocurrency.
+        volume_24h: 0.0
+      - id: friend-tech
+        name: Friend.tech Ecosystem
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: Interconnected platforms and services built around Friend.tech.
+        volume_24h: 0.0
+      - id: index-coop-metaverse-index
+        name: Index Coop Metaverse Index
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: The Metaverse Index (MVI) is designed to capture the trend of entertainment,
+          social activity and business moving to take place in virtual economies,
+          powered by NFTs and blockchain technology.
+        volume_24h: 0.0
+      - id: token-standards
+        name: Token Standards
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: A set of rules or protocols defining how tokens operate on a blockchain,
+          including their creation, functionality, and interaction with smart contracts
+          and wallets.
+        volume_24h: 0.0
+      - id: nft-aggregator
+        name: NFT Aggregator
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: NFT aggregators work by pulling together listings, sales data, and
+          other relevant information from multiple NFT marketplaces into one unified
+          interface.
+        volume_24h: 0.0
       - id: bridged-wbnb
         name: Bridged WBNB
         market_cap: 0.0
         market_cap_change_24h: 0
         content: Bridged WBNB refers to Wrapped BNB that has been transferred from
           its native blockchain to a different blockchain through "bridging".
-        volume_24h: 28542.594196075992
+        volume_24h: 28507.21406491833
+      - id: src-20
+        name: SRC-20
+        market_cap: 0.0
+        market_cap_change_24h: 0
+        content: The SRC-20 standard issues fungible tokens on the Bitcoin blockchain,
+          attaching data via UTXOs for immutable and non-prunable storage.
+        volume_24h: 10708.945201310422
       - id: ethereum-ecosystem
         name: Ethereum Ecosystem
         market_cap: null
@@ -5364,286 +5388,440 @@ tokens_by_category_tool:
           symbol: btc
           name: Bitcoin
           image: https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400
-          current_price: 105628
-          market_cap: 2099489472544
+          current_price: 105626
+          market_cap: 2099507228214
           market_cap_rank: 1
-          fully_diluted_valuation: 2099489472544
-          total_volume: 19251887809
+          fully_diluted_valuation: 2099507228214
+          total_volume: 19411544363
           high_24h: 106365
           low_24h: 105112
-          price_change_24h: 148.79
-          price_change_percentage_24h: 0.14106
-          market_cap_change_24h: 3009975836
-          market_cap_change_percentage_24h: 0.14357
+          price_change_24h: 174.48
+          price_change_percentage_24h: 0.16546
+          market_cap_change_24h: 3511451404
+          market_cap_change_percentage_24h: 0.16753
           circulating_supply: 19876393.0
           total_supply: 19876393.0
           max_supply: 21000000.0
           ath: 111814
-          ath_change_percentage: -5.54997
+          ath_change_percentage: -5.52734
           ath_date: '2025-05-22T18:41:28.492Z'
           atl: 67.81
-          atl_change_percentage: 155644.09178
+          atl_change_percentage: 155681.41103
           atl_date: '2013-07-06T00:00:00.000Z'
           roi: null
-          last_updated: '2025-06-09T08:13:53.372Z'
+          last_updated: '2025-06-09T08:28:56.257Z'
         - id: ethereum
           symbol: eth
           name: Ethereum
           image: https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628
-          current_price: 2492.13
-          market_cap: 300851506569
+          current_price: 2490.61
+          market_cap: 300712120888
           market_cap_rank: 2
-          fully_diluted_valuation: 300851506569
-          total_volume: 11686504233
+          fully_diluted_valuation: 300712120888
+          total_volume: 11876389614
           high_24h: 2537.4
           low_24h: 2482.7
-          price_change_24h: -25.054562143229305
-          price_change_percentage_24h: -0.99534
-          market_cap_change_24h: -2737964454.357544
-          market_cap_change_percentage_24h: -0.90186
+          price_change_24h: -27.327321786472567
+          price_change_percentage_24h: -1.08531
+          market_cap_change_24h: -3254907186.7558594
+          market_cap_change_percentage_24h: -1.07081
           circulating_supply: 120722959.1173206
           total_supply: 120722959.1173206
           max_supply: null
           ath: 4878.26
-          ath_change_percentage: -48.93487
+          ath_change_percentage: -48.91699
           ath_date: '2021-11-10T14:24:19.604Z'
           atl: 0.432979
-          atl_change_percentage: 575237.61277
+          atl_change_percentage: 575438.967
           atl_date: '2015-10-20T00:00:00.000Z'
           roi:
-            times: 30.542050794127217
+            times: 30.54046356237849
             currency: btc
-            percentage: 3054.2050794127217
-          last_updated: '2025-06-09T08:13:52.701Z'
+            percentage: 3054.046356237849
+          last_updated: '2025-06-09T08:28:56.586Z'
         - id: binancecoin
           symbol: bnb
           name: BNB
           image: https://coin-images.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1696501970
-          current_price: 649.87
-          market_cap: 94799431638
+          current_price: 649.1
+          market_cap: 94702993230
           market_cap_rank: 5
-          fully_diluted_valuation: 94799431638
-          total_volume: 424480276
+          fully_diluted_valuation: 94702993230
+          total_volume: 432900006
           high_24h: 655.88
           low_24h: 647.16
-          price_change_24h: 0.162758
-          price_change_percentage_24h: 0.02505
-          market_cap_change_24h: 19713083
-          market_cap_change_percentage_24h: 0.0208
+          price_change_24h: -0.7508741881254082
+          price_change_percentage_24h: -0.11554
+          market_cap_change_24h: -92893564.764328
+          market_cap_change_percentage_24h: -0.09799
           circulating_supply: 145887575.79
           total_supply: 145887575.79
           max_supply: 200000000.0
           ath: 788.84
-          ath_change_percentage: -17.65847
+          ath_change_percentage: -17.6195
           ath_date: '2024-12-04T10:35:25.220Z'
           atl: 0.0398177
-          atl_change_percentage: 1631199.51443
+          atl_change_percentage: 1631971.59796
           atl_date: '2017-10-19T00:00:00.000Z'
           roi: null
-          last_updated: '2025-06-09T08:13:52.662Z'
+          last_updated: '2025-06-09T08:28:56.692Z'
         - id: solana
           symbol: sol
           name: Solana
           image: https://coin-images.coingecko.com/coins/images/4128/large/solana.png?1718769756
-          current_price: 150.8
-          market_cap: 79132983726
+          current_price: 150.82
+          market_cap: 79174866857
           market_cap_rank: 6
-          fully_diluted_valuation: 90835860084
-          total_volume: 2451252235
+          fully_diluted_valuation: 90883965172
+          total_volume: 2456818394
           high_24h: 154.64
           low_24h: 148.37
-          price_change_24h: 1.19
-          price_change_percentage_24h: 0.79738
-          market_cap_change_24h: 612709648
-          market_cap_change_percentage_24h: 0.78032
-          circulating_supply: 524927368.970794
+          price_change_24h: 1.22
+          price_change_percentage_24h: 0.81247
+          market_cap_change_24h: 659579892
+          market_cap_change_percentage_24h: 0.84007
+          circulating_supply: 524927207.7493861
           total_supply: 602558210.209542
           max_supply: null
           ath: 293.31
-          ath_change_percentage: -48.62241
+          ath_change_percentage: -48.56813
           ath_date: '2025-01-19T11:15:27.957Z'
           atl: 0.500801
-          atl_change_percentage: 29991.10573
+          atl_change_percentage: 30022.89399
           atl_date: '2020-05-11T19:35:23.449Z'
           roi: null
-          last_updated: '2025-06-09T08:13:52.204Z'
+          last_updated: '2025-06-09T08:28:57.184Z'
         - id: tron
           symbol: trx
           name: TRON
           image: https://coin-images.coingecko.com/coins/images/1094/large/tron-logo.png?1696502193
-          current_price: 0.28388
-          market_cap: 26917174887
+          current_price: 0.284314
+          market_cap: 26968510642
           market_cap_rank: 9
-          fully_diluted_valuation: 26917210889
-          total_volume: 466358595
+          fully_diluted_valuation: 26968564803
+          total_volume: 471911498
           high_24h: 0.286219
           low_24h: 0.281804
-          price_change_24h: -0.002130209598607324
-          price_change_percentage_24h: -0.7448
-          market_cap_change_24h: -201230668.8596878
-          market_cap_change_percentage_24h: -0.74204
-          circulating_supply: 94853114371.97101
+          price_change_24h: -0.001561741354916879
+          price_change_percentage_24h: -0.5463
+          market_cap_change_24h: -151429480.176239
+          market_cap_change_percentage_24h: -0.55837
+          circulating_supply: 94853050747.48553
           total_supply: 94853241241.11342
           max_supply: null
           ath: 0.431288
-          ath_change_percentage: -34.26309
+          ath_change_percentage: -34.12881
           ath_date: '2024-12-04T00:10:40.323Z'
           atl: 0.00180434
-          atl_change_percentage: 15612.9676
+          atl_change_percentage: 15645.06517
           atl_date: '2017-11-12T00:00:00.000Z'
           roi:
-            times: 148.41076797024493
+            times: 148.6391405540973
             currency: usd
-            percentage: 14841.076797024494
-          last_updated: '2025-06-09T08:13:53.055Z'
+            percentage: 14863.914055409732
+          last_updated: '2025-06-09T08:28:56.180Z'
         - id: cardano
           symbol: ada
           name: Cardano
           image: https://coin-images.coingecko.com/coins/images/975/large/cardano.png?1696502090
-          current_price: 0.662717
-          market_cap: 23920138838
+          current_price: 0.661799
+          market_cap: 23892418228
           market_cap_rank: 10
-          fully_diluted_valuation: 29821401170
-          total_volume: 461345886
+          fully_diluted_valuation: 29786841696
+          total_volume: 465626345
           high_24h: 0.677742
           low_24h: 0.654099
-          price_change_24h: -0.000279023037576431
-          price_change_percentage_24h: -0.04209
-          market_cap_change_24h: -445636.85496520996
-          market_cap_change_percentage_24h: -0.00186
+          price_change_24h: -0.000601237613059302
+          price_change_percentage_24h: -0.09077
+          market_cap_change_24h: -13661809.378047943
+          market_cap_change_percentage_24h: -0.05715
           circulating_supply: 36095092968.40453
           total_supply: 45000000000.0
           max_supply: 45000000000.0
           ath: 3.09
-          ath_change_percentage: -78.52943
+          ath_change_percentage: -78.5318
           ath_date: '2021-09-02T06:00:10.474Z'
           atl: 0.01925275
-          atl_change_percentage: 3342.50898
+          atl_change_percentage: 3342.12801
           atl_date: '2020-03-13T02:22:55.044Z'
           roi: null
-          last_updated: '2025-06-09T08:13:52.000Z'
+          last_updated: '2025-06-09T08:28:58.828Z'
         - id: hyperliquid
           symbol: hype
           name: Hyperliquid
           image: https://coin-images.coingecko.com/coins/images/50882/large/hyperliquid.jpg?1729431300
-          current_price: 35.14
-          market_cap: 11692897332
+          current_price: 35.15
+          market_cap: 11739995688
           market_cap_rank: 13
-          fully_diluted_valuation: 35015867709
-          total_volume: 149924016
+          fully_diluted_valuation: 35156909723
+          total_volume: 149797682
           high_24h: 36.11
           low_24h: 34.86
-          price_change_24h: -0.32390259688275336
-          price_change_percentage_24h: -0.91335
-          market_cap_change_24h: -115449591.24242592
-          market_cap_change_percentage_24h: -0.97769
+          price_change_24h: -0.29888775847719273
+          price_change_percentage_24h: -0.8431
+          market_cap_change_24h: -98250794.77942276
+          market_cap_change_percentage_24h: -0.82994
           circulating_supply: 333928180.0
           total_supply: 999990391.0
           max_supply: 1000000000.0
           ath: 39.68
-          ath_change_percentage: -11.75193
+          ath_change_percentage: -11.4148
           ath_date: '2025-05-26T02:00:26.867Z'
           atl: 3.81
-          atl_change_percentage: 819.31247
+          atl_change_percentage: 822.82441
           atl_date: '2024-11-29T09:30:30.871Z'
           roi: null
-          last_updated: '2025-06-09T08:13:51.685Z'
+          last_updated: '2025-06-09T08:28:57.153Z'
         - id: sui
           symbol: sui
           name: Sui
           image: https://coin-images.coingecko.com/coins/images/26375/large/sui-ocean-square.png?1727791290
           current_price: 3.21
-          market_cap: 10911153924
+          market_cap: 10913705193
           market_cap_rank: 14
-          fully_diluted_valuation: 32123080185
-          total_volume: 553071257
+          fully_diluted_valuation: 32130591271
+          total_volume: 550100502
           high_24h: 3.28
           low_24h: 3.19
-          price_change_24h: -0.010261315831321838
-          price_change_percentage_24h: -0.31845
-          market_cap_change_24h: -35346357.709711075
-          market_cap_change_percentage_24h: -0.3229
+          price_change_24h: -0.00644823768518199
+          price_change_percentage_24h: -0.20033
+          market_cap_change_24h: -23946038.74279785
+          market_cap_change_percentage_24h: -0.21893
           circulating_supply: 3396671135.364443
           total_supply: 10000000000.0
           max_supply: 10000000000.0
           ath: 5.35
-          ath_change_percentage: -40.01227
+          ath_change_percentage: -39.90013
           ath_date: '2025-01-04T22:56:18.063Z'
           atl: 0.364846
-          atl_change_percentage: 779.07824
+          atl_change_percentage: 780.72156
           atl_date: '2023-10-19T10:40:30.078Z'
           roi: null
-          last_updated: '2025-06-09T08:13:52.443Z'
+          last_updated: '2025-06-09T08:28:58.861Z'
         - id: avalanche-2
           symbol: avax
           name: Avalanche
           image: https://coin-images.coingecko.com/coins/images/12559/large/Avalanche_Circle_RedWhite_Trans.png?1696512369
-          current_price: 20.33
-          market_cap: 8582041394
+          current_price: 20.29
+          market_cap: 8564057343
           market_cap_rank: 17
-          fully_diluted_valuation: 9294277115
-          total_volume: 369012911
+          fully_diluted_valuation: 9274800542
+          total_volume: 368401962
           high_24h: 21.45
           low_24h: 20.2
-          price_change_24h: 0.0179068
-          price_change_percentage_24h: 0.08815
-          market_cap_change_24h: 15020853
-          market_cap_change_percentage_24h: 0.17533
+          price_change_24h: -0.050473921163696644
+          price_change_percentage_24h: -0.24812
+          market_cap_change_24h: -7185478.299720764
+          market_cap_change_percentage_24h: -0.08383
           circulating_supply: 421762437.6623425
           total_supply: 456765097.3102922
           max_supply: 720000000.0
           ath: 144.96
-          ath_change_percentage: -85.95764
+          ath_change_percentage: -85.9893
           ath_date: '2021-11-21T14:18:56.538Z'
           atl: 2.8
-          atl_change_percentage: 626.72272
+          atl_change_percentage: 625.08448
           atl_date: '2020-12-31T13:15:21.540Z'
           roi: null
-          last_updated: '2025-06-09T08:13:52.352Z'
+          last_updated: '2025-06-09T08:28:56.381Z'
         - id: bitcoin-cash
           symbol: bch
           name: Bitcoin Cash
           image: https://coin-images.coingecko.com/coins/images/780/large/bitcoin-cash-circle.png?1696501932
-          current_price: 417.5
-          market_cap: 8282441327
+          current_price: 418.21
+          market_cap: 8313887626
           market_cap_rank: 19
-          fully_diluted_valuation: 8282441327
-          total_volume: 176438097
-          high_24h: 418.32
-          low_24h: 409.48
-          price_change_24h: 7.93
-          price_change_percentage_24h: 1.93579
-          market_cap_change_24h: 143920689
-          market_cap_change_percentage_24h: 1.76839
+          fully_diluted_valuation: 8313887626
+          total_volume: 180796304
+          high_24h: 418.41
+          low_24h: 409.49
+          price_change_24h: 8.73
+          price_change_percentage_24h: 2.13095
+          market_cap_change_24h: 173289091
+          market_cap_change_percentage_24h: 2.1287
           circulating_supply: 19881174.89665078
           total_supply: 19881174.89665078
           max_supply: 21000000.0
           ath: 3785.82
-          ath_change_percentage: -89.01366
+          ath_change_percentage: -88.94851
           ath_date: '2017-12-20T00:00:00.000Z'
           atl: 76.93
-          atl_change_percentage: 440.61778
+          atl_change_percentage: 443.82355
           atl_date: '2018-12-16T00:00:00.000Z'
           roi: null
-          last_updated: '2025-06-09T08:13:52.059Z'
+          last_updated: '2025-06-09T08:28:56.501Z'
 trending_pools_tool:
   input:
     tool: get_trending_pools
     tool_arguments:
-      include: base_token,quote_token,dex,network
+      include: base_token
       pools: 4
-    raw_data_only: true
+    raw_data_only: false
   output:
     response: ''
     data:
-      error: 'API request failed: 400, message=''Bad Request'', url=''https://pro-api.coingecko.com/api/v3/onchain/pools/trending_search?include=base_token,quote_token,dex,network&pools=4'''
+      trending_pools:
+        data:
+        - id: eth_0xaba19e6542657ceec57cca173e078085c9cadb41
+          type: pool
+          attributes:
+            trending_rank: 0
+            address: '0xaba19e6542657ceec57cca173e078085c9cadb41'
+            name: TUGGIN / WETH
+            pool_created_at: '2025-06-07T20:05:35Z'
+            fdv_usd: '41504.6719120106'
+            market_cap_usd: null
+            volume_usd:
+              h24: '155527.003513567'
+            reserve_in_usd: '19438.5621'
+          relationships:
+            network:
+              data:
+                id: eth
+                type: network
+            dex:
+              data:
+                id: uniswap_v2
+                type: dex
+            base_token:
+              data:
+                id: eth_0xed93a0bcbd7793b4dd6ca0033b813344512c106d
+                type: token
+            quote_token:
+              data:
+                id: eth_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+                type: token
+        - id: solana_EmY3QMuKQjzf2eD5uuGjLzA1pFF2bc2yXpMWhX5FSHv2
+          type: pool
+          attributes:
+            trending_rank: 1
+            address: EmY3QMuKQjzf2eD5uuGjLzA1pFF2bc2yXpMWhX5FSHv2
+            name: MARIE / SOL
+            pool_created_at: '2024-11-16T23:21:09Z'
+            fdv_usd: '20117.8343176237'
+            market_cap_usd: '20117.8343207353'
+            volume_usd:
+              h24: '8380.7454190084'
+            reserve_in_usd: '19034.405'
+          relationships:
+            network:
+              data:
+                id: solana
+                type: network
+            dex:
+              data:
+                id: raydium
+                type: dex
+            base_token:
+              data:
+                id: solana_7u9kr8ZCHnkeS2n46jVuyq6tUegAtaCUM52AQ1iARKP3
+                type: token
+            quote_token:
+              data:
+                id: solana_So11111111111111111111111111111111111111112
+                type: token
+        - id: base_0xd418dfe7670c21f682e041f34250c114db5d7789
+          type: pool
+          attributes:
+            trending_rank: 2
+            address: '0xd418dfe7670c21f682e041f34250c114db5d7789'
+            name: GAME / VIRTUAL
+            pool_created_at: '2024-09-23T11:42:11Z'
+            fdv_usd: '28581355.8541354'
+            market_cap_usd: '29467507.69'
+            volume_usd:
+              h24: '1258757.96395398'
+            reserve_in_usd: '7912655.0755'
+          relationships:
+            network:
+              data:
+                id: base
+                type: network
+            dex:
+              data:
+                id: uniswap-v2-base
+                type: dex
+            base_token:
+              data:
+                id: base_0x1c4cca7c5db003824208adda61bd749e55f463a3
+                type: token
+            quote_token:
+              data:
+                id: base_0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b
+                type: token
+        - id: tron_TZ4uR8mfkfyKUfTmSxcDa7rs3R49Yy2gL6
+          type: pool
+          attributes:
+            trending_rank: 3
+            address: TZ4uR8mfkfyKUfTmSxcDa7rs3R49Yy2gL6
+            name: FOFAR / WTRX
+            pool_created_at: '2024-08-17T03:39:09Z'
+            fdv_usd: '259374.996058586'
+            market_cap_usd: '260667.6301'
+            volume_usd:
+              h24: '1061.7715674292'
+            reserve_in_usd: '157287.8193'
+          relationships:
+            network:
+              data:
+                id: tron
+                type: network
+            dex:
+              data:
+                id: sunswap-v2
+                type: dex
+            base_token:
+              data:
+                id: tron_TUFonyWZ4Tza5MzgDj6g2u5rfdGoRVYG7g
+                type: token
+            quote_token:
+              data:
+                id: tron_TNUC9Qb1rRpS5CbWLmNMxXBjyFoydXjWFR
+                type: token
+        included:
+        - id: eth_0xed93a0bcbd7793b4dd6ca0033b813344512c106d
+          type: token
+          attributes:
+            address: '0xed93a0bcbd7793b4dd6ca0033b813344512c106d'
+            name: Tuggin
+            symbol: TUGGIN
+            decimals: 9
+            image_url: null
+            coingecko_coin_id: null
+        - id: solana_7u9kr8ZCHnkeS2n46jVuyq6tUegAtaCUM52AQ1iARKP3
+          type: token
+          attributes:
+            address: 7u9kr8ZCHnkeS2n46jVuyq6tUegAtaCUM52AQ1iARKP3
+            name: Marie Rose AI
+            symbol: MARIE
+            decimals: 6
+            image_url: https://coin-images.coingecko.com/coins/images/51760/large/photo_2023-10-02_12-35-05.jpg?1731928262
+            coingecko_coin_id: marie-rose-ai
+        - id: base_0x1c4cca7c5db003824208adda61bd749e55f463a3
+          type: token
+          attributes:
+            address: '0x1c4cca7c5db003824208adda61bd749e55f463a3'
+            name: GAME by Virtuals
+            symbol: GAME
+            decimals: 18
+            image_url: https://coin-images.coingecko.com/coins/images/51063/large/Gaming_Agent_1fe70d54ba.jpg?1729925539
+            coingecko_coin_id: game-by-virtuals
+        - id: tron_TUFonyWZ4Tza5MzgDj6g2u5rfdGoRVYG7g
+          type: token
+          attributes:
+            address: TUFonyWZ4Tza5MzgDj6g2u5rfdGoRVYG7g
+            name: FOFAR
+            symbol: FOFAR
+            decimals: 18
+            image_url: https://coin-images.coingecko.com/coins/images/39798/large/0mWJSkHI_400x400.jpg?1728417701
+            coingecko_coin_id: fofar-2
 top_holders_tool:
   input:
     tool: get_top_token_holders
     tool_arguments:
       network: base
       address: '0xEF22cb48B8483dF6152e1423b19dF5553BbD818b'
-    raw_data_only: true
+    raw_data_only: false
   output:
     response: ''
     data:
@@ -5659,72 +5837,74 @@ top_holders_tool:
               label: Staked Heurist Token (STHEU)
               amount: '18937212.0'
               percentage: '12.388'
-              value: '786169.93'
+              value: '799844.25'
             - rank: 2
               address: '0xbeb7381f574e941650dc91e710ca0bd4864b3d31'
               label: null
               amount: '8977507.0'
               percentage: '5.8727'
-              value: '372697.21'
+              value: '379179.75'
             - rank: 3
               address: '0xf314fa643d4819021d7a3c3b2f9f8b6386761ce5'
               label: null
               amount: '8698474.0'
               percentage: '5.6902'
-              value: '361113.28'
+              value: '367394.34'
             - rank: 4
               address: '0x4e3ae00e8323558fa5cac04b152238924aa31b60'
               label: Hot Wallet
               amount: '6917418.0'
               percentage: '4.5251'
-              value: '287173.53'
+              value: '292168.51'
             - rank: 5
               address: '0x726e0b747df0f78a7d8c546b6b34e1ac1e127598'
               label: null
               amount: '6604066.0'
               percentage: '4.3201'
-              value: '274164.86'
+              value: '278933.57'
             - rank: 6
               address: '0x7c42dd1556754be827e187ce0870e70c5e571f35'
               label: CLPool
               amount: '6398883.0'
               percentage: '4.1859'
-              value: '265646.78'
+              value: '270267.33'
             - rank: 7
               address: '0xcfc4f31d615f81d2f2508a06fb43e5b1c154ada2'
               label: null
               amount: '5645616.0'
               percentage: '3.6931'
-              value: '234375.24'
+              value: '238451.86'
             - rank: 8
               address: '0x0d0707963952f2fba59dd06f2b425ace40b492fe'
               label: Hot Wallet
               amount: '4975697.0'
               percentage: '3.2549'
-              value: '206563.85'
+              value: '210156.73'
             - rank: 9
               address: '0x89f9f593d2957bec9dc1ac58068a115961109ae9'
               label: null
               amount: '4000004.0'
               percentage: '2.6166'
-              value: '166058.39'
+              value: '168946.74'
             - rank: 10
               address: '0xd72a3cf959e023bc3d8d62b9f5a7120c07a7de67'
               label: null
               amount: '3500000.0'
               percentage: '2.2896'
-              value: '145300.94'
+              value: '147828.25'
 raw_data_query:
   input:
     query: Compare Bitcoin and Ethereum prices
     raw_data_only: true
   output:
-    response: "### Price Comparison: Bitcoin vs Ethereum\n\n- **Bitcoin (BTC)**:\n\
-      \  - **Price**: $105,627\n  - **Market Cap**: $2.10 Trillion\n  - **24h Trading\
-      \ Volume**: $19.26 Billion\n  - **24h Price Change**: +0.14%\n\n- **Ethereum\
-      \ (ETH)**:\n  - **Price**: $2,492.07\n  - **Market Cap**: $300.85 Billion\n\
-      \  - **24h Trading Volume**: $11.67 Billion\n  - **24h Price Change**: -0.99%\n\
-      \n### Insights:\n- Bitcoin leads significantly in price and market capitalization\
-      \ compared to Ethereum.\n- Bitcoin has shown a slight increase in price over\
-      \ the last 24 hours, while Ethereum has declined."
+    response: "### Price Comparison: Bitcoin vs. Ethereum\n\n- **Bitcoin (BTC)** \
+      \ \n  - Price: **$105,626**  \n  - Market Cap: **$2.10 Trillion**  \n  - 24h\
+      \ Trading Volume: **$19.42 Billion**  \n  - 24h Change: **+0.17%**  \n\n- **Ethereum\
+      \ (ETH)**  \n  - Price: **$2,490.61**  \n  - Market Cap: **$300.71 Billion**\
+      \  \n  - 24h Trading Volume: **$11.88 Billion**  \n  - 24h Change: **-1.09%**\
+      \  \n\n### Insights:\n- Bitcoin's price is significantly higher than Ethereum's,\
+      \ standing at over **42 times** Ethereum's price.\n- Bitcoin's market cap is\
+      \ also much larger, being approximately **7 times** that of Ethereum's.\n- Bitcoin\
+      \ has shown a slight increase in price over the last 24 hours, whereas Ethereum\
+      \ has experienced a minor decline."
     data: {}
