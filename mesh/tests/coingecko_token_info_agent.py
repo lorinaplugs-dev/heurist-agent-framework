@@ -19,7 +19,7 @@ async def run_agent():
     try:
         # Test with a natural language query
         await asyncio.sleep(REQUEST_SLEEP)
-        query_input = {"query": "Get information about MONA"}
+        query_input = {"query": "Get information about $HEURIST"}
         query_result = await agent.handle_message(query_input)
         print(f"Natural Language Query Result: {query_result}")
 
@@ -91,7 +91,7 @@ async def run_agent():
                 "per_page": 10,
                 "page": 1,
             },
-            "raw_data_only": True,
+            "raw_data_only": False,
         }
         tokens_by_category_result = await agent.handle_message(tokens_by_category_input)
         print(f"Get Tokens By Category Tool Result: {tokens_by_category_result}")

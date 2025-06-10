@@ -1,9 +1,11 @@
+import asyncio
 import json
 import logging
 import os
 import time
 from typing import Any, Dict, List, Optional
 
+import aiohttp
 import requests
 from smolagents import ToolCallingAgent, tool
 from smolagents.memory import SystemPromptStep
@@ -81,6 +83,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
 
         self.agent.step_callbacks.append(self._step_callback)
         self.current_message = {}
+        self._request_semaphore = asyncio.Semaphore(10)  # Limit to 10 concurrent requests
 
     def _step_callback(self, step_log):
         logger.info(f"Step: {step_log}")
@@ -346,6 +349,24 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
         if endpoint.startswith("/onchain"):
             return self.pro_api_url, self.pro_headers
         return self.public_api_url, self.public_headers
+
+    async def _api_request(self, url: str, method: str, headers: Dict, params: Dict = None) -> Dict:
+        """Perform an asynchronous API request with rate-limiting."""
+        async with self._request_semaphore:
+            try:
+                async with aiohttp.ClientSession() as session:
+                    async with session.request(method, url, headers=headers, params=params, timeout=10) as response:
+                        response.raise_for_status()
+                        return await response.json()
+            except aiohttp.ClientResponseError as e:
+                logger.error(f"API request error: {e.status}, message='{e.message}', url='{url}'")
+                return {"error": f"API request failed: {e.status}, message='{e.message}', url='{url}'"}
+            except aiohttp.ClientError as e:
+                logger.error(f"Client error during API request: {e}")
+                return {"error": f"Client error: {str(e)}"}
+            except asyncio.TimeoutError:
+                logger.error(f"API request timed out: {url}")
+                return {"error": f"Request timed out: {url}"}
 
     # Tool definitions using smolagents tool decorator
     def get_token_info_tool(self):
@@ -760,41 +781,33 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return selected_token
         return None
 
+    @with_retry(max_retries=3)
     async def _search_token(self, query: str) -> str | None:
         """internal helper to search for a token and return its id"""
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                api_url, headers = self.get_api_config("/search")
-                url = f"{api_url}/search"
-                params = {"query": query}
-                response = requests.get(url, headers=headers, params=params)
-                response.raise_for_status()
-                search_results = response.json()
-
-                if not search_results.get("coins"):
-                    return None
-
-                if len(search_results["coins"]) == 1:
-                    return search_results["coins"][0]["id"]
-
-                # try exact matches first
-                for coin in search_results["coins"]:
-                    if coin["name"].lower() == query.lower() or coin["symbol"].lower() == query.lower():
-                        return coin["id"]
-
-                # if no exact match, return first result
-                return search_results["coins"][0]["id"]
-            except requests.HTTPError as e:
-                if response.status_code == 429 and attempt < max_attempts - 1:
-                    logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
-                    time.sleep(5)
-                    continue
-                logger.error(f"Error searching for token: {e}")
+        try:
+            api_url, headers = self.get_api_config("/search")
+            url = f"{api_url}/search"
+            params = {"query": query}
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
+            if "error" in response:
                 return None
-            except requests.RequestException as e:
-                logger.error(f"Error searching for token: {e}")
+
+            if not response.get("coins"):
                 return None
+
+            if len(response["coins"]) == 1:
+                return response["coins"][0]["id"]
+
+            # try exact matches first
+            for coin in response["coins"]:
+                if coin["name"].lower() == query.lower() or coin["symbol"].lower() == query.lower():
+                    return coin["id"]
+
+            # if no exact match, return first result
+            return response["coins"][0]["id"]
+        except Exception as e:
+            logger.error(f"Error searching for token: {e}")
+            return None
 
     # ------------------------------------------------------------------------
     #                      COINGECKO API-SPECIFIC METHODS
@@ -827,91 +840,75 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return {"error": f"Failed to fetch trending coins: {str(e)}"}
 
     @with_cache(ttl_seconds=3600)
+    @with_retry(max_retries=3)
     async def _get_token_info(self, coingecko_id: str) -> dict:
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                api_url, headers = self.get_api_config(f"/coins/{coingecko_id}")
-                response = requests.get(f"{api_url}/coins/{coingecko_id}", headers=headers)
-                response.raise_for_status()
-                return response.json()
-            except requests.HTTPError:
-                if response.status_code == 429 and attempt < max_attempts - 1:
-                    logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
-                    time.sleep(5)
-                    continue
-                # if response fails, try to search for the token and use first result
-                if response.status_code != 200:
-                    fallback_id = await self._search_token(coingecko_id)
-                    if fallback_id:
-                        try:
-                            api_url, headers = self.get_api_config(f"/coins/{fallback_id}")
-                            fallback_response = requests.get(f"{api_url}/coins/{fallback_id}", headers=headers)
-                            fallback_response.raise_for_status()
-                            return fallback_response.json()
-                        except requests.RequestException:
-                            pass
-                return {"error": "Failed to fetch token info"}
-            except requests.RequestException as e:
-                logger.error(f"Error: {e}")
-                return {"error": f"Failed to fetch token info: {str(e)}"}
+        try:
+            api_url, headers = self.get_api_config(f"/coins/{coingecko_id}")
+            url = f"{api_url}/coins/{coingecko_id}"
+            response = await self._api_request(url=url, method="GET", headers=headers)
+            if "error" not in response:
+                return response
+
+            # if response contains error, try search fallback
+            fallback_id = await self._search_token(coingecko_id)
+            if fallback_id:
+                api_url, headers = self.get_api_config(f"/coins/{fallback_id}")
+                fallback_url = f"{api_url}/coins/{fallback_id}"
+                fallback_response = await self._api_request(url=fallback_url, method="GET", headers=headers)
+                if "error" not in fallback_response:
+                    return fallback_response
+            return {"error": "Failed to fetch token info"}
+        except Exception as e:
+            logger.error(f"Error: {e}")
+            return {"error": f"Failed to fetch token info: {str(e)}"}
 
     @with_cache(ttl_seconds=3600)
+    @with_retry(max_retries=3)
     async def _get_categories_list(self) -> dict:
         """Get a list of all CoinGecko categories"""
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                api_url, headers = self.get_api_config("/coins/categories/list")
-                url = f"{api_url}/coins/categories/list"
-                response = await self._api_request(url=url, method="GET", headers=headers)
-                if "error" in response:
-                    return {"error": response["error"]}
-                return {"categories": response}
-            except Exception as e:
-                if isinstance(e, requests.HTTPError) and e.response.status_code == 429 and attempt < max_attempts - 1:
-                    logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
-                    time.sleep(5)
-                    continue
-                logger.error(f"Error: {e}")
-                return {"error": f"Failed to fetch categories list: {str(e)}"}
+        try:
+            api_url, headers = self.get_api_config("/coins/categories/list")
+            url = f"{api_url}/coins/categories/list"
+            response = await self._api_request(url=url, method="GET", headers=headers)
+            if "error" in response:
+                return {"error": response["error"]}
+            return {"categories": response}
+        except Exception as e:
+            logger.error(f"Error: {e}")
+            return {"error": f"Failed to fetch categories list: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
     async def _get_category_data(self, order: Optional[str] = "market_cap_desc") -> dict:
         """Get market data for all cryptocurrency categories"""
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                api_url, headers = self.get_api_config("/coins/categories")
-                url = f"{api_url}/coins/categories"
-                params = {}
-                if order:
-                    params["order"] = order
+        try:
+            api_url, headers = self.get_api_config("/coins/categories")
+            url = f"{api_url}/coins/categories"
+            params = {}
+            if order:
+                params["order"] = order
 
-                response = await self._api_request(url=url, method="GET", headers=headers, params=params)
-                if "error" in response:
-                    return {"error": response["error"]}
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
+            if "error" in response:
+                return {"error": response["error"]}
 
-                # Process the response to remove specified fields
-                category_data = response
-                for category in category_data:
-                    if "top_3_coins" in category:
-                        del category["top_3_coins"]
-                    if "updated_at" in category:
-                        del category["updated_at"]
-                    if "top_3_coins_id" in category:
-                        del category["top_3_coins_id"]
+            # Process the response to remove specified fields
+            category_data = response
+            for category in category_data:
+                if "top_3_coins" in category:
+                    del category["top_3_coins"]
+                if "updated_at" in category:
+                    del category["updated_at"]
+                if "top_3_coins_id" in category:
+                    del category["top_3_coins_id"]
 
-                return {"category_data": category_data}
-            except Exception as e:
-                if isinstance(e, requests.HTTPError) and e.response.status_code == 429 and attempt < max_attempts - 1:
-                    logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
-                    time.sleep(5)
-                    continue
-                logger.error(f"Error: {e}")
-                return {"error": f"Failed to fetch category data: {str(e)}"}
+            return {"category_data": category_data}
+        except Exception as e:
+            logger.error(f"Error: {e}")
+            return {"error": f"Failed to fetch category data: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
     async def _get_token_price_multi(
         self,
         ids: str,
@@ -922,36 +919,31 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
         include_last_updated_at: bool = False,
         precision: str = None,
     ) -> dict:
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                api_url, headers = self.get_api_config("/simple/price")
-                url = f"{api_url}/simple/price"
-                params = {
-                    "ids": ids,
-                    "vs_currencies": vs_currencies,
-                    "include_market_cap": str(include_market_cap).lower(),
-                    "include_24hr_vol": str(include_24hr_vol).lower(),
-                    "include_24hr_change": str(include_24hr_change).lower(),
-                    "include_last_updated_at": str(include_last_updated_at).lower(),
-                }
+        try:
+            api_url, headers = self.get_api_config("/simple/price")
+            url = f"{api_url}/simple/price"
+            params = {
+                "ids": ids,
+                "vs_currencies": vs_currencies,
+                "include_market_cap": str(include_market_cap).lower(),
+                "include_24hr_vol": str(include_24hr_vol).lower(),
+                "include_24hr_change": str(include_24hr_change).lower(),
+                "include_last_updated_at": str(include_last_updated_at).lower(),
+            }
 
-                if precision:
-                    params["precision"] = precision
+            if precision:
+                params["precision"] = precision
 
-                response = await self._api_request(url=url, method="GET", headers=headers, params=params)
-                if "error" in response:
-                    return {"error": response["error"]}
-                return response
-            except Exception as e:
-                if isinstance(e, requests.HTTPError) and e.response.status_code == 429 and attempt < max_attempts - 1:
-                    logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
-                    time.sleep(5)
-                    continue
-                logger.error(f"Error: {e}")
-                return {"error": f"Failed to fetch multi-token price data: {str(e)}"}
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
+            if "error" in response:
+                return {"error": response["error"]}
+            return response
+        except Exception as e:
+            logger.error(f"Error: {e}")
+            return {"error": f"Failed to fetch multi-token price data: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
     async def _get_tokens_by_category(
         self,
         category_id: str,
@@ -961,31 +953,25 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
         page: int = 1,
     ) -> dict:
         """Get tokens within a specific category"""
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                api_url, headers = self.get_api_config("/coins/markets")
-                url = f"{api_url}/coins/markets"
-                params = {
-                    "vs_currency": vs_currency,
-                    "category": category_id,
-                    "order": order,
-                    "per_page": per_page,
-                    "page": page,
-                    "sparkline": "false",
-                }
+        try:
+            api_url, headers = self.get_api_config("/coins/markets")
+            url = f"{api_url}/coins/markets"
+            params = {
+                "vs_currency": vs_currency,
+                "category": category_id,
+                "order": order,
+                "per_page": per_page,
+                "page": page,
+                "sparkline": "false",
+            }
 
-                response = await self._api_request(url=url, method="GET", headers=headers, params=params)
-                if "error" in response:
-                    return {"error": response["error"]}
-                return {"category_tokens": {"category_id": category_id, "tokens": response}}
-            except Exception as e:
-                if isinstance(e, requests.HTTPError) and e.response.status_code == 429 and attempt < max_attempts - 1:
-                    logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
-                    time.sleep(5)
-                    continue
-                logger.error(f"Error: {e}")
-                return {"error": f"Failed to fetch tokens for category '{category_id}': {str(e)}"}
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
+            if "error" in response:
+                return {"error": response["error"]}
+            return {"category_tokens": {"category_id": category_id, "tokens": response}}
+        except Exception as e:
+            logger.error(f"Error: {e}")
+            return {"error": f"Failed to fetch tokens for category '{category_id}': {str(e)}"}
 
     def format_token_info(self, data: Dict) -> Dict:
         """Format token information in a structured way"""
@@ -1150,6 +1136,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return {"error": f"Unsupported tool: {tool_name}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
     async def _handle_trending_pools(self, include: str, pools: int) -> Dict[str, Any]:
         """Handle trending pools API call"""
         valid_includes = ["base_token", "quote_token", "dex", "network"]
@@ -1157,40 +1144,29 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             logger.error(f"Invalid include parameter: {include}. Must be one of {valid_includes}")
             return {"error": f"Invalid include parameter: {include}. Must be one of {valid_includes}"}
 
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                api_url, headers = self.get_api_config("/onchain/pools/trending_search")
-                url = f"{api_url}/onchain/pools/trending_search"
-                params = {"include": include, "pools": pools}
-                response = await self._api_request(url=url, method="GET", headers=headers, params=params)
-                if "error" in response:
-                    return {"error": response["error"]}
-                return {"trending_pools": response}
-            except Exception as e:
-                if isinstance(e, requests.HTTPError) and e.response.status_code == 429 and attempt < max_attempts - 1:
-                    logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
-                    time.sleep(5)
-                    continue
-                logger.error(f"Error getting trending pools: {e}")
-                return {"error": f"Failed to fetch trending pools: {str(e)}"}
+        try:
+            api_url, headers = self.get_api_config("/onchain/pools/trending_search")
+            url = f"{api_url}/onchain/pools/trending_search"
+            params = {"include": include, "pools": pools}
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
+            if "error" in response:
+                return {"error": response["error"]}
+            return {"trending_pools": response}
+        except Exception as e:
+            logger.error(f"Error getting trending pools: {e}")
+            return {"error": f"Failed to fetch trending pools: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
     async def _handle_top_token_holders(self, network: str, address: str) -> Dict[str, Any]:
         """Handle top token holders API call"""
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                api_url, headers = self.get_api_config(f"/onchain/networks/{network}/tokens/{address}/top_holders")
-                url = f"{api_url}/onchain/networks/{network}/tokens/{address}/top_holders"
-                response = await self._api_request(url=url, method="GET", headers=headers)
-                if "error" in response:
-                    return {"error": response["error"]}
-                return {"top_holders": response}
-            except Exception as e:
-                if isinstance(e, requests.HTTPError) and e.response.status_code == 429 and attempt < max_attempts - 1:
-                    logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
-                    time.sleep(5)
-                    continue
-                logger.error(f"Error getting top token holders: {e}")
-                return {"error": f"Failed to fetch top token holders: {str(e)}"}
+        try:
+            api_url, headers = self.get_api_config(f"/onchain/networks/{network}/tokens/{address}/top_holders")
+            url = f"{api_url}/onchain/networks/{network}/tokens/{address}/top_holders"
+            response = await self._api_request(url=url, method="GET", headers=headers)
+            if "error" in response:
+                return {"error": response["error"]}
+            return {"top_holders": response}
+        except Exception as e:
+            logger.error(f"Error getting top token holders: {e}")
+            return {"error": f"Failed to fetch top token holders: {str(e)}"}
