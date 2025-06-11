@@ -17,7 +17,7 @@ MESH_METADATA_URL = "https://mesh.heurist.ai/metadata.json"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEST_INPUTS_FILE = os.path.join(SCRIPT_DIR, "test_inputs.json")
 
-DISABLED_AGENTS = {"DeepResearchAgent"}  # slow and times out frequently
+DISABLED_AGENTS = {"DeepResearchAgent", "MemoryAgent"}
 
 
 def fetch_agents_metadata() -> Dict:
@@ -227,7 +227,7 @@ def list_agents():
             missing_tools = test_tools - tools
             if missing_tools:
                 orphaned_tools[agent_id] = missing_tools
-        elif tools:  # agent has tools but no test inputs
+        elif tools and agent_id not in DISABLED_AGENTS:
             agents_needing_samples.add(agent_id)
 
     if agents_needing_samples or orphaned_test_agents or orphaned_tools:
@@ -274,8 +274,9 @@ def list_agents():
         else:
             actions.append("[dim]-[/]")
 
+        display_name = styled_name if has_any_test or agent_id in DISABLED_AGENTS else f"[dim]{agent_id}[/]"
         row = [
-            styled_name if has_any_test else f"[dim]{agent_id}[/]",
+            display_name,
             "\n".join(tool_names),
             "\n".join(tool_test_status),
         ]

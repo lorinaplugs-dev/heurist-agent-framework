@@ -1,19 +1,37 @@
 {
-  "AaveAgent": {
-    "get_aave_reserves": {
-      "chain_id": 137
-    }
-  },
   "AIXBTProjectInfoAgent": {
     "search_projects": {
       "limit": 1,
       "name": "heurist"
     }
   },
+  "AaveAgent": {
+    "get_aave_reserves": {
+      "chain_id": 137
+    }
+  },
   "AlloraPricePredictionAgent": {
     "get_allora_prediction": {
       "timeframe": "5m",
       "token": "ETH"
+    }
+  },
+  "ArkhamIntelligenceAgent": {
+    "get_address_intelligence": {
+      "address": "0x7d9d1821d15b9e0b8ab98a058361233e255e405d",
+      "chain": "base"
+    },
+    "get_contract_metadata": {
+      "chain": "ethereum",
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    },
+    "get_portfolio_snapshot": {
+      "address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D"
+    },
+    "get_token_holders": {
+      "chain": "solana",
+      "address": "38PgzpJYu2HkiYvV8qePFakB8tuobPdGm2FFEn7Dpump",
+      "groupByEntity": false
     }
   },
   "BitquerySolanaTokenInfoAgent": {
@@ -111,6 +129,20 @@
       "keywords": [
         "aave"
       ]
+    }
+  },
+  "EtherscanAgent": {
+    "get_address_history": {
+      "chain": "base",
+      "address": "0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B"
+    },
+    "get_erc20_token_details": {
+      "chain": "base",
+      "address": "0x55d398326f99059ff775485246999027b3197955"
+    },
+    "get_transaction_details": {
+      "chain": "base",
+      "txid": "0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd"
     }
   },
   "ExaSearchAgent": {
@@ -236,8 +268,8 @@
       "page": 0
     },
     "get_token_info": {
-      "token_symbol": "HEU",
-      "limit": 5
+      "limit": 5,
+      "token_symbol": "HEU"
     }
   },
   "TruthSocialAgent": {
