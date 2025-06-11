@@ -1,8 +1,11 @@
+import asyncio
 import json
 import logging
 import os
+import time
 from typing import Any, Dict, List, Optional
 
+import aiohttp
 import requests
 from smolagents import ToolCallingAgent, tool
 from smolagents.memory import SystemPromptStep
@@ -18,12 +21,14 @@ logger = logging.getLogger(__name__)
 class CoinGeckoTokenInfoAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.api_url = "https://api.coingecko.com/api/v3"
+        self.public_api_url = "https://api.coingecko.com/api/v3"
+        self.pro_api_url = "https://pro-api.coingecko.com/api/v3"
         self.api_key = os.getenv("COINGECKO_API_KEY")
         if not self.api_key:
             raise ValueError("COINGECKO_API_KEY environment variable is required")
 
-        self.headers = {"Authorization": f"Bearer {self.api_key}"}
+        self.public_headers = {"Authorization": f"Bearer {self.api_key}"}
+        self.pro_headers = {"x-cg-pro-api-key": self.api_key}
 
         self.metadata.update(
             {
@@ -45,6 +50,8 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                     "Analyze AI16Z token",
                     "List crypto categories",
                     "Compare DeFi tokens",
+                    "Get trending on-chain pools",
+                    "Get top token holders for a token",
                 ],
             }
         )
@@ -63,6 +70,8 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             self.get_categories_list_tool(),
             self.get_category_data_tool(),
             self.get_tokens_by_category_tool(),
+            self.get_trending_pools_tool(),
+            self.get_top_token_holders_tool(),
         ]
 
         max_steps = 6
@@ -74,6 +83,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
 
         self.agent.step_callbacks.append(self._step_callback)
         self.current_message = {}
+        self._request_semaphore = asyncio.Semaphore(10)  # Limit to 10 concurrent requests
 
     def _step_callback(self, step_log):
         logger.info(f"Step: {step_log}")
@@ -95,6 +105,8 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     - List crypto categories
     - Get tokens within specific categories
     - Compare tokens across categories
+    - Get trending on-chain pools
+    - Get top token holders for a specific token and network
 
     RESPONSE GUIDELINES:
     - Keep responses focused on what was specifically asked
@@ -105,6 +117,10 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     For specific token queries, identify whether the user provided a CoinGecko ID directly or needs to search by token name or symbol. Coingecko ID is lowercase string and may contain dashes. If a direct CoinGecko ID lookup fails, the system will automatically attempt to search and find the best matching token. Do not make up CoinGecko IDs.
 
     For trending coins requests, use the get_trending_coins tool to fetch the current top trending cryptocurrencies.
+
+    For trending pools requests, use the get_trending_pools tool to fetch trending on-chain pools. The 'include' parameter must be one of: base_token, quote_token, dex, or network.
+
+    For top token holders requests, use the get_top_token_holders tool to analyze token holder distribution for a specific token and network.
 
     For token comparisons or when needing to fetch multiple token prices at once, use the get_token_price_multi tool which is more efficient than making multiple individual calls.
 
@@ -285,7 +301,72 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                     },
                 },
             },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_trending_pools",
+                    "description": "Get up to 10 trending on-chain pools with token data from CoinGecko. The 'include' parameter must be one of: base_token, quote_token, dex, or network.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "include": {
+                                "type": "string",
+                                "description": "Single attribute to include: base_token, quote_token, dex, or network",
+                                "enum": ["base_token", "quote_token", "dex", "network"],
+                                "default": "base_token",
+                            },
+                            "pools": {
+                                "type": "integer",
+                                "description": "Number of pools to return (1-10)",
+                                "default": 4,
+                                "minimum": 1,
+                                "maximum": 10,
+                            },
+                        },
+                        "required": [],
+                    },
+                },
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_top_token_holders",
+                    "description": "Get top 50 token holder addresses for a token on a specific network.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "network": {"type": "string", "description": "Network ID (e.g., base)"},
+                            "address": {"type": "string", "description": "Token contract address"},
+                        },
+                        "required": ["network", "address"],
+                    },
+                },
+            },
         ]
+
+    def get_api_config(self, endpoint: str) -> tuple[str, Dict[str, str]]:
+        """Determine the appropriate API URL and headers based on the endpoint."""
+        if endpoint.startswith("/onchain"):
+            return self.pro_api_url, self.pro_headers
+        return self.public_api_url, self.public_headers
+
+    async def _api_request(self, url: str, method: str, headers: Dict, params: Dict = None) -> Dict:
+        """Perform an asynchronous API request with rate-limiting."""
+        async with self._request_semaphore:
+            try:
+                async with aiohttp.ClientSession() as session:
+                    async with session.request(method, url, headers=headers, params=params, timeout=10) as response:
+                        response.raise_for_status()
+                        return await response.json()
+            except aiohttp.ClientResponseError as e:
+                logger.error(f"API request error: {e.status}, message='{e.message}', url='{url}'")
+                return {"error": f"API request failed: {e.status}, message='{e.message}', url='{url}'"}
+            except aiohttp.ClientError as e:
+                logger.error(f"Client error during API request: {e}")
+                return {"error": f"Client error: {str(e)}"}
+            except asyncio.TimeoutError:
+                logger.error(f"API request timed out: {url}")
+                return {"error": f"Request timed out: {url}"}
 
     # Tool definitions using smolagents tool decorator
     def get_token_info_tool(self):
@@ -300,33 +381,40 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 Dictionary with token information or error message
             """
             logger.info(f"Getting token info for: {coingecko_id}")
-            try:
-                response = requests.get(f"{self.api_url}/coins/{coingecko_id}", headers=self.headers)
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    api_url, headers = self.get_api_config(f"/coins/{coingecko_id}")
+                    response = requests.get(f"{api_url}/coins/{coingecko_id}", headers=headers)
+                    response.raise_for_status()
+                    return self.format_token_info(response.json())
+                except requests.HTTPError:
+                    if response.status_code == 429 and attempt < max_attempts - 1:
+                        logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    if response.status_code != 200:
+                        api_url, headers = self.get_api_config("/search")
+                        search_response = requests.get(f"{api_url}/search?query={coingecko_id}", headers=headers)
+                        search_response.raise_for_status()
+                        search_results = search_response.json()
 
-                if response.status_code != 200:
-                    search_response = requests.get(f"{self.api_url}/search?query={coingecko_id}", headers=self.headers)
-                    search_response.raise_for_status()
-                    search_results = search_response.json()
+                        if search_results.get("coins") and len(search_results["coins"]) > 0:
+                            valid_tokens = [
+                                token for token in search_results["coins"] if token.get("market_cap_rank") is not None
+                            ]
+                            if valid_tokens:
+                                valid_tokens.sort(key=lambda x: x.get("market_cap_rank", float("inf")))
+                                fallback_id = valid_tokens[0]["id"]
+                                api_url, headers = self.get_api_config(f"/coins/{fallback_id}")
+                                fallback_response = requests.get(f"{api_url}/coins/{fallback_id}", headers=headers)
+                                fallback_response.raise_for_status()
+                                return self.format_token_info(fallback_response.json())
 
-                    if search_results.get("coins") and len(search_results["coins"]) > 0:
-                        valid_tokens = [
-                            token for token in search_results["coins"] if token.get("market_cap_rank") is not None
-                        ]
-                        if valid_tokens:
-                            valid_tokens.sort(key=lambda x: x.get("market_cap_rank", float("inf")))
-                            fallback_id = valid_tokens[0]["id"]
-                            response = requests.get(f"{self.api_url}/coins/{fallback_id}", headers=self.headers)
-                            response.raise_for_status()
-                            return self.format_token_info(response.json())
-
-                    return {"error": "Failed to fetch token info and fallback search failed"}
-
-                response.raise_for_status()
-                return self.format_token_info(response.json())
-
-            except requests.RequestException as e:
-                logger.error(f"Error getting token info: {e}")
-                return {"error": f"Failed to fetch token info: {str(e)}"}
+                        return {"error": "Failed to fetch token info and fallback search failed"}
+                except requests.RequestException as e:
+                    logger.error(f"Error getting token info: {e}")
+                    return {"error": f"Failed to fetch token info: {str(e)}"}
 
         return get_token_info
 
@@ -339,26 +427,35 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 Dictionary with trending coins data or error message
             """
             logger.info("Getting trending coins")
-            try:
-                response = requests.get(f"{self.api_url}/search/trending", headers=self.headers)
-                response.raise_for_status()
-                trending_data = response.json()
-                formatted_trending = []
-                for coin in trending_data.get("coins", [])[:10]:
-                    coin_info = coin["item"]
-                    formatted_trending.append(
-                        {
-                            "name": coin_info["name"],
-                            "symbol": coin_info["symbol"],
-                            "market_cap_rank": coin_info.get("market_cap_rank", "N/A"),
-                            "price_usd": coin_info["data"].get("price", "N/A"),
-                        }
-                    )
-                return {"trending_coins": formatted_trending}
-
-            except requests.RequestException as e:
-                logger.error(f"Error getting trending coins: {e}")
-                return {"error": f"Failed to fetch trending coins: {str(e)}"}
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    api_url, headers = self.get_api_config("/search/trending")
+                    response = requests.get(f"{api_url}/search/trending", headers=headers)
+                    response.raise_for_status()
+                    trending_data = response.json()
+                    formatted_trending = []
+                    for coin in trending_data.get("coins", [])[:10]:
+                        coin_info = coin["item"]
+                        formatted_trending.append(
+                            {
+                                "name": coin_info["name"],
+                                "symbol": coin_info["symbol"],
+                                "market_cap_rank": coin_info.get("market_cap_rank", "N/A"),
+                                "price_usd": coin_info["data"].get("price", "N/A"),
+                            }
+                        )
+                    return {"trending_coins": formatted_trending}
+                except requests.HTTPError as e:
+                    if response.status_code == 429 and attempt < max_attempts - 1:
+                        logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    logger.error(f"Error getting trending coins: {e}")
+                    return {"error": f"Failed to fetch trending coins: {str(e)}"}
+                except requests.RequestException as e:
+                    logger.error(f"Error getting trending coins: {e}")
+                    return {"error": f"Failed to fetch trending coins: {str(e)}"}
 
         return get_trending_coins
 
@@ -388,33 +485,42 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 Dictionary with price data for the requested tokens or error message
             """
             logger.info(f"Getting multi-token price data for: {ids} in {vs_currencies}")
-            try:
-                params = {
-                    "ids": ids,
-                    "vs_currencies": vs_currencies,
-                    "include_market_cap": str(include_market_cap).lower(),
-                    "include_24hr_vol": str(include_24hr_vol).lower(),
-                    "include_24hr_change": str(include_24hr_change).lower(),
-                    "include_last_updated_at": str(include_last_updated_at).lower(),
-                }
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    api_url, headers = self.get_api_config("/simple/price")
+                    params = {
+                        "ids": ids,
+                        "vs_currencies": vs_currencies,
+                        "include_market_cap": str(include_market_cap).lower(),
+                        "include_24hr_vol": str(include_24hr_vol).lower(),
+                        "include_24hr_change": str(include_24hr_change).lower(),
+                        "include_last_updated_at": str(include_last_updated_at).lower(),
+                    }
 
-                if precision:
-                    params["precision"] = precision
+                    if precision:
+                        params["precision"] = precision
 
-                response = requests.get(f"{self.api_url}/simple/price", headers=self.headers, params=params)
-                response.raise_for_status()
-                price_data = response.json()
+                    response = requests.get(f"{api_url}/simple/price", headers=headers, params=params)
+                    response.raise_for_status()
+                    price_data = response.json()
 
-                # Format the response in a more readable structure
-                formatted_data = {}
-                for token_id, data in price_data.items():
-                    formatted_data[token_id] = data
+                    # Format the response in a more readable structure
+                    formatted_data = {}
+                    for token_id, data in price_data.items():
+                        formatted_data[token_id] = data
 
-                return {"price_data": formatted_data}
-
-            except requests.RequestException as e:
-                logger.error(f"Error getting multi-token price data: {e}")
-                return {"error": f"Failed to fetch price data: {str(e)}"}
+                    return {"price_data": formatted_data}
+                except requests.HTTPError as e:
+                    if response.status_code == 429 and attempt < max_attempts - 1:
+                        logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    logger.error(f"Error getting multi-token price data: {e}")
+                    return {"error": f"Failed to fetch price data: {str(e)}"}
+                except requests.RequestException as e:
+                    logger.error(f"Error getting multi-token price data: {e}")
+                    return {"error": f"Failed to fetch price data: {str(e)}"}
 
         return get_token_price_multi
 
@@ -427,14 +533,23 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 Dictionary with categories list or error message
             """
             logger.info("Getting categories list")
-            try:
-                response = requests.get(f"{self.api_url}/coins/categories/list", headers=self.headers)
-                response.raise_for_status()
-                return {"categories": response.json()}
-
-            except requests.RequestException as e:
-                logger.error(f"Error getting categories list: {e}")
-                return {"error": f"Failed to fetch categories list: {str(e)}"}
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    api_url, headers = self.get_api_config("/coins/categories/list")
+                    response = requests.get(f"{api_url}/coins/categories/list", headers=headers)
+                    response.raise_for_status()
+                    return {"categories": response.json()}
+                except requests.HTTPError as e:
+                    if response.status_code == 429 and attempt < max_attempts - 1:
+                        logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    logger.error(f"Error getting categories list: {e}")
+                    return {"error": f"Failed to fetch categories list: {str(e)}"}
+                except requests.RequestException as e:
+                    logger.error(f"Error getting categories list: {e}")
+                    return {"error": f"Failed to fetch categories list: {str(e)}"}
 
         return get_categories_list
 
@@ -450,28 +565,37 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 Dictionary with category data or error message
             """
             logger.info(f"Getting category data with order: {order}")
-            try:
-                params = {}
-                if order:
-                    params["order"] = order
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    api_url, headers = self.get_api_config("/coins/categories")
+                    params = {}
+                    if order:
+                        params["order"] = order
 
-                response = requests.get(f"{self.api_url}/coins/categories", headers=self.headers, params=params)
-                response.raise_for_status()
+                    response = requests.get(f"{api_url}/coins/categories", headers=headers, params=params)
+                    response.raise_for_status()
 
-                category_data = response.json()
-                for category in category_data:
-                    if "top_3_coins" in category:
-                        del category["top_3_coins"]
-                    if "updated_at" in category:
-                        del category["updated_at"]
-                    if "top_3_coins_id" in category:
-                        del category["top_3_coins_id"]
+                    category_data = response.json()
+                    for category in category_data:
+                        if "top_3_coins" in category:
+                            del category["top_3_coins"]
+                        if "updated_at" in category:
+                            del category["updated_at"]
+                        if "top_3_coins_id" in category:
+                            del category["top_3_coins_id"]
 
-                return {"category_data": category_data}
-
-            except requests.RequestException as e:
-                logger.error(f"Error getting category data: {e}")
-                return {"error": f"Failed to fetch category data: {str(e)}"}
+                    return {"category_data": category_data}
+                except requests.HTTPError as e:
+                    if response.status_code == 429 and attempt < max_attempts - 1:
+                        logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    logger.error(f"Error getting category data: {e}")
+                    return {"error": f"Failed to fetch category data: {str(e)}"}
+                except requests.RequestException as e:
+                    logger.error(f"Error getting category data: {e}")
+                    return {"error": f"Failed to fetch category data: {str(e)}"}
 
         return get_category_data
 
@@ -497,25 +621,115 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 Dictionary with category tokens or error message
             """
             logger.info(f"Getting tokens for category: {category_id}")
-            try:
-                params = {
-                    "vs_currency": vs_currency,
-                    "category": category_id,
-                    "order": order,
-                    "per_page": per_page,
-                    "page": page,
-                    "sparkline": "false",
-                }
-
-                response = requests.get(f"{self.api_url}/coins/markets", headers=self.headers, params=params)
-                response.raise_for_status()
-                return {"category_tokens": {"category_id": category_id, "tokens": response.json()}}
-
-            except requests.RequestException as e:
-                logger.error(f"Error getting tokens for category: {e}")
-                return {"error": f"Failed to fetch tokens for category '{category_id}': {str(e)}"}
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    api_url, headers = self.get_api_config("/coins/markets")
+                    params = {
+                        "vs_currency": vs_currency,
+                        "category": category_id,
+                        "order": order,
+                        "per_page": per_page,
+                        "page": page,
+                        "sparkline": "false",
+                    }
+                    response = requests.get(f"{api_url}/coins/markets", headers=headers, params=params)
+                    response.raise_for_status()
+                    return {
+                        "category_tokens": {
+                            "category_id": category_id,
+                            "tokens": response.json(),
+                            "pagination": {
+                                "total": response.headers.get("x-total", "N/A"),
+                                "per_page": response.headers.get("x-per-page", "N/A"),
+                            },
+                        }
+                    }
+                except requests.HTTPError as e:
+                    if response.status_code == 429 and attempt < max_attempts - 1:
+                        logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    logger.error(f"Error getting tokens for category: {e}")
+                    return {"error": f"Failed to fetch tokens for category '{category_id}': {str(e)}"}
+                except requests.RequestException as e:
+                    logger.error(f"Error getting tokens for category: {e}")
+                    return {"error": f"Failed to fetch tokens for category '{category_id}': {str(e)}"}
 
         return get_tokens_by_category
+
+    def get_trending_pools_tool(self):
+        @tool
+        def get_trending_pools(include: str = "base_token", pools: int = 4) -> Dict[str, Any]:
+            """Get trending on-chain pools from CoinGecko.
+
+            Args:
+                include: Single attribute to include: base_token, quote_token, dex, or network
+                pools: Number of pools to return (1-10, default: 4)
+
+            Returns:
+                Dictionary with trending pools data or error message
+            """
+            valid_includes = ["base_token", "quote_token", "dex", "network"]
+            if include not in valid_includes:
+                logger.error(f"Invalid include parameter: {include}. Must be one of {valid_includes}")
+                return {"error": f"Invalid include parameter: {include}. Must be one of {valid_includes}"}
+
+            logger.info(f"Getting trending pools with include: {include}, pools: {pools}")
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    api_url, headers = self.get_api_config("/onchain/pools/trending_search")
+                    params = {"include": include, "pools": pools}
+                    response = requests.get(f"{api_url}/onchain/pools/trending_search", headers=headers, params=params)
+                    response.raise_for_status()
+                    return {"trending_pools": response.json()}
+                except requests.HTTPError as e:
+                    if response.status_code == 429 and attempt < max_attempts - 1:
+                        logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    logger.error(f"Error getting trending pools: {e}")
+                    return {"error": f"Failed to fetch trending pools: {str(e)}"}
+                except requests.RequestException as e:
+                    logger.error(f"Error getting trending pools: {e}")
+                    return {"error": f"Failed to fetch trending pools: {str(e)}"}
+
+        return get_trending_pools
+
+    def get_top_token_holders_tool(self):
+        @tool
+        def get_top_token_holders(network: str, address: str) -> Dict[str, Any]:
+            """Get top 50 token holder addresses for a token on a specific network.
+
+            Args:
+                network: Network ID (e.g., base)
+                address: Token contract address
+
+            Returns:
+                Dictionary with top token holders data or error message
+            """
+            logger.info(f"Getting top token holders for network: {network}, address: {address}")
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    api_url, headers = self.get_api_config(f"/onchain/networks/{network}/tokens/{address}/top_holders")
+                    url = f"{api_url}/onchain/networks/{network}/tokens/{address}/top_holders"
+                    response = requests.get(url, headers=headers)
+                    response.raise_for_status()
+                    return {"top_holders": response.json()}
+                except requests.HTTPError as e:
+                    if response.status_code == 429 and attempt < max_attempts - 1:
+                        logger.warning(f"429 Too Many Requests, retrying after 5 seconds (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    logger.error(f"Error getting top token holders: {e}")
+                    return {"error": f"Failed to fetch top token holders: {str(e)}"}
+                except requests.RequestException as e:
+                    logger.error(f"Error getting top token holders: {e}")
+                    return {"error": f"Failed to fetch top token holders: {str(e)}"}
+
+        return get_top_token_holders
 
     async def select_best_token_match(self, search_results: Dict, query: str) -> str:
         """
@@ -567,30 +781,31 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return selected_token
         return None
 
+    @with_retry(max_retries=3)
     async def _search_token(self, query: str) -> str | None:
         """internal helper to search for a token and return its id"""
         try:
-            url = f"{self.api_url}/search"
+            api_url, headers = self.get_api_config("/search")
+            url = f"{api_url}/search"
             params = {"query": query}
-            response = requests.get(url, headers=self.headers, params=params)
-            response.raise_for_status()
-            search_results = response.json()
-
-            if not search_results.get("coins"):
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
+            if "error" in response:
                 return None
 
-            if len(search_results["coins"]) == 1:
-                return search_results["coins"][0]["id"]
+            if not response.get("coins"):
+                return None
+
+            if len(response["coins"]) == 1:
+                return response["coins"][0]["id"]
 
             # try exact matches first
-            for coin in search_results["coins"]:
+            for coin in response["coins"]:
                 if coin["name"].lower() == query.lower() or coin["symbol"].lower() == query.lower():
                     return coin["id"]
 
             # if no exact match, return first result
-            return search_results["coins"][0]["id"]
-
-        except requests.RequestException as e:
+            return response["coins"][0]["id"]
+        except Exception as e:
             logger.error(f"Error searching for token: {e}")
             return None
 
@@ -600,8 +815,9 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
     async def _get_trending_coins(self) -> dict:
         try:
-            url = f"{self.api_url}/search/trending"
-            response = await self._api_request(url=url, method="GET", headers=self.headers)
+            api_url, headers = self.get_api_config("/search/trending")
+            url = f"{api_url}/search/trending"
+            response = await self._api_request(url=url, method="GET", headers=headers)
             if "error" in response:
                 return {"error": response["error"]}
 
@@ -624,34 +840,36 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return {"error": f"Failed to fetch trending coins: {str(e)}"}
 
     @with_cache(ttl_seconds=3600)
+    @with_retry(max_retries=3)
     async def _get_token_info(self, coingecko_id: str) -> dict:
         try:
-            response = requests.get(f"{self.api_url}/coins/{coingecko_id}", headers=self.headers)
+            api_url, headers = self.get_api_config(f"/coins/{coingecko_id}")
+            url = f"{api_url}/coins/{coingecko_id}"
+            response = await self._api_request(url=url, method="GET", headers=headers)
+            if "error" not in response:
+                return response
 
-            # if response fails, try to search for the token and use first result
-            if response.status_code != 200:
-                fallback_id = await self._search_token(coingecko_id)
-                if fallback_id:
-                    try:
-                        fallback_response = requests.get(f"{self.api_url}/coins/{fallback_id}", headers=self.headers)
-                        fallback_response.raise_for_status()
-                        return fallback_response.json()
-                    except requests.RequestException:
-                        pass
-                return {"error": "Failed to fetch token info"}
-
-            response.raise_for_status()
-            return response.json()
-        except requests.RequestException as e:
+            # if response contains error, try search fallback
+            fallback_id = await self._search_token(coingecko_id)
+            if fallback_id:
+                api_url, headers = self.get_api_config(f"/coins/{fallback_id}")
+                fallback_url = f"{api_url}/coins/{fallback_id}"
+                fallback_response = await self._api_request(url=fallback_url, method="GET", headers=headers)
+                if "error" not in fallback_response:
+                    return fallback_response
+            return {"error": "Failed to fetch token info"}
+        except Exception as e:
             logger.error(f"Error: {e}")
             return {"error": f"Failed to fetch token info: {str(e)}"}
 
     @with_cache(ttl_seconds=3600)
+    @with_retry(max_retries=3)
     async def _get_categories_list(self) -> dict:
         """Get a list of all CoinGecko categories"""
         try:
-            url = f"{self.api_url}/coins/categories/list"
-            response = await self._api_request(url=url, method="GET", headers=self.headers)
+            api_url, headers = self.get_api_config("/coins/categories/list")
+            url = f"{api_url}/coins/categories/list"
+            response = await self._api_request(url=url, method="GET", headers=headers)
             if "error" in response:
                 return {"error": response["error"]}
             return {"categories": response}
@@ -660,15 +878,17 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return {"error": f"Failed to fetch categories list: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
     async def _get_category_data(self, order: Optional[str] = "market_cap_desc") -> dict:
         """Get market data for all cryptocurrency categories"""
         try:
-            url = f"{self.api_url}/coins/categories"
+            api_url, headers = self.get_api_config("/coins/categories")
+            url = f"{api_url}/coins/categories"
             params = {}
             if order:
                 params["order"] = order
 
-            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
             if "error" in response:
                 return {"error": response["error"]}
 
@@ -688,6 +908,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return {"error": f"Failed to fetch category data: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
     async def _get_token_price_multi(
         self,
         ids: str,
@@ -699,7 +920,8 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
         precision: str = None,
     ) -> dict:
         try:
-            url = f"{self.api_url}/simple/price"
+            api_url, headers = self.get_api_config("/simple/price")
+            url = f"{api_url}/simple/price"
             params = {
                 "ids": ids,
                 "vs_currencies": vs_currencies,
@@ -712,7 +934,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             if precision:
                 params["precision"] = precision
 
-            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
             if "error" in response:
                 return {"error": response["error"]}
             return response
@@ -721,6 +943,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
             return {"error": f"Failed to fetch multi-token price data: {str(e)}"}
 
     @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
     async def _get_tokens_by_category(
         self,
         category_id: str,
@@ -731,7 +954,8 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
     ) -> dict:
         """Get tokens within a specific category"""
         try:
-            url = f"{self.api_url}/coins/markets"
+            api_url, headers = self.get_api_config("/coins/markets")
+            url = f"{api_url}/coins/markets"
             params = {
                 "vs_currency": vs_currency,
                 "category": category_id,
@@ -741,7 +965,7 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 "sparkline": "false",
             }
 
-            response = await self._api_request(url=url, method="GET", headers=self.headers, params=params)
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
             if "error" in response:
                 return {"error": response["error"]}
             return {"category_tokens": {"category_id": category_id, "tokens": response}}
@@ -896,5 +1120,53 @@ class CoinGeckoTokenInfoAgent(MeshAgent):
                 page=function_args.get("page", 1),
             )
 
+        elif tool_name == "get_trending_pools":
+            return await self._handle_trending_pools(
+                include=function_args.get("include", "base_token"),
+                pools=function_args.get("pools", 4),
+            )
+
+        elif tool_name == "get_top_token_holders":
+            return await self._handle_top_token_holders(
+                network=function_args["network"],
+                address=function_args["address"],
+            )
+
         else:
             return {"error": f"Unsupported tool: {tool_name}"}
+
+    @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
+    async def _handle_trending_pools(self, include: str, pools: int) -> Dict[str, Any]:
+        """Handle trending pools API call"""
+        valid_includes = ["base_token", "quote_token", "dex", "network"]
+        if include not in valid_includes:
+            logger.error(f"Invalid include parameter: {include}. Must be one of {valid_includes}")
+            return {"error": f"Invalid include parameter: {include}. Must be one of {valid_includes}"}
+
+        try:
+            api_url, headers = self.get_api_config("/onchain/pools/trending_search")
+            url = f"{api_url}/onchain/pools/trending_search"
+            params = {"include": include, "pools": pools}
+            response = await self._api_request(url=url, method="GET", headers=headers, params=params)
+            if "error" in response:
+                return {"error": response["error"]}
+            return {"trending_pools": response}
+        except Exception as e:
+            logger.error(f"Error getting trending pools: {e}")
+            return {"error": f"Failed to fetch trending pools: {str(e)}"}
+
+    @with_cache(ttl_seconds=300)  # Cache for 5 minutes
+    @with_retry(max_retries=3)
+    async def _handle_top_token_holders(self, network: str, address: str) -> Dict[str, Any]:
+        """Handle top token holders API call"""
+        try:
+            api_url, headers = self.get_api_config(f"/onchain/networks/{network}/tokens/{address}/top_holders")
+            url = f"{api_url}/onchain/networks/{network}/tokens/{address}/top_holders"
+            response = await self._api_request(url=url, method="GET", headers=headers)
+            if "error" in response:
+                return {"error": response["error"]}
+            return {"top_holders": response}
+        except Exception as e:
+            logger.error(f"Error getting top token holders: {e}")
+            return {"error": f"Failed to fetch top token holders: {str(e)}"}
