@@ -1,10 +1,10 @@
 import logging
 import os
+import time
 from typing import Any, Dict, List, Optional
 
 import aiohttp
 from dotenv import load_dotenv
-from spaceandtime import SpaceAndTime
 
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
@@ -19,9 +19,13 @@ class SpaceTimeAgent(MeshAgent):
         self.api_key = os.getenv("SPACE_AND_TIME_API_KEY")
         if not self.api_key:
             raise ValueError("SPACE_AND_TIME_API_KEY environment variable is required")
-        self.client = None
+
+        # Authentication-related attributes
         self.access_token = None
-        self.refresh_token = None
+        self.access_token_expires = None
+        self.auth_url = "https://proxy.api.makeinfinite.dev/auth/apikey"
+
+        # API endpoints
         self.sql_generate_url = "https://api.spaceandtime.dev/v1/ai/sql/generate"
         self.sql_execute_url = "https://proxy.api.spaceandtime.dev/v1/sql"
 
@@ -96,22 +100,51 @@ class SpaceTimeAgent(MeshAgent):
         ]
 
     # ------------------------------------------------------------------------
-    #                       SHARED / UTILITY METHODS
+    #                       AUTHENTICATION METHODS
     # ------------------------------------------------------------------------
+    def _is_token_expired(self) -> bool:
+        """Check if the access token is expired or about to expire"""
+        if not self.access_token or not self.access_token_expires:
+            return True
+
+        # Add 60 second buffer to refresh token before it expires
+        current_time_ms = int(time.time() * 1000)
+        return current_time_ms >= (self.access_token_expires - 60000)
+
     @with_retry(max_retries=3)
     async def _authenticate(self):
-        """Authenticate with Space and Time API if not already authenticated"""
-        if not self.client:
-            try:
-                logger.info("Authenticating with Space and Time API")
-                self.client = SpaceAndTime(api_key=self.api_key)
-                self.client.authenticate()
-                self.access_token = self.client.access_token
-                self.refresh_token = self.client.refresh_token
-                logger.info("Authentication successful")
-            except Exception as e:
-                logger.error(f"Authentication failed: {str(e)}")
-                raise
+        """Authenticate with Space and Time API using the new endpoint"""
+        if not self._is_token_expired():
+            logger.debug("Access token is still valid")
+            return
+
+        try:
+            logger.info("Authenticating with Space and Time API")
+
+            headers = {"accept": "application/json", "apikey": self.api_key}
+
+            async with aiohttp.ClientSession() as session:
+                async with session.post(self.auth_url, headers=headers) as response:
+                    if response.status == 200:
+                        auth_data = await response.json()
+                        self.access_token = auth_data.get("accessToken")
+                        self.access_token_expires = auth_data.get("accessTokenExpires")
+
+                        if not self.access_token:
+                            raise ValueError("Authentication response missing accessToken")
+
+                        logger.info("Authentication successful")
+                    else:
+                        error_text = await response.text()
+                        logger.error(f"Authentication failed: {response.status}, {error_text}")
+                        raise Exception(f"Authentication failed: HTTP {response.status}")
+
+        except Exception as e:
+            logger.error(f"Authentication failed: {str(e)}")
+            # Reset token info on failure
+            self.access_token = None
+            self.access_token_expires = None
+            raise
 
     # ------------------------------------------------------------------------
     #                      API-SPECIFIC METHODS
@@ -147,9 +180,17 @@ class SpaceTimeAgent(MeshAgent):
     @with_retry(max_retries=3)
     async def execute_sql(self, sql_query: str) -> Dict:
         """Execute SQL query using Space and Time API"""
+        await self._authenticate()
+
         try:
-            headers = {"accept": "application/json", "apikey": self.api_key, "content-type": "application/json"}
+            headers = {
+                "accept": "application/json",
+                "apikey": self.api_key,
+                "Authorization": f"Bearer {self.access_token}",
+                "content-type": "application/json",
+            }
             payload = {"sqlText": sql_query}
+
             async with aiohttp.ClientSession() as session:
                 async with session.post(self.sql_execute_url, headers=headers, json=payload) as response:
                     if response.status == 200:
