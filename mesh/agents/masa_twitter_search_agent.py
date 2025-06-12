@@ -14,12 +14,16 @@ logger = logging.getLogger(__name__)
 class MasaTwitterSearchAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.api_url = "https://data.dev.masalabs.ai/api/v1"
+        self.api_url = "https://data.masa.ai/api/v1"  # Updated to production URL
         self.api_key = os.getenv("MASA_API_KEY")
         if not self.api_key:
             raise ValueError("MASA_API_KEY environment variable is required")
 
-        self.headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
+        self.headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+            "accept": "application/json",
+        }
 
         self.metadata.update(
             {
@@ -88,9 +92,10 @@ class MasaTwitterSearchAgent(MeshAgent):
     @with_retry(max_retries=3)
     async def search_twitter(self, search_term: str, max_results: int = 25) -> dict:
         try:
-            # https://data.dev.masalabs.ai/endpoints
-            payload = {"type": "twitter-scraper", "arguments": {"query": search_term, "max_results": max_results}}
-
+            payload = {
+                "type": "twitter-credential-scraper",
+                "arguments": {"query": search_term, "max_results": max_results},
+            }
             response = requests.post(f"{self.api_url}/search/live/twitter", headers=self.headers, json=payload)
             response.raise_for_status()
 
@@ -101,12 +106,15 @@ class MasaTwitterSearchAgent(MeshAgent):
             if not uuid:
                 return {"error": "Failed to initialize search: No UUID returned"}
 
+            if search_data.get("error"):
+                return {"error": f"Search initialization failed: {search_data.get('error')}"}
             max_attempts = 30
             wait_time = 2
+            waiting_logged = False
 
             for attempt in range(max_attempts):
                 status_response = requests.get(
-                    f"{self.api_url}/search/live/twitter/status/{uuid}", headers=self.headers
+                    f"{self.api_url}/search/live/twitter/result/{uuid}", headers=self.headers
                 )
                 try:
                     status_response.raise_for_status()
@@ -116,24 +124,54 @@ class MasaTwitterSearchAgent(MeshAgent):
                     )
                     time.sleep(wait_time)
                     continue
+
                 status_data = status_response.json()
-                if status_data.get("status") == "done":
+                if isinstance(status_data, dict) and status_data.get("status") == "in progress":
+                    if not waiting_logged:
+                        logger.info(f"Search in progress for UUID {uuid}, waiting for response...")
+                        waiting_logged = True
+                    time.sleep(wait_time)
+                    continue
+                if isinstance(status_data, dict) and status_data.get("error"):
+                    error_msg = status_data.get("error")
+                    details = status_data.get("details", {})
+                    if details and details.get("error"):
+                        full_error = f"{error_msg}: {details.get('error')}"
+                    else:
+                        full_error = error_msg
+
+                    logger.error(f"Search failed for UUID {uuid}: {full_error}")
+                    return {"error": f"Search failed: {full_error}"}
+
+                # If we get here and it's not "in progress" and no error, assume it's done
+                # For the old flow, we would check if status == "done", but since we're using result endpoint
+                # we can assume if it's not "in progress" and not an error, we have results
+                if isinstance(status_data, list) or (
+                    isinstance(status_data, dict) and status_data.get("status") != "in progress"
+                ):
+                    logger.info(f"Search completed for UUID {uuid}, response received")
                     break
-                if status_data.get("error"):
-                    return {"error": f"Search failed: {status_data.get('error')}"}
+
                 time.sleep(wait_time)
             else:
+                logger.error(f"Search timed out for UUID {uuid} after {max_attempts} attempts")
                 return {"error": "Search timed out after maximum attempts"}
-            result_response = requests.get(f"{self.api_url}/search/live/twitter/result/{uuid}", headers=self.headers)
-            result_response.raise_for_status()
-            return self.format_twitter_results(result_response.json())
+
+            return self.format_twitter_results(status_data if isinstance(status_data, list) else [status_data])
+
         except requests.RequestException as e:
             logger.error(f"Error during Twitter search: {e}")
             return {"error": f"Failed to search Twitter: {str(e)}"}
 
     def format_twitter_results(self, data: List) -> Dict:
         """Format Twitter search results in a structured way"""
-        valid_tweets = [tweet for tweet in data if tweet.get("Content")]
+        if isinstance(data, dict):
+            data = [data]
+
+        valid_tweets = []
+        for tweet in data:
+            if isinstance(tweet, dict) and tweet.get("Content"):
+                valid_tweets.append(tweet)
 
         formatted_results = {
             "search_stats": {"total_results": len(valid_tweets), "has_results": len(valid_tweets) > 0},

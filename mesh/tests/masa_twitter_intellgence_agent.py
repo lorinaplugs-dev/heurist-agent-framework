@@ -30,7 +30,7 @@ async def run_agent():
     agent = MasaTwitterSearchAgent()
     try:
         # Natural language query
-        agent_input = {"query": "@heurist_ai", "max_results": 100}
+        agent_input = {"query": "@getmasafi", "max_results": 100}
         agent_output = await agent.handle_message(agent_input)
 
         # Another natural language query

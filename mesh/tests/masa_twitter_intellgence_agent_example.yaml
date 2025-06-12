@@ -1,312 +1,300 @@
 input_basic:
-  query: '@heurist_ai'
+  query: '@getmasafi'
   max_results: 100
 output_basic:
-  response: "**Search Query Analysis: `@heurist_ai`**\n\n**Search Statistics:**\n\n\
-    * **Total Results:** 25 tweets\n* **Timeframe:** All tweets are from the same\
-    \ day (2025-05-05), indicating a surge in activity around `@heurist_ai` on this\
-    \ day.\n* **Languages:** Primarily English (en), with a few instances of undefined\
-    \ languages (qam, qme), possibly due to emojis or non-standard language codes.\n\
-    \n**Key Insights and Patterns:**\n\n1. **Partnership Announcement:** The dominant\
-    \ topic (appearing in 13 out of 25 tweets) revolves around an announced partnership\
-    \ between `@heurist_ai` and `@OraProtocol`. This suggests a significant event\
-    \ that drove the conversation on this day.\n   \n2. **Sentiment Analysis:** The\
-    \ sentiment around the partnership is **overwhelmingly positive**, with tweets\
-    \ expressing excitement, anticipation, and praise for the collaboration. Keywords\
-    \ and phrases like \"\U0001F525\", \"\U0001F680\", \"Love seeing\", \"Strategic\"\
-    , \"Excited to see\", and \"finally\" underscore the enthusiasm.\n\n3. **Content\
-    \ Themes:**\n   - **Compositional Intelligence & Web(3,3) Ecosystem:** Several\
-    \ tweets highlight the potential of this partnership for advancing compositional\
-    \ intelligence and building the Web(3,3) ecosystem, indicating a forward-thinking\
-    \ and innovative context.\n   - **Community and Ecosystem Growth:** The welcome\
-    \ extended to `@heurist_ai` by `@OraProtocol` and the community suggests a growing,\
-    \ collaborative ecosystem.\n\n4. **Engagement Metrics:**\n   - **Retweets:** The\
-    \ announcement tweet by `@OraProtocol` (retweeted in several instances) garnered\
-    \ the most retweets (up to 5 per instance), signaling widespread interest in the\
-    \ partnership news.\n   - **Likes and Bookmarks:** Engagement in terms of likes\
-    \ is relatively low, with only a couple of tweets receiving likes. Bookmarks are\
-    \ also sparse, except for one instance related to undervalued AI projects.\n\n\
-    5. **Other Mentions:** \n   - `@heurist_ai` is also mentioned in a list of \"\
-    Undervalued AI projects\" by `@DamiDefi`, alongside other AI-related projects,\
-    \ which might indicate a broader interest in AI projects beyond the partnership\
-    \ news.\n\n**Conclusion:**\nThe Twitter conversation around `@heurist_ai` on 2025-05-05"
+  response: "**Search Query Analysis: `@getmasafi`**\n\n**Volume and Recency:**\n\
+    - **Total Results:** 25 tweets\n- **Time Frame:** All tweets are from June 11-12,\
+    \ 2025, indicating a highly concentrated and recent conversation.\n\n**Key Insights\
+    \ and Patterns:**\n\n1. **Partnerships and Integrations:**\n   - **@getmasafi**\
+    \ is frequently mentioned alongside **@huggingface**, **@OmniMCP**, and **@BrendanPlayford**,\
+    \ suggesting collaborations or discussions around integrating Masa's data capabilities\
+    \ with these entities, particularly in the context of open-source AI and decentralized\
+    \ data solutions.\n\n2. **Market and Investment Sentiment:**\n   - Tweets from\
+    \ **@Lily_Nguyen111** indicate a bullish outlook on Masa's token ($MASA), with\
+    \ discussions on market movements, breakouts, and investment advice. This subset\
+    \ of tweets suggests a speculative interest in Masa's financial performance.\n\
+    \   - **@getmasafi** is also mentioned in the context of having a strong vision,\
+    \ with a user implying that \"something massive is coming,\" further hinting at\
+    \ optimism regarding Masa's future developments.\n\n3. **Project and Technology:**\n\
+    \   - Masa is described as a \"decentralized data network for building Fair AI,\"\
+    \ with access to real-time data, highlighting its technological focus.\n   - Backing\
+    \ by notable investors like DCG, Binance, Hashkey, and an $8.75M investment from\
+    \ CoinList, underscores the project's credibility and growth potential.\n\n4.\
+    \ **Engagement and Community:**\n   - Despite the recent and concentrated nature\
+    \ of the tweets, engagement metrics (likes, retweets, replies, quotes, bookmarks)\
+    \ are uniformly low across all tweets. This could indicate a niche audience or\
+    \ a need for strategies to boost engagement.\n   - The use of enthusiastic language\
+    \ and emojis (e.g., \"\U0001F680\U0001F680\U0001F680\", \"\U0001F440\U0001F440\
+    \U0001F440\") in some tweets suggests a dedicated, if small, community interested\
+    \ in Masa's progress.\n\n**Sentiment Analysis:**\n- **Overall Sentiment:** Positive\n\
+    - **Reasoning:** The majority of tweets express excitement, optimism, or bullish\
+    \ sentiments towards Masa's collaborations, technological potential, and future\
+    \ prospects, outweighing any neutral or negative comments."
   data:
     search_stats:
       total_results: 25
       has_results: true
     tweets:
-    - content: '@OraProtocol @heurist_ai 👏 🎊 Looking forward to more great news from
-        your project 🥂'
-      created_at: '2025-05-05T21:16:47Z'
-      language: en
+    - content: '@YumaGroup @proofoftalk @mxmsbt @webuildscore @flock_io @getmasafi
+        @BrendanPlayford @0x7SUN @_redteam_ @oscar_hayek Exciting times at @proofoftalk!
+        Yuma-powered subnets are leading the charge in decentralized AI. Can''t wait
+        to see what innovations emerge from this gathering.'
+      created_at: '2025-06-12T07:34:33Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol Great partnership 🤝'
-      created_at: '2025-05-05T21:13:21Z'
-      language: en
+    - content: '@getmasafi @huggingface $MASA data to the World!'
+      created_at: '2025-06-12T06:47:06Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai https://t.co/pHpxruFmhp'
-      created_at: '2025-05-05T20:00:31Z'
-      language: qam
+    - content: '@getmasafi @OmniMCP Nice one'
+      created_at: '2025-06-12T06:40:36Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'implications for @heurist_ai next steps
+    - content: '@getmasafi @BrendanPlayford @proofoftalk Ice one'
+      created_at: '2025-06-12T06:39:44Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@getmasafi @OmniMCP That sounds amazing!'
+      created_at: '2025-06-12T03:44:06Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@Thaociuute @getmasafi Back test 0.022 như vẽ luôn🤣 https://t.co/YcSojap7jy'
+      created_at: '2025-06-12T00:20:42Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@getmasafi @huggingface Huge move for open-source AI!
 
-        - openai / claude / gemini models will be supported in the LLM gateway soon.
-        this will make it convenient for devs to use one API key and a unified payment
-        method to access everything
+        Masa + Hugging Face = real-time, decentralized data for everyone. Start building
+        smarter today.'
+      created_at: '2025-06-12T00:03:03Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@getmasafi @OmniMCP Big win for open AI infra!
 
-        - compositional intelligence means that a curated https://t.co/QBOHiycW8R'
-      created_at: '2025-05-05T19:21:32Z'
-      language: en
-      metrics:
-        likes: 2
-        retweets: 0
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '@heurist_ai @OraProtocol $HEU'
-      created_at: '2025-05-05T19:11:19Z'
-      language: qme
+        Masa + OmniMCP = the future of permissionless, real-time AI agents. Let’s
+        build smarter.'
+      created_at: '2025-06-12T00:01:46Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '🔥 The BIGGЕST #Сryрtо #РUMР #Signаl is here! 🚀 Jоin the actiоn!
+    - content: '@getmasafi @BrendanPlayford @proofoftalk Walled gardens had their
+        time.
 
-
-        https://t.co/9PuAoCK2f6 $ETH
-
-
-        Rn9tVsGj @heurist_ai @Lorrena93 @mwlonne @SsinYaa @ileahdanielle16 @limeveln
-        @houda75651 @loneama19 @31_exoforever @l0gan_l0gan1853'
-      created_at: '2025-05-05T17:54:56Z'
-      language: en
+        The future belongs to open systems and real-time data. Let’s build it together
+        with Masa'
+      created_at: '2025-06-11T23:59:22Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @cryptokevin2011: @Web3Wallbanks @nansen_ai @HoloworldAI @virtuals_io
-        @joinFXN @ALCHDAO @AgentXAVI @CreatorBid @heurist_ai @Georgia_AI @…'
-      created_at: '2025-05-05T17:09:24Z'
-      language: qam
-      metrics:
-        likes: 0
-        retweets: 1
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @OraProtocol: 🎉 We’re excited to welcome @heurist_ai to the ORA
-        ecosystem!
-
-
-        @heurist_ai, a community owned AI cloud powered by decentral…'
-      created_at: '2025-05-05T16:57:26Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 5
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '@heurist_ai @OraProtocol Heurist + Ora — finally, AI infra that thinks
-        like a network.'
-      created_at: '2025-05-05T15:27:53Z'
-      language: en
+    - content: '@getmasafi @huggingface @Rollup_News rollup'
+      created_at: '2025-06-11T23:26:12Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol ''Architecture of compositional minds'' —
-        that phrase alone is worth thinking about.'
-      created_at: '2025-05-05T15:27:42Z'
-      language: en
+    - content: '@getmasafi @huggingface Masa is covering every aspect like a cloud
+        ☁️'
+      created_at: '2025-06-11T21:51:50Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol If you''re building modular AI agents, this
-        is your signal. 📡'
-      created_at: '2025-05-05T15:27:39Z'
-      language: en
+    - content: '@getmasafi @OmniMCP Great, talk soon. 🤝'
+      created_at: '2025-06-11T21:32:04Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol Love seeing two protocol-native builders
-        team up like this! 🚀'
-      created_at: '2025-05-05T15:27:37Z'
-      language: en
+    - content: '@Lily_Nguyen111 @getmasafi Volume breakout H4 là tín hiệu xác nhận
+        rồi, ae nào thích swing thì đây là kèo sáng.'
+      created_at: '2025-06-11T21:17:50Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol 🔥 Web (3,3) vibes are real! Heurist x Ora
-        is a brainpower-level collab.'
-      created_at: '2025-05-05T15:27:26Z'
-      language: en
+    - content: '@Lily_Nguyen111 @getmasafi Nhìn chart thì đúng là bullish rõ ràng'
+      created_at: '2025-06-11T21:17:20Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol Heurist always ahead of the curve. This Ora
-        collab proves it.'
-      created_at: '2025-05-05T15:27:17Z'
-      language: en
+    - content: '@Lily_Nguyen111 @getmasafi niche market khá tiềm năng đấy chứ'
+      created_at: '2025-06-11T21:16:29Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol Web(3,3) is not just a meme anymore  it''s
-        forming right in front of us.'
-      created_at: '2025-05-05T15:27:14Z'
-      language: en
-      metrics:
-        likes: 1
-        retweets: 0
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '@heurist_ai @OraProtocol Compositional minds + onchain infra = next-level
-        coordination 👀'
-      created_at: '2025-05-05T15:27:11Z'
-      language: en
+    - content: '@Lily_Nguyen111 @getmasafi Vẫn còn cơ hội vào cho ai chưa lên tàu'
+      created_at: '2025-06-11T21:15:56Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol Strategic? More like symbiotic. Let’s gooo.'
-      created_at: '2025-05-05T15:27:08Z'
-      language: en
+    - content: '@Lily_Nguyen111 @getmasafi Chờ BTC.D gãy nữa là altcoin bay hàng loạt'
+      created_at: '2025-06-11T21:15:27Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol This partnership looks like the foundation
-        of AGI-native dApps! 🧠'
-      created_at: '2025-05-05T15:26:45Z'
-      language: en
+    - content: '@Lily_Nguyen111 @getmasafi Target 0.05 là hợp lý.'
+      created_at: '2025-06-11T21:14:55Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@heurist_ai @OraProtocol Excited to see what composable intelligence
-        actually looks like in action.'
-      created_at: '2025-05-05T15:26:36Z'
-      language: en
+    - content: '@Lily_Nguyen111 @getmasafi Đúng là Lily call từ sớm, ae nào theo chắc
+        cũng ăn kha khá rồi'
+      created_at: '2025-06-11T21:14:11Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@SoSoValueCrypto
-
-        ORA Announces Strategic Partnership with https://t.co/8VXLKA1htv to Build
-        Web(3,3) Ecosystem Together
-
-        Explore more key information on SoSoValue:
-
-        https://t.co/VR8fDAIV2A'
-      created_at: '2025-05-05T15:21:07Z'
-      language: en
+    - content: '@Lily_Nguyen111 @getmasafi MASA quả này break đẹp thật'
+      created_at: '2025-06-11T21:13:27Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: "@DamiDefi Undervalued AI projects :\n\n$HEU @heurist_ai \n\n$KIP @KIPprotocol\
-        \ \n\n$HINT @Hive_Intel \n\n$EAI @CryptoEternalAI \n\n$CADAI @Cadaico \n\n\
-        $SKAI @SkillfulAI"
-      created_at: '2025-05-05T15:20:19Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 0
-        replies: 0
-        quotes: 0
-        bookmarks: 1
-    - content: '@heurist_ai @OraProtocol 🔥🙌'
-      created_at: '2025-05-05T15:13:36Z'
-      language: qme
+    - content: "@getmasafi @OmniMCP For me theres so much work @getmasafi is putting\
+        \ behind the scene . Only the visionary ones will fill their $MASA bag . \n\
+        \nSomething massive is coming"
+      created_at: '2025-06-11T18:02:41Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @OraProtocol: 🎉 We’re excited to welcome @heurist_ai to the ORA
-        ecosystem!
+    - content: '11/ ᳀ @getmasafi
 
 
-        @heurist_ai, a community owned AI cloud powered by decentral…'
-      created_at: '2025-05-05T15:10:11Z'
-      language: en
+        MC - $17.35M
+
+        CA - 0x944824290CC12F31ae18Ef51216A223Ba4063092
+
+
+        ᳀ A decentralized data network for building Fair AI, giving developers access
+        to real-time data
+
+
+        ᳀ Backed by DCG, Binance and Hashkey, plus $8.75M from CoinList, confirming
+        high demand and growth https://t.co/BfZq7glWmJ'
+      created_at: '2025-06-11T17:28:49Z'
+      language: ''
       metrics:
         likes: 0
-        retweets: 5
+        retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @OraProtocol: 🎉 We’re excited to welcome @heurist_ai to the ORA
-        ecosystem!
-
-
-        @heurist_ai, a community owned AI cloud powered by decentral…'
-      created_at: '2025-05-05T15:09:40Z'
-      language: en
+    - content: '@getmasafi @OmniMCP 🚀🚀🚀'
+      created_at: '2025-06-11T16:48:33Z'
+      language: ''
       metrics:
         likes: 0
-        retweets: 5
+        retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @OraProtocol: 🎉 We’re excited to welcome @heurist_ai to the ORA
-        ecosystem!
-
-
-        @heurist_ai, a community owned AI cloud powered by decentral…'
-      created_at: '2025-05-05T15:02:22Z'
-      language: en
+    - content: '@getmasafi @OmniMCP This is bullish call ☎️ $Masa'
+      created_at: '2025-06-11T14:20:53Z'
+      language: ''
       metrics:
         likes: 0
-        retweets: 5
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@getmasafi @OmniMCP 👀👀👀
+
+
+        We''re currently looking for partners to integrate data into $YARA ----- full
+        voice, crypto-centric agent... (nom nom nom) 🍔
+
+
+        Can we DM @getmasafi ?'
+      created_at: '2025-06-11T14:19:50Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
@@ -314,369 +302,204 @@ input_specific:
   query: $BTC
   max_results: 30
 output_specific:
-  response: "**Search Query:** $BTC\n**Search Stats:**\n* **Total Results:** 25\n\
-    * **Has Results:** True\n* **Time Frame:** All tweets are from **2025-05-06T00:48:35Z**\
-    \ to **2025-05-06T00:48:27Z** (approximately 8 seconds)\n\n**Language Distribution:**\n\
-    * **English (en):** 20 tweets\n* **Spanish (es):** 1 tweet\n* **Japanese (ja):**\
-    \ 1 tweet\n* **Chinese (zh):** 2 tweets\n* **Czech (cs):** 1 tweet (note: content\
-    \ appears to be spam/non-Czech, likely misclassified)\n\n**Sentiment and Notable\
-    \ Insights:**\n\n* **Mixed Sentiment:** The overall sentiment towards $BTC is\
-    \ mixed, with some users expressing bullish sentiments (e.g., \"Against all odds,\
-    \ #BTC to 100K.\", \"Big move alert! Corporate treasuries pouring into $BTC...\"\
-    ), while others seem skeptical or neutral (e.g., \"oh great, more mystery wallets\
-    \ transferring massive amounts like it’s monopoly money.\").\n* **Dominant Topics:**\n\
-    \t1. **Price Speculation:** Several tweets discuss or imply future price movements\
-    \ of $BTC, with predictions ranging from bullish (e.g., \"#BTC to 100K\") to more\
-    \ cautious analyses (e.g., \"$BTC 日线已死叉，现在只是死叉后的反抽，还会下...\").\n\t2. **Promotions/Airdrops:**\
-    \ A significant number of tweets (e.g., \"\U0001F525 The BIGGЕST #Сryрtо #РUMР\
-    \ #Signаl is here! \U0001F680 Jоin the actiоn!\") appear to be promotional in\
-    \ nature, inviting followers to join various crypto-related initiatives or airdrops.\
-    \ These tweets have **zero engagement** (likes, replies) but are frequently retweeted,\
-    \ suggesting potential bot activity.\n\t3. **Market Analysis/Trading:** A few\
-    \ tweets share brief analyses or trading strategies related to $BTC (e.g., \"\
-    $BTC TRADE - 15min scalp long\", \"$BTC 日线已死叉...\").\n\n**Engagement Highlights:**\n\
-    * **Highest Retweet Count:** A promotional tweet for a \"ROBOTON X Crypto Daily\
-    \ Big #Airdrop\" with **9625 retweets**.\n* **Notable Engagement:**"
+  response: "**Search Query:** $BTC\n**Search Results:**\n* **Total Results:** 14\n\
+    * **Time Frame:** All tweets are from June 12, 2025, within a 48-second window\
+    \ (07:43:00Z - 07:44:51Z), indicating a high volume of real-time discussions.\n\
+    * **Languages:** Primarily English, with some non-English tweets (e.g., French,\
+    \ Japanese, Spanish, Turkish)\n\n**Insights & Notable Patterns:**\n\n1. **Market\
+    \ Analysis and Predictions:**\n\t* Multiple users are sharing technical analysis,\
+    \ predicting market movements for $BTC. A weekly close above **$104,500** is highlighted\
+    \ as a key indicator in three identical posts (possibly indicative of a coordinated\
+    \ effort or a popular market analysis tool/template).\n\t* Another user anticipates\
+    \ **$106.5k** as an imminent target, suggesting a short-term bullish outlook.\n\
+    \t* A descending trendline break and successful retest are noted, with **$107K**\
+    \ and **$111K** mentioned as crucial levels for the bullish structure.\n\n2. **Sentiment:**\n\
+    \t* Overall sentiment appears **cautiously bullish** for $BTC, with users discussing\
+    \ potential price increases and key resistance levels.\n\t* However, one user\
+    \ warns of a potential downturn, mentioning altcoins \"bleeding\" and advising\
+    \ caution.\n\n3. **Inflation and Store of Value:**\n\t* A quote from billionaire\
+    \ Paul Tudor Jones highlights **$BTC as a key in fighting inflation**, alongside\
+    \ gold, in today's debt-driven economy.\n\n4. **Miscellaneous:**\n\t* Speculation\
+    \ about **Russia adding more $BTC to its reserves**.\n\t* A lighthearted response\
+    \ to a user with \"WAGMI (We're All Gonna Make It) with $BTC, duh.\"\n\n**Trending\
+    \ Topics Related to $BTC (from this dataset):**\n- Market Analysis and Price Predictions\n\
+    - Inflation and Store of Value (with Gold)\n- Global Economic and Reserve Speculations\
+    \ (Russia)\n\n**Limitations of Current Data:**\n- The extremely narrow time frame\
+    \ (48 seconds) may not provide a comprehensive view of the broader market sentiment\
+    \ or long-term trends.\n- The small sample size (14 tweets) might not be fully\
+    \ representative of the global Twitter discourse on $BTC at the time of search."
   data:
     search_stats:
-      total_results: 25
+      total_results: 14
       has_results: true
     tweets:
-    - content: '@whale_alert oh great, more mystery wallets transferring massive amounts
-        like it’s monopoly money. wonder how many "experts" will spin this into a
-        bullish narrative. #crypto #btc #whales'
-      created_at: '2025-05-06T00:48:35Z'
-      language: en
+    - content: 'June Full Moon Took its toll and $BTC rejected 110K
+
+        This is still my short term plan until proven wrong! https://t.co/LorpyMvlwQ'
+      created_at: '2025-06-12T07:44:51Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @EnzoOnChain: 🚨🎉 1 $SOL GIVEAWAY — DAY 25 🎉🚨
-
-
-        Day 25 is here — let’s celebrate with another 1 SOL giveaway!
-
-
-        To enter:
-
-        ✅ Like this post…'
-      created_at: '2025-05-06T00:48:35Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 211
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @GladiatorMSTR: Saylor told me I’m Not Bullish Enough
-
-
-        GOD CANDLES ARE LOADING!!!!!!!!
-
-
-        $MSTR $BTC https://t.co/lk9m7h0XtE'
-      created_at: '2025-05-06T00:48:35Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 36
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @opnetbtc: Introducing OP_WALLET - built for Bitcoin’s programmable
-        future🍊💊
-
-
-        Securely manage assets, interact with dApps, and deploy sm…'
-      created_at: '2025-05-06T00:48:35Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 318
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '🔥 Woooow!! This is novelty - the BIGGЕST #Сryрtо #РUMР #Signаl is
-        here! 🚀 Jоin the actiоn!
-
-
-        Welcome https://t.co/DNXZesVKN3
-
-        $ETH
-
-
-        8HgCDKvF @BTCScholar_btc @kpc32212 @sgdfhg184738 @kink46356829 @Salimofpunjani
-        @RaviPoudel17'
-      created_at: '2025-05-06T00:48:34Z'
-      language: en
+    - content: "$BTC / $USD - Update \n\nA weekly close above $104,500 is what i am\
+        \ looking for\n\n$SPY $TSLA $NVDA $QQQ $META $COIN $MSTR #BTC $AVGO $GEV $ORCL\
+        \ $ARM $NFLX #BTC $BTC https://t.co/mT5RdOGKgV https://t.co/NZGQSagXdi"
+      created_at: '2025-06-12T07:44:48Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @MyfirstBitcoin_: 10,000 BTC for two pizzas? 𝐖𝐞 𝐠𝐨𝐭 𝐲𝐨𝐮 𝐜𝐨𝐯𝐞𝐫𝐞𝐝
-        𝐟𝐨𝐫 𝐟𝐫𝐞𝐞!
-
-        Bitcoin isn’t just a currency. It’s a movement. And every move…'
-      created_at: '2025-05-06T00:48:34Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 28
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @MinimalTrader_: $BTC No entiendo como pueden hablar de FOMO 🤷‍♂️
-        pronto o en algun momento conoceran el verdadero FOMO .. RELAX! dejen…'
-      created_at: '2025-05-06T00:48:34Z'
-      language: es
-      metrics:
-        likes: 0
-        retweets: 42
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: "( Trade 1 - Supply &amp; Demand ) \n\nKept it very simple today and\
-        \ stayed green with supply and demand. \n\n$nq $SPX #us30 #forex $aapl $nvda\
-        \ $msft $tesla $aapl $es_f $spy $btc $nvda #eurusd $USD $nq_f $xauusd #MMXM\
-        \ https://t.co/SAPFdjwPiv"
-      created_at: '2025-05-06T00:48:33Z'
-      language: en
+    - content: "$BTC / $USD - Update \n\nA weekly close above $104,500 is what i am\
+        \ looking for\n\n$SPY $TSLA $NVDA $QQQ $META $COIN $MSTR #BTC $AVGO $GEV $ORCL\
+        \ $ARM $NFLX #BTC $BTC https://t.co/TLwJLaiIzG https://t.co/GaA7dvHMLY"
+      created_at: '2025-06-12T07:44:40Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'Big move alert! Corporate treasuries pouring into $BTC, projected
-        to hit $330B by 2029 - that''s a game-changer for liquidity and mainstream
-        adoption! #Bitcoin #Crypto #InstitutionalInvestment'
-      created_at: '2025-05-06T00:48:33Z'
-      language: en
+    - content: "$BTC / $USD - Update \n\nA weekly close above $104,500 is what i am\
+        \ looking for\n\n$SPY $TSLA $NVDA $QQQ $META $COIN $MSTR #BTC $AVGO $GEV $ORCL\
+        \ $ARM $NFLX #BTC $BTC https://t.co/V2u6iMTSlB https://t.co/UJ96WzX74o"
+      created_at: '2025-06-12T07:44:15Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@AstroFrog_BTC Crypto continues to surprise.'
-      created_at: '2025-05-06T00:48:33Z'
-      language: en
+    - content: 'GM les amis !
+
+
+        📊Recap du marché :
+
+        $BTC $107 467, -1,62%
+
+        $ETH $2 738, -1,21%
+
+
+        🌡️ Fear &amp; Greed Index: 61/100
+
+
+        Nous vous souhaitons une bonne journée
+
+        --
+
+        📷Le 12 juin 1798 marque la prise de Malte par Napoléon. La flotte française
+        s’empare de l’île, étape stratégique qui précède le https://t.co/dx9dsTwLoM'
+      created_at: '2025-06-12T07:44:07Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @DyorNetCrypto: [Scan results - 1h - GateIo]
-
-
-        ➡️ Full results: https://t.co/PasM3c3VWZ
-
-
-        Top bullish trends on BTC pair
-
-        $BNB $CRV $BDX $E…'
-      created_at: '2025-05-06T00:48:33Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 1
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '🔥 The BIGGЕST #Сryрtо #РUMР #Signаl is here! 🚀 Jоin the actiоn!
-
-
-        ↳ https://t.co/wDIBQlmi0a
-
-
-        $ENJ $BTC $DYDX #Bybit #Ripple $OP #Gems'
-      created_at: '2025-05-06T00:48:33Z'
-      language: en
+    - content: $BTC よわよわ😇 https://t.co/yMeQfphoDX
+      created_at: '2025-06-12T07:44:05Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @Cryptodaily_ann: 🥳 ROBOTON X Crypto Daily Big #Airdrop
-
-
-        🏆 Rewards »» 300 $USDT
-
-
-        🌟  Follow @Roboton_Offcl
-
-        ⭐ Like, RT and Tag Friends
-
-        ✅ C…'
-      created_at: '2025-05-06T00:48:33Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 9625
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'Copped more #PumpFight LFG!!!
-
-
-        → https://t.co/G2eswFVx7Z
-
-
-        $BITBOY $DAVE $DIVA $DXY $btc $MNT #Matic
-
-
-        @hashtagviks @yuichikory @Cristia21964811  #TPx6XjT'
-      created_at: '2025-05-06T00:48:32Z'
-      language: en
+    - content: "GM \U0001F499\n\nZaman makinesi çalıştı! Bugünkü bilginle yalnızca\
+        \ bir $BTC #boğa sezonuna dönebilirsin:\n\n\U0001F5392013 \n\U0001F5392017\n\
+        \U0001F5392021\n\U0001F5392025’te mi kalırsın?\n\nHangi yılda all-in yapardın?\
+        \ \U0001F3A2"
+      created_at: '2025-06-12T07:44:03Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @SmartReversals: 3 key aspects of flexibility that can influence
-        performance:
-
-
-        - Mental: Quickly let go of expectations.
-
-        - Emotional: En…'
-      created_at: '2025-05-06T00:48:32Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 4
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '@Umama0_ Playing COD in 2010 and not buying $BTC'
-      created_at: '2025-05-06T00:48:32Z'
-      language: en
+    - content: '@CryptoThro WAGMI with $BTC, duh'
+      created_at: '2025-06-12T07:44:02Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: "$BTC TRADE - 15min scalp long\n\n15min Range is Bullish and we are\
-        \ deep within discount \n\n15min Range High is also Mondays High which i believe\
-        \ has a good chance of being swept before a move down (this goes against the\
-        \ previous #Bitcoin short idea i shared) https://t.co/OUCB975O6A"
-      created_at: '2025-05-06T00:48:31Z'
-      language: en
+    - content: '$106.5k imminent 📉
+
+
+        $BTC'
+      created_at: '2025-06-12T07:44:00Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: "RT @Attitoshi: A $DOG me ensinou sobre $BTC\nA $DOG me ensinou sobre\
-        \ $SOL\nA $DOG me ensinou sobre $ADA\n\nE muito, muito sobre o mercado! \n\
-        Ser…"
-      created_at: '2025-05-06T00:48:30Z'
-      language: pt
-      metrics:
-        likes: 0
-        retweets: 4
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '堀江貴文が紹介したこのブロガー。
-
-        @mahmoudhany30👈
-
-        毎日急騰している銘柄を推奨していることがわかりました
-
-        彼の指導のもと、私も同じ株を買っ318万円儲けました
-
-        私の資産を倍増させてくれた先生に本当に感謝しています😍❤️❤️1 @hydetax @jyagaimo_btc @kikori98 @hope500100'
-      created_at: '2025-05-06T00:48:30Z'
-      language: ja
+    - content: "$BTC broke the descending trendline and successfully retested it.\
+        \  \nPrice is holding above key moving averages. As long as $107K holds, the\
+        \ structure remains bullish.  \nNext target is the $111K resistance zone.\
+        \ Watching this level for the next move.  #BTC https://t.co/Kgde9OxLt9"
+      created_at: '2025-06-12T07:43:31Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @1776toBTC: Against all odds, #BTC to 100K. 🫡'
-      created_at: '2025-05-06T00:48:30Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 160
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @Chris_Defi: 辛巳🈷️BTC比特币☯️玄学剧本 https://t.co/LSIZIjfzj9'
-      created_at: '2025-05-06T00:48:30Z'
-      language: zh
-      metrics:
-        likes: 0
-        retweets: 10
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @Cryptodaily_ann: 🥳 ROBOTON X Crypto Daily Big #Airdrop
-
-
-        🏆 Rewards »» 300 $USDT
-
-
-        🌟  Follow @Roboton_Offcl
-
-        ⭐ Like, RT and Tag Friends
-
-        ✅ C…'
-      created_at: '2025-05-06T00:48:29Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 9625
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '$BTC 日线已死叉，现在只是死叉后的反抽，还会下，先看925附近，看他会选A方案，还是B方案，如果放量下破那就拿到89.跟随做单
-        #比特币走势分析  #BTC合约建议 #跟单带单 https://t.co/IOtJotxx3p'
-      created_at: '2025-05-06T00:48:28Z'
-      language: zh
+    - content: "$ETH is resisting ! Alts are bleeding \n\nWe are going to go lower\
+        \ ! Careful \n\n$SUI, $LINK, $XRP, $ETH, $DOT , $ATOM $SOL $LDO $BTC"
+      created_at: '2025-06-12T07:43:00Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '🔥 The BIGGЕST #Сryрtо #РUMР #Signаl is here! 🚀 Jоin the actiоn!
+    - content: '💡 ICYMI: Billionaire Paul Tudor Jones:
+
+        " #Bitcoin  is key to fighting inflation."
 
 
-        Jоin ➞https://t.co/rOvKf1MHzH
+        In today’s debt-driven economy, he says $BTC is critical as a store of value
+        — alongside gold.
 
-
-        lfZiYsnO @JacobsFrdderick @SolanaYeah @TradingPastor @ChungCrypto @MainManShmurda
-        @shirgir44 @ATXrealtypros @Roth_btc @realHjupety @MdRafiu20192073'
-      created_at: '2025-05-06T00:48:28Z'
-      language: cs
+        "This is the portfolio for the inflation era." https://t.co/nhc6f109uI'
+      created_at: '2025-06-12T07:43:00Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '🔥 The BIGGЕST #Сryрtо #РUMР #Signаl is here! 🚀 Jоin the actiоn!
-
-
-        Jоin ➞https://t.co/rOvKf1MHzH
-
-
-        9Kt7NiAr @ZPedroFerro @mdfaiz93 @NXTFLOOR @SteveInOhio @billson_gary0 @ElisandraReis7
-        @SAB960 @yasinn3478 @WalnutsSally @ops_btc'
-      created_at: '2025-05-06T00:48:27Z'
-      language: en
+    - content: '@AltcoinMoe its not a rumours I think. will be more $BTC in Russian
+        reserve'
+      created_at: '2025-06-12T07:43:00Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: "¡Buenos días foreros y tuiteros! #FelizJuevesATodos  \nEl toro tiene\
+        \ que dar miedo.\n#Sánchez #JPM $QQQ #COST #UzakŞehir $INTC $PLTR $BTC #Koldo\
+        \ $ETH #PSOE #ChatGPT Fiscal General"
+      created_at: '2025-06-12T07:42:53Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
@@ -696,334 +519,371 @@ output_direct:
       total_results: 30
       has_results: true
     tweets:
-    - content: '@RobTheHockeyGuy @Canucks Nothing wrong with Elon Musk, Rob.'
-      created_at: '2025-05-06T00:49:10Z'
-      language: en
+    - content: 'Elon Musk''s favorability among Republicans dropped 16 points since
+        March: Quinnipiac - he did it to himself. Win the worship in their eyes, then
+        lose it #cnbc #Musk
+
+        https://t.co/q2tTDyiuFH'
+      created_at: '2025-06-12T07:45:18Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: '@mayemusk Democrats and Republicans are Satanists and liars, servants
-        of Lucifer. Working People, take power into your own hands, otherwise the
-        moneybags and the idiot Elon Musk will bring us to trouble.'
-      created_at: '2025-05-06T00:49:10Z'
-      language: en
+    - content: '@lacey10112 @rich_toronto How do you feel about Elon Musk''s salutes
+        and at least one Jewish organisation and Jewish Chronicle writer saying "not
+        a Hitler salute"? Even if it could be proven not, why the defence from a zionist
+        paper and organisation for someone who remotely emulated it?'
+      created_at: '2025-06-12T07:45:17Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: "Thanks for participating on my giveaway.\n\nYou have been selected\
-        \ on \U0001D54F among our lucky winners.\n\nType \"\"YES\"\" to proceed. \n\
-        \nSigned:\nELON MUSK ★ https://t.co/zdM1sHfUaK"
-      created_at: '2025-05-06T00:49:10Z'
-      language: en
+    - content: '🔊Official : 🇺🇸 US House votes to advance first phase of Elon Musk''s
+        DOGE cuts, slashing $9.3 billion from USAID, NPR, and PBS.
+
+        #ElonMusk #riyadh'
+      created_at: '2025-06-12T07:45:07Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @Donaldtrumpike: Elon Musk lost 25% of his fortune, approximately
-        $113 billion, while leading efforts to streamline the U.S. government.…'
-      created_at: '2025-05-06T00:49:10Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 324
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @BoLoudon: 🚨BREAKING: Elon Musk just announced DOGE has found 100,000
-        federal workers who committed FRAUD by applying for and got unempl…'
-      created_at: '2025-05-06T00:49:09Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 1774
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @teslaownersSV: Elon Musk lives on Memes Street https://t.co/4rV8XHznfg'
-      created_at: '2025-05-06T00:49:09Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 1171
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @ElonClipsX: Here''s Elon Musk in 2013, explaining SpaceX''s plans
-        to build a commercial spaceport in Texas, which would later become Star…'
-      created_at: '2025-05-06T00:49:08Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 1568
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @DimaZeniuk: Elon Musk is America''s smartest CEO
+    - content: 'Musk''s father started watching RT News channel to find out what was
+        really going on in the world.
 
 
-        - Tesla, SpaceX, Neuralink, The Boring Company, 𝕏, xAI https://t.co/NJaiChjolz'
-      created_at: '2025-05-06T00:49:08Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 37
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @nicksortor: 🚨 WTF?! Elon Musk revealed that DOGE discovered ***100,000***
-        federal workers who applied for and received unemployment ben…'
-      created_at: '2025-05-06T00:49:06Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 11367
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @PamBondiNewsX: 🚨BREAKING: Elon Musk says “Adam Schiff is a criminal.”
-
-
-        Do you agree with Elon?
-
-
-        Yes — he’s spot on.
-
-        No — that’s a wild…'
-      created_at: '2025-05-06T00:49:06Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 123
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @Teslaconomics: The Fox News cast are so confused seeing a Tesla
-        drive from the production line to the shipping out logistics lot with Z…'
-      created_at: '2025-05-06T00:49:06Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 2217
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: Democrats and Republicans are Satanists and liars, servants of Lucifer.
-        Working People, take power into your own hands, otherwise the moneybags and
-        the idiot Elon Musk will bring us to trouble. https://t.co/PyzEvP3jZF
-      created_at: '2025-05-06T00:49:05Z'
-      language: en
+        Errol Musk, father of Elon Musk, told Rick Sanchez in an interview that around
+        2015, while watching CNN, he began to think that the channel was “telling
+        something wrong”: https://t.co/OVxCt5Ha6w'
+      created_at: '2025-06-12T07:45:03Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @DavidJHarrisJr: 🚨BREAKING: Elon Musk announced DOGE findings of
-        at least 100,000 federal workers who committed FRAUD by applying for an…'
-      created_at: '2025-05-06T00:49:04Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 68
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: "Thanks for participating on my giveaway.\n\nYou have been selected\
-        \ on \U0001D54F among our lucky winners.\n\nType \"\"YES\"\" to proceed. \n\
-        \nSigned:\nELON MUSK ★ https://t.co/sWW6A75rsb"
-      created_at: '2025-05-06T00:49:04Z'
-      language: en
+    - content: "$TSLA \n\nIt’s pathetically easy to manipulate the masses. Take Elon\
+        \ Musk and Tesla: the political right was brainwashed to despise electric\
+        \ vehicles, blindly rejecting them because their leftist rivals pushed them.\
+        \ Now, with Musk as their right-wing idol, these same sheep flock to"
+      created_at: '2025-06-12T07:44:57Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @nicksortor: 🚨 WTF?! Elon Musk revealed that DOGE discovered ***100,000***
-        federal workers who applied for and received unemployment ben…'
-      created_at: '2025-05-06T00:49:04Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 11367
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: "@RetroAgent12 KAMALA HARRIS WON THE 2024 ELECTION.\n\U0001F499\U0001F1FA\
-        \U0001F1F8\U0001F499\U0001F1FA\U0001F1F8\U0001F499\U0001F1FA\U0001F1F8\U0001F499\
-        \U0001F1FA\U0001F1F8\U0001F499\U0001F1FA\U0001F1F8\U0001F499\U0001F1FA\U0001F1F8\
-        \U0001F499\U0001F1FA\U0001F1F8\U0001F499\U0001F1FA\U0001F1F8\n\nMUSK HACKED\
-        \ OUR ELECTION WITH FELON TRUMPS BLESSINGS.\n\nINVESTIGATION - AUDITS - RECOUNTS\
-        \ \n\n✅ ELON MUSK FLIPPED THE SWITCH BETWEEN 7:40 pm and 8:18 pm ON NOVEMBER\
-        \ 5th 2024.\n\nhttps://t.co/SPvGDhgoIc https://t.co/wLklMj9UmD"
-      created_at: '2025-05-06T00:49:04Z'
-      language: en
+    - content: '@grok @OpiningOnX @Rainmaker1973 @grok why does Elon Musk always hides
+        and fabricates information to fit his narrative and mislead people, weather
+        is in Tesla production or SpaceX or any of his business.'
+      created_at: '2025-06-12T07:44:51Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @nicksortor: 🚨 WTF?! Elon Musk revealed that DOGE discovered ***100,000***
-        federal workers who applied for and received unemployment ben…'
-      created_at: '2025-05-06T00:49:03Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 11367
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: "Thanks for participating on my giveaway.\n\nYou have been selected\
-        \ on \U0001D54F among our lucky winners.\n\nType \"\"YES\"\" to proceed. \n\
-        \nSigned:\nELON MUSK ★ https://t.co/bEygpmFilk"
-      created_at: '2025-05-06T00:49:03Z'
-      language: en
+    - content: '@cb_doge I wonder if Elon musk sleeps late too thinking about the
+        American party that''ll guarantee the freedom of the people. https://t.co/oNQuDAgrz7'
+      created_at: '2025-06-12T07:44:39Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: "RT @ElonMuskZAB: Elon Musk born June 28, 1971 - The day that changed\
-        \ history. \nDo you agree with me?\n\nYes or No https://t.co/VQBpnWMsu6"
-      created_at: '2025-05-06T00:49:03Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 74
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: "Thanks for participating on my giveaway.\n\nYou have been selected\
-        \ on \U0001D54F among our lucky winners.\n\nType \"\"YES\"\" to proceed. \n\
-        \nSigned:\nELON MUSK ★ https://t.co/Yk3dIs3Brv"
-      created_at: '2025-05-06T00:49:02Z'
-      language: en
+    - content: '@petermillar Shame they cut down all the trees at Oakmont so the squirrel
+        is now homeless.'
+      created_at: '2025-06-12T07:44:35Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: "I Elon musk, Specially appreciate you for being a big fan of mine,\n\
-        \nYou have been selected on \U0001D54F among our lucky winners.\n\nType \"\
-        \"YES\"\" And follow me,I got $90,000 for you  \n\nSigned:\nELON MUSK ★ https://t.co/ijy2vbq4st"
-      created_at: '2025-05-06T00:49:02Z'
-      language: en
+    - content: Elon Musk's wife | The Tragic Childhood Behind Elon Musk’s Genius https://t.co/spqBA1eEwI
+      created_at: '2025-06-12T07:44:35Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @nicksortor: 🚨 WTF?! Elon Musk revealed that DOGE discovered ***100,000***
-        federal workers who applied for and received unemployment ben…'
-      created_at: '2025-05-06T00:49:01Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 11367
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @DimaZeniuk: “SpaceX hopefully will build technology to make life
-        multiplanetary to build a self-suistaining city on Mars. That''s the go…'
-      created_at: '2025-05-06T00:49:01Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 35
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: '@TrumpDailyPosts Democrats and Republicans are Satanists and liars,
-        servants of Lucifer. Working People, take power into your own hands, otherwise
-        the moneybags and the idiot Elon Musk will bring us to trouble.'
-      created_at: '2025-05-06T00:49:01Z'
-      language: en
+    - content: "@RealkiaraFx Epic matured scenes from the \nTV series https://t.co/jXNIXOzY2C"
+      created_at: '2025-06-12T07:44:34Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: "RT @Donaldtrumpike: \U0001F6A8BREAKING: Italian PM Giorgia Meloni\
-        \ says, \"Elon Musk is NOT a danger to democracy, George Soros is” \n\nElon\
-        \ Musk is LOV…"
-      created_at: '2025-05-06T00:49:01Z'
-      language: en
+    - content: '@KashPatelNewsX Yes! Elon Musk is 100% correct! Thank you for speaking
+        out for us. Our own Politician''s are all weak. (Except Rupert Lowe.)'
+      created_at: '2025-06-12T07:44:29Z'
+      language: ''
       metrics:
         likes: 0
-        retweets: 137
+        retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @barrontump: Do you agree with uncle Elon Musk?
+    - content: I hope Elon musk &amp; Peter teal fail
+      created_at: '2025-06-12T07:44:29Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: 'I Elon musk, Specially appreciate you for being a big fan of mine,
 
 
-        Yes or NO https://t.co/vC2zdCAH3C'
-      created_at: '2025-05-06T00:49:00Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 2
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: "RT @JDVanceNewsX: \U0001F6A8BREAKING: Italian PM Giorgia Meloni says,\
-        \ \"Elon Musk is NOT a danger to democracy, George Soros is” \n\nElon Musk\
-        \ is LOVED…"
-      created_at: '2025-05-06T00:49:00Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 4442
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: 'RT @DimaZeniuk: Elon Musk says Neuralink’s product Blindsight will
-        enable people to see, including those blind from birth.
+        You have been selected on 𝕏 among our lucky winners.
 
 
-        He hopes this c…'
-      created_at: '2025-05-06T00:49:00Z'
-      language: en
-      metrics:
-        likes: 0
-        retweets: 83
-        replies: 0
-        quotes: 0
-        bookmarks: 0
-    - content: "Thanks for participating on my giveaway.\n\nYou have been selected\
-        \ on \U0001D54F among our lucky winners.\n\nType \"\"YES\"\" to proceed. \n\
-        \nSigned:\nELON MUSK ★ https://t.co/lETfDO5k9J"
-      created_at: '2025-05-06T00:49:00Z'
-      language: en
+        Type ""YES"" And follow me,I got $120,000 for you  
+
+
+        Signed:
+
+        ELON MUSK ★'
+      created_at: '2025-06-12T07:44:28Z'
+      language: ''
       metrics:
         likes: 0
         retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
-    - content: 'RT @lucy88999: The last time Elon Musk changed his name to Kekius
-        Maximus — $KEKIUS went to $600M MC ATH
+    - content: 'I Elon musk, Specially appreciate you for being a big fan of mine,
 
 
-        Now you’re given another chance w…'
-      created_at: '2025-05-06T00:48:59Z'
-      language: en
+        You have been selected on 𝕏 among our lucky winners.
+
+
+        Type ""YES"" And follow me,I got $120,000 for you  
+
+
+        Signed:
+
+        ELON MUSK ★'
+      created_at: '2025-06-12T07:44:22Z'
+      language: ''
       metrics:
         likes: 0
-        retweets: 3
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@AndyRobsonTips Five replies, every one a Bot.
+
+
+        Elon Musk has ruined this app.'
+      created_at: '2025-06-12T07:44:21Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: Ben Jennings on Elon Musk’s show of remorse after feuding with Donald
+        Trump – cartoon - The Guardian https://t.co/nbyKDdJ7XS
+      created_at: '2025-06-12T07:44:19Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: 'I Elon musk, Specially appreciate you for being a big fan of mine,
+
+
+        You have been selected on 𝕏 among our lucky winners.
+
+
+        Type ""YES"" And follow me,I got $120,000 for you  
+
+
+        Signed:
+
+        ELON MUSK ★'
+      created_at: '2025-06-12T07:44:16Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: 'Trump-Musk Feud: The public rift between President Trump and Elon
+        Musk has escalated, with Musk criticizing Trump’s policies, including a proposed
+        bill. Trump has shifted focus to domestic and foreign policy, downplaying
+        the feud'
+      created_at: '2025-06-12T07:44:16Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: 'I Elon musk, Specially appreciate you for being a big fan of mine,
+
+
+        You have been selected on 𝕏 among our lucky winners.
+
+
+        Type ""YES"" And follow me,I got $120,000 for you  
+
+
+        Signed:
+
+        ELON MUSK ★'
+      created_at: '2025-06-12T07:44:10Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: Elon Musk's wife | The Tragic Childhood Behind Elon Musk’s Genius https://t.co/9pRwqI24hA
+      created_at: '2025-06-12T07:44:09Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@lekan_mark You are doing good.more grease to your elbow'
+      created_at: '2025-06-12T07:44:04Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: "Tesla Sued Over Elon Musk's 'Extreme Right' Politics \nSource: Newsweek\
+        \ https://t.co/0KvW3IcGvJ"
+      created_at: '2025-06-12T07:44:00Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@LanceMille61538 38'
+      created_at: '2025-06-12T07:43:50Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@ruffles01970 Message me privately'
+      created_at: '2025-06-12T07:43:49Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: 'Billionaire businessman Elon Musk backed off digs he took at President
+        Donald Trump after extensive outreach from administration officials, including
+        Vice President JD Vance, with Musk saying on Wednesday he had gone "too far."
+        #Musk #DonaldTrump #relationships https://t.co/N2APTBFDSa'
+      created_at: '2025-06-12T07:43:48Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: '@slime_machine Elon musk'
+      created_at: '2025-06-12T07:43:42Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: 'President Donald Trump says he is open to reconciling with tech entrepreneur
+        Elon Musk following a sharp public fallout over the administration’s latest
+        multi-trillion-dollar spending package, known informally as the “big, beautiful
+        bill”.
+
+
+        https://t.co/uJXcmbTBRI
+
+        #muskvstrump'
+      created_at: '2025-06-12T07:43:34Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: Elon musk doesn’t pay no more, so this is the real you?
+      created_at: '2025-06-12T07:43:25Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: Elon Musk's wife | The Tragic Childhood Behind Elon Musk’s Genius https://t.co/wAfRCR8jVA
+      created_at: '2025-06-12T07:43:11Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
+        replies: 0
+        quotes: 0
+        bookmarks: 0
+    - content: 'I Elon musk, Specially appreciate you for being a big fan of mine,
+
+
+        You have been selected on 𝕏 among our lucky winners.
+
+
+        Type ""YES"" And follow me,I got $120,000 for you  
+
+
+        Signed:
+
+        ELON MUSK ★'
+      created_at: '2025-06-12T07:43:11Z'
+      language: ''
+      metrics:
+        likes: 0
+        retweets: 0
         replies: 0
         quotes: 0
         bookmarks: 0
