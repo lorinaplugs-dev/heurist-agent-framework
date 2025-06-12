@@ -2,10 +2,21 @@ ethereum_example:
   input:
     query: Identify the biggest transaction of ETH in the past 30 days
   output:
-    response: The biggest transaction of ETH in the past 30 days was for 3.55 ETH.
-      It occurred on April 9, 2025, at 12:55:23 UTC. The transaction hash is 0xfeae9902504c77545c8dfda1540c8f2921f2bc9eceef11293a3fa6b769e03c4d,
-      with the funds transferred from the address 0x109be9d7d5f64c8c391ced3a8f69bdef20fcaea9
-      to the address 0xa6dfb62fc572da152a335384f7724535b9defc84.
+    response: "**Transaction Analysis: Largest ETH Transfer in the Past 30 Days on\
+      \ Ethereum**\n\n**Query Breakdown:** \n* Blockchain: **Ethereum**\n* Query:\
+      \ **Identify the biggest transaction of ETH in the past 30 days**\n\n**Results:**\n\
+      \nThe largest Ethereum (ETH) transaction in the past 30 days has been identified\
+      \ as follows:\n\n* **Transaction Hash:** 0x9d944b5ba4d0eb1ce398e15fc088655bf846faa69d2d772030c69591a0813903\n\
+      * **Sender (From) Address:** 0x28c6c06298d514db089934071355e5743bf21d60\n* **Recipient\
+      \ (To) Address:** 0xf977814e90da44bfa03b6295a0616a897441acec\n* **Transaction\
+      \ Value:** Approximately **27,870.3232 ETH** (2.78703232E23, considering 10^18\
+      \ as the denominator for ETH)\n* **Block Timestamp:** June 8, 2025, 13:45:23\
+      \ (UTC)\n\n**Note:** The transaction value is equivalent to approximately 27,870.3232\
+      \ ETH, which, at the time of analysis, represents the largest single transaction\
+      \ of ETH on the Ethereum blockchain within the specified 30-day timeframe. Please\
+      \ note that the ETH price in fiat currency (e.g., USD) is not provided as it\
+      \ fluctuates and was not part of the original query. For current conversion\
+      \ rates, please refer to a reliable cryptocurrency pricing service."
     data:
       blockchain: ethereum
       query: Identify the biggest transaction of ETH in the past 30 days
@@ -21,11 +32,11 @@ ethereum_example:
           - block_timestamp
           rows:
           - items:
-            - '0xfeae9902504c77545c8dfda1540c8f2921f2bc9eceef11293a3fa6b769e03c4d'
-            - '0x109be9d7d5f64c8c391ced3a8f69bdef20fcaea9'
-            - '0xa6dfb62fc572da152a335384f7724535b9defc84'
-            - 3.55E23
-            - '2025-04-09 12:55:23.000'
+            - '0x9d944b5ba4d0eb1ce398e15fc088655bf846faa69d2d772030c69591a0813903'
+            - '0x28c6c06298d514db089934071355e5743bf21d60'
+            - '0xf977814e90da44bfa03b6295a0616a897441acec'
+            - 2.78703232E23
+            - '2025-06-08 13:45:23.000'
 direct_example:
   input:
     tool: query_onchain_data
@@ -45,7 +56,7 @@ direct_example:
           - total_bitcoins_mined
           rows:
           - items:
-            - '57170.66764975006'
+            - 1.0424733379453155E8
 raw_example:
   input:
     query: What are the top 5 most popular smart contracts on Ethereum in the past
@@ -63,20 +74,20 @@ raw_example:
         data:
           column_infos:
           - contract_address
-          - interaction_count
+          - total_transactions
           rows:
           - items:
             - '0xdac17f958d2ee523a2206206994597c13d831ec7'
-            - '4173838'
+            - '4418211'
           - items:
             - '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
-            - '2387740'
+            - '2788220'
           - items:
             - '0x66a9893cc07d91d95644aedd05d03f95e1dba8af'
-            - '702608'
+            - '1104487'
           - items:
             - '0x7a250d5630b4cf539739df2c5dacb4c659f2488d'
-            - '511607'
+            - '846675'
           - items:
-            - '0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23'
-            - '511117'
+            - '0x0000000000001ff3684f28c67538d4d072c22734'
+            - '497288'
