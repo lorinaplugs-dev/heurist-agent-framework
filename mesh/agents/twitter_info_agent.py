@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import os
 from typing import Any, Dict, List, Optional
@@ -155,6 +156,19 @@ class TwitterInfoAgent(MeshAgent):
             async with self.session.get(endpoint, params=params, headers=self.headers) as response:
                 if response.status == 200:
                     return await response.json()
+
+                if response.status == 429:
+                    error_text = await response.text()
+                    logger.warning("Rate limit exceeded (429). Waiting 5 seconds before retry...")
+                    await asyncio.sleep(5)
+                    async with self.session.get(endpoint, params=params, headers=self.headers) as retry_response:
+                        if retry_response.status == 200:
+                            logger.info("Request successful after rate limit wait period")
+                            return await retry_response.json()
+                        else:
+                            retry_error_text = await retry_response.text()
+                            logger.error(f"API error {retry_response.status} after retry: {retry_error_text[:200]}")
+                            return {"error": f"API returned error {retry_response.status}: {retry_error_text[:200]}"}
 
                 error_text = await response.text()
                 logger.error(f"API error {response.status}: {error_text[:200]}")
