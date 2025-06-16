@@ -351,10 +351,26 @@ class MeshAgent(ABC):
         try:
             if method.upper() == "GET":
                 async with self.session.get(url, headers=headers, params=params) as response:
+                    if response.status == 429:
+                        logger.warning(f"Rate limit exceeded for {url}. Retrying after 5 seconds...")
+                        await asyncio.sleep(5)
+                        async with self.session.get(url, headers=headers, params=params) as retry_response:
+                            retry_response.raise_for_status()
+                            logger.info(f"Request to {url} succeeded after 429 retry")
+                            return await retry_response.json()
                     response.raise_for_status()
                     return await response.json()
             elif method.upper() == "POST":
                 async with self.session.post(url, headers=headers, params=params, json=json_data) as response:
+                    if response.status == 429:
+                        logger.warning(f"Rate limit exceeded for {url}. Retrying after 5 seconds...")
+                        await asyncio.sleep(5)
+                        async with self.session.post(
+                            url, headers=headers, params=params, json=json_data
+                        ) as retry_response:
+                            retry_response.raise_for_status()
+                            logger.info(f"Request to {url} succeeded after 429 retry")
+                            return await retry_response.json()
                     response.raise_for_status()
                     return await response.json()
 
