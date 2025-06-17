@@ -142,7 +142,7 @@ class EtherscanAgent(MeshAgent):
     #                      ETHERSCAN API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
 
-    # using async executor to run  firecrawl operation
+    # using async executor to run firecrawl operation
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_transaction_details(self, chain: str, txid: str) -> Dict[str, Any]:
@@ -159,7 +159,7 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/tx/{txid}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"]})
+                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"], "waitFor": 5000})
             )
 
             if not scrape_result or "markdown" not in scrape_result:
@@ -196,7 +196,7 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/address/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"]})
+                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"], "waitFor": 5000})
             )
 
             if not scrape_result or "markdown" not in scrape_result:
@@ -233,7 +233,7 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/token/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"]})
+                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"], "waitFor": 5000})
             )
 
             if not scrape_result or "markdown" not in scrape_result:
