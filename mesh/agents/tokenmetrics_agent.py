@@ -30,6 +30,7 @@ class TokenMetricsAgent(MeshAgent):
                 "description": "This agent provides market insights, sentiment analysis, and resistance/support data for cryptocurrencies using TokenMetrics API.",
                 "external_apis": ["TokenMetrics"],
                 "tags": ["Market Analysis"],
+                "hidden": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/TokenMetrics.png",
                 "examples": [
                     "What is the current crypto market sentiment?",
