@@ -158,7 +158,7 @@ class FirecrawlSearchAgent(MeshAgent):
                 None,
                 lambda: self.app.extract(
                     urls=urls,
-                    params={"prompt": extraction_prompt, "enableWebSearch": enable_web_search, "waitFor": 5000},
+                    params={"prompt": extraction_prompt, "enableWebSearch": enable_web_search},
                 ),
             )
 
