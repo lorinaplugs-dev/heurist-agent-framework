@@ -7,6 +7,7 @@ from typing import Any, Dict, List, Optional
 from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
 
+from core.llm import call_llm_async
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
@@ -56,50 +57,20 @@ class EtherscanAgent(MeshAgent):
         )
 
     def get_system_prompt(self) -> str:
-        return """You are a blockchain data processor that extracts and formats relevant information from blockchain explorer pages.
+        return """You are an intelligent blockchain data processor that extracts ALL valuable information from blockchain explorer pages.
 
-        Extract only the essential information and format it cleanly using the following structure:
+Strip out ALL garbage: ads, navigation, headers, footers, cookie notices, social buttons, HTML artifacts, excessive whitespace.
 
-        For TRANSACTIONS:
-        - **Transaction Hash**: [hash value]
-        - **Status**: [Success/Failed/Pending]
-        - **Block Number**: [number] | **Timestamp**: [date/time]
-        - **From**: [0xaddress](explorer_url/address/0xaddress)
-        - **To**: [0xaddress](explorer_url/address/0xaddress)
-        - **Value**: [amount] ETH/token
-        - **Transaction Fee**: [fee amount]
-        - **Gas Details**: Used [used]/[limit] | Price: [price] Gwei
+Capture EVERYTHING useful: transaction actions, method calls, token transfers, internal transactions, contract interactions, event logs, multi-sig details, DeFi interactions, NFT transfers, gas data, security warnings, verification status, source code availability, special badges. Accurately represent ALL useful info present in the given data without adding subjective interpretation or missing details.
 
-        For ADDRESSES:
-        - **Address**: [0xaddress]
-        - **Balance**: [amount] ETH/tokens
-        - **Transaction Count**: [number]
+Format clearly:
+- Make addresses clickable: [0xaddress](full_explorer_url)
+- Use **bold headers** for sections
+- Present complex data in tables
+- Keep monetary values with original units
 
-        **Recent Transactions** (if available):
-        | Hash | Method | Age | From/To | Value |
-        |------|--------|-----|---------|-------|
-        | [hash] | [method] | [time] | [address] | [amount] |
-
-        For TOKENS:
-        - **Token Name**: [name] ([symbol])
-        - **Contract Address**: [0xaddress](explorer_url/token/0xaddress)
-        - **Total Supply**: [amount] [symbol]
-        - **Holders**: [number] addresses
-        - **Decimals**: [number]
-
-        **Recent Transfers** (if available):
-        | Txn Hash | Age | From | To | Value |
-        |----------|-----|------|----|----|
-        | [hash] | [time] | [from] | [to] | [amount] |
-
-        IMPORTANT FORMATTING RULES:
-        - Remove all advertisements, navigation menus, headers, footers, and irrelevant content
-        - Format all addresses as clickable markdown links: [0xaddress](full_explorer_url)
-        - Use tables for transaction/transfer lists with proper markdown syntax
-        - Handle missing data gracefully by showing "N/A" or "Not available"
-        - Keep monetary values with appropriate units (ETH, USD, etc.)
-        - Present timestamps in human-readable format
-        - Use bold formatting for field labels"""
+Focus on blockchain data only. Ignore website UI elements.
+Always include FULL list with ALL meaningful details. Avoid placeholder symbols like empty table elements in your output to save space"""
 
     async def _process_with_llm(self, raw_content: str, context_info: Dict[str, str]) -> str:
         """Process raw scraped content with LLM and track performance"""
@@ -122,30 +93,16 @@ class EtherscanAgent(MeshAgent):
                 },
             ]
 
-            if hasattr(self, "llm_client") and hasattr(self.llm_client, "chat"):
-                # If using a direct LLM client
-                response = await self.llm_client.chat(
-                    model=self.metadata["small_model_id"], messages=messages, max_tokens=2000, temperature=0.1
-                )
-                processed_content = response.content if hasattr(response, "content") else str(response)
-            elif hasattr(self, "generate_response"):
-                # If using generate_response method
-                processed_content = await self.generate_response(
-                    messages=messages, model_id=self.metadata["small_model_id"], max_tokens=2000, temperature=0.1
-                )
-            elif hasattr(self, "call_llm"):
-                # If call_llm exists
-                processed_content = await self.call_llm(
-                    messages=messages, model_id=self.metadata["small_model_id"], max_tokens=2000, temperature=0.1
-                )
-            else:
-                prompt = f"{messages[0]['content']}\n\nUser: {messages[1]['content']}"
-                if hasattr(self, "process_with_ai"):
-                    processed_content = await self.process_with_ai(prompt)
-                else:
-                    logger.warning("No LLM method found in MeshAgent base class, returning raw content")
-                    return raw_content
+            response = await call_llm_async(
+                base_url=self.heurist_base_url,
+                api_key=self.heurist_api_key,
+                model_id=self.metadata["small_model_id"],
+                messages=messages,
+                max_tokens=2000,
+                temperature=0.1,
+            )
 
+            processed_content = response if isinstance(response, str) else response.get("content", raw_content)
             processing_time = time.time() - start_time
             logger.info(f"LLM processing completed in {processing_time:.2f}s for {context_info.get('type', 'content')}")
 
@@ -250,11 +207,8 @@ class EtherscanAgent(MeshAgent):
                 None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
             )
 
-            markdown_content = getattr(scrape_result, "markdown", None) or (
-                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
-            )
-
-            if not scrape_result or not markdown_content:
+            markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
+            if not markdown_content:
                 return {"status": "error", "error": "Failed to scrape transaction page"}
 
             context_info = {"type": "transaction", "chain": chain, "url": url}
@@ -295,11 +249,8 @@ class EtherscanAgent(MeshAgent):
                 None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
             )
 
-            markdown_content = getattr(scrape_result, "markdown", None) or (
-                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
-            )
-
-            if not scrape_result or not markdown_content:
+            markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
+            if not markdown_content:
                 return {"status": "error", "error": "Failed to scrape address page"}
 
             context_info = {"type": "address", "chain": chain, "url": url}
@@ -340,15 +291,11 @@ class EtherscanAgent(MeshAgent):
                 None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
             )
 
-            markdown_content = getattr(scrape_result, "markdown", None) or (
-                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
-            )
-
-            if not scrape_result or not markdown_content:
+            markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
+            if not markdown_content:
                 return {"status": "error", "error": "Failed to scrape token page"}
 
             context_info = {"type": "token", "chain": chain, "url": url}
-
             processed_content = await self._process_with_llm(markdown_content, context_info)
             logger.info("Successfully processed token data")
 
