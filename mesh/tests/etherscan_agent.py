@@ -16,7 +16,7 @@ async def run_agent():
     try:
         # Test 1: Natural language query for transaction analysis
         agent_input_tx = {
-            "query": "analyze transaction pattern of https://basescan.org/address/0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686",
+            "query": "Analyze transaction 0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd on Ethereum",
             "raw_data_only": False,
         }
         agent_output_tx = await agent.handle_message(agent_input_tx)

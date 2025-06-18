@@ -1,7 +1,6 @@
 import asyncio
 import logging
 import os
-import time
 from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
@@ -56,106 +55,18 @@ class EtherscanAgent(MeshAgent):
         )
 
     def get_system_prompt(self) -> str:
-        return """You are a blockchain data processor that extracts and formats relevant information from blockchain explorer pages.
+        return """You are a web data parser designed to scrape data from blockchain explorers such as Etherscan, Basescan, and similar platforms.
 
-        Extract only the essential information and format it cleanly using the following structure:
+        Your task:
+        - Extract all relevant data from blockchain explorer pages, focusing on core sections like 'Overview', 'More Info', and transaction lists.
+        - Capture every key field presented in these sections for transactions, addresses, and tokens (e.g., status, participants, amounts, gas fees, balances, token details, and any other fields present).
+        - For transaction lists, present each entry row by row in a clear table format.
+        - Exclude irrelevant content such as advertisements, headers, footers, and navigation links.
+        - Preserve all factual data exactly as presented without adding interpretations, summaries, or assessments.
+        - Format addresses as clickable links in the format: [0xaddress](explorer_url).
+        - Return the extracted data in a structured, concise format optimized for clarity and token efficiency.
 
-        For TRANSACTIONS:
-        - **Transaction Hash**: [hash value]
-        - **Status**: [Success/Failed/Pending]
-        - **Block Number**: [number] | **Timestamp**: [date/time]
-        - **From**: [0xaddress](explorer_url/address/0xaddress)
-        - **To**: [0xaddress](explorer_url/address/0xaddress)
-        - **Value**: [amount] ETH/token
-        - **Transaction Fee**: [fee amount]
-        - **Gas Details**: Used [used]/[limit] | Price: [price] Gwei
-
-        For ADDRESSES:
-        - **Address**: [0xaddress]
-        - **Balance**: [amount] ETH/tokens
-        - **Transaction Count**: [number]
-
-        **Recent Transactions** (if available):
-        | Hash | Method | Age | From/To | Value |
-        |------|--------|-----|---------|-------|
-        | [hash] | [method] | [time] | [address] | [amount] |
-
-        For TOKENS:
-        - **Token Name**: [name] ([symbol])
-        - **Contract Address**: [0xaddress](explorer_url/token/0xaddress)
-        - **Total Supply**: [amount] [symbol]
-        - **Holders**: [number] addresses
-        - **Decimals**: [number]
-
-        **Recent Transfers** (if available):
-        | Txn Hash | Age | From | To | Value |
-        |----------|-----|------|----|----|
-        | [hash] | [time] | [from] | [to] | [amount] |
-
-        IMPORTANT FORMATTING RULES:
-        - Remove all advertisements, navigation menus, headers, footers, and irrelevant content
-        - Format all addresses as clickable markdown links: [0xaddress](full_explorer_url)
-        - Use tables for transaction/transfer lists with proper markdown syntax
-        - Handle missing data gracefully by showing "N/A" or "Not available"
-        - Keep monetary values with appropriate units (ETH, USD, etc.)
-        - Present timestamps in human-readable format
-        - Use bold formatting for field labels"""
-
-    async def _process_with_llm(self, raw_content: str, context_info: Dict[str, str]) -> str:
-        """Process raw scraped content with LLM and track performance"""
-        start_time = time.time()
-
-        try:
-            messages = [
-                {"role": "system", "content": self.get_system_prompt()},
-                {
-                    "role": "user",
-                    "content": f"""Extract and format the relevant blockchain data from this {context_info.get("type", "page")} content.
-
-                Context:
-                - Chain: {context_info.get("chain", "unknown")}
-                - Explorer URL: {context_info.get("url", "unknown")}
-                - Data Type: {context_info.get("type", "unknown")}
-
-                Raw Content:
-                {raw_content}""",
-                },
-            ]
-
-            if hasattr(self, "llm_client") and hasattr(self.llm_client, "chat"):
-                # If using a direct LLM client
-                response = await self.llm_client.chat(
-                    model=self.metadata["small_model_id"], messages=messages, max_tokens=2000, temperature=0.1
-                )
-                processed_content = response.content if hasattr(response, "content") else str(response)
-            elif hasattr(self, "generate_response"):
-                # If using generate_response method
-                processed_content = await self.generate_response(
-                    messages=messages, model_id=self.metadata["small_model_id"], max_tokens=2000, temperature=0.1
-                )
-            elif hasattr(self, "call_llm"):
-                # If call_llm exists
-                processed_content = await self.call_llm(
-                    messages=messages, model_id=self.metadata["small_model_id"], max_tokens=2000, temperature=0.1
-                )
-            else:
-                prompt = f"{messages[0]['content']}\n\nUser: {messages[1]['content']}"
-                if hasattr(self, "process_with_ai"):
-                    processed_content = await self.process_with_ai(prompt)
-                else:
-                    logger.warning("No LLM method found in MeshAgent base class, returning raw content")
-                    return raw_content
-
-            processing_time = time.time() - start_time
-            logger.info(f"LLM processing completed in {processing_time:.2f}s for {context_info.get('type', 'content')}")
-
-            return processed_content
-
-        except Exception as e:
-            processing_time = time.time() - start_time
-            logger.error(f"LLM processing failed after {processing_time:.2f}s: {str(e)}")
-            logger.warning("Falling back to raw content due to LLM processing failure")
-            return raw_content
+        Stay factual and focus on presenting the raw, relevant data directly from the scraped content."""
 
     def get_tool_schemas(self) -> List[Dict]:
         return [
@@ -231,6 +142,7 @@ class EtherscanAgent(MeshAgent):
     #                      ETHERSCAN API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
 
+    # using async executor to run firecrawl operation
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_transaction_details(self, chain: str, txid: str) -> Dict[str, Any]:
@@ -257,20 +169,7 @@ class EtherscanAgent(MeshAgent):
             if not scrape_result or not markdown_content:
                 return {"status": "error", "error": "Failed to scrape transaction page"}
 
-            context_info = {"type": "transaction", "chain": chain, "url": url}
-
-            processed_content = await self._process_with_llm(markdown_content, context_info)
-            logger.info("Successfully processed transaction data")
-
-            return {
-                "status": "success",
-                "data": {
-                    "chain": chain,
-                    "txid": txid,
-                    "explorer_url": url,
-                    "processed_content": processed_content,
-                },
-            }
+            return {"status": "success", "scraped_content": scrape_result["markdown"]}
 
         except Exception as e:
             logger.error(f"Exception in get_transaction_details: {str(e)}")
@@ -302,19 +201,9 @@ class EtherscanAgent(MeshAgent):
             if not scrape_result or not markdown_content:
                 return {"status": "error", "error": "Failed to scrape address page"}
 
-            context_info = {"type": "address", "chain": chain, "url": url}
-
-            processed_content = await self._process_with_llm(markdown_content, context_info)
-            logger.info("Successfully processed address data")
-
             return {
                 "status": "success",
-                "data": {
-                    "chain": chain,
-                    "address": address,
-                    "explorer_url": url,
-                    "processed_content": processed_content,
-                },
+                "scraped_content": scrape_result["markdown"],
             }
 
         except Exception as e:
@@ -347,19 +236,9 @@ class EtherscanAgent(MeshAgent):
             if not scrape_result or not markdown_content:
                 return {"status": "error", "error": "Failed to scrape token page"}
 
-            context_info = {"type": "token", "chain": chain, "url": url}
-
-            processed_content = await self._process_with_llm(markdown_content, context_info)
-            logger.info("Successfully processed token data")
-
             return {
                 "status": "success",
-                "data": {
-                    "chain": chain,
-                    "token_address": address,
-                    "explorer_url": url,
-                    "processed_content": processed_content,
-                },
+                "scraped_content": scrape_result["markdown"],
             }
 
         except Exception as e:
@@ -372,7 +251,7 @@ class EtherscanAgent(MeshAgent):
     async def _handle_tool_logic(
         self, tool_name: str, function_args: dict, session_context: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
-        """Handle execution of specific tools and return the processed data"""
+        """Handle execution of specific tools and return the raw data"""
 
         logger.info(f"Handling tool call: {tool_name} with args: {function_args}")
 
