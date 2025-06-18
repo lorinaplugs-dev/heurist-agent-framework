@@ -212,11 +212,17 @@ class ResearchWorkflow:
         self, query: str, search_result: Dict, num_learnings: int = 5, num_follow_up_questions: int = 3
     ) -> Dict:
         """Process search results to extract learnings and follow-up questions with enhanced validation"""
-        contents = [
-            trim_prompt(item.get("markdown", ""), 25000)
-            for item in search_result.get("data", [])
-            if item.get("markdown")
-        ]
+        # Extract data - works for both Pydantic models and dicts
+        data = getattr(search_result, "data", None) or (
+            search_result.get("data") if isinstance(search_result, dict) else []
+        )
+
+        contents = []
+        for item in data:
+            # Extract markdown - works for both Pydantic models and dicts
+            markdown = getattr(item, "markdown", None) or (item.get("markdown") if isinstance(item, dict) else None)
+            if markdown:
+                contents.append(trim_prompt(markdown, 25000))
 
         if not contents:
             return {"learnings": [], "follow_up_questions": [], "analysis": "No search results found to analyze."}
@@ -322,8 +328,13 @@ class ResearchWorkflow:
                                 logger.warning(f"Search attempt {attempt + 1} failed: {str(e)}")
                                 await asyncio.sleep(2)  # Wait before retrying
 
-                        # Extract URLs
-                        urls = [item.get("url") for item in result.get("data", []) if item.get("url")]
+                        # Extract URLs - works for both Pydantic models and dicts
+                        data = getattr(result, "data", None) or (result.get("data") if isinstance(result, dict) else [])
+                        urls = []
+                        for item in data:
+                            url = getattr(item, "url", None) or (item.get("url") if isinstance(item, dict) else None)
+                            if url:
+                                urls.append(url)
 
                         # Process content to extract learnings
                         processed_result = await self._process_search_result(
@@ -402,8 +413,15 @@ class ResearchWorkflow:
                                 logger.warning(f"Search attempt {attempt + 1} failed: {str(e)}")
                                 await asyncio.sleep(2)  # Wait before retrying
 
-                        # Extract URLs
-                        urls = [item.get("url") for item in search_result.get("data", []) if item.get("url")]
+                        # Extract URLs - works for both Pydantic models and dicts
+                        data = getattr(search_result, "data", None) or (
+                            search_result.get("data") if isinstance(search_result, dict) else []
+                        )
+                        urls = []
+                        for item in data:
+                            url = getattr(item, "url", None) or (item.get("url") if isinstance(item, dict) else None)
+                            if url:
+                                urls.append(url)
                     except Exception as e:
                         logger.error(f"Error searching with {provider} for {research_query.query}: {str(e)}")
 
@@ -442,7 +460,7 @@ class ResearchWorkflow:
                     "learnings": [],
                     "urls": urls,
                     "follow_up_questions": [],
-                    "analysis": f"Error with {provider}: {str(e) if 'e' in locals() else 'Unknown error'}",
+                    "analysis": f"Error with {provider}: Unknown error occurred",
                     "provider": provider,
                 }
 
