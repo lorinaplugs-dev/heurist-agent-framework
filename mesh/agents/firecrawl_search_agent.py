@@ -157,7 +157,8 @@ class FirecrawlSearchAgent(MeshAgent):
             response = await asyncio.get_event_loop().run_in_executor(
                 None,
                 lambda: self.app.extract(
-                    urls=urls, params={"prompt": extraction_prompt, "enableWebSearch": enable_web_search}
+                    urls=urls,
+                    params={"prompt": extraction_prompt, "enableWebSearch": enable_web_search, "waitFor": 5000},
                 ),
             )
 
