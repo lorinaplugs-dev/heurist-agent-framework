@@ -2,6 +2,7 @@ import asyncio
 from typing import Optional
 
 from firecrawl import FirecrawlApp
+from firecrawl.firecrawl import ScrapeOptions
 
 from .base_search_client import BaseSearchClient, SearchResponse
 
@@ -19,10 +20,13 @@ class FirecrawlClient(BaseSearchClient):
             # Apply rate limiting
             await self._apply_rate_limiting()
 
+            # Create ScrapeOptions object instead of passing raw dict
+            scrape_options = ScrapeOptions(formats=["markdown"])
+
             # Run the synchronous SDK call in a thread pool
             response = await asyncio.get_event_loop().run_in_executor(
                 None,
-                lambda: self.app.search(query=query, params={"scrapeOptions": {"formats": ["markdown"]}}),
+                lambda: self.app.search(query=query, scrape_options=scrape_options),
             )
 
             # Handle the response format from the SDK
