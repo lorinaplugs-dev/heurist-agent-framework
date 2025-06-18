@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
+from firecrawl.firecrawl import ScrapeOptions
 
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
@@ -106,34 +107,20 @@ class FirecrawlSearchAgent(MeshAgent):
         logger.info(f"Executing Firecrawl web search for '{search_term}'")
 
         try:
+            scrape_options = ScrapeOptions(formats=["markdown"])
+
             response = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.search(query=search_term, params={"scrapeOptions": {"formats": ["markdown"]}})
+                None, lambda: self.app.search(query=search_term, scrape_options=scrape_options)
             )
 
-            if isinstance(response, dict) and "data" in response:
-                logger.info(f"Search completed successfully with {len(response.get('data', []))} results")
-                return {
-                    "status": "success",
-                    "data": {"results": response.get("data", []), "metadata": response.get("metadata", {})},
-                }
-            elif isinstance(response, dict) and "success" in response:
-                logger.info(f"Search completed with {len(response.get('data', []))} results")
-                return {"status": "success", "data": {"results": response.get("data", [])}}
+            data = getattr(response, "data", None) or (response.get("data") if isinstance(response, dict) else None)
+
+            if isinstance(data, list) and data:
+                logger.info(f"Search completed successfully with {len(data)} results")
+                return {"status": "success", "data": {"results": data}}
             elif isinstance(response, list):
-                formatted_data = []
-                for item in response:
-                    if isinstance(item, dict):
-                        formatted_data.append(item)
-                    else:
-                        formatted_data.append(
-                            {
-                                "url": getattr(item, "url", ""),
-                                "markdown": getattr(item, "markdown", "") or getattr(item, "content", ""),
-                                "title": getattr(item, "title", "") or getattr(item, "metadata", {}).get("title", ""),
-                            }
-                        )
-                logger.info(f"Search completed with {len(formatted_data)} formatted results")
-                return {"status": "success", "data": {"results": formatted_data}}
+                logger.info(f"Search completed with {len(response)} results")
+                return {"status": "success", "data": {"results": response}}
             else:
                 logger.warning("Search completed but no results were found")
                 return {"status": "no_data", "data": {"results": []}}

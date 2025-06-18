@@ -247,15 +247,19 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/tx/{txid}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"], "waitFor": 5000})
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
             )
 
-            if not scrape_result or "markdown" not in scrape_result:
+            markdown_content = getattr(scrape_result, "markdown", None) or (
+                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
+            )
+
+            if not scrape_result or not markdown_content:
                 return {"status": "error", "error": "Failed to scrape transaction page"}
 
             context_info = {"type": "transaction", "chain": chain, "url": url}
 
-            processed_content = await self._process_with_llm(scrape_result["markdown"], context_info)
+            processed_content = await self._process_with_llm(markdown_content, context_info)
             logger.info("Successfully processed transaction data")
 
             return {
@@ -288,15 +292,19 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/address/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"], "waitFor": 5000})
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
             )
 
-            if not scrape_result or "markdown" not in scrape_result:
+            markdown_content = getattr(scrape_result, "markdown", None) or (
+                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
+            )
+
+            if not scrape_result or not markdown_content:
                 return {"status": "error", "error": "Failed to scrape address page"}
 
             context_info = {"type": "address", "chain": chain, "url": url}
 
-            processed_content = await self._process_with_llm(scrape_result["markdown"], context_info)
+            processed_content = await self._process_with_llm(markdown_content, context_info)
             logger.info("Successfully processed address data")
 
             return {
@@ -329,15 +337,19 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/token/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, params={"formats": ["markdown"], "waitFor": 5000})
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
             )
 
-            if not scrape_result or "markdown" not in scrape_result:
+            markdown_content = getattr(scrape_result, "markdown", None) or (
+                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
+            )
+
+            if not scrape_result or not markdown_content:
                 return {"status": "error", "error": "Failed to scrape token page"}
 
             context_info = {"type": "token", "chain": chain, "url": url}
 
-            processed_content = await self._process_with_llm(scrape_result["markdown"], context_info)
+            processed_content = await self._process_with_llm(markdown_content, context_info)
             logger.info("Successfully processed token data")
 
             return {

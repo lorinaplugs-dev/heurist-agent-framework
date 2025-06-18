@@ -148,7 +148,17 @@ async def process_serp_result(
     num_follow_up_questions: int = 3,
 ) -> Dict[str, List[str]]:
     """Process search results to extract learnings and follow-up questions."""
-    contents = [trim_prompt(item.get("markdown", ""), 25_000) for item in search_result["data"] if item.get("markdown")]
+    # Extract data - works for both Pydantic models and dicts
+    data = getattr(search_result, "data", None) or (
+        search_result.get("data") if isinstance(search_result, dict) else []
+    )
+
+    contents = []
+    for item in data:
+        # Extract markdown - works for both Pydantic models and dicts
+        markdown = getattr(item, "markdown", None) or (item.get("markdown") if isinstance(item, dict) else None)
+        if markdown:
+            contents.append(trim_prompt(markdown, 25_000))
 
     contents_str = "".join(f"<content>\n{content}\n</content>" for content in contents)
 
@@ -282,8 +292,13 @@ async def deep_research(
                 # Search for content
                 result = await search_client.search(serp_query.query, timeout=15000)
 
-                # Collect new URLs
-                new_urls = [item.get("url") for item in result["data"] if item.get("url")]
+                # Collect new URLs - works for both Pydantic models and dicts
+                data = getattr(result, "data", None) or (result.get("data") if isinstance(result, dict) else [])
+                new_urls = []
+                for item in data:
+                    url = getattr(item, "url", None) or (item.get("url") if isinstance(item, dict) else None)
+                    if url:
+                        new_urls.append(url)
 
                 # Calculate new breadth and depth for next iteration
                 new_breadth = max(1, breadth // 2)
