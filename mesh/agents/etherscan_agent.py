@@ -1,11 +1,13 @@
 import asyncio
 import logging
 import os
+import time
 from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
 
+from core.llm import call_llm_async
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
@@ -49,24 +51,68 @@ class EtherscanAgent(MeshAgent):
                     "Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC",
                 ],
                 "credits": 2,
-                "large_model_id": "google/gemini-2.0-flash-001",
-                "small_model_id": "google/gemini-2.0-flash-001",
+                "large_model_id": "google/gemini-2.5-flash",
+                "small_model_id": "google/gemini-2.5-flash",
             }
         )
 
     def get_system_prompt(self) -> str:
-        return """You are a web data parser designed to scrape data from blockchain explorers such as Etherscan, Basescan, and similar platforms.
+        return """You are an intelligent blockchain data processor that extracts ALL valuable information from blockchain explorer pages.
 
-        Your task:
-        - Extract all relevant data from blockchain explorer pages, focusing on core sections like 'Overview', 'More Info', and transaction lists.
-        - Capture every key field presented in these sections for transactions, addresses, and tokens (e.g., status, participants, amounts, gas fees, balances, token details, and any other fields present).
-        - For transaction lists, present each entry row by row in a clear table format.
-        - Exclude irrelevant content such as advertisements, headers, footers, and navigation links.
-        - Preserve all factual data exactly as presented without adding interpretations, summaries, or assessments.
-        - Format addresses as clickable links in the format: [0xaddress](explorer_url).
-        - Return the extracted data in a structured, concise format optimized for clarity and token efficiency.
+        Strip out ALL garbage: ads, navigation, headers, footers, cookie notices, social buttons, HTML artifacts, excessive whitespace.
 
-        Stay factual and focus on presenting the raw, relevant data directly from the scraped content."""
+        Capture EVERYTHING useful: transaction actions, method calls, token transfers, internal transactions, contract interactions, event logs, multi-sig details, DeFi interactions, NFT transfers, gas data, security warnings, verification status, source code availability, special badges. Accurately represent ALL useful info present in the given data without adding subjective interpretation or missing details.
+
+        Format clearly:
+        - Make addresses clickable: [0xaddress](full_explorer_url)
+        - Use **bold headers** for sections
+        - Present complex data in tables
+        - Keep monetary values with original units
+
+        Focus on blockchain data only. Ignore website UI elements.
+        Always include FULL list with ALL meaningful details. Avoid placeholder symbols like empty table elements in your output to save space"""
+
+    async def _process_with_llm(self, raw_content: str, context_info: Dict[str, str]) -> str:
+        """Process raw scraped content with LLM and track performance"""
+        start_time = time.time()
+
+        try:
+            messages = [
+                {"role": "system", "content": self.get_system_prompt()},
+                {
+                    "role": "user",
+                    "content": f"""Extract and format the relevant blockchain data from this {context_info.get("type", "page")} content.
+
+                Context:
+                - Chain: {context_info.get("chain", "unknown")}
+                - Explorer URL: {context_info.get("url", "unknown")}
+                - Data Type: {context_info.get("type", "unknown")}
+
+                Raw Content:
+                {raw_content}""",
+                },
+            ]
+
+            response = await call_llm_async(
+                base_url=self.heurist_base_url,
+                api_key=self.heurist_api_key,
+                model_id=self.metadata["small_model_id"],
+                messages=messages,
+                max_tokens=25000,
+                temperature=0.1,
+            )
+
+            processed_content = response if isinstance(response, str) else response.get("content", raw_content)
+            processing_time = time.time() - start_time
+            logger.info(f"LLM processing completed in {processing_time:.2f}s for {context_info.get('type', 'content')}")
+
+            return processed_content
+
+        except Exception as e:
+            processing_time = time.time() - start_time
+            logger.error(f"LLM processing failed after {processing_time:.2f}s: {str(e)}")
+            logger.warning("Falling back to raw content due to LLM processing failure")
+            return raw_content
 
     def get_tool_schemas(self) -> List[Dict]:
         return [
@@ -142,7 +188,6 @@ class EtherscanAgent(MeshAgent):
     #                      ETHERSCAN API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
 
-    # using async executor to run firecrawl operation
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_transaction_details(self, chain: str, txid: str) -> Dict[str, Any]:
@@ -159,17 +204,24 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/tx/{txid}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=10000)
             )
 
-            markdown_content = getattr(scrape_result, "markdown", None) or (
-                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
-            )
-
-            if not scrape_result or not markdown_content:
+            markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
+            if not markdown_content:
                 return {"status": "error", "error": "Failed to scrape transaction page"}
 
-            return {"status": "success", "scraped_content": scrape_result["markdown"]}
+            context_info = {"type": "transaction", "chain": chain, "url": url}
+
+            processed_content = await self._process_with_llm(markdown_content, context_info)
+            logger.info("Successfully processed transaction data")
+
+            return {
+                "status": "success",
+                "data": {
+                    "processed_content": processed_content,
+                },
+            }
 
         except Exception as e:
             logger.error(f"Exception in get_transaction_details: {str(e)}")
@@ -191,19 +243,23 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/address/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=10000)
             )
 
-            markdown_content = getattr(scrape_result, "markdown", None) or (
-                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
-            )
-
-            if not scrape_result or not markdown_content:
+            markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
+            if not markdown_content:
                 return {"status": "error", "error": "Failed to scrape address page"}
+
+            context_info = {"type": "address", "chain": chain, "url": url}
+
+            processed_content = await self._process_with_llm(markdown_content, context_info)
+            logger.info("Successfully processed address data")
 
             return {
                 "status": "success",
-                "scraped_content": scrape_result["markdown"],
+                "data": {
+                    "processed_content": processed_content,
+                },
             }
 
         except Exception as e:
@@ -226,19 +282,22 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/token/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=10000)
             )
 
-            markdown_content = getattr(scrape_result, "markdown", None) or (
-                scrape_result.get("markdown") if isinstance(scrape_result, dict) else None
-            )
-
-            if not scrape_result or not markdown_content:
+            markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
+            if not markdown_content:
                 return {"status": "error", "error": "Failed to scrape token page"}
+
+            context_info = {"type": "token", "chain": chain, "url": url}
+            processed_content = await self._process_with_llm(markdown_content, context_info)
+            logger.info("Successfully processed token data")
 
             return {
                 "status": "success",
-                "scraped_content": scrape_result["markdown"],
+                "data": {
+                    "processed_content": processed_content,
+                },
             }
 
         except Exception as e:
@@ -251,35 +310,29 @@ class EtherscanAgent(MeshAgent):
     async def _handle_tool_logic(
         self, tool_name: str, function_args: dict, session_context: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
-        """Handle execution of specific tools and return the raw data"""
+        """Handle execution of specific tools and return the processed data"""
 
         logger.info(f"Handling tool call: {tool_name} with args: {function_args}")
 
         if tool_name == "get_transaction_details":
             chain = function_args.get("chain")
             txid = function_args.get("txid")
-
             if not chain or not txid:
                 return {"status": "error", "error": "Missing required parameters: chain and txid"}
-
             result = await self.get_transaction_details(chain, txid)
 
         elif tool_name == "get_address_history":
             chain = function_args.get("chain")
             address = function_args.get("address")
-
             if not chain or not address:
                 return {"status": "error", "error": "Missing required parameters: chain and address"}
-
             result = await self.get_address_history(chain, address)
 
         elif tool_name == "get_erc20_token_details":
             chain = function_args.get("chain")
             address = function_args.get("address")
-
             if not chain or not address:
                 return {"status": "error", "error": "Missing required parameters: chain and address"}
-
             result = await self.get_erc20_token_details(chain, address)
 
         else:

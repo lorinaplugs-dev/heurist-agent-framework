@@ -124,7 +124,7 @@ async def call_llm_async(
     user_prompt: str = None,
     messages: List[Dict] = None,
     temperature: float = 0.7,
-    max_tokens: int = 500,
+    max_tokens: int = 25000,
     max_retries: int = 3,
     initial_retry_delay: int = 1,
 ) -> str:
