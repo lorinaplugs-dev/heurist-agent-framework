@@ -59,18 +59,18 @@ class EtherscanAgent(MeshAgent):
     def get_system_prompt(self) -> str:
         return """You are an intelligent blockchain data processor that extracts ALL valuable information from blockchain explorer pages.
 
-Strip out ALL garbage: ads, navigation, headers, footers, cookie notices, social buttons, HTML artifacts, excessive whitespace.
+        Strip out ALL garbage: ads, navigation, headers, footers, cookie notices, social buttons, HTML artifacts, excessive whitespace.
 
-Capture EVERYTHING useful: transaction actions, method calls, token transfers, internal transactions, contract interactions, event logs, multi-sig details, DeFi interactions, NFT transfers, gas data, security warnings, verification status, source code availability, special badges. Accurately represent ALL useful info present in the given data without adding subjective interpretation or missing details.
+        Capture EVERYTHING useful: transaction actions, method calls, token transfers, internal transactions, contract interactions, event logs, multi-sig details, DeFi interactions, NFT transfers, gas data, security warnings, verification status, source code availability, special badges. Accurately represent ALL useful info present in the given data without adding subjective interpretation or missing details.
 
-Format clearly:
-- Make addresses clickable: [0xaddress](full_explorer_url)
-- Use **bold headers** for sections
-- Present complex data in tables
-- Keep monetary values with original units
+        Format clearly:
+        - Make addresses clickable: [0xaddress](full_explorer_url)
+        - Use **bold headers** for sections
+        - Present complex data in tables
+        - Keep monetary values with original units
 
-Focus on blockchain data only. Ignore website UI elements.
-Always include FULL list with ALL meaningful details. Avoid placeholder symbols like empty table elements in your output to save space"""
+        Focus on blockchain data only. Ignore website UI elements.
+        Always include FULL list with ALL meaningful details. Avoid placeholder symbols like empty table elements in your output to save space"""
 
     async def _process_with_llm(self, raw_content: str, context_info: Dict[str, str]) -> str:
         """Process raw scraped content with LLM and track performance"""
@@ -98,7 +98,7 @@ Always include FULL list with ALL meaningful details. Avoid placeholder symbols 
                 api_key=self.heurist_api_key,
                 model_id=self.metadata["small_model_id"],
                 messages=messages,
-                max_tokens=2000,
+                max_tokens=15000,
                 temperature=0.1,
             )
 
@@ -204,7 +204,7 @@ Always include FULL list with ALL meaningful details. Avoid placeholder symbols 
             url = f"{explorer_url}/tx/{txid}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=10000)
             )
 
             markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
@@ -246,7 +246,7 @@ Always include FULL list with ALL meaningful details. Avoid placeholder symbols 
             url = f"{explorer_url}/address/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=10000)
             )
 
             markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
@@ -288,7 +288,7 @@ Always include FULL list with ALL meaningful details. Avoid placeholder symbols 
             url = f"{explorer_url}/token/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=10000)
             )
 
             markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
@@ -326,28 +326,22 @@ Always include FULL list with ALL meaningful details. Avoid placeholder symbols 
         if tool_name == "get_transaction_details":
             chain = function_args.get("chain")
             txid = function_args.get("txid")
-
             if not chain or not txid:
                 return {"status": "error", "error": "Missing required parameters: chain and txid"}
-
             result = await self.get_transaction_details(chain, txid)
 
         elif tool_name == "get_address_history":
             chain = function_args.get("chain")
             address = function_args.get("address")
-
             if not chain or not address:
                 return {"status": "error", "error": "Missing required parameters: chain and address"}
-
             result = await self.get_address_history(chain, address)
 
         elif tool_name == "get_erc20_token_details":
             chain = function_args.get("chain")
             address = function_args.get("address")
-
             if not chain or not address:
                 return {"status": "error", "error": "Missing required parameters: chain and address"}
-
             result = await self.get_erc20_token_details(chain, address)
 
         else:

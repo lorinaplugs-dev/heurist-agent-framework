@@ -1,66 +1,261 @@
 natural_language_transaction:
   input:
-    query: analyze transaction pattern of https://basescan.org/address/0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686
+    query: analyze transaction pattern of https://basescan.org/address/0x4200000000000000000000000000000000000016
     raw_data_only: false
   output:
-    response: '**Address Overview**
+    response: '**Contract Address**
+
+      [0x4200000000000000000000000000000000000016](https://basescan.org/address/0x4200000000000000000000000000000000000016)
 
 
-      *   **Address:** [0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/address/0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686)
-
-      *   **Chain:** Base
-
-      *   **ETH Balance:** 0.00205984193425065 ETH
-
-      *   **ETH Value:** $5.09 (@ $2,471.92/ETH)
-
-      *   **Token Holdings:** $0.00 (57 Tokens)
+      **Contract Name:** Base: L2 To L1 Message Passer
 
 
-      **ERC-20 Token Holdings (47 listed)**
+      **Source Code:** [Base: L2 To L1 Message Passer](https://base.org/)
 
 
-      | Token Name                                | Quantity                     |
-      Explorer Link'
+      **Overview**
+
+      *ETH Balance:* 923,237.598628681487302582 ETH
+
+      *ETH Value:* $2,317,949,303.96 (@ $2,510.67/ETH)
+
+      *Token Holdings:* >$0.10 (>116 Tokens)
+
+
+      **ERC-20 Tokens (>100)**
+
+
+      *   [Rigo Token (GRG)](https://basescan.org/token/0x09188484e1ab980daef53a9755241d759c5b7d60?a=0x4200000000000000000000000000000000000016):
+      0.1 GRG, $0.08 @0.781
+
+      *   [Sekuya (SKYA)](https://basescan.org/token/0x623cD3a3EdF080057892aaF8D773Bbb7A5C9b6e9?a=0x4200000000000000000000000000000000000016):
+      1.722 SKYA, $0.01 @0.0047
+
+      *   [Wrapped ETHO (ETHO)](https://basescan.'
     data:
       status: success
       data:
         chain: base
-        address: '0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686'
-        explorer_url: https://basescan.org/address/0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686
+        address: '0x4200000000000000000000000000000000000016'
+        explorer_url: https://basescan.org/address/0x4200000000000000000000000000000000000016
         processed_content: '```
 
-          **Address:** [0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/address/0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686)
+          **Contract Address**
+
+          [0x4200000000000000000000000000000000000016](https://basescan.org/address/0x4200000000000000000000000000000000000016)
+
+
+          **Contract Name:** Base: L2 To L1 Message Passer
+
+
+          **Source Code:** [Base: L2 To L1 Message Passer](https://base.org/)
 
 
           **Overview**
 
-          - ETH Balance: 0.00205984193425065 ETH
+          *ETH Balance:* 923,237.598628681487302582 ETH
 
-          - ETH Value: $5.09 (@ $2,471.92/ETH)
+          *ETH Value:* $2,317,949,303.96 (@ $2,510.67/ETH)
 
-          - Token Holdings: $0.00 (57 Tokens)
-
-
-          **ERC-20 Tokens (47)**
+          *Token Holdings:* >$0.10 (>116 Tokens)
 
 
-          *   Baby Hamster... (HMSTR): 1 HMSTR ([https://basescan.org/token/0x089d91926e43cd7318198922d548189470ca25f2?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0x089d91926e43cd7318198922d548189470ca25f2?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686))
+          **ERC-20 Tokens (>100)**
 
-          *   Ski Mask Apu (SAPU): 20 SAPU ([https://basescan.org/token/0xdbb2e40d67c1c5c3119f69282f425d3e7764d6db?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0xdbb2e40d67c1c5c3119f69282f425d3e7764d6db?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686))
 
-          *   TRUMP GROK (GROK): 1 GROK ([https://basescan.org/token/0x05d68f36dc47048a2725db632f6d442a95c230c4?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0x05d68f36dc47048a2725db632f6d442a95c230c4?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686))
+          *   [Rigo Token (GRG)](https://basescan.org/token/0x09188484e1ab980daef53a9755241d759c5b7d60?a=0x4200000000000000000000000000000000000016):
+          0.1 GRG, $0.08 @0.781
 
-          *   ODOS-LP - www.odosprotocol.io: 12,258 ODOS-LP - www.odosprotocol.io
-          ([https://basescan.org/token/0x1d63ff316734f172600e3cbbd058078bf8d7c4d4?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0x1d63ff316734f172600e3cbbd058078bf8d7c4d4?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686))
+          *   [Sekuya (SKYA)](https://basescan.org/token/0x623cD3a3EdF080057892aaF8D773Bbb7A5C9b6e9?a=0x4200000000000000000000000000000000000016):
+          1.722 SKYA, $0.01 @0.0047
 
-          *   ENA-W \[EthenaDrop.net]: 1,406 ENA-W \[EthenaDrop.net] ([https://basescan.org/token/0xf6dfc98b97ce40caac782e554e99c968a447f614?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0xf6dfc98b97ce40caac782e554e99c968a447f614?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686))
+          *   [Wrapped ETHO (ETHO)](https://basescan.org/token/0x8b52F46A52D86C131222EE14167Da6a847bdB84a?a=0x4200000000000000000000000000000000000016):
+          11 ETHO, $0.01 @0.001
 
-          *   OP \[OP-Vault.com]: 327 OP \[OP-Vault.com] ([https://basescan.org/token/0x33de893fa1fa8ee58860f768fe71d16e9aee7a23?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0x33de893fa1fa8ee58860f768fe71d16e9aee7a23?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686))
+          *   [Wild Goat Coin](https://basescan.org/token/0xfb18511f1590a494360069f3640c27d55c2b5290?a=0x4200000000000000000000000000000000000016):
+          200 WGC, $0.01 @0.00
 
-          *   OP \[www.optimism.supply]: 726 OP \[www.optimism.supply] ([https://basescan.org/token/0xc7b7dd8e59b7fb03d82a0de9befe81752df8c61b?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0xc7b7dd8e59b7fb03d82a0de9befe81752df8c61b?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686))
+          *   [BASED USA](https://basescan.org/token/0xb56d0839998fd79efcd15c27cf966250aa58d6d3?a=0x4200000000000000000000000000000000000016):
+          1 USA, $0.00 @0.0002
 
-          *   NC-Eligible (Verify: www.nodeco.in): 11,359 NC-Eligible (Verify: www.nodeco.in)
-          ([https://basescan.org/token/0x09b79fd57bd42f747eceb76beb723c827815f389?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0x09b79fd57bd42f747eceb76beb723c827815f389?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686))
+          *   [kurbi](https://basescan.org/token/0x653A143B8d15C565C6623D1F168cFbeC1056D872?a=0x4200000000000000000000000000000000000016):
+          0.1 kurbi, $0.00 @0.0003
 
-          *   FLIP: 777 FLIP ([https://basescan.org/token/0x90f02fbdc8202a5d525dae2868b0d572922629cb?a=0x59ddB69675B3f59dC569a5e3a7438EC3fb23f686](https://basescan.org/token/0x90f02fbdc8202a5d525dae2868b0d572922629cb?a=0x59ddB69675B3f59dC569a5e3a74'
+          *   [Onchain Summer](https://basescan.org/token/0xf7cCB8a6e3400eB8Eb0c47619134f7516E025215?a=0x4200000000000000000000000000000000000016):
+          0.9 SUMMER, $0.00 @0.00
+
+          *   [ERC-20: Aave... (aave-f...)](https://basescan.org/token/0xF53897FC88A4C2963dB479aB70C086c85005C9f8?a=0x4200000000000000000000000000000000000016):
+          100 aave-foundation.com
+
+          *   [ERC-20: Anth... (ANTHRA...)](https://basescan.org/token/0x904efbbaab6cf3e4499968af1b68aa54d5b586df?a=0x4200000000000000000000000000000000000016):
+          4,030 ANTHRAX
+
+          *   [ERC-20: Auri... (AUR)](https://basescan.org/token/0x54d2f3a37a926fb60a67c20a9658b786b0c9a6bc?a=0x4200000000000000000000000000000000000016):
+          768,888.01304876 AUR
+
+          *   [ERC-20: Bake... (BAKED)](https://basescan.org/token/0x4bf277EfC0937E5C7c0A5f29199C192CF873A28E?a=0x4200000000000000000000000000000000000016):
+          747,464.67160456 BAKED
+
+          *   [ERC-20: Base (BASE)](https://basescan.org/token/0x8f6286e5ad1ee2a89c31f080ad0db4902a84dade?a=0x4200000000000000000000000000000000000016):
+          99,063,829,787,234 BASE
+
+          *   [ERC-20: BASE... (BLOWN)](https://basescan.org/token/0x749d57006a1ff4f7ff8cd0a238525b08d85ece33?a=0x4200000000000000000000000000000000000016):
+          77.6942069 BLOWN
+
+          *   [ERC-20: BASE... (BASELO...)](https://basescan.org/token/0xc088797eaee27e0b1b80cd0ccc02b5792182ba6d?a=0x4200000000000000000000000000000000000016):
+          4,000 BASELOL
+
+          *   [ERC-20: base... (COIN w...)](https://basescan.org/token/0x9494ccaec7b3be19f80dedca5dbb444801331a25?a=0x4200000000000000000000000000000000000016):
+          20,000 COIN www.baseweb.io
+
+          *   [ERC-20: Bask... (BSKT)](https://basescan.org/token/0x8d1826a44b63f2c598955611cc3ae0c270bab62a?a=0x4200000000000000000000000000000000000016):
+          443,337.12510685 BSKT
+
+          *   [ERC-20: Bitc... (GOD)](https://basescan.org/token/0xb24d0c08e0596b50f0bfc6715e3f1e0fbcbaedea?a=0x4200000000000000000000000000000000000016):
+          384,954.2934674 GOD
+
+          *   [ERC-20: Bits... (BITSHI...)](https://basescan.org/token/0x71A3927B3558e4a7d26cA94CC3b7A55f5c0f5C9C?a=0x4200000000000000000000000000000000000016):
+          89,111.7822 BITSHIT
+
+          *   [ERC-20: Blep... (BLEP)](https://basescan.org/token/0xc438b0c0e80a8fa1b36898d1b36a3fc2ec371c54?a=0x4200000000000000000000000000000000000016):
+          10 BLEP
+
+          *   [ERC-20: Blue... (BMEW)](https://basescan.org/token/0x04e7df4c0e131c6d0d4a3a0d19a5b987ceb02eb6?a=0x4200000000000000000000000000000000000016):
+          1,337 BMEW
+
+          *   [ERC-20: BLUM (BLUM)](https://basescan.org/token/0x05f9d833179b873a018899785f857508c83682b9?a=0x4200000000000000000000000000000000000016):
+          1 BLUM
+
+          *   [ERC-20: Brai... (BWORM)](https://basescan.org/token/0x506BEb7965FC7053059006c7ab4C62c02C2D989F?a=0x4200000000000000000000000000000000000016):
+          0.0011 BWORM
+
+          *   [ERC-20: Brog... (BROGE)](https://basescan.org/token/0xe8E55A847Bb446d967ef92F4580162fb8f2d3F38?a=0x4200000000000000000000000000000000000016):
+          10,000 BROGE
+
+          *   [ERC-20: BS10... (BS109)](https://basescan.org/token/0x1a7020142bb38d8385c78e38cb2468e2832b0fca?a=0x4200000000000000000000000000000000000016):
+          1.11111111 BS109
+
+          *   [ERC-20: BS3A... (BS3A0)](https://basescan.org/token/0x8e19db87541a253fafad7ea0ad34aff3d5243bf7?a=0x4200000000000000000000000000000000000016):
+          0.00011111 BS3A0
+
+          *   [ERC-20: BS3A... (BS3A1)](https://basescan.org/token/0x45289251743324655492ee4d09b7e6ef895f96d6?a=0x4200000000000000000000000000000000000016):
+          0.00001111 BS3A1
+
+          *   [ERC-20: BS3A... (BS3A3)](https://basescan.org/token/0x44d0a88a7995d1d7528003c5a470afdcb3cf1fd3?a=0x4200000000000000000000000000000000000016):
+          0.00001111 BS3A3
+
+          *   [ERC-20: BS3A... (BS3A4)](https://basescan.org/token/0x37d2cc5f04099a779fec1b0da79e0d53f3fc1870?a=0x4200000000000000000000000000000000000016):
+          0.00011111 BS3A4
+
+          *   [ERC-20: BS3A... (BS3A6)](https://basescan.org/token/0xb22e54f69dc63fcc683426efeb4a77a025c754f6?a=0x4200000000000000000000000000000000000016):
+          0.00111111 BS3A6
+
+          *   [ERC-20: BS70 (BS70)](https://basescan.org/token/0x616b4cf01db1bf895fbc51cc477d257c172adb0e?a=0x4200000000000000000000000000000000000016):
+          0.00001111 BS70
+
+          *   [ERC-20: BS72 (BS72)](https://basescan.org/token/0x2ea23b476df871b135ead08eccdd434c0824bbc5?a=0x4200000000000000000000000000000000000016):
+          0.00011111 BS72
+
+          *   [Bsop](https://basescan.org/token/0x9704d2adbc02c085ff526a37ac64872027ac8a50?a=0x4200000000000000000000000000000000000016):
+          13,938 Bsop
+
+          *   [ERC-20: Bull... (BOE)](https://basescan.org/token/0xa775a7c5a388d018c86040b19a787fd8267d7f81?a=0x4200000000000000000000000000000000000016):
+          279,964.81398707 BOE
+
+          *   [ERC-20: BURR... (BURRRD)](https://basescan.org/token/0x7a01776c480620dbb1a261cd3d6add61c821e603?a=0x4200000000000000000000000000000000000016):
+          35,806,688.2787231 BURRRD
+
+          *   [ERC-20: CSR (CSR)](https://basescan.org/token/0x3621f62bb43bc131bb22867fddf41a021d4c6ea0?a=0x4200000000000000000000000000000000000016):
+          360,377.98714356 CSR
+
+          *   [ERC-20: DAWK... (DAW)](https://basescan.org/token/0x01057310a9796C34E45616B0F0F2E038ef048d26?a=0x4200000000000000000000000000000000000016):
+          201,170.71827324 DAW
+
+          *   [ERC-20: debr... (Acces ...)](https://basescan.org/token/0x3b6634541c63903b84385ec792909c1adc76d716?a=0x4200000000000000000000000000000000000016):
+          1 Acces debridgether.com
+
+          *   [ERC-20: Dege... (DEGEN)](https://basescan.org/token/0x424a25819f494948ff9489c203f0f9a8f0382ad3?a=0x4200000000000000000000000000000000000016):
+          173,117.97302705 DEGEN
+
+          *   [ERC-20: DexM... (DXM)](https://basescan.org/token/0x542390b6312ae36ce9186a77122cb3797b608a99?a=0x4200000000000000000000000000000000000016):
+          1 DXM
+
+          *   [ERC-20: Digi... (XDB)](https://basescan.org/token/0x8d622b5ba06df4f75a180fae84d18e0ce1e2072b?a=0x4200000000000000000000000000000000000016):
+          36,547.22924156 XDB
+
+          *   [ERC-20: Dimo... (DMN)](https://basescan.org/token/0x284A081009F2174b83e62fD2b59aC37A8e496b91?a=0x4200000000000000000000000000000000000016):
+          0.05 DMN
+
+          *   [ERC-20: DOGA... (DOGAI)](https://basescan.org/token/0x460CF9dFD0C53494BaaF639a3431A04355ee6D41?a=0x4200000000000000000000000000000000000016):
+          364,809.47928436 DOGAI
+
+          *   [ERC-20: FLOO... (FLS)](https://basescan.org/token/0xe1e0a83ae40cb5e20a6f45d927dbfd7172608644?a=0x4200000000000000000000000000000000000016):
+          197,429.33569762 FLS
+
+          *   [ERC-20: Flux... (FLUXB)](https://basescan.org/token/0x8285e0e1d96c8b1fc4079cfeaf5c4219caa954e0?a=0x4200000000000000000000000000000000000016):
+          595,483.33952143 FLUXB
+
+          *   [ERC-20: Fred (FRED)](https://basescan.org/token/0x8d81b3ad7f6fa7086ac2e990a362ec92e70db53c?a=0x4200000000000000000000000000000000000016):
+          0.000001 FRED
+
+          *   [ERC-20: GPTP... (GPTPLU...)](https://basescan.org/token/0xe58C9e683f7bb0Ca266773a8f2411aE32D0a9BC5?a=0x4200000000000000000000000000000000000016):
+          90,649.61221036 GPTPLUS
+
+          *   [ERC-20: Hebe... (HBT)](https://basescan.org/token/0x102b3FE21f32b3A096ebF2Ea17015EF3eF282Db9?a=0x4200000000000000000000000000000000000016):
+          370,603.39836588 HBT
+
+          *   [ERC-20: Home... (HOME)](https://basescan.org/token/0x7727a1602987C9972D721A3be437FEabAF453c46?a=0x4200000000000000000000000000000000000016):
+          3,950,000,000 HOME
+
+          *   [ERC-20: Juic... (JBX)](https://basescan.org/token/0x72676415FA856Bb828A804a62c8b3374b815130b?a=0x4200000000000000000000000000000000000016):
+          149,614.15311021 JBX
+
+          *   [ERC-20: KSCE... (HOLO)](https://basescan.org/token/0xd14c5f3147b4031943d5d500f385d2e476d3e90c?a=0x4200000000000000000000000000000000000016):
+          13 HOLO
+
+          *   [ERC-20: Lega... (ICHI)](https://basescan.org/token/0x5A623FF905264b46F68B58092EF9f80459A9f25F?a=0x4200000000000000000000000000000000000016):
+          264,594.63824299 ICHI
+
+          *   [ERC-20: Limo... (LMCSWA...)](https://basescan.org/token/0x41bc94db7cd0170c72fccd0a974e8cff0db6e6e5?a=0x4200000000000000000000000000000000000016):
+          203,873.83006806 LMCSWAP
+
+          *   [ERC-20: Lite... (LTCB)](https://basescan.org/token/0x479f76ab2c432984b59fa1b3425dacff2e2f4023?a=0x4200000000000000000000000000000000000016):
+          990 LTCB
+
+          *   [ERC-20: Lush... (LUSH)](https://basescan.org/token/0xcd533362aa2c34ab5f37646a9c93a3b2efcfd162?a=0x4200000000000000000000000000000000000016):
+          859,316.4951547 LUSH
+
+          *   [ERC-20: Mimo... (MIMO)](https://basescan.org/token/0xfB5A739C28fBeA1704d7e1B672F9f9f71f6Ca3AA?a=0x4200000000000000000000000000000000000016):
+          358,447.39639005 MIMO
+
+          *   [ERC-20: Mini... (MINIMO...)](https://basescan.org/token/0x60e3dd2fe7148e825cb5fed1df061deb575ff11e?a=0x4200000000000000000000000000000000000016):
+          1,415,485 MINIMOCHI
+
+          *   [ERC-20: Myth... (MYTH)](https://basescan.org/token/0x422692b7902ffca8796ed2299da68cb3f7c6e006?a=0x4200000000000000000000000000000000000016):
+          2,429.59634974 MYTH
+
+          *   [ERC-20: neob... (neob00)](https://basescan.org/token/0x54ac6dc3629baa4e5199a6884563ec5405ec585b?a=0x4200000000000000000000000000000000000016):
+          0 neob00
+
+          *   [ERC-20: Neph... (NOB)](https://basescan.org/token/0xdC0120B6b088EEfE1B178f880ae175B3ddfeF72c?a=0x4200000000000000000000000000000000000016):
+          2,000 NOB
+
+          *   [ERC-20: New ... (NSC)](https://basescan.org/token/0xD0349c25484009902AA8f1a7285eca916F35fB6c?a=0x4200000000000000000000000000000000000016):
+          39,000 NSC
+
+          *   [ERC-20: Nunu (NUNU)](https://basescan.org/token/0x5dE1175ddC02e47d44831B54a1bADf833e44809a?a=0x4200000000000000000000000000000000000016):
+          9.4201337 NUNU
+
+          *   [ERC-20: Pook... (BEAR)](https://basescan.org/token/0x0e2e2ed5abb75ac7f3b5223ce69d3c85a86d094d?a=0x4200000000000000000000000000000000000016):
+          13 BEAR
+
+          *   [ERC-20: Popo (POPO)](https://basescan.org/token/0x51321dd71ddd959661d3b73a02843844de7fec0a?a=0x4200000000000000000000000000000000000016):
+          362,306.12242621 POPO
+
+          *   [ERC-20: Rabi (RABI)](https://basescan.org/token/0xc6ffdd60ae479ad6e117a8cbfedde2139f08dcba?a=0x4200000000000000000000000000000000000016):
+          797,529.24540435 RABI
+
+          *   [ERC-20: Rosc... (CATGUY)](https://basescan.org/token/0xA8bdbE2b4Da52213e9503CA8BD40A1D85994b35F?a=0x4200000000000000000000000000000000000016):
+          148,525.73316'
+  raw_data: ''
