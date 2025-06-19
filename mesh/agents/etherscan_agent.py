@@ -98,6 +98,7 @@ class EtherscanAgent(MeshAgent):
                 api_key=self.heurist_api_key,
                 model_id=self.metadata["small_model_id"],
                 messages=messages,
+                max_tokens=25000,
                 temperature=0.1,
             )
 
@@ -257,9 +258,6 @@ class EtherscanAgent(MeshAgent):
             return {
                 "status": "success",
                 "data": {
-                    "chain": chain,
-                    "address": address,
-                    "explorer_url": url,
                     "processed_content": processed_content,
                 },
             }
@@ -298,9 +296,6 @@ class EtherscanAgent(MeshAgent):
             return {
                 "status": "success",
                 "data": {
-                    "chain": chain,
-                    "token_address": address,
-                    "explorer_url": url,
                     "processed_content": processed_content,
                 },
             }

@@ -4,9 +4,9 @@ natural_language_transaction:
     raw_data_only: false
   output:
     response: "**Address:** [0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\n\
-      \n**Overview**\n\n*   **ETH Balance:** 1.142756836659239339 ETH\n*   **ETH Value:**\
-      \ $2,887.40 (@ $2,526.70/ETH)\n*   **Token Holdings Value:** $2.90 (21 Tokens)\n\
-      \n**Token Holdings (ERC-20)**\n\n| Token Name | Symbol | Amount | Value | Price\
+      \n**Overview**\n\n*   **ETH Balance:** 1.142204859802073197 ETH\n*   **ETH Value:**\
+      \ $2,882.62 (@ $2,523.73/ETH)\n*   **Token Holdings:** $2.90 (21 Tokens)\n\n\
+      **Token Holdings (ERC-20)**\n\n| Token Name | Symbol | Amount | Value | Price\
       \ per Token |\n| :--------- | :----- | :----- | :---- | :-------------- |\n\
       | PREME Token | PREME | 1,008 | $2.89 | @0.0029 |\n| Black Agnus | FTW | 3,333,333\
       \ | $0.02 | @0.00 |\n| TRUMP MAGA | MAGA | 2,240 | $0.00 | - |\n| ERC-20: (NC-Eli...)\
@@ -15,274 +15,909 @@ natural_language_transaction:
       \ | - |\n| ERC-20: AI C... | AIC | 1 | $0.00 | - |\n| ERC-20: Ange... | Lettuce\
       \ | 34,302,925.8 | $0.00 | - |\n| ERC-20: BMB | BMB | 0.89 | $0.00 | - |\n|\
       \ ERC-20: Marv... | Marvin | 17,776 | $0.00 | - |\n\n**NFT Holdings**\n\n* \
-      \  **SHIBAFAIR. ORG:** GVNO (ERC-1155)\n\n**More Info**\n\n*   **Transactions\
-      \ Sent:** Latest: [2 mins ago](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77),\
-      \ First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)\n\
+      \  **SHIBAFAIR.ORG:** GVNO (ERC-1155)\n\n**More Info**\n\n*   **Transactions\
+      \ Sent:**\n    *   Latest: [9 secs ago](https://etherscan.io/tx/0xe2afa90bae68b55491fbcddc0ab80eee272e7a2626b1048c8bcaacf236500c31)\n\
+      \    *   First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)\n\
       *   **Funded By:** [0x5D47603902a8cadbf3337abbc6df8f67a251d821](https://etherscan.io/address/0x5d47603902a8cadbf3337abbc6df8f67a251d821)\
       \ ([1 year 266 days ago](https://etherscan.io/tx/0x9209ecf6e32d4b32909fbf6193548b13129e60dfb11add01546ed799e235fe1a))\n\
-      \n**Multichain Info**\n\n*   **Multichain Portfolio Value:** $2,891.33 (across\
-      \ 35 Chains)\n*   **Chains with Holdings:**\n    *   [Ethereum](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073):\
-      \ $2,888 (100%)\n    *   [Base](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073):\
-      \ $3 (<1%)\n\n**Multichain Portfolio Details**\n\n| Chain | Token | Portfolio\
-      \ % | Price | Amount | Value |\n| :---- | :---- | :---------- | :---- | :-----\
-      \ | :---- |\n| [ETH](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-      \ | Ether (ETH) | 99.80% | $2,525.07 | 1.1428 | $2,885.54 |\n| [ETH](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-      \ | [PREME Token (PREME)](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-      \ | 0.10% | $0.002865 | 1,008 | $2.89 |\n| [BASE](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-      \ | [PREME Token (PREME)](https://basescan.org/token/0x8c62ac3b71db8c81a764b84ffbc2a8d0bad7f111?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-      \ | 0.10% | $0.002875 | 1,008 | $2.9 |\n\n**Transactions (Latest 25 of 33,021\
-      \ total)**\n\n| Transaction Hash | Method | Block | Age | From | To | Amount\
-      \ | Txn Fee |\n| :--------------- | :----- | :---- | :-- | :--- | :--- | :-----\
-      \ | :------ |\n| [0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77)\
-      \ | 0x122067ed | [22738593](https://etherscan.io/block/22738593) | 2 mins ago\
+      \n**Multichain Info**\n\n*   **Total Multichain Portfolio Value:** $2,888.85\n\
+      *   **Addresses Found via Blockscan:** 1\n    *   [BaseScan ($3)](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\n\
+      \    *   [Blockscan (View All)](https://blockscan.com/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\n\
+      \n**Multichain Portfolio (35 Chains)**\n\n| Chain | Token | Portfolio % | Price\
+      \ | Amount | Value |\n| :---- | :---- | :---------- | :---- | :----- | :----\
+      \ |\n| Ethereum | Ether (ETH) | 99.80% | $2,524.12 | 1.1422 | $2,883.06 |\n\
+      | Ethereum | [PREME Token (PREME)](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | 0.10% | $0.002865 | 1,008 | $2.89 |\n| Base | [PREME Token (PREME)](https://basescan.org/token/0x8c62ac3b71db8c81a764b84ffbc2a8d0bad7f111?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | 0.10% | $0.002875 | 1,008 | $2.9 |\n\n**Transactions (Latest 25 of 33,021)**\n\
+      \n| Transaction Hash | Method | Block | Age | From | To | Amount | Txn Fee (ETH)\
+      \ | Txn Fee (USD) |\n| :--------------- | :----- | :---- | :-- | :--- | :--\
+      \ | :----- | :------------ | :------------ |\n| [0xe2afa90bae68b55491fbcddc0ab80eee272e7a2626b1048c8bcaacf236500c31](https://etherscan.io/tx/0xe2afa90bae68b55491fbcddc0ab80eee272e7a2626b1048c8bcaacf236500c31)\
+      \ | 0x122067ed | [22738655](https://etherscan.io/block/22738655) | 8 secs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00223544 ETH |\n| [0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d](https://etherscan.io/tx/0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d)\
-      \ | 0x30a28ffc | [22738550](https://etherscan.io/block/22738550) | 11 mins ago\
+      \ | 0 ETH ($0.00) | 0.00055197 | 4.99386468 |\n| [0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77)\
+      \ | 0x122067ed | [22738593](https://etherscan.io/block/22738593) | 12 mins ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00234611 ETH |\n| [0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)\
+      \ | 0 ETH ($0.00) | 0.00223544 | 18.68350951 |\n| [0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d](https://etherscan.io/tx/0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d)\
+      \ | 0x30a28ffc | [22738550](https://etherscan.io/block/22738550) | 21 mins ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00234611 | 23.2412525 |\n| [0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)\
       \ | 0x122067ed | [22738166](https://etherscan.io/block/22738166) | 1 hr ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00064685 ETH |\n| [0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2](https://etherscan.io/tx/0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2)\
-      \ | 0x30a28ffc | [22738012](https://etherscan.io/block/22738012) | 1 hr ago\
+      \ | 0 ETH ($0.00) | 0.00064685 | 4.16780295 |\n| [0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2](https://etherscan.io/tx/0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2)\
+      \ | 0x30a28ffc | [22738012](https://etherscan.io/block/22738012) | 2 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00112555 ETH |\n| [0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86](https://etherscan.io/tx/0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86)\
+      \ | 0 ETH ($0.00) | 0.00112555 | 8.82574121 |\n| [0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86](https://etherscan.io/tx/0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86)\
       \ | 0x122067ed | [22737998](https://etherscan.io/block/22737998) | 2 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00131619 ETH |\n| [0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11](https://etherscan.io/tx/0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11)\
-      \ | 0x30a28ffc | [22737751](https://etherscan.io/block/22737751) | 2 hrs ago\
+      \ | 0 ETH ($0.00) | 0.00131619 | 10.44232971 |\n| [0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11](https://etherscan.io/tx/0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11)\
+      \ | 0x30a28ffc | [22737751](https://etherscan.io/block/22737751) | 3 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00334247 ETH |\n| [0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c](https://etherscan.io/tx/0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c)\
+      \ | 0 ETH ($0.00) | 0.00334247 | 33.11151956 |\n| [0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c](https://etherscan.io/tx/0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c)\
       \ | 0x30a28ffc | [22737538](https://etherscan.io/block/22737538) | 3 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00104254 ETH |\n| [0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75](https://etherscan.io/tx/0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75)\
-      \ | 0x30a28ffc | [22737437](https://etherscan.io/block/22737437) | 3 hrs ago\
+      \ | 0 ETH ($0.00) | 0.00104254 | 7.88925328 |\n| [0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75](https://etherscan.io/tx/0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75)\
+      \ | 0x30a28ffc | [22737437](https://etherscan.io/block/22737437) | 4 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00033231 ETH |\n| [0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587](https://etherscan.io/tx/0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587)\
+      \ | 0 ETH ($0.00) | 0.00033231 | 3.29199649 |\n| [0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587](https://etherscan.io/tx/0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587)\
       \ | 0x122067ed | [22737321](https://etherscan.io/block/22737321) | 4 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00248902 ETH |\n| [0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33](https://etherscan.io/tx/0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33)\
+      \ | 0 ETH ($0.00) | 0.00248902 | 20.96200354 |\n| [0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33](https://etherscan.io/tx/0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33)\
       \ | 0x30a28ffc | [22737293](https://etherscan.io/block/22737293) | 4 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00037498 ETH |\n| [0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927](https://etherscan.io/tx/0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927)\
-      \ | 0x122067ed | [22737152](https://etherscan.io/block/22737152) | 4 hrs ago\
+      \ | 0 ETH ($0.00) | 0.00037498 | 3.71519856 |\n| [0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927](https://etherscan.io/tx/0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927)\
+      \ | 0x122067ed | [22737152](https://etherscan.io/block/22737152) | 5 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00055548 ETH |\n| [0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53](https://etherscan.io/tx/0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53)\
-      \ | 0x30a28ffc | [22737144](https://etherscan.io/block/22737144) | 4 hrs ago\
+      \ | 0 ETH ($0.00) | 0.00055548 | 4.37288124 |\n| [0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53](https://etherscan.io/tx/0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53)\
+      \ | 0x30a28ffc | [22737144](https://etherscan.io/block/22737144) | 5 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00893864 ETH |\n| [0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf](https://etherscan.io/tx/0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf)\
+      \ | 0 ETH ($0.00) | 0.00893864 | 70.08995886 |\n| [0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf](https://etherscan.io/tx/0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf)\
       \ | 0x30a28ffc | [22736769](https://etherscan.io/block/22736769) | 6 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.0027041 ETH |\n| [0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e](https://etherscan.io/tx/0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e)\
+      \ | 0 ETH ($0.00) | 0.0027041 | 21.20350919 |\n| [0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e](https://etherscan.io/tx/0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e)\
       \ | 0x30a28ffc | [22736573](https://etherscan.io/block/22736573) | 6 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00085254 ETH |\n| [0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3](https://etherscan.io/tx/0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3)\
+      \ | 0 ETH ($0.00) | 0.00085254 | 6.68501418 |\n| [0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3](https://etherscan.io/tx/0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3)\
       \ | 0x122067ed | [22736507](https://etherscan.io/block/22736507) | 7 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00058007 ETH |\n| [0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c](https://etherscan.io/tx/0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c)\
+      \ | 0 ETH ($0.00) | 0.00058007 | 4.70900208 |\n| [0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c](https://etherscan.io/tx/0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c)\
       \ | 0x122067ed | [22736457](https://etherscan.io/block/22736457) | 7 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00038489 ETH |\n| [0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269](https://etherscan.io/tx/0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269)\
+      \ | 0 ETH ($0.00) | 0.00038489 | 3.25878277 |\n| [0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269](https://etherscan.io/tx/0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269)\
       \ | 0x122067ed | [22736417](https://etherscan.io/block/22736417) | 7 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00354311 ETH |\n| [0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3](https://etherscan.io/tx/0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3)\
+      \ | 0 ETH ($0.00) | 0.00354311 | 30.04855369 |\n| [0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3](https://etherscan.io/tx/0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3)\
       \ | 0x122067ed | [22736405](https://etherscan.io/block/22736405) | 7 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00033393 ETH |\n| [0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10](https://etherscan.io/tx/0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10)\
+      \ | 0 ETH ($0.00) | 0.00033393 | 2.17327267 |\n| [0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10](https://etherscan.io/tx/0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10)\
       \ | 0x122067ed | [22736397](https://etherscan.io/block/22736397) | 7 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00049211 ETH |\n| [0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced](https://etherscan.io/tx/0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced)\
+      \ | 0 ETH ($0.00) | 0.00049211 | 4.29710742 |\n| [0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced](https://etherscan.io/tx/0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced)\
       \ | 0x30a28ffc | [22736360](https://etherscan.io/block/22736360) | 7 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00031105 ETH |\n| [0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255](https://etherscan.io/tx/0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255)\
+      \ | 0 ETH ($0.00) | 0.00031105 | 3.22379184 |\n| [0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255](https://etherscan.io/tx/0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255)\
       \ | 0x122067ed | [22736328](https://etherscan.io/block/22736328) | 7 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00064064 ETH |\n| [0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751](https://etherscan.io/tx/0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751)\
+      \ | 0 ETH ($0.00) | 0.00064064 | 4.72777393 |\n| [0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751](https://etherscan.io/tx/0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751)\
       \ | 0x122067ed | [22736188](https://etherscan.io/block/22736188) | 8 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00241091 ETH |\n| [0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128](https://etherscan.io/tx/0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128)\
+      \ | 0 ETH ($0.00) | 0.00241091 | 19.57464238 |\n| [0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128](https://etherscan.io/tx/0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128)\
       \ | 0x122067ed | [22736157](https://etherscan.io/block/22736157) | 8 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00096334 ETH |\n| [0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036](https://etherscan.io/tx/0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036)\
+      \ | 0 ETH ($0.00) | 0.00096334 | 7.88562989 |\n| [0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036](https://etherscan.io/tx/0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036)\
       \ | 0x122067ed | [22736138](https://etherscan.io/block/22736138) | 8 hrs ago\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
       \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00061178 ETH |\n| [0x08c3a0220f9ae461ee8a342598629fc38b71755bece162a100f0465e7ef23850](https://etherscan.io/tx/0x08c3a0220f9ae461ee8a342598629fc38b71755bece162a100f0465e7ef23850)\
-      \ | 0x30a28ffc | [22736130](https://etherscan.io/block/22736130) | 8 hrs ago\
-      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-      \ | 0 ETH ($0.00) | 0.00209223 ETH |\n\n**Internal Transactions (Latest 1)**\n\
-      \n| Parent Transaction Hash | Method | Block | Age | From | To | Amount |\n\
-      | :---------------------- | :----- | :---- | :-- | :--- | :--- | :----- |\n\
-      | [0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c](https://etherscan.io/tx/0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c)\
+      \ | 0 ETH ($0.00) | 0.00061178 | 5.04819717 |\n\n**Internal Transactions (Latest\
+      \ 1)**\n\n| Parent Transaction Hash | Method | Block | Age | From | To | Amount\
+      \ |\n| :---------------------- | :----- | :---- | :-- | :--- | :-- | :-----\
+      \ |\n| [0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c](https://etherscan.io/tx/0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c)\
       \ | Transfer | [22719123](https://etherscan.io/block/22719123) | 2 days ago\
       \ | [Disperse.app](https://etherscan.io/address/0xd152f549545093347a162dce210e7293f1452150)\
       \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-      \ | 0.05291609 ETH ($133.70) |"
+      \ | 0.05291609 ETH ($133.55) |"
     data:
       status: success
       data:
-        chain: ethereum
-        address: '0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073'
-        explorer_url: https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073
         processed_content: "**Address:** [0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\n\
-          \n**Overview**\n\n*   **ETH Balance:** 1.142756836659239339 ETH\n*   **ETH\
-          \ Value:** $2,887.40 (@ $2,526.70/ETH)\n*   **Token Holdings Value:** $2.90\
-          \ (21 Tokens)\n\n**Token Holdings (ERC-20)**\n\n| Token Name | Symbol |\
-          \ Amount | Value | Price per Token |\n| :--------- | :----- | :----- | :----\
-          \ | :-------------- |\n| PREME Token | PREME | 1,008 | $2.89 | @0.0029 |\n\
+          \n**Overview**\n\n*   **ETH Balance:** 1.142204859802073197 ETH\n*   **ETH\
+          \ Value:** $2,882.62 (@ $2,523.73/ETH)\n*   **Token Holdings:** $2.90 (21\
+          \ Tokens)\n\n**Token Holdings (ERC-20)**\n\n| Token Name | Symbol | Amount\
+          \ | Value | Price per Token |\n| :--------- | :----- | :----- | :---- |\
+          \ :-------------- |\n| PREME Token | PREME | 1,008 | $2.89 | @0.0029 |\n\
           | Black Agnus | FTW | 3,333,333 | $0.02 | @0.00 |\n| TRUMP MAGA | MAGA |\
           \ 2,240 | $0.00 | - |\n| ERC-20: (NC-Eli...) | NC-Eligible (Verify: www.nodeco.in)\
           \ | 8,162 | $0.00 | - |\n| ERC-20: ! EL... | TONCrypto.io | 229 | $0.00\
           \ | - |\n| ERC-20: !SNX... | wSNX | 685 | $0.00 | - |\n| ERC-20: AI C...\
           \ | AIC | 1 | $0.00 | - |\n| ERC-20: Ange... | Lettuce | 34,302,925.8 |\
           \ $0.00 | - |\n| ERC-20: BMB | BMB | 0.89 | $0.00 | - |\n| ERC-20: Marv...\
-          \ | Marvin | 17,776 | $0.00 | - |\n\n**NFT Holdings**\n\n*   **SHIBAFAIR.\
-          \ ORG:** GVNO (ERC-1155)\n\n**More Info**\n\n*   **Transactions Sent:**\
-          \ Latest: [2 mins ago](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77),\
-          \ First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)\n\
+          \ | Marvin | 17,776 | $0.00 | - |\n\n**NFT Holdings**\n\n*   **SHIBAFAIR.ORG:**\
+          \ GVNO (ERC-1155)\n\n**More Info**\n\n*   **Transactions Sent:**\n    *\
+          \   Latest: [9 secs ago](https://etherscan.io/tx/0xe2afa90bae68b55491fbcddc0ab80eee272e7a2626b1048c8bcaacf236500c31)\n\
+          \    *   First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)\n\
           *   **Funded By:** [0x5D47603902a8cadbf3337abbc6df8f67a251d821](https://etherscan.io/address/0x5d47603902a8cadbf3337abbc6df8f67a251d821)\
           \ ([1 year 266 days ago](https://etherscan.io/tx/0x9209ecf6e32d4b32909fbf6193548b13129e60dfb11add01546ed799e235fe1a))\n\
-          \n**Multichain Info**\n\n*   **Multichain Portfolio Value:** $2,891.33 (across\
-          \ 35 Chains)\n*   **Chains with Holdings:**\n    *   [Ethereum](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073):\
-          \ $2,888 (100%)\n    *   [Base](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073):\
-          \ $3 (<1%)\n\n**Multichain Portfolio Details**\n\n| Chain | Token | Portfolio\
-          \ % | Price | Amount | Value |\n| :---- | :---- | :---------- | :---- |\
-          \ :----- | :---- |\n| [ETH](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-          \ | Ether (ETH) | 99.80% | $2,525.07 | 1.1428 | $2,885.54 |\n| [ETH](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-          \ | [PREME Token (PREME)](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-          \ | 0.10% | $0.002865 | 1,008 | $2.89 |\n| [BASE](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-          \ | [PREME Token (PREME)](https://basescan.org/token/0x8c62ac3b71db8c81a764b84ffbc2a8d0bad7f111?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-          \ | 0.10% | $0.002875 | 1,008 | $2.9 |\n\n**Transactions (Latest 25 of 33,021\
-          \ total)**\n\n| Transaction Hash | Method | Block | Age | From | To | Amount\
-          \ | Txn Fee |\n| :--------------- | :----- | :---- | :-- | :--- | :--- |\
-          \ :----- | :------ |\n| [0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77)\
-          \ | 0x122067ed | [22738593](https://etherscan.io/block/22738593) | 2 mins\
+          \n**Multichain Info**\n\n*   **Total Multichain Portfolio Value:** $2,888.85\n\
+          *   **Addresses Found via Blockscan:** 1\n    *   [BaseScan ($3)](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\n\
+          \    *   [Blockscan (View All)](https://blockscan.com/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\n\
+          \n**Multichain Portfolio (35 Chains)**\n\n| Chain | Token | Portfolio %\
+          \ | Price | Amount | Value |\n| :---- | :---- | :---------- | :---- | :-----\
+          \ | :---- |\n| Ethereum | Ether (ETH) | 99.80% | $2,524.12 | 1.1422 | $2,883.06\
+          \ |\n| Ethereum | [PREME Token (PREME)](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | 0.10% | $0.002865 | 1,008 | $2.89 |\n| Base | [PREME Token (PREME)](https://basescan.org/token/0x8c62ac3b71db8c81a764b84ffbc2a8d0bad7f111?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | 0.10% | $0.002875 | 1,008 | $2.9 |\n\n**Transactions (Latest 25 of 33,021)**\n\
+          \n| Transaction Hash | Method | Block | Age | From | To | Amount | Txn Fee\
+          \ (ETH) | Txn Fee (USD) |\n| :--------------- | :----- | :---- | :-- | :---\
+          \ | :-- | :----- | :------------ | :------------ |\n| [0xe2afa90bae68b55491fbcddc0ab80eee272e7a2626b1048c8bcaacf236500c31](https://etherscan.io/tx/0xe2afa90bae68b55491fbcddc0ab80eee272e7a2626b1048c8bcaacf236500c31)\
+          \ | 0x122067ed | [22738655](https://etherscan.io/block/22738655) | 8 secs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00223544 ETH |\n| [0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d](https://etherscan.io/tx/0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d)\
-          \ | 0x30a28ffc | [22738550](https://etherscan.io/block/22738550) | 11 mins\
+          \ | 0 ETH ($0.00) | 0.00055197 | 4.99386468 |\n| [0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77)\
+          \ | 0x122067ed | [22738593](https://etherscan.io/block/22738593) | 12 mins\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00234611 ETH |\n| [0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)\
+          \ | 0 ETH ($0.00) | 0.00223544 | 18.68350951 |\n| [0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d](https://etherscan.io/tx/0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d)\
+          \ | 0x30a28ffc | [22738550](https://etherscan.io/block/22738550) | 21 mins\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00234611 | 23.2412525 |\n| [0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)\
           \ | 0x122067ed | [22738166](https://etherscan.io/block/22738166) | 1 hr\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00064685 ETH |\n| [0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2](https://etherscan.io/tx/0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2)\
-          \ | 0x30a28ffc | [22738012](https://etherscan.io/block/22738012) | 1 hr\
+          \ | 0 ETH ($0.00) | 0.00064685 | 4.16780295 |\n| [0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2](https://etherscan.io/tx/0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2)\
+          \ | 0x30a28ffc | [22738012](https://etherscan.io/block/22738012) | 2 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00112555 ETH |\n| [0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86](https://etherscan.io/tx/0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86)\
+          \ | 0 ETH ($0.00) | 0.00112555 | 8.82574121 |\n| [0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86](https://etherscan.io/tx/0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86)\
           \ | 0x122067ed | [22737998](https://etherscan.io/block/22737998) | 2 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00131619 ETH |\n| [0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11](https://etherscan.io/tx/0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11)\
-          \ | 0x30a28ffc | [22737751](https://etherscan.io/block/22737751) | 2 hrs\
+          \ | 0 ETH ($0.00) | 0.00131619 | 10.44232971 |\n| [0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11](https://etherscan.io/tx/0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11)\
+          \ | 0x30a28ffc | [22737751](https://etherscan.io/block/22737751) | 3 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00334247 ETH |\n| [0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c](https://etherscan.io/tx/0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c)\
+          \ | 0 ETH ($0.00) | 0.00334247 | 33.11151956 |\n| [0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c](https://etherscan.io/tx/0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c)\
           \ | 0x30a28ffc | [22737538](https://etherscan.io/block/22737538) | 3 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00104254 ETH |\n| [0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75](https://etherscan.io/tx/0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75)\
-          \ | 0x30a28ffc | [22737437](https://etherscan.io/block/22737437) | 3 hrs\
+          \ | 0 ETH ($0.00) | 0.00104254 | 7.88925328 |\n| [0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75](https://etherscan.io/tx/0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75)\
+          \ | 0x30a28ffc | [22737437](https://etherscan.io/block/22737437) | 4 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00033231 ETH |\n| [0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587](https://etherscan.io/tx/0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587)\
+          \ | 0 ETH ($0.00) | 0.00033231 | 3.29199649 |\n| [0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587](https://etherscan.io/tx/0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587)\
           \ | 0x122067ed | [22737321](https://etherscan.io/block/22737321) | 4 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00248902 ETH |\n| [0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33](https://etherscan.io/tx/0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33)\
+          \ | 0 ETH ($0.00) | 0.00248902 | 20.96200354 |\n| [0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33](https://etherscan.io/tx/0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33)\
           \ | 0x30a28ffc | [22737293](https://etherscan.io/block/22737293) | 4 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00037498 ETH |\n| [0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927](https://etherscan.io/tx/0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927)\
-          \ | 0x122067ed | [22737152](https://etherscan.io/block/22737152) | 4 hrs\
+          \ | 0 ETH ($0.00) | 0.00037498 | 3.71519856 |\n| [0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927](https://etherscan.io/tx/0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927)\
+          \ | 0x122067ed | [22737152](https://etherscan.io/block/22737152) | 5 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00055548 ETH |\n| [0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53](https://etherscan.io/tx/0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53)\
-          \ | 0x30a28ffc | [22737144](https://etherscan.io/block/22737144) | 4 hrs\
+          \ | 0 ETH ($0.00) | 0.00055548 | 4.37288124 |\n| [0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53](https://etherscan.io/tx/0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53)\
+          \ | 0x30a28ffc | [22737144](https://etherscan.io/block/22737144) | 5 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00893864 ETH |\n| [0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf](https://etherscan.io/tx/0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf)\
+          \ | 0 ETH ($0.00) | 0.00893864 | 70.08995886 |\n| [0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf](https://etherscan.io/tx/0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf)\
           \ | 0x30a28ffc | [22736769](https://etherscan.io/block/22736769) | 6 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.0027041 ETH |\n| [0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e](https://etherscan.io/tx/0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e)\
+          \ | 0 ETH ($0.00) | 0.0027041 | 21.20350919 |\n| [0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e](https://etherscan.io/tx/0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e)\
           \ | 0x30a28ffc | [22736573](https://etherscan.io/block/22736573) | 6 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00085254 ETH |\n| [0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3](https://etherscan.io/tx/0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3)\
+          \ | 0 ETH ($0.00) | 0.00085254 | 6.68501418 |\n| [0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3](https://etherscan.io/tx/0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3)\
           \ | 0x122067ed | [22736507](https://etherscan.io/block/22736507) | 7 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00058007 ETH |\n| [0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c](https://etherscan.io/tx/0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c)\
+          \ | 0 ETH ($0.00) | 0.00058007 | 4.70900208 |\n| [0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c](https://etherscan.io/tx/0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c)\
           \ | 0x122067ed | [22736457](https://etherscan.io/block/22736457) | 7 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00038489 ETH |\n| [0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269](https://etherscan.io/tx/0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269)\
+          \ | 0 ETH ($0.00) | 0.00038489 | 3.25878277 |\n| [0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269](https://etherscan.io/tx/0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269)\
           \ | 0x122067ed | [22736417](https://etherscan.io/block/22736417) | 7 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00354311 ETH |\n| [0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3](https://etherscan.io/tx/0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3)\
+          \ | 0 ETH ($0.00) | 0.00354311 | 30.04855369 |\n| [0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3](https://etherscan.io/tx/0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3)\
           \ | 0x122067ed | [22736405](https://etherscan.io/block/22736405) | 7 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00033393 ETH |\n| [0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10](https://etherscan.io/tx/0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10)\
+          \ | 0 ETH ($0.00) | 0.00033393 | 2.17327267 |\n| [0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10](https://etherscan.io/tx/0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10)\
           \ | 0x122067ed | [22736397](https://etherscan.io/block/22736397) | 7 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00049211 ETH |\n| [0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced](https://etherscan.io/tx/0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced)\
+          \ | 0 ETH ($0.00) | 0.00049211 | 4.29710742 |\n| [0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced](https://etherscan.io/tx/0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced)\
           \ | 0x30a28ffc | [22736360](https://etherscan.io/block/22736360) | 7 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00031105 ETH |\n| [0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255](https://etherscan.io/tx/0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255)\
+          \ | 0 ETH ($0.00) | 0.00031105 | 3.22379184 |\n| [0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255](https://etherscan.io/tx/0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255)\
           \ | 0x122067ed | [22736328](https://etherscan.io/block/22736328) | 7 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00064064 ETH |\n| [0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751](https://etherscan.io/tx/0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751)\
+          \ | 0 ETH ($0.00) | 0.00064064 | 4.72777393 |\n| [0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751](https://etherscan.io/tx/0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751)\
           \ | 0x122067ed | [22736188](https://etherscan.io/block/22736188) | 8 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00241091 ETH |\n| [0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128](https://etherscan.io/tx/0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128)\
+          \ | 0 ETH ($0.00) | 0.00241091 | 19.57464238 |\n| [0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128](https://etherscan.io/tx/0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128)\
           \ | 0x122067ed | [22736157](https://etherscan.io/block/22736157) | 8 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00096334 ETH |\n| [0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036](https://etherscan.io/tx/0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036)\
+          \ | 0 ETH ($0.00) | 0.00096334 | 7.88562989 |\n| [0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036](https://etherscan.io/tx/0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036)\
           \ | 0x122067ed | [22736138](https://etherscan.io/block/22736138) | 8 hrs\
           \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
           \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00061178 ETH |\n| [0x08c3a0220f9ae461ee8a342598629fc38b71755bece162a100f0465e7ef23850](https://etherscan.io/tx/0x08c3a0220f9ae461ee8a342598629fc38b71755bece162a100f0465e7ef23850)\
-          \ | 0x30a28ffc | [22736130](https://etherscan.io/block/22736130) | 8 hrs\
-          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
-          \ | 0 ETH ($0.00) | 0.00209223 ETH |\n\n**Internal Transactions (Latest\
-          \ 1)**\n\n| Parent Transaction Hash | Method | Block | Age | From | To |\
-          \ Amount |\n| :---------------------- | :----- | :---- | :-- | :--- | :---\
-          \ | :----- |\n| [0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c](https://etherscan.io/tx/0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c)\
+          \ | 0 ETH ($0.00) | 0.00061178 | 5.04819717 |\n\n**Internal Transactions\
+          \ (Latest 1)**\n\n| Parent Transaction Hash | Method | Block | Age | From\
+          \ | To | Amount |\n| :---------------------- | :----- | :---- | :-- | :---\
+          \ | :-- | :----- |\n| [0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c](https://etherscan.io/tx/0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c)\
           \ | Transfer | [22719123](https://etherscan.io/block/22719123) | 2 days\
           \ ago | [Disperse.app](https://etherscan.io/address/0xd152f549545093347a162dce210e7293f1452150)\
           \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
-          \ | 0.05291609 ETH ($133.70) |"
+          \ | 0.05291609 ETH ($133.55) |"
+direct_transaction_call:
+  input:
+    tool: get_transaction_details
+    tool_arguments:
+      chain: ethereum
+      txid: '0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd'
+  output:
+    response: ''
+    data:
+      status: success
+      data:
+        processed_content: "**Transaction Hash:** [0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd](https://etherscan.io/tx/0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd)\n\
+          \n**Status:** Success\n\n**Block:** [22207195](https://etherscan.io/block/22207195)\
+          \ (531468 Block Confirmations)\n\n**Timestamp:** 74 days ago (Apr-06-2025\
+          \ 03:29:47 AM UTC) | Confirmed within 8 secs\n\n**Transaction Action:**\n\
+          Swap 0.026 ($65.66) ETH for 892.16 M [MONKEYS](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\
+          \ on Uniswap V2\n\n**From:** [0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E](https://etherscan.io/address/0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\n\
+          \n**To:** [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ (Uniswap V4: Universal Router)\n\n**Internal Transactions:**\n\n| Type\
+          \ Trace Address | Method | From | To | Value | Gas Limit |\n|---|---|---|---|---|---|\n\
+          | call_0_1 | Deposit | [Uniswap V4: Universal Router](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ | [Wrapped Ether](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\
+          \ | 0.026 ETH | 237,689 |\n\n**ERC-20 Tokens Transferred:**\n\n| From |\
+          \ To | Value | Token |\n|---|---|---|---|\n| [Uniswap V4: Universal Router](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ | [0xdF30850e...D86F34787](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
+          \ | 0.026 ($65.64) | [Wrapped Ethe... (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\
+          \ |\n| [0xdF30850e...D86F34787](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
+          \ | [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ | 892,155,118.330137431 | [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\
+          \ |\n| [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ | [Uniswap: Fee Collector](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x000000fee13a103a10d593b9ae06b3e05f2e7e1c)\
+          \ | 2,230,387.795825343 | [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\
+          \ |\n| [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ | [0x01eEbDB7...Ed462eC5E](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\
+          \ | 889,924,730.534312088 | [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\
+          \ |\n\n**Value:** 0.026 ETH ($65.66)\n\n**Transaction Fee:** 0.00047794244038612\
+          \ ETH ($1.21)\n\n**Gas Price:** 2.42311484 Gwei (0.00000000242311484 ETH)\n\
+          \n**Ether Price:** $1,579.65 / ETH\n\n**Gas Limit & Usage by Txn:** 279,361\
+          \ | 197,243 (70.61%)\n\n**Gas Fees:**\n* Base: 0.42311484 Gwei\n* Max: 2.506431645\
+          \ Gwei\n* Max Priority: 2 Gwei\n\n**Burnt & Txn Savings Fees:**\n* \U0001F525\
+          \ Burnt: 0.00008345644038612 ETH ($0.21)\n* \U0001F4B8 Txn Savings: 0.000016433656568615\
+          \ ETH ($0.04)\n\n**Other Attributes:**\n* Txn Type: 2 (EIP-1559)\n* Nonce:\
+          \ 844\n* Position In Block: 5\n\n**Input Data:**\n`0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000067f1fc2500000000000000000000000000000000000000000000000000000000000000040b080604000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000005c5edcbc29000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000005c5edcbc290000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf750800000000000000000000000000000000000000000000000000000000000000600000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf7508000000000000000000000000000000fee13a103a10d593b9ae06b3e05f2e7e1c000000000000000000000000000000000000000000000000000000000000001900000000000000000000000000000000000000000000000000000000000000600000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf750800000000000000000000000001eebdb7f6855f1ddfd38c1131d67e8ed462ec5e0000000000000000000000000000000000000000000000000c59a485d6251fd50c`\n\
+          \n**Transaction Receipt Event Logs:**\n\n**Log 5:**\n* **Address:** [0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\
+          \ (Wrapped Ether)\n* **Name:** Deposit (index_topic_1 address dst, uint256\
+          \ wad)\n* **Topics:**\n    * 0: `0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c`\n\
+          \    * 1: dst: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\n\
+          * **Data:**\n    * wad: 26000000000000000\n\n**Log 6:**\n* **Address:**\
+          \ [0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\
+          \ (Wrapped Ether)\n* **Name:** Transfer (index_topic_1 address src, index_topic_2\
+          \ address dst, uint256 wad)\n* **Topics:**\n    * 0: `0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef`\n\
+          \    * 1: src: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\n\
+          \    * 2: dst: [0xdF30850e09E33f07BA82E893dC7b2eeD86F34787](https://etherscan.io/address/0xdF30850e09E33f07BA82E893dC7b2eeD86F34787)\n\
+          * **Data:**\n    * wad: 26000000000000000\n\n**Log 7:**\n* **Address:**\
+          \ [0x8728b4190a048ee2236f21e8288f7dda8fcf7508](https://etherscan.io/address/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          * **Name:** Transfer (index_topic_1 address from, index_topic_2 address\
+          \ to, uint256 value)\n* **Topics:**\n    * 0: `0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef`\n\
+          \    * 1: from: [0xdF30850e09E33f07BA82E893dC7b2eeD86F34787](https://etherscan.io/address/0xdF30850e09E33f07BA82E893dC7b2eeD86F34787)\n\
+          \    * 2: to: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\n\
+          * **Data:**\n    * value: 892155118330137431\n\n**Log 8:**\n* **Address:**\
+          \ [0xdf30850e09e33f07ba82e893dc7b2eed86f34787](https://etherscan.io/address/0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\n\
+          * **Name:** Sync (uint112 reserve0, uint112 reserve1)\n* **Topics:**\n \
+          \   * 0: `0x1c411e9a96e071241c2f21f7726b17ae89e3cab4c78be50e062b03a9fffbbad1`\n\
+          * **Data:**\n    * reserve0: 79785395611662040392\n    * reserve1: 2344203395970629512\n\
+          \n**Log 9:**\n* **Address:** [0xdf30850e09e33f07ba82e893dc7b2eed86f34787](https://etherscan.io/address/0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\n\
+          * **Name:** Swap (index_topic_1 address sender, uint256 amount0In, uint256\
+          \ amount1In, uint256 amount0Out, uint256 amount1Out, index_topic_2 address\
+          \ to)\n* **Topics:**\n    * 0: `0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822`\n\
+          \    * 1: sender: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\n\
+          \    * 2: to: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\n\
+          * **Data:**\n    * amount0In: 0\n    * amount1In: 26000000000000000\n  \
+          \  * amount0Out: 892155118330137431\n    * amount1Out: 0\n\n**Log 10:**\n\
+          * **Address:** [0x8728b4190a048ee2236f21e8288f7dda8fcf7508](https://etherscan.io/address/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          * **Name:** Transfer (index_topic_1 address from, index_topic_2 address\
+          \ to, uint256 value)\n* **Topics:**\n    * 0: `0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef`\n\
+          \    * 1: from: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\n\
+          \    * 2: to: [0x000000fee13a103A10D593b9AE06b3e05F2E7E1c](https://etherscan.io/address/0x000000fee13a103A10D593b9AE06b3e05F2E7E1c)\n\
+          * **Data:**\n    * value: 2230387795825343\n\n**Log 11:**\n* **Address:**\
+          \ [0x8728b4190a048ee2236f21e8288f7dda8fcf7508](https://etherscan.io/address/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          * **Name:** Transfer (index_topic_1 address from, index_topic_2 address\
+          \ to, uint256 value)\n* **Topics:**\n    * 0: `0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef`\n\
+          \    * 1: from: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\n\
+          \    * 2: to: [0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E](https://etherscan.io/address/0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E)\n\
+          * **Data:**\n    * value: 889924730534312088"
+natural_language_address:
+  input:
+    query: Get address history for 0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B on Base
+    raw_data_only: false
+  output:
+    response: '**Address:** [0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B](https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)
+
+
+      **Overview**
+
+
+      *   **ETH Balance:** 0 ETH
+
+      *   **ETH Value:** $0.00
+
+      *   **Transactions Sent:** N/A (no latest or first transaction)
+
+      *   **Funded By:** N/A
+
+
+      **Multichain Info**
+
+
+      *   **Multichain Portfolio:** $0 (across 35 chains)
+
+      *   **Last updated:** less than 1 sec ago
+
+
+      **Multichain Portfolio Details (across 35 chains, all showing 0 balance)**
+
+
+      | Chain         | Token | Portfolio % | Price | Amount | Value |
+
+      | :------------ | :---- | :---------- | :---- | :----- | :---- |
+
+      | Ethereum      |       | 0%          |       | 0      | 0     |
+
+      | BNB Chain     |       | 0%          |       | 0      | 0     |
+
+      | Polygon       |       | 0%          |       | 0      | 0     |
+
+      | Arbitrum One  |       | 0%          |       | 0      | 0     |
+
+      | Optimism      |       | 0%          |       | 0      | 0     |
+
+      | Base          |       | 0%          |       | 0      | 0     |
+
+      | BTTC          |       | 0%          |       | 0      | 0     |
+
+      | Celo          |       | 0%          |       | 0      | 0     |
+
+      | Gnosis        |       | 0%          |       | 0      | 0     |
+
+      | Polygon zkEVM |       | 0%          |       | 0      | 0     |
+
+      | Linea         |       | 0%          |       | 0      | 0     |
+
+      | Moonbeam      |       | 0%          |       | 0      | 0     |
+
+      | Moonriver     |       | 0%          |       | 0      | 0     |
+
+      | Arbitrum Nova |       | 0%          |       | 0      | 0     |
+
+      | Scroll        |       | 0%          |       | 0      | 0     |
+
+      | Wemix         |       | 0%          |       | 0      | 0     |
+
+      | Avax C-Chain  |       | 0%          |       | 0      | 0     |
+
+      | zkSync Era    |       | 0%          |       | 0      | 0     |
+
+      | opBNB         |       | 0%          |       | 0      | 0     |
+
+      | Fraxtal       |       | 0%          |       | 0      | 0     |
+
+      | Blast         |       | 0%          |       | 0      | 0     |
+
+      | Cronos        |       | 0%          |       | 0      | 0     |
+
+      | Mantle        |       | 0%          |       | 0      | 0     |
+
+      | Taiko         |       | 0%          |       | 0      | 0     |
+
+      | Xai           |       | 0%          |       | 0      | 0     |
+
+      | World         |       | 0%          |       | 0      | 0     |
+
+      | Xdc           |       | 0%          |       | 0      | 0     |
+
+      | Ape           |       | 0%          |       | 0      | 0     |
+
+      | Sophon        |       | 0%          |       | 0      | 0     |
+
+      | Unichain      |       | 0%          |       | 0      | 0     |
+
+      | Berachain     |       | 0%          |       | 0      | 0     |
+
+      | MemeCoreChain |       | 0%          |       | 0      | 0     |
+
+      | Swellchain    |       | 0%          |       | 0      | 0     |
+
+      | Sonic         |       | 0%          |       | 0      | 0     |
+
+      | Abstract      |       | 0%          |       | 0      | 0     |
+
+
+      **Transactions:** No matching entries.
+
+
+      **Internal Transactions:** No internal transactions found.
+
+
+      **Contract Details:**
+
+
+      *   **Contract Name:** Not available
+
+      *   **Compiler Version:** Not available
+
+      *   **Optimization Enabled:** Not available
+
+      *   **Other Settings:** -NA-
+
+
+      **Blocks Produced:** No blocks produced.
+
+
+      **Uncles Produced:** No uncles produced.
+
+
+      **Withdrawals:** No withdrawals.
+
+
+      **Deposits:** No deposits.'
+    data: &id001
+      status: success
+      data:
+        processed_content: "**Address:** [0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B](https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
+          \n**ETH Price:** $2,524.44 (+1.21%)\n\n**Overview**\n\n*   **ETH Balance:**\
+          \ 0 ETH\n*   **ETH Value:** $0.00\n\n**More Info**\n\n*   **Private Name\
+          \ Tags:** Add\n*   **Transactions Sent:**\n    *   Latest: N/A\n    *  \
+          \ First: N/A\n*   **Funded By:** N/A\n\n**Multichain Info**\n\n*   **Multichain\
+          \ Portfolio:** $0 (across 35 chains)\n*   **Last updated:** less than 1\
+          \ sec ago\n\n**Multichain Portfolio Details (across 35 chains, all showing\
+          \ 0 balance)**\n\n| Chain           | Token | Portfolio % | Price | Amount\
+          \ | Value |\n| :-------------- | :---- | :---------- | :---- | :----- |\
+          \ :---- |\n| Ethereum        |       | 0%          |       | 0      | 0\
+          \     |\n| BNB Chain       |       | 0%          |       | 0      | 0  \
+          \   |\n| Polygon         |       | 0%          |       | 0      | 0    \
+          \ |\n| Arbitrum One    |       | 0%          |       | 0      | 0     |\n\
+          | Optimism        |       | 0%          |       | 0      | 0     |\n| Base\
+          \            |       | 0%          |       | 0      | 0     |\n| BTTC  \
+          \          |       | 0%          |       | 0      | 0     |\n| Celo    \
+          \        |       | 0%          |       | 0      | 0     |\n| Gnosis    \
+          \      |       | 0%          |       | 0      | 0     |\n| Polygon zkEVM\
+          \   |       | 0%          |       | 0      | 0     |\n| Linea          \
+          \ |       | 0%          |       | 0      | 0     |\n| Moonbeam        |\
+          \       | 0%          |       | 0      | 0     |\n| Moonriver       |  \
+          \     | 0%          |       | 0      | 0     |\n| Arbitrum Nova   |    \
+          \   | 0%          |       | 0      | 0     |\n| Scroll          |      \
+          \ | 0%          |       | 0      | 0     |\n| Wemix           |       |\
+          \ 0%          |       | 0      | 0     |\n| Avax C-Chain    |       | 0%\
+          \          |       | 0      | 0     |\n| zkSync Era      |       | 0%  \
+          \        |       | 0      | 0     |\n| opBNB           |       | 0%    \
+          \      |       | 0      | 0     |\n| Fraxtal         |       | 0%      \
+          \    |       | 0      | 0     |\n| Blast           |       | 0%        \
+          \  |       | 0      | 0     |\n| Cronos          |       | 0%          |\
+          \       | 0      | 0     |\n| Mantle          |       | 0%          |  \
+          \     | 0      | 0     |\n| Taiko           |       | 0%          |    \
+          \   | 0      | 0     |\n| Xai             |       | 0%          |      \
+          \ | 0      | 0     |\n| World           |       | 0%          |       |\
+          \ 0      | 0     |\n| Xdc             |       | 0%          |       | 0\
+          \      | 0     |\n| Ape             |       | 0%          |       | 0  \
+          \    | 0     |\n| Sophon          |       | 0%          |       | 0    \
+          \  | 0     |\n| Unichain        |       | 0%          |       | 0      |\
+          \ 0     |\n| Berachain       |       | 0%          |       | 0      | 0\
+          \     |\n| MemeCoreChain   |       | 0%          |       | 0      | 0  \
+          \   |\n| Swellchain      |       | 0%          |       | 0      | 0    \
+          \ |\n| Sonic           |       | 0%          |       | 0      | 0     |\n\
+          | Abstract        |       | 0%          |       | 0      | 0     |\n\n**Transactions:**\
+          \ There are no matching entries.\n\n**Internal Transactions:** No internal\
+          \ transactions found.\n\n**Contract Details:**\n\n*   **Contract Name:**\
+          \ Not available (indicated by \"0 ETH\")\n*   **Compiler Version:** Not\
+          \ available (indicated by \"0\")\n*   **Optimization Enabled:** Not available\
+          \ (indicated by \"0 ETH\")\n*   **Other Settings:** -NA-\n\n**Blocks Produced:**\
+          \ No blocks produced.\n\n**Uncles Produced:** No uncles produced.\n\n**Withdrawals:**\
+          \ No withdrawals.\n\n**Deposits:** No deposits."
+direct_address_call:
+  input:
+    tool: get_address_history
+    tool_arguments:
+      chain: base
+      address: '0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B'
+  output:
+    response: ''
+    data: *id001
+natural_language_token:
+  input:
+    query: Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC
+    raw_data_only: false
+  output:
+    response: "**Token Name:** Binance-Peg BSC-USD (BSC-USD)\n**Reputation:** OK:\
+      \ Evaluated to be a token of public interest by BscScan.\n**Contract Address:**\
+      \ [0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)\n\
+      **Decimals:** 18\n**Token Type:** BEP-20, Cross-Chain, Stablecoin, Binance-Peg\n\
+      \n**Description:**\nA pegged token by Binance which gives you the joint benefits\
+      \ of open blockchain technology and traditional currency by converting your\
+      \ cash into a stable digital currency equivalent.\nBinance-Peg tokens are BEP20\
+      \ tokens that are backed by tokens vaults in Binance public addresses and is\
+      \ part of a new initiative known as Project Token Canal.\n*Note: This token's\
+      \ displayed name symbol does not match its contract's Name and Symbol function.*\n\
+      \n**Official Links:**\n*   [https://www.binance.com/en/trade/BNB_USDT](https://www.binance.com/en/trade/BNB_USDT)\n\
+      *   [CoinMarketCap](https://coinmarketcap.com/currencies/tether/)\n*   [CoinGecko](https://www.coingecko.com/en/coins/tether/)\n\
+      \n**Overview**\n\n| Metric | Value |\n| :-------------------- | :----------------------------------\
+      \ |\n| Max Total Supply | 6,284,993,699.505674 BSC-USD |\n| Circulating Supply\
+      \ | 155,719,756,689.00 BSC-USD |\n| Holders | 30,882,603 (0.247%) |\n| Total\
+      \ Transfers | More than -1 |\n| Price | $1.00 @ 0.001558 BNB (+0.01%) |\n| Onchain\
+      \ Market Cap | $6,284,993,699.51 |\n| Circulating Supply Market Cap | $155,732,915,098.00\
+      \ |\n| Volume (24H) | $38,614,902,664.00 |\n| Market Data Source | Coinmarketcap\
+      \ |\n\n**Contract Details**\n\n*   **Contract Name:** BEP20USDT\n*   **Compiler\
+      \ Version:** v0.5.16+commit.9c3226ce\n*   **Optimization Enabled:** Yes with\
+      \ 200 runs\n*   **Other Settings:** default evmVersion, Apache-2.0 license,\
+      \ Audited\n*   **Contract Source Code Verified:** Exact Match\n*   **Audit Report:**\
+      \ [Etherauthority - Apr 3rd, 2025 - Security Audit Report](https://etherauthority.io/wp-content/uploads/2025/04/Binance-BSC-USD.pdf)\n\
+      *   **Swarm Source:** bzzr://cbbd570ae478f6b7abf9c9a5c8c6884cf3f64dded74f7ec3e9b6d0b41122eaff\n\
+      \n**Contract Functions (Outline)**\n\n*   **interface IBEP20**\n    *   function\
+      \ totalSupply()\n    *   function decimals()\n    *   function symbol()\n  \
+      \  *   function name()\n    *   function getOwner()\n    *   function balanceOf(address\
+      \ account)\n    *   function transfer(address recipient, ...)\n    *   function\
+      \ allowance(address _owner, ad ...)\n    *   function approve(address spender,\
+      \ uin ...)\n    *   function transferFrom(address sender, ...)\n*   **contract\
+      \ Context**\n    *   function _msgSender()\n    *   function _msgData()\n* \
+      \  **library SafeMath**\n    *   function add(uint256 a, uint256 b)\n    * \
+      \  function sub(uint256 a, uint256 b)\n    *   function sub(uint256 a, uint256\
+      \ b, st ...)\n    *   function mul(uint256 a, uint256 b)\n    *   function div(uint256\
+      \ a, uint256 b)\n    *   function div(uint256 a, uint256 b, st ...)\n    * \
+      \  function mod(uint256 a, uint256 b)\n    *   function mod(uint256 a, uint256\
+      \ b, st ...)\n*   **contract Ownable is Context**\n    *   function owner()\n\
+      \    *   function renounceOwnership()\n    *   function transferOwnership(address\
+      \ ne ...)\n    *   function _transferOwnership(address n ...)\n*   **contract\
+      \ BEP20USDT is Context, IBE ...**\n    *   function getOwner()\n    *   function\
+      \ decimals()\n    *   function symbol()\n    *   function name()\n    *   function\
+      \ totalSupply()\n    *   function balanceOf(address account)\n    *   function\
+      \ transfer(address recipient, ...)\n    *   function allowance(address owner,\
+      \ add ...)\n    *   function approve(address spender, uin ...)\n    *   function\
+      \ transferFrom(address sender, ...)\n    *   function increaseAllowance(address\
+      \ sp ...)\n    *   function decreaseAllowance(address sp ...)\n    *   function\
+      \ mint(uint256 amount)\n    *   function burn(uint256 amount)\n    *   function\
+      \ _transfer(address sender, ad ...)\n    *   function _mint(address account,\
+      \ uint2 ...)\n    *   function _burn(address account, uint2 ...)\n    *   function\
+      \ _approve(address owner, addr ...)\n    *   function _burnFrom(address account,\
+      \ u ...)\n\n**Latest 20 Token Transfers**\n\n| Transaction Hash | Method | Block\
+      \ | Age | From | To | Amount |\n| :-----------------------------------------------------------------------------\
+      \ | :----------------- | :-----------------------------------------------------\
+      \ | :------------------ | :-----------------------------------------------------------------------------------------------\
+      \ | :-----------------------------------------------------------------------------------------------\
+      \ | :-------------- |\n| [0x33ed476d88604f2af347ad5ff0efd4a491dd575be0d92ba574595e896b8574f2](https://bscscan.com/tx/0x33ed476d88604f2af347ad5ff0efd4a491dd575be0d92ba574595e896b8574f2)\
+      \ | Claim Reward | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0xEdd395e6...003836772](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xedd395e63450cf07e45d222284e175f003836772)\
+      \ | [0x542A4f60...6FA365777](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x542a4f60973dc0d8b3fafb04d29b16a6fa365777)\
+      \ | 0.17132127781454648$0.17 |\n| [0xe199f8935320f965359f4ffd33e11b38c919cd8934fe3a52461b00f9e861c018](https://bscscan.com/tx/0xe199f8935320f965359f4ffd33e11b38c919cd8934fe3a52461b00f9e861c018)\
+      \ | Transfer | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0xF98E40b5...Aabb26372](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xf98e40b5900980079d39b63367a13d6aabb26372)\
+      \ | [0xCCcCB699...bBa22Bf07](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xccccb699550271255f5d645dd4ac928bba22bf07)\
+      \ | 1,460$1,460.00 |\n| [0x15230d31aa50e751d1b57070c4d76604fbbc7b53537a35a8c354b2a65d334d6e](https://bscscan.com/tx/0x15230d31aa50e751d1b57070c4d76604fbbc7b53537a35a8c354b2a65d334d6e)\
+      \ | Silence | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0xa8aCdd81...00cc8938D](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xa8acdd81f46633b69acb6ec5c16ee7e00cc8938d)\
+      \ | [PancakeSwap V2: wkeyDAO-BSC-USD 2](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x8665a78ccc84d6df2acaa4b207d88c6bc9b70ec5)\
+      \ | 12.663786617$12.66 |\n| [0x15230d31aa50e751d1b57070c4d76604fbbc7b53537a35a8c354b2a65d334d6e](https://bscscan.com/tx/0x15230d31aa50e751d1b57070c4d76604fbbc7b53537a35a8c354b2a65d334d6e)\
+      \ | Silence | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0x6F6dAfFE...4F3b17593](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x6f6daffe7e8bdce67a15ed6b5d0da024f3b17593)\
+      \ | [0xa8aCdd81...00cc8938D](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xa8acdd81f46633b69acb6ec5c16ee7e00cc8938d)\
+      \ | 12.663786617$12.66 |\n| [0x1e4b9fd686a6833d72b6b91728ef03cc35e75402096eaf7af1e8d1a01b088296](https://bscscan.com/tx/0x1e4b9fd686a6833d72b6b91728ef03cc35e75402096eaf7af1e8d1a01b088296)\
+      \ | Transfer From | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0xba07271c...824467548](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xba07271cdad915a04944866fe81a5a5824467548)\
+      \ | [0xAceb8320...F705c9202](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xaceb832086ad1569436b88e62d366ebf705c9202)\
+      \ | 171.988024164292710258$171.99 |\n| [0x44eea18f9e58515b71a7d86134148e4ed57ae18b683c8982a49b2fe58e45d2d6](https://bscscan.com/tx/0x44eea18f9e58515b71a7d86134148e4ed57ae18b683c8982a49b2fe58e45d2d6)\
+      \ | 0xa780bd52 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0xb80CCaa9...650A11867](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xb80ccaa913d36757fe7b6251333113e650a11867)\
+      \ | [0xF9878A5d...4f032229c](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xf9878a5dd55edc120fde01893ea713a4f032229c)\
+      \ | 16.204440048600095251$16.20 |\n| [0x44eea18f9e58515b71a7d86134148e4ed57ae18b683c8982a49b2fe58e45d2d6](https://bscscan.com/tx/0x44eea18f9e58515b71a7d86134148e4ed57ae18b683c8982a49b2fe58e45d2d6)\
+      \ | 0xa780bd52 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x5968FEAC...32664ad33](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x5968feacba91d55010975e0cfe8acfc32664ad33)\
+      \ | [0xb80CCaa9...650A11867](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xb80ccaa913d36757fe7b6251333113e650a11867)\
+      \ | 16.204440048600095251$16.20 |\n| [0xf7857a7e073635ba0ac8a048f6d320fc7f9892b8240257bb64fdf660df564b2f](https://bscscan.com/tx/0xf7857a7e073635ba0ac8a048f6d320fc7f9892b8240257bb64fdf660df564b2f)\
+      \ | 0xa780bd52 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [PancakeSwap V2: BSC-USD-GTST 6](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x27c4c15ba98dc84abff05aa4c6f9086337f07472)\
+      \ | [0x78d79468...5bF9AB2a2](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x78d794681d209392b25be14ebbc22ec5bf9ab2a2)\
+      \ | 3.466581185287757269$3.47 |\n| [0xf7857a7e073635ba0ac8a048f6d320fc7f9892b8240257bb64fdf660df564b2f](https://bscscan.com/tx/0xf7857a7e073635ba0ac8a048f6d320fc7f9892b8240257bb64fdf660df564b2f)\
+      \ | 0xa780bd52 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x78d79468...5bF9AB2a2](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x78d794681d209392b25be14ebbc22ec5bf9ab2a2)\
+      \ | [PancakeSwap V2: BSC-USD-LOVE 58](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xc9a256e3495a70580a2554cabe75475b47027e7d)\
+      \ | 3.457579791295486871$3.46 |\n| [0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0](https://bscscan.com/tx/0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0)\
+      \ | 0x493aca54 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x6E7F0A32...154382ef8](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x6e7f0a32618d6fa255acc19e9a957e8154382ef8)\
+      \ | [0x36696169...Bae652050](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x36696169c63e42cd08ce11f5deebbcebae652050)\
+      \ | 0.000264027700380558$0.00 |\n| [0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0](https://bscscan.com/tx/0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0)\
+      \ | 0x493aca54 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x6E7F0A32...154382ef8](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x6e7f0a32618d6fa255acc19e9a957e8154382ef8)\
+      \ | [0x3f2e2487...78c3BbF22](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x3f2e2487724e60963b8490fab1e5c3c78c3bbf22)\
+      \ | 1.0566$1.06 |\n| [0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0](https://bscscan.com/tx/0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0)\
+      \ | 0x493aca54 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x5968FEAC...32664ad33](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x5968feacba91d55010975e0cfe8acfc32664ad33)\
+      \ | [0x6E7F0A32...154382ef8](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x6e7f0a32618d6fa255acc19e9a957e8154382ef8)\
+      \ | 1.056864027700380558$1.06 |\n| [0xe83ebead562b5a050750c51ed0a063b2d6ac80b005429f7ac2cd0969df1c49b2](https://bscscan.com/tx/0xe83ebead562b5a050750c51ed0a063b2d6ac80b005429f7ac2cd0969df1c49b2)\
+      \ | 0xa4331601 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x5F562897...A440F2B52](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x5f5628975fb195835b01f2816415b1aa440f2b52)\
+      \ | [0x07FeD7f3...402eC2639](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x07fed7f326ab26377d5a4bf4af2d0e9402ec2639)\
+      \ | 3.932321030298868812$3.93 |\n| [0xe83ebead562b5a050750c51ed0a063b2d6ac80b005429f7ac2cd0969df1c49b2](https://bscscan.com/tx/0xe83ebead562b5a050750c51ed0a063b2d6ac80b005429f7ac2cd0969df1c49b2)\
+      \ | 0xa4331601 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x9c4Ee895...Db7502cCE](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x9c4ee895e4f6ce07ada631c508d1306db7502cce)\
+      \ | [0x5F562897...A440F2B52](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x5f5628975fb195835b01f2816415b1aa440f2b52)\
+      \ | 3.933223480083186378$3.93 |\n| [0x9372a937375fd8a6c3c4e0f6d2bbae112e8805bc0d21029c9143e126532b5f45](https://bscscan.com/tx/0x9372a937375fd8a6c3c4e0f6d2bbae112e8805bc0d21029c9143e126532b5f45)\
+      \ | 0xd1dd417f | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0xDb187290...40Cc4486a](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xdb18729070d3abdc72f9cd57d3b949540cc4486a)\
+      \ | [0x63e1e815...2291E1eB9](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x63e1e81573f8667fba28706e94741ad2291e1eb9)\
+      \ | 208.2349783848779072$208.23 |\n| [0x9372a937375fd8a6c3c4e0f6d2bbae112e8805bc0d21029c9143e126532b5f45](https://bscscan.com/tx/0x9372a937375fd8a6c3c4e0f6d2bbae112e8805bc0d21029c9143e126532b5f45)\
+      \ | 0xd1dd417f | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x63e1e815...2291E1eB9](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x63e1e81573f8667fba28706e94741ad2291e1eb9)\
+      \ | [0xEfcB5527...479839F0D](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xefcb55270c5fe85fc8eb6a311dc5aa9479839f0d)\
+      \ | 208.189746218350469292$208.19 |\n| [0x48e0dc2fc70513abdbe2745aae717f6284281973e2ccfb13cefe8c871fc83be1](https://bscscan.com/tx/0x48e0dc2fc70513abdbe2745aae717f6284281973e2ccfb13cefe8c871fc83be1)\
+      \ | Transfer | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0x99B613DD...519D1382e](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x99b613dd71e54cd01467dfad640dd70519d1382e)\
+      \ | [0x2050faE8...4700A9eB9](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x2050fae8e6ab55819606db6be459cfb4700a9eb9)\
+      \ | 0.0001$0.00 |\n| [0xb9ed68d734c739d2a9e4a6e889a210e985d1bde616a7bb25e5b0d50eb580e7de](https://bscscan.com/tx/0xb9ed68d734c739d2a9e4a6e889a210e985d1bde616a7bb25e5b0d50eb580e7de)\
+      \ | Transfer | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0x051dDE5E...d1e97d2F7](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x051dde5e3c67da9a45f4ed861734f8dd1e97d2f7)\
+      \ | [0x35d70e65...6441A623D](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x35d70e65df4061300d88c520c31dcba6441a623d)\
+      \ | 0.0001$0.00 |\n| [0x5a7cf3a1f28dfdfac252d1143597858f40deb6f99e12b933e4643adbfcd639ca](https://bscscan.com/tx/0x5a7cf3a1f28dfdfac252d1143597858f40deb6f99e12b933e4643adbfcd639ca)\
+      \ | Circulate Withdr... | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x92b7807b...5228f3121](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x92b7807bf19b7dddf89b706143896d05228f3121)\
+      \ | [0x1936Ed84...631D48d6c](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x1936ed842387ff87a80ef1a8d55e760631d48d6c)\
+      \ | 183.954$183.95 |\n| [0xc33096dd4eeb99e5fa96a83be1c9b4839be83f8ee8ad132d37ccb43fe273dae6](https://bscscan.com/tx/0xc33096dd4eeb99e5fa96a83be1c9b4839be83f8ee8ad132d37ccb43fe273dae6)\
+      \ | Transfer | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0x251eb873...603e6dCaC](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x251eb873329c076ce3de71d5041909f603e6dcac)\
+      \ | [0x26066883...76f593C41](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x26066883d5ff23f18a875eae21ba9a276f593c41)\
+      \ | 0.0001$0.00 |\n| [0x932b9c8b3c11019ad125f590aec6a5f1c4f82fdb54e6149ab97eca907d36554e](https://bscscan.com/tx/0x932b9c8b3c11019ad125f590aec6a5f1c4f82fdb54e6149ab97eca907d36554e)\
+      \ | Transfer | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0x30041A46...5Ad3E4575](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x30041a468167b5ef32798f6bb4c99cc5ad3e4575)\
+      \ | [0x546BA0Eb...F6F221Ceb](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x546ba0eb2b847bbb8210eb6baf1af8bf6f221ceb)\
+      \ | 0.00011$0.00 |\n| [0x90d4bd74c648545358940dade8d876b271d9d90520c99a9710ec58f6dd55dbc9](https://bscscan.com/tx/0x90d4bd74c648545358940dade8d876b271d9d90520c99a9710ec58f6dd55dbc9)\
+      \ | Transfer | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0xa813Db6c...CfCD96791](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xa813db6cc5d8c5f71cbbadfe5c770e6cfcd96791)\
+      \ | [0xabfb2986...9f3026e19](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xabfb2986468478d9b2174c38df6cb6c9f3026e19)\
+      \ | 0.00011$0.00 |\n| [0x47146b25ae1bf81abe3e072bf8397831b59fd0d23409481c27bb5e0559fb1d94](https://bscscan.com/tx/0x47146b25ae1bf81abe3e072bf8397831b59fd0d23409481c27bb5e0559fb1d94)\
+      \ | Transfer | [51729122](https://bscscan.com/block/51729122) | 2025-06-19 12:57:31\
+      \ | [0x8E8F274c...95c6Ec389](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x8e8f274cc29f9963368b3e02b17deb795c6ec389)\
+      \ | [0xf11084C4...1231c0C03](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xf11084c4bc837a9bf04958e7fcee4161231c0c03)\
+      \ | 0.0001$0.00 |\n| [0x8221537a6c5f98d38b5d05b65ef5e5dbe2060319d263c844dcb7c609493badc4](https://bscscan.com/tx/0x8221537a6c5f98d38b5d05b65ef5e5dbe2060319d263c844dcb7c609493badc4)\
+      \ | Proxy Swap V2 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [Binance: DEX Router](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xb300000b72deaeb607a12d5f54773d1c19c7028d)\
+      \ | [0x69c63AE1...C9d0a9CbA](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x69c63ae1778d876e27e1ece236c321fc9d0a9cba)\
+      \ | 942.831854889429397396$942.83 |\n| [0x8221537a6c5f98d38b5d05b65ef5e5dbe2060319d263c844dcb7c609493badc4](https://bscscan.com/tx/0x8221537a6c5f98d38b5d05b65ef5e5dbe2060319d263c844dcb7c609493badc4)\
+      \ | Proxy Swap V2 | [51729122](https://bscscan.com/block/51729122) | 2025-06-19\
+      \ 12:57:31 | [0x380aaDF6...fB23d5228](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x380aadf63d84d3a434073f1d5d95f02fb23d5228)\
+      \ | [Binance: DEX Router](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xb300000b72deaeb607a12d5f54773d1c19c7028d)\
+      \ | 942.831854889429397396$942.83 |"
+    data: &id002
+      status: success
+      data:
+        processed_content: "**Token Name:** Binance-Peg BSC-USD (BSC-USD)\n**Reputation:**\
+          \ OK: Evaluated to be a token of public interest by BscScan.\n**Contract\
+          \ Address:** [0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)\n\
+          **Decimals:** 18\n**Token Type:** BEP-20, Cross-Chain, Stablecoin, Binance-Peg\n\
+          \n**Description:**\nA pegged token by Binance which gives you the joint\
+          \ benefits of open blockchain technology and traditional currency by converting\
+          \ your cash into a stable digital currency equivalent.\nBinance-Peg tokens\
+          \ are BEP20 tokens that are backed by tokens vaults in Binance public addresses\
+          \ and is part of a new initiative known as Project Token Canal.\n*Note:\
+          \ This token's displayed name symbol does not match its contract's Name\
+          \ and Symbol function.*\n\n**Official Links:**\n*   [https://www.binance.com/en/trade/BNB_USDT](https://www.binance.com/en/trade/BNB_USDT)\n\
+          *   [CoinMarketCap](https://coinmarketcap.com/currencies/tether/)\n*   [CoinGecko](https://www.coingecko.com/en/coins/tether/)\n\
+          \n**Overview**\n\n| Metric                | Value                      \
+          \         |\n| :-------------------- | :----------------------------------\
+          \ |\n| Max Total Supply      | 6,284,993,699.505674 BSC-USD        |\n|\
+          \ Circulating Supply    | 155,719,756,689.00 BSC-USD          |\n| Holders\
+          \               | 30,882,603 (0.247%)                 |\n| Total Transfers\
+          \       | More than -1                        |\n| Price               \
+          \  | $1.00 @ 0.001558 BNB (+0.01%)       |\n| Onchain Market Cap    | $6,284,993,699.51\
+          \                   |\n| Circulating Supply Market Cap | $155,732,915,098.00\
+          \             |\n| Volume (24H)          | $38,614,902,664.00          \
+          \        |\n| Market Data Source    | Coinmarketcap                    \
+          \   |\n\n**Contract Details**\n\n*   **Contract Name:** BEP20USDT\n*   **Compiler\
+          \ Version:** v0.5.16+commit.9c3226ce\n*   **Optimization Enabled:** Yes\
+          \ with 200 runs\n*   **Other Settings:** default evmVersion, Apache-2.0\
+          \ license, Audited\n*   **Contract Source Code Verified:** Exact Match\n\
+          *   **Audit Report:** [Etherauthority - Apr 3rd, 2025 - Security Audit Report](https://etherauthority.io/wp-content/uploads/2025/04/Binance-BSC-USD.pdf)\n\
+          *   **Swarm Source:** bzzr://cbbd570ae478f6b7abf9c9a5c8c6884cf3f64dded74f7ec3e9b6d0b41122eaff\n\
+          \n**Contract Functions (Outline)**\n\n*   **interface IBEP20**\n    *  \
+          \ function totalSupply()\n    *   function decimals()\n    *   function\
+          \ symbol()\n    *   function name()\n    *   function getOwner()\n    *\
+          \   function balanceOf(address account)\n    *   function transfer(address\
+          \ recipient, ...)\n    *   function allowance(address _owner, ad ...)\n\
+          \    *   function approve(address spender, uin ...)\n    *   function transferFrom(address\
+          \ sender, ...)\n*   **contract Context**\n    *   function _msgSender()\n\
+          \    *   function _msgData()\n*   **library SafeMath**\n    *   function\
+          \ add(uint256 a, uint256 b)\n    *   function sub(uint256 a, uint256 b)\n\
+          \    *   function sub(uint256 a, uint256 b, st ...)\n    *   function mul(uint256\
+          \ a, uint256 b)\n    *   function div(uint256 a, uint256 b)\n    *   function\
+          \ div(uint256 a, uint256 b, st ...)\n    *   function mod(uint256 a, uint256\
+          \ b)\n    *   function mod(uint256 a, uint256 b, st ...)\n*   **contract\
+          \ Ownable is Context**\n    *   function owner()\n    *   function renounceOwnership()\n\
+          \    *   function transferOwnership(address ne ...)\n    *   function _transferOwnership(address\
+          \ n ...)\n*   **contract BEP20USDT is Context, IBE ...**\n    *   function\
+          \ getOwner()\n    *   function decimals()\n    *   function symbol()\n \
+          \   *   function name()\n    *   function totalSupply()\n    *   function\
+          \ balanceOf(address account)\n    *   function transfer(address recipient,\
+          \ ...)\n    *   function allowance(address owner, add ...)\n    *   function\
+          \ approve(address spender, uin ...)\n    *   function transferFrom(address\
+          \ sender, ...)\n    *   function increaseAllowance(address sp ...)\n   \
+          \ *   function decreaseAllowance(address sp ...)\n    *   function mint(uint256\
+          \ amount)\n    *   function burn(uint256 amount)\n    *   function _transfer(address\
+          \ sender, ad ...)\n    *   function _mint(address account, uint2 ...)\n\
+          \    *   function _burn(address account, uint2 ...)\n    *   function _approve(address\
+          \ owner, addr ...)\n    *   function _burnFrom(address account, u ...)\n\
+          \n**Latest 20 Token Transfers**\n\n| Transaction Hash                  \
+          \                                             | Method             | Block\
+          \                                                  | Age               \
+          \  | From                                                              \
+          \                               | To                                   \
+          \                                                            | Amount  \
+          \        |\n| :-----------------------------------------------------------------------------\
+          \ | :----------------- | :-----------------------------------------------------\
+          \ | :------------------ | :-----------------------------------------------------------------------------------------------\
+          \ | :-----------------------------------------------------------------------------------------------\
+          \ | :-------------- |\n| [0x33ed476d88604f2af347ad5ff0efd4a491dd575be0d92ba574595e896b8574f2](https://bscscan.com/tx/0x33ed476d88604f2af347ad5ff0efd4a491dd575be0d92ba574595e896b8574f2)\
+          \ | Claim Reward       | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0xEdd395e6...003836772](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xedd395e63450cf07e45d222284e175f003836772)\
+          \ | [0x542A4f60...6FA365777](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x542a4f60973dc0d8b3fafb04d29b16a6fa365777)\
+          \ | 0.17132127781454648$0.17 |\n| [0xe199f8935320f965359f4ffd33e11b38c919cd8934fe3a52461b00f9e861c018](https://bscscan.com/tx/0xe199f8935320f965359f4ffd33e11b38c919cd8934fe3a52461b00f9e861c018)\
+          \ | Transfer           | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0xF98E40b5...Aabb26372](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xf98e40b5900980079d39b63367a13d6aabb26372)\
+          \ | [0xCCcCB699...bBa22Bf07](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xccccb699550271255f5d645dd4ac928bba22bf07)\
+          \ | 1,460$1,460.00  |\n| [0x15230d31aa50e751d1b57070c4d76604fbbc7b53537a35a8c354b2a65d334d6e](https://bscscan.com/tx/0x15230d31aa50e751d1b57070c4d76604fbbc7b53537a35a8c354b2a65d334d6e)\
+          \ | Silence            | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0xa8aCdd81...00cc8938D](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xa8acdd81f46633b69acb6ec5c16ee7e00cc8938d)\
+          \ | [PancakeSwap V2: wkeyDAO-BSC-USD 2](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x8665a78ccc84d6df2acaa4b207d88c6bc9b70ec5)\
+          \ | 12.663786617$12.66 |\n| [0x15230d31aa50e751d1b57070c4d76604fbbc7b53537a35a8c354b2a65d334d6e](https://bscscan.com/tx/0x15230d31aa50e751d1b57070c4d76604fbbc7b53537a35a8c354b2a65d334d6e)\
+          \ | Silence            | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x6F6dAfFE...4F3b17593](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x6f6daffe7e8bdce67a15ed6b5d0da024f3b17593)\
+          \ | [0xa8aCdd81...00cc8938D](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xa8acdd81f46633b69acb6ec5c16ee7e00cc8938d)\
+          \ | 12.663786617$12.66 |\n| [0x1e4b9fd686a6833d72b6b91728ef03cc35e75402096eaf7af1e8d1a01b088296](https://bscscan.com/tx/0x1e4b9fd686a6833d72b6b91728ef03cc35e75402096eaf7af1e8d1a01b088296)\
+          \ | Transfer From      | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0xba07271c...824467548](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xba07271cdad915a04944866fe81a5a5824467548)\
+          \ | [0xAceb8320...F705c9202](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xaceb832086ad1569436b88e62d366ebf705c9202)\
+          \ | 171.988024164292710258$171.99 |\n| [0x44eea18f9e58515b71a7d86134148e4ed57ae18b683c8982a49b2fe58e45d2d6](https://bscscan.com/tx/0x44eea18f9e58515b71a7d86134148e4ed57ae18b683c8982a49b2fe58e45d2d6)\
+          \ | 0xa780bd52         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0xb80CCaa9...650A11867](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xb80ccaa913d36757fe7b6251333113e650a11867)\
+          \ | [0xF9878A5d...4f032229c](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xf9878a5dd55edc120fde01893ea713a4f032229c)\
+          \ | 16.204440048600095251$16.20 |\n| [0x44eea18f9e58515b71a7d86134148e4ed57ae18b683c8982a49b2fe58e45d2d6](https://bscscan.com/tx/0x44eea18f9e58515b71a7d86134148e4ed57ae18b683c8982a49b2fe58e45d2d6)\
+          \ | 0xa780bd52         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x5968FEAC...32664ad33](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x5968feacba91d55010975e0cfe8acfc32664ad33)\
+          \ | [0xb80CCaa9...650A11867](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xb80ccaa913d36757fe7b6251333113e650a11867)\
+          \ | 16.204440048600095251$16.20 |\n| [0xf7857a7e073635ba0ac8a048f6d320fc7f9892b8240257bb64fdf660df564b2f](https://bscscan.com/tx/0xf7857a7e073635ba0ac8a048f6d320fc7f9892b8240257bb64fdf660df564b2f)\
+          \ | 0xa780bd52         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [PancakeSwap V2: BSC-USD-GTST 6](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x27c4c15ba98dc84abff05aa4c6f9086337f07472)\
+          \ | [0x78d79468...5bF9AB2a2](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x78d794681d209392b25be14ebbc22ec5bf9ab2a2)\
+          \ | 3.466581185287757269$3.47 |\n| [0xf7857a7e073635ba0ac8a048f6d320fc7f9892b8240257bb64fdf660df564b2f](https://bscscan.com/tx/0xf7857a7e073635ba0ac8a048f6d320fc7f9892b8240257bb64fdf660df564b2f)\
+          \ | 0xa780bd52         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x78d79468...5bF9AB2a2](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x78d794681d209392b25be14ebbc22ec5bf9ab2a2)\
+          \ | [PancakeSwap V2: BSC-USD-LOVE 58](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xc9a256e3495a70580a2554cabe75475b47027e7d)\
+          \ | 3.457579791295486871$3.46 |\n| [0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0](https://bscscan.com/tx/0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0)\
+          \ | 0x493aca54         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x6E7F0A32...154382ef8](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x6e7f0a32618d6fa255acc19e9a957e8154382ef8)\
+          \ | [0x36696169...Bae652050](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x36696169c63e42cd08ce11f5deebbcebae652050)\
+          \ | 0.000264027700380558$0.00 |\n| [0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0](https://bscscan.com/tx/0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0)\
+          \ | 0x493aca54         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x6E7F0A32...154382ef8](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x6e7f0a32618d6fa255acc19e9a957e8154382ef8)\
+          \ | [0x3f2e2487...78c3BbF22](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x3f2e2487724e60963b8490fab1e5c3c78c3bbf22)\
+          \ | 1.0566$1.06     |\n| [0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0](https://bscscan.com/tx/0x86f18cb3d6f0635303517567f5b65d2c47984df537e94e280c320aa4ee01d8d0)\
+          \ | 0x493aca54         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x5968FEAC...32664ad33](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x5968feacba91d55010975e0cfe8acfc32664ad33)\
+          \ | [0x6E7F0A32...154382ef8](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x6e7f0a32618d6fa255acc19e9a957e8154382ef8)\
+          \ | 1.056864027700380558$1.06 |\n| [0xe83ebead562b5a050750c51ed0a063b2d6ac80b005429f7ac2cd0969df1c49b2](https://bscscan.com/tx/0xe83ebead562b5a050750c51ed0a063b2d6ac80b005429f7ac2cd0969df1c49b2)\
+          \ | 0xa4331601         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x5F562897...A440F2B52](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x5f5628975fb195835b01f2816415b1aa440f2b52)\
+          \ | [0x07FeD7f3...402eC2639](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x07fed7f326ab26377d5a4bf4af2d0e9402ec2639)\
+          \ | 3.932321030298868812$3.93 |\n| [0xe83ebead562b5a050750c51ed0a063b2d6ac80b005429f7ac2cd0969df1c49b2](https://bscscan.com/tx/0xe83ebead562b5a050750c51ed0a063b2d6ac80b005429f7ac2cd0969df1c49b2)\
+          \ | 0xa4331601         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x9c4Ee895...Db7502cCE](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x9c4ee895e4f6ce07ada631c508d1306db7502cce)\
+          \ | [0x5F562897...A440F2B52](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x5f5628975fb195835b01f2816415b1aa440f2b52)\
+          \ | 3.933223480083186378$3.93 |\n| [0x9372a937375fd8a6c3c4e0f6d2bbae112e8805bc0d21029c9143e126532b5f45](https://bscscan.com/tx/0x9372a937375fd8a6c3c4e0f6d2bbae112e8805bc0d21029c9143e126532b5f45)\
+          \ | 0xd1dd417f         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0xDb187290...40Cc4486a](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xdb18729070d3abdc72f9cd57d3b949540cc4486a)\
+          \ | [0x63e1e815...2291E1eB9](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x63e1e81573f8667fba28706e94741ad2291e1eb9)\
+          \ | 208.2349783848779072$208.23 |\n| [0x9372a937375fd8a6c3c4e0f6d2bbae112e8805bc0d21029c9143e126532b5f45](https://bscscan.com/tx/0x9372a937375fd8a6c3c4e0f6d2bbae112e8805bc0d21029c9143e126532b5f45)\
+          \ | 0xd1dd417f         | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x63e1e815...2291E1eB9](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x63e1e81573f8667fba28706e94741ad2291e1eb9)\
+          \ | [0xEfcB5527...479839F0D](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xefcb55270c5fe85fc8eb6a311dc5aa9479839f0d)\
+          \ | 208.189746218350469292$208.19 |\n| [0x48e0dc2fc70513abdbe2745aae717f6284281973e2ccfb13cefe8c871fc83be1](https://bscscan.com/tx/0x48e0dc2fc70513abdbe2745aae717f6284281973e2ccfb13cefe8c871fc83be1)\
+          \ | Transfer           | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x99B613DD...519D1382e](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x99b613dd71e54cd01467dfad640dd70519d1382e)\
+          \ | [0x2050faE8...4700A9eB9](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x2050fae8e6ab55819606db6be459cfb4700a9eb9)\
+          \ | 0.0001$0.00     |\n| [0xb9ed68d734c739d2a9e4a6e889a210e985d1bde616a7bb25e5b0d50eb580e7de](https://bscscan.com/tx/0xb9ed68d734c739d2a9e4a6e889a210e985d1bde616a7bb25e5b0d50eb580e7de)\
+          \ | Transfer           | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x051dDE5E...d1e97d2F7](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x051dde5e3c67da9a45f4ed861734f8dd1e97d2f7)\
+          \ | [0x35d70e65...6441A623D](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x35d70e65df4061300d88c520c31dcba6441a623d)\
+          \ | 0.0001$0.00     |\n| [0x5a7cf3a1f28dfdfac252d1143597858f40deb6f99e12b933e4643adbfcd639ca](https://bscscan.com/tx/0x5a7cf3a1f28dfdfac252d1143597858f40deb6f99e12b933e4643adbfcd639ca)\
+          \ | Circulate Withdr... | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x92b7807b...5228f3121](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x92b7807bf19b7dddf89b706143896d05228f3121)\
+          \ | [0x1936Ed84...631D48d6c](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x1936ed842387ff87a80ef1a8d55e760631d48d6c)\
+          \ | 183.954$183.95  |\n| [0xc33096dd4eeb99e5fa96a83be1c9b4839be83f8ee8ad132d37ccb43fe273dae6](https://bscscan.com/tx/0xc33096dd4eeb99e5fa96a83be1c9b4839be83f8ee8ad132d37ccb43fe273dae6)\
+          \ | Transfer           | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x251eb873...603e6dCaC](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x251eb873329c076ce3de71d5041909f603e6dcac)\
+          \ | [0x26066883...76f593C41](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x26066883d5ff23f18a875eae21ba9a276f593c41)\
+          \ | 0.0001$0.00     |\n| [0x932b9c8b3c11019ad125f590aec6a5f1c4f82fdb54e6149ab97eca907d36554e](https://bscscan.com/tx/0x932b9c8b3c11019ad125f590aec6a5f1c4f82fdb54e6149ab97eca907d36554e)\
+          \ | Transfer           | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x30041A46...5Ad3E4575](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x30041a468167b5ef32798f6bb4c99cc5ad3e4575)\
+          \ | [0x546BA0Eb...F6F221Ceb](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x546ba0eb2b847bbb8210eb6baf1af8bf6f221ceb)\
+          \ | 0.00011$0.00    |\n| [0x90d4bd74c648545358940dade8d876b271d9d90520c99a9710ec58f6dd55dbc9](https://bscscan.com/tx/0x90d4bd74c648545358940dade8d876b271d9d90520c99a9710ec58f6dd55dbc9)\
+          \ | Transfer           | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0xa813Db6c...CfCD96791](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xa813db6cc5d8c5f71cbbadfe5c770e6cfcd96791)\
+          \ | [0xabfb2986...9f3026e19](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xabfb2986468478d9b2174c38df6cb6c9f3026e19)\
+          \ | 0.00011$0.00    |\n| [0x47146b25ae1bf81abe3e072bf8397831b59fd0d23409481c27bb5e0559fb1d94](https://bscscan.com/tx/0x47146b25ae1bf81abe3e072bf8397831b59fd0d23409481c27bb5e0559fb1d94)\
+          \ | Transfer           | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x8E8F274c...95c6Ec389](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x8e8f274cc29f9963368b3e02b17deb795c6ec389)\
+          \ | [0xf11084C4...1231c0C03](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xf11084c4bc837a9bf04958e7fcee4161231c0c03)\
+          \ | 0.0001$0.00     |\n| [0x8221537a6c5f98d38b5d05b65ef5e5dbe2060319d263c844dcb7c609493badc4](https://bscscan.com/tx/0x8221537a6c5f98d38b5d05b65ef5e5dbe2060319d263c844dcb7c609493badc4)\
+          \ | Proxy Swap V2      | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [Binance: DEX Router](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xb300000b72deaeb607a12d5f54773d1c19c7028d)\
+          \ | [0x69c63AE1...C9d0a9CbA](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x69c63ae1778d876e27e1ece236c321fc9d0a9cba)\
+          \ | 942.831854889429397396$942.83 |\n| [0x8221537a6c5f98d38b5d05b65ef5e5dbe2060319d263c844dcb7c609493badc4](https://bscscan.com/tx/0x8221537a6c5f98d38b5d05b65ef5e5dbe2060319d263c844dcb7c609493badc4)\
+          \ | Proxy Swap V2      | [51729122](https://bscscan.com/block/51729122)\
+          \         | 2025-06-19 12:57:31 | [0x380aaDF6...fB23d5228](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0x380aadf63d84d3a434073f1d5d95f02fb23d5228)\
+          \ | [Binance: DEX Router](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955?a=0xb300000b72deaeb607a12d5f54773d1c19c7028d)\
+          \ | 942.831854889429397396$942.83 |"
+direct_token_call:
+  input:
+    tool: get_erc20_token_details
+    tool_arguments:
+      chain: bsc
+      address: '0x55d398326f99059ff775485246999027b3197955'
+  output:
+    response: ''
+    data: *id002
+raw_data_only:
+  input:
+    query: Analyze transaction 0xabc123 on Arbitrum
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      status: success
+      data:
+        processed_content: '**Transaction Details**
+
+
+          Oops! An invalid Txn hash has been entered: 0xabc123'
+error_handling:
+  input:
+    tool: get_transaction_details
+    tool_arguments:
+      chain: unsupported_chain
+      txid: '0x123'
+  output:
+    response: ''
+    data:
+      error: 'Unsupported chain: unsupported_chain'
