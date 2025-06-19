@@ -21,57 +21,57 @@ async def run_agent():
         }
         agent_output_tx = await agent.handle_message(agent_input_tx)
 
-        # Test 2: Direct tool call for transaction details
-        direct_tx_input = {
-            "tool": "get_transaction_details",
-            "tool_arguments": {
-                "chain": "ethereum",
-                "txid": "0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd",
-            },
-        }
-        direct_tx_output = await agent.handle_message(direct_tx_input)
+        # # Test 2: Direct tool call for transaction details
+        # direct_tx_input = {
+        #     "tool": "get_transaction_details",
+        #     "tool_arguments": {
+        #         "chain": "ethereum",
+        #         "txid": "0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd",
+        #     },
+        # }
+        # direct_tx_output = await agent.handle_message(direct_tx_input)
 
-        # Test 3: Natural language query for address analysis
-        agent_input_address = {
-            "query": "Get address history for 0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B on Base",
-            "raw_data_only": False,
-        }
-        agent_output_address = await agent.handle_message(agent_input_address)
+        # # Test 3: Natural language query for address analysis
+        # agent_input_address = {
+        #     "query": "Get address history for 0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B on Base",
+        #     "raw_data_only": False,
+        # }
+        # agent_output_address = await agent.handle_message(agent_input_address)
 
-        # Test 4: Direct tool call for address history
-        direct_address_input = {
-            "tool": "get_address_history",
-            "tool_arguments": {"chain": "base", "address": "0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B"},
-        }
-        direct_address_output = await agent.handle_message(direct_address_input)
+        # # Test 4: Direct tool call for address history
+        # direct_address_input = {
+        #     "tool": "get_address_history",
+        #     "tool_arguments": {"chain": "base", "address": "0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B"},
+        # }
+        # direct_address_output = await agent.handle_message(direct_address_input)
 
-        # Test 5: Natural language query for token analysis
-        agent_input_token = {
-            "query": "Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC",
-            "raw_data_only": False,
-        }
-        agent_output_token = await agent.handle_message(agent_input_token)
+        # # Test 5: Natural language query for token analysis
+        # agent_input_token = {
+        #     "query": "Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC",
+        #     "raw_data_only": False,
+        # }
+        # agent_output_token = await agent.handle_message(agent_input_token)
 
-        # Test 6: Direct tool call for ERC20 token details
-        direct_token_input = {
-            "tool": "get_erc20_token_details",
-            "tool_arguments": {"chain": "bsc", "address": "0x55d398326f99059ff775485246999027b3197955"},
-        }
-        direct_token_output = await agent.handle_message(direct_token_input)
+        # # Test 6: Direct tool call for ERC20 token details
+        # direct_token_input = {
+        #     "tool": "get_erc20_token_details",
+        #     "tool_arguments": {"chain": "bsc", "address": "0x55d398326f99059ff775485246999027b3197955"},
+        # }
+        # direct_token_output = await agent.handle_message(direct_token_input)
 
-        # Test 7: Raw data only mode
-        raw_data_input = {
-            "query": "Analyze transaction 0xabc123 on Arbitrum",
-            "raw_data_only": True,
-        }
-        raw_data_output = await agent.handle_message(raw_data_input)
+        # # Test 7: Raw data only mode
+        # raw_data_input = {
+        #     "query": "Analyze transaction 0xabc123 on Arbitrum",
+        #     "raw_data_only": True,
+        # }
+        # raw_data_output = await agent.handle_message(raw_data_input)
 
-        # Test 8: Error handling - unsupported chain
-        error_input = {
-            "tool": "get_transaction_details",
-            "tool_arguments": {"chain": "unsupported_chain", "txid": "0x123"},
-        }
-        error_output = await agent.handle_message(error_input)
+        # # Test 8: Error handling - unsupported chain
+        # error_input = {
+        #     "tool": "get_transaction_details",
+        #     "tool_arguments": {"chain": "unsupported_chain", "txid": "0x123"},
+        # }
+        # error_output = await agent.handle_message(error_input)
 
         script_dir = Path(__file__).parent
         current_file = Path(__file__).stem
@@ -80,13 +80,13 @@ async def run_agent():
 
         yaml_content = {
             "natural_language_transaction": {"input": agent_input_tx, "output": agent_output_tx},
-            "direct_transaction_call": {"input": direct_tx_input, "output": direct_tx_output},
-            "natural_language_address": {"input": agent_input_address, "output": agent_output_address},
-            "direct_address_call": {"input": direct_address_input, "output": direct_address_output},
-            "natural_language_token": {"input": agent_input_token, "output": agent_output_token},
-            "direct_token_call": {"input": direct_token_input, "output": direct_token_output},
-            "raw_data_only": {"input": raw_data_input, "output": raw_data_output},
-            "error_handling": {"input": error_input, "output": error_output},
+            # "direct_transaction_call": {"input": direct_tx_input, "output": direct_tx_output},
+            # "natural_language_address": {"input": agent_input_address, "output": agent_output_address},
+            # "direct_address_call": {"input": direct_address_input, "output": direct_address_output},
+            # "natural_language_token": {"input": agent_input_token, "output": agent_output_token},
+            # "direct_token_call": {"input": direct_token_input, "output": direct_token_output},
+            # "raw_data_only": {"input": raw_data_input, "output": raw_data_output},
+            # "error_handling": {"input": error_input, "output": error_output},
         }
 
         with open(output_file, "w", encoding="utf-8") as f:

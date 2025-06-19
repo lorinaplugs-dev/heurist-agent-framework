@@ -3,1573 +3,286 @@ natural_language_transaction:
     query: analyze transaction pattern of https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073
     raw_data_only: false
   output:
-    response: '**Address:** [0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-
-      **Overview**
-
-      - **ETH Balance:** 1.147338392680977545 ETH
-
-      - **ETH Value:** $2,910.16 (@ $2,536.44/ETH)
-
-      - **Token Holdings:** $2.90 (21 Tokens)
-
-
-      **ERC-20 Tokens (16)**
-
-
-      | Token                                                                                                               |
-      Balance             | Value   |
-
-      | -------------------------------------------------------------------------------------------------------------------
-      | ------------------- | ------- |
-
-      | [PREME Token](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-      | 1,008 PREME         | $2.89   |
-
-      | [Black Agnus (FTW)](https://etherscan.io/token/0x306fD3e7b169Aa4ee19412323e1a5995B8c1a1f4?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)   |
-      3,333,333 FTW       | $0.02   |
-
-      | [TRUMP MAGA (MAGA)](https://etherscan.io/token/0xf211B655431c10E72C1CAeae37688Ae9f7F7A549?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)     |
-      2,240 MAGA          | $0.00   |
-
-      | [NC-Eligible](https://etherscan.io/token/0x8811249e0af51bfffca2a1148d7d6f819043e7c3?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)        |
-      8,162 NC-Eligible   | $0.00   |
-
-      | [TONCrypto.io](https://etherscan.io/token/0xcf59cc4af0a590ad19640e9d1ec93eb5a2302338?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)         |
-      229 TONCrypto.io    | $0.00   |
-
-      | [wSNX](https://etherscan.io/token/0xE754F5FC5d43C11C48F1554aEb56EF948eB7b149?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)              |
-      685 wSNX            | $0.00   |
-
-      | [AIC](https://etherscan.io/token/0x8e27f5bf0eb69faf8bce5cf54e2ca0bfa9db5313?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)                |
-      1 AIC               | $0.00   |
-
-      | [Lettuce](https://etherscan.io/token/0xb0ba9217b1b0c4d63c3a6cc0b08c8264ba367fc7?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)            |
-      34,302,925.8 Lettuce | $0.00   |
-
-      | [BMB](https://etherscan.io/token/0x9447dd95f576fdf6ed8219fff45bd1362430b787?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)                |
-      0.89 BMB            | $0.00   |
-
-      | [Marvin](https://etherscan.io/token/0x85bEA4eE627B795A79583FcedE229E198aa57055?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)              |
-      17,776 Marvin       | $0.00   |
-
-
-      **NFT Tokens (5)**
-
-
-      | Token                                                                                                              |
-
-      | ------------------------------------------------------------------------------------------------------------------
-      |
-
-      | [GVNO](https://etherscan.io/token/0x978cf0730c0432da310023eeb5614b96b6f8c72f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-      |
-
-
-      **More Info**
-
-      - **Transactions Sent:** Latest: [1 hr ago](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)
-      First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)
-
-      - **Funded By:** [0x5D476039...7a251d821](https://etherscan.io/address/0x5d47603902a8cadbf3337abbc6df8f67a251d821)
-      [1 year 266 days ago](https://etherscan.io/tx/0x9209ecf6e32d4b32909fbf6193548b13129e60dfb11add01546ed799e235fe1a)
-
-
-      **Multichain Info**
-
-      - **Multichain Portfolio:** [$2,915.94](javascript:;)
-
-      - **BaseScan:** [$3](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-      - **Blockscan:** [View All](https://blockscan.com/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)'
+    response: "**Address:** [0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\n\
+      \n**Overview**\n\n*   **ETH Balance:** 1.142756836659239339 ETH\n*   **ETH Value:**\
+      \ $2,887.40 (@ $2,526.70/ETH)\n*   **Token Holdings Value:** $2.90 (21 Tokens)\n\
+      \n**Token Holdings (ERC-20)**\n\n| Token Name | Symbol | Amount | Value | Price\
+      \ per Token |\n| :--------- | :----- | :----- | :---- | :-------------- |\n\
+      | PREME Token | PREME | 1,008 | $2.89 | @0.0029 |\n| Black Agnus | FTW | 3,333,333\
+      \ | $0.02 | @0.00 |\n| TRUMP MAGA | MAGA | 2,240 | $0.00 | - |\n| ERC-20: (NC-Eli...)\
+      \ | NC-Eligible (Verify: www.nodeco.in) | 8,162 | $0.00 | - |\n| ERC-20: ! EL...\
+      \ | TONCrypto.io | 229 | $0.00 | - |\n| ERC-20: !SNX... | wSNX | 685 | $0.00\
+      \ | - |\n| ERC-20: AI C... | AIC | 1 | $0.00 | - |\n| ERC-20: Ange... | Lettuce\
+      \ | 34,302,925.8 | $0.00 | - |\n| ERC-20: BMB | BMB | 0.89 | $0.00 | - |\n|\
+      \ ERC-20: Marv... | Marvin | 17,776 | $0.00 | - |\n\n**NFT Holdings**\n\n* \
+      \  **SHIBAFAIR. ORG:** GVNO (ERC-1155)\n\n**More Info**\n\n*   **Transactions\
+      \ Sent:** Latest: [2 mins ago](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77),\
+      \ First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)\n\
+      *   **Funded By:** [0x5D47603902a8cadbf3337abbc6df8f67a251d821](https://etherscan.io/address/0x5d47603902a8cadbf3337abbc6df8f67a251d821)\
+      \ ([1 year 266 days ago](https://etherscan.io/tx/0x9209ecf6e32d4b32909fbf6193548b13129e60dfb11add01546ed799e235fe1a))\n\
+      \n**Multichain Info**\n\n*   **Multichain Portfolio Value:** $2,891.33 (across\
+      \ 35 Chains)\n*   **Chains with Holdings:**\n    *   [Ethereum](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073):\
+      \ $2,888 (100%)\n    *   [Base](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073):\
+      \ $3 (<1%)\n\n**Multichain Portfolio Details**\n\n| Chain | Token | Portfolio\
+      \ % | Price | Amount | Value |\n| :---- | :---- | :---------- | :---- | :-----\
+      \ | :---- |\n| [ETH](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | Ether (ETH) | 99.80% | $2,525.07 | 1.1428 | $2,885.54 |\n| [ETH](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [PREME Token (PREME)](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | 0.10% | $0.002865 | 1,008 | $2.89 |\n| [BASE](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [PREME Token (PREME)](https://basescan.org/token/0x8c62ac3b71db8c81a764b84ffbc2a8d0bad7f111?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | 0.10% | $0.002875 | 1,008 | $2.9 |\n\n**Transactions (Latest 25 of 33,021\
+      \ total)**\n\n| Transaction Hash | Method | Block | Age | From | To | Amount\
+      \ | Txn Fee |\n| :--------------- | :----- | :---- | :-- | :--- | :--- | :-----\
+      \ | :------ |\n| [0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77)\
+      \ | 0x122067ed | [22738593](https://etherscan.io/block/22738593) | 2 mins ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00223544 ETH |\n| [0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d](https://etherscan.io/tx/0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d)\
+      \ | 0x30a28ffc | [22738550](https://etherscan.io/block/22738550) | 11 mins ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00234611 ETH |\n| [0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)\
+      \ | 0x122067ed | [22738166](https://etherscan.io/block/22738166) | 1 hr ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00064685 ETH |\n| [0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2](https://etherscan.io/tx/0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2)\
+      \ | 0x30a28ffc | [22738012](https://etherscan.io/block/22738012) | 1 hr ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00112555 ETH |\n| [0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86](https://etherscan.io/tx/0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86)\
+      \ | 0x122067ed | [22737998](https://etherscan.io/block/22737998) | 2 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00131619 ETH |\n| [0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11](https://etherscan.io/tx/0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11)\
+      \ | 0x30a28ffc | [22737751](https://etherscan.io/block/22737751) | 2 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00334247 ETH |\n| [0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c](https://etherscan.io/tx/0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c)\
+      \ | 0x30a28ffc | [22737538](https://etherscan.io/block/22737538) | 3 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00104254 ETH |\n| [0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75](https://etherscan.io/tx/0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75)\
+      \ | 0x30a28ffc | [22737437](https://etherscan.io/block/22737437) | 3 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00033231 ETH |\n| [0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587](https://etherscan.io/tx/0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587)\
+      \ | 0x122067ed | [22737321](https://etherscan.io/block/22737321) | 4 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00248902 ETH |\n| [0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33](https://etherscan.io/tx/0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33)\
+      \ | 0x30a28ffc | [22737293](https://etherscan.io/block/22737293) | 4 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00037498 ETH |\n| [0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927](https://etherscan.io/tx/0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927)\
+      \ | 0x122067ed | [22737152](https://etherscan.io/block/22737152) | 4 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00055548 ETH |\n| [0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53](https://etherscan.io/tx/0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53)\
+      \ | 0x30a28ffc | [22737144](https://etherscan.io/block/22737144) | 4 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00893864 ETH |\n| [0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf](https://etherscan.io/tx/0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf)\
+      \ | 0x30a28ffc | [22736769](https://etherscan.io/block/22736769) | 6 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.0027041 ETH |\n| [0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e](https://etherscan.io/tx/0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e)\
+      \ | 0x30a28ffc | [22736573](https://etherscan.io/block/22736573) | 6 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00085254 ETH |\n| [0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3](https://etherscan.io/tx/0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3)\
+      \ | 0x122067ed | [22736507](https://etherscan.io/block/22736507) | 7 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00058007 ETH |\n| [0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c](https://etherscan.io/tx/0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c)\
+      \ | 0x122067ed | [22736457](https://etherscan.io/block/22736457) | 7 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00038489 ETH |\n| [0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269](https://etherscan.io/tx/0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269)\
+      \ | 0x122067ed | [22736417](https://etherscan.io/block/22736417) | 7 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00354311 ETH |\n| [0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3](https://etherscan.io/tx/0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3)\
+      \ | 0x122067ed | [22736405](https://etherscan.io/block/22736405) | 7 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00033393 ETH |\n| [0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10](https://etherscan.io/tx/0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10)\
+      \ | 0x122067ed | [22736397](https://etherscan.io/block/22736397) | 7 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00049211 ETH |\n| [0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced](https://etherscan.io/tx/0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced)\
+      \ | 0x30a28ffc | [22736360](https://etherscan.io/block/22736360) | 7 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00031105 ETH |\n| [0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255](https://etherscan.io/tx/0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255)\
+      \ | 0x122067ed | [22736328](https://etherscan.io/block/22736328) | 7 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00064064 ETH |\n| [0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751](https://etherscan.io/tx/0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751)\
+      \ | 0x122067ed | [22736188](https://etherscan.io/block/22736188) | 8 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00241091 ETH |\n| [0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128](https://etherscan.io/tx/0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128)\
+      \ | 0x122067ed | [22736157](https://etherscan.io/block/22736157) | 8 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00096334 ETH |\n| [0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036](https://etherscan.io/tx/0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036)\
+      \ | 0x122067ed | [22736138](https://etherscan.io/block/22736138) | 8 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00061178 ETH |\n| [0x08c3a0220f9ae461ee8a342598629fc38b71755bece162a100f0465e7ef23850](https://etherscan.io/tx/0x08c3a0220f9ae461ee8a342598629fc38b71755bece162a100f0465e7ef23850)\
+      \ | 0x30a28ffc | [22736130](https://etherscan.io/block/22736130) | 8 hrs ago\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+      \ | 0 ETH ($0.00) | 0.00209223 ETH |\n\n**Internal Transactions (Latest 1)**\n\
+      \n| Parent Transaction Hash | Method | Block | Age | From | To | Amount |\n\
+      | :---------------------- | :----- | :---- | :-- | :--- | :--- | :----- |\n\
+      | [0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c](https://etherscan.io/tx/0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c)\
+      \ | Transfer | [22719123](https://etherscan.io/block/22719123) | 2 days ago\
+      \ | [Disperse.app](https://etherscan.io/address/0xd152f549545093347a162dce210e7293f1452150)\
+      \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+      \ | 0.05291609 ETH ($133.70) |"
     data:
       status: success
       data:
         chain: ethereum
         address: '0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073'
         explorer_url: https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073
-        processed_content: '```
-
-          **Address:** [0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-
-          **Overview**
-
-          - **ETH Balance:** 1.147338392680977545 ETH
-
-          - **ETH Value:** $2,910.16 (@ $2,536.44/ETH)
-
-          - **Token Holdings:** $2.90 (21 Tokens)
-
-
-          **ERC-20 Tokens (16)**
-
-
-          - **PREME Token:** 1,008 PREME ($2.89 @0.0029) - [0x7d0c49057c09501595a8ce23b773bb36a40b521f](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **Black Agnus (FTW):** 3,333,333 FTW ($0.02 @0.00) - [0x306fD3e7b169Aa4ee19412323e1a5995B8c1a1f4](https://etherscan.io/token/0x306fD3e7b169Aa4ee19412323e1a5995B8c1a1f4?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **TRUMP MAGA (MAGA):** 2,240 MAGA ($0.00) - [0xf211B655431c10E72C1CAeae37688Ae9f7F7A549](https://etherscan.io/token/0xf211B655431c10E72C1CAeae37688Ae9f7F7A549?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **NC-Eligible (Verify: www.nodeco.in):** 8,162 NC-Eligible ($0.00) - [0x8811249e0af51bfffca2a1148d7d6f819043e7c3](https://etherscan.io/token/0x8811249e0af51bfffca2a1148d7d6f819043e7c3?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **TONCrypto.io:** 229 TONCrypto.io ($0.00) - [0xcf59cc4af0a590ad19640e9d1ec93eb5a2302338](https://etherscan.io/token/0xcf59cc4af0a590ad19640e9d1ec93eb5a2302338?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **wSNX:** 685 wSNX ($0.00) - [0xE754F5FC5d43C11C48F1554aEb56EF948eB7b149](https://etherscan.io/token/0xE754F5FC5d43C11C48F1554aEb56EF948eB7b149?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **AIC:** 1 AIC ($0.00) - [0x8e27f5bf0eb69faf8bce5cf54e2ca0bfa9db5313](https://etherscan.io/token/0x8e27f5bf0eb69faf8bce5cf54e2ca0bfa9db5313?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **Lettuce:** 34,302,925.8 Lettuce ($0.00) - [0xb0ba9217b1b0c4d63c3a6cc0b08c8264ba367fc7](https://etherscan.io/token/0xb0ba9217b1b0c4d63c3a6cc0b08c8264ba367fc7?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **BMB:** 0.89 BMB ($0.00) - [0x9447dd95f576fdf6ed8219fff45bd1362430b787](https://etherscan.io/token/0x9447dd95f576fdf6ed8219fff45bd1362430b787?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **Marvin:** 17,776 Marvin ($0.00) - [0x85bEA4eE627B795A79583FcedE229E198aa57055](https://etherscan.io/token/0x85bEA4eE627B795A79583FcedE229E198aa57055?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-
-          **NFT Tokens (5)**
-
-
-          - **GVNO:** SHIBAFAIR. ORG GVNO (ERC-1155) - [0x978cf0730c0432da310023eeb5614b96b6f8c72f](https://etherscan.io/token/0x978cf0730c0432da310023eeb5614b96b6f8c72f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-
-          **More Info**
-
-          - **Private Name Tags:** [Add](https://etherscan.io/login?msg=NeedLogin&ref=address&ret=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **Transactions Sent:** Latest: [1 hr ago](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)
-          First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)
-
-          - **Funded By:** [0x5D476039...7a251d821](https://etherscan.io/address/0x5d47603902a8cadbf3337abbc6df8f67a251d821)
-          [1 year 266 days ago](https://etherscan.io/tx/0x9209ecf6e32d4b32909fbf6193548b13129e60dfb11add01546ed799e235fe1a)
-
-
-          **Multichain Info**
-
-          - **Multichain Portfolio:** [$2,915.94](javascript:;)
-
-          - **BaseScan:** [$3](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-          - **Blockscan:** [View All](https://blockscan.com/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
-
-
-          **Latest Transactions**
-
-
-          | Transaction Hash                                                                                                                               |
-          Method     | Block    | Age       | From'
-direct_transaction_call:
-  input:
-    tool: get_transaction_details
-    tool_arguments:
-      chain: ethereum
-      txid: '0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd'
-  output:
-    response: ''
-    data:
-      status: success
-      data:
-        chain: ethereum
-        txid: '0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd'
-        explorer_url: https://etherscan.io/tx/0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd
-        processed_content: "```\n**Transaction Details**\n\n*   MEV Transaction: [EigenPhi](https://etherscan.io/txs/label/eigenphi)\n\
-          *   Transaction Action: [Swap](https://etherscan.io/dex/uniswapv2/0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
-          \ 0.026 ($65.90) ETH for 892.16 M[MONKEYS](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\
-          \ on Uniswap V2\n*   Transaction Hash: `0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd`\n\
-          *   Status: Success\n*   Block: [22207195](https://etherscan.io/block/22207195)\
-          \ (531304 Block Confirmations)\n*   Timestamp: 74 days ago (Apr-06-2025\
-          \ 03:29:47 AM UTC) Confirmed within 8 secs\n*   From: [0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E](https://etherscan.io/address/0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E)\n\
-          *   To: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\
-          \ (Uniswap V4: Universal Router)\n\n**Internal Transactions**\n\n*   Transfer\
-          \ 0.026 ETH ($65.90) From [Uniswap V4: Universal Router](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
-          \ To [Wrapped Ether](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
-          \    *   [0x01eEbDB7...Ed462eC5E](https://etherscan.io/token/ETH?a=0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\
-          \ sent 0.026 ETH ($65.90)\n    *   [Wrapped Ether](https://etherscan.io/token/ETH?a=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\
-          \ received 0.026 ETH ($65.90)\n\n**ERC-20 Tokens Transferred: 4**\n\n* \
-          \  From [Uniswap V4: Universal Router](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
-          \ To [0xdF30850e...D86F34787](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
-          \ For 0.026 ($65.90) [Wrapped Ether (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
-          *   From [0xdF30850e...D86F34787](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
-          \ To [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
-          \ For 892,155,118.330137431 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
-          *   From [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
-          \ To [Uniswap: Fee Collector](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x000000fee13a103a10d593b9ae06b3e05f2e7e1c)\
-          \ For 2,230,387.795825343 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
-          *   From [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
-          \ To [0x01eEbDB7...Ed462eC5E](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\
-          \ For 889,924,730.534312088 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
-          \    *   [0x01eEbDB7...Ed462eC5E](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\
-          \ received 889,924,730.534312088 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
-          \    *   [Uniswap V4: Universal Router](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
-          \ sent 0.026 ($65.90) [Wrapped Ether (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
-          \    *   [0xdF30850e...D86F34787](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
-          \ received 0.026 ($65.90) [Wrapped Ether (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
-          \    *   [0xdF30850e...D86F34787](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
-          \ sent 892,155,118.330137431 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
-          \    *   [Uniswap: Fee Collector](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x000000fee13a103a10d593b9ae06b3e05f2e7e1c)\
-          \ received 2,230,387.795825343 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
-          \n**Transaction Details (cont.)**\n\n*   Value: 0.026 ETH ($65.90)\n*  \
-          \ Transaction Fee: 0.00047794244038612 ETH ($1.21)\n*   Gas Price: 2.42311484\
-          \ Gwei (0.00000000242311484 ETH)\n*   Ether Price: $1,579.65 / ETH\n*  \
-          \ Gas Limit & Usage by Txn: 279,361 | 197,243 (70.61%)\n*   Gas Fees: Base:\
-          \ 0.42311484 Gwei | Max: 2.506431645 Gwei | Max Priority: 2 Gwei\n*   Burnt\
-          \ & Txn Savings Fees: \U0001F525 Burnt: 0.00008345644038612 ETH ($0.21)\
-          \ \U0001F4B8 Txn Savings: 0.000016433656568615 ETH ($0.04)\n*   Txn Type:\
-          \ 2 (EIP-1559)\n*   Nonce: 844\n*   Position In Block: 5\n\n**Input Data**\n\
-          \n*   `0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000067f1fc2500000000000000000000000000000000000000000000000000000000000000040b080604000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000005c5edcbc29000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000005c5edcbc290000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf7508000000000000000000000000000000fee13a103a10d593b9ae06b3e05f2e7e1c000000000000000000000000000000000000000000000000000000000000001900000000000000000000000000000000000000000000000000000000000000600000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf750800000000000000000000000001eebdb7f6855f1ddfd38c1131d67e8ed462ec5e0000000000000000000000000000000000000000000000000c59a485d6251fd50c`\n\
-          \n**Internal Transaction Details (Advanced Mode)**\n\n| Type        | Trace\
-          \ Address | Method   | From                                            \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                                                      \
-          \                                   \n| AA Txn Hash | Method  | Position\
-          \ | From"
-natural_language_address:
-  input:
-    query: Get address history for 0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B on Base
-    raw_data_only: false
-  output:
-    response: "**Address**\n[0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B](https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
-      \n**Overview**\n*   ETH Balance: 0 ETH\n*   ETH Value: $0.00\n\n**More Info**\n\
-      *   Private Name Tags: [Add](https://basescan.org/login?msg=NeedLogin&ref=address&ret=0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
-      *   Transactions Sent:\n    *   Latest: N/A\n    *   First: N/A\n*   Funded\
-      \ By: N/A\n\n**Multichain Info**\n*   [$0 (Multichain Portfolio)](javascript:;)\n\
-      *   No addresses found\n\n**Transactions**\n\nThere are no matching entries.\n\
-      \n**Internal Transactions**\n\nNo internal transactions found.\n\n**Solidity\
-      \ Compiler**\n\n*   Contract Name: 0 ETH\n*   Compiler Version: 0\n*   Optimization\
-      \ Enabled: 0 ETH\n*   Other Settings: -NA-\n\n**Blocks Produced**\n\nNo blocks\
-      \ produced.\n\n**Uncles**\n\nNo uncles found.\n\n**Validator Withdrawals**\n\
-      \nNo withdrawals found.\n\n**Deposits**\n\nNo deposits found.\n\n**Multichain\
-      \ Portfolio | 35 Chains**\n\n*   Last updated: less than 1 sec ago\n\n| Chain\
-      \           | Token | Portfolio % | Price | Amount | Value |\n| ---------------\
-      \ | ----- | ------------- | ----- | ------ | ----- |\n| Ethereum (0)    |  \
-      \     | 0 (0%)        |       |        |       |\n| BNB Chain (0)   |      \
-      \ | 0 (0%)        |       |        |       |\n| Polygon (0)     |       | 0\
-      \ (0%)        |       |        |       |\n| Arbitrum One (0)|       | 0 (0%)\
-      \        |       |        |       |\n| Optimism (0)    |       | 0 (0%)    \
-      \    |       |        |       |\n| Base (0)        |       | 0 (0%)        |\
-      \       |        |       |\n| BTTC (0)        |       | 0 (0%)        |    \
-      \   |        |       |\n| Celo (0)        |       | 0 (0%)        |       |\
-      \        |       |\n| Gnosis (0)      |       | 0 (0%)        |       |    \
-      \    |       |\n| Polygon zkEVM (0) |       | 0 (0%)        |       |      \
-      \  |       |\n| Linea (0)       |       | 0 (0%)        |       |        | \
-      \      |\n| Moonbeam (0)    |       | 0 (0%)        |       |        |     \
-      \  |\n| Moonriver (0)   |       | 0 (0%)        |       |        |       |\n\
-      | Arbitrum Nova (0) |       | 0 (0%)        |       |        |       |\n| Scroll\
-      \ (0)      |       | 0 (0%)        |       |        |       |\n| Wemix (0) \
-      \      |       | 0 (0%)        |       |        |       |\n| Avax C-Chain (0)|\
-      \       | 0 (0%)        |       |        |       |\n| zkSync Era (0)  |    \
-      \   | 0 (0%)        |       |        |       |\n| opBNB (0)       |       |\
-      \ 0 (0%)        |       |        |       |\n| Fraxtal (0)     |       | 0 (0%)\
-      \        |       |        |       |\n| Blast (0)       |       | 0 (0%)    \
-      \    |       |        |       |\n| Cronos (0)      |       | 0 (0%)        |\
-      \       |        |       |\n| Mantle (0)      |       | 0 (0%)        |    \
-      \   |        |       |\n| Taiko (0)       |       | 0 (0%)        |       |\
-      \        |       |\n| Xai (0)         |       | 0 (0%)        |       |    \
-      \    |       |\n| World (0)       |       | 0 (0%)        |       |        |\
-      \       |\n| Xdc (0)         |       | 0 (0%)        |       |        |    \
-      \   |\n| Ape (0)         |       | 0 (0%)        |       |        |       |\n\
-      | Sophon (0)      |       | 0 (0%)        |       |        |       |\n| Unichain\
-      \ (0)    |       | 0 (0%)        |       |        |       |\n| Berachain (0)\
-      \   |       | 0 (0%)        |       |        |       |\n| MemeCoreChain (0)\
-      \ |       | 0 (0%)        |       |        |       |\n| Swellchain (0)  |  \
-      \     | 0 (0%)        |       |        |       |\n| Sonic (0)       |      \
-      \ | 0 (0%)        |       |        |       |\n| Abstract (0)    |       | 0\
-      \ (0%)        |       |        |       |"
-    data: &id001
-      status: success
-      data:
-        chain: base
-        address: '0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B'
-        explorer_url: https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B
-        processed_content: "**Address**\n[0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B](https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
-          \n**Overview**\n*   ETH Balance: 0 ETH\n*   ETH Value: $0.00\n\n**More Info**\n\
-          *   Private Name Tags: [Add](https://basescan.org/login?msg=NeedLogin&ref=address&ret=0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
-          *   Transactions Sent:\n    *   Latest: N/A\n    *   First: N/A\n*   Funded\
-          \ By: N/A\n\n**Multichain Info**\n*   [$0 (Multichain Portfolio)](javascript:;)\n\
-          *   No addresses found\n\n**Transactions**\n\nThere are no matching entries.\n\
-          \n**Internal Transactions**\n\nNo internal transactions found.\n\n**Solidity\
-          \ Compiler**\n\n*   Contract Name: 0 ETH\n*   Compiler Version: 0\n*   Optimization\
-          \ Enabled: 0 ETH\n*   Other Settings: -NA-\n\n**Blocks Produced**\n\nNo\
-          \ blocks produced.\n\n**Uncles**\n\nNo uncles found.\n\n**Validator Withdrawals**\n\
-          \nNo withdrawals found.\n\n**Deposits**\n\nNo deposits found.\n\n**Multichain\
-          \ Portfolio \\| 35 Chains**\n\n*   Last updated: less than 1 sec ago\n\n\
-          | Chain           | Token | Portfolio % | Price | Amount | Value |\n| ---------------\
-          \ | ----- | ------------- | ----- | ------ | ----- |\n| Ethereum (0)   \
-          \ |       | 0 (0%)        |       |        |       |\n| BNB Chain (0)  \
-          \ |       | 0 (0%)        |       |        |       |\n| Polygon (0)    \
-          \ |       | 0 (0%)        |       |        |       |\n| Arbitrum One (0)|\
-          \       | 0 (0%)        |       |        |       |\n| Optimism (0)    |\
-          \       | 0 (0%)        |       |        |       |\n| Base (0)        |\
-          \       | 0 (0%)        |       |        |       |\n| BTTC (0)        |\
-          \       | 0 (0%)        |       |        |       |\n| Celo (0)        |\
-          \       | 0 (0%)        |       |        |       |\n| Gnosis (0)      |\
-          \       | 0 (0%)        |       |        |       |\n| Polygon zkEVM (0)\
-          \ |       | 0 (0%)        |       |        |       |\n| Linea (0)      \
-          \ |       | 0 (0%)        |       |        |       |\n| Moonbeam (0)   \
-          \ |       | 0 (0%)        |       |        |       |\n| Moonriver (0)  \
-          \ |       | 0 (0%)        |       |        |       |\n| Arbitrum Nova (0)\
-          \ |       | 0 (0%)        |       |        |       |\n| Scroll (0)     \
-          \ |       | 0 (0%)        |       |        |       |\n| Wemix (0)      \
-          \ |       | 0 (0%)        |       |        |       |\n| Avax C-Chain (0)|\
-          \       | 0 (0%)        |       |        |       |\n| zkSync Era (0)  |\
-          \       | 0 (0%)        |       |        |       |\n| opBNB (0)       |\
-          \       | 0 (0%)        |       |        |       |\n| Fraxtal (0)     |\
-          \       | 0 (0%)        |       |        |       |\n| Blast (0)       |\
-          \       | 0 (0%)        |       |        |       |\n| Cronos (0)      |\
-          \       | 0 (0%)        |       |        |       |\n| Mantle (0)      |\
-          \       | 0 (0%)        |       |        |       |\n| Taiko (0)       |\
-          \       | 0 (0%)        |       |        |       |\n| Xai (0)         |\
-          \       | 0 (0%)        |       |        |       |\n| World (0)       |\
-          \       | 0 (0%)        |       |        |       |\n| Xdc (0)         |\
-          \       | 0 (0%)        |       |        |       |\n| Ape (0)         |\
-          \       | 0 (0%)        |       |        |       |\n| Sophon (0)      |\
-          \       | 0 (0%)        |       |        |       |\n| Unichain (0)    |\
-          \       | 0 (0%)        |       |        |       |\n| Berachain (0)   |\
-          \       | 0 (0%)        |       |        |       |\n| MemeCoreChain (0)\
-          \ |       | 0 (0%)        |       |        |       |\n| Swellchain (0) \
-          \ |       | 0 (0%)        |       |        |       |\n| Sonic (0)      \
-          \ |       | 0 (0%)        |       |        |       |\n| Abstract (0)   \
-          \ |       | 0 (0%)        |       |        |       |"
-direct_address_call:
-  input:
-    tool: get_address_history
-    tool_arguments:
-      chain: base
-      address: '0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B'
-  output:
-    response: ''
-    data: *id001
-natural_language_token:
-  input:
-    query: Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC
-    raw_data_only: false
-  output:
-    response: '**Token Overview**
-
-
-      *   Token Name: Binance-Peg BSC-USD (BSC-USD)
-
-      *   Token Contract: [0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)
-
-      *   Decimals: 18
-
-      *   Token Type: BEP-20, Cross-Chain, Stablecoin, Binance-Peg
-
-      *   Reputation: Evaluated to be a token of public interest by BscScan.
-
-
-      **Links**
-
-
-      *   [https://www.binance.com/en/trade/BNB\_USDT](https://www.binance.com/en/trade/BNB_USDT)
-
-      *   [CoinMarketCap](https://coinmarketcap.com/currencies/tether/)
-
-      *   [CoinGecko](https://www.coingecko.com/en/coins/tether/)
-
-      *   [API](https://docs.etherscan.io/etherscan-v2/api-endpoints/tokens)
-
-      *   [Check previous token supply](https://bscscan.com/tokencheck-tool?t=0x55d398326f99059ff775485246999027b3197955)
-
-
-      **Overview**
-
-
-      *   Max Total Supply: 6,284,993,699.505674 BSC-USD (CSupply: 6,283,379,633.856122)
-
-      *   Holders: 30,879,300
-
-      *   Total Transfers: More than -1
-
-
-      **Market**
-
-
-      *   Price: $1.00 @ 0.001557 BNB (+0.01%)
-
-      *   Onchain Market Cap: $6,284,993,699.51
-
-      *   Circulating Supply Market Cap: $155,735,989,988.00
-
-
-      **Additional Market Data**
-
-
-      *   Volume (24H): $46,464,167,538.00
-
-      *   Market Capitalization: $155,735,989,988.00
-
-      *   Circulating Supply: 155,719,756,689.00 BSC-USD'
-    data: &id002
-      status: success
-      data:
-        chain: bsc
-        token_address: '0x55d398326f99059ff775485246999027b3197955'
-        explorer_url: https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955
-        processed_content: '```
-
-          **Token Overview**
-
-
-          *   Token Name: Binance-Peg BSC-USD (BSC-USD)
-
-          *   Token Contract: [0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)
-
-          *   Decimals: 18
-
-          *   Token Type: BEP-20, Cross-Chain, Stablecoin, Binance-Peg
-
-          *   Reputation: Evaluated to be a token of public interest by BscScan.
-
-          *   Binance-Peg tokens are BEP20 tokens backed by tokens vaults in Binance
-          public addresses and is part of Project Token Canal.
-
-          *   Note: This token''s displayed name symbol does not match its contract''s
-          Name and Symbol function.
-
-
-          **Links**
-
-
-          *   [https://www.binance.com/en/trade/BNB\_USDT](https://www.binance.com/en/trade/BNB_USDT)
-
-          *   [CoinMarketCap](https://coinmarketcap.com/currencies/tether/)
-
-          *   [CoinGecko](https://www.coingecko.com/en/coins/tether/)
-
-          *   [API](https://docs.etherscan.io/etherscan-v2/api-endpoints/tokens)
-
-          *   [Check previous token supply](https://bscscan.com/tokencheck-tool?t=0x55d398326f99059ff775485246999027b3197955)
-
-          *   Add Token to MetaMask (Web3)
-
-          *   [Update Name Tag or Label](https://bscscan.com/contactus?id=5&a=0x55d398326f99059ff775485246999027b3197955)
-
-          *   [Submit Burn Details](https://bscscan.com/contactus)
-
-          *   [Report/Flag Address](https://bscscan.com/contactus?id=6)
-
-
-          **Overview**
-
-
-          *   Max Total Supply: 6,284,993,699.505674 BSC-USD (CSupply: 6,283,379,633.856122)
-
-          *   Holders: 30,879,300 (0.166%)
-
-          *   Total Transfers: More than -1
-
-
-          **Market**
-
-
-          *   Price: $1.00 @ 0.001557 BNB (+0.01%)
-
-          *   Onchain Market Cap: $6,284,993,699.51
-
-          *   Circulating Supply Market Cap: $155,735,989,988.00
-
-
-          **Additional Market Data**
-
-
-          |                       |     |
-
-          | :-------------------- | :-: |
-
-          | Volume (24H)          | :   |
-
-          | Market Capitalization | :   |
-
-          | Circulating Supply    | :   |
-
-
-          *   Volume (24H): $46,464,167,538.00
-
-          *   Market Capitalization: $155,735,989,988.00
-
-          *   Circulating Supply: 155,719,756,689.00 BSC-USD
-
-          *   Market Data Source: [Coinmarketcap](https://coinmarketcap.com/)
-
-
-          **Transactions**
-
-
-          |   | Transaction Hash'
-direct_token_call:
-  input:
-    tool: get_erc20_token_details
-    tool_arguments:
-      chain: bsc
-      address: '0x55d398326f99059ff775485246999027b3197955'
-  output:
-    response: ''
-    data: *id002
-raw_data_only:
-  input:
-    query: Analyze transaction 0xabc123 on Arbitrum
-    raw_data_only: true
-  output:
-    response: ''
-    data:
-      status: success
-      data:
-        chain: arbitrum
-        txid: '0xabc123'
-        explorer_url: https://arbiscan.io/tx/0xabc123
-        processed_content: '**Transaction Details**
-
-
-          Oops! An invalid Txn hash has been entered: 0xabc123
-
-
-          **Invoked Transactions**
-
-
-          ADVANCED MODE:
-
-
-          |   | Type Trace Address | From |   | To | Value | Gas Limit |
-
-          | --- | --- | --- | --- | --- | --- | --- |
-
-          | AA Txn Hash | Method | Position | From | Internal Txns | Token Txns |
-          NFT Txns | Txn Fee (ETH) | Gas Limit |
-
-          | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-
-
-          **Transaction Receipt Event Logs**
-
-
-          Txn Batch Index:
-
-
-          L1 Fixed Cost:
-
-
-          L1 Calldata Paid:
-
-
-          L2 Computational Used:
-
-
-          L2 Computational Paid:
-
-
-          L2 Storage Used:
-
-
-          L2 Storage Paid:
-
-
-          Poster Fee:
-
-
-          Network Fee:
-
-
-          L1 Gas Used:
-
-
-          L2 Gas Used:
-
-
-          | Authority | Delegated Address | Nonce | Valid? | yParity | r | s |
-
-          | --- | --- | --- | --- | --- | --- | --- |'
-error_handling:
-  input:
-    tool: get_transaction_details
-    tool_arguments:
-      chain: unsupported_chain
-      txid: '0x123'
-  output:
-    response: ''
-    data:
-      error: 'Unsupported chain: unsupported_chain'
+        processed_content: "**Address:** [0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\n\
+          \n**Overview**\n\n*   **ETH Balance:** 1.142756836659239339 ETH\n*   **ETH\
+          \ Value:** $2,887.40 (@ $2,526.70/ETH)\n*   **Token Holdings Value:** $2.90\
+          \ (21 Tokens)\n\n**Token Holdings (ERC-20)**\n\n| Token Name | Symbol |\
+          \ Amount | Value | Price per Token |\n| :--------- | :----- | :----- | :----\
+          \ | :-------------- |\n| PREME Token | PREME | 1,008 | $2.89 | @0.0029 |\n\
+          | Black Agnus | FTW | 3,333,333 | $0.02 | @0.00 |\n| TRUMP MAGA | MAGA |\
+          \ 2,240 | $0.00 | - |\n| ERC-20: (NC-Eli...) | NC-Eligible (Verify: www.nodeco.in)\
+          \ | 8,162 | $0.00 | - |\n| ERC-20: ! EL... | TONCrypto.io | 229 | $0.00\
+          \ | - |\n| ERC-20: !SNX... | wSNX | 685 | $0.00 | - |\n| ERC-20: AI C...\
+          \ | AIC | 1 | $0.00 | - |\n| ERC-20: Ange... | Lettuce | 34,302,925.8 |\
+          \ $0.00 | - |\n| ERC-20: BMB | BMB | 0.89 | $0.00 | - |\n| ERC-20: Marv...\
+          \ | Marvin | 17,776 | $0.00 | - |\n\n**NFT Holdings**\n\n*   **SHIBAFAIR.\
+          \ ORG:** GVNO (ERC-1155)\n\n**More Info**\n\n*   **Transactions Sent:**\
+          \ Latest: [2 mins ago](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77),\
+          \ First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)\n\
+          *   **Funded By:** [0x5D47603902a8cadbf3337abbc6df8f67a251d821](https://etherscan.io/address/0x5d47603902a8cadbf3337abbc6df8f67a251d821)\
+          \ ([1 year 266 days ago](https://etherscan.io/tx/0x9209ecf6e32d4b32909fbf6193548b13129e60dfb11add01546ed799e235fe1a))\n\
+          \n**Multichain Info**\n\n*   **Multichain Portfolio Value:** $2,891.33 (across\
+          \ 35 Chains)\n*   **Chains with Holdings:**\n    *   [Ethereum](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073):\
+          \ $2,888 (100%)\n    *   [Base](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073):\
+          \ $3 (<1%)\n\n**Multichain Portfolio Details**\n\n| Chain | Token | Portfolio\
+          \ % | Price | Amount | Value |\n| :---- | :---- | :---------- | :---- |\
+          \ :----- | :---- |\n| [ETH](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | Ether (ETH) | 99.80% | $2,525.07 | 1.1428 | $2,885.54 |\n| [ETH](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [PREME Token (PREME)](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | 0.10% | $0.002865 | 1,008 | $2.89 |\n| [BASE](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [PREME Token (PREME)](https://basescan.org/token/0x8c62ac3b71db8c81a764b84ffbc2a8d0bad7f111?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | 0.10% | $0.002875 | 1,008 | $2.9 |\n\n**Transactions (Latest 25 of 33,021\
+          \ total)**\n\n| Transaction Hash | Method | Block | Age | From | To | Amount\
+          \ | Txn Fee |\n| :--------------- | :----- | :---- | :-- | :--- | :--- |\
+          \ :----- | :------ |\n| [0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77](https://etherscan.io/tx/0x6e2f5706b89edd1f3e28219edc37dcba2d6c12660d4787e995302bb98a946e77)\
+          \ | 0x122067ed | [22738593](https://etherscan.io/block/22738593) | 2 mins\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00223544 ETH |\n| [0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d](https://etherscan.io/tx/0x77f0b72e0f8769664dfea599c14a524d6023d7707a18aa36077cdeb010f85a8d)\
+          \ | 0x30a28ffc | [22738550](https://etherscan.io/block/22738550) | 11 mins\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00234611 ETH |\n| [0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)\
+          \ | 0x122067ed | [22738166](https://etherscan.io/block/22738166) | 1 hr\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00064685 ETH |\n| [0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2](https://etherscan.io/tx/0xcefa3e73b01f968167cf6a4d694c48fb90e0e235314c28d5714abdfbb11b45c2)\
+          \ | 0x30a28ffc | [22738012](https://etherscan.io/block/22738012) | 1 hr\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00112555 ETH |\n| [0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86](https://etherscan.io/tx/0xda56fa102f5fdab2d8ea3ac6c5f4b4717f4f9f032f3ad3775398cdae117c3d86)\
+          \ | 0x122067ed | [22737998](https://etherscan.io/block/22737998) | 2 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00131619 ETH |\n| [0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11](https://etherscan.io/tx/0x599e3b1a52e5f9b58ac7af6cc14981b26a82b8576f4ab780b1d194f44f8a7d11)\
+          \ | 0x30a28ffc | [22737751](https://etherscan.io/block/22737751) | 2 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00334247 ETH |\n| [0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c](https://etherscan.io/tx/0xfe8096a073c37d6305469362b7e37f0e9e684dfd64a34eefb2c36bc9a0ce261c)\
+          \ | 0x30a28ffc | [22737538](https://etherscan.io/block/22737538) | 3 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00104254 ETH |\n| [0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75](https://etherscan.io/tx/0x10ff564f4d9a56fede94427f55a5dc8fb059b48fb3afb037350730deabeafb75)\
+          \ | 0x30a28ffc | [22737437](https://etherscan.io/block/22737437) | 3 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00033231 ETH |\n| [0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587](https://etherscan.io/tx/0xab6f847cc9e59336e320a825e818c10692b9866618e0a82444b5509913d9e587)\
+          \ | 0x122067ed | [22737321](https://etherscan.io/block/22737321) | 4 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00248902 ETH |\n| [0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33](https://etherscan.io/tx/0xc5f722ccb359276680b47fd0512fcf5d6dba8108faecd28abfbdb0f04173ac33)\
+          \ | 0x30a28ffc | [22737293](https://etherscan.io/block/22737293) | 4 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00037498 ETH |\n| [0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927](https://etherscan.io/tx/0xec1a27bcde60200e834fcc4f63a3c11fa8b499796321b3d6d71684657f10d927)\
+          \ | 0x122067ed | [22737152](https://etherscan.io/block/22737152) | 4 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00055548 ETH |\n| [0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53](https://etherscan.io/tx/0xf0c9ad80490111fc34a79cf0971417715bffc405ccfcc79ae686605fc20d3a53)\
+          \ | 0x30a28ffc | [22737144](https://etherscan.io/block/22737144) | 4 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00893864 ETH |\n| [0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf](https://etherscan.io/tx/0x9c58a1627487c9b7736e68a7c93810504e457c0d0f222b11510c9e63da93ddcf)\
+          \ | 0x30a28ffc | [22736769](https://etherscan.io/block/22736769) | 6 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.0027041 ETH |\n| [0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e](https://etherscan.io/tx/0xa0c1e4d21ac9f935c5c3c4b8b479eaf967d096b2d3f9ccd35d317cb5df02321e)\
+          \ | 0x30a28ffc | [22736573](https://etherscan.io/block/22736573) | 6 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00085254 ETH |\n| [0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3](https://etherscan.io/tx/0x85d3433b6b5f6d5acefd01180a6120be171cae579bc26acb73ba5b53944fc2d3)\
+          \ | 0x122067ed | [22736507](https://etherscan.io/block/22736507) | 7 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00058007 ETH |\n| [0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c](https://etherscan.io/tx/0x48dede02f894f2c02c4347cfbf8193aa75ab4c52e07853c2cafce3cf18faa94c)\
+          \ | 0x122067ed | [22736457](https://etherscan.io/block/22736457) | 7 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00038489 ETH |\n| [0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269](https://etherscan.io/tx/0xe76d0b0ca19ecac3ff2815a40c5c8abcb69555760835f0d7081c01009ea51269)\
+          \ | 0x122067ed | [22736417](https://etherscan.io/block/22736417) | 7 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00354311 ETH |\n| [0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3](https://etherscan.io/tx/0x14e59dfbdbd9d92e9e569bfaefe20270244ddcc4e9fa085bb7904a9d68d6d6c3)\
+          \ | 0x122067ed | [22736405](https://etherscan.io/block/22736405) | 7 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00033393 ETH |\n| [0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10](https://etherscan.io/tx/0xb56c6b768777651528bce92693d782639471c6582b3865e246a921dafa448d10)\
+          \ | 0x122067ed | [22736397](https://etherscan.io/block/22736397) | 7 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00049211 ETH |\n| [0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced](https://etherscan.io/tx/0x1b4f5d2af9ce5ca536108cc8080aa468fa0aaa92b98657bc30e519546909dced)\
+          \ | 0x30a28ffc | [22736360](https://etherscan.io/block/22736360) | 7 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00031105 ETH |\n| [0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255](https://etherscan.io/tx/0xc1ed47b12f6bec2373743dc3f2c5c269fa1d631c569e045d655c3515f6636255)\
+          \ | 0x122067ed | [22736328](https://etherscan.io/block/22736328) | 7 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00064064 ETH |\n| [0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751](https://etherscan.io/tx/0xcb13a3c222ea0a5eba0c30c43b7bfad3f0c9e1a46952390ef37489483f401751)\
+          \ | 0x122067ed | [22736188](https://etherscan.io/block/22736188) | 8 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00241091 ETH |\n| [0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128](https://etherscan.io/tx/0xbef7008abd2456cb256022a17c29b4fe0d27671edc5bb27d0966e17281be5128)\
+          \ | 0x122067ed | [22736157](https://etherscan.io/block/22736157) | 8 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00096334 ETH |\n| [0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036](https://etherscan.io/tx/0xa0593fbcedf32e38d34552b51b6bcfe4d00ca9b714f855e51865ab8680b59036)\
+          \ | 0x122067ed | [22736138](https://etherscan.io/block/22736138) | 8 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00061178 ETH |\n| [0x08c3a0220f9ae461ee8a342598629fc38b71755bece162a100f0465e7ef23850](https://etherscan.io/tx/0x08c3a0220f9ae461ee8a342598629fc38b71755bece162a100f0465e7ef23850)\
+          \ | 0x30a28ffc | [22736130](https://etherscan.io/block/22736130) | 8 hrs\
+          \ ago | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | [0x51C72848...784502a7F](https://etherscan.io/address/0x51c72848c68a965f66fa7a88855f9f7784502a7f)\
+          \ | 0 ETH ($0.00) | 0.00209223 ETH |\n\n**Internal Transactions (Latest\
+          \ 1)**\n\n| Parent Transaction Hash | Method | Block | Age | From | To |\
+          \ Amount |\n| :---------------------- | :----- | :---- | :-- | :--- | :---\
+          \ | :----- |\n| [0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c](https://etherscan.io/tx/0xc3ec0b4f45c2b4d15b177356c19cc448cc7c94459fc408997ef4183edb62c47c)\
+          \ | Transfer | [22719123](https://etherscan.io/block/22719123) | 2 days\
+          \ ago | [Disperse.app](https://etherscan.io/address/0xd152f549545093347a162dce210e7293f1452150)\
+          \ | [0x2B25B37c...642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)\
+          \ | 0.05291609 ETH ($133.70) |"

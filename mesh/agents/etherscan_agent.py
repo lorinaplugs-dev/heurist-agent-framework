@@ -51,8 +51,8 @@ class EtherscanAgent(MeshAgent):
                     "Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC",
                 ],
                 "credits": 2,
-                "large_model_id": "google/gemini-2.0-flash-001",
-                "small_model_id": "google/gemini-2.0-flash-001",
+                "large_model_id": "google/gemini-2.5-flash",
+                "small_model_id": "google/gemini-2.5-flash",
             }
         )
 
@@ -98,7 +98,6 @@ class EtherscanAgent(MeshAgent):
                 api_key=self.heurist_api_key,
                 model_id=self.metadata["small_model_id"],
                 messages=messages,
-                max_tokens=15000,
                 temperature=0.1,
             )
 
@@ -219,9 +218,6 @@ class EtherscanAgent(MeshAgent):
             return {
                 "status": "success",
                 "data": {
-                    "chain": chain,
-                    "txid": txid,
-                    "explorer_url": url,
                     "processed_content": processed_content,
                 },
             }
