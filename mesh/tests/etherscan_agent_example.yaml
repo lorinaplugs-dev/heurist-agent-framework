@@ -1,261 +1,1575 @@
 natural_language_transaction:
   input:
-    query: analyze transaction pattern of https://basescan.org/address/0x4200000000000000000000000000000000000016
+    query: analyze transaction pattern of https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073
     raw_data_only: false
   output:
-    response: '**Contract Address**
-
-      [0x4200000000000000000000000000000000000016](https://basescan.org/address/0x4200000000000000000000000000000000000016)
-
-
-      **Contract Name:** Base: L2 To L1 Message Passer
-
-
-      **Source Code:** [Base: L2 To L1 Message Passer](https://base.org/)
+    response: '**Address:** [0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
 
       **Overview**
 
-      *ETH Balance:* 923,237.598628681487302582 ETH
+      - **ETH Balance:** 1.147338392680977545 ETH
 
-      *ETH Value:* $2,317,949,303.96 (@ $2,510.67/ETH)
+      - **ETH Value:** $2,910.16 (@ $2,536.44/ETH)
 
-      *Token Holdings:* >$0.10 (>116 Tokens)
-
-
-      **ERC-20 Tokens (>100)**
+      - **Token Holdings:** $2.90 (21 Tokens)
 
 
-      *   [Rigo Token (GRG)](https://basescan.org/token/0x09188484e1ab980daef53a9755241d759c5b7d60?a=0x4200000000000000000000000000000000000016):
-      0.1 GRG, $0.08 @0.781
+      **ERC-20 Tokens (16)**
 
-      *   [Sekuya (SKYA)](https://basescan.org/token/0x623cD3a3EdF080057892aaF8D773Bbb7A5C9b6e9?a=0x4200000000000000000000000000000000000016):
-      1.722 SKYA, $0.01 @0.0047
 
-      *   [Wrapped ETHO (ETHO)](https://basescan.'
+      | Token                                                                                                               |
+      Balance             | Value   |
+
+      | -------------------------------------------------------------------------------------------------------------------
+      | ------------------- | ------- |
+
+      | [PREME Token](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
+      | 1,008 PREME         | $2.89   |
+
+      | [Black Agnus (FTW)](https://etherscan.io/token/0x306fD3e7b169Aa4ee19412323e1a5995B8c1a1f4?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)   |
+      3,333,333 FTW       | $0.02   |
+
+      | [TRUMP MAGA (MAGA)](https://etherscan.io/token/0xf211B655431c10E72C1CAeae37688Ae9f7F7A549?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)     |
+      2,240 MAGA          | $0.00   |
+
+      | [NC-Eligible](https://etherscan.io/token/0x8811249e0af51bfffca2a1148d7d6f819043e7c3?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)        |
+      8,162 NC-Eligible   | $0.00   |
+
+      | [TONCrypto.io](https://etherscan.io/token/0xcf59cc4af0a590ad19640e9d1ec93eb5a2302338?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)         |
+      229 TONCrypto.io    | $0.00   |
+
+      | [wSNX](https://etherscan.io/token/0xE754F5FC5d43C11C48F1554aEb56EF948eB7b149?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)              |
+      685 wSNX            | $0.00   |
+
+      | [AIC](https://etherscan.io/token/0x8e27f5bf0eb69faf8bce5cf54e2ca0bfa9db5313?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)                |
+      1 AIC               | $0.00   |
+
+      | [Lettuce](https://etherscan.io/token/0xb0ba9217b1b0c4d63c3a6cc0b08c8264ba367fc7?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)            |
+      34,302,925.8 Lettuce | $0.00   |
+
+      | [BMB](https://etherscan.io/token/0x9447dd95f576fdf6ed8219fff45bd1362430b787?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)                |
+      0.89 BMB            | $0.00   |
+
+      | [Marvin](https://etherscan.io/token/0x85bEA4eE627B795A79583FcedE229E198aa57055?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)              |
+      17,776 Marvin       | $0.00   |
+
+
+      **NFT Tokens (5)**
+
+
+      | Token                                                                                                              |
+
+      | ------------------------------------------------------------------------------------------------------------------
+      |
+
+      | [GVNO](https://etherscan.io/token/0x978cf0730c0432da310023eeb5614b96b6f8c72f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
+      |
+
+
+      **More Info**
+
+      - **Transactions Sent:** Latest: [1 hr ago](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)
+      First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)
+
+      - **Funded By:** [0x5D476039...7a251d821](https://etherscan.io/address/0x5d47603902a8cadbf3337abbc6df8f67a251d821)
+      [1 year 266 days ago](https://etherscan.io/tx/0x9209ecf6e32d4b32909fbf6193548b13129e60dfb11add01546ed799e235fe1a)
+
+
+      **Multichain Info**
+
+      - **Multichain Portfolio:** [$2,915.94](javascript:;)
+
+      - **BaseScan:** [$3](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
+
+      - **Blockscan:** [View All](https://blockscan.com/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)'
     data:
       status: success
       data:
-        chain: base
-        address: '0x4200000000000000000000000000000000000016'
-        explorer_url: https://basescan.org/address/0x4200000000000000000000000000000000000016
+        chain: ethereum
+        address: '0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073'
+        explorer_url: https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073
         processed_content: '```
 
-          **Contract Address**
-
-          [0x4200000000000000000000000000000000000016](https://basescan.org/address/0x4200000000000000000000000000000000000016)
-
-
-          **Contract Name:** Base: L2 To L1 Message Passer
-
-
-          **Source Code:** [Base: L2 To L1 Message Passer](https://base.org/)
+          **Address:** [0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073](https://etherscan.io/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
 
           **Overview**
 
-          *ETH Balance:* 923,237.598628681487302582 ETH
+          - **ETH Balance:** 1.147338392680977545 ETH
 
-          *ETH Value:* $2,317,949,303.96 (@ $2,510.67/ETH)
+          - **ETH Value:** $2,910.16 (@ $2,536.44/ETH)
 
-          *Token Holdings:* >$0.10 (>116 Tokens)
+          - **Token Holdings:** $2.90 (21 Tokens)
 
 
-          **ERC-20 Tokens (>100)**
+          **ERC-20 Tokens (16)**
 
 
-          *   [Rigo Token (GRG)](https://basescan.org/token/0x09188484e1ab980daef53a9755241d759c5b7d60?a=0x4200000000000000000000000000000000000016):
-          0.1 GRG, $0.08 @0.781
+          - **PREME Token:** 1,008 PREME ($2.89 @0.0029) - [0x7d0c49057c09501595a8ce23b773bb36a40b521f](https://etherscan.io/token/0x7d0c49057c09501595a8ce23b773bb36a40b521f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [Sekuya (SKYA)](https://basescan.org/token/0x623cD3a3EdF080057892aaF8D773Bbb7A5C9b6e9?a=0x4200000000000000000000000000000000000016):
-          1.722 SKYA, $0.01 @0.0047
+          - **Black Agnus (FTW):** 3,333,333 FTW ($0.02 @0.00) - [0x306fD3e7b169Aa4ee19412323e1a5995B8c1a1f4](https://etherscan.io/token/0x306fD3e7b169Aa4ee19412323e1a5995B8c1a1f4?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [Wrapped ETHO (ETHO)](https://basescan.org/token/0x8b52F46A52D86C131222EE14167Da6a847bdB84a?a=0x4200000000000000000000000000000000000016):
-          11 ETHO, $0.01 @0.001
+          - **TRUMP MAGA (MAGA):** 2,240 MAGA ($0.00) - [0xf211B655431c10E72C1CAeae37688Ae9f7F7A549](https://etherscan.io/token/0xf211B655431c10E72C1CAeae37688Ae9f7F7A549?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [Wild Goat Coin](https://basescan.org/token/0xfb18511f1590a494360069f3640c27d55c2b5290?a=0x4200000000000000000000000000000000000016):
-          200 WGC, $0.01 @0.00
+          - **NC-Eligible (Verify: www.nodeco.in):** 8,162 NC-Eligible ($0.00) - [0x8811249e0af51bfffca2a1148d7d6f819043e7c3](https://etherscan.io/token/0x8811249e0af51bfffca2a1148d7d6f819043e7c3?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [BASED USA](https://basescan.org/token/0xb56d0839998fd79efcd15c27cf966250aa58d6d3?a=0x4200000000000000000000000000000000000016):
-          1 USA, $0.00 @0.0002
+          - **TONCrypto.io:** 229 TONCrypto.io ($0.00) - [0xcf59cc4af0a590ad19640e9d1ec93eb5a2302338](https://etherscan.io/token/0xcf59cc4af0a590ad19640e9d1ec93eb5a2302338?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [kurbi](https://basescan.org/token/0x653A143B8d15C565C6623D1F168cFbeC1056D872?a=0x4200000000000000000000000000000000000016):
-          0.1 kurbi, $0.00 @0.0003
+          - **wSNX:** 685 wSNX ($0.00) - [0xE754F5FC5d43C11C48F1554aEb56EF948eB7b149](https://etherscan.io/token/0xE754F5FC5d43C11C48F1554aEb56EF948eB7b149?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [Onchain Summer](https://basescan.org/token/0xf7cCB8a6e3400eB8Eb0c47619134f7516E025215?a=0x4200000000000000000000000000000000000016):
-          0.9 SUMMER, $0.00 @0.00
+          - **AIC:** 1 AIC ($0.00) - [0x8e27f5bf0eb69faf8bce5cf54e2ca0bfa9db5313](https://etherscan.io/token/0x8e27f5bf0eb69faf8bce5cf54e2ca0bfa9db5313?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [ERC-20: Aave... (aave-f...)](https://basescan.org/token/0xF53897FC88A4C2963dB479aB70C086c85005C9f8?a=0x4200000000000000000000000000000000000016):
-          100 aave-foundation.com
+          - **Lettuce:** 34,302,925.8 Lettuce ($0.00) - [0xb0ba9217b1b0c4d63c3a6cc0b08c8264ba367fc7](https://etherscan.io/token/0xb0ba9217b1b0c4d63c3a6cc0b08c8264ba367fc7?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [ERC-20: Anth... (ANTHRA...)](https://basescan.org/token/0x904efbbaab6cf3e4499968af1b68aa54d5b586df?a=0x4200000000000000000000000000000000000016):
-          4,030 ANTHRAX
+          - **BMB:** 0.89 BMB ($0.00) - [0x9447dd95f576fdf6ed8219fff45bd1362430b787](https://etherscan.io/token/0x9447dd95f576fdf6ed8219fff45bd1362430b787?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [ERC-20: Auri... (AUR)](https://basescan.org/token/0x54d2f3a37a926fb60a67c20a9658b786b0c9a6bc?a=0x4200000000000000000000000000000000000016):
-          768,888.01304876 AUR
+          - **Marvin:** 17,776 Marvin ($0.00) - [0x85bEA4eE627B795A79583FcedE229E198aa57055](https://etherscan.io/token/0x85bEA4eE627B795A79583FcedE229E198aa57055?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
 
-          *   [ERC-20: Bake... (BAKED)](https://basescan.org/token/0x4bf277EfC0937E5C7c0A5f29199C192CF873A28E?a=0x4200000000000000000000000000000000000016):
-          747,464.67160456 BAKED
 
-          *   [ERC-20: Base (BASE)](https://basescan.org/token/0x8f6286e5ad1ee2a89c31f080ad0db4902a84dade?a=0x4200000000000000000000000000000000000016):
-          99,063,829,787,234 BASE
+          **NFT Tokens (5)**
 
-          *   [ERC-20: BASE... (BLOWN)](https://basescan.org/token/0x749d57006a1ff4f7ff8cd0a238525b08d85ece33?a=0x4200000000000000000000000000000000000016):
-          77.6942069 BLOWN
-
-          *   [ERC-20: BASE... (BASELO...)](https://basescan.org/token/0xc088797eaee27e0b1b80cd0ccc02b5792182ba6d?a=0x4200000000000000000000000000000000000016):
-          4,000 BASELOL
-
-          *   [ERC-20: base... (COIN w...)](https://basescan.org/token/0x9494ccaec7b3be19f80dedca5dbb444801331a25?a=0x4200000000000000000000000000000000000016):
-          20,000 COIN www.baseweb.io
-
-          *   [ERC-20: Bask... (BSKT)](https://basescan.org/token/0x8d1826a44b63f2c598955611cc3ae0c270bab62a?a=0x4200000000000000000000000000000000000016):
-          443,337.12510685 BSKT
-
-          *   [ERC-20: Bitc... (GOD)](https://basescan.org/token/0xb24d0c08e0596b50f0bfc6715e3f1e0fbcbaedea?a=0x4200000000000000000000000000000000000016):
-          384,954.2934674 GOD
-
-          *   [ERC-20: Bits... (BITSHI...)](https://basescan.org/token/0x71A3927B3558e4a7d26cA94CC3b7A55f5c0f5C9C?a=0x4200000000000000000000000000000000000016):
-          89,111.7822 BITSHIT
-
-          *   [ERC-20: Blep... (BLEP)](https://basescan.org/token/0xc438b0c0e80a8fa1b36898d1b36a3fc2ec371c54?a=0x4200000000000000000000000000000000000016):
-          10 BLEP
-
-          *   [ERC-20: Blue... (BMEW)](https://basescan.org/token/0x04e7df4c0e131c6d0d4a3a0d19a5b987ceb02eb6?a=0x4200000000000000000000000000000000000016):
-          1,337 BMEW
-
-          *   [ERC-20: BLUM (BLUM)](https://basescan.org/token/0x05f9d833179b873a018899785f857508c83682b9?a=0x4200000000000000000000000000000000000016):
-          1 BLUM
-
-          *   [ERC-20: Brai... (BWORM)](https://basescan.org/token/0x506BEb7965FC7053059006c7ab4C62c02C2D989F?a=0x4200000000000000000000000000000000000016):
-          0.0011 BWORM
-
-          *   [ERC-20: Brog... (BROGE)](https://basescan.org/token/0xe8E55A847Bb446d967ef92F4580162fb8f2d3F38?a=0x4200000000000000000000000000000000000016):
-          10,000 BROGE
-
-          *   [ERC-20: BS10... (BS109)](https://basescan.org/token/0x1a7020142bb38d8385c78e38cb2468e2832b0fca?a=0x4200000000000000000000000000000000000016):
-          1.11111111 BS109
-
-          *   [ERC-20: BS3A... (BS3A0)](https://basescan.org/token/0x8e19db87541a253fafad7ea0ad34aff3d5243bf7?a=0x4200000000000000000000000000000000000016):
-          0.00011111 BS3A0
-
-          *   [ERC-20: BS3A... (BS3A1)](https://basescan.org/token/0x45289251743324655492ee4d09b7e6ef895f96d6?a=0x4200000000000000000000000000000000000016):
-          0.00001111 BS3A1
-
-          *   [ERC-20: BS3A... (BS3A3)](https://basescan.org/token/0x44d0a88a7995d1d7528003c5a470afdcb3cf1fd3?a=0x4200000000000000000000000000000000000016):
-          0.00001111 BS3A3
-
-          *   [ERC-20: BS3A... (BS3A4)](https://basescan.org/token/0x37d2cc5f04099a779fec1b0da79e0d53f3fc1870?a=0x4200000000000000000000000000000000000016):
-          0.00011111 BS3A4
-
-          *   [ERC-20: BS3A... (BS3A6)](https://basescan.org/token/0xb22e54f69dc63fcc683426efeb4a77a025c754f6?a=0x4200000000000000000000000000000000000016):
-          0.00111111 BS3A6
-
-          *   [ERC-20: BS70 (BS70)](https://basescan.org/token/0x616b4cf01db1bf895fbc51cc477d257c172adb0e?a=0x4200000000000000000000000000000000000016):
-          0.00001111 BS70
-
-          *   [ERC-20: BS72 (BS72)](https://basescan.org/token/0x2ea23b476df871b135ead08eccdd434c0824bbc5?a=0x4200000000000000000000000000000000000016):
-          0.00011111 BS72
-
-          *   [Bsop](https://basescan.org/token/0x9704d2adbc02c085ff526a37ac64872027ac8a50?a=0x4200000000000000000000000000000000000016):
-          13,938 Bsop
-
-          *   [ERC-20: Bull... (BOE)](https://basescan.org/token/0xa775a7c5a388d018c86040b19a787fd8267d7f81?a=0x4200000000000000000000000000000000000016):
-          279,964.81398707 BOE
-
-          *   [ERC-20: BURR... (BURRRD)](https://basescan.org/token/0x7a01776c480620dbb1a261cd3d6add61c821e603?a=0x4200000000000000000000000000000000000016):
-          35,806,688.2787231 BURRRD
-
-          *   [ERC-20: CSR (CSR)](https://basescan.org/token/0x3621f62bb43bc131bb22867fddf41a021d4c6ea0?a=0x4200000000000000000000000000000000000016):
-          360,377.98714356 CSR
-
-          *   [ERC-20: DAWK... (DAW)](https://basescan.org/token/0x01057310a9796C34E45616B0F0F2E038ef048d26?a=0x4200000000000000000000000000000000000016):
-          201,170.71827324 DAW
-
-          *   [ERC-20: debr... (Acces ...)](https://basescan.org/token/0x3b6634541c63903b84385ec792909c1adc76d716?a=0x4200000000000000000000000000000000000016):
-          1 Acces debridgether.com
-
-          *   [ERC-20: Dege... (DEGEN)](https://basescan.org/token/0x424a25819f494948ff9489c203f0f9a8f0382ad3?a=0x4200000000000000000000000000000000000016):
-          173,117.97302705 DEGEN
-
-          *   [ERC-20: DexM... (DXM)](https://basescan.org/token/0x542390b6312ae36ce9186a77122cb3797b608a99?a=0x4200000000000000000000000000000000000016):
-          1 DXM
-
-          *   [ERC-20: Digi... (XDB)](https://basescan.org/token/0x8d622b5ba06df4f75a180fae84d18e0ce1e2072b?a=0x4200000000000000000000000000000000000016):
-          36,547.22924156 XDB
-
-          *   [ERC-20: Dimo... (DMN)](https://basescan.org/token/0x284A081009F2174b83e62fD2b59aC37A8e496b91?a=0x4200000000000000000000000000000000000016):
-          0.05 DMN
-
-          *   [ERC-20: DOGA... (DOGAI)](https://basescan.org/token/0x460CF9dFD0C53494BaaF639a3431A04355ee6D41?a=0x4200000000000000000000000000000000000016):
-          364,809.47928436 DOGAI
-
-          *   [ERC-20: FLOO... (FLS)](https://basescan.org/token/0xe1e0a83ae40cb5e20a6f45d927dbfd7172608644?a=0x4200000000000000000000000000000000000016):
-          197,429.33569762 FLS
-
-          *   [ERC-20: Flux... (FLUXB)](https://basescan.org/token/0x8285e0e1d96c8b1fc4079cfeaf5c4219caa954e0?a=0x4200000000000000000000000000000000000016):
-          595,483.33952143 FLUXB
-
-          *   [ERC-20: Fred (FRED)](https://basescan.org/token/0x8d81b3ad7f6fa7086ac2e990a362ec92e70db53c?a=0x4200000000000000000000000000000000000016):
-          0.000001 FRED
-
-          *   [ERC-20: GPTP... (GPTPLU...)](https://basescan.org/token/0xe58C9e683f7bb0Ca266773a8f2411aE32D0a9BC5?a=0x4200000000000000000000000000000000000016):
-          90,649.61221036 GPTPLUS
-
-          *   [ERC-20: Hebe... (HBT)](https://basescan.org/token/0x102b3FE21f32b3A096ebF2Ea17015EF3eF282Db9?a=0x4200000000000000000000000000000000000016):
-          370,603.39836588 HBT
-
-          *   [ERC-20: Home... (HOME)](https://basescan.org/token/0x7727a1602987C9972D721A3be437FEabAF453c46?a=0x4200000000000000000000000000000000000016):
-          3,950,000,000 HOME
-
-          *   [ERC-20: Juic... (JBX)](https://basescan.org/token/0x72676415FA856Bb828A804a62c8b3374b815130b?a=0x4200000000000000000000000000000000000016):
-          149,614.15311021 JBX
-
-          *   [ERC-20: KSCE... (HOLO)](https://basescan.org/token/0xd14c5f3147b4031943d5d500f385d2e476d3e90c?a=0x4200000000000000000000000000000000000016):
-          13 HOLO
-
-          *   [ERC-20: Lega... (ICHI)](https://basescan.org/token/0x5A623FF905264b46F68B58092EF9f80459A9f25F?a=0x4200000000000000000000000000000000000016):
-          264,594.63824299 ICHI
-
-          *   [ERC-20: Limo... (LMCSWA...)](https://basescan.org/token/0x41bc94db7cd0170c72fccd0a974e8cff0db6e6e5?a=0x4200000000000000000000000000000000000016):
-          203,873.83006806 LMCSWAP
-
-          *   [ERC-20: Lite... (LTCB)](https://basescan.org/token/0x479f76ab2c432984b59fa1b3425dacff2e2f4023?a=0x4200000000000000000000000000000000000016):
-          990 LTCB
-
-          *   [ERC-20: Lush... (LUSH)](https://basescan.org/token/0xcd533362aa2c34ab5f37646a9c93a3b2efcfd162?a=0x4200000000000000000000000000000000000016):
-          859,316.4951547 LUSH
-
-          *   [ERC-20: Mimo... (MIMO)](https://basescan.org/token/0xfB5A739C28fBeA1704d7e1B672F9f9f71f6Ca3AA?a=0x4200000000000000000000000000000000000016):
-          358,447.39639005 MIMO
-
-          *   [ERC-20: Mini... (MINIMO...)](https://basescan.org/token/0x60e3dd2fe7148e825cb5fed1df061deb575ff11e?a=0x4200000000000000000000000000000000000016):
-          1,415,485 MINIMOCHI
-
-          *   [ERC-20: Myth... (MYTH)](https://basescan.org/token/0x422692b7902ffca8796ed2299da68cb3f7c6e006?a=0x4200000000000000000000000000000000000016):
-          2,429.59634974 MYTH
-
-          *   [ERC-20: neob... (neob00)](https://basescan.org/token/0x54ac6dc3629baa4e5199a6884563ec5405ec585b?a=0x4200000000000000000000000000000000000016):
-          0 neob00
-
-          *   [ERC-20: Neph... (NOB)](https://basescan.org/token/0xdC0120B6b088EEfE1B178f880ae175B3ddfeF72c?a=0x4200000000000000000000000000000000000016):
-          2,000 NOB
-
-          *   [ERC-20: New ... (NSC)](https://basescan.org/token/0xD0349c25484009902AA8f1a7285eca916F35fB6c?a=0x4200000000000000000000000000000000000016):
-          39,000 NSC
-
-          *   [ERC-20: Nunu (NUNU)](https://basescan.org/token/0x5dE1175ddC02e47d44831B54a1bADf833e44809a?a=0x4200000000000000000000000000000000000016):
-          9.4201337 NUNU
-
-          *   [ERC-20: Pook... (BEAR)](https://basescan.org/token/0x0e2e2ed5abb75ac7f3b5223ce69d3c85a86d094d?a=0x4200000000000000000000000000000000000016):
-          13 BEAR
-
-          *   [ERC-20: Popo (POPO)](https://basescan.org/token/0x51321dd71ddd959661d3b73a02843844de7fec0a?a=0x4200000000000000000000000000000000000016):
-          362,306.12242621 POPO
-
-          *   [ERC-20: Rabi (RABI)](https://basescan.org/token/0xc6ffdd60ae479ad6e117a8cbfedde2139f08dcba?a=0x4200000000000000000000000000000000000016):
-          797,529.24540435 RABI
-
-          *   [ERC-20: Rosc... (CATGUY)](https://basescan.org/token/0xA8bdbE2b4Da52213e9503CA8BD40A1D85994b35F?a=0x4200000000000000000000000000000000000016):
-          148,525.73316'
-  raw_data: ''
+
+          - **GVNO:** SHIBAFAIR. ORG GVNO (ERC-1155) - [0x978cf0730c0432da310023eeb5614b96b6f8c72f](https://etherscan.io/token/0x978cf0730c0432da310023eeb5614b96b6f8c72f?a=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
+
+
+          **More Info**
+
+          - **Private Name Tags:** [Add](https://etherscan.io/login?msg=NeedLogin&ref=address&ret=0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
+
+          - **Transactions Sent:** Latest: [1 hr ago](https://etherscan.io/tx/0x3a9fbe412cd373db88f504e99d2560d2f0e21c76529ed5d7cc3eb4d91d650013)
+          First: [1 year 266 days ago](https://etherscan.io/tx/0xce014ef2a02ebc0dd1545f8a2a6dac79756734785f81adb81cd1ab7c0be308f0)
+
+          - **Funded By:** [0x5D476039...7a251d821](https://etherscan.io/address/0x5d47603902a8cadbf3337abbc6df8f67a251d821)
+          [1 year 266 days ago](https://etherscan.io/tx/0x9209ecf6e32d4b32909fbf6193548b13129e60dfb11add01546ed799e235fe1a)
+
+
+          **Multichain Info**
+
+          - **Multichain Portfolio:** [$2,915.94](javascript:;)
+
+          - **BaseScan:** [$3](https://basescan.org/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
+
+          - **Blockscan:** [View All](https://blockscan.com/address/0x2B25B37c683F042E9Ae1877bc59A1Bb642Eb1073)
+
+
+          **Latest Transactions**
+
+
+          | Transaction Hash                                                                                                                               |
+          Method     | Block    | Age       | From'
+direct_transaction_call:
+  input:
+    tool: get_transaction_details
+    tool_arguments:
+      chain: ethereum
+      txid: '0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd'
+  output:
+    response: ''
+    data:
+      status: success
+      data:
+        chain: ethereum
+        txid: '0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd'
+        explorer_url: https://etherscan.io/tx/0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd
+        processed_content: "```\n**Transaction Details**\n\n*   MEV Transaction: [EigenPhi](https://etherscan.io/txs/label/eigenphi)\n\
+          *   Transaction Action: [Swap](https://etherscan.io/dex/uniswapv2/0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
+          \ 0.026 ($65.90) ETH for 892.16 M[MONKEYS](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\
+          \ on Uniswap V2\n*   Transaction Hash: `0xd8a484a402a4373221288fed84e9025ed48eba2a45a7294c19289f740ca00fcd`\n\
+          *   Status: Success\n*   Block: [22207195](https://etherscan.io/block/22207195)\
+          \ (531304 Block Confirmations)\n*   Timestamp: 74 days ago (Apr-06-2025\
+          \ 03:29:47 AM UTC) Confirmed within 8 secs\n*   From: [0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E](https://etherscan.io/address/0x01eEbDB7F6855f1DdFD38C1131d67E8Ed462eC5E)\n\
+          *   To: [0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af](https://etherscan.io/address/0x66a9893cC07D91D95644AEDD05D03f95e1dBA8Af)\
+          \ (Uniswap V4: Universal Router)\n\n**Internal Transactions**\n\n*   Transfer\
+          \ 0.026 ETH ($65.90) From [Uniswap V4: Universal Router](https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ To [Wrapped Ether](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
+          \    *   [0x01eEbDB7...Ed462eC5E](https://etherscan.io/token/ETH?a=0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\
+          \ sent 0.026 ETH ($65.90)\n    *   [Wrapped Ether](https://etherscan.io/token/ETH?a=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\
+          \ received 0.026 ETH ($65.90)\n\n**ERC-20 Tokens Transferred: 4**\n\n* \
+          \  From [Uniswap V4: Universal Router](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ To [0xdF30850e...D86F34787](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
+          \ For 0.026 ($65.90) [Wrapped Ether (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
+          *   From [0xdF30850e...D86F34787](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
+          \ To [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ For 892,155,118.330137431 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          *   From [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ To [Uniswap: Fee Collector](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x000000fee13a103a10d593b9ae06b3e05f2e7e1c)\
+          \ For 2,230,387.795825343 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          *   From [Uniswap V4: Universal Router](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ To [0x01eEbDB7...Ed462eC5E](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\
+          \ For 889,924,730.534312088 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          \    *   [0x01eEbDB7...Ed462eC5E](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x01eebdb7f6855f1ddfd38c1131d67e8ed462ec5e)\
+          \ received 889,924,730.534312088 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          \    *   [Uniswap V4: Universal Router](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0x66a9893cc07d91d95644aedd05d03f95e1dba8af)\
+          \ sent 0.026 ($65.90) [Wrapped Ether (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
+          \    *   [0xdF30850e...D86F34787](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
+          \ received 0.026 ($65.90) [Wrapped Ether (WETH)](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)\n\
+          \    *   [0xdF30850e...D86F34787](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0xdf30850e09e33f07ba82e893dc7b2eed86f34787)\
+          \ sent 892,155,118.330137431 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          \    *   [Uniswap: Fee Collector](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508?a=0x000000fee13a103a10d593b9ae06b3e05f2e7e1c)\
+          \ received 2,230,387.795825343 [ERC-20: Monkeys (MONKEY...)](https://etherscan.io/token/0x8728b4190a048ee2236f21e8288f7dda8fcf7508)\n\
+          \n**Transaction Details (cont.)**\n\n*   Value: 0.026 ETH ($65.90)\n*  \
+          \ Transaction Fee: 0.00047794244038612 ETH ($1.21)\n*   Gas Price: 2.42311484\
+          \ Gwei (0.00000000242311484 ETH)\n*   Ether Price: $1,579.65 / ETH\n*  \
+          \ Gas Limit & Usage by Txn: 279,361 | 197,243 (70.61%)\n*   Gas Fees: Base:\
+          \ 0.42311484 Gwei | Max: 2.506431645 Gwei | Max Priority: 2 Gwei\n*   Burnt\
+          \ & Txn Savings Fees: \U0001F525 Burnt: 0.00008345644038612 ETH ($0.21)\
+          \ \U0001F4B8 Txn Savings: 0.000016433656568615 ETH ($0.04)\n*   Txn Type:\
+          \ 2 (EIP-1559)\n*   Nonce: 844\n*   Position In Block: 5\n\n**Input Data**\n\
+          \n*   `0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000067f1fc2500000000000000000000000000000000000000000000000000000000000000040b080604000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000005c5edcbc29000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000005c5edcbc290000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf7508000000000000000000000000000000fee13a103a10d593b9ae06b3e05f2e7e1c000000000000000000000000000000000000000000000000000000000000001900000000000000000000000000000000000000000000000000000000000000600000000000000000000000008728b4190a048ee2236f21e8288f7dda8fcf750800000000000000000000000001eebdb7f6855f1ddfd38c1131d67e8ed462ec5e0000000000000000000000000000000000000000000000000c59a485d6251fd50c`\n\
+          \n**Internal Transaction Details (Advanced Mode)**\n\n| Type        | Trace\
+          \ Address | Method   | From                                            \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                                                      \
+          \                                   \n| AA Txn Hash | Method  | Position\
+          \ | From"
+natural_language_address:
+  input:
+    query: Get address history for 0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B on Base
+    raw_data_only: false
+  output:
+    response: "**Address**\n[0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B](https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
+      \n**Overview**\n*   ETH Balance: 0 ETH\n*   ETH Value: $0.00\n\n**More Info**\n\
+      *   Private Name Tags: [Add](https://basescan.org/login?msg=NeedLogin&ref=address&ret=0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
+      *   Transactions Sent:\n    *   Latest: N/A\n    *   First: N/A\n*   Funded\
+      \ By: N/A\n\n**Multichain Info**\n*   [$0 (Multichain Portfolio)](javascript:;)\n\
+      *   No addresses found\n\n**Transactions**\n\nThere are no matching entries.\n\
+      \n**Internal Transactions**\n\nNo internal transactions found.\n\n**Solidity\
+      \ Compiler**\n\n*   Contract Name: 0 ETH\n*   Compiler Version: 0\n*   Optimization\
+      \ Enabled: 0 ETH\n*   Other Settings: -NA-\n\n**Blocks Produced**\n\nNo blocks\
+      \ produced.\n\n**Uncles**\n\nNo uncles found.\n\n**Validator Withdrawals**\n\
+      \nNo withdrawals found.\n\n**Deposits**\n\nNo deposits found.\n\n**Multichain\
+      \ Portfolio | 35 Chains**\n\n*   Last updated: less than 1 sec ago\n\n| Chain\
+      \           | Token | Portfolio % | Price | Amount | Value |\n| ---------------\
+      \ | ----- | ------------- | ----- | ------ | ----- |\n| Ethereum (0)    |  \
+      \     | 0 (0%)        |       |        |       |\n| BNB Chain (0)   |      \
+      \ | 0 (0%)        |       |        |       |\n| Polygon (0)     |       | 0\
+      \ (0%)        |       |        |       |\n| Arbitrum One (0)|       | 0 (0%)\
+      \        |       |        |       |\n| Optimism (0)    |       | 0 (0%)    \
+      \    |       |        |       |\n| Base (0)        |       | 0 (0%)        |\
+      \       |        |       |\n| BTTC (0)        |       | 0 (0%)        |    \
+      \   |        |       |\n| Celo (0)        |       | 0 (0%)        |       |\
+      \        |       |\n| Gnosis (0)      |       | 0 (0%)        |       |    \
+      \    |       |\n| Polygon zkEVM (0) |       | 0 (0%)        |       |      \
+      \  |       |\n| Linea (0)       |       | 0 (0%)        |       |        | \
+      \      |\n| Moonbeam (0)    |       | 0 (0%)        |       |        |     \
+      \  |\n| Moonriver (0)   |       | 0 (0%)        |       |        |       |\n\
+      | Arbitrum Nova (0) |       | 0 (0%)        |       |        |       |\n| Scroll\
+      \ (0)      |       | 0 (0%)        |       |        |       |\n| Wemix (0) \
+      \      |       | 0 (0%)        |       |        |       |\n| Avax C-Chain (0)|\
+      \       | 0 (0%)        |       |        |       |\n| zkSync Era (0)  |    \
+      \   | 0 (0%)        |       |        |       |\n| opBNB (0)       |       |\
+      \ 0 (0%)        |       |        |       |\n| Fraxtal (0)     |       | 0 (0%)\
+      \        |       |        |       |\n| Blast (0)       |       | 0 (0%)    \
+      \    |       |        |       |\n| Cronos (0)      |       | 0 (0%)        |\
+      \       |        |       |\n| Mantle (0)      |       | 0 (0%)        |    \
+      \   |        |       |\n| Taiko (0)       |       | 0 (0%)        |       |\
+      \        |       |\n| Xai (0)         |       | 0 (0%)        |       |    \
+      \    |       |\n| World (0)       |       | 0 (0%)        |       |        |\
+      \       |\n| Xdc (0)         |       | 0 (0%)        |       |        |    \
+      \   |\n| Ape (0)         |       | 0 (0%)        |       |        |       |\n\
+      | Sophon (0)      |       | 0 (0%)        |       |        |       |\n| Unichain\
+      \ (0)    |       | 0 (0%)        |       |        |       |\n| Berachain (0)\
+      \   |       | 0 (0%)        |       |        |       |\n| MemeCoreChain (0)\
+      \ |       | 0 (0%)        |       |        |       |\n| Swellchain (0)  |  \
+      \     | 0 (0%)        |       |        |       |\n| Sonic (0)       |      \
+      \ | 0 (0%)        |       |        |       |\n| Abstract (0)    |       | 0\
+      \ (0%)        |       |        |       |"
+    data: &id001
+      status: success
+      data:
+        chain: base
+        address: '0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B'
+        explorer_url: https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B
+        processed_content: "**Address**\n[0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B](https://basescan.org/address/0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
+          \n**Overview**\n*   ETH Balance: 0 ETH\n*   ETH Value: $0.00\n\n**More Info**\n\
+          *   Private Name Tags: [Add](https://basescan.org/login?msg=NeedLogin&ref=address&ret=0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B)\n\
+          *   Transactions Sent:\n    *   Latest: N/A\n    *   First: N/A\n*   Funded\
+          \ By: N/A\n\n**Multichain Info**\n*   [$0 (Multichain Portfolio)](javascript:;)\n\
+          *   No addresses found\n\n**Transactions**\n\nThere are no matching entries.\n\
+          \n**Internal Transactions**\n\nNo internal transactions found.\n\n**Solidity\
+          \ Compiler**\n\n*   Contract Name: 0 ETH\n*   Compiler Version: 0\n*   Optimization\
+          \ Enabled: 0 ETH\n*   Other Settings: -NA-\n\n**Blocks Produced**\n\nNo\
+          \ blocks produced.\n\n**Uncles**\n\nNo uncles found.\n\n**Validator Withdrawals**\n\
+          \nNo withdrawals found.\n\n**Deposits**\n\nNo deposits found.\n\n**Multichain\
+          \ Portfolio \\| 35 Chains**\n\n*   Last updated: less than 1 sec ago\n\n\
+          | Chain           | Token | Portfolio % | Price | Amount | Value |\n| ---------------\
+          \ | ----- | ------------- | ----- | ------ | ----- |\n| Ethereum (0)   \
+          \ |       | 0 (0%)        |       |        |       |\n| BNB Chain (0)  \
+          \ |       | 0 (0%)        |       |        |       |\n| Polygon (0)    \
+          \ |       | 0 (0%)        |       |        |       |\n| Arbitrum One (0)|\
+          \       | 0 (0%)        |       |        |       |\n| Optimism (0)    |\
+          \       | 0 (0%)        |       |        |       |\n| Base (0)        |\
+          \       | 0 (0%)        |       |        |       |\n| BTTC (0)        |\
+          \       | 0 (0%)        |       |        |       |\n| Celo (0)        |\
+          \       | 0 (0%)        |       |        |       |\n| Gnosis (0)      |\
+          \       | 0 (0%)        |       |        |       |\n| Polygon zkEVM (0)\
+          \ |       | 0 (0%)        |       |        |       |\n| Linea (0)      \
+          \ |       | 0 (0%)        |       |        |       |\n| Moonbeam (0)   \
+          \ |       | 0 (0%)        |       |        |       |\n| Moonriver (0)  \
+          \ |       | 0 (0%)        |       |        |       |\n| Arbitrum Nova (0)\
+          \ |       | 0 (0%)        |       |        |       |\n| Scroll (0)     \
+          \ |       | 0 (0%)        |       |        |       |\n| Wemix (0)      \
+          \ |       | 0 (0%)        |       |        |       |\n| Avax C-Chain (0)|\
+          \       | 0 (0%)        |       |        |       |\n| zkSync Era (0)  |\
+          \       | 0 (0%)        |       |        |       |\n| opBNB (0)       |\
+          \       | 0 (0%)        |       |        |       |\n| Fraxtal (0)     |\
+          \       | 0 (0%)        |       |        |       |\n| Blast (0)       |\
+          \       | 0 (0%)        |       |        |       |\n| Cronos (0)      |\
+          \       | 0 (0%)        |       |        |       |\n| Mantle (0)      |\
+          \       | 0 (0%)        |       |        |       |\n| Taiko (0)       |\
+          \       | 0 (0%)        |       |        |       |\n| Xai (0)         |\
+          \       | 0 (0%)        |       |        |       |\n| World (0)       |\
+          \       | 0 (0%)        |       |        |       |\n| Xdc (0)         |\
+          \       | 0 (0%)        |       |        |       |\n| Ape (0)         |\
+          \       | 0 (0%)        |       |        |       |\n| Sophon (0)      |\
+          \       | 0 (0%)        |       |        |       |\n| Unichain (0)    |\
+          \       | 0 (0%)        |       |        |       |\n| Berachain (0)   |\
+          \       | 0 (0%)        |       |        |       |\n| MemeCoreChain (0)\
+          \ |       | 0 (0%)        |       |        |       |\n| Swellchain (0) \
+          \ |       | 0 (0%)        |       |        |       |\n| Sonic (0)      \
+          \ |       | 0 (0%)        |       |        |       |\n| Abstract (0)   \
+          \ |       | 0 (0%)        |       |        |       |"
+direct_address_call:
+  input:
+    tool: get_address_history
+    tool_arguments:
+      chain: base
+      address: '0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B'
+  output:
+    response: ''
+    data: *id001
+natural_language_token:
+  input:
+    query: Show token details for 0x55d398326f99059ff775485246999027b3197955 on BSC
+    raw_data_only: false
+  output:
+    response: '**Token Overview**
+
+
+      *   Token Name: Binance-Peg BSC-USD (BSC-USD)
+
+      *   Token Contract: [0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)
+
+      *   Decimals: 18
+
+      *   Token Type: BEP-20, Cross-Chain, Stablecoin, Binance-Peg
+
+      *   Reputation: Evaluated to be a token of public interest by BscScan.
+
+
+      **Links**
+
+
+      *   [https://www.binance.com/en/trade/BNB\_USDT](https://www.binance.com/en/trade/BNB_USDT)
+
+      *   [CoinMarketCap](https://coinmarketcap.com/currencies/tether/)
+
+      *   [CoinGecko](https://www.coingecko.com/en/coins/tether/)
+
+      *   [API](https://docs.etherscan.io/etherscan-v2/api-endpoints/tokens)
+
+      *   [Check previous token supply](https://bscscan.com/tokencheck-tool?t=0x55d398326f99059ff775485246999027b3197955)
+
+
+      **Overview**
+
+
+      *   Max Total Supply: 6,284,993,699.505674 BSC-USD (CSupply: 6,283,379,633.856122)
+
+      *   Holders: 30,879,300
+
+      *   Total Transfers: More than -1
+
+
+      **Market**
+
+
+      *   Price: $1.00 @ 0.001557 BNB (+0.01%)
+
+      *   Onchain Market Cap: $6,284,993,699.51
+
+      *   Circulating Supply Market Cap: $155,735,989,988.00
+
+
+      **Additional Market Data**
+
+
+      *   Volume (24H): $46,464,167,538.00
+
+      *   Market Capitalization: $155,735,989,988.00
+
+      *   Circulating Supply: 155,719,756,689.00 BSC-USD'
+    data: &id002
+      status: success
+      data:
+        chain: bsc
+        token_address: '0x55d398326f99059ff775485246999027b3197955'
+        explorer_url: https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955
+        processed_content: '```
+
+          **Token Overview**
+
+
+          *   Token Name: Binance-Peg BSC-USD (BSC-USD)
+
+          *   Token Contract: [0x55d398326f99059ff775485246999027b3197955](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955)
+
+          *   Decimals: 18
+
+          *   Token Type: BEP-20, Cross-Chain, Stablecoin, Binance-Peg
+
+          *   Reputation: Evaluated to be a token of public interest by BscScan.
+
+          *   Binance-Peg tokens are BEP20 tokens backed by tokens vaults in Binance
+          public addresses and is part of Project Token Canal.
+
+          *   Note: This token''s displayed name symbol does not match its contract''s
+          Name and Symbol function.
+
+
+          **Links**
+
+
+          *   [https://www.binance.com/en/trade/BNB\_USDT](https://www.binance.com/en/trade/BNB_USDT)
+
+          *   [CoinMarketCap](https://coinmarketcap.com/currencies/tether/)
+
+          *   [CoinGecko](https://www.coingecko.com/en/coins/tether/)
+
+          *   [API](https://docs.etherscan.io/etherscan-v2/api-endpoints/tokens)
+
+          *   [Check previous token supply](https://bscscan.com/tokencheck-tool?t=0x55d398326f99059ff775485246999027b3197955)
+
+          *   Add Token to MetaMask (Web3)
+
+          *   [Update Name Tag or Label](https://bscscan.com/contactus?id=5&a=0x55d398326f99059ff775485246999027b3197955)
+
+          *   [Submit Burn Details](https://bscscan.com/contactus)
+
+          *   [Report/Flag Address](https://bscscan.com/contactus?id=6)
+
+
+          **Overview**
+
+
+          *   Max Total Supply: 6,284,993,699.505674 BSC-USD (CSupply: 6,283,379,633.856122)
+
+          *   Holders: 30,879,300 (0.166%)
+
+          *   Total Transfers: More than -1
+
+
+          **Market**
+
+
+          *   Price: $1.00 @ 0.001557 BNB (+0.01%)
+
+          *   Onchain Market Cap: $6,284,993,699.51
+
+          *   Circulating Supply Market Cap: $155,735,989,988.00
+
+
+          **Additional Market Data**
+
+
+          |                       |     |
+
+          | :-------------------- | :-: |
+
+          | Volume (24H)          | :   |
+
+          | Market Capitalization | :   |
+
+          | Circulating Supply    | :   |
+
+
+          *   Volume (24H): $46,464,167,538.00
+
+          *   Market Capitalization: $155,735,989,988.00
+
+          *   Circulating Supply: 155,719,756,689.00 BSC-USD
+
+          *   Market Data Source: [Coinmarketcap](https://coinmarketcap.com/)
+
+
+          **Transactions**
+
+
+          |   | Transaction Hash'
+direct_token_call:
+  input:
+    tool: get_erc20_token_details
+    tool_arguments:
+      chain: bsc
+      address: '0x55d398326f99059ff775485246999027b3197955'
+  output:
+    response: ''
+    data: *id002
+raw_data_only:
+  input:
+    query: Analyze transaction 0xabc123 on Arbitrum
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      status: success
+      data:
+        chain: arbitrum
+        txid: '0xabc123'
+        explorer_url: https://arbiscan.io/tx/0xabc123
+        processed_content: '**Transaction Details**
+
+
+          Oops! An invalid Txn hash has been entered: 0xabc123
+
+
+          **Invoked Transactions**
+
+
+          ADVANCED MODE:
+
+
+          |   | Type Trace Address | From |   | To | Value | Gas Limit |
+
+          | --- | --- | --- | --- | --- | --- | --- |
+
+          | AA Txn Hash | Method | Position | From | Internal Txns | Token Txns |
+          NFT Txns | Txn Fee (ETH) | Gas Limit |
+
+          | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+
+          **Transaction Receipt Event Logs**
+
+
+          Txn Batch Index:
+
+
+          L1 Fixed Cost:
+
+
+          L1 Calldata Paid:
+
+
+          L2 Computational Used:
+
+
+          L2 Computational Paid:
+
+
+          L2 Storage Used:
+
+
+          L2 Storage Paid:
+
+
+          Poster Fee:
+
+
+          Network Fee:
+
+
+          L1 Gas Used:
+
+
+          L2 Gas Used:
+
+
+          | Authority | Delegated Address | Nonce | Valid? | yParity | r | s |
+
+          | --- | --- | --- | --- | --- | --- | --- |'
+error_handling:
+  input:
+    tool: get_transaction_details
+    tool_arguments:
+      chain: unsupported_chain
+      txid: '0x123'
+  output:
+    response: ''
+    data:
+      error: 'Unsupported chain: unsupported_chain'
