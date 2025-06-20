@@ -66,7 +66,7 @@ async def run_agent():
         # Save the test inputs and outputs to a YAML file for further inspection
         script_dir = Path(__file__).parent
         current_file = Path(__file__).stem
-        base_filename = f"{current_file}_results"
+        base_filename = f"{current_file}_example"
         output_file = script_dir / f"{base_filename}.yaml"
 
         yaml_content = {
