@@ -4,7 +4,7 @@ natural_language_store:
       much users.
     raw_data_only: false
     session_context: &id001
-      api_key: manishdev144-6a88d8e80878e25
+      api_key: xxxxx-xxxxxxx
   output:
     response: "**Conversation Storage Confirmation**\n\n* **Status:** **SUCCESS**\n\
       * **Message:** Conversation stored successfully\n* **Conversation Count:** **5**\
