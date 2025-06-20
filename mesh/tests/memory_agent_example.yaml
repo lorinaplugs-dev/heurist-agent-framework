@@ -1,0 +1,96 @@
+natural_language_store:
+  input:
+    query: Save our conversation to memory. We discussed about Imagine not having
+      much users.
+    raw_data_only: false
+    session_context: &id001
+      api_key: manishdev144-6a88d8e80878e25
+  output:
+    response: "**Conversation Storage Confirmation**\n\n* **Status:** **SUCCESS**\n\
+      * **Message:** Conversation stored successfully\n* **Conversation Count:** **5**\
+      \ (Total conversations stored in your context)\n\n**Stored Conversation Summary:**\n\
+      \n* **Conversation ID:** #5\n* **Topic:** Low User Engagement\n* **Key Points:**\n\
+      \t+ Initial topic: \"Imagine not having many users\"\n\t+ **No specific details\
+      \ or questions** discussed yet (conversation just initiated)\n* **Timestamp:**\
+      \ *current timestamp not provided (assuming)* `[YYYY-MM-DD HH:MM:SS]` \n\n**Retrieve\
+      \ or Continue?**\nHow would you like to proceed?\n\n1. **Retrieve Previous Conversation**:\
+      \ Specify a conversation ID or topic to review.\nExample: `Retrieve conversation\
+      \ #3` or `Summary of our last discussion on [Topic]`\n2. **Add to Current Conversation**:\
+      \ Continue discussing \"Imagine not having many users\" (add more context or\
+      \ ask a specific question).\nExample: `What are strategies to attract more users?`\n\
+      3. **Start New Topic**: Begin a new conversation on a different subject.\nExample:\
+      \ `Discuss the impact of AI on customer service`"
+    data:
+      status: success
+      message: Conversation stored successfully
+      conversation_count: 5
+direct_retrieve:
+  input:
+    tool: retrieve_conversations
+    tool_arguments:
+      limit: 5
+    session_context: *id001
+  output:
+    response: ''
+    data:
+      conversations:
+      - timestamp: '2025-06-20T06:40:15.831509'
+        content: Discussed about the scenario of not having many users.
+      - timestamp: '2025-06-20T06:15:45.041676'
+        content: Discussed about the scenario of not having many users.
+      - timestamp: '2025-06-20T05:06:31.498992'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      - timestamp: '2025-06-20T05:06:21.783795'
+        content: Discussed blockchain technology, smart contracts, and DeFi protocols.
+      - timestamp: '2025-06-19T16:59:07.566751'
+        content: My name is manish.
+      total_conversations: 5
+      returned_conversations: 5
+raw_data_query:
+  input:
+    query: Show me all stored conversations
+    raw_data_only: false
+    session_context: *id001
+  output:
+    response: "**Conversation History**\n\nHere is a list of all stored conversations,\
+      \ formatted for readability with timestamps:\n\n**1.** **2025-06-20 06:40:15**\n\
+      * **Content:** Discussed about the scenario of not having many users.\n\n**2.**\
+      \ **2025-06-20 06:15:45**\n* **Content:** Discussed about the scenario of not\
+      \ having many users. (**Duplicate Topic**)\n\n**3.** **2025-06-20 05:06:31**\n\
+      * **Content:** User asked about NFT marketplace development. Explained ERC-721\
+      \ standards, IPFS storage, and smart contract deployment.\n* **Metadata:**\n\
+      \t+ **Platform:** Discord\n\t+ **Topic:** NFTs\n\t+ **Sentiment:** Educational\n\
+      \n**4.** **2025-06-20 05:06:21**\n* **Content:** Discussed blockchain technology,\
+      \ smart contracts, and DeFi protocols.\n\n**5.** **2025-06-19 16:59:07**\n*\
+      \ **Content:** My name is Manish.\n\n**Summary Statistics:**\n* **Total Conversations:**\
+      \ 5\n* **Returned Conversations:** 5 (All conversations are displayed) \n\n\
+      **Quick Actions:**\n* **Search by Topic/KW:** Type a keyword (e.g., NFT, blockchain)\
+      \ to find related conversations.\n* **Filter by Date:** Specify a date range\
+      \ to view conversations within that period.\n* **Clear Conversations:** Remove\
+      \ all stored conversations (caution: irreversible).\n* **Back to Assist Mode:**\
+      \ Return to asking me questions or starting a new conversation. \n\nHow would\
+      \ you like to proceed? (Reply with one of the quick actions or ask a new question)"
+    data:
+      conversations:
+      - timestamp: '2025-06-20T06:40:15.831509'
+        content: Discussed about the scenario of not having many users.
+      - timestamp: '2025-06-20T06:15:45.041676'
+        content: Discussed about the scenario of not having many users.
+      - timestamp: '2025-06-20T05:06:31.498992'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      - timestamp: '2025-06-20T05:06:21.783795'
+        content: Discussed blockchain technology, smart contracts, and DeFi protocols.
+      - timestamp: '2025-06-19T16:59:07.566751'
+        content: My name is manish.
+      total_conversations: 5
+      returned_conversations: 5
