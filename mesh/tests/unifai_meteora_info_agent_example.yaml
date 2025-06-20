@@ -1,0 +1,2341 @@
+trending_dlmm_natural_language:
+  input:
+    query: Show me trending DLMM pools on Meteora
+    raw_data_only: false
+  output:
+    response: "**Trending DLMM Pools on Meteora**\n\nBelow is a curated list of trending\
+      \ DLMM (Decentralized Liquidity Market Maker) pools on the Meteora platform,\
+      \ based on the provided payload data. The pools are sorted by their **APR (Annual\
+      \ Percentage Rate)** in descending order, which can indicate their current attractiveness\
+      \ to liquidity providers. Please note that APR, TVL (Total Value Locked), and\
+      \ other metrics can fluctuate rapidly in DeFi markets.\n\n### Top Trending DLMM\
+      \ Pools by APR:\n\n1. **OSCAR-SOL**\n\t* **APR:** 58.88%\n\t* **TVL:** $39,621.31\n\
+      \t* **Fees (24h):** $23,327.12\n\t* **Base Token:** 8Q8KPBL21FVatn2C1EaxAQSorAkHW2W2jDUXapVPZmhm\
+      \ (OSCAR)\n\t* **Quote Token:** So11111111111111111111111111111111111111112\
+      \ (SOL)\n\t* **Score:** 71.91\n\t* **URL:** [https://app.meteora.ag/dlmm/6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt](https://app.meteora.ag/dlmm/6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt)\n\
+      \n2. **KAI-SOL**\n\t* **APR:** 55.32%\n\t* **TVL:** $40,790.81\n\t* **Fees (24h):**\
+      \ $22,565.08\n\t* **Base Token:** 2MuDS29b6rQb9MydKLMvggST5Yqez3B6gYWitvvjc6ir\
+      \ (KAI)\n\t* **Quote Token:** So11111111111111111111111111111111111111112 (SOL)\n\
+      \t* **Score:** 71.91\n\t* **URL:** [https://app.meteora.ag/dlmm/DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay](https://app.meteora.ag/dlmm/DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay)\n\
+      \n3. **VIBE-SOL**\n\t* **APR:** 28.92%\n\t* **TVL:** $375,847.83\n\t* **Fees\
+      \ (24h):** $108,706.26\n\t* **Base Token:** DFVeSFxNohR5CVuReaXSz6rGuJ62LsKhxFpWsDbbjups\
+      \ (VIBE)\n\t* **Quote Token:** So11111111111111111111111111111111111111112 (SOL)\n\
+      \t* **Score:** 78.84\n\t* **URL:** [https://app.meteora.ag/dlmm/HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu](https://app.meteora.ag/dlmm/HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu)\n\
+      \n4. **GOR-SOL**\n\t* **APR:** 25.01%\n\t* **TVL:** $1,651,354.21\n\t* **Fees\
+      \ (24h):** $413,042.98\n\t* **Base Token:** 71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg\
+      \ (GOR)\n\t* **Quote Token:** So11111111111111111111111111111111111111112 (SOL)\n\
+      \t* **Score:** 79.75\n\t* **URL:** [https://app.meteora.ag/dlmm/CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w](https://app.meteora.ag/dlmm/CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w)\n\
+      \n5. **FB-SOL**\n\t* **APR:** 48.98% **[Initially listed lower, but APR is higher\
+      \ than VIBE-SOL and GOR-SOL, moving it up in APR sorting]**\n\t* **TVL:** $17,407.93\n\
+      \t* **Fees (24h):** $8,526.51\n\t* **Base Token:** BYpJEjZ8YBBWjF66oihbLnipwtmMHnLeJnkp4aBcpump\
+      \ (FB)\n\t* **Quote Token:** So11111111111111111111111111111111111111112 (SOL)\n\
+      \t* **Score:** 66.36\n\t* **URL:** [https://app.meteora.ag/dlmm/42uGiRCGdkxrFziMKAYH4veCawK5Ry6TZnfGwPrqBbrT](https://app.meteora.ag/dlmm/42uGiRCGdkxrFziMKAYH4veCawK5Ry6TZnfGwPrqBbrT)\n\
+      \n**Note:** \n- **APR** values are subject to change and might not reflect the\
+      \ current rates.\n- **TVL (Total Value Locked)** and **Fees (24h)** provide\
+      \ insight into the pool's liquidity and activity.\n- **Score** is a Meteora\
+      \ metric, likely indicating the pool's health or attractiveness, though its\
+      \ exact calculation isn't detailed here.\n- Always research and consider the\
+      \ risks, fees, and market conditions before engaging with any DeFi opportunity."
+    data: &id002
+      payload:
+        deduplicatedPoolsCount: 145
+        matchingPoolsCount: 248
+        pools:
+        - address: CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w
+          apr: '25.01'
+          baseFeePercentage: '2'
+          baseToken: 71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg
+          binStep: 100
+          cumulativeVolumeRatio: '1.41'
+          currentPrice: 0.0002055424687827915
+          fdv: '30521244.86'
+          fees24h: '413042.98'
+          name: GOR-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 79.75
+          tvl: '1651354.21'
+          url: https://app.meteora.ag/dlmm/CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w
+          volume1h: '258889.03'
+          volume24h: '14598674.17'
+        - address: HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu
+          apr: '28.92'
+          baseFeePercentage: '1'
+          baseToken: DFVeSFxNohR5CVuReaXSz6rGuJ62LsKhxFpWsDbbjups
+          binStep: 100
+          cumulativeVolumeRatio: '2.63'
+          currentPrice: 0.0004466514246941375
+          fdv: '6632358.00'
+          fees24h: '108706.26'
+          name: VIBE-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 78.84
+          tvl: '375847.83'
+          url: https://app.meteora.ag/dlmm/HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu
+          volume1h: '46263.00'
+          volume24h: '5492850.73'
+        - address: 6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt
+          apr: '58.88'
+          baseFeePercentage: '2'
+          baseToken: 8Q8KPBL21FVatn2C1EaxAQSorAkHW2W2jDUXapVPZmhm
+          binStep: 100
+          cumulativeVolumeRatio: '1.00'
+          currentPrice: 6.704231269589613e-06
+          fdv: '995530.11'
+          fees24h: '23327.12'
+          name: OSCAR-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 71.91
+          tvl: '39621.31'
+          url: https://app.meteora.ag/dlmm/6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt
+          volume1h: '43068.45'
+          volume24h: '739357.51'
+        - address: DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay
+          apr: '55.32'
+          baseFeePercentage: '2'
+          baseToken: 2MuDS29b6rQb9MydKLMvggST5Yqez3B6gYWitvvjc6ir
+          binStep: 100
+          cumulativeVolumeRatio: '1.00'
+          currentPrice: 3.4017274046500265e-05
+          fdv: '5051321.41'
+          fees24h: '22565.08'
+          name: KAI-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 71.91
+          tvl: '40790.81'
+          url: https://app.meteora.ag/dlmm/DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay
+          volume1h: '745.02'
+          volume24h: '671175.29'
+        - address: 42uGiRCGdkxrFziMKAYH4veCawK5Ry6TZnfGwPrqBbrT
+          apr: '48.98'
+          baseFeePercentage: '2'
+          baseToken: BYpJEjZ8YBBWjF66oihbLnipwtmMHnLeJnkp4aBcpump
+          binStep: 100
+          cumulativeVolumeRatio: '5.27'
+          currentPrice: 5.7175109734544634e-06
+          fdv: '847054.01'
+          fees24h: '8526.51'
+          name: FB-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 66.36
+          tvl: '17407.93'
+          url: https://app.meteora.ag/dlmm/42uGiRCGdkxrFziMKAYH4veCawK5Ry6TZnfGwPrqBbrT
+          volume1h: '3547.22'
+          volume24h: '334087.28'
+        - address: 9XTxssSpuoEbvpez5mu9TPEHoRE1J3VLvYQuevjMe687
+          apr: '37.80'
+          baseFeePercentage: '2'
+          baseToken: Etd4QU7PGuzh4ozkzzBBjMmySNkU21BZamB7qPR1xBLV
+          binStep: 100
+          cumulativeVolumeRatio: '1.00'
+          currentPrice: 1.3350279962373308e-05
+          fdv: '1982420.39'
+          fees24h: '28070.51'
+          name: YOURSELF-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 62.79
+          tvl: '74264.46'
+          url: https://app.meteora.ag/dlmm/9XTxssSpuoEbvpez5mu9TPEHoRE1J3VLvYQuevjMe687
+          volume1h: '25602.73'
+          volume24h: '844697.19'
+        - address: CtW881Zz1bjT1sGx8JyCqfGgpCwHepNYce4WVPtpTn5L
+          apr: '32.96'
+          baseFeePercentage: '5'
+          baseToken: BediSYEPUiuye8W5bFJueqwpLpry9CckehLEv1tBmoon
+          binStep: 250
+          cumulativeVolumeRatio: '1.72'
+          currentPrice: 1.3870399741924116e-05
+          fdv: '1775594.71'
+          fees24h: '3599.84'
+          name: QQQ-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 46.71
+          tvl: '10923.01'
+          url: https://app.meteora.ag/dlmm/CtW881Zz1bjT1sGx8JyCqfGgpCwHepNYce4WVPtpTn5L
+          volume1h: '1276.78'
+          volume24h: '61570.29'
+        - address: 5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6
+          apr: '0.14'
+          baseFeePercentage: '0.04'
+          baseToken: So11111111111111111111111111111111111111112
+          binStep: 4
+          cumulativeVolumeRatio: '405.62'
+          currentPrice: 148.49283341913576
+          fdv: '7945019928.13'
+          fees24h: '9696.74'
+          name: SOL-USDC
+          quoteToken: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          score: 42.24
+          tvl: '6907861.11'
+          url: https://app.meteora.ag/dlmm/5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6
+          volume1h: '666786.93'
+          volume24h: '24540179.61'
+        - address: GwJrsST7YC3kgDaDRXW6PqFY9B17Z1TA1ZzMFRv9ZYdY
+          apr: '16.96'
+          baseFeePercentage: '1'
+          baseToken: EBCqxfSMVSJPDGFLcf2yAfQoeLJRD1z8VbEUemZSbonk
+          binStep: 125
+          cumulativeVolumeRatio: '1.00'
+          currentPrice: 9.248535729925112e-06
+          fdv: '1373325.77'
+          fees24h: '15672.71'
+          name: shiyo-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 34.39
+          tvl: '92425.26'
+          url: https://app.meteora.ag/dlmm/GwJrsST7YC3kgDaDRXW6PqFY9B17Z1TA1ZzMFRv9ZYdY
+          volume1h: '47140.01'
+          volume24h: '840346.52'
+        - address: FTUUwFN25knhihreUS9hjmBS2zZMJHdTZVAiCKedhjw9
+          apr: '2.85'
+          baseFeePercentage: '2'
+          baseToken: DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+          binStep: 100
+          cumulativeVolumeRatio: '16.73'
+          currentPrice: 0.0009234832224823122
+          fdv: '132096219.64'
+          fees24h: '30181.53'
+          name: aura-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 27.75
+          tvl: '1058744.69'
+          url: https://app.meteora.ag/dlmm/FTUUwFN25knhihreUS9hjmBS2zZMJHdTZVAiCKedhjw9
+          volume1h: '15055.36'
+          volume24h: '1548975.13'
+trending_dlmm_direct:
+  input:
+    tool: get_trending_dlmm_pools
+    tool_arguments:
+      limit: 5
+    raw_data_only: true
+  output:
+    response: ''
+    data: &id001
+      payload:
+        deduplicatedPoolsCount: 145
+        matchingPoolsCount: 248
+        pools:
+        - address: CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w
+          apr: '24.89'
+          baseFeePercentage: '2'
+          baseToken: 71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg
+          binStep: 100
+          cumulativeVolumeRatio: '1.41'
+          currentPrice: 0.00020759789347061933
+          fdv: '30826457.30'
+          fees24h: '412833.85'
+          name: GOR-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 79.75
+          tvl: '1658643.00'
+          url: https://app.meteora.ag/dlmm/CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w
+          volume1h: '263340.72'
+          volume24h: '14589252.00'
+        - address: HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu
+          apr: '29.14'
+          baseFeePercentage: '1'
+          baseToken: DFVeSFxNohR5CVuReaXSz6rGuJ62LsKhxFpWsDbbjups
+          binStep: 100
+          cumulativeVolumeRatio: '2.63'
+          currentPrice: 0.0004466514246941375
+          fdv: '6632358.00'
+          fees24h: '108705.49'
+          name: VIBE-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 78.84
+          tvl: '373040.54'
+          url: https://app.meteora.ag/dlmm/HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu
+          volume1h: '42750.70'
+          volume24h: '5492908.81'
+        - address: 6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt
+          apr: '66.86'
+          baseFeePercentage: '2'
+          baseToken: 8Q8KPBL21FVatn2C1EaxAQSorAkHW2W2jDUXapVPZmhm
+          binStep: 100
+          cumulativeVolumeRatio: '1.00'
+          currentPrice: 7.046214442533364e-06
+          fdv: '1046312.15'
+          fees24h: '23327.12'
+          name: OSCAR-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 71.91
+          tvl: '34889.16'
+          url: https://app.meteora.ag/dlmm/6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt
+          volume1h: '43068.45'
+          volume24h: '739357.51'
+        - address: DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay
+          apr: '55.32'
+          baseFeePercentage: '2'
+          baseToken: 2MuDS29b6rQb9MydKLMvggST5Yqez3B6gYWitvvjc6ir
+          binStep: 100
+          cumulativeVolumeRatio: '1.00'
+          currentPrice: 3.4017274046500265e-05
+          fdv: '5051321.41'
+          fees24h: '22565.08'
+          name: KAI-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 71.91
+          tvl: '40790.81'
+          url: https://app.meteora.ag/dlmm/DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay
+          volume1h: '745.02'
+          volume24h: '671175.29'
+        - address: RLvLCzAFyTA6B43oHSSfzLpSXX5nrPhPFczRqHRB9en
+          apr: '79.83'
+          baseFeePercentage: '5'
+          baseToken: 2qachMY68G2oPXt2SYPVSu3SyR1YgiiZFZ1pjJxnxKyi
+          binStep: 125
+          cumulativeVolumeRatio: '1.00'
+          currentPrice: 8.800206257236936e-06
+          fdv: '1306734.06'
+          fees24h: '14760.59'
+          name: PWC-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 68.64
+          tvl: '18490.95'
+          url: https://app.meteora.ag/dlmm/RLvLCzAFyTA6B43oHSSfzLpSXX5nrPhPFczRqHRB9en
+          volume1h: '5427.62'
+          volume24h: '237707.01'
+trending_dlmm_filtered:
+  input:
+    tool: get_trending_dlmm_pools
+    tool_arguments:
+      limit: 3
+      include_pool_token_pairs:
+      - SOL/USDC
+    raw_data_only: false
+  output:
+    response: ''
+    data:
+      payload:
+        deduplicatedPoolsCount: 145
+        matchingPoolsCount: 248
+        pools:
+        - address: CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w
+          apr: '24.89'
+          baseFeePercentage: '2'
+          baseToken: 71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg
+          binStep: 100
+          cumulativeVolumeRatio: '1.41'
+          currentPrice: 0.00020759789347061933
+          fdv: '30826457.30'
+          fees24h: '412833.85'
+          name: GOR-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 79.75
+          tvl: '1658643.00'
+          url: https://app.meteora.ag/dlmm/CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w
+          volume1h: '263340.72'
+          volume24h: '14589252.00'
+        - address: HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu
+          apr: '29.14'
+          baseFeePercentage: '1'
+          baseToken: DFVeSFxNohR5CVuReaXSz6rGuJ62LsKhxFpWsDbbjups
+          binStep: 100
+          cumulativeVolumeRatio: '2.63'
+          currentPrice: 0.0004466514246941375
+          fdv: '6632358.00'
+          fees24h: '108705.49'
+          name: VIBE-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 78.84
+          tvl: '373040.54'
+          url: https://app.meteora.ag/dlmm/HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu
+          volume1h: '42750.70'
+          volume24h: '5492908.81'
+        - address: 6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt
+          apr: '66.86'
+          baseFeePercentage: '2'
+          baseToken: 8Q8KPBL21FVatn2C1EaxAQSorAkHW2W2jDUXapVPZmhm
+          binStep: 100
+          cumulativeVolumeRatio: '1.00'
+          currentPrice: 7.046214442533364e-06
+          fdv: '1046312.15'
+          fees24h: '23327.12'
+          name: OSCAR-SOL
+          quoteToken: So11111111111111111111111111111111111111112
+          score: 71.91
+          tvl: '34889.16'
+          url: https://app.meteora.ag/dlmm/6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt
+          volume1h: '43068.45'
+          volume24h: '739357.51'
+dynamic_amm_natural_language:
+  input:
+    query: Find dynamic AMM pools with SOL token
+    raw_data_only: false
+  output:
+    response: "**Dynamic AMM Pools with SOL Token**\n\nBelow is a curated list of\
+      \ dynamic AMM (Automated Market Maker) pools that include the SOL (Solana) token,\
+      \ extracted from the provided payload. Key metrics such as **Pool Name**, **Pool\
+      \ TVL (Total Value Locked)**, **APR (Annual Percentage Rate)**, and **Pool Type**\
+      \ are highlighted for each pool. Please note that the data is subject to change\
+      \ and might not reflect real-time values.\n\n### **List of SOL Pools**\n\n1.\
+      \ **SOL-mSOL**\n\t* **Pool TVL:** $8,581,774.77\n\t* **APR:** 1.38%\n\t* **Pool\
+      \ Type:** Stable\n\n2. **METAV-SOL**\n\t* **Pool TVL:** $6,160,215.31\n\t* **APR:**\
+      \ 1.68%\n\t* **Pool Type:** Volatile\n\n3. **WATCHCOIN-SOL**\n\t* **Pool TVL:**\
+      \ $5,372,386.78\n\t* **APR:** 38.50%\n\t* **Pool Type:** Volatile\n\n4. **SOL-JitoSOL**\n\
+      \t* **Pool TVL:** $4,151,724.54\n\t* **APR:** 1.55%\n\t* **Pool Type:** Stable\n\
+      \n5. **SOL-bSOL**\n\t* **Pool TVL:** $3,529,902.13\n\t* **APR:** 1.61%\n\t*\
+      \ **Pool Type:** Stable\n\n6. **SOL-ZERO**\n\t* **Pool TVL:** $2,783,313.50\n\
+      \t* **APR:** 1.70%\n\t* **Pool Type:** Volatile\n\n7. **VIRTUAL-SOL**\n\t* **Pool\
+      \ TVL:** $2,508,878.39\n\t* **APR:** 7.31%\n\t* **Pool Type:** Volatile\n\n\
+      8. **CANDLE-SOL**\n\t* **Pool TVL:** $2,095,003.31\n\t* **APR:** 15.64%\n\t\
+      * **Pool Type:** Volatile\n\n9. **DIS-SOL**\n\t* **Pool TVL:** $1,908,719.82\n\
+      \t* **APR:** 17.71%\n\t* **Pool Type:** Volatile\n\n10. **SOL-NOBODY**\n\t*\
+      \ **Pool TVL:** $1,670,173.24\n\t* **APR:** 202.14% **(Note: High APR, potentially\
+      \ high-risk)**\n\t* **Pool Type:** Volatile\n\t* **Is Meme:** True **(Caution\
+      \ advised, may be highly speculative)**\n\n### **Important Considerations:**\n\
+      \n- **APR Fluctuations:** APR rates can change rapidly. Always verify current\
+      \ rates before investing.\n- **Risk Levels:**\n\t+ **Stable Pools** generally\
+      \ offer lower but more stable returns.\n\t+ **Volatile Pools** can offer higher\
+      \ returns but come with higher risks.\n\t+ **Meme Pools** (e.g., SOL-NOBODY)\
+      \ are highly speculative and should be approached with caution.\n- **Total Value\
+      \ Locked (TVL):** Reflects the pool's liquidity. Higher TVL generally indicates\
+      \ more liquid pools.\n\n### **Before Investing:**\n\n1. **Verify Current Metrics:**\
+      \ Check the latest APR, TVL, and pool conditions.\n2. **Assess Your Risk Tolerance:**\
+      \ Understand the risks associated with each pool type.\n3. **Read Pool Terms:**\
+      \ Familiarize yourself with the pool's specific rules and any potential fees.\n\
+      \n**This analysis is based on the provided data snapshot and is intended for\
+      \ informational purposes only. It should not be considered as investment advice.\
+      \ Always do your own research (DYOR) and consider consulting with a financial\
+      \ advisor before making investment decisions.**"
+    data: &id003
+      payload:
+        data:
+        - accumulated_fee_volume: '196233.765084'
+          accumulated_trading_volume: '1982277133.118394'
+          accumulated_yield_volume: '95851.690547'
+          apr: 1.3774581982905398
+          created_at: 0
+          daily_base_apy: '1.45009'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 75.11441834611314
+          is_forex: false
+          is_lst: true
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: B2uEs9zjnz222hfUaUuRgesryUEYwy3JGuWe31sE9gsG
+          permissioned: true
+          pool_address: HcjZvfeSNJbNkfLD4eEcRBr96AD3w1GpmMppaeRZf7ur
+          pool_lp_price_in_usd: '176.411252'
+          pool_name: SOL-mSOL
+          pool_order: 0
+          pool_token_amounts:
+          - '19092.288195344'
+          - '29728.032712631'
+          pool_token_mints:
+          - So11111111111111111111111111111111111111112
+          - mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So
+          pool_token_usd_amounts:
+          - '2835163.462204641'
+          - '5746611.307660122'
+          pool_tvl: '8581774.769864764'
+          pool_type: stable
+          pool_version: 2
+          total_fee_pct: '0.01'
+          trade_apy: '0.319986'
+          trading_volume: 751144.1834611313
+          unknown: false
+          vault_lps:
+          - HWnWnLvBzvSmXH5hnHJCFmuQbDTsX3Ba2w9CPE5zf4YD
+          - GGG4DxkYa86g2v4KwtvR8Xu2tXEp1xd4BRC3yNnpve3g
+          vaults:
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          - 8p1VKP45hhqq5iZG5fNGoi7ucme8nFLeChoDWNy7rWFm
+          weekly_base_apy: '6.100041'
+          weekly_fee_volume: 895.7774498323089
+          weekly_trade_apy: '0.544230'
+          weekly_trading_volume: 8957774.498323081
+          yield_volume: '248.749582'
+        - accumulated_fee_volume: '6128878.556021'
+          accumulated_trading_volume: '183237731.813357'
+          accumulated_yield_volume: '56697.277598'
+          apr: 1.6759907673470205
+          created_at: 1735087169
+          daily_base_apy: '1.76692'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 5.0881950486080685
+          is_forex: false
+          is_lst: false
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: EY89gD1J493Ya3RS5GWUfjqGwNsudNEng4Cay33Ez8g2
+          permissioned: false
+          pool_address: EH8xLzfq2YARgQC846NWP6EfRK9gfcjDJMxcHhxFLruv
+          pool_lp_price_in_usd: '55.563316'
+          pool_name: METAV-SOL
+          pool_order: 0
+          pool_token_amounts:
+          - '895341486.94995'
+          - '20741.750964226'
+          pool_token_mints:
+          - HCgvbV9Qcf9TVGPGKMGbVEj8WwwVD6HhTt5E2i3qkeN9
+          - So11111111111111111111111111111111111111112
+          pool_token_usd_amounts:
+          - '3080107.655848582'
+          - '3080107.655848582'
+          pool_tvl: '6160215.311697164'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '2'
+          trade_apy: '0.030153'
+          trading_volume: 254.40975243040344
+          unknown: false
+          vault_lps:
+          - 45hJQr4YECdV5sfqSqCgsuKN2fHLygoXDZajURoZxWyi
+          - CNuspoZjJVpziHmqhTukpwbcRyUQa2YKh2JhKuhE5gqT
+          vaults:
+          - Ct7W49f6gkhD1QaW5WQy6icAcM4pKU3b9PAbpkPLsa3i
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          weekly_base_apy: '1.926912'
+          weekly_fee_volume: 74.07584449341793
+          weekly_trade_apy: '0.062549'
+          weekly_trading_volume: 3703.7922246708977
+          yield_volume: '277.773832'
+        - accumulated_fee_volume: '311284.254905'
+          accumulated_trading_volume: '26615331.907438'
+          accumulated_yield_volume: '5938.473375'
+          apr: 38.50346124042187
+          created_at: 1747328411
+          daily_base_apy: '38.100236'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 5419.776356891225
+          is_forex: false
+          is_lst: false
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: BRiCcTGcMLWCh6z9gPvz1nYC1tCKjpNx8Vs5HdJGwf4z
+          permissioned: false
+          pool_address: FYFvzPiQCZpzhqcuqM76ka1c38xAM3SSw887W64d5qKK
+          pool_lp_price_in_usd: '59.006135'
+          pool_name: WATCHCOIN-SOL
+          pool_order: 0
+          pool_token_amounts:
+          - '481586803.379419'
+          - '18089.093174225'
+          pool_token_mints:
+          - 37CsKhfnGWjGwtsfhTbrknYpYAXG7C2J4gGR5QPZSnwY
+          - So11111111111111111111111111111111111111112
+          pool_token_usd_amounts:
+          - '2686193.391743283'
+          - '2686193.391743283'
+          pool_tvl: '5372386.783486566'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '2'
+          trade_apy: '44.489122'
+          trading_volume: 270988.81784456124
+          unknown: true
+          vault_lps:
+          - FQ93DzBj2udgFgPnArFUyz8hfDTd6w3ivDiC1YfuByam
+          - G8wJ6tKaz4pzG95UNRTTE48UCJQd4MB8orThgnK9bjNV
+          vaults:
+          - 4WZWA3eDELUq8jtdK4QEeK9bTy9AEGAEsJXzjWNBJxTJ
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          weekly_base_apy: '37.531985'
+          weekly_fee_volume: 41935.10512831984
+          weekly_trade_apy: '49.828205'
+          weekly_trading_volume: 2096755.256415992
+          yield_volume: '247.49724'
+        - accumulated_fee_volume: '90554.780196'
+          accumulated_trading_volume: '919915124.908215'
+          accumulated_yield_volume: '45200.243277'
+          apr: 1.5542932971834094
+          created_at: 0
+          daily_base_apy: '1.627994'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 31.52235029032994
+          is_forex: false
+          is_lst: true
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: 8fL5oNPFD9WEpwf4k3H4YnPQtVUo9RAGpN36vKFQoHPi
+          permissioned: true
+          pool_address: ERgpKaq59Nnfm9YRVAAhnq16cZhHxGcDoDWCzXbhiaNw
+          pool_lp_price_in_usd: '171.538239'
+          pool_name: SOL-JitoSOL
+          pool_order: 0
+          pool_token_amounts:
+          - '11593.543335966'
+          - '13520.19749894'
+          pool_token_mints:
+          - So11111111111111111111111111111111111111112
+          - J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+          pool_token_usd_amounts:
+          - '1721616.0853696289'
+          - '2430108.4506563265'
+          pool_tvl: '4151724.5360259553'
+          pool_type: stable
+          pool_version: 2
+          total_fee_pct: '0.01'
+          trade_apy: '0.277513'
+          trading_volume: 315223.5029032997
+          unknown: false
+          vault_lps:
+          - D6uDyjtptL5Mr267BiLZJF4y3tNVm8RwT31KM9W5t6ZA
+          - 24eCZN6iFJYhveH9i7jiTAD41R7Qn2cXSWVpvaVCfwoa
+          vaults:
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          - DzrQZb6jj9GeLV5DgcD9v2L2TcJyTYxfcBUaXkmDbXVF
+          weekly_base_apy: '5.595816'
+          weekly_fee_volume: 326.50884854874175
+          weekly_trade_apy: '0.409771'
+          weekly_trading_volume: 3265088.485487419
+          yield_volume: '145.272105'
+        - accumulated_fee_volume: '121157.500793'
+          accumulated_trading_volume: '1214372322.775402'
+          accumulated_yield_volume: '68705.592249'
+          apr: 1.6141832378172176
+          created_at: 0
+          daily_base_apy: '1.696799'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 1732533795
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: 4mNHArimvdk3FRQtKuycYQTnjZSyNvJFh9LCUmb2GEpz
+          fee_volume: 41.81752387700978
+          is_forex: false
+          is_lst: true
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: 8ioaL3gTSAhNJy3t9JakXuoKobJvms62Ko5aWHvmHgSf
+          permissioned: true
+          pool_address: DvWpLaNUPqoCGn4foM6hekAPKqMtADJJbJWhwuMiT6vK
+          pool_lp_price_in_usd: '167.899068'
+          pool_name: SOL-bSOL
+          pool_order: 5
+          pool_token_amounts:
+          - '10110.684767272'
+          - '11147.282223976'
+          pool_token_mints:
+          - So11111111111111111111111111111111111111112
+          - bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1
+          pool_token_usd_amounts:
+          - '1501414.7983073709'
+          - '2028487.3342509288'
+          pool_tvl: '3529902.1325582997'
+          pool_type: stable
+          pool_version: 2
+          total_fee_pct: '0.01'
+          trade_apy: '0.433336'
+          trading_volume: 418175.2387700978
+          unknown: false
+          vault_lps:
+          - BWajRkDXMprxxxPZ9LCh9mJKzCzAxfToTiWyjDJBQwJ9
+          - 78PvjMRngHV9fnw7M9bzr86GmU6nsZzsNLmYkphpboqB
+          vaults:
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          - 62SqUDFBM9dcdb5uwJmPKXgjgBpji9vyAL2qXBbUBQF2
+          weekly_base_apy: '5.542037'
+          weekly_fee_volume: 227.00776117602123
+          weekly_trade_apy: '0.334961'
+          weekly_trading_volume: 2270077.611760212
+          yield_volume: '114.289568'
+        - accumulated_fee_volume: '1198537.953724'
+          accumulated_trading_volume: '119853795.575197'
+          accumulated_yield_volume: '43737.832252'
+          apr: 1.7037808787911364
+          created_at: 0
+          daily_base_apy: '1.757588'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 4.455147906678785
+          is_forex: false
+          is_lst: false
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: 7zsqaRQNpKB81suMXBZQhogDHEjogbaVAMxMqfxAwPZW
+          permissioned: false
+          pool_address: HjbGLmq2ZkHFZGArgDRDDXokgo5GKZfGHvUGjc9Po8ME
+          pool_lp_price_in_usd: '9.351854'
+          pool_name: SOL-ZERO
+          pool_order: 0
+          pool_token_amounts:
+          - '9378.288920075'
+          - '15531012.78781026'
+          pool_token_mints:
+          - So11111111111111111111111111111111111111112
+          - 93RC484oMK5T9H89rzT5qiAXKHGP9jscXfFfrihNbe57
+          pool_token_usd_amounts:
+          - '1392656.7506910982'
+          - '1392656.7506910982'
+          pool_tvl: '2785313.5013821963'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '1'
+          trade_apy: '0.058399'
+          trading_volume: 445.51479066787846
+          unknown: true
+          vault_lps:
+          - 5N47yfJ5urESaXGUWh7cyUs7j3YzMR4em8Zf6iMAqZBV
+          - nFLusyy934MVghMZVSni7CnNSggY9ggL3LvyeGeefCA
+          vaults:
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          - 6G1nWWWwJayG6HhQzbMpmQCAGtuswCKLwYVz9h3yeCt9
+          weekly_base_apy: '1.953062'
+          weekly_fee_volume: 53.84674153055436
+          weekly_trade_apy: '0.100578'
+          weekly_trading_volume: 5384.6741530554345
+          yield_volume: '125.560301'
+        - accumulated_fee_volume: '948054.275000'
+          accumulated_trading_volume: '230325699.165583'
+          accumulated_yield_volume: '33966.494179'
+          apr: 7.312135653599171
+          created_at: 1738820726
+          daily_base_apy: '6.614961'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 390.36442350379116
+          is_forex: false
+          is_lst: false
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: 6WFfTkMcMUPYQ1wbkaemG3F2nXGgz8MQsosZzBXf4SgQ
+          permissioned: false
+          pool_address: B1AdQ85N2mJ2xtMg9bgThhsPoA6T3M26rt4TChWSiPpr
+          pool_lp_price_in_usd: '37.399096'
+          pool_name: VIRTUAL-SOL
+          pool_order: 0
+          pool_token_amounts:
+          - '720302.110711677'
+          - '8447.518175377'
+          pool_token_mints:
+          - 3iQL8BFS2vE7mww4ehAqQHAsbmRNCrPxizWAT2Zfyr9y
+          - So11111111111111111111111111111111111111112
+          pool_token_usd_amounts:
+          - '1254439.1960820977'
+          - '1254439.1960820977'
+          pool_tvl: '2508878.3921641954'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '0.3'
+          trade_apy: '5.843045'
+          trading_volume: 130121.47450126364
+          unknown: false
+          vault_lps:
+          - H7ecqNb5xvuHBuu27t6EJqFDSxomw1G6sMo4hizD3wZb
+          - DdW4Xzo3192gkSS5Yrvf1uhqFaHgEfA1L54XH1qUXpQZ
+          vaults:
+          - 64K4zQJMzoVvVMVMChfPuUuohHJroMDQt7ZdEWF3AUbe
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          weekly_base_apy: '8.558245'
+          weekly_fee_volume: 3857.7559564859866
+          weekly_trade_apy: '8.317436'
+          weekly_trading_volume: 1285918.6521619963
+          yield_volume: '112.245416'
+        - accumulated_fee_volume: '586804.625750'
+          accumulated_trading_volume: '58680462.575045'
+          accumulated_yield_volume: '3301.402303'
+          apr: 15.644177467525344
+          created_at: 1745618743
+          daily_base_apy: '14.801543'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 802.9834135129919
+          is_forex: false
+          is_lst: false
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: 3vsDm8LYtQY66xsS74o96apPT9QmzYdfKrPKrFxxVzVC
+          permissioned: false
+          pool_address: HoEENcw9WWxZdL69mTYVqKSwfGJLCKembNU5wmN4pWsW
+          pool_lp_price_in_usd: '32.948117'
+          pool_name: CANDLE-SOL
+          pool_order: 0
+          pool_token_amounts:
+          - '878034631.880083'
+          - '7053.980229703'
+          pool_token_mints:
+          - A8bcY1eSenMiMy75vgSnp6ShMfWHRHjeM6JxfM1CNDL
+          - So11111111111111111111111111111111111111112
+          pool_token_usd_amounts:
+          - '1047501.6572702118'
+          - '1047501.6572702117'
+          pool_tvl: '2095003.3145404235'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '1'
+          trade_apy: '15.012684'
+          trading_volume: 80298.34135129918
+          unknown: false
+          vault_lps:
+          - ERap3ATKaVwKAjPtBQCE9sQN4HYXvRETFoTS91o4ich3
+          - CSarUjjbNdSRo9mccLoxPyaDa4TNPPNjGZenVpxe3Zhf
+          vaults:
+          - 8qetHSTTFfyK6LgynyzLFUrMnH1AvxSFicsxvRvd1D5d
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          weekly_base_apy: '12.320808'
+          weekly_fee_volume: 5035.841057865291
+          weekly_trade_apy: '13.297219'
+          weekly_trading_volume: 503584.1057865291
+          yield_volume: '94.950933'
+        - accumulated_fee_volume: '309342.261056'
+          accumulated_trading_volume: '123736904.422529'
+          accumulated_yield_volume: '2192.335735'
+          apr: 17.707930186199057
+          created_at: 1747850519
+          daily_base_apy: '16.911204'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 841.5751515820361
+          is_forex: false
+          is_lst: false
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: 6qKEcSoY6pttxu1HN6zedDm4UDTH4XxomSyR8qksG23w
+          permissioned: false
+          pool_address: AyCkqVLkmMnqYCrCh2fFB1xEj29nymzc5t6PvyRHaCKn
+          pool_lp_price_in_usd: '2.227575'
+          pool_name: DIS-SOL
+          pool_order: 0
+          pool_token_amounts:
+          - '130367515.28669134'
+          - '6426.754438735'
+          pool_token_mints:
+          - 2AEU9yWk3dEGnVwRaKv4div5TarC4dn7axFLyz6zG4Pf
+          - So11111111111111111111111111111111111111112
+          pool_token_usd_amounts:
+          - '954359.9083388764'
+          - '954359.9083388764'
+          pool_tvl: '1908719.8166777529'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '0.25'
+          trade_apy: '17.456395'
+          trading_volume: 336630.06063281454
+          unknown: false
+          vault_lps:
+          - 9CnStcbDXJ2Use23gJisU8sjFb6Xe8M1qnZksKTkhoL3
+          - 4d6FSYZJ7vw1zQ5D268W6Bt44SnmaAf3QVzLZUbwJeMt
+          vaults:
+          - 2y66QqQNVzC9321h9shfndZxH3eqdvmMSP2EMuitBJG2
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          weekly_base_apy: '14.55222'
+          weekly_fee_volume: 5729.681565835046
+          weekly_trade_apy: '16.866507'
+          weekly_trading_volume: 2291872.626334022
+          yield_volume: '84.437924'
+        - accumulated_fee_volume: '1323883.254021'
+          accumulated_trading_volume: '114789876.274726'
+          accumulated_yield_volume: '2736.118293'
+          apr: 202.1366655065556
+          created_at: 1745507186
+          daily_base_apy: '411.630245'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 9173.42144431168
+          is_forex: false
+          is_lst: false
+          is_meme: true
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: Dx747VSZVwrTrUh8XLz5Em2gbmbFKXjuZUxyPtUHBShd
+          permissioned: false
+          pool_address: 7rQd8FhC1rimV3v9edCRZ6RNFsJN1puXM9UmjaURJRNj
+          pool_lp_price_in_usd: '6.564008'
+          pool_name: SOL-NOBODY
+          pool_order: 0
+          pool_token_amounts:
+          - '5623.556281635'
+          - '44484302.241959445'
+          pool_token_mints:
+          - So11111111111111111111111111111111111111112
+          - C29ebrgYjYoJPMGPnPSGY1q3mMGk4iDSqnQeQQA7moon
+          pool_token_usd_amounts:
+          - '835086.6224376975'
+          - '835086.6224376975'
+          pool_tvl: '1670173.244875395'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '1'
+          trade_apy: '638.370754'
+          trading_volume: 917342.1444311691
+          unknown: false
+          vault_lps:
+          - 8tPBb8oo3563mzejmwfAWkwBCmDFsuwLWW2hP85NQHxm
+          - wG3z4Rd4FDtAcgZEdbYHpAnnwA65KgnZnC69MvHfoEL
+          vaults:
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          - 4GBFUjXdn8cbWgk7zXBC6CTxHygoqXE5dcpySB9Zq4Ej
+          weekly_base_apy: '452.116644'
+          weekly_fee_volume: 76189.37607670925
+          weekly_trade_apy: '917.164174'
+          weekly_trading_volume: 7618937.607670923
+          yield_volume: '75.98268'
+        page: 0
+        total_count: 3425
+dynamic_amm_direct:
+  input:
+    tool: search_dynamic_amm_pools
+    tool_arguments:
+      limit: 5
+      include_token_mints:
+      - So11111111111111111111111111111111111111112
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      payload:
+        data:
+        - accumulated_fee_volume: '196233.765084'
+          accumulated_trading_volume: '1982277133.118394'
+          accumulated_yield_volume: '95851.690547'
+          apr: 1.3774581982905398
+          created_at: 0
+          daily_base_apy: '1.45009'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 75.11441834611314
+          is_forex: false
+          is_lst: true
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: B2uEs9zjnz222hfUaUuRgesryUEYwy3JGuWe31sE9gsG
+          permissioned: true
+          pool_address: HcjZvfeSNJbNkfLD4eEcRBr96AD3w1GpmMppaeRZf7ur
+          pool_lp_price_in_usd: '176.411252'
+          pool_name: SOL-mSOL
+          pool_order: 0
+          pool_token_amounts:
+          - '19092.288195344'
+          - '29728.032712631'
+          pool_token_mints:
+          - So11111111111111111111111111111111111111112
+          - mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So
+          pool_token_usd_amounts:
+          - '2835163.462204641'
+          - '5746611.307660122'
+          pool_tvl: '8581774.769864764'
+          pool_type: stable
+          pool_version: 2
+          total_fee_pct: '0.01'
+          trade_apy: '0.319986'
+          trading_volume: 751144.1834611313
+          unknown: false
+          vault_lps:
+          - HWnWnLvBzvSmXH5hnHJCFmuQbDTsX3Ba2w9CPE5zf4YD
+          - GGG4DxkYa86g2v4KwtvR8Xu2tXEp1xd4BRC3yNnpve3g
+          vaults:
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          - 8p1VKP45hhqq5iZG5fNGoi7ucme8nFLeChoDWNy7rWFm
+          weekly_base_apy: '6.100041'
+          weekly_fee_volume: 895.7774498323089
+          weekly_trade_apy: '0.544230'
+          weekly_trading_volume: 8957774.498323081
+          yield_volume: '248.749582'
+        - accumulated_fee_volume: '6128878.556021'
+          accumulated_trading_volume: '183237731.813357'
+          accumulated_yield_volume: '56697.277598'
+          apr: 1.6759907673470205
+          created_at: 1735087169
+          daily_base_apy: '1.76692'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 5.0881950486080685
+          is_forex: false
+          is_lst: false
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: EY89gD1J493Ya3RS5GWUfjqGwNsudNEng4Cay33Ez8g2
+          permissioned: false
+          pool_address: EH8xLzfq2YARgQC846NWP6EfRK9gfcjDJMxcHhxFLruv
+          pool_lp_price_in_usd: '55.563316'
+          pool_name: METAV-SOL
+          pool_order: 0
+          pool_token_amounts:
+          - '895341486.94995'
+          - '20741.750964226'
+          pool_token_mints:
+          - HCgvbV9Qcf9TVGPGKMGbVEj8WwwVD6HhTt5E2i3qkeN9
+          - So11111111111111111111111111111111111111112
+          pool_token_usd_amounts:
+          - '3080107.655848582'
+          - '3080107.655848582'
+          pool_tvl: '6160215.311697164'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '2'
+          trade_apy: '0.030153'
+          trading_volume: 254.40975243040344
+          unknown: false
+          vault_lps:
+          - 45hJQr4YECdV5sfqSqCgsuKN2fHLygoXDZajURoZxWyi
+          - CNuspoZjJVpziHmqhTukpwbcRyUQa2YKh2JhKuhE5gqT
+          vaults:
+          - Ct7W49f6gkhD1QaW5WQy6icAcM4pKU3b9PAbpkPLsa3i
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          weekly_base_apy: '1.926912'
+          weekly_fee_volume: 74.07584449341793
+          weekly_trade_apy: '0.062549'
+          weekly_trading_volume: 3703.7922246708977
+          yield_volume: '277.773832'
+        - accumulated_fee_volume: '311284.254905'
+          accumulated_trading_volume: '26615331.907438'
+          accumulated_yield_volume: '5938.473375'
+          apr: 38.50346124042187
+          created_at: 1747328411
+          daily_base_apy: '38.100236'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 5419.776356891225
+          is_forex: false
+          is_lst: false
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: BRiCcTGcMLWCh6z9gPvz1nYC1tCKjpNx8Vs5HdJGwf4z
+          permissioned: false
+          pool_address: FYFvzPiQCZpzhqcuqM76ka1c38xAM3SSw887W64d5qKK
+          pool_lp_price_in_usd: '59.006135'
+          pool_name: WATCHCOIN-SOL
+          pool_order: 0
+          pool_token_amounts:
+          - '481586803.379419'
+          - '18089.093174225'
+          pool_token_mints:
+          - 37CsKhfnGWjGwtsfhTbrknYpYAXG7C2J4gGR5QPZSnwY
+          - So11111111111111111111111111111111111111112
+          pool_token_usd_amounts:
+          - '2686193.391743283'
+          - '2686193.391743283'
+          pool_tvl: '5372386.783486566'
+          pool_type: volatile
+          pool_version: 2
+          total_fee_pct: '2'
+          trade_apy: '44.489122'
+          trading_volume: 270988.81784456124
+          unknown: true
+          vault_lps:
+          - FQ93DzBj2udgFgPnArFUyz8hfDTd6w3ivDiC1YfuByam
+          - G8wJ6tKaz4pzG95UNRTTE48UCJQd4MB8orThgnK9bjNV
+          vaults:
+          - 4WZWA3eDELUq8jtdK4QEeK9bTy9AEGAEsJXzjWNBJxTJ
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          weekly_base_apy: '37.531985'
+          weekly_fee_volume: 41935.10512831984
+          weekly_trade_apy: '49.828205'
+          weekly_trading_volume: 2096755.256415992
+          yield_volume: '247.49724'
+        - accumulated_fee_volume: '90554.780196'
+          accumulated_trading_volume: '919915124.908215'
+          accumulated_yield_volume: '45200.243277'
+          apr: 1.5542932971834094
+          created_at: 0
+          daily_base_apy: '1.627994'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 0
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: null
+          fee_volume: 31.52235029032994
+          is_forex: false
+          is_lst: true
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: 8fL5oNPFD9WEpwf4k3H4YnPQtVUo9RAGpN36vKFQoHPi
+          permissioned: true
+          pool_address: ERgpKaq59Nnfm9YRVAAhnq16cZhHxGcDoDWCzXbhiaNw
+          pool_lp_price_in_usd: '171.538239'
+          pool_name: SOL-JitoSOL
+          pool_order: 0
+          pool_token_amounts:
+          - '11593.543335966'
+          - '13520.19749894'
+          pool_token_mints:
+          - So11111111111111111111111111111111111111112
+          - J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+          pool_token_usd_amounts:
+          - '1721616.0853696289'
+          - '2430108.4506563265'
+          pool_tvl: '4151724.5360259553'
+          pool_type: stable
+          pool_version: 2
+          total_fee_pct: '0.01'
+          trade_apy: '0.277513'
+          trading_volume: 315223.5029032997
+          unknown: false
+          vault_lps:
+          - D6uDyjtptL5Mr267BiLZJF4y3tNVm8RwT31KM9W5t6ZA
+          - 24eCZN6iFJYhveH9i7jiTAD41R7Qn2cXSWVpvaVCfwoa
+          vaults:
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          - DzrQZb6jj9GeLV5DgcD9v2L2TcJyTYxfcBUaXkmDbXVF
+          weekly_base_apy: '5.595816'
+          weekly_fee_volume: 326.50884854874175
+          weekly_trade_apy: '0.409771'
+          weekly_trading_volume: 3265088.485487419
+          yield_volume: '145.272105'
+        - accumulated_fee_volume: '121157.500793'
+          accumulated_trading_volume: '1214372322.775402'
+          accumulated_yield_volume: '68705.592249'
+          apr: 1.6141832378172176
+          created_at: 0
+          daily_base_apy: '1.696799'
+          farm_expire: false
+          farm_new: false
+          farm_order: 0
+          farm_reward_duration_end: 1732533795
+          farm_tvl: '0'
+          farming_apy: '0'
+          farming_pool: 4mNHArimvdk3FRQtKuycYQTnjZSyNvJFh9LCUmb2GEpz
+          fee_volume: 41.81752387700978
+          is_forex: false
+          is_lst: true
+          is_meme: false
+          is_monitoring: false
+          lp_decimal: 9
+          lp_mint: 8ioaL3gTSAhNJy3t9JakXuoKobJvms62Ko5aWHvmHgSf
+          permissioned: true
+          pool_address: DvWpLaNUPqoCGn4foM6hekAPKqMtADJJbJWhwuMiT6vK
+          pool_lp_price_in_usd: '167.899068'
+          pool_name: SOL-bSOL
+          pool_order: 5
+          pool_token_amounts:
+          - '10110.684767272'
+          - '11147.282223976'
+          pool_token_mints:
+          - So11111111111111111111111111111111111111112
+          - bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1
+          pool_token_usd_amounts:
+          - '1501414.7983073709'
+          - '2028487.3342509288'
+          pool_tvl: '3529902.1325582997'
+          pool_type: stable
+          pool_version: 2
+          total_fee_pct: '0.01'
+          trade_apy: '0.433336'
+          trading_volume: 418175.2387700978
+          unknown: false
+          vault_lps:
+          - BWajRkDXMprxxxPZ9LCh9mJKzCzAxfToTiWyjDJBQwJ9
+          - 78PvjMRngHV9fnw7M9bzr86GmU6nsZzsNLmYkphpboqB
+          vaults:
+          - FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT
+          - 62SqUDFBM9dcdb5uwJmPKXgjgBpji9vyAL2qXBbUBQF2
+          weekly_base_apy: '5.542037'
+          weekly_fee_volume: 227.00776117602123
+          weekly_trade_apy: '0.334961'
+          weekly_trading_volume: 2270077.611760212
+          yield_volume: '114.289568'
+        page: 0
+        total_count: 3425
+dlmm_pools_natural_language:
+  input:
+    query: Search for DLMM pools on Meteora
+    raw_data_only: false
+  output:
+    response: '**Meteora DeFi Liquidity Pools (DLMM) Overview**
+
+
+      Below is a summary of the provided DLMM pools on the Meteora platform, highlighting
+      key metrics for each pool. Please note that the data is factual and based on
+      the provided payload, with no additional information inferred.
+
+
+      ### **Pool Summary Table**
+
+
+      | **Pool Name** | **Address** | **APR** | **APY** | **Liquidity** | **24H Fees**
+      | **24H Trade Volume** |
+
+      | --- | --- | --- | --- | --- | --- | --- |
+
+      | **TRUMP-USDC** | `9d9mb8k...` | 0.0155% | 5.81% | 354,578,515.69 | 54,905.42
+      | 56,241,822.82 |
+
+      | **MELANIA-USDC** | `9DiruRp...` | 0.0078% | 2.90% | 25,177,312.76 | 1,972.26
+      | 164,354.59 |
+
+      | **FO-USDT** | `AXXo7N2...` | 0.0011% | 0.39% | 21,889,424.59 | 230.90 | 120,721.87
+      |
+
+      | **LIBRA-USDC** | `BzzMNvfm...` | 0% | 0% | 16,838,129.24 | 0 | 0 |
+
+      | **JitoSOL-SOL** | `BoeMUkCL...` | 0.0018% | 0.65% | 14,064,197.43 | 249.65
+      | 2,627,440.35 |
+
+      | **SOL-USDC** | `5rCf1DM8...` | 0.1404% | 66.89% | 6,907,878.59 | 9,699.54
+      | 24,547,560.70 |
+
+      | **JUP-SOL** | `C8Gr6AUu...` | 0.0246% | 9.39% | 4,611,279.84 | 1,133.85 |
+      782,080.83 |
+
+      | **USDC-USDT** | `ARwi1S4D...` | 0.0002% | 0.07% | 4,022,712.70 | 8.14 | 84,668.50
+      |
+
+      | **JLP-USDC** | `22hGJjJN...` | 0.0199% | 7.53% | 4,002,964.02 | 796.64 | 139,760.55
+      |
+
+      | **USDC-CLOUD** | `F1KKNyUC...` | 0.0146% | 5.47% | 3,982,147.23 | 581.03 |
+      303,016.15 |
+
+
+      ### **Key Observations:**
+
+
+      1. **Highest APR:** SOL-USDC pool with an APR of 0.1404% and APY of 66.89%
+
+      2. **Highest Liquidity:** TRUMP-USDC pool with approximately 354.58M in liquidity
+
+      3. **Highest 24H Fees:** SOL-USDC pool with 9,699.54 in fees
+
+      4. **Highest 24H Trade Volume:** SOL-USDC pool with 24,547,560.70 in trade volume
+
+      5. **Inactive Pool:** LIBRA-USDC appears to be inactive with 0 APR, APY, fees,
+      and trade volume.
+
+
+      ### **Detailed Pool Information:**
+
+
+      For each pool, the following detailed information is available in the original
+      payload but summarized here for brevity:
+
+
+      - **Address:** Unique identifier for each pool.
+
+      - **APR & APY:** Annual Percentage Rate and Yield, respectively, indicating
+      the pool''s earnings potential.
+
+      - **Liquidity:** Total value locked (TVL) in each pool.
+
+      - **24H Fees:** Fees generated by each pool in the last 24 hours.
+
+      - **24H Trade Volume:** Total trade volume for each pool in the last 24 hours.
+
+      - **Additional Metrics:** Each pool''s base fee percentage, bin step, cumulative
+      fee and trade volumes, current price, farm APR and APY (all 0 in this dataset),
+      fee TVL ratios, and more are available in the original payload.'
+    data:
+      payload:
+        pairs:
+        - address: 9d9mb8kooFfaD3SctgZtkxQypkshx6ezhbKio89ixyy2
+          apr: 0.015484701547902754
+          apy: 5.814225951878105
+          base_fee_percentage: '0.1'
+          bin_step: 50
+          cumulative_fee_volume: '19459003.9000'
+          cumulative_trade_volume: '16329903273.6400'
+          current_price: 9.387754605278023
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0.0007567179874328003
+            hour_12: 0.00934342338148124
+            hour_2: 0.002245006778639597
+            hour_24: 0.015484701547902754
+            hour_4: 0.004010015446167366
+            min_30: 0.0003660967544318359
+          fees:
+            hour_1: 2683.1594077912096
+            hour_12: 33129.771940599014
+            hour_2: 7960.311712818644
+            hour_24: 54905.42490743159
+            hour_4: 14218.653247921533
+            min_30: 1298.1004378501584
+          fees_24h: 54905.42490743159
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '354578515.6890413'
+          max_fee_percentage: '1.6625'
+          mint_x: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: TRUMP-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: AK93dERw7MJsGFBUPfV1bkXzDviJZM1K6vg2yGDugk7L
+          reserve_x_amount: 12898553528458
+          reserve_y: 81BadRGfaHFpAmuXpJ65k8tYtUWsZ54EFSmsVo1rbDTV
+          reserve_y_amount: 233477650587129
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 30317.87834004323
+          trade_volume_24h: 56241822.82091048
+          volume:
+            hour_1: 2805870.900799836
+            hour_12: 33404154.928092107
+            hour_2: 8262054.787703825
+            hour_24: 56241822.82091048
+            hour_4: 14767004.47572722
+            min_30: 1366420.7244874083
+        - address: 9DiruRpjnAnzhn6ts5HGLouHtJrT1JGsPbXNYCrFz2ad
+          apr: 0.007833461794649213
+          apy: 2.9003662094062133
+          base_fee_percentage: '1.5'
+          bin_step: 100
+          cumulative_fee_volume: '38551622.4100'
+          cumulative_trade_volume: '3212624855.3500'
+          current_price: 0.24585910518094115
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0
+            hour_12: 0.0036273425863613882
+            hour_2: 0
+            hour_24: 0.007833461794649213
+            hour_4: 0.0018177281506200783
+            min_30: 0
+          fees:
+            hour_1: 0
+            hour_12: 913.2673878376586
+            hour_2: 0
+            hour_24: 1972.2551759583466
+            hour_4: 457.65510160456233
+            min_30: 0
+          fees_24h: 1972.2551759583466
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '25177312.759800926'
+          max_fee_percentage: '1.5'
+          mint_x: FUAfBo2jgks6gB4Z4LfZkqSZgzNucisEHqnNebaRxM1P
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: MELANIA-USDC
+          protocol_fee_percentage: '20'
+          reserve_x: 7dY6amxDBCSG2fEnTAJiyXbe4z19kQSRk9DM5wrYzsuN
+          reserve_x_amount: 88244000339180
+          reserve_y: 4FWoCg5Ukne58ytBe9Ki578USggRfcj8rqpLW78s8jDV
+          reserve_y_amount: 3480840623718
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags:
+          - blp
+          - lfg
+          today_fees: 913.267387837659
+          trade_volume_24h: 164354.59325770594
+          volume:
+            hour_1: 0
+            hour_12: 76105.61298846398
+            hour_2: 0
+            hour_24: 164354.59325770594
+            hour_4: 38137.92276090781
+            min_30: 0
+        - address: AXXo7N2gcLeVyo8nDsN99UW8Fv6NCsa2DP21WD3SKtM3
+          apr: 0.0010548351033935679
+          apy: 0.38575490845105254
+          base_fee_percentage: '0.2'
+          bin_step: 100
+          cumulative_fee_volume: '1625983.7200'
+          cumulative_trade_volume: '317293235.7000'
+          current_price: 0.6390549155990778
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 7.843582026149666e-05
+            hour_12: 0.0008684878014822169
+            hour_2: 0.00020878722209916972
+            hour_24: 0.0010548351033935679
+            hour_4: 0.0004797480031991505
+            min_30: 1.552513044460846e-05
+          fees:
+            hour_1: 17.16914972890557
+            hour_12: 190.10698239227764
+            hour_2: 45.702321538193935
+            hour_24: 230.89733452255453
+            hour_4: 105.01407738975449
+            min_30: 3.39836172141265
+          fees_24h: 230.89733452255453
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '21889424.591551993'
+          max_fee_percentage: '1.8875'
+          mint_x: JDzPbXboQYWVmdxXS3LbvjM52RtsV1QaSv2AzoCiai2o
+          mint_y: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+          name: FO-USDT
+          protocol_fee_percentage: '5'
+          reserve_x: ny86TuzrFavYy1BTbLuCJGep3TfnGGwS155jtcrFiNd
+          reserve_x_amount: 25620292930226
+          reserve_y: spqB46cNDN7LYuwf9BtwgwY6DFbPZjijGVAQeHkf41A
+          reserve_y_amount: 5513258120403
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 190.1069823922775
+          trade_volume_24h: 120721.87083888368
+          volume:
+            hour_1: 9022.245526240347
+            hour_12: 99404.29487922773
+            hour_2: 23812.587085594634
+            hour_24: 120721.87083888368
+            hour_4: 54813.31594965067
+            min_30: 1788.6082182130845
+        - address: BzzMNvfm7T6zSGFeLXzERmRxfKaNLdo4fSzvsisxcSzz
+          apr: 0
+          apy: 0
+          base_fee_percentage: '1.5'
+          bin_step: 100
+          cumulative_fee_volume: '34115922.2400'
+          cumulative_trade_volume: '1460004880.3800'
+          current_price: 0.06105116659637679
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0
+            hour_12: 0
+            hour_2: 0
+            hour_24: 0
+            hour_4: 0
+            min_30: 0
+          fees:
+            hour_1: 0
+            hour_12: 0
+            hour_2: 0
+            hour_24: 0
+            hour_4: 0
+            min_30: 0
+          fees_24h: 0
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '16838129.240487114'
+          max_fee_percentage: '10'
+          mint_x: Bo9jh3wsmcC2AjakLWzNmKJ3SgtZmXEcSaW7L2FAvUsU
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: LIBRA-USDC
+          protocol_fee_percentage: '20'
+          reserve_x: 7ehgfSLXCjd6VqtpT2Q63Mcq8TeHv6h2ujj7XvwgyNPk
+          reserve_x_amount: 211257608719980
+          reserve_y: 3nSdqiF5Cxd22r8h6Ti1TwzDmcVN6SgFfDcWbBtCFRdc
+          reserve_y_amount: 3940016461874
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags:
+          - lfg
+          today_fees: 0
+          trade_volume_24h: 0
+          volume:
+            hour_1: 0
+            hour_12: 0
+            hour_2: 0
+            hour_24: 0
+            hour_4: 0
+            min_30: 0
+        - address: BoeMUkCLHchTD31HdXsbDExuZZfcUppSLpYtV3LZTH6U
+          apr: 0.0017750627797763526
+          apy: 0.6499955257285528
+          base_fee_percentage: '0.01'
+          bin_step: 1
+          cumulative_fee_volume: '247716.4500'
+          cumulative_trade_volume: '2432346772.3100'
+          current_price: 1.2108110637018032
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 5.733110789861604e-05
+            hour_12: 0.000702942570729283
+            hour_2: 0.0003619400966718253
+            hour_24: 0.0017750627797763526
+            hour_4: 0.00036195753685689167
+            min_30: 6.956230771330752e-10
+          fees:
+            hour_1: 8.063160202214107
+            hour_12: 98.86323094906129
+            hour_2: 50.90396976508172
+            hour_24: 249.64833380918728
+            hour_4: 50.906422587141165
+            min_30: 9.7833802919e-05
+          fees_24h: 249.64833380918728
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '14064197.427464593'
+          max_fee_percentage: '0.03'
+          mint_x: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+          mint_y: So11111111111111111111111111111111111111112
+          name: JitoSOL-SOL
+          protocol_fee_percentage: '5'
+          reserve_x: 93d6ukn24o1xMcMDip2SACKG8GbvhGUZim1e3ZEcQVm2
+          reserve_x_amount: 13439942846194
+          reserve_y: CodroyzrRNvc5kHRoAQYjpVSr1jA9fLcUWVFouiuWGsD
+          reserve_y_amount: 78749492985811
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 98.29768541501511
+          trade_volume_24h: 2627440.353839632
+          volume:
+            hour_1: 84875.35161422059
+            hour_12: 1040605.5734383367
+            hour_2: 535819.6837145629
+            hour_24: 2627440.353839632
+            hour_4: 535845.245015982
+            min_30: 1.02810598112875
+        - address: 5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6
+          apr: 0.14041264462791822
+          apy: 66.88698780669273
+          base_fee_percentage: '0.04'
+          bin_step: 4
+          cumulative_fee_volume: '4615336.7600'
+          cumulative_trade_volume: '9953900338.9800'
+          current_price: 148.49283341913576
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0.0037838296327737243
+            hour_12: 0.06392670387702838
+            hour_2: 0.010924735448871842
+            hour_24: 0.14041264462791822
+            hour_4: 0.02637109090690742
+            min_30: 0.0023097946696930814
+          fees:
+            hour_1: 261.3823570874694
+            hour_12: 4415.979090464926
+            hour_2: 754.667461095471
+            hour_24: 9699.535016016729
+            hour_4: 1821.682942728726
+            min_30: 159.55781146253167
+          fees_24h: 9699.535016016729
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '6907878.590079752'
+          max_fee_percentage: '0.2128'
+          mint_x: So11111111111111111111111111111111111111112
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: SOL-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: EYj9xKw6ZszwpyNibHY7JD5o3QgTVrSdcBp1fMJhrR9o
+          reserve_x_amount: 33259883361600
+          reserve_y: CoaxzEh8p5YyGLcj36Eo3cUThVJxeKCs7qvLAGDYwBcz
+          reserve_y_amount: 1968782503237
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 3930.620696924686
+          trade_volume_24h: 24547560.702581175
+          volume:
+            hour_1: 677221.7846766905
+            hour_12: 11235900.220590686
+            hour_2: 1928624.947156104
+            hour_24: 24547560.702581175
+            hour_4: 4559183.578469305
+            min_30: 412605.6815926697
+        - address: C8Gr6AUuq9hEdSYJzoEpNcdjpojPZwqG5MtQbeouNNwg
+          apr: 0.02458868650317523
+          apy: 9.388729047355993
+          base_fee_percentage: '0.15'
+          bin_step: 80
+          cumulative_fee_volume: '3657167.5800'
+          cumulative_trade_volume: '2255832295.2200'
+          current_price: 0.00275098091776302
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 4.056843670034868e-10
+            hour_12: 0.009019007084740158
+            hour_2: 0.0017923782269574616
+            hour_24: 0.02458868650317523
+            hour_4: 0.0017933843564357855
+            min_30: 2.0298956660786547e-10
+          fees:
+            hour_1: 1.87072414407114e-05
+            hour_12: 415.8916557124092
+            hour_2: 82.6515758850507
+            hour_24: 1133.853144311344
+            hour_4: 82.69797133087634
+            min_30: 9.360416967819886e-06
+          fees_24h: 1133.853144311344
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '4611279.8427233'
+          max_fee_percentage: '1.23'
+          mint_x: JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
+          mint_y: So11111111111111111111111111111111111111112
+          name: JUP-SOL
+          protocol_fee_percentage: '5'
+          reserve_x: 37XRwFkmrvrh57MuyHJ651qwXikmsUbcH29Uj5USWq1E
+          reserve_x_amount: 8681108610258
+          reserve_y: 5rJ5PvB5MyxsyV9VSid2esNLJUykRiq9xcGxnMmoDJhh
+          reserve_y_amount: 7273884037367
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 415.8916557124091
+          trade_volume_24h: 782080.8305685319
+          volume:
+            hour_1: 0.012053306834250984
+            hour_12: 288169.33615439193
+            hour_2: 58000.66166044931
+            hour_24: 782080.8305685319
+            hour_4: 58033.125174304696
+            min_30: 0.005905920661875257
+        - address: ARwi1S4DaiTG5DX7S4M4ZsrXqpMD1MrTmbu9ue2tpmEq
+          apr: 0.00020242917635964847
+          apy: 0.07391387744062339
+          base_fee_percentage: '0.01'
+          bin_step: 1
+          cumulative_fee_volume: '410191.6800'
+          cumulative_trade_volume: '3819958108'
+          current_price: 0.9998000299960006
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 7.06207304363633e-07
+            hour_12: 0.00018486315592803557
+            hour_2: 7.162759932011222e-07
+            hour_24: 0.00020242917635964847
+            hour_4: 3.834319950112288e-06
+            min_30: 2.2633292367999644e-07
+          fees:
+            hour_1: 0.028408690949779276
+            hour_12: 7.43651365868096
+            hour_2: 0.028813725374779275
+            hour_24: 8.143144194184803
+            hour_4: 0.1542436757482545
+            min_30: 0.009104723274391708
+          fees_24h: 8.143144194184803
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '4022712.704080354'
+          max_fee_percentage: '0.03'
+          mint_x: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          mint_y: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+          name: USDC-USDT
+          protocol_fee_percentage: '5'
+          reserve_x: 4STreSrMtf8umxyei9DaZG4bX3HT9hE3TGw3Xz41XNHd
+          reserve_x_amount: 2735472771633
+          reserve_y: GkTrsQsu8WvrbairmN12aUKk74qHivRNFxaT5YxCECKQ
+          reserve_y_amount: 1287163521110
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 7.436329612859261
+          trade_volume_24h: 84668.49673437278
+          volume:
+            hour_1: 298.921632433193
+            hour_12: 77262.92669338145
+            hour_2: 303.180731425838
+            hour_24: 84668.49673437278
+            hour_4: 1623.434274502642
+            min_30: 95.77287933166821
+        - address: 22hGJjJNckPqzpDnmgmJUYS6Yh1qeRtYyMV57bkcdDWK
+          apr: 0.01990114134740714
+          apy: 7.533467516777459
+          base_fee_percentage: '0.6'
+          bin_step: 80
+          cumulative_fee_volume: '23057.8500'
+          cumulative_trade_volume: '4033578.3700'
+          current_price: 4.40209055730234
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0
+            hour_12: 0.01010024185900936
+            hour_2: 0
+            hour_24: 0.01990114134740714
+            hour_4: 0.01010024185900936
+            min_30: 0
+          fees:
+            hour_1: 0
+            hour_12: 404.30904760216896
+            hour_2: 0
+            hour_24: 796.6355278105692
+            hour_4: 404.30904760216896
+            min_30: 0
+          fees_24h: 796.6355278105692
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '4002964.0205251873'
+          max_fee_percentage: '1.68'
+          mint_x: 27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: JLP-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: 2x65pwXEyh9utRJPx9fs5q5aYAojST2jKtvjE2f97JZF
+          reserve_x_amount: 779566951599
+          reserve_y: 8ZmnzUxNjF6wjbhPzDshhaEeP45BwnefWdMSfidZL3JN
+          reserve_y_amount: 571099605269
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 404.30904760216896
+          trade_volume_24h: 139760.54701368976
+          volume:
+            hour_1: 0
+            hour_12: 70931.40648940737
+            hour_2: 0
+            hour_24: 139760.54701368976
+            hour_4: 70931.40648940737
+            min_30: 0
+        - address: F1KKNyUCsQcZLRjwQ4abX6Ri8gDAQ46nHwSHFKA5sFQv
+          apr: 0.014590886891473597
+          apy: 5.469629370227191
+          base_fee_percentage: '0.2'
+          bin_step: 20
+          cumulative_fee_volume: '673614.8000'
+          cumulative_trade_volume: '314208184.4800'
+          current_price: 8.408228118132351
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 3.679515825686383e-07
+            hour_12: 0.0056642849317141905
+            hour_2: 0.00020169701021534303
+            hour_24: 0.014590886891473597
+            hour_4: 0.0016180139865193982
+            min_30: 0
+          fees:
+            hour_1: 0.014652373738639774
+            hour_12: 225.56016528652907
+            hour_2: 8.031871897412364
+            hour_24: 581.030597611875
+            hour_4: 64.43169908205572
+            min_30: 0
+          fees_24h: 581.030597611875
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '3982147.2260977426'
+          max_fee_percentage: '1.18'
+          mint_x: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          mint_y: CLoUDKc4Ane7HeQcPpE3YHnznRxhMimJ4MyaUqyHFzAu
+          name: USDC-CLOUD
+          protocol_fee_percentage: '5'
+          reserve_x: 4bi7CDbp3HpybnKoMd1g3LDLhT6c5WF9GKT6cEfKBZpC
+          reserve_x_amount: 1109242914108
+          reserve_y: 3qoB4PJrfRS3Q5oE8AUm1pYf7BLUyUGn3Tv8kELSB8RH
+          reserve_y_amount: 24154862959711136
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 185.33328232565623
+          trade_volume_24h: 303016.14532313764
+          volume:
+            hour_1: 7.711775558945837
+            hour_12: 117146.44175783782
+            hour_2: 4223.058779980471
+            hour_24: 303016.14532313764
+            hour_4: 33828.60270031922
+            min_30: 0
+        total: 2281
+dlmm_pools_direct:
+  input:
+    tool: search_dlmm_pools
+    tool_arguments:
+      limit: 5
+      include_pool_token_pairs:
+      - So11111111111111111111111111111111111111112-EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      payload:
+        pairs:
+        - address: 5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6
+          apr: 0.14038264082902654
+          apy: 66.86873798911815
+          base_fee_percentage: '0.04'
+          bin_step: 4
+          cumulative_fee_volume: '4615340.8800'
+          cumulative_trade_volume: '9953911187.8800'
+          current_price: 148.49283341913576
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0.003842599160056397
+            hour_12: 0.06384728488282054
+            hour_2: 0.010956944295766689
+            hour_24: 0.14038264082902654
+            hour_4: 0.026430810942640468
+            min_30: 0.002295444004674767
+          fees:
+            hour_1: 265.4420846801202
+            hour_12: 4410.492922767587
+            hour_2: 756.8924091342317
+            hour_24: 9697.46239001688
+            hour_4: 1825.808330291117
+            min_30: 158.56648494619748
+          fees_24h: 9697.46239001688
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '6907878.590079752'
+          max_fee_percentage: '0.2128'
+          mint_x: So11111111111111111111111111111111111111112
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: SOL-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: EYj9xKw6ZszwpyNibHY7JD5o3QgTVrSdcBp1fMJhrR9o
+          reserve_x_amount: 33259883361600
+          reserve_y: CoaxzEh8p5YyGLcj36Eo3cUThVJxeKCs7qvLAGDYwBcz
+          reserve_y_amount: 1968782503237
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 3934.746084487077
+          trade_volume_24h: 24542132.36683627
+          volume:
+            hour_1: 687898.7820188154
+            hour_12: 11221520.39451594
+            hour_2: 1934477.4563009674
+            hour_24: 24542132.36683627
+            hour_4: 4570032.479560388
+            min_30: 410284.65187730675
+        - address: BVRbyLjjfSBcoyiYFuxbgKYnWuiFaF9CSXEa5vdSZ9Hh
+          apr: 0.09219749323363273
+          apy: 39.98510158305688
+          base_fee_percentage: '0.2'
+          bin_step: 20
+          cumulative_fee_volume: '8147691.6300'
+          cumulative_trade_volume: '4084894372.3400'
+          current_price: 148.36311314590884
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0.004869852657700534
+            hour_12: 0.04995899811394295
+            hour_2: 0.009686043535263712
+            hour_24: 0.09219749323363273
+            hour_4: 0.02286653264526097
+            min_30: 0.0033604725063515473
+          fees:
+            hour_1: 188.44976117571935
+            hour_12: 1933.2743565174437
+            hour_2: 374.82296062319875
+            hour_24: 3567.7867077568
+            hour_4: 884.8712515156365
+            min_30: 130.0409449263594
+          fees_24h: 3567.7867077568
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '3869722.0310706957'
+          max_fee_percentage: '1.18'
+          mint_x: So11111111111111111111111111111111111111112
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: SOL-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: FMzVsENjscefpAtUJYBUTeJAYaKNfFQBHjTZE1AQRFYY
+          reserve_x_amount: 20378474946070
+          reserve_y: 7du3jFJK4rhf9JnZSQmhr6qPkgdQyJ88528qyxpYPPtL
+          reserve_y_amount: 846172611375
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 1679.6208493538468
+          trade_volume_24h: 1871994.3617708744
+          volume:
+            hour_1: 98690.54494114243
+            hour_12: 1014360.5851711297
+            hour_2: 196557.78840506167
+            hour_24: 1871994.3617708744
+            hour_4: 464121.1564577434
+            min_30: 67949.27852482832
+        - address: BGm1tav58oGcsQJehL9WXBFXF7D27vZsKefj4xJKD5Y
+          apr: 0.20679957302853683
+          apy: 112.55679457427333
+          base_fee_percentage: '0.1'
+          bin_step: 10
+          cumulative_fee_volume: '3744376.8100'
+          cumulative_trade_volume: '3671354858.5600'
+          current_price: 148.51836839054084
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0.0070919157921244215
+            hour_12: 0.0941424004013174
+            hour_2: 0.01899844361249685
+            hour_24: 0.20679957302853683
+            hour_4: 0.04499319161879004
+            min_30: 0.0043301235943281995
+          fees:
+            hour_1: 162.34674908137467
+            hour_12: 2155.0894150271156
+            hour_2: 434.90865493916726
+            hour_24: 4734.0153742212215
+            hour_4: 1029.97534153149
+            min_30: 99.1243423166984
+          fees_24h: 4734.0153742212215
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '2289180.4392497283'
+          max_fee_percentage: '0.59'
+          mint_x: So11111111111111111111111111111111111111112
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: SOL-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: DwZz4S1Z1LBXomzmncQRVKCYhjCqSAMQ6RPKbUAadr7H
+          reserve_x_amount: 9065691644329
+          reserve_y: 4N22J4vW2juHocTntJNmXywSonYjkndCwahjZ2cYLDgb
+          reserve_y_amount: 942678589391
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 1920.6428072644928
+          trade_volume_24h: 4947760.648127679
+          volume:
+            hour_1: 170583.14290257037
+            hour_12: 2255516.517842587
+            hour_2: 455516.52783938305
+            hour_24: 4947760.648127679
+            hour_4: 1076266.5524348717
+            min_30: 104040.26991932548
+        - address: CgqwPLSFfht89pF5RSKGUUMFj5zRxoUt4861w2SkXaqY
+          apr: 0.05798050595444548
+          apy: 23.5613389822227
+          base_fee_percentage: '0.05'
+          bin_step: 80
+          cumulative_fee_volume: '392769.4400'
+          cumulative_trade_volume: '613978163.4600'
+          current_price: 148.91307297223108
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0.001757085133450111
+            hour_12: 0.02672053331382373
+            hour_2: 0.005123697366592613
+            hour_24: 0.05798050595444548
+            hour_4: 0.01559176936924363
+            min_30: 9.250630155379967e-06
+          fees:
+            hour_1: 30.901497672435955
+            hour_12: 469.92856651291874
+            hour_2: 90.10941998987853
+            hour_24: 1019.6913260997819
+            hour_4: 274.2092660739709
+            min_30: 0.1626889447603173
+          fees_24h: 1019.6913260997819
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '1758679.5929323898'
+          max_fee_percentage: '1.13'
+          mint_x: So11111111111111111111111111111111111111112
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: SOL-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: 4jTcZiooRV5Z5sb29xroJEu1FnPJbadmZcnEbXFsUuXi
+          reserve_x_amount: 7896768400933
+          reserve_y: AsAhzfi3u9gihEYzV3zq6VnkfvQaM7yF13wnsTfAk936
+          reserve_y_amount: 582685992168
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 444.13980964014064
+          trade_volume_24h: 2069623.4306335202
+          volume:
+            hour_1: 64984.178701620636
+            hour_12: 946525.7686111232
+            hour_2: 171918.90198413242
+            hour_24: 2069623.4306335202
+            hour_4: 539739.0955240687
+            min_30: 334.3345473753802
+        - address: 9oCwYQJYCWHeXnodFCxdqY1kV4uBPo5P7yWGkNJ2Wjj3
+          apr: 0.07636881115468512
+          apy: 32.13312846201739
+          base_fee_percentage: '0.4'
+          bin_step: 50
+          cumulative_fee_volume: '545642.1200'
+          cumulative_trade_volume: '139464981.4700'
+          current_price: 148.0465690856212
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0
+            hour_12: 0.03434270198041503
+            hour_2: 7.346873464814031e-09
+            hour_24: 0.07636881115468512
+            hour_4: 0.015008136304171206
+            min_30: 0
+          fees:
+            hour_1: 0
+            hour_12: 343.2802662024958
+            hour_2: 7.343733990982076e-05
+            hour_24: 763.3617715256898
+            hour_4: 150.0172301130329
+            min_30: 0
+          fees_24h: 763.3617715256898
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '999572.6789297527'
+          max_fee_percentage: '1.9625'
+          mint_x: So11111111111111111111111111111111111111112
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: SOL-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: G9HhRByXgHzA3hQUy5LARE8xxk13gQyYzgFToLqR6zG5
+          reserve_x_amount: 5064066997026
+          reserve_y: 2vRxenZynWMyV7UFLLw1zvjEocqq1bTneaYDQi4KK7xx
+          reserve_y_amount: 249819950581
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 338.7400870863825
+          trade_volume_24h: 199991.8954968784
+          volume:
+            hour_1: 0
+            hour_12: 89964.31633234456
+            hour_2: 0.019242803943668698
+            hour_24: 199991.8954968784
+            hour_4: 39175.33093496989
+            min_30: 0
+        total: 63
+dlmm_pools_combined:
+  input:
+    tool: search_dlmm_pools
+    tool_arguments:
+      limit: 3
+      include_token_mints:
+      - So11111111111111111111111111111111111111112
+      include_pool_token_pairs: []
+    raw_data_only: false
+  output:
+    response: ''
+    data:
+      payload:
+        pairs:
+        - address: BoeMUkCLHchTD31HdXsbDExuZZfcUppSLpYtV3LZTH6U
+          apr: 0.0017718513239984152
+          apy: 0.6488157530742056
+          base_fee_percentage: '0.01'
+          bin_step: 1
+          cumulative_fee_volume: '247716.4500'
+          cumulative_trade_volume: '2432346772.3100'
+          current_price: 1.2108110637018032
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 3.477022729730086e-05
+            hour_12: 0.0007015860988600084
+            hour_2: 0.0003612852721619731
+            hour_24: 0.0017718513239984152
+            hour_4: 0.0003613026807941368
+            min_30: 6.943645510821785e-10
+          fees:
+            hour_1: 4.899016747832757
+            hour_12: 98.85129651219286
+            hour_2: 50.90396976508172
+            hour_24: 249.64833380918728
+            hour_4: 50.906422587141165
+            min_30: 9.7833802919e-05
+          fees_24h: 249.64833380918728
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '14089688.58887229'
+          max_fee_percentage: '0.03'
+          mint_x: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+          mint_y: So11111111111111111111111111111111111111112
+          name: JitoSOL-SOL
+          protocol_fee_percentage: '5'
+          reserve_x: 93d6ukn24o1xMcMDip2SACKG8GbvhGUZim1e3ZEcQVm2
+          reserve_x_amount: 13464675359006
+          reserve_y: CodroyzrRNvc5kHRoAQYjpVSr1jA9fLcUWVFouiuWGsD
+          reserve_y_amount: 78891773946636
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 98.29768541501511
+          trade_volume_24h: 2627440.353839632
+          volume:
+            hour_1: 51568.580780735356
+            hour_12: 1040485.5658210114
+            hour_2: 535819.6837145629
+            hour_24: 2627440.353839632
+            hour_4: 535845.245015982
+            min_30: 1.02810598112875
+        - address: 5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6
+          apr: 0.14038264082902654
+          apy: 66.86873798911815
+          base_fee_percentage: '0.04'
+          bin_step: 4
+          cumulative_fee_volume: '4615340.8800'
+          cumulative_trade_volume: '9953911187.8800'
+          current_price: 148.49283341913576
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 0.003842599160056397
+            hour_12: 0.06384728488282054
+            hour_2: 0.010956944295766689
+            hour_24: 0.14038264082902654
+            hour_4: 0.026430810942640468
+            min_30: 0.002295444004674767
+          fees:
+            hour_1: 265.4420846801202
+            hour_12: 4410.492922767587
+            hour_2: 756.8924091342317
+            hour_24: 9697.46239001688
+            hour_4: 1825.808330291117
+            min_30: 158.56648494619748
+          fees_24h: 9697.46239001688
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '6907878.590079752'
+          max_fee_percentage: '0.2128'
+          mint_x: So11111111111111111111111111111111111111112
+          mint_y: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+          name: SOL-USDC
+          protocol_fee_percentage: '5'
+          reserve_x: EYj9xKw6ZszwpyNibHY7JD5o3QgTVrSdcBp1fMJhrR9o
+          reserve_x_amount: 33259883361600
+          reserve_y: CoaxzEh8p5YyGLcj36Eo3cUThVJxeKCs7qvLAGDYwBcz
+          reserve_y_amount: 1968782503237
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 3934.746084487077
+          trade_volume_24h: 24542132.36683627
+          volume:
+            hour_1: 687898.7820188154
+            hour_12: 11221520.39451594
+            hour_2: 1934477.4563009674
+            hour_24: 24542132.36683627
+            hour_4: 4570032.479560388
+            min_30: 410284.65187730675
+        - address: C8Gr6AUuq9hEdSYJzoEpNcdjpojPZwqG5MtQbeouNNwg
+          apr: 0.02458868650317523
+          apy: 9.388729047355993
+          base_fee_percentage: '0.15'
+          bin_step: 80
+          cumulative_fee_volume: '3657167.5800'
+          cumulative_trade_volume: '2255832295.2200'
+          current_price: 0.00275098091776302
+          farm_apr: 0
+          farm_apy: 0
+          fee_tvl_ratio:
+            hour_1: 4.056843670034868e-10
+            hour_12: 0.009019007084740158
+            hour_2: 0.0017923782269574616
+            hour_24: 0.02458868650317523
+            hour_4: 0.0017933843564357855
+            min_30: 1.67713160349999e-10
+          fees:
+            hour_1: 1.87072414407114e-05
+            hour_12: 415.8916557124092
+            hour_2: 82.6515758850507
+            hour_24: 1133.853144311344
+            hour_4: 82.69797133087634
+            min_30: 7.73372315681371e-06
+          fees_24h: 1133.853144311344
+          hide: false
+          is_blacklisted: false
+          launchpad: null
+          liquidity: '4611279.8427233'
+          max_fee_percentage: '1.23'
+          mint_x: JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
+          mint_y: So11111111111111111111111111111111111111112
+          name: JUP-SOL
+          protocol_fee_percentage: '5'
+          reserve_x: 37XRwFkmrvrh57MuyHJ651qwXikmsUbcH29Uj5USWq1E
+          reserve_x_amount: 8681108610258
+          reserve_y: 5rJ5PvB5MyxsyV9VSid2esNLJUykRiq9xcGxnMmoDJhh
+          reserve_y_amount: 7273884037367
+          reward_mint_x: '11111111111111111111111111111111'
+          reward_mint_y: '11111111111111111111111111111111'
+          tags: []
+          today_fees: 415.8916557124091
+          trade_volume_24h: 782080.8305685319
+          volume:
+            hour_1: 0.012053306834250984
+            hour_12: 288169.33615439193
+            hour_2: 58000.66166044931
+            hour_24: 782080.8305685319
+            hour_4: 58033.125174304696
+            min_30: 0.00484531629709923
+        total: 1390
+additional_test_cases:
+  case_1:
+    input:
+      query: What are the top 5 trending pools on Meteora?
+    output:
+      response: "**Top 5 Trending Pools on Meteora**\n\nBased on the provided payload\
+        \ data, here is an objective analysis of the top 5 trending pools on Meteora,\
+        \ focusing on key metrics such as APR, TVL, and 24-hour Fees. Please note\
+        \ that the ranking is based on the `score` metric, which appears to be a comprehensive\
+        \ indicator of a pool's attractiveness, considering multiple factors.\n\n\
+        ### Ranking Criteria: **Score** (Higher is Better)\n\n1. **PWC-SOL**\n\t*\
+        \ **Address:** `RLvLCzAFyTA6B43oHSSfzLpSXX5nrPhPFczRqHRB9en`\n\t* **APR:**\
+        \ `79.83%`\n\t* **TVL (Total Value Locked):** `$18,490.95`\n\t* **24h Fees:**\
+        \ `$14,760.59`\n\t* **Score:** `68.64`\n\t* **[View on Meteora](https://app.meteora.ag/dlmm/RLvLCzAFyTA6B43oHSSfzLpSXX5nrPhPFczRqHRB9en)**\n\
+        \n2. **KAI-SOL**\n\t* **Address:** `DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay`\n\
+        \t* **APR:** `55.32%`\n\t* **TVL:** `$40,790.81`\n\t* **24h Fees:** `$22,565.08`\n\
+        \t* **Score:** `71.91`\n\t* **[View on Meteora](https://app.meteora.ag/dlmm/DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay)**\n\
+        \n3. **OSCAR-SOL**\n\t* **Address:** `6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt`\n\
+        \t* **APR:** `66.86%`\n\t* **TVL:** `$34,889.16`\n\t* **24h Fees:** `$23,327.12`\n\
+        \t* **Score:** `71.91`\n\t* **[View on Meteora](https://app.meteora.ag/dlmm/6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt)**\n\
+        \n4. **VIBE-SOL**\n\t* **Address:** `HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu`\n\
+        \t* **APR:** `29.14%`\n\t* **TVL:** `$373,040.54`\n\t* **24h Fees:** `$108,705.49`\n\
+        \t* **Score:** `78.84`\n\t* **[View on Meteora](https://app.meteora.ag/dlmm/HD6v6vrx27SXBwGP5VAkC7PGfGaPhR55EFifM42h8Exu)**\n\
+        \n5. **GOR-SOL**\n\t* **Address:** `CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w`\n\
+        \t* **APR:** `24.89%`\n\t* **TVL:** `$1,658,643.00`\n\t* **24h Fees:** `$412,833.85`\n\
+        \t* **Score:** `79.75`\n\t* **[View on Meteora](https://app.meteora.ag/dlmm/CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w)**\n\
+        \n**Note:** \n- The ranking is based on the `score` provided in the payload,\
+        \ which seems to encapsulate the pool's overall attractiveness.\n- **TVL (Total\
+        \ Value Locked)** and **24h Fees** are indicators of a pool's liquidity and\
+        \ activity.\n- **APR (Annual Percentage Rate)** reflects the pool's annualized\
+        \ return rate.\n- Always conduct your own research and consider multiple factors\
+        \ before engaging with any DeFi opportunity."
+      data: *id001
+  case_2:
+    input:
+      query: Show me pools with high TVL
+    output:
+      response: "**High TVL Pools on Meteora**\n\nBased on the provided data, here\
+        \ are the top pools with high Total Value Locked (TVL) on the Meteora platform,\
+        \ along with their respective metrics:\n\n### **Top 3 Pools by TVL**\n\n1.\
+        \ **SOL-USDC**\n\t* **TVL:** **$6,907,861.11**\n\t* **APR:** 0.14%\n\t* **Base\
+        \ Token:** SOL\n\t* **Quote Token:** USDC\n\t* **Fees (24h):** $9,696.74\n\
+        \t* **Volume (24h):** $24,540,179.61\n\t* **URL:** https://app.meteora.ag/dlmm/5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6\n\
+        \n2. **aura-SOL**\n\t* **TVL:** **$1,058,744.69**\n\t* **APR:** 2.85%\n\t\
+        * **Base Token:** aura\n\t* **Quote Token:** SOL\n\t* **Fees (24h):** $30,181.53\n\
+        \t* **Volume (24h):** $1,548,975.13\n\t* **URL:** https://app.meteora.ag/dlmm/FTUUwFN25knhihreUS9hjmBS2zZMJHdTZVAiCKedhjw9\n\
+        \n3. **GOR-SOL**\n\t* **TVL:** **$1,651,354.21**\n\t* **APR:** 25.01%\n\t\
+        * **Base Token:** GOR\n\t* **Quote Token:** SOL\n\t* **Fees (24h):** $413,042.98\n\
+        \t* **Volume (24h):** $14,598,674.17\n\t* **URL:** https://app.meteora.ag/dlmm/CpaQjgRZuVJ9yv4ewnZXuFhoy2VUwr4pStbTSHvHtK4w\n\
+        \n### **Additional Notable Pools (TVL > $100,000)**\n\n* **VIBE-SOL**: TVL\
+        \ - **$375,847.83**, APR - 28.92%\n* **shiyo-SOL**: TVL - **$92,425.26**,\
+        \ APR - 16.96%\n* **YOURSELF-SOL**: TVL - **$74,264.46**, APR - 37.80%"
+      data: *id002
+  case_3:
+    input:
+      query: Find liquidity pools for SOL
+    output:
+      response: "**Liquidity Pools for SOL on Meteora Platform**\n\nBelow is a summary\
+        \ of the first 10 liquidity pools for SOL (Solana) on the Meteora platform,\
+        \ extracted from the provided payload data. Key metrics include **Pool Name**,\
+        \ **Pool Type**, **Total Value Locked (TVL)**, **Annual Percentage Rate (APR)**,\
+        \ **Daily Base APY**, and **Trade APY**.\n\n| **Pool #** | **Pool Name** |\
+        \ **Pool Type** | **TVL (USD)** | **APR** | **Daily Base APY** | **Trade APY**\
+        \ |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1    | **SOL-mSOL** |\
+        \ Stable    | $8,581,774.77 | 1.38% | 1.45%       | 0.32%    |\n| 2    | **METAV-SOL**\
+        \ | Volatile  | $6,160,215.31 | 1.68% | 1.77%       | 0.03%    |\n| 3    |\
+        \ **WATCHCOIN-SOL** | Volatile | $5,372,386.78 | 38.50% | 38.10%      | 44.49%\
+        \   |\n| 4    | **SOL-JitoSOL** | Stable    | $4,151,724.54 | 1.55% | 1.63%\
+        \       | 0.28%    |\n| 5    | **SOL-bSOL** | Stable    | $3,529,902.13 |\
+        \ 1.61% | 1.70%       | 0.43%    |\n| 6    | **SOL-ZERO** | Volatile  | $2,785,313.50\
+        \ | 1.70% | 1.76%       | 0.06%    |\n| 7    | **VIRTUAL-SOL** | Volatile\
+        \ | $2,508,878.39 | 7.31% | 6.61%       | 5.84%    |\n| 8    | **CANDLE-SOL**\
+        \ | Volatile | $2,095,003.31 | 15.64% | 14.80%      | 15.01%   |\n| 9    |\
+        \ **DIS-SOL** | Volatile  | $1,908,719.82 | 17.71% | 16.91%      | 17.46%\
+        \   |\n| 10   | **SOL-NOBODY** | Volatile | $1,670,173.24 | 202.14% | 411.63%\
+        \     | 638.37%  |\n\n**Key Observations:**\n\n- **Highest TVL:** SOL-mSOL\
+        \ with approximately $8,581,774.77\n- **Highest APR:** SOL-NOBODY with 202.14%\n\
+        - **Highest Daily Base APY:** SOL-NOBODY with 411.63%\n- **Highest Trade APY:**\
+        \ SOL-NOBODY with 638.37%\n\n**Disclaimer:** \n- The data is extracted from\
+        \ the provided payload and might not reflect real-time values due to market\
+        \ fluctuations.\n- APR, Daily Base APY, and Trade APY are subject to change\
+        \ and might have different values at the time of inquiry.\n- It's essential\
+        \ to conduct thorough research and consider personal risk tolerance before\
+        \ investing in any liquidity pool."
+      data: *id003
+  case_4:
+    input:
+      query: Get me the best DLMM pools
+    output:
+      response: "**Top DLMM Pools on Meteora (based on provided data)**\n\nBelow is\
+        \ an analysis of the top DLMM (Decentralized Liquidity Market Maker) pools\
+        \ on the Meteora platform, filtered from the provided payload data. The ranking\
+        \ is primarily based on the **APR (Annual Percentage Rate)**, which indicates\
+        \ the estimated annual return on investment, considering fees and other factors.\
+        \ Additional key metrics like **TVL (Total Value Locked)**, **Fees (24h)**,\
+        \ and **Score** (a composite metric likely reflecting pool health and attractiveness)\
+        \ are also highlighted for a more comprehensive view.\n\n### Top 3 Pools by\
+        \ APR:\n\n1. **OSCAR-SOL**\n\t* **APR:** 58.88%\n\t* **TVL:** $39,621.31\n\
+        \t* **Fees (24h):** $23,327.12\n\t* **Score:** 71.91\n\t* **URL:** https://app.meteora.ag/dlmm/6YAU2qApjPzZj4m3uFccuMybTfy4QYqYBEUNhgpnQRCt\n\
+        \n2. **KAI-SOL**\n\t* **APR:** 55.32%\n\t* **TVL:** $40,790.81\n\t* **Fees\
+        \ (24h):** $22,565.08\n\t* **Score:** 71.91\n\t* **URL:** https://app.meteora.ag/dlmm/DQu4QuJCFZXAexajJh2ieCoD2cVcaEs7QHVMzcZJYuay\n\
+        \n3. **FB-SOL**\n\t* **APR:** 48.98%\n\t* **TVL:** $17,407.93\n\t* **Fees\
+        \ (24h):** $8,526.51\n\t* **Score:** 66.36\n\t* **URL:** https://app.meteora.ag/dlmm/42uGiRCGdkxrFziMKAYH4veCawK5Ry6TZnfGwPrqBbrT\n\
+        \n### Notable Mention (Highest TVL):\n\n* **SOL-USDC**\n\t* **APR:** 0.14%\
+        \ (Note: Significantly lower APR compared to the top 3, but highlighted for\
+        \ its high TVL)\n\t* **TVL:** $6,907,861.11\n\t* **Fees (24h):** $9,696.74\n\
+        \t* **Score:** 42.24\n\t* **URL:** https://app.meteora.ag/dlmm/5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6\n\
+        \n**Investment Considerations:**\n- **APR** is subject to change and may not\
+        \ reflect the actual return.\n- **TVL** indicates pool size, which can affect\
+        \ liquidity.\n- **Fees (24h)** show recent activity but may not predict future\
+        \ fees.\n- **Score** is a composite metric; its components and weightage are\
+        \ not detailed here.\n- Always research the underlying assets (**Base Token**\
+        \ and **Quote Token**) and understand the fees (**Base Fee Percentage**) before\
+        \ investing.\n\n**Disclaimer:** This analysis is based on the provided data\
+        \ snapshot and may not reflect the current market situation. Investing in\
+        \ DeFi products carries risks, including but not limited to, liquidity risks,\
+        \ smart contract risks, and market volatility. Always do your own research\
+        \ (DYOR) and consider your risk tolerance before making investment decisions."
+      data: *id002
