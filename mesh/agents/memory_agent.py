@@ -29,7 +29,7 @@ class MemoryAgent(ContextAgent):
         )
 
     def get_system_prompt(self) -> str:
-        return """You are a cross-platformmemory assistant that helps users manage their conversation history.
+        return """You are a cross-platform memory assistant that helps users manage their conversation history.
 
         Key functions:
         - Store conversation messages in the user's context

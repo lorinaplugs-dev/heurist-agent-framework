@@ -125,12 +125,21 @@ class NillionContextStorage(ContextStorage):
                 async with session.get(url, headers=headers) as response:
                     if response.status == 200:
                         data = await response.json()
-                        if isinstance(data, list) and len(data) > 0:
-                            return data[0].get("content", {})
-                        elif isinstance(data, dict):
-                            return data.get("content", {})
+
+                        if isinstance(data, dict) and "credentials" in data:
+                            credentials = data["credentials"]
+                            if isinstance(credentials, list) and len(credentials) > 0:
+                                latest_credential = max(credentials, key=lambda x: x.get("_updated", ""))
+                                return latest_credential.get("content", {})
+                            else:
+                                return {}
                         else:
-                            return {}
+                            if isinstance(data, list) and len(data) > 0:
+                                return data[0].get("content", {})
+                            elif isinstance(data, dict):
+                                return data.get("content", {})
+                            else:
+                                return {}
                     elif response.status == 404:
                         return {}
                     else:
