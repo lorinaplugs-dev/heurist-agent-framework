@@ -29,6 +29,7 @@ class MetaSleuthSolTokenWalletClusterAgent(MeshAgent):
                 "description": "This agent can analyze the wallet clusters holding a specific Solana token, and identify top holder behavior, concentration, and potential market manipulation.",
                 "external_apis": ["MetaSleuth"],
                 "tags": ["Solana"],
+                "hidden": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/MetaSleuth.png",
                 "examples": [
                     "Analyze the wallet clusters of this Solana token: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
