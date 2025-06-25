@@ -33,7 +33,7 @@ async def run_agent():
 
         # Test 3: Natural language query for address analysis
         agent_input_address = {
-            "query": "Get address history for 0x742d35Cc6639C0532fEa3BcdE3524A0be79C3b7B on Base",
+            "query": "Get address history for 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045 on ethereum",
             "raw_data_only": False,
         }
         agent_output_address = await agent.handle_message(agent_input_address)
