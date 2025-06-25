@@ -1,12 +1,14 @@
 import asyncio
 import logging
 import os
+import time
 from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
 from firecrawl.firecrawl import ScrapeOptions
 
+from core.llm import call_llm_async
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
@@ -44,18 +46,62 @@ class FirecrawlSearchAgent(MeshAgent):
         )
 
     def get_system_prompt(self) -> str:
-        return """You are an expert research analyst that processes web search results.
+        return """You are an expert research analyst that processes web search results and scraped content.
 
         Your capabilities:
         1. Execute targeted web searches on specific topics
         2. Analyze search results for key findings and patterns
+        3. Extract and process structured data from web pages
+        4. Scrape specific URLs for detailed content analysis
 
-        For search results:
+        For search results and scraped content:
         1. Only use relevant, good quality, credible information
         2. Extract key facts and statistics
         3. Present the information like a human, not a robot
 
         Return analyses in clear natural language with concrete findings. Do not make up any information."""
+
+    async def _process_with_llm(self, raw_content: str, context_info: Dict[str, str]) -> str:
+        """Process raw scraped content with LLM and track performance"""
+        start_time = time.time()
+
+        try:
+            messages = [
+                {"role": "system", "content": self.get_system_prompt()},
+                {
+                    "role": "user",
+                    "content": f"""Extract and format the relevant information from this web content.
+
+                Context:
+                - URL: {context_info.get("url", "unknown")}
+                - Content Type: {context_info.get("type", "unknown")}
+                - Purpose: {context_info.get("purpose", "general analysis")}
+
+                Raw Content:
+                {raw_content}""",
+                },
+            ]
+
+            response = await call_llm_async(
+                base_url=self.heurist_base_url,
+                api_key=self.heurist_api_key,
+                model_id=self.metadata["small_model_id"],
+                messages=messages,
+                max_tokens=25000,
+                temperature=0.1,
+            )
+
+            processed_content = response if isinstance(response, str) else response.get("content", raw_content)
+            processing_time = time.time() - start_time
+            logger.info(f"LLM processing completed in {processing_time:.2f}s for {context_info.get('type', 'content')}")
+
+            return processed_content
+
+        except Exception as e:
+            processing_time = time.time() - start_time
+            logger.error(f"LLM processing failed after {processing_time:.2f}s: {str(e)}")
+            logger.warning("Falling back to raw content due to LLM processing failure")
+            return raw_content
 
     def get_tool_schemas(self) -> List[Dict]:
         return [
@@ -90,6 +136,28 @@ class FirecrawlSearchAgent(MeshAgent):
                             },
                         },
                         "required": ["urls", "extraction_prompt"],
+                    },
+                },
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "firecrawl_scrape_url",
+                    "description": "Scrape and analyze content from a specific URL using Firecrawl. This provides detailed content extraction and processing from individual web pages with intelligent content analysis.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "url": {
+                                "type": "string",
+                                "description": "The URL to scrape and analyze",
+                            },
+                            "wait_time": {
+                                "type": "integer",
+                                "description": "Time to wait for page to load in milliseconds (default: 5000)",
+                                "default": 5000,
+                            },
+                        },
+                        "required": ["url"],
                     },
                 },
             },
@@ -167,6 +235,41 @@ class FirecrawlSearchAgent(MeshAgent):
             logger.error(f"Exception in firecrawl_extract_web_data: {str(e)}")
             return {"status": "error", "error": f"Failed to extract data: {str(e)}"}
 
+    @with_cache(ttl_seconds=300)
+    @with_retry(max_retries=3)
+    async def firecrawl_scrape_url(self, url: str, wait_time: int = 5000) -> Dict[str, Any]:
+        """
+        Scrape and analyze content from a specific URL using Firecrawl.
+        """
+        logger.info(f"Scraping content from URL: {url}")
+
+        try:
+            scrape_result = await asyncio.get_event_loop().run_in_executor(
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=wait_time)
+            )
+
+            markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
+            if not markdown_content:
+                return {"status": "error", "error": "Failed to scrape URL - no content returned"}
+
+            context_info = {"type": "webpage", "url": url, "purpose": "content analysis"}
+
+            processed_content = await self._process_with_llm(markdown_content, context_info)
+            logger.info("Successfully processed scraped content")
+
+            return {
+                "status": "success",
+                "data": {
+                    "processed_content": processed_content,
+                    "raw_markdown": markdown_content,
+                    "url": url,
+                },
+            }
+
+        except Exception as e:
+            logger.error(f"Exception in firecrawl_scrape_url: {str(e)}")
+            return {"status": "error", "error": f"Failed to scrape URL: {str(e)}"}
+
     # ------------------------------------------------------------------------
     #                      TOOL HANDLING LOGIC
     # ------------------------------------------------------------------------
@@ -195,6 +298,15 @@ class FirecrawlSearchAgent(MeshAgent):
                 return {"status": "error", "error": "Missing 'extraction_prompt' parameter"}
 
             result = await self.firecrawl_extract_web_data(urls, extraction_prompt, enable_web_search)
+
+        elif tool_name == "firecrawl_scrape_url":
+            url = function_args.get("url")
+            wait_time = function_args.get("wait_time", 5000)
+
+            if not url:
+                return {"status": "error", "error": "Missing 'url' parameter"}
+
+            result = await self.firecrawl_scrape_url(url, wait_time)
 
         else:
             return {"status": "error", "error": f"Unsupported tool: {tool_name}"}

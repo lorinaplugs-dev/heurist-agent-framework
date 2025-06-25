@@ -46,6 +46,20 @@ async def run_agent():
         }
         agent_output_extract = await agent.handle_message(agent_input_extract)
 
+        # NEW: Example for scraping Heurist.ai services and offerings (with response generation)
+        agent_input_scrape_heurist = {
+            "query": "Scap me data of heurist.ai and generate a response about their services and offerings",
+            "raw_data_only": False,
+        }
+        agent_output_scrape_heurist = await agent.handle_message(agent_input_scrape_heurist)
+
+        # NEW: Natural language query about Heurist services
+        agent_input_heurist_query = {
+            "query": "What services and products does Heurist.ai offer? What makes them unique in the AI space?",
+            "raw_data_only": False,
+        }
+        agent_output_heurist_query = await agent.handle_message(agent_input_heurist_query)
+
         script_dir = Path(__file__).parent
         current_file = Path(__file__).stem
         base_filename = f"{current_file}_example"
@@ -56,6 +70,8 @@ async def run_agent():
             "natural_language_query_raw_data": {"input": agent_input_query_raw, "output": agent_output_query_raw},
             "direct_search": {"input": agent_input_search, "output": agent_output_search},
             "direct_extract": {"input": agent_input_extract, "output": agent_output_extract},
+            "scrape_heurist_homepage": {"input": agent_input_scrape_heurist, "output": agent_output_scrape_heurist},
+            "heurist_services_query": {"input": agent_input_heurist_query, "output": agent_output_heurist_query},
         }
 
         with open(output_file, "w", encoding="utf-8") as f:
