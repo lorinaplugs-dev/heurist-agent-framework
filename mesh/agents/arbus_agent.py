@@ -27,16 +27,16 @@ class ArbusAgent(MeshAgent):
                 "version": "1.0.0",
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
-                "description": "This agent provides professional-grade cryptocurrency analysis, sentiment tracking, and market intelligence using Arbus AI. Get AI-powered market insights, project analysis, and structured reports.",
+                "description": "This agent provides professional-grade cryptocurrency analysis, sentiment tracking, and market intelligence using Arbus AI. Get AI-powered market insights and structured reports.",
                 "external_apis": ["Arbus AI"],
                 "tags": ["Market Analysis"],
                 "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Arbus.png",
                 "examples": [
                     "Is Bitcoin bullish right now?",
-                    "Analyze Ethereum's recent developments",
-                    "Generate a report on Solana's partnerships",
                     "What's happening with DeFi markets?",
+                    "Generate a report on Solana's partnerships",
+                    "Analyze the current crypto market sentiment",
                 ],
                 "credits": 0,
             }
@@ -47,9 +47,8 @@ class ArbusAgent(MeshAgent):
 
 You can help users with:
 - Real-time crypto market analysis and sentiment
-- Comprehensive project analysis with bullish/bearish scenarios
-- Structured intelligence reports on partnerships, development, and funding
 - AI-powered answers to any crypto market questions
+- Structured intelligence reports on partnerships, development, and funding
 
 Be objective and factual in your analysis. Provide clear, actionable insights based on the data returned. If the user's query is outside your scope, provide a brief explanation and suggest how they might rephrase their question.
 
@@ -78,30 +77,6 @@ Format your responses in clean text without markdown or special formatting. Focu
                             },
                         },
                         "required": ["query"],
-                    },
-                },
-            },
-            {
-                "type": "function",
-                "function": {
-                    "name": "analyze_project",
-                    "description": "Get comprehensive AI analysis of specific crypto projects with bullish/bearish scenarios, community sentiment, development progress, and price outlook.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "ticker_or_twitterhandle": {
-                                "type": "string",
-                                "description": "Project name, ticker symbol, or Twitter handle (e.g., 'Ethereum', 'BTC', 'solana', 'vitalik')",
-                            },
-                            "day_interval": {
-                                "type": "integer",
-                                "description": "Number of days to analyze (1-30)",
-                                "default": 7,
-                                "minimum": 1,
-                                "maximum": 30,
-                            },
-                        },
-                        "required": ["ticker_or_twitterhandle"],
                     },
                 },
             },
@@ -184,48 +159,6 @@ Format your responses in clean text without markdown or special formatting. Focu
             return {"status": "error", "error": f"Failed to get AI analysis: {str(e)}"}
 
     @monitor_execution()
-    @with_cache(ttl_seconds=600)
-    @with_retry(max_retries=3)
-    async def analyze_project(self, ticker_or_twitterhandle: str, day_interval: int = 7) -> Dict[str, Any]:
-        """
-        Get comprehensive AI analysis of specific crypto projects.
-
-        Args:
-            ticker_or_twitterhandle: Project name, ticker, or Twitter handle
-            day_interval: Days to analyze (1-30)
-
-        Returns:
-            Dict containing project analysis or error information
-        """
-        try:
-            url = f"{self.base_url}/assistant-summary"
-
-            # Add API key as query parameter
-            params = {"key": self.api_key}
-
-            payload = {
-                "ticker_or_twitterhandle": ticker_or_twitterhandle,
-                "day_interval": max(1, min(day_interval, 30)),  # Ensure day_interval is within valid range
-            }
-
-            logger.info(f"Analyzing project: {ticker_or_twitterhandle} ({day_interval} days)")
-
-            result = await self._api_request(
-                url=url, method="POST", headers=self.headers, params=params, json_data=payload
-            )
-
-            if "error" in result:
-                logger.error(f"API error: {result['error']}")
-                return {"status": "error", "error": result["error"]}
-
-            logger.info(f"Successfully analyzed project: {ticker_or_twitterhandle}")
-            return {"status": "success", "data": result}
-
-        except Exception as e:
-            logger.error(f"Error analyzing project {ticker_or_twitterhandle}: {str(e)}")
-            return {"status": "error", "error": f"Failed to analyze project: {str(e)}"}
-
-    @monitor_execution()
     @with_cache(ttl_seconds=900)
     @with_retry(max_retries=3)
     async def generate_report(
@@ -301,21 +234,6 @@ Format your responses in clean text without markdown or special formatting. Focu
 
             if result.get("status") == "error":
                 return {"error": result.get("error", "Failed to get AI analysis")}
-
-            return result.get("data", {})
-
-        elif tool_name == "analyze_project":
-            ticker_or_handle = function_args.get("ticker_or_twitterhandle")
-            day_interval = function_args.get("day_interval", 7)
-
-            if not ticker_or_handle:
-                return {"error": "ticker_or_twitterhandle parameter is required"}
-
-            logger.info(f"Handling project analysis: {ticker_or_handle}")
-            result = await self.analyze_project(ticker_or_twitterhandle=ticker_or_handle, day_interval=day_interval)
-
-            if result.get("status") == "error":
-                return {"error": result.get("error", "Failed to analyze project")}
 
             return result.get("data", {})
 

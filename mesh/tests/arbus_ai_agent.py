@@ -26,32 +26,32 @@ async def run_agent():
         agent_input_ai_query = {"query": "Is Bitcoin bullish right now?"}
         agent_output_ai_query = await agent.handle_message(agent_input_ai_query)
 
-        # Test 3: Project Analysis - Direct tool call
-        agent_input_project_direct = {
-            "tool": "analyze_project",
-            "tool_arguments": {
-                "ticker_or_twitterhandle": "ETH",  # Using ticker symbol
-                "day_interval": 3,  # Shorter period to avoid timeouts
-            },
-        }
-        agent_output_project_direct = await agent.handle_message(agent_input_project_direct)
+        # Test 3: AI Assistant - Market sentiment query
+        agent_input_sentiment_query = {"query": "Analyze the current crypto market sentiment over the last 14 days"}
+        agent_output_sentiment_query = await agent.handle_message(agent_input_sentiment_query)
 
-        # Test 4: Project Analysis - Natural language query
-        agent_input_project_query = {
-            "query": "Analyze Bitcoin's recent developments"  # Changed to Bitcoin
-        }
-        agent_output_project_query = await agent.handle_message(agent_input_project_query)
-
-        # Test 5: Report Generation - Direct tool call
+        # Test 4: Report Generation - Direct tool call
         agent_input_report_direct = {
             "tool": "generate_report",
             "tool_arguments": {"twitter_handle": "ethereum", "category": "projects"},
         }
         agent_output_report_direct = await agent.handle_message(agent_input_report_direct)
 
-        # Test 6: Report Generation - Natural language query
+        # Test 5: Report Generation - Natural language query
         agent_input_report_query = {"query": "Generate a report on Ethereum's partnerships"}
         agent_output_report_query = await agent.handle_message(agent_input_report_query)
+
+        # Test 6: Report Generation - Solana with date range
+        agent_input_report_solana = {
+            "tool": "generate_report",
+            "tool_arguments": {
+                "twitter_handle": "solana",
+                "category": "projects",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+            },
+        }
+        agent_output_report_solana = await agent.handle_message(agent_input_report_solana)
 
         # Save results to YAML
         script_dir = Path(__file__).parent
@@ -62,10 +62,10 @@ async def run_agent():
         yaml_content = {
             "ai_assistant_direct": {"input": agent_input_ai_direct, "output": agent_output_ai_direct},
             "ai_assistant_query": {"input": agent_input_ai_query, "output": agent_output_ai_query},
-            "project_analysis_direct": {"input": agent_input_project_direct, "output": agent_output_project_direct},
-            "project_analysis_query": {"input": agent_input_project_query, "output": agent_output_project_query},
+            "ai_assistant_sentiment": {"input": agent_input_sentiment_query, "output": agent_output_sentiment_query},
             "report_generation_direct": {"input": agent_input_report_direct, "output": agent_output_report_direct},
             "report_generation_query": {"input": agent_input_report_query, "output": agent_output_report_query},
+            "report_generation_solana": {"input": agent_input_report_solana, "output": agent_output_report_solana},
         }
 
         with open(output_file, "w", encoding="utf-8") as f:
