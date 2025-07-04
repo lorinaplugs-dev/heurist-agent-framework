@@ -1,0 +1,873 @@
+ai_assistant_query_test:
+  input:
+    query: What is the current market sentiment for bitcoin?
+  output:
+    response: "**Current Market Sentiment for Bitcoin (as of July 4, 2025, 10:29:03)**\n\
+      \n**Overall Sentiment:** **Decidedly Bullish**\n\n**Key Drivers and Insights:**\n\
+      \n1. **Technical Analysis:**\n\t* **Breakout Signals:** Bitcoin testing key\
+      \ levels near **$110,000**, with potential for a bullish trend confirmation\
+      \ after a successful retest of a descending channel.\n\t* **Bullish Flags:**\
+      \ Indicators suggest buyers are eyeing higher price ranges, anticipating new\
+      \ all-time highs (ATH).\n\t* **Options Data:** Call/Put split (56%/44%) and\
+      \ Put/Call Ratio (1.26) support upward momentum if buyers act decisively.\n\n\
+      2. **Institutional Activity:**\n\t* **ETF Inflows:** Over **$600 million** in\
+      \ net inflows, led by Fidelity, BlackRock, Ark Invest, Bitwise, and VanEck,\
+      \ reflecting confidence among large capital managers.\n\t* **High-Profile Endorsements:**\
+      \ Cathie Wood reaffirms a \"bull market for Bitcoin\", bolstering the bullish\
+      \ narrative.\n\t* **Whale Activity:** Sustained accumulation by institutional\
+      \ players and significant large-scale transfers by dormant wallets (including\
+      \ a 14-year-old wallet moving over **$1 billion**) indicate long-term holder\
+      \ commitment.\n\n3. **Market Structure and Derivatives:**\n\t* **Upside Continuation:**\
+      \ Structure aligned for upside, pending sustained volume to clear critical resistance.\n\
+      \t* **Potential Liquidity Events:** Waiting traders and **$8 billion** in shorts\
+      \ could lead to forced liquidations, accelerating a rally.\n\n4. **Outlook:**\n\
+      \t* **Cautious Optimism:** Temporary consolidation expected before the next\
+      \ leg up, with the prevailing narrative centered on breaking through to new\
+      \ price records.\n\t* **Broad Sentiment:** Highly bullish, supported by institutional\
+      \ inflows, positive derivative signals, and anticipation of an imminent upward\
+      \ move.\n\n**Risk Consideration:**\nWhile the sentiment is decidedly bullish,\
+      \ short-term consolidation or testing of resistance levels may occur before\
+      \ a breakthrough. Market participants should be aware of potential liquidity\
+      \ events or forced liquidations that could impact price volatility."
+    data:
+      data:
+        days: 7
+        query: current market sentiment for bitcoin
+        response: 'Based on the most recent observations from early July 2025 data,
+          the sentiment toward Bitcoin is predominantly bullish, with several important
+          factors supporting an upward outlook.
+
+
+          Key technical and institutional factors include:
+
+
+          1. Strong Breakout Signals and Technical Analysis
+
+           • Multiple updates indicate that Bitcoin is testing key breakout levels
+          near $110,000. Analysts discuss bullish reconstructions—with one tweet noting
+          that after a successful retest of a descending channel, a bullish trend
+          could be confirmed.
+
+           • Technical messages reference bullish flags and several "ATH coming up"
+          alerts, suggesting that buyers are eyeing higher price ranges. Even though
+          price action has experienced some rejections at resistance zones, analysts
+          remain optimistic that a sustained breakthrough will lead to new all‐time
+          highs.
+
+           • Options data shows a call/put split of roughly 56%/44% with a Put/Call
+          Ratio of 1.26—while balanced, this positioning appears to be supportive
+          of continued upward momentum if buyers step in decisively.
+
+
+          2. Institutional Inflows and ETF Activity
+
+           • Bitcoin ETFs collectively absorbed over $600 million in net inflows,
+          with contributors like Fidelity ($237.13M), BlackRock ($225.59M), Ark Invest
+          ($114.25M), Bitwise, and VanEck playing significant roles. This healthy
+          institutional demand underscores the confidence of large capital managers.
+
+           • High-profile endorsements are emerging, such as Cathie Wood’s comment
+          that “we’re still in the bull market for Bitcoin,” further reinforcing the
+          bullish narrative.
+
+           • Sustained accumulation by institutional players, as well as reports of
+          significant whale activity and large-scale transfers by dormant wallets
+          (even one referencing a 14-year-old wallet moving volume worth over $1 billion),
+          indicate that long-term holders remain strongly committed.
+
+
+          3. Market Structure and Derivative Indicators
+
+           • Some technical commentary acknowledges that while structure currently
+          appears aligned for an upside continuation, there is still work to be done
+          on momentum. Analysts suggest that once price clears critical resistance
+          with sustained volume, a stronger bullish move can be expected.
+
+           • A number of market updates noted that waiting traders and short interest
+          (including an estimated $8 billion in shorts) could result in liquidity
+          events or forced liquidations that might accelerate a rally.
+
+
+          4. Overall Bullish Outlook with Cautious Optimism
+
+           • While there is some recognition of the need for additional “fuel” to
+          push beyond resistance, the prevailing narrative among these market participants
+          is one of eventual breakout. The current trading range and technical tests
+          are seen as temporary consolidation before the next leg up.
+
+           • With institutional inflows, positive derivative signals, and a narrative
+          centered on breaking through to new price records, the broader sentiment
+          remains highly bullish.
+
+
+          In summary, the current market sentiment for Bitcoin in early July 2025
+          is decidedly bullish. Key breakout levels around $110K are being carefully
+          watched, institutional inflows and large-scale whale activity continue to
+          support demand, and technical signals point toward a forthcoming upward
+          move—even if short-term consolidation or testing of resistance levels is
+          observed along the way.'
+        timestamp: '2025-07-04T10:29:03.145482'
+ai_assistant_tool_test:
+  input:
+    tool: ask_ai_assistant
+    tool_arguments:
+      query: Is Ethereum showing bullish trends?
+      days: 10
+  output:
+    response: ''
+    data:
+      data:
+        days: 10
+        query: Is Ethereum showing bullish trends?
+        response: "Based on my analysis of the available market data, Ethereum appears\
+          \ to be exhibiting strong bullish signals right now. Several technical indications,\
+          \ paired with institutional buying and positive price-action commentary,\
+          \ point to a bullish trend for ETH.\n\nKey bullish indicators include:\n\
+          \n• Technical Patterns and Price Action:  \n – Multiple messages confirm\
+          \ that Ethereum is “looking good” and “holding strong above support.” Specific\
+          \ technical analysis mentions a golden cross forming on the daily timeframe\
+          \ along with a clean breakout above recent consolidation ranges.  \n – Some\
+          \ analysis notes that after consolidations, a breakout is expected—just\
+          \ as seen in previous rallies where retesting of resistance as support has\
+          \ led to rapid upward movement. For example, one update mentioned that “the\
+          \ price is pulling back toward the breakout zone to retest the resistance\
+          \ as support,” which is a bullish setup.\n\n• Institutional Interest and\
+          \ Inflows:  \n – There is evidence of significant institutional activity,\
+          \ with BlackRock reportedly buying more $ETH daily. Additionally, one update\
+          \ detailed an inflow of $148.5 million in Ethereum associated with ETF activities,\
+          \ which bolsters the long-term bullish outlook.  \n – Increased institutional\
+          \ demand often signals confidence in the asset’s upside potential, and in\
+          \ this case, it adds weight to the bullish sentiment.\n\n• Market Sentiment\
+          \ and Volume:  \n – Numerous messages state “Bullish ETH” or “I’m bullish\
+          \ Ethereum,” highlighting a clear sentiment among market participants. \
+          \ \n – Comments about a “solid run” following consolidation and the anticipation\
+          \ of a breakout suggest that market momentum is building. Also, support\
+          \ levels around key price points (such as retesting support zones mentioned\
+          \ near $2,380 or potential targets around $4,200) are being watched closely,\
+          \ all of which are typical in bullish technical setups.\n\nIn summary, the\
+          \ combination of clean technical breakouts, strong support levels being\
+          \ held, and significant institutional inflows are all reinforcing a bullish\
+          \ trend for Ethereum at this time. All available evidence points toward\
+          \ renewed upward momentum, making ETH one of the standout assets showing\
+          \ bullish trends in the current market environment."
+        timestamp: '2025-07-04T10:29:26.752481'
+ai_assistant_query_test_2:
+  input:
+    query: What are the key price drivers for $eth?
+  output:
+    response: "**Current Ethereum (ETH) Price Drivers Analysis (as of 2025-07-04T10:29:47.614243)**\n\
+      \n**Key Price Drivers:**\n\n1. **Institutional and Capital Inflows**\n\t* **Data\
+      \ Point:** Recent large-scale ETF purchases (e.g., BlackRock’s Ethereum ETF:\
+      \ ~$85.4M, institutional inflows: up to $148.5M in a single day)\n\t* **Impact:**\
+      \ Increased demand, positioning ETH as a safe harbor in the digital asset ecosystem\n\
+      \n2. **Network Security Economics**\n\t* **Dynamic:** Rising ETH price increases\
+      \ attack costs, enhancing network security and appeal to institutions\n\t* **Effect:**\
+      \ Virtuous cycle of increased institutional buying, further boosting network\
+      \ security and price\n\n3. **Growing On-Chain Activity and Ecosystem Maturation**\n\
+      \t* **Metrics:**\n\t\t+ All-time high active addresses\n\t\t+ Record transaction\
+      \ volumes\n\t\t+ Significant growth in decentralized application usage (e.g.,\
+      \ DEX trading volume, transaction counts)\n\t* **Impact:** Robust network usage\
+      \ fuels user sentiment and underpins long-term protocol value\n\n4. **Technical\
+      \ Breakouts and Key Resistance Levels**\n\t* **Technical Analysis:**\n\t\t+\
+      \ Strong support around $2,380\n\t\t+ Breakout potential from consolidation\
+      \ patterns (e.g., rising wedge) targeting levels like $10,000\n\t\t+ Bullish\
+      \ indicators (e.g., golden crosses, consolidation patterns)\n\t* **Effect:**\
+      \ Renewed buying interest driven by favorable technical signals\n\n5. **Broader\
+      \ Crypto Market Trends**\n\t* **Market Dynamics:**\n\t\t+ Correlation with Bitcoin\
+      \ rallies\n\t\t+ Increased ETF flows and institutional accumulation in the broader\
+      \ crypto market\n\t\t+ Long-term trends toward DeFi and tokenization applications\n\
+      \t* **Impact:** Upward pressure on ETH’s price, reinforced by positive market\
+      \ sentiment and trends\n\n**Summary:**\nEthereum's price surge is attributed\
+      \ to a synergistic combination of substantial institutional investments, a self-reinforcing\
+      \ network security model, thriving on-chain activity within its mature ecosystem,\
+      \ favorable technical market analysis, and alignment with broader crypto market\
+      \ uptrends. These interconnected factors create a positive feedback loop, continuously\
+      \ supporting Ethereum's upward price trajectory."
+    data:
+      data:
+        days: 7
+        query: What are the key price drivers for Ethereum (ETH)?
+        response: "Based on my analysis, Ethereum’s price has been driven by several\
+          \ interlocking factors:\n\n1. Institutional and Capital Inflows  \n• Institutional\
+          \ money is flowing into Ethereum through large-scale ETF purchases and other\
+          \ funds. For example, BlackRock’s Ethereum ETF bought roughly $85.4 million\
+          \ in ETH, and there have been reports of significant institutional inflows—upwards\
+          \ of $148.5 million in a single day. These moves by firms such as BlackRock\
+          \ and Fidelity drive demand, while large purchases by institutions position\
+          \ Ethereum as a safe harbor within the digital asset ecosystem.  \n\n2.\
+          \ Network Security Economics  \n• There is a well-known dynamic in the Ethereum\
+          \ ecosystem that rewards a rising price. As ETH’s price increases, the cost\
+          \ of potential attacks on the network rises, making it more secure and appealing\
+          \ to institutional players. In this “virtuous cycle,” substantial holders—ranging\
+          \ from governments to large financial institutions guided by stablecoin\
+          \ flows—are incentivized to purchase and hold ETH to further boost network\
+          \ security. The idea is that a higher market price makes the network more\
+          \ resilient, prompting more buying pressure.  \n\n3. Growing On-Chain Activity\
+          \ and Ecosystem Maturation  \n• Ethereum’s fundamentals are strong—active\
+          \ addresses and transaction volumes have hit all‐time highs recently, which\
+          \ serves as a key bullish underpinning. Increased usage across decentralized\
+          \ applications, including significant trading volume growth on decentralized\
+          \ perpetual DEXs and record transaction counts, signals widespread adoption.\
+          \ This robust network usage, as evidenced by data showing activity at unprecedented\
+          \ levels, not only fuels user sentiment but also underpins the protocol’s\
+          \ long-term value.  \n\n4. Technical Breakouts and Key Resistance Levels\
+          \  \n• Market technical analysis has played an important role as well. Several\
+          \ analysts are noting that ETH holds strong technical supports around key\
+          \ levels (for instance, a base at around $2,380 has been noted) and that\
+          \ breakouts from consolidation patterns—like a rising wedge—could push ETH\
+          \ toward new targets such as $10,000. Indicators like golden crosses and\
+          \ consolidation patterns are interpreted as bullish signals, contributing\
+          \ to renewed buying interest.  \n\n5. Broader Crypto Market Trends  \n•\
+          \ Ethereum’s price is also affected by the overall crypto market momentum.\
+          \ When Bitcoin rallies or the broader market sees increased ETF flows and\
+          \ institutional accumulation, Ethereum often benefits as a leading asset\
+          \ in the digital economy. Shifts in market sentiment—coupled with long-term\
+          \ trends toward decentralized finance and tokenization applications—further\
+          \ reinforce the upward pressure on ETH’s price.\n\nIn summary, Ethereum’s\
+          \ price is being driven by a combination of deep institutional inflows,\
+          \ a self-reinforcing network security model, rising on-chain activity across\
+          \ its mature ecosystem, and favorable technical indicators amid broader\
+          \ crypto market trends. These elements work together to create a positive\
+          \ feedback loop that continuously supports and accelerates Ethereum’s upward\
+          \ trajectory."
+        timestamp: '2025-07-04T10:29:47.614243'
+ai_assistant_tool_test_2:
+  input:
+    tool: ask_ai_assistant
+    tool_arguments:
+      query: How is $sol performing in the market?
+      days: 14
+  output:
+    response: ''
+    data:
+      data:
+        days: 14
+        query: How is $sol performing in the market?
+        response: "Based on my analysis of the available market data for Solana ($SOL),\
+          \ it appears that the token is trading in a highly active and liquid environment,\
+          \ with several key features and dynamics currently at play:\n\n1. Current\
+          \ Price and Key Metrics:\n • $SOL is trading at roughly $150.20 with a market\
+          \ capitalization of about $80.17 billion.  \n • Key trading metrics include\
+          \ an open interest of $6.76 billion and a 24‐hour trading volume of approximately\
+          \ $13.21 billion.  \n • The recent price action shows a 1‑hour change of\
+          \ –0.40% and a 24‑hour change of –3.49%, indicating that the token is experiencing\
+          \ a short‑term correction while still operating within a broader active\
+          \ range.\n\n2. Trading Activity and Positioning:\n • There is an impressive\
+          \ level of activity on trading platforms such as Drift and Hyperliquid where\
+          \ several top traders have been executing both long and short positions\
+          \ at prices between around $150 and $153.  \n • Notable entries include\
+          \ a long position at roughly $151.14 and additional trades executed in the\
+          \ $150–$153 range, with some traders taking on significant positions (in\
+          \ one case, aggregated long positions exceeding $4 million).  \n • Conversely,\
+          \ there have been multiple short entries with orders placed at similar price\
+          \ levels. Some positions are managed with defined liquidation triggers (for\
+          \ example, one short position would be liquidated at around $368, while\
+          \ another long position has a trigger near $134.68).  \n • This mix of aggressive\
+          \ long and short activity indicates robust liquidity as well as potential\
+          \ near‑term volatility.\n\n3. Technical Indicators and Sentiment:\n • The\
+          \ relative strength indices across different timeframes are relatively neutral\
+          \ – the 1‑hour RSI is about 40.06, the 4‑hour RSI at 48.42, and the 1‑day\
+          \ RSI stands around 50.48. This suggests that while there is pressure on\
+          \ the downside in the short term, the longer‑term technical picture remains\
+          \ balanced.  \n • The overall sentiment is bolstered by a Fear & Greed Index\
+          \ reading of 72/100, which signals a more bullish market outlook despite\
+          \ the recent price dip.  \n • Several traders are positioning to catch dips\
+          \ in the $150–$160 region, indicating that many view the current levels\
+          \ as providing attractive entry points for a potential rebound.\n\n4. Overall\
+          \ Market Dynamics and Outlook:\n • The heavy trading volume and the number\
+          \ of large positions, both long and short, reflect that the $SOL market\
+          \ is in a state of dynamic balance. With high liquidity, the price can quickly\
+          \ swing if a significant imbalance develops—this is evidenced by the active\
+          \ use of leverage and the mix of position sizes.\n • The current correction\
+          \ has not derailed market confidence. Instead, the neutral technical indicators\
+          \ combined with the aggressive trading activity suggest that traders are\
+          \ ready to rotate their positions in the near term.\n • Given the bullish\
+          \ sentiment implied by the Fear & Greed Index and the interest from institutional\
+          \ vehicles such as sizable ETF volumes, there is cautious optimism that\
+          \ a bounce from the current dip may occur if buyers step in at support levels.\n\
+          \nIn summary, Solana is performing as a highly traded and actively managed\
+          \ asset right now. Despite a short-term price pullback of about 3.5% from\
+          \ recent highs, its strong liquidity, active participation from top traders,\
+          \ and neutral-to-bullish technical indicators suggest that market participants\
+          \ remain engaged. The concentration of trades in the $150–$153 range, along\
+          \ with aggressive long and short positions, points to an environment that\
+          \ is primed for further volatility and potential opportunities for those\
+          \ monitoring intraday price movements."
+        timestamp: '2025-07-04T10:30:20.816041'
+summary_query_test:
+  input:
+    query: Provide an analysis of Bitcoin's recent performance
+  output:
+    response: "**Current Market Analysis: Bitcoin (BTC) - July 2025**\n\n**Market\
+      \ Sentiment:** Cautious Optimism\n\n**Key Findings:**\n\n1. **Price Action &\
+      \ Key Levels:**\n\t* **Current Price:** Hovering near crucial resistance levels\
+      \ (~$110,000)\n\t* **Key Support:** $107,000 - $108,000 (must hold for bullish\
+      \ momentum)\n\t* **Potential Retest Levels:** $104,000 - $105,000 or mid-$90,000s\
+      \ (if support fails)\n\n2. **Technical Indicators & Chart Dynamics:**\n\t* **Breakout:**\
+      \ Successfully broken out of descending channel pattern, retesting from above\n\
+      \t* **Ichimoku Cloud:** Indicates bullish momentum\n\t* **RSI Readings:** Extremely\
+      \ overbought (upper 70s to 90s across various time frames), suggesting potential\
+      \ short-term consolidation or profit taking\n\t* **Bullish Flag Formations:**\
+      \ Monitoring for successful retests of prior resistance zones as a strong continuation\
+      \ signal\n\n3. **Liquidity, Open Interest, & Derivatives Sentiment:**\n\t* **Open\
+      \ Interest:** Approximately $42-43 million across major platforms\n\t* **Long/Short\
+      \ Ratios:** Divergent; some exchanges show long bias (>60%), while others are\
+      \ more balanced or short-dominant\n\t* **Short Exposure:** Notably high (~$8\
+      \ billion in shorts at risk of liquidation), potentially leading to rapid price\
+      \ swings\n\n4. **Institutional & Whale Activity:**\n\t* **Historic Wallet Movement:**\
+      \ A 14-year dormant Satoshi-era wallet moved 10,000 BTC (~$1.09 billion), possibly\
+      \ signaling shifting long-term holder sentiment or institutional reallocation\n\
+      \t* **Large Positioning:** Sizable short positions added by known market players,\
+      \ balancing whale activity and implying potential for sudden volatility\n\n\
+      5. **Outlook:**\n\t* **Bullish Continuation:** Likely if Bitcoin sustains above\
+      \ $110,000\n\t* **Caution:** Extreme overbought conditions and mixed derivative\
+      \ positions may lead to volatile swings\n\t* **Near-Term Risk:** Failure to\
+      \ consolidate could trigger a temporary pullback to $104,000 - $105,000 or mid-$90,000s\n\
+      \n**Conclusion:**\nBitcoin's recent performance is marked by a bullish structural\
+      \ break, testing key resistance around $107,000 - $110,000. While the technical\
+      \ structure supports further gains, extreme overbought conditions and mixed\
+      \ derivative sentiments introduce caution. Traders should remain vigilant, as\
+      \ the market's reaction in the coming sessions will be crucial in determining\
+      \ the next directional move. \n\n**Recommendation for Traders:**\n- **Monitor\
+      \ Support Levels:** Closely watch $107,000 - $108,000 for successful holds or\
+      \ potential breaks.\n- **Manage Risk:** Be prepared for volatile swings due\
+      \ to high short exposure and overbought conditions.\n- **Wait for Confirmation:**\
+      \ Await further market reaction before making significant positional commitments."
+    data:
+      data:
+        days: 7
+        query: Analyze Bitcoin's recent performance
+        response: "Below is my analysis of Bitcoin’s recent performance, drawing on\
+          \ the detailed market updates and technical signals recorded over the past\
+          \ several days:\n\n1. Overview of Price Action and Key Levels  \n• Recent\
+          \ updates indicate that Bitcoin has been hovering near crucial resistance\
+          \ levels. In several messages from early July 2025, market participants\
+          \ noted that Bitcoin approached or even broke through the $110K mark. In\
+          \ one update it was noted, “Bitcoin just hit $110K – hinting at a potential\
+          \ breakout?” while others focused on the importance of the 107–108K zone\
+          \ for confirming bullish momentum.  \n• At the same time, technical commentators\
+          \ emphasized that Bitcoin must secure support in that area. A failure to\
+          \ hold these levels could force a retest in the 104–105K range, with potential\
+          \ downward pressure even into the mid-nineties. This suggests that traders\
+          \ are currently assessing whether the bullish breakout is genuine or if\
+          \ selling pressure will ultimately cap subsequent gains.\n\n2. Technical\
+          \ Indicators and Chart Dynamics  \n• Several detailed technical analyses\
+          \ mention Bitcoin’s breakout from a descending channel pattern. For instance,\
+          \ one update cited that “Bitcoin has broken out of the descending channel\
+          \ pattern and is currently retesting it from above” and noted that the Ichimoku\
+          \ cloud is indicating bullish momentum. Such a trend structure is largely\
+          \ interpreted as a positive sign for continued short-term gains if the price\
+          \ can hold the formed support.  \n• Overbought conditions are coming under\
+          \ scrutiny as well. The 15‑minute RSI values in some technical updates are\
+          \ reported in the upper 70s to even above 88 on very short intervals, and\
+          \ longer time frames show RSI figures in the 90s. This extreme reading implies\
+          \ that short‐term buying may be quite spirited and could even invite profit\
+          \ taking or short-term consolidation.  \n• Additionally, technical setups\
+          \ such as bullish flag formations and successful retests of prior resistance\
+          \ zones are being monitored. If Bitcoin can consolidate above the 107–108K\
+          \ band and then push further, many view it as a strong continuation signal.\n\
+          \n3. Liquidity, Open Interest, and Derivatives Sentiment  \n• Bitcoin’s\
+          \ derivatives market also appears active at this critical juncture. Multiple\
+          \ updates provide open interest figures around $42–43 million on various\
+          \ platforms. Furthermore, across exchanges such as Binance, OKX, Bybit,\
+          \ and others, there are divergent long/short ratios. On one hand, some exchanges\
+          \ exhibit a long bias (with ratios above 60% on platforms like Deribit or\
+          \ Bitmex in some snapshots), while others show caution with more balanced\
+          \ or even short-dominant sentiment.  \n• Several updates reference significant\
+          \ short exposure – one message highlighted that “there’s $8 BILLION in shorts\
+          \ just waiting to be liquidated,” which could induce a rapid swing higher\
+          \ should these positions become unwound. Conversely, a strong clustering\
+          \ of long positions might also result in abrupt corrections if sell pressure\
+          \ intensifies.\n\n4. Institutional and Whales’ Activity  \n• A noteworthy\
+          \ development came from the block of data revealing that a dormant Satoshi-era\
+          \ wallet, untouched for over 14 years, moved 10,000 BTC – now collectively\
+          \ worth about $1.09 billion. This historic transfer, with coins originally\
+          \ purchased at a nominal $0.78 per BTC, is being interpreted by some market\
+          \ observers as more than a routine move. It serves as a possible signal\
+          \ of shifting sentiment among long-term holders or could indicate a portfolio\
+          \ reallocation by an institutional or legacy investor.  \n• In parallel,\
+          \ some reports mention sizable positions being added on the short side by\
+          \ certain well-known market players. The balance between these large exposures\
+          \ and the whale activity implies that the upcoming price action could be\
+          \ subject to sudden volatility, with liquidations on either side influencing\
+          \ the near-term trajectory.\n\n5. Sentiment and Outlook  \n• Combining the\
+          \ technical data with order flow and derivatives sentiment, the overall\
+          \ picture is one of cautious optimism. Most technical commentators are leaning\
+          \ toward a bullish continuation, provided that Bitcoin can firmly break\
+          \ and sustain above the current resistance near $110K.  \n• However, the\
+          \ market is at a critical juncture. Should Bitcoin fail to consolidate and\
+          \ instead retest lower support levels (possibly between 104–105K or even\
+          \ slip into the mid-90Ks), that could trigger a temporary pullback as demand\
+          \ in that range appears to be weakening based on recent tests.  \n• The\
+          \ extreme short-term overbought readings, coupled with large open interest\
+          \ and the looming risk of short liquidations, suggest that while the technical\
+          \ structure itself remains supportive on the higher time frames, the immediate\
+          \ near-term remains subject to volatile swings.\n\nConclusion  \nBitcoin’s\
+          \ recent performance is characterized by a bullish structural break—with\
+          \ the asset testing key resistance around $107–110K—yet the extreme overbought\
+          \ conditions and mixed derivative positions inject an element of caution.\
+          \ In summary, Bitcoin appears poised for further gains if it can hold its\
+          \ support and drive momentum beyond the pivotal $110K level; however, traders\
+          \ should remain vigilant as any failure to secure these levels may result\
+          \ in temporary corrections. This critical point in the cycle offers both\
+          \ opportunity and risk, and it will be essential to watch how the market\
+          \ reacts in the coming sessions before making further positional commitments."
+        timestamp: '2025-07-04T10:30:48.964082'
+summary_tool_test:
+  input:
+    tool: assistant_summary
+    tool_arguments:
+      ticker_or_twitterhandle: heurist_ai
+      day_interval: 7
+  output:
+    response: ''
+    data:
+      data:
+        ticker_or_twitterhandle: heurist_ai
+        response_arbus_ai_assistant: I have no specific information about heurist_ai
+          in the provided data.
+summary_query_test_2:
+  input:
+    query: What is the outlook for bitcoin's ecosystem of a week?
+  output:
+    response: '**Current Data Shows: Bitcoin Ecosystem on the Cusp of Transformation
+      (As of 2025-07-04T10:31:43.837031)**
+
+
+      ### **Technical Breakthroughs and Price Outlook**
+
+      - **Imminent Breakout:** Technical indicators (e.g., Ichimoku clouds, momentum
+      measures) suggest a sustained bullish trend is on the horizon, with price levels
+      hovering around $108K-$110K, nearing all-time high levels.
+
+      - **Chart Patterns:** Shift from descending channels to positive retests observed,
+      indicating a potential new trading range if key resistance levels are strongly
+      retested.
+
+
+      ### **Innovation and Expansion of BTCFi**
+
+      - **Growing Utility:** Projects like GOATRollup are enhancing Bitcoin''s composability,
+      scalability, and yield generation, moving beyond traditional store-of-value
+      narratives.
+
+      - **Babylon Genesis Roadmap:** Milestones include a Bitcoin Multi-Staking Testnet
+      (Q3/Q4 2025) and EVM Testnet, followed by liquidity applications in Q1 2026,
+      signaling a transition towards a more productive asset class.
+
+      - **Innovative Protocols:** Lombard Finance (LBTC, $2B TVL) and SatLayer (restaking
+      model, $340M TVL as of June 2025) demonstrate potential for increased utility
+      in DeFi.
+
+
+      ### **Institutional Adoption and Inflow Trends**
+
+      - **Robust Institutional Backing:** Recent net inflows into Bitcoin ETFs total
+      $603M, with significant allocations from Fidelity, BlackRock, and Ark Invest.
+
+      - **Evolution in Perception:** Bitcoin is increasingly seen as an actively productive
+      asset and potential institutional collateral, reinforcing its role in broader
+      financial systems.
+
+
+      ### **Ecosystem Trends and Market Sentiment**
+
+      - **Aligned Sentiment:** Broader ecosystem sentiment supports Bitcoin''s technical
+      strength, with potential for altcoin performance to follow.
+
+      - **Economic Model Recalibration:** Bitcoin’s security model is being reassessed
+      to support cross-chain applications and native protocols.
+
+      - **Liquidity Vortex:** Bitcoin serves as a safe gateway during liquidity shifts,
+      especially in anticipation of macroeconomic moves.
+
+
+      ### **Long-Term Outlook and New Horizons**
+
+      - **Turning Point:** Potential shift from a passive store-of-value to an actively
+      yield-generating, utility-rich asset, driven by technical support, BTCFi innovations,
+      and institutional participation.
+
+      - **Narrative Shift:** From "holding BTC" to "earning and building within the
+      Bitcoin ecosystem," unlocking new use cases and driving adoption.
+
+
+      **Key Takeaways:**
+
+      - **Transformative Phase:** Bitcoin is poised for its most transformative evolution
+      yet, driven by technical, institutional, and innovative forces.
+
+      - **Near-Term Outlook:** Breakout potential towards new highs, coupled with
+      ongoing ecosystem developments.
+
+      - **Investment Thesis:** Strong technical momentum, entrenched institutional
+      backing, and transformative innovation set a dynamic stage for Bitcoin’s growth
+      in 2025 and beyond.'
+    data:
+      data:
+        days: 7
+        query: Bitcoin ecosystem outlook
+        response: "The Bitcoin ecosystem is showing signs of transformation on both\
+          \ technical and institutional fronts. In recent days, the technical narrative\
+          \ around Bitcoin has focused on breakouts near all‐time high levels, while\
+          \ innovations within BTCFi and DeFi integrations are laying the groundwork\
+          \ for a more utility‐driven future. Let me break down the key trends and\
+          \ developments shaping Bitcoin’s outlook:\n\n1. Technical Breakthroughs\
+          \ and Price Outlook  \n • Multiple technical updates have repeatedly signaled\
+          \ that Bitcoin is nearing a critical breakout zone. Several analyses point\
+          \ to current price levels in the high $100K range—many tweets even mention\
+          \ “ATH coming up” and the recent price reading around $108K–$110K.  \n •\
+          \ Chart patterns are shifting from descending channels to positive retests,\
+          \ with indications from Ichimoku clouds and other momentum measures suggesting\
+          \ that a sustained bullish trend could be on the horizon.  \n • Trading\
+          \ sentiment is evolving; technical analysts are highlighting that a strong\
+          \ retest of key resistance levels would confirm a new trading range, while\
+          \ failure could bring temporary retracements. This balance of risk and opportunity\
+          \ is central to positioning around Bitcoin in the near term.\n\n2. Innovation\
+          \ and the Expansion of BTCFi  \n • Beyond traditional store-of-value narratives,\
+          \ a growing number of projects are infusing Bitcoin with real utility. For\
+          \ example, platforms like GOATRollup are enabling BTC to become composable,\
+          \ scalable, and yield generating. Their vision of a Bitcoin native layer—where\
+          \ your digital assets participate in DeFi without compromising trust—is\
+          \ a significant evolution.\n • The Babylon Genesis roadmap adds further\
+          \ momentum with milestones such as a Bitcoin Multi-Staking Testnet and an\
+          \ EVM Testnet scheduled to go live in Q3/Q4 2025, followed by liquidity\
+          \ applications in Q1 2026. This roadmap suggests that Bitcoin is transitioning\
+          \ into a more productive asset class beyond simple HODLing.\n • Innovations\
+          \ in BTCFi are also emerging from protocols like Lombard Finance and SatLayer.\
+          \ Lombard’s LBTC is reported to have reached $2 billion in total value locked\
+          \ (TVL), while SatLayer’s restaking model, now sitting at $340 million in\
+          \ TVL as of June 2025, illustrates that even though traditional BTC holding\
+          \ remains dominant, there exists a significant potential for increased Bitcoin\
+          \ utility in decentralized finance.\n\n3. Institutional Adoption and Inflow\
+          \ Trends  \n • Institutional capital continues to back Bitcoin robustly.\
+          \ Recent inflows into Bitcoin ETFs have reached a total net inflow of $603\
+          \ million, with specific allocations from Fidelity ($237.13M), BlackRock\
+          \ ($225.59M), and Ark Invest ($114.25M).  \n • These inflows, combined with\
+          \ new narratives of Bitcoin as institutional collateral, are slowly transforming\
+          \ how traditional financial institutions perceive Bitcoin—not just as a\
+          \ hedge but as an actively productive asset.\n • The increasing involvement\
+          \ of institutions and capital managers like JPMorgan’s collateral desks\
+          \ reinforces the notion that Bitcoin is evolving in a direction that not\
+          \ only preserves its decentralized nature but also expands its role as a\
+          \ key player within broader financial systems.\n\n4. Ecosystem Trends and\
+          \ Market Sentiment  \n • The broader ecosystem sentiment appears aligned\
+          \ with the technical strength of Bitcoin. Traders are observing that as\
+          \ Bitcoin surges, altcoin performance may follow while also supporting institutional\
+          \ and retail narratives alike.\n • Some observations indicate that Bitcoin’s\
+          \ established security model—which depends on sustainable fee revenue—is\
+          \ increasingly being reassessed as blockchain protocols like those running\
+          \ on Ethereum’s EVM are integrated. In this light, Bitcoin’s economic model\
+          \ is being recalibrated to support an ecosystem of cross-chain applications\
+          \ and native protocols.\n • Market participants are also discussing the\
+          \ “liquidity vortex” role of Bitcoin. In times when liquidity is shifting—especially\
+          \ in a regime where the narrative is determined by macro factors such as\
+          \ potential Federal Reserve rate moves—Bitcoin stands out as a safe gateway\
+          \ that preempts easing cycles. This sentiment is further reinforced by discussions\
+          \ comparing exposure across various asset classes, including gold and equities\
+          \ indexed through platforms like SPY.\n\n5. Long-Term Outlook and New Horizons\
+          \  \n • Over the next several months, if technical support holds and the\
+          \ innovations around multi-staking and DeFi integrations continue to roll\
+          \ out as planned, Bitcoin could mark a turning point from a passive store-of-value\
+          \ asset to one that is actively generating yield and integrating with decentralized\
+          \ applications.  \n • The narrative is shifting from “just holding BTC”\
+          \ to “earning and building within the Bitcoin ecosystem,” which might unlock\
+          \ new use cases and drive further adoption among developers, HODLers, and\
+          \ institutional investors alike.\n • Given these developments and the positive\
+          \ institutional inflows, the evolving technical landscape, and the increasing\
+          \ interplay with cross-chain DeFi ecosystems, Bitcoin is well poised to\
+          \ lead the next phase of the crypto bull run while setting the stage for\
+          \ widespread financial innovation.\n\nIn summary, the Bitcoin ecosystem\
+          \ is at a pivotal juncture. On the one hand, strong technical momentum points\
+          \ to a breakout toward new highs; on the other, ongoing developments in\
+          \ BTCFi, enhanced institutional participation, and a clear roadmap for cross-chain\
+          \ integration are setting the foundation for transforming Bitcoin into a\
+          \ yield-generating, utility-rich asset. This blend of technical progress\
+          \ and entrenched institutional backing creates a dynamic outlook for Bitcoin\
+          \ in 2025 and beyond, suggesting that the next chapter of Bitcoin’s evolution\
+          \ may be its most transformative yet."
+        timestamp: '2025-07-04T10:31:43.837031'
+summary_tool_test_2:
+  input:
+    tool: assistant_summary
+    tool_arguments:
+      ticker_or_twitterhandle: mona_witchy
+      day_interval: 1
+  output:
+    response: ''
+    data:
+      data:
+        ticker_or_twitterhandle: mona_witchy
+        response_arbus_ai_assistant: I have no specific information about mona_witchy.
+report_query_test:
+  input:
+    query: Generate a report on Ethereum project developments
+  output:
+    response: "**Ethereum Project Developments Report**\n\n**Current Sentiment and\
+      \ Overview**\nAnalysis indicates a predominantly positive sentiment surrounding\
+      \ Ethereum, driven by significant project developments, ecosystem growth, and\
+      \ strategic partnerships. Current data shows a strong focus on enhancing user\
+      \ experience, scaling efforts, and promoting a decentralized financial system.\n\
+      \n**Key Developments and Insights**\n\n1. **Pectra Upgrade**: Described as the\
+      \ largest Ethereum upgrade since the Merge, Pectra aims to enhance user experience\
+      \ with reduced click requirements for actions. **Impact:** Improved usability,\
+      \ potentially increasing adoption rates.\n2. **1% Token Pledge**: Introduced\
+      \ to secure Ethereum's future development, this initiative has become a standard\
+      \ for supporting core development efforts. **Impact:** Ensures continuous development\
+      \ and security enhancements.\n3. **Community Engagement**:\n\t* **Marketing\
+      \ Collective (@ETHRNSM)**: Rewards contributors based on performance, fostering\
+      \ a collaborative ecosystem.\n\t* **Latin American Grassroots Movements**: Accelerating\
+      \ teams and educating developers, driving crypto adoption in the region.\n\t\
+      **Impact:** Strengthened community, increased adoption in emerging markets.\n\
+      \n**Ecosystem Growth and Expansion**\n\n1. **Uniswap v4 Upgrade**: Surpassed\
+      \ $84B in swap volume, indicating growing user adoption and activity. **Impact:**\
+      \ Validates the effectiveness of protocol upgrades.\n2. **@CoinbaseWallet and\
+      \ @Farcaster Integration**: Enhances accessibility to decentralized social media.\
+      \ **Impact:** Expands Ethereum's use cases beyond DeFi.\n3. **@MorphoLabs on\
+      \ @Base**: Reached $1B in TVL, a significant milestone for DeFi. **Impact:**\
+      \ Demonstrates the ecosystem's capacity for growth.\n4. **L2 Sector Growth**:\
+      \ Now stronger and more secure, highlighting Ethereum's scaling successes. **Impact:**\
+      \ Improved scalability, enhanced security.\n\n**Upcoming Developments**\n\n\
+      1. **Fusaka Upgrade**: The next scheduled upgrade, following Pectra, will continue\
+      \ to focus on scaling and user experience enhancements. **Expected Impact:**\
+      \ Further improved scalability and usability.\n\n**Strategic Partnerships and\
+      \ Collaborations**\n\n1. **@Stripe's Stablecoin Financial Accounts**: Enables\
+      \ global financial freedom for users in 101 countries. **Impact:** Increases\
+      \ Ethereum's global financial inclusion.\n2. **@JPMorgan's JPMD (USD Deposit\
+      \ Token)**: Indicates strong institutional interest in Ethereum. **Impact:**\
+      \ Potential for increased institutional investment.\n3. **@SuccinctLabs and\
+      \ Collaborators**: Achieved breakthroughs in block proof times (<12 seconds),\
+      \ pushing frontier technology forward. **Impact:** Enhances Ethereum's technological\
+      \ competitiveness.\n\n**Product Development Highlights**\n\n1. **@ZKsync's EVM\
+      \ Equivalence**: Allows deployment of existing Solidity contracts, simplifying\
+      \ development. **Impact:** Streamlines developer onboarding.\n2. **@aztecnetwork's\
+      \ Public Testnet**: Focuses on privacy-focused L2 development, expanding Ethereum's\
+      \ use cases. **Impact:** Enhances privacy offerings within the ecosystem.\n\n\
+      **Tokenomics and Fundraising**\n\n1. **SharpLinkGaming's $425M Private Placement**:\
+      \ For an Ethereum treasury strategy, indicating confidence in Ethereum's ecosystem.\
+      \ **Impact:** Potential for increased liquidity.\n2. **BUIDL Fund's $10M Dividend\
+      \ Distribution**: On Ethereum platforms in May, supporting ecosystem projects.\
+      \ **Impact:** Fosters project development within the ecosystem.\n\n**Risk Factors\
+      \ and Market Dynamics**\n- **Regulatory Environment**: Ongoing global regulatory\
+      \ shifts may impact Ethereum's adoption and institutional investment.\n- **Market\
+      \ Volatility**: Ethereum's price may fluctuate based on broader crypto market\
+      \ trends and investor sentiment.\n\n**Data Constraints**\n- Real-time market\
+      \ price data for Ethereum (ETH) is not provided in the given dataset. For a\
+      \ comprehensive analysis, integrating current market prices and trends is recommended.\n\
+      - Specific metrics on the adoption rates following the Pectra upgrade are not\
+      \ available, suggesting an area for further research."
+    data:
+      data:
+        summary:
+          Community Engagement & Incentives:
+          - <strong>Pectra</strong> is described as the biggest Ethereum upgrade since
+            the merge, aimed at enhancing user experience with fewer clicks needed
+            for actions. [<a href="https://x.com/ethereum/status/1919794615827280126"
+            target='_blank'>1</a>, <a href="https://x.com/ethereum/status/1919794621132968240"
+            target='_blank'>2</a>]
+          - The introduction of the <strong>1% Token Pledge</strong> aims to secure
+            Ethereum's future development. This initiative has grown into a new standard
+            to support core development efforts. [<a href="https://x.com/ethereum/status/1938270421717320000"
+            target='_blank'>3</a>]
+          - '@ETHRNSM launched a marketing collective for Ethereum, rewarding contributors
+            based on performance. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target=''_blank''>4</a>]'
+          - Community efforts in Latin America through grassroots movements are accelerating
+            teams and educating developers, fostering crypto adoption in the region.
+            [<a href="https://twitter.com/ethereum/status/1890504614761443375" target='_blank'>5</a>]
+          Exchange Listings:
+          - Uniswap's v4 upgrade surpassed $84B in swap volume, signaling growing
+            user adoption and activity. [<a href="https://x.com/ethereum/status/1938270421717320000"
+            target='_blank'>17</a>]
+          Growth & Expansion:
+          - '@Coinbasewallet''s integration with @Farcaster aims to make decentralized
+            social media more accessible. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target=''_blank''>6</a>]'
+          - '@MorphoLabs on @Base reached $1B in TVL, marking a significant milestone
+            for DeFi. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target=''_blank''>7</a>]'
+          - The Ethereum ecosystem highlighted significant growth in the L2 sector,
+            now stronger and more secure. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target='_blank'>8</a>]
+          - Ecosystem gatherings like @ETHPrague and @ETHGlobal Prague brought together
+            hundreds of hackers and attendees to build on Ethereum. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target='_blank'>9</a>]
+          Next Steps:
+          - Moving toward the next upgrade labeled "Fusaka" following the successful
+            Pectra update. [<a href="https://x.com/ethereum/status/1920419477889388697"
+            target='_blank'>18</a>]
+          - Ethereum continues to focus on scaling efforts and improving user experience,
+            as highlighted by ongoing protocol enhancements. [<a href="https://x.com/ethereum/status/1938270421717320000"
+            target='_blank'>19</a>]
+          Other Findings:
+          - Community use case highlighted with real-world stories on how Ethereum
+            is reshaping financial transactions in areas such as Argentina. [<a href="https://x.com/ethereum/status/1928418046042927567"
+            target='_blank'>20</a>]
+          - Strong messaging around Ethereum being inclusive for users of all experiences
+            and promoting a decentralized financial system. [<a href="https://x.com/ethereum/status/1938270421717320000"
+            target='_blank'>21</a>]
+          Partnerships & Collaborations:
+          - '@Stripe''s stablecoin financial accounts enable users in 101 countries
+            to engage in global financial freedom through Ethereum. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target=''_blank''>10</a>]'
+          - '@jpmorgan announced plans to create JPMD, a USD deposit token for institutional
+            clients, indicating a strong institutional interest in Ethereum. [<a href="https://x.com/ethereum/status/1938270421717320000"
+            target=''_blank''>11</a>]'
+          - '@SuccinctLabs and other teams achieved advancements like the ability
+            to prove Ethereum blocks in under 12 seconds, collaborating to push frontier
+            technology forward. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target=''_blank''>12</a>]'
+          Product Development:
+          - <strong>EVM Compatibility:</strong> @ZKsync is now fully EVM equivalent,
+            allowing developers to deploy existing Solidity contracts. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target='_blank'>13</a>]
+          - '@aztecnetwork launched a public testnet, emphasizing privacy-focused
+            L2 development. [<a href="https://x.com/ethereum/status/1925519840829141291"
+            target=''_blank''>14</a>]'
+          Tokenomics and Fundraising:
+          - SharpLinkGaming announced a $425M private placement for an Ethereum treasury
+            strategy. [<a href="https://x.com/ethereum/status/1938270421717320000"
+            target='_blank'>15</a>]
+          - The BUIDL fund distributed over $10M in dividends on Ethereum platforms
+            in May. [<a href="https://x.com/ethereum/status/1938270421717320000" target='_blank'>16</a>]
+report_tool_test:
+  input:
+    tool: report
+    tool_arguments:
+      twitter_handle: '@bitcoin'
+      category: projects
+    raw_data_only: false
+  output:
+    response: ''
+    data:
+      data:
+        summary:
+          Community Engagement & Incentives:
+          - No specific information available.
+          Exchange Listings:
+          - No specific information available.
+          Growth & Expansion:
+          - No specific information available.
+          Next Steps:
+          - No specific information available.
+          Other Findings:
+          - No specific information available.
+          Partnerships & Collaborations:
+          - No specific information available.
+          Product Development:
+          - No specific information available.
+          Tokenomics and Fundraising:
+          - No specific information available.
+report_query_test_2:
+  input:
+    query: Provide a report on heurist's recent partnerships
+  output:
+    response: '**Heurist Project Report: Partnerships**
+
+
+      **Current Data Shows:**
+
+      Limited information is available regarding Heurist''s recent partnerships.
+
+
+      **Key Findings:**
+
+
+      * **Partnerships & Collaborations:** *No specific information available.* Arbus
+      AI''s current data scan did not retrieve any concrete details on recent partnerships
+      or collaborations involving Heurist.
+
+
+      **Constraints:**
+
+      The analysis is constrained by the lack of available data on Heurist''s partnership
+      activities. This limitation affects the depth of insights that can be provided
+      on this aspect of the project.
+
+
+      **Relevant Context (Based on Available Information):**
+
+      While no specific partnership details are available for Heurist, in the broader
+      cryptocurrency and blockchain space, strategic partnerships often play a crucial
+      role in:
+
+      - Enhancing project visibility and credibility
+
+      - Expanding ecosystem capabilities
+
+      - Driving adoption and growth
+
+
+      **Recommendation for Future Analysis:**
+
+      To gain a more comprehensive understanding of Heurist''s position and prospects,
+      it is recommended to:
+
+      - Monitor project communications channels (e.g., official website, social media,
+      forums) for announcements related to partnerships.
+
+      - Utilize network analysis tools to identify potential collaborations, if and
+      when more data becomes available.
+
+      - Cross-reference with market sentiment and project fundamentals to assess the
+      potential impact of future partnerships on Heurist''s ecosystem.
+
+
+      **Next Update Trigger:**
+
+      The next analysis update on Heurist''s partnerships will be triggered upon the
+      availability of new data, which may include but is not limited to:
+
+      - Official partnership announcements by Heurist or collaborating entities.
+
+      - Significant updates on Heurist''s ecosystem that may indirectly suggest partnership
+      activities.
+
+      - Enhanced data coverage by Arbus AI on the project.'
+    data:
+      data:
+        summary:
+          Community Engagement & Incentives:
+          - No specific information available.
+          Exchange Listings:
+          - No specific information available.
+          Growth & Expansion:
+          - No specific information available.
+          Next Steps:
+          - No specific information available.
+          Other Findings:
+          - No specific information available.
+          Partnerships & Collaborations:
+          - No specific information available.
+          Product Development:
+          - No specific information available.
+          Tokenomics and Fundraising:
+          - No specific information available.
+report_tool_test_2:
+  input:
+    tool: report
+    tool_arguments:
+      twitter_handle: SpaceX
+      category: projects
+    raw_data_only: true
+  output:
+    response: ''
+    data:
+      data:
+        summary:
+          Community Engagement & Incentives:
+          - No specific information available.
+          Exchange Listings:
+          - No specific information available.
+          Growth & Expansion:
+          - No specific information available.
+          Next Steps:
+          - No specific information available.
+          Other Findings:
+          - No specific information available.
+          Partnerships & Collaborations:
+          - No specific information available.
+          Product Development:
+          - No specific information available.
+          Tokenomics and Fundraising:
+          - No specific information available.
