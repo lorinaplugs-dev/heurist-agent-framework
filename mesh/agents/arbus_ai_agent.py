@@ -60,14 +60,17 @@ class ArbusAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "ask_ai_assistant",
-                    "description": "Ask questions about crypto markets and get AI-powered analysis based on real-time data.",
+                    "description": "Query the Arbus AI assistant for real-time cryptocurrency market analysis, sentiment insights, and general market intelligence. This tool provides comprehensive answers to crypto-related questions using current market data, social sentiment, and on-chain metrics. Ideal for getting broad market overviews, understanding current trends, or asking specific questions about market conditions.",
                     "parameters": {
                         "type": "object",
                         "properties": {
-                            "query": {"type": "string", "description": "The question about crypto markets"},
+                            "query": {
+                                "type": "string",
+                                "description": "The specific question or topic about cryptocurrency markets you want analyzed. Examples: 'What is the current sentiment for Bitcoin?', 'How are DeFi tokens performing?', 'What are the main market drivers today?'",
+                            },
                             "days": {
                                 "type": "integer",
-                                "description": "Days of data to analyze (1-365, default: 7)",
+                                "description": "Number of days of historical data to include in the analysis (1-365 days). Default is 7 days. Use shorter periods (1-7 days) for recent events, longer periods (30-365 days) for trend analysis.",
                                 "default": 7,
                             },
                         },
@@ -79,17 +82,17 @@ class ArbusAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "assistant_summary",
-                    "description": "Get comprehensive AI analysis of specific crypto projects with bullish/bearish scenarios.",
+                    "description": "Generate a comprehensive AI-powered analysis summary for a specific cryptocurrency project or token. This tool provides detailed insights including bullish and bearish scenarios, key metrics, recent developments, and risk assessment. Perfect for deep-dive analysis of individual projects, understanding project fundamentals, and getting balanced perspectives on investment potential.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "ticker_or_twitterhandle": {
                                 "type": "string",
-                                "description": "Project name or Twitter handle",
+                                "description": "The cryptocurrency ticker symbol (e.g., 'BTC', 'ETH', 'SOL') or the project's Twitter handle (with or without @). For Twitter handles, the @ symbol will be automatically removed if present.",
                             },
                             "day_interval": {
                                 "type": "integer",
-                                "description": "Days to analyze (1-30)",
+                                "description": "Number of days to analyze for the project summary (1-30 days). Default is 7 days. Use shorter intervals (1-7 days) for recent project updates, longer intervals (14-30 days) for comprehensive trend analysis.",
                                 "default": 7,
                             },
                         },
@@ -101,26 +104,26 @@ class ArbusAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "report",
-                    "description": "Generate structured reports for crypto projects with categorized findings.",
+                    "description": "Generate structured, categorized reports for cryptocurrency projects based on their social media presence and community activity. This tool creates organized reports with specific focus areas like project updates, community sentiment, or alert-worthy events. Useful for tracking project development, monitoring community engagement, and generating formal analysis reports.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "twitter_handle": {
                                 "type": "string",
-                                "description": "Project's Twitter handle (without @)",
+                                "description": "The project's Twitter handle without the @ symbol (e.g., 'ethereum', 'solana', 'chainlink'). The @ symbol will be automatically removed if included.",
                             },
                             "category": {
                                 "type": "string",
-                                "description": "Report category",
+                                "description": "The type of report to generate: 'projects' for general project analysis and updates, 'threador' for Twitter thread analysis and social sentiment, 'alerts' for notable events and important announcements.",
                                 "enum": ["projects", "threador", "alerts"],
                             },
                             "date_from": {
                                 "type": "string",
-                                "description": "Start date for report (YYYY-MM-DD)",
+                                "description": "Start date for the report analysis in YYYY-MM-DD format (e.g., '2024-01-01'). If not provided, the report will use a default recent time period.",
                             },
                             "date_to": {
                                 "type": "string",
-                                "description": "End date for report (YYYY-MM-DD)",
+                                "description": "End date for the report analysis in YYYY-MM-DD format (e.g., '2024-01-31'). If not provided, the report will use the current date as the end point.",
                             },
                         },
                         "required": ["twitter_handle", "category"],
