@@ -28,7 +28,7 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
         self.last_rotation_time = time.time()
         self.rotation_interval = 300  # Rotate every 5 minutes
 
-        self.base_url = "https://api.elfa.ai/v2"  # Updated to v2
+        self.base_url = "https://api.elfa.ai/v2"
         self._update_headers()
 
         self.apidance_api_key = os.getenv("APIDANCE_API_KEY")
@@ -43,7 +43,7 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes a token or a topic or a Twitter account using Twitter data and Elfa API. It highlights smart influencers.",
-                "external_apis": ["Elfa", "Apidance"],  # Added Apidance
+                "external_apis": ["Elfa", "Apidance"],
                 "tags": ["Twitter"],
                 "recommended": True,
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/Elfa.png",
@@ -155,7 +155,7 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def _make_request(self, endpoint: str, method: str = "GET", params: Dict = None) -> Dict:
-        self._rotate_api_key()  # Check and rotate API key if needed
+        self._rotate_api_key()
         url = f"{self.base_url}/{endpoint.lstrip('/')}"
         logger.info(f"Making request to ELFA API: {endpoint}")
         return await self._api_request(url=url, method=method, headers=self.headers, params=params)
@@ -174,12 +174,12 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
             logger.warning(f"Truncated keywords to 5: {keywords}")
 
         try:
-            end_time = int(time.time() - 60)  # Current time minus 60 seconds
-            start_time = int(end_time - (days_ago * 86400))  # end_time minus days_ago in seconds
+            end_time = int(time.time() - 60)
+            start_time = int(end_time - (days_ago * 86400))
 
             params = {"keywords": ",".join(keywords), "from": start_time, "to": end_time, "limit": limit}
 
-            result = await self._make_request("data/keyword-mentions", params=params)  # Updated endpoint
+            result = await self._make_request("data/keyword-mentions", params=params)
             if "error" in result:
                 logger.error(f"Error searching mentions: {result['error']}")
                 return result
@@ -193,13 +193,12 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
                                 if tweet.get("id_str") == tweet_id:
                                     item["text"] = tweet.get("text")
                                     break
-                # Remove unnecessary fields if present
                 for tweet in result["data"]:
                     tweet.pop("id", None)
                     tweet.pop("twitter_id", None)
                     tweet.pop("twitter_user_id", None)
 
-            result.pop("metadata", None)  # If present
+            result.pop("metadata", None)
             logger.info(f"Successfully retrieved mentions data with {len(result.get('data', []))} results")
             return {"status": "success", "data": result}
         except Exception as e:
@@ -214,7 +213,7 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
             if username.startswith("@"):
                 username = username[1:]
             params = {"username": username}
-            result = await self._make_request("account/smart-stats", params=params)  # Endpoint remains relative to v2
+            result = await self._make_request("account/smart-stats", params=params)
             if "error" in result:
                 logger.error(f"Error getting account stats: {result['error']}")
                 return result
@@ -230,19 +229,14 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
         logger.info(f"Searching account for username: {username}, days_ago: {days_ago}, limit: {limit}")
 
         try:
-            # Get account stats
             if username.startswith("@"):
                 username = username[1:]
             account_stats_result = await self.get_account_stats(username)
             if "error" in account_stats_result:
                 return account_stats_result
-
-            # Search for mentions of the account
             mentions_result = await self.search_mentions([username], days_ago, limit)
             if "error" in mentions_result:
                 return mentions_result
-
-            # Combine both results
             logger.info(f"Successfully retrieved combined account data for {username}")
             return {
                 "status": "success",
@@ -263,7 +257,7 @@ class ElfaTwitterIntelligenceAgent(MeshAgent):
 
         try:
             params = {"timeWindow": time_window, "page": 1, "pageSize": 50, "minMentions": 5}
-            result = await self._make_request("aggregations/trending-tokens", params=params)  # Updated endpoint
+            result = await self._make_request("aggregations/trending-tokens", params=params)
             if "error" in result:
                 logger.error(f"Error getting trending tokens: {result['error']}")
                 return result
