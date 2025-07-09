@@ -22,7 +22,7 @@ DISABLED_AGENTS = {"DeepResearchAgent", "MemoryAgent"}
 
 def is_agent_hidden(agent_data: Dict) -> bool:
     """Check if an agent is marked as hidden in metadata"""
-    return agent_data.get("hidden", False) is True
+    return agent_data.get("metadata", {}).get("hidden", False) is True
 
 
 def fetch_agents_metadata() -> Dict:
