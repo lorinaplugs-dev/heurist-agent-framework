@@ -1,12 +1,10 @@
-import asyncio
 import logging
 import os
 from typing import Any, Dict, List, Optional
 
-import aiohttp
 from dotenv import load_dotenv
 
-from decorators import monitor_execution, with_cache, with_retry
+from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
 
 logger = logging.getLogger(__name__)
@@ -143,53 +141,13 @@ class TwitterInfoAgent(MeshAgent):
         """Check if the input is a numeric ID"""
         return input_str.strip().isdigit()
 
-    @monitor_execution()
-    @with_retry(max_retries=3)
-    async def make_request(self, endpoint: str, params: Dict = None) -> Dict:
-        """Make API request to Twitter API"""
-        should_close = False
-        if not self.session:
-            self.session = aiohttp.ClientSession()
-            should_close = True
-
-        try:
-            async with self.session.get(endpoint, params=params, headers=self.headers) as response:
-                if response.status == 200:
-                    return await response.json()
-
-                if response.status == 429:
-                    error_text = await response.text()
-                    logger.warning("Rate limit exceeded (429). Waiting 5 seconds before retry...")
-                    await asyncio.sleep(5)
-                    async with self.session.get(endpoint, params=params, headers=self.headers) as retry_response:
-                        if retry_response.status == 200:
-                            logger.info("Request successful after rate limit wait period")
-                            return await retry_response.json()
-                        else:
-                            retry_error_text = await retry_response.text()
-                            logger.error(f"API error {retry_response.status} after retry: {retry_error_text[:200]}")
-                            return {"error": f"API returned error {retry_response.status}: {retry_error_text[:200]}"}
-
-                error_text = await response.text()
-                logger.error(f"API error {response.status}: {error_text[:200]}")
-                return {"error": f"API returned error {response.status}: {error_text[:200]}"}
-
-        except Exception as e:
-            logger.error(f"API request error: {str(e)}")
-            return {"error": f"API request failed: {str(e)}"}
-
-        finally:
-            if should_close and self.session:
-                await self.session.close()
-                self.session = None
-
     # ------------------------------------------------------------------------
     #                      TWITTER API-SPECIFIC METHODS
     # ------------------------------------------------------------------------
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_user_id(self, identifier: str) -> Dict:
-        """Fetch Twitter user ID and profile information"""
+        """Fetch Twitter user ID and profile information using _api_request"""
         try:
             params = {}
             if self._is_numeric_id(identifier):
@@ -198,9 +156,13 @@ class TwitterInfoAgent(MeshAgent):
                 clean_username = self._clean_username(identifier)
                 params = {"screen_name": clean_username}
 
-            user_data = await self.make_request(endpoint=self.get_twitter_user_endpoint(), params=params)
+            logger.info(f"Fetching user profile for identifier: {identifier}")
+            user_data = await self._api_request(
+                url=self.get_twitter_user_endpoint(), method="GET", headers=self.headers, params=params
+            )
 
             if "error" in user_data:
+                logger.error(f"Error fetching user profile: {user_data['error']}")
                 return user_data
 
             profile_info = {
@@ -216,6 +178,7 @@ class TwitterInfoAgent(MeshAgent):
                 "created_at": user_data.get("created_at"),
             }
 
+            logger.info(f"Successfully fetched profile for user: {profile_info.get('screen_name')}")
             return {"profile": profile_info}
 
         except Exception as e:
@@ -225,13 +188,17 @@ class TwitterInfoAgent(MeshAgent):
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_tweets(self, user_id: str, limit: int = 10) -> Dict:
-        """Fetch recent tweets for a user by ID"""
+        """Fetch recent tweets for a user by ID using _api_request"""
         try:
             params = {"user_id": user_id, "count": min(limit, 50)}
 
-            tweets_data = await self.make_request(endpoint=self.get_twitter_tweets_endpoint(), params=params)
+            logger.info(f"Fetching tweets for user_id: {user_id}, limit: {limit}")
+            tweets_data = await self._api_request(
+                url=self.get_twitter_tweets_endpoint(), method="GET", headers=self.headers, params=params
+            )
 
             if "error" in tweets_data:
+                logger.error(f"Error fetching tweets: {tweets_data['error']}")
                 return tweets_data
 
             tweets = tweets_data.get("tweets", [])
@@ -249,6 +216,7 @@ class TwitterInfoAgent(MeshAgent):
                 }
                 cleaned_tweets.append(cleaned_tweet)
 
+            logger.info(f"Successfully fetched {len(cleaned_tweets)} tweets")
             return {"tweets": cleaned_tweets}
 
         except Exception as e:
@@ -258,22 +226,29 @@ class TwitterInfoAgent(MeshAgent):
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def get_tweet_detail(self, tweet_id: str, cursor: str = "") -> Dict:
-        """Fetch detailed information about a specific tweet"""
+        """Fetch detailed information about a specific tweet using _api_request"""
         try:
             params = {"tweet_id": tweet_id}
             if cursor:
                 params["cursor"] = cursor
 
-            tweet_data = await self.make_request(endpoint=self.get_twitter_detail_endpoint(), params=params)
+            logger.info(f"Fetching tweet details for tweet_id: {tweet_id}")
+            tweet_data = await self._api_request(
+                url=self.get_twitter_detail_endpoint(), method="GET", headers=self.headers, params=params
+            )
 
             if "error" in tweet_data:
+                logger.error(f"Error fetching tweet details: {tweet_data['error']}")
                 return tweet_data
 
-            return {
+            result = {
                 "pinned_tweet": tweet_data.get("pinned_tweet"),
                 "tweets": tweet_data.get("tweets", []),
                 "next_cursor": tweet_data.get("next_cursor_str"),
             }
+
+            logger.info("Successfully fetched tweet details")
+            return result
 
         except Exception as e:
             logger.error(f"Error in get_tweet_detail: {e}")
@@ -282,22 +257,29 @@ class TwitterInfoAgent(MeshAgent):
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
     async def general_search(self, query: str, cursor: str = "") -> Dict:
-        """Search for tweets using a query term"""
+        """Search for tweets using a query term using _api_request"""
         try:
             params = {"q": query}
             if cursor:
                 params["cursor"] = cursor
 
-            search_data = await self.make_request(endpoint=self.get_twitter_search_endpoint(), params=params)
+            logger.info(f"Performing general search for query: {query}")
+            search_data = await self._api_request(
+                url=self.get_twitter_search_endpoint(), method="GET", headers=self.headers, params=params
+            )
 
             if "error" in search_data:
+                logger.error(f"Error in general search: {search_data['error']}")
                 return search_data
 
-            return {
+            result = {
                 "query": query,
                 "tweets": search_data.get("tweets", []),
                 "next_cursor": search_data.get("next_cursor_str"),
             }
+
+            logger.info(f"Successfully completed search for query: {query}")
+            return result
 
         except Exception as e:
             logger.error(f"Error in general_search: {e}")
@@ -310,6 +292,8 @@ class TwitterInfoAgent(MeshAgent):
         self, tool_name: str, function_args: dict, session_context: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """Handle tool execution logic"""
+        logger.info(f"Handling tool call: {tool_name} with args: {function_args}")
+
         if tool_name == "get_user_tweets":
             identifier = function_args.get("username")
             limit = min(function_args.get("limit", 10), 50)  # Cap at 50
@@ -322,17 +306,21 @@ class TwitterInfoAgent(MeshAgent):
                 {"identifier": identifier}, f"Looking up Twitter user: @{self._clean_username(identifier)}..."
             )
 
+            # Get user profile first
             profile_result = await self.get_user_id(identifier)
-            if "error" in profile_result:
-                return profile_result
+            errors = self._handle_error(profile_result)
+            if errors:
+                return errors
 
             user_id = profile_result.get("profile", {}).get("id_str")
             if not user_id:
                 return {"error": "Could not retrieve user ID"}
 
+            # Get user tweets
             tweets_result = await self.get_tweets(user_id, limit)
-            if "error" in tweets_result:
-                return tweets_result
+            errors = self._handle_error(tweets_result)
+            if errors:
+                return errors
 
             return {
                 "twitter_data": {
@@ -351,8 +339,9 @@ class TwitterInfoAgent(MeshAgent):
             logger.info(f"Fetching tweet details for tweet_id '{tweet_id}'")
 
             tweet_detail_result = await self.get_tweet_detail(tweet_id, cursor)
-            if "error" in tweet_detail_result:
-                return tweet_detail_result
+            errors = self._handle_error(tweet_detail_result)
+            if errors:
+                return errors
 
             return {"tweet_data": tweet_detail_result}
 
@@ -366,10 +355,13 @@ class TwitterInfoAgent(MeshAgent):
             logger.info(f"Performing general search for query '{query}'")
 
             search_result = await self.general_search(query, cursor)
-            if "error" in search_result:
-                return search_result
+            errors = self._handle_error(search_result)
+            if errors:
+                return errors
 
             return {"search_data": search_result}
 
         else:
-            return {"error": f"Unsupported tool: {tool_name}"}
+            error_msg = f"Unsupported tool: {tool_name}"
+            logger.error(error_msg)
+            return {"error": error_msg}
