@@ -4,26 +4,98 @@ natural_language_store:
       much users.
     raw_data_only: false
     session_context: &id001
-      api_key: xxxxx-xxxxxxx
+      api_key: xxxxxx-xxxxxxx
   output:
-    response: "**Conversation Storage Confirmation**\n\n* **Status:** **SUCCESS**\n\
-      * **Message:** Conversation stored successfully\n* **Conversation Count:** **5**\
-      \ (Total conversations stored in your context)\n\n**Stored Conversation Summary:**\n\
-      \n* **Conversation ID:** #5\n* **Topic:** Low User Engagement\n* **Key Points:**\n\
-      \t+ Initial topic: \"Imagine not having many users\"\n\t+ **No specific details\
-      \ or questions** discussed yet (conversation just initiated)\n* **Timestamp:**\
-      \ *current timestamp not provided (assuming)* `[YYYY-MM-DD HH:MM:SS]` \n\n**Retrieve\
-      \ or Continue?**\nHow would you like to proceed?\n\n1. **Retrieve Previous Conversation**:\
-      \ Specify a conversation ID or topic to review.\nExample: `Retrieve conversation\
-      \ #3` or `Summary of our last discussion on [Topic]`\n2. **Add to Current Conversation**:\
-      \ Continue discussing \"Imagine not having many users\" (add more context or\
-      \ ask a specific question).\nExample: `What are strategies to attract more users?`\n\
-      3. **Start New Topic**: Begin a new conversation on a different subject.\nExample:\
-      \ `Discuss the impact of AI on customer service`"
+    response: "**Conversation Stored Confirmation**\n\n* **Status:** Success\n* **Message:**\
+      \ Conversation stored successfully\n* **Conversation Count:** **9** (updated\
+      \ total count of conversations stored in your context)\n\n**Stored Conversation\
+      \ Summary:**\n\n* **Conversation ID:** #9\n* **Topic:** Hypothetical Scenario\
+      \ Discussion\n* **Key Points:**\n\t1. **Scenario:** Imagine not having many\
+      \ users\n\t2. **Discussion Summary:** Initial statement only, no further discussion\
+      \ or details provided (yet!)\n* **Timestamp:** *current timestamp not provided,\
+      \ if you'd like to include timestamps in the future, please share the timing\
+      \ of your messages*\n\n**What's Next?**\nHow would you like to proceed?\n\n\
+      A) **Add to Conversation #9**: Respond with additional thoughts on the scenario\
+      \ to append to this conversation.\nB) **Retrieve Past Conversation**: Provide\
+      \ a conversation ID or topic to summarize a previous discussion.\nC) **Find\
+      \ Specific Info**: Ask me to search for specific information within your stored\
+      \ conversations.\nD) **Start New Topic**: Begin a new conversation on a different\
+      \ subject. \n\nPlease respond with the letter of your chosen action."
     data:
       status: success
       message: Conversation stored successfully
-      conversation_count: 5
+      conversation_count: 9
+direct_store_with_metadata:
+  input:
+    tool: store_conversation
+    tool_arguments:
+      content: User asked about NFT marketplace development. Explained ERC-721 standards,
+        IPFS storage, and smart contract deployment.
+      metadata:
+        platform: discord
+        topic: NFTs
+        sentiment: educational
+    session_context: *id001
+  output:
+    response: ''
+    data:
+      status: success
+      message: Conversation stored successfully
+      conversation_count: 10
+natural_language_retrieve:
+  input:
+    query: What did we talk about in our previous conversations?
+    raw_data_only: false
+    session_context: *id001
+  output:
+    response: "**Conversation History Summary**\n\nHere's a concise summary of our\
+      \ previous conversations, formatted for readability with timestamps:\n\n###\
+      \ **NFT Marketplace Development (3 conversations)**\n\n1. **2025-07-11T09:39:12.875042**\
+      \ (Discord)\n\t* Topic: NFTs\n\t* Sentiment: Educational\n\t* **Summary:** Discussed\
+      \ NFT marketplace development, covering:\n\t\t+ ERC-721 standards\n\t\t+ IPFS\
+      \ storage\n\t\t+ Smart contract deployment\n\n2. **2025-07-11T10:08:14.237120**\
+      \ (Discord)\n\t* Topic: NFTs\n\t* Sentiment: Educational\n\t* **Summary:** (Duplicate\
+      \ topic) NFT marketplace development, same points as above.\n\n3. **2025-07-11T10:27:31.297511**\
+      \ (Discord)\n\t* Topic: NFTs\n\t* Sentiment: Educational\n\t* **Summary:** (Duplicate\
+      \ topic) NFT marketplace development, same points as above.\n\n### **User Base\
+      \ Challenges (2 conversations)**\n\n1. **2025-07-11T10:08:05.041648** (Discord)\n\
+      \t* **Summary:** Discussed the challenges of having a **limited user base**.\n\
+      \n2. **2025-07-11T10:27:20.772794** (Discord)\n\t* **Summary:** (Duplicate topic)\
+      \ Discussed the **scenario of not having many users**.\n\n**Note:**\n- There\
+      \ are **5 additional unseen conversations** (out of a total of 10). If you'd\
+      \ like to review them, please respond with \"Show all conversations\" or specify\
+      \ a topic/platform to filter by.\n- To find specific information, reply with\
+      \ a keyword or question related to the topic you're interested in (e.g., \"\
+      More on ERC-721 standards\")."
+    data:
+      conversations:
+      - timestamp: '2025-07-11T10:27:31.297511'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      - timestamp: '2025-07-11T10:27:20.772794'
+        content: Discussed about the challenges of having a limited user base.
+      - timestamp: '2025-07-11T10:08:14.237120'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      - timestamp: '2025-07-11T10:08:05.041648'
+        content: Discussed about the scenario of not having many users.
+      - timestamp: '2025-07-11T09:39:12.875042'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      total_conversations: 10
+      returned_conversations: 5
 direct_retrieve:
   input:
     tool: retrieve_conversations
@@ -34,22 +106,32 @@ direct_retrieve:
     response: ''
     data:
       conversations:
-      - timestamp: '2025-06-20T06:40:15.831509'
-        content: Discussed about the scenario of not having many users.
-      - timestamp: '2025-06-20T06:15:45.041676'
-        content: Discussed about the scenario of not having many users.
-      - timestamp: '2025-06-20T05:06:31.498992'
+      - timestamp: '2025-07-11T10:27:31.297511'
         content: User asked about NFT marketplace development. Explained ERC-721 standards,
           IPFS storage, and smart contract deployment.
         metadata:
           platform: discord
           topic: NFTs
           sentiment: educational
-      - timestamp: '2025-06-20T05:06:21.783795'
-        content: Discussed blockchain technology, smart contracts, and DeFi protocols.
-      - timestamp: '2025-06-19T16:59:07.566751'
-        content: My name is manish.
-      total_conversations: 5
+      - timestamp: '2025-07-11T10:27:20.772794'
+        content: Discussed about the challenges of having a limited user base.
+      - timestamp: '2025-07-11T10:08:14.237120'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      - timestamp: '2025-07-11T10:08:05.041648'
+        content: Discussed about the scenario of not having many users.
+      - timestamp: '2025-07-11T09:39:12.875042'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      total_conversations: 10
       returned_conversations: 5
 raw_data_query:
   input:
@@ -57,40 +139,56 @@ raw_data_query:
     raw_data_only: false
     session_context: *id001
   output:
-    response: "**Conversation History**\n\nHere is a list of all stored conversations,\
-      \ formatted for readability with timestamps:\n\n**1.** **2025-06-20 06:40:15**\n\
-      * **Content:** Discussed about the scenario of not having many users.\n\n**2.**\
-      \ **2025-06-20 06:15:45**\n* **Content:** Discussed about the scenario of not\
-      \ having many users. (**Duplicate Topic**)\n\n**3.** **2025-06-20 05:06:31**\n\
-      * **Content:** User asked about NFT marketplace development. Explained ERC-721\
-      \ standards, IPFS storage, and smart contract deployment.\n* **Metadata:**\n\
-      \t+ **Platform:** Discord\n\t+ **Topic:** NFTs\n\t+ **Sentiment:** Educational\n\
-      \n**4.** **2025-06-20 05:06:21**\n* **Content:** Discussed blockchain technology,\
-      \ smart contracts, and DeFi protocols.\n\n**5.** **2025-06-19 16:59:07**\n*\
-      \ **Content:** My name is Manish.\n\n**Summary Statistics:**\n* **Total Conversations:**\
-      \ 5\n* **Returned Conversations:** 5 (All conversations are displayed) \n\n\
-      **Quick Actions:**\n* **Search by Topic/KW:** Type a keyword (e.g., NFT, blockchain)\
-      \ to find related conversations.\n* **Filter by Date:** Specify a date range\
-      \ to view conversations within that period.\n* **Clear Conversations:** Remove\
-      \ all stored conversations (caution: irreversible).\n* **Back to Assist Mode:**\
-      \ Return to asking me questions or starting a new conversation. \n\nHow would\
-      \ you like to proceed? (Reply with one of the quick actions or ask a new question)"
+    response: "**Conversation History (Last 5 Entries)**\n\nBelow is a formatted display\
+      \ of your recent conversations. Note that there are **5 out of 10 total conversations**\
+      \ shown here, ordered from most recent to oldest based on their timestamps.\n\
+      \n### Conversation 1\n* **Timestamp:** `2025-07-11T10:27:31.297511`\n* **Platform:**\
+      \ Discord\n* **Topic:** NFTs\n* **Sentiment:** Educational\n* **Content:**\n\
+      \  > User asked about NFT marketplace development. Explained ERC-721 standards,\
+      \ IPFS storage, and smart contract deployment.\n\n### Conversation 2\n* **Timestamp:**\
+      \ `2025-07-11T10:27:20.772794`\n* **Platform:** *Not Specified*\n* **Topic:**\
+      \ *Not Specified*\n* **Sentiment:** *Not Specified*\n* **Content:**\n  > Discussed\
+      \ about the challenges of having a limited user base.\n\n### Conversation 3\n\
+      * **Timestamp:** `2025-07-11T10:08:14.237120`\n* **Platform:** Discord\n* **Topic:**\
+      \ NFTs\n* **Sentiment:** Educational\n* **Content:**\n  > User asked about NFT\
+      \ marketplace development. Explained ERC-721 standards, IPFS storage, and smart\
+      \ contract deployment.\n\n### Conversation 4\n* **Timestamp:** `2025-07-11T10:08:05.041648`\n\
+      * **Platform:** *Not Specified*\n* **Topic:** *Not Specified*\n* **Sentiment:**\
+      \ *Not Specified*\n* **Content:**\n  > Discussed about the scenario of not having\
+      \ many users.\n\n### Conversation 5\n* **Timestamp:** `2025-07-11T09:39:12.875042`\n\
+      * **Platform:** Discord\n* **Topic:** NFTs\n* **Sentiment:** Educational\n*\
+      \ **Content:**\n  > User asked about NFT marketplace development. Explained\
+      \ ERC-721 standards, IPFS storage, and smart contract deployment.\n\n**View\
+      \ More Options:**\n- **View All 10 Conversations:** (Type 'show all conversations'\
+      \ to see the entire history)\n- **Filter by Topic:** (Specify a topic, e.g.,\
+      \ 'NFTs', to view related conversations)\n- **Search Specific Info:** (Provide\
+      \ keywords to find specific information within the conversations)"
     data:
       conversations:
-      - timestamp: '2025-06-20T06:40:15.831509'
-        content: Discussed about the scenario of not having many users.
-      - timestamp: '2025-06-20T06:15:45.041676'
-        content: Discussed about the scenario of not having many users.
-      - timestamp: '2025-06-20T05:06:31.498992'
+      - timestamp: '2025-07-11T10:27:31.297511'
         content: User asked about NFT marketplace development. Explained ERC-721 standards,
           IPFS storage, and smart contract deployment.
         metadata:
           platform: discord
           topic: NFTs
           sentiment: educational
-      - timestamp: '2025-06-20T05:06:21.783795'
-        content: Discussed blockchain technology, smart contracts, and DeFi protocols.
-      - timestamp: '2025-06-19T16:59:07.566751'
-        content: My name is manish.
-      total_conversations: 5
+      - timestamp: '2025-07-11T10:27:20.772794'
+        content: Discussed about the challenges of having a limited user base.
+      - timestamp: '2025-07-11T10:08:14.237120'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      - timestamp: '2025-07-11T10:08:05.041648'
+        content: Discussed about the scenario of not having many users.
+      - timestamp: '2025-07-11T09:39:12.875042'
+        content: User asked about NFT marketplace development. Explained ERC-721 standards,
+          IPFS storage, and smart contract deployment.
+        metadata:
+          platform: discord
+          topic: NFTs
+          sentiment: educational
+      total_conversations: 10
       returned_conversations: 5

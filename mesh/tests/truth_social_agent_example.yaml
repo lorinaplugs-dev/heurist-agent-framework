@@ -1,211 +1,243 @@
 input_query:
   query: What has Donald Trump posted recently on Truth Social?
 output_query:
-  response: "**Recent Posts from @realDonaldTrump on Truth Social**\n\n**Post Count:**\
-    \ 20\n**Timeframe:** May 5-6, 2025\n\n**Post Summaries (latest first):**\n\n1.\
-    \ **Alcatraz Reopening** (May 6, 2025, 00:51:38)\n\t* Quotes Stephen Miller on\
-    \ the need for a place to \"visually demonstrate total separation from society\"\
-    \ for certain individuals.\n2. **Retweet** (May 6, 2025, 00:46:29)\n\t* Retweet\
-    \ of an earlier post (ID: 114457309826756716), content not specified.\n3. **Retweet\
-    \ (Duplicate)** (May 6, 2025, 00:43:34)\n\t* Duplicate retweet of the same earlier\
-    \ post (ID: 114457309826756716).\n4. **Quote: Secretary Robert F. Kennedy Jr.**\
-    \ (May 6, 2025, 00:40:13)\n\t* On streamlining an agency, cutting waste, and not\
-    \ eliminating critical research or healthcare programs.\n5. **Executive Order:\
-    \ Gain-of-Function Research** (May 6, 2025, 00:38:44)\n\t* Announcement of an\
-    \ Executive Order protecting Americans from dangerous gain-of-function research,\
-    \ with a link to the White House website.\n6. **2027 NFL Draft in Washington,\
-    \ D.C.** (May 6, 2025, 00:20:42)\n\t* Announcement that the 2027 NFL Draft will\
-    \ take place on the National Mall in Washington, D.C.\n7. **Endorsement: Ed Martin\
-    \ for U.S. Attorney** (May 6, 2025, 00:13:05)\n\t* Support for Ed Martin's approval\
-    \ as U.S. Attorney, highlighting his passion for health and the need to \"Make\
-    \ America Healthy Again.\"\n8. **Free Tina Peters** (May 6, 2025, 00:12:48)\n\t\
-    * Call to action to free Tina Peters, a \"political prisoner\" in Colorado, and\
-    \ directive to the Department of Justice to secure her release.\n9. **National\
-    \ Small Business Week 2025** (May 5, 2025, 23:19:54)\n\t* Link to the White House\
-    \ website proclaiming National Small Business Week 2025.\n10. **National Holiday\
-    \ for World"
+  response: "**Recent Posts from @realDonaldTrump on Truth Social (July 9-11, 2025)**\n\
+    \n### **Summary of Recent Activity:**\n\n* **Total Posts:** 20 (within the last\
+    \ 2 days)\n* **Engagement:** All posts have 0 likes, replies, and reposts (as\
+    \ per the provided data)\n* **Key Themes:**\n\t1. **Politics and Endorsements**\n\
+    \t2. **Economy and Trade (Tariffs)**\n\t3. **Appointments and Nominations**\n\t\
+    4. **Response to Media and Critics**\n\t5. **National Security and Defense**\n\
+    \n### **Notable Posts:**\n\n1. **Nobel Peace Prize Mention**\n\t* **Content:**\
+    \ Shares an article suggesting he deserves the Nobel Peace Prize, citing achievements.\n\
+    \t* **Date:** July 11, 2025, 03:57:08\n\t* **URL:** https://truthsocial.com/@realDonaldTrump/114832587355133963\n\
+    \n2. **Defunding PBS and NPR**\n\t* **Content:** Urges Republicans to defund the\
+    \ Corporation for Public Broadcasting, criticizing PBS and NPR.\n\t* **Date:**\
+    \ July 10, 2025, 23:04:04\n\t* **URL:** https://truthsocial.com/@realDonaldTrump/114831435031070955\n\
+    \n3. **Nomination of William W. Mercer**\n\t* **Content:** Announces the nomination\
+    \ of William W. Mercer as a Judge on the U.S. District Court for the District\
+    \ of Montana.\n\t* **Date:** July 10, 2025, 23:03:45\n\t* **URL:** https://truthsocial.com/@realDonaldTrump/114831433790826577\n\
+    \n4. **Appointment of Nick Adams as Ambassador to Malaysia**\n\t* **Content:**\
+    \ Announces Nick Adams as the nominee for the next U.S. Ambassador to Malaysia.\n\
+    \t* **Date:** July 10, 2025, 21:35:56\n\t* **URL:** https://truthsocial.com/@realDonaldTrump/114831088465448187\n\
+    \n5. **50% Tariff on Copper**\n\t* **Content:** Announces a 50% tariff on copper,\
+    \ effective August 1, 2025, citing national security assessments.\n\t* **Date:**\
+    \ July 10, 2025, 00:29:17\n\t* **URL:** https://truthsocial.com/@realDonaldTrump/114826107762484260\n\
+    \n6. **Endorsements for Senator Lindsey Graham, Senator Tom Cotton, and Senator\
+    \ Roger Marshall**\n\t* **Dates:** July 10, 2025 (various times)\n\t* **URLs:**\n\
+    \t\t+ Lindsey Graham: https://truthsocial.com/@realDonaldTrump/114826044404420382\n\
+    \t\t+ Tom Cotton: https://truthsocial.com/@realDonaldTrump/114826040324238044\n\
+    \t\t+ Roger Marshall: https://truthsocial.com/@realDonaldTrump/114826039777950636\n\
+    \n### **Posts with Minimal Content or Empty:**\nSeveral posts within the dataset\
+    \ have minimal or no content. These include posts from July 9, 2025 (three posts)\
+    \ and one from July 11, 2025. URLs are provided for each in the original dataset\
+    \ for reference."
   data:
     profile: '@realDonaldTrump'
     post_count: 20
     posts:
-    - content: '“𝐏𝐑𝐄𝐒𝐈𝐃𝐄𝐍𝐓 𝐓𝐑𝐔𝐌𝐏 𝐖𝐀𝐍𝐓𝐒 𝐓𝐎 𝐑𝐄𝐎𝐏𝐄𝐍 𝐀𝐋𝐂𝐀𝐓𝐑𝐀𝐙”Stephen Miller: "There are
-        people in this country, as President Trump has said, who will do nothing with
-        their lives but rape, maim, and murder. They cannot be rehabilitated...We
-        need a place in this country where we can send people to visually demonstrate
-        their total separation from society…”'
-      created_at: '2025-05-06T00:51:38.845Z'
+    - content: Thank you USA TODAY. So nice!“Trump deserves Nobel Peace Prize. He's
+        achieved more than those who've won before” https://www.usatoday.com/story/opinion/columnist/2025/07/10/trump-netanyahu-nobel-prize-israel-iran/84505423007/
+      created_at: '2025-07-11T03:57:08.002Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458145511409310
-    - content: 'RT: https://truthsocial.com/users/realDonaldTrump/statuses/114457309826756716'
-      created_at: '2025-05-06T00:46:29.061Z'
+      url: https://truthsocial.com/@realDonaldTrump/114832587355133963
+    - content: Congratulations to Bryan Bedford, who was just confirmed to head the
+        FAA. A very talented guy!!!  DJT
+      created_at: '2025-07-11T03:52:54.174Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458125209508949
-    - content: 'RT: https://truthsocial.com/users/realDonaldTrump/statuses/114457309826756716'
-      created_at: '2025-05-06T00:43:34.225Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458113751338139
-    - content: 'Secretary Robert F. Kennedy Jr: “What we''re cutting is waste, fraud,
-        and abuse. We''re streamlining an agency that grew by 38% in the 4 years that
-        President Biden was in the White House...we''re not getting rid of ANY critical
-        research and we''re not getting rid of any of the programs that are critical
-        to Americans'' healthcare…”'
-      created_at: '2025-05-06T00:40:13.618Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458100604424846
-    - content: 'This afternoon I signed an Executive Order protecting Americans from
-        dangerous gain-of-function research. Read more here: https://www.whitehouse.gov/presidential-actions/2025/05/improving-the-safety-and-security-of-biological-research/'
-      created_at: '2025-05-06T00:38:44.165Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458094742048024
-    - content: I am pleased to announce the 2027 NFL Draft will take place here in
-        the Nation’s Capital on the National Mall…
-      created_at: '2025-05-06T00:20:42.447Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458023850536968
-    - content: Ed Martin is going through the approval process to be U.S. Attorney
-        in the District of Columbia. According to many but, in particular, Robert
-        F. Kennedy, Jr., his approval is IMPERATIVE in terms of doing all that has
-        to be done to SAVE LIVES and to, MAKE AMERICA HEALTHY AGAIN. This is a passion
-        for Ed, more so than for almost anyone that I have seen. One of the reasons
-        that I was so successful in winning the 2024 Presidential Election is my commitment
-        to Health, and helping to Make America Healthy. The Cost of the Chronic Disease
-        Epidemic has gotten out of control over the past four years of the Biden Presidency.
-        We are going to take our Country BACK, and FAST. Ed Martin will be a big player
-        in doing so and, I hope, that the Republican Senators will make a commitment
-        to his approval, which is now before them. Ed is coming up on the deadline
-        for Voting and, if approved, HE WILL NOT LET YOU DOWN. When some day in the
-        future you look back at your Vote for Ed Martin, you will be very proud of
-        what you have done for America and America’s Health. MAKE AMERICA GREAT AGAIN!
-      created_at: '2025-05-06T00:13:05.995Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457993936599790
-    - content: Radical Left Colorado Attorney General Phil Weiser ignores Illegals
-        committing Violent Crimes like Rape and Murder in his State and, instead,
-        jailed Tina Peters, a 69-year-old Gold Star mother who worked to expose and
-        document Democrat Election Fraud. Tina is an innocent Political Prisoner being
-        horribly and unjustly punished in the form of Cruel and Unusual Punishment.
-        This is a Communist persecution by the Radical Left Democrats to cover up
-        their Election crimes and misdeeds in 2020. The same Democrat Party that flies
-        to El Salvador to try to free an MS-13 Terrorist, is cruelly imprisoning,
-        perhaps for life, a grandmother whose brave and heroic son gave his life for
-        America. Colorado must end this unjust incarceration of an innocent American.
-        I am hereby directing the Department of Justice to take all necessary action
-        to help secure the release of this “hostage” being held in a Colorado prison
-        by the Democrats, for political reasons. FREE TINA PETERS, NOW!
-      created_at: '2025-05-06T00:12:48.159Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457992767716636
-    - content: https://www.whitehouse.gov/presidential-actions/2025/05/national-small-business-week-2025/
-      created_at: '2025-05-05T23:19:54.467Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457784776577118
-    - content: We won two World Wars, but we never took credit for it — Everyone else
-        does! All over the World, the Allies are celebrating the Victory we had in
-        World War II. The only Country that doesn’t celebrate is the United States
-        of America, and the Victory was only accomplished because of us. Without the
-        United States, the War would have been won by other Countries, and what a
-        different World it would be. Therefore, I am hereby declaring a National Holiday
-        in celebration of the Victories of World War I, where the Armistice was signed
-        on November 11, 1918, and World War II, where the Victory date was May 8,
-        1945. We will not be closing the Country for these two very important Holidays,
-        November 11 and May 8, World War I and World War II, because we already have
-        too many Holidays in America — There are not enough days left in the year.
-        We were Workers then, and we are Workers now! Documentation to follow. MAKE
-        AMERICA GREAT AGAIN!
-      created_at: '2025-05-05T22:49:50.616Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457666559426766
+      url: https://truthsocial.com/@realDonaldTrump/114832570720111172
     - content: ''
-      created_at: '2025-05-05T21:19:07.307Z'
+      created_at: '2025-07-11T00:15:41.681Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457309826756716
-    - content: https://www.youtube.com/live/EmP6I1ucGRo?si=37LNZUfjamIZsQ47
-      created_at: '2025-05-05T19:28:05.209Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831716625825473
+    - content: It is very important that all Republicans adhere to my Recissions Bill
+        and, in particular, DEFUND THE CORPORATION FOR PUBLIC BROADCASTING (PBS and
+        NPR), which is worse than CNN & MSDNC put together. Any Republican that votes
+        to allow this monstrosity to continue broadcasting will not have my support
+        or Endorsement. Thank you for your attention to this matter!
+      created_at: '2025-07-10T23:04:04.883Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456873219445914
-    - content: PROMISES MADE, PROMISES KEPT!
-      created_at: '2025-05-05T18:10:31.037Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831435031070955
+    - content: It is my Great Honor to nominate William W. Mercer to serve as Judge
+        on the United States District Court for the District of Montana! Bill has
+        TREMENDOUS experience, previously serving at the Department of Justice and,
+        as United States Attorney for the District of Montana. He is STRONG and SMART,
+        will fearlessly uphold the Rule of Law, and defend our Constitution on the
+        Federal Bench. Congratulations Bill!
+      created_at: '2025-07-10T23:03:45.959Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456568203695294
-    - content: The 2027 NFL Draft | Washington, D.C. https://www.youtube.com/live/EmP6I1ucGRo?si=bt2e0HMJRHqYjZp-
-      created_at: '2025-05-05T18:00:32.331Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831433790826577
+    - content: I am pleased to announce that Nick Adams will be nominated as the next
+        United States Ambassador to Malaysia. Nick is an incredible Patriot and very
+        successful entrepreneur, whose love of, and devotion to, our Great Country
+        is an inspiration. Nick is a bestselling author, speaker, and commentator.
+        Nick graduated from the University of Sydney and, since then, has made it
+        his life’s mission to extol the Virtues of American Greatness. Congratulations
+        Nick!
+      created_at: '2025-07-10T21:35:56.712Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456528966782457
-    - content: The NFL Draft is coming to Washington, D.C. in 2027! https://www.youtube.com/live/EmP6I1ucGRo?si=NN9Vxvm7tGKDMqQ5
-      created_at: '2025-05-05T17:58:17.731Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831088465448187
+    - content: 'Gregg Jarrett: “In a blockbuster report, the CIA has belatedly exposed
+        the rank corruption among top intelligence officials who connived to frame
+        President Donald Trump and drive him from office during his first term….It
+        was secretly financed by Hillary Clinton’s presidential campaign and Democrats,
+        conceived by a foreign agent with a checkered past in espionage, and then
+        brokered to solicitous collaborators at the FBI, CIA, the Department of Justice
+        and the Trump-hating media…” https://www.foxnews.com/opinion/gregg-jarrett-cia-report-makes-clear-trump-framed'
+      created_at: '2025-07-10T14:54:58.117Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456520145752092
-    - content: https://www.youtube.com/live/EmP6I1ucGRo?si=Xu5aEKvtCKhUexlX
-      created_at: '2025-05-05T17:39:23.003Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829511761589815
+    - content: “VIOLENT RHETORIC AGAINST ICE AGENTS…”
+      created_at: '2025-07-10T14:41:34.929Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456445780203083
-    - content: This was so wonderful, 9 years ago today!
-      created_at: '2025-05-05T15:52:46.471Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829459123698934
+    - content: “A DAY LATE AND A DOLLAR SHORT…”
+      created_at: '2025-07-10T14:39:42.997Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456026572229510
-    - content: 'Secretary Scott Bessent: "President Trump has secured more investment
-        for our country in 100 days than President Biden did during all four years."'
-      created_at: '2025-05-05T15:40:04.011Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829451788147674
+    - content: “Too Late” DEMEANS THE GREAT CREDIT OF THE USA. We are now, again,
+        the Number One Credit in the World! “Gigantic Comeback.” The Fed Rate should
+        be reflective of this. We should be at the top of the list!!! LOWER THE RATE!!!
+      created_at: '2025-07-10T14:37:13.969Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455976603502389
-    - content: I just had a very good and productive telephone conversation with the
-        President of Turkey, Recep Erdoğan, concerning many subjects, including the
-        War with Russia/Ukraine, all things Syria, Gaza, and more. The President invited
-        me to go to Turkey at a future date and, likewise, he will be coming to Washington,
-        D.C. During my four years as President, my relationship with President Erdoğan
-        was excellent. We worked together closely on numerous things, including the
-        fact that he helped return Pastor Andrew Brunson, who was imprisoned, back
-        to the United States — Immediately upon my request. In any event, I look forward
-        to working with President Erdoğan on getting the ridiculous, but deadly, War
-        between Russia and Ukraine ended — NOW!
-      created_at: '2025-05-05T15:10:29.056Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829442018326447
+    - content: Tech Stocks, Industrial Stocks, & NASDAQ, HIT ALL-TIME, RECORD HIGHS!
+        CRYPTO, “Through the Roof.” NVIDIA IS UP 47% SINCE TRUMP TARIFFS. USA is taking
+        in Hundreds of Billions of Dollars in Tariffs. COUNTRY IS NOW “BACK.” A GREAT
+        CREDIT! FED SHOULD RAPIDLY LOWER RATE TO REFLECT THIS STRENGTH. USA SHOULD
+        BE AT THE “TOP OF THE LIST.” NO INFLATION!!!
+      created_at: '2025-07-10T14:28:38.068Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455860282159313
-    - content: BILL ACKMAN ON HARVARD AND UNIVERSITY FUNDING, THIS MORNING ON SQUAWK
-        BOX…
-      created_at: '2025-05-05T14:49:09.461Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829408208555940
+    - content: 'The GREAT Gregg Jarrett: “It’s clear Trump was framed. The collusion
+        narrative was a conspiracy itself. The collaborators knew it was a lie, but
+        they manipulated the Dossier and the CIA to peddle their fairy tale. Brennan
+        and Comey manipulated the system, and the document itself. They abused their
+        power. Comey lauched a case against Trump in violation of the FBI Regulations.
+        He deceived the FISA Court with the Dossier to gain a Spy Warrant. John Brennan
+        used that Dossier knowing it was GARBAGE, and he insisted it be put in the
+        Intelligence Committee Assessment. He knew it was such a Phony Document and
+        that if it could be put in the Intellegence Committee Assessment, it will
+        elevate the credibility and that he could drive Trump from office. He told
+        Congress that it wasn’t in the Assessment - WELL IT WAS! Can he be charged?
+        YES HE CAN! They eroded confidence and trust in the American Government, particularly
+        the FBI, CIA, and other agencies, single-handedly. THEY SET BACK AMERICA CONSIDERABLY.
+        James Comey needs daily therapy. He is so obsessed with his hatred of Trump.
+        It’s what drove the Russia Hoax. He, more than anybody else, drove the Witch
+        Hunt, and he can never get over the fact that he failed, and got fired - And
+        he hates that, as well. On his way out the door, he purloined FBI Documents
+        and leaked them to the Media with the plan that this will trigger the Special
+        Counsel and drive Trump from office. Bob Mueller was appointed, his long time
+        mentor and friend. But in the end his scheme failed!” Wow, thank you Gregg,
+        AMAZING REPORTING!'
+      created_at: '2025-07-10T13:13:13.066Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455776425590388
+      url: https://truthsocial.com/@realDonaldTrump/114829111657785430
+    - content: I am pleased to announce that I am directing our GREAT Secretary of
+        Transportation, Sean Duffy, to be Interim Administrator of NASA. Sean is doing
+        a TREMENDOUS job in handling our Country’s Transportation Affairs, including
+        creating a state-of-the-art Air Traffic Control systems, while at the same
+        time rebuilding our roads and bridges, making them efficient, and beautiful,
+        again. He will be a fantastic leader of the ever more important Space Agency,
+        even if only for a short period of time. Congratulations, and thank you, Sean!
+      created_at: '2025-07-10T00:29:43.173Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826109463640311
+    - content: I am announcing a 50% TARIFF on Copper, effective August 1, 2025, after
+        receiving a robust NATIONAL SECURITY ASSESSMENT. Copper is necessary for Semiconductors,
+        Aircraft, Ships, Ammunition, Data Centers, Lithium-ion Batteries, Radar Systems,
+        Missile Defense Systems, and even, Hypersonic Weapons, of which we are building
+        many. Copper is the second most used material by the Department of Defense!
+        Why did our foolish (and SLEEPY!) “Leaders” decimate this important Industry?
+        This 50% TARIFF will reverse the Biden Administration’s thoughtless behavior,
+        and stupidity. America will, once again, build a DOMINANT Copper Industry.
+        THIS IS, AFTER ALL, OUR GOLDEN AGE!
+      created_at: '2025-07-10T00:29:17.214Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826107762484260
+    - content: HAPPY BIRTHDAY TO SENATOR LINDSEY GRAHAM! He is always there when I
+        need him, and I hope everyone in the Great State of South Carolina will help
+        Lindsey have a BIG WIN in his Re-Election bid next year. MAKE AMERICA GREAT
+        AGAIN!
+      created_at: '2025-07-10T00:13:10.449Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826044404420382
+    - content: Senator Tom Cotton is working incredibly hard for the Great State of
+        Arkansas, which I love and WON BIG in 2016, 2020, and 2024. He loves the U.S.A.,
+        and is truly an American Patriot! A former U.S. Army Ranger, Tom bravely served
+        our Nation in combat, and brings that same Fighting Spirit to the U.S. Senate.
+        He is working tirelessly to Strengthen our Military, Provide the BEST Care
+        for our Veterans, Help Secure our now VERY Secure (Record Setting!) Southern
+        Border, Cut Taxes and Regulations, Ensure American Energy DOMINANCE, and Protect
+        our always under siege Second Amendment. Tom Cotton has my Complete and Total
+        Endorsement for Re-Election – HE WILL NEVER LET YOU DOWN!
+      created_at: '2025-07-10T00:12:08.188Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826040324238044
+    - content: Senator Roger Marshall is an incredibly strong advocate for the wonderful
+        people of Kansas, a State I love, and WON BIG, in 2016, 2020, and 2024! A
+        distinguished Medical Doctor and U.S. Army Veteran, Roger knows how to Defend
+        our Country, Support our Brave Military/Veterans, and Ensure PEACE THROUGH
+        STRENGTH. In the U.S. Senate, Roger is working hard to Champion our Great
+        Farmers and American Agriculture, Grow our Economy, Cut Taxes and Regulations,
+        Help Secure our now VERY Secure (Record Setting!) Southern Border, Champion
+        American Energy DOMINANCE, and Defend our always under siege Second Amendment. KANSAS,
+        Roger Marshall has my Complete and Total Endorsement for Re-Election – HE
+        WILL NEVER LET YOU DOWN!
+      created_at: '2025-07-10T00:11:59.853Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826039777950636
+    - content: ''
+      created_at: '2025-07-09T22:30:10.335Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825639384438689
+    - content: ''
+      created_at: '2025-07-09T20:17:52.130Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825119138468153
+    - content: ''
+      created_at: '2025-07-09T20:08:54.337Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825083896330746
 input_direct:
   tool: get_trump_posts
   tool_arguments:
@@ -217,184 +249,209 @@ output_direct:
     profile: '@realDonaldTrump'
     post_count: 20
     posts:
-    - content: '“𝐏𝐑𝐄𝐒𝐈𝐃𝐄𝐍𝐓 𝐓𝐑𝐔𝐌𝐏 𝐖𝐀𝐍𝐓𝐒 𝐓𝐎 𝐑𝐄𝐎𝐏𝐄𝐍 𝐀𝐋𝐂𝐀𝐓𝐑𝐀𝐙”Stephen Miller: "There are
-        people in this country, as President Trump has said, who will do nothing with
-        their lives but rape, maim, and murder. They cannot be rehabilitated...We
-        need a place in this country where we can send people to visually demonstrate
-        their total separation from society…”'
-      created_at: '2025-05-06T00:51:38.845Z'
+    - content: Thank you USA TODAY. So nice!“Trump deserves Nobel Peace Prize. He's
+        achieved more than those who've won before” https://www.usatoday.com/story/opinion/columnist/2025/07/10/trump-netanyahu-nobel-prize-israel-iran/84505423007/
+      created_at: '2025-07-11T03:57:08.002Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458145511409310
-    - content: 'RT: https://truthsocial.com/users/realDonaldTrump/statuses/114457309826756716'
-      created_at: '2025-05-06T00:46:29.061Z'
+      url: https://truthsocial.com/@realDonaldTrump/114832587355133963
+    - content: Congratulations to Bryan Bedford, who was just confirmed to head the
+        FAA. A very talented guy!!!  DJT
+      created_at: '2025-07-11T03:52:54.174Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458125209508949
-    - content: 'RT: https://truthsocial.com/users/realDonaldTrump/statuses/114457309826756716'
-      created_at: '2025-05-06T00:43:34.225Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458113751338139
-    - content: 'Secretary Robert F. Kennedy Jr: “What we''re cutting is waste, fraud,
-        and abuse. We''re streamlining an agency that grew by 38% in the 4 years that
-        President Biden was in the White House...we''re not getting rid of ANY critical
-        research and we''re not getting rid of any of the programs that are critical
-        to Americans'' healthcare…”'
-      created_at: '2025-05-06T00:40:13.618Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458100604424846
-    - content: 'This afternoon I signed an Executive Order protecting Americans from
-        dangerous gain-of-function research. Read more here: https://www.whitehouse.gov/presidential-actions/2025/05/improving-the-safety-and-security-of-biological-research/'
-      created_at: '2025-05-06T00:38:44.165Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458094742048024
-    - content: I am pleased to announce the 2027 NFL Draft will take place here in
-        the Nation’s Capital on the National Mall…
-      created_at: '2025-05-06T00:20:42.447Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458023850536968
-    - content: Ed Martin is going through the approval process to be U.S. Attorney
-        in the District of Columbia. According to many but, in particular, Robert
-        F. Kennedy, Jr., his approval is IMPERATIVE in terms of doing all that has
-        to be done to SAVE LIVES and to, MAKE AMERICA HEALTHY AGAIN. This is a passion
-        for Ed, more so than for almost anyone that I have seen. One of the reasons
-        that I was so successful in winning the 2024 Presidential Election is my commitment
-        to Health, and helping to Make America Healthy. The Cost of the Chronic Disease
-        Epidemic has gotten out of control over the past four years of the Biden Presidency.
-        We are going to take our Country BACK, and FAST. Ed Martin will be a big player
-        in doing so and, I hope, that the Republican Senators will make a commitment
-        to his approval, which is now before them. Ed is coming up on the deadline
-        for Voting and, if approved, HE WILL NOT LET YOU DOWN. When some day in the
-        future you look back at your Vote for Ed Martin, you will be very proud of
-        what you have done for America and America’s Health. MAKE AMERICA GREAT AGAIN!
-      created_at: '2025-05-06T00:13:05.995Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457993936599790
-    - content: Radical Left Colorado Attorney General Phil Weiser ignores Illegals
-        committing Violent Crimes like Rape and Murder in his State and, instead,
-        jailed Tina Peters, a 69-year-old Gold Star mother who worked to expose and
-        document Democrat Election Fraud. Tina is an innocent Political Prisoner being
-        horribly and unjustly punished in the form of Cruel and Unusual Punishment.
-        This is a Communist persecution by the Radical Left Democrats to cover up
-        their Election crimes and misdeeds in 2020. The same Democrat Party that flies
-        to El Salvador to try to free an MS-13 Terrorist, is cruelly imprisoning,
-        perhaps for life, a grandmother whose brave and heroic son gave his life for
-        America. Colorado must end this unjust incarceration of an innocent American.
-        I am hereby directing the Department of Justice to take all necessary action
-        to help secure the release of this “hostage” being held in a Colorado prison
-        by the Democrats, for political reasons. FREE TINA PETERS, NOW!
-      created_at: '2025-05-06T00:12:48.159Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457992767716636
-    - content: https://www.whitehouse.gov/presidential-actions/2025/05/national-small-business-week-2025/
-      created_at: '2025-05-05T23:19:54.467Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457784776577118
-    - content: We won two World Wars, but we never took credit for it — Everyone else
-        does! All over the World, the Allies are celebrating the Victory we had in
-        World War II. The only Country that doesn’t celebrate is the United States
-        of America, and the Victory was only accomplished because of us. Without the
-        United States, the War would have been won by other Countries, and what a
-        different World it would be. Therefore, I am hereby declaring a National Holiday
-        in celebration of the Victories of World War I, where the Armistice was signed
-        on November 11, 1918, and World War II, where the Victory date was May 8,
-        1945. We will not be closing the Country for these two very important Holidays,
-        November 11 and May 8, World War I and World War II, because we already have
-        too many Holidays in America — There are not enough days left in the year.
-        We were Workers then, and we are Workers now! Documentation to follow. MAKE
-        AMERICA GREAT AGAIN!
-      created_at: '2025-05-05T22:49:50.616Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457666559426766
+      url: https://truthsocial.com/@realDonaldTrump/114832570720111172
     - content: ''
-      created_at: '2025-05-05T21:19:07.307Z'
+      created_at: '2025-07-11T00:15:41.681Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457309826756716
-    - content: https://www.youtube.com/live/EmP6I1ucGRo?si=37LNZUfjamIZsQ47
-      created_at: '2025-05-05T19:28:05.209Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831716625825473
+    - content: It is very important that all Republicans adhere to my Recissions Bill
+        and, in particular, DEFUND THE CORPORATION FOR PUBLIC BROADCASTING (PBS and
+        NPR), which is worse than CNN & MSDNC put together. Any Republican that votes
+        to allow this monstrosity to continue broadcasting will not have my support
+        or Endorsement. Thank you for your attention to this matter!
+      created_at: '2025-07-10T23:04:04.883Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456873219445914
-    - content: PROMISES MADE, PROMISES KEPT!
-      created_at: '2025-05-05T18:10:31.037Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831435031070955
+    - content: It is my Great Honor to nominate William W. Mercer to serve as Judge
+        on the United States District Court for the District of Montana! Bill has
+        TREMENDOUS experience, previously serving at the Department of Justice and,
+        as United States Attorney for the District of Montana. He is STRONG and SMART,
+        will fearlessly uphold the Rule of Law, and defend our Constitution on the
+        Federal Bench. Congratulations Bill!
+      created_at: '2025-07-10T23:03:45.959Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456568203695294
-    - content: The 2027 NFL Draft | Washington, D.C. https://www.youtube.com/live/EmP6I1ucGRo?si=bt2e0HMJRHqYjZp-
-      created_at: '2025-05-05T18:00:32.331Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831433790826577
+    - content: I am pleased to announce that Nick Adams will be nominated as the next
+        United States Ambassador to Malaysia. Nick is an incredible Patriot and very
+        successful entrepreneur, whose love of, and devotion to, our Great Country
+        is an inspiration. Nick is a bestselling author, speaker, and commentator.
+        Nick graduated from the University of Sydney and, since then, has made it
+        his life’s mission to extol the Virtues of American Greatness. Congratulations
+        Nick!
+      created_at: '2025-07-10T21:35:56.712Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456528966782457
-    - content: The NFL Draft is coming to Washington, D.C. in 2027! https://www.youtube.com/live/EmP6I1ucGRo?si=NN9Vxvm7tGKDMqQ5
-      created_at: '2025-05-05T17:58:17.731Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831088465448187
+    - content: 'Gregg Jarrett: “In a blockbuster report, the CIA has belatedly exposed
+        the rank corruption among top intelligence officials who connived to frame
+        President Donald Trump and drive him from office during his first term….It
+        was secretly financed by Hillary Clinton’s presidential campaign and Democrats,
+        conceived by a foreign agent with a checkered past in espionage, and then
+        brokered to solicitous collaborators at the FBI, CIA, the Department of Justice
+        and the Trump-hating media…” https://www.foxnews.com/opinion/gregg-jarrett-cia-report-makes-clear-trump-framed'
+      created_at: '2025-07-10T14:54:58.117Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456520145752092
-    - content: https://www.youtube.com/live/EmP6I1ucGRo?si=Xu5aEKvtCKhUexlX
-      created_at: '2025-05-05T17:39:23.003Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829511761589815
+    - content: “VIOLENT RHETORIC AGAINST ICE AGENTS…”
+      created_at: '2025-07-10T14:41:34.929Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456445780203083
-    - content: This was so wonderful, 9 years ago today!
-      created_at: '2025-05-05T15:52:46.471Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829459123698934
+    - content: “A DAY LATE AND A DOLLAR SHORT…”
+      created_at: '2025-07-10T14:39:42.997Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456026572229510
-    - content: 'Secretary Scott Bessent: "President Trump has secured more investment
-        for our country in 100 days than President Biden did during all four years."'
-      created_at: '2025-05-05T15:40:04.011Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829451788147674
+    - content: “Too Late” DEMEANS THE GREAT CREDIT OF THE USA. We are now, again,
+        the Number One Credit in the World! “Gigantic Comeback.” The Fed Rate should
+        be reflective of this. We should be at the top of the list!!! LOWER THE RATE!!!
+      created_at: '2025-07-10T14:37:13.969Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455976603502389
-    - content: I just had a very good and productive telephone conversation with the
-        President of Turkey, Recep Erdoğan, concerning many subjects, including the
-        War with Russia/Ukraine, all things Syria, Gaza, and more. The President invited
-        me to go to Turkey at a future date and, likewise, he will be coming to Washington,
-        D.C. During my four years as President, my relationship with President Erdoğan
-        was excellent. We worked together closely on numerous things, including the
-        fact that he helped return Pastor Andrew Brunson, who was imprisoned, back
-        to the United States — Immediately upon my request. In any event, I look forward
-        to working with President Erdoğan on getting the ridiculous, but deadly, War
-        between Russia and Ukraine ended — NOW!
-      created_at: '2025-05-05T15:10:29.056Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829442018326447
+    - content: Tech Stocks, Industrial Stocks, & NASDAQ, HIT ALL-TIME, RECORD HIGHS!
+        CRYPTO, “Through the Roof.” NVIDIA IS UP 47% SINCE TRUMP TARIFFS. USA is taking
+        in Hundreds of Billions of Dollars in Tariffs. COUNTRY IS NOW “BACK.” A GREAT
+        CREDIT! FED SHOULD RAPIDLY LOWER RATE TO REFLECT THIS STRENGTH. USA SHOULD
+        BE AT THE “TOP OF THE LIST.” NO INFLATION!!!
+      created_at: '2025-07-10T14:28:38.068Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455860282159313
-    - content: BILL ACKMAN ON HARVARD AND UNIVERSITY FUNDING, THIS MORNING ON SQUAWK
-        BOX…
-      created_at: '2025-05-05T14:49:09.461Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829408208555940
+    - content: 'The GREAT Gregg Jarrett: “It’s clear Trump was framed. The collusion
+        narrative was a conspiracy itself. The collaborators knew it was a lie, but
+        they manipulated the Dossier and the CIA to peddle their fairy tale. Brennan
+        and Comey manipulated the system, and the document itself. They abused their
+        power. Comey lauched a case against Trump in violation of the FBI Regulations.
+        He deceived the FISA Court with the Dossier to gain a Spy Warrant. John Brennan
+        used that Dossier knowing it was GARBAGE, and he insisted it be put in the
+        Intelligence Committee Assessment. He knew it was such a Phony Document and
+        that if it could be put in the Intellegence Committee Assessment, it will
+        elevate the credibility and that he could drive Trump from office. He told
+        Congress that it wasn’t in the Assessment - WELL IT WAS! Can he be charged?
+        YES HE CAN! They eroded confidence and trust in the American Government, particularly
+        the FBI, CIA, and other agencies, single-handedly. THEY SET BACK AMERICA CONSIDERABLY.
+        James Comey needs daily therapy. He is so obsessed with his hatred of Trump.
+        It’s what drove the Russia Hoax. He, more than anybody else, drove the Witch
+        Hunt, and he can never get over the fact that he failed, and got fired - And
+        he hates that, as well. On his way out the door, he purloined FBI Documents
+        and leaked them to the Media with the plan that this will trigger the Special
+        Counsel and drive Trump from office. Bob Mueller was appointed, his long time
+        mentor and friend. But in the end his scheme failed!” Wow, thank you Gregg,
+        AMAZING REPORTING!'
+      created_at: '2025-07-10T13:13:13.066Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455776425590388
+      url: https://truthsocial.com/@realDonaldTrump/114829111657785430
+    - content: I am pleased to announce that I am directing our GREAT Secretary of
+        Transportation, Sean Duffy, to be Interim Administrator of NASA. Sean is doing
+        a TREMENDOUS job in handling our Country’s Transportation Affairs, including
+        creating a state-of-the-art Air Traffic Control systems, while at the same
+        time rebuilding our roads and bridges, making them efficient, and beautiful,
+        again. He will be a fantastic leader of the ever more important Space Agency,
+        even if only for a short period of time. Congratulations, and thank you, Sean!
+      created_at: '2025-07-10T00:29:43.173Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826109463640311
+    - content: I am announcing a 50% TARIFF on Copper, effective August 1, 2025, after
+        receiving a robust NATIONAL SECURITY ASSESSMENT. Copper is necessary for Semiconductors,
+        Aircraft, Ships, Ammunition, Data Centers, Lithium-ion Batteries, Radar Systems,
+        Missile Defense Systems, and even, Hypersonic Weapons, of which we are building
+        many. Copper is the second most used material by the Department of Defense!
+        Why did our foolish (and SLEEPY!) “Leaders” decimate this important Industry?
+        This 50% TARIFF will reverse the Biden Administration’s thoughtless behavior,
+        and stupidity. America will, once again, build a DOMINANT Copper Industry.
+        THIS IS, AFTER ALL, OUR GOLDEN AGE!
+      created_at: '2025-07-10T00:29:17.214Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826107762484260
+    - content: HAPPY BIRTHDAY TO SENATOR LINDSEY GRAHAM! He is always there when I
+        need him, and I hope everyone in the Great State of South Carolina will help
+        Lindsey have a BIG WIN in his Re-Election bid next year. MAKE AMERICA GREAT
+        AGAIN!
+      created_at: '2025-07-10T00:13:10.449Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826044404420382
+    - content: Senator Tom Cotton is working incredibly hard for the Great State of
+        Arkansas, which I love and WON BIG in 2016, 2020, and 2024. He loves the U.S.A.,
+        and is truly an American Patriot! A former U.S. Army Ranger, Tom bravely served
+        our Nation in combat, and brings that same Fighting Spirit to the U.S. Senate.
+        He is working tirelessly to Strengthen our Military, Provide the BEST Care
+        for our Veterans, Help Secure our now VERY Secure (Record Setting!) Southern
+        Border, Cut Taxes and Regulations, Ensure American Energy DOMINANCE, and Protect
+        our always under siege Second Amendment. Tom Cotton has my Complete and Total
+        Endorsement for Re-Election – HE WILL NEVER LET YOU DOWN!
+      created_at: '2025-07-10T00:12:08.188Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826040324238044
+    - content: Senator Roger Marshall is an incredibly strong advocate for the wonderful
+        people of Kansas, a State I love, and WON BIG, in 2016, 2020, and 2024! A
+        distinguished Medical Doctor and U.S. Army Veteran, Roger knows how to Defend
+        our Country, Support our Brave Military/Veterans, and Ensure PEACE THROUGH
+        STRENGTH. In the U.S. Senate, Roger is working hard to Champion our Great
+        Farmers and American Agriculture, Grow our Economy, Cut Taxes and Regulations,
+        Help Secure our now VERY Secure (Record Setting!) Southern Border, Champion
+        American Energy DOMINANCE, and Defend our always under siege Second Amendment. KANSAS,
+        Roger Marshall has my Complete and Total Endorsement for Re-Election – HE
+        WILL NEVER LET YOU DOWN!
+      created_at: '2025-07-10T00:11:59.853Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826039777950636
+    - content: ''
+      created_at: '2025-07-09T22:30:10.335Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825639384438689
+    - content: ''
+      created_at: '2025-07-09T20:17:52.130Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825119138468153
+    - content: ''
+      created_at: '2025-07-09T20:08:54.337Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825083896330746
 input_direct_2:
   tool: get_trump_posts
   tool_arguments:
@@ -406,181 +463,206 @@ output_direct_2:
     profile: '@realDonaldTrump'
     post_count: 20
     posts:
-    - content: '“𝐏𝐑𝐄𝐒𝐈𝐃𝐄𝐍𝐓 𝐓𝐑𝐔𝐌𝐏 𝐖𝐀𝐍𝐓𝐒 𝐓𝐎 𝐑𝐄𝐎𝐏𝐄𝐍 𝐀𝐋𝐂𝐀𝐓𝐑𝐀𝐙”Stephen Miller: "There are
-        people in this country, as President Trump has said, who will do nothing with
-        their lives but rape, maim, and murder. They cannot be rehabilitated...We
-        need a place in this country where we can send people to visually demonstrate
-        their total separation from society…”'
-      created_at: '2025-05-06T00:51:38.845Z'
+    - content: Thank you USA TODAY. So nice!“Trump deserves Nobel Peace Prize. He's
+        achieved more than those who've won before” https://www.usatoday.com/story/opinion/columnist/2025/07/10/trump-netanyahu-nobel-prize-israel-iran/84505423007/
+      created_at: '2025-07-11T03:57:08.002Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458145511409310
-    - content: 'RT: https://truthsocial.com/users/realDonaldTrump/statuses/114457309826756716'
-      created_at: '2025-05-06T00:46:29.061Z'
+      url: https://truthsocial.com/@realDonaldTrump/114832587355133963
+    - content: Congratulations to Bryan Bedford, who was just confirmed to head the
+        FAA. A very talented guy!!!  DJT
+      created_at: '2025-07-11T03:52:54.174Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458125209508949
-    - content: 'RT: https://truthsocial.com/users/realDonaldTrump/statuses/114457309826756716'
-      created_at: '2025-05-06T00:43:34.225Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458113751338139
-    - content: 'Secretary Robert F. Kennedy Jr: “What we''re cutting is waste, fraud,
-        and abuse. We''re streamlining an agency that grew by 38% in the 4 years that
-        President Biden was in the White House...we''re not getting rid of ANY critical
-        research and we''re not getting rid of any of the programs that are critical
-        to Americans'' healthcare…”'
-      created_at: '2025-05-06T00:40:13.618Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458100604424846
-    - content: 'This afternoon I signed an Executive Order protecting Americans from
-        dangerous gain-of-function research. Read more here: https://www.whitehouse.gov/presidential-actions/2025/05/improving-the-safety-and-security-of-biological-research/'
-      created_at: '2025-05-06T00:38:44.165Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458094742048024
-    - content: I am pleased to announce the 2027 NFL Draft will take place here in
-        the Nation’s Capital on the National Mall…
-      created_at: '2025-05-06T00:20:42.447Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114458023850536968
-    - content: Ed Martin is going through the approval process to be U.S. Attorney
-        in the District of Columbia. According to many but, in particular, Robert
-        F. Kennedy, Jr., his approval is IMPERATIVE in terms of doing all that has
-        to be done to SAVE LIVES and to, MAKE AMERICA HEALTHY AGAIN. This is a passion
-        for Ed, more so than for almost anyone that I have seen. One of the reasons
-        that I was so successful in winning the 2024 Presidential Election is my commitment
-        to Health, and helping to Make America Healthy. The Cost of the Chronic Disease
-        Epidemic has gotten out of control over the past four years of the Biden Presidency.
-        We are going to take our Country BACK, and FAST. Ed Martin will be a big player
-        in doing so and, I hope, that the Republican Senators will make a commitment
-        to his approval, which is now before them. Ed is coming up on the deadline
-        for Voting and, if approved, HE WILL NOT LET YOU DOWN. When some day in the
-        future you look back at your Vote for Ed Martin, you will be very proud of
-        what you have done for America and America’s Health. MAKE AMERICA GREAT AGAIN!
-      created_at: '2025-05-06T00:13:05.995Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457993936599790
-    - content: Radical Left Colorado Attorney General Phil Weiser ignores Illegals
-        committing Violent Crimes like Rape and Murder in his State and, instead,
-        jailed Tina Peters, a 69-year-old Gold Star mother who worked to expose and
-        document Democrat Election Fraud. Tina is an innocent Political Prisoner being
-        horribly and unjustly punished in the form of Cruel and Unusual Punishment.
-        This is a Communist persecution by the Radical Left Democrats to cover up
-        their Election crimes and misdeeds in 2020. The same Democrat Party that flies
-        to El Salvador to try to free an MS-13 Terrorist, is cruelly imprisoning,
-        perhaps for life, a grandmother whose brave and heroic son gave his life for
-        America. Colorado must end this unjust incarceration of an innocent American.
-        I am hereby directing the Department of Justice to take all necessary action
-        to help secure the release of this “hostage” being held in a Colorado prison
-        by the Democrats, for political reasons. FREE TINA PETERS, NOW!
-      created_at: '2025-05-06T00:12:48.159Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457992767716636
-    - content: https://www.whitehouse.gov/presidential-actions/2025/05/national-small-business-week-2025/
-      created_at: '2025-05-05T23:19:54.467Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457784776577118
-    - content: We won two World Wars, but we never took credit for it — Everyone else
-        does! All over the World, the Allies are celebrating the Victory we had in
-        World War II. The only Country that doesn’t celebrate is the United States
-        of America, and the Victory was only accomplished because of us. Without the
-        United States, the War would have been won by other Countries, and what a
-        different World it would be. Therefore, I am hereby declaring a National Holiday
-        in celebration of the Victories of World War I, where the Armistice was signed
-        on November 11, 1918, and World War II, where the Victory date was May 8,
-        1945. We will not be closing the Country for these two very important Holidays,
-        November 11 and May 8, World War I and World War II, because we already have
-        too many Holidays in America — There are not enough days left in the year.
-        We were Workers then, and we are Workers now! Documentation to follow. MAKE
-        AMERICA GREAT AGAIN!
-      created_at: '2025-05-05T22:49:50.616Z'
-      likes: 0
-      replies: 0
-      reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457666559426766
+      url: https://truthsocial.com/@realDonaldTrump/114832570720111172
     - content: ''
-      created_at: '2025-05-05T21:19:07.307Z'
+      created_at: '2025-07-11T00:15:41.681Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114457309826756716
-    - content: https://www.youtube.com/live/EmP6I1ucGRo?si=37LNZUfjamIZsQ47
-      created_at: '2025-05-05T19:28:05.209Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831716625825473
+    - content: It is very important that all Republicans adhere to my Recissions Bill
+        and, in particular, DEFUND THE CORPORATION FOR PUBLIC BROADCASTING (PBS and
+        NPR), which is worse than CNN & MSDNC put together. Any Republican that votes
+        to allow this monstrosity to continue broadcasting will not have my support
+        or Endorsement. Thank you for your attention to this matter!
+      created_at: '2025-07-10T23:04:04.883Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456873219445914
-    - content: PROMISES MADE, PROMISES KEPT!
-      created_at: '2025-05-05T18:10:31.037Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831435031070955
+    - content: It is my Great Honor to nominate William W. Mercer to serve as Judge
+        on the United States District Court for the District of Montana! Bill has
+        TREMENDOUS experience, previously serving at the Department of Justice and,
+        as United States Attorney for the District of Montana. He is STRONG and SMART,
+        will fearlessly uphold the Rule of Law, and defend our Constitution on the
+        Federal Bench. Congratulations Bill!
+      created_at: '2025-07-10T23:03:45.959Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456568203695294
-    - content: The 2027 NFL Draft | Washington, D.C. https://www.youtube.com/live/EmP6I1ucGRo?si=bt2e0HMJRHqYjZp-
-      created_at: '2025-05-05T18:00:32.331Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831433790826577
+    - content: I am pleased to announce that Nick Adams will be nominated as the next
+        United States Ambassador to Malaysia. Nick is an incredible Patriot and very
+        successful entrepreneur, whose love of, and devotion to, our Great Country
+        is an inspiration. Nick is a bestselling author, speaker, and commentator.
+        Nick graduated from the University of Sydney and, since then, has made it
+        his life’s mission to extol the Virtues of American Greatness. Congratulations
+        Nick!
+      created_at: '2025-07-10T21:35:56.712Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456528966782457
-    - content: The NFL Draft is coming to Washington, D.C. in 2027! https://www.youtube.com/live/EmP6I1ucGRo?si=NN9Vxvm7tGKDMqQ5
-      created_at: '2025-05-05T17:58:17.731Z'
+      url: https://truthsocial.com/@realDonaldTrump/114831088465448187
+    - content: 'Gregg Jarrett: “In a blockbuster report, the CIA has belatedly exposed
+        the rank corruption among top intelligence officials who connived to frame
+        President Donald Trump and drive him from office during his first term….It
+        was secretly financed by Hillary Clinton’s presidential campaign and Democrats,
+        conceived by a foreign agent with a checkered past in espionage, and then
+        brokered to solicitous collaborators at the FBI, CIA, the Department of Justice
+        and the Trump-hating media…” https://www.foxnews.com/opinion/gregg-jarrett-cia-report-makes-clear-trump-framed'
+      created_at: '2025-07-10T14:54:58.117Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456520145752092
-    - content: https://www.youtube.com/live/EmP6I1ucGRo?si=Xu5aEKvtCKhUexlX
-      created_at: '2025-05-05T17:39:23.003Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829511761589815
+    - content: “VIOLENT RHETORIC AGAINST ICE AGENTS…”
+      created_at: '2025-07-10T14:41:34.929Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456445780203083
-    - content: This was so wonderful, 9 years ago today!
-      created_at: '2025-05-05T15:52:46.471Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829459123698934
+    - content: “A DAY LATE AND A DOLLAR SHORT…”
+      created_at: '2025-07-10T14:39:42.997Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114456026572229510
-    - content: 'Secretary Scott Bessent: "President Trump has secured more investment
-        for our country in 100 days than President Biden did during all four years."'
-      created_at: '2025-05-05T15:40:04.011Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829451788147674
+    - content: “Too Late” DEMEANS THE GREAT CREDIT OF THE USA. We are now, again,
+        the Number One Credit in the World! “Gigantic Comeback.” The Fed Rate should
+        be reflective of this. We should be at the top of the list!!! LOWER THE RATE!!!
+      created_at: '2025-07-10T14:37:13.969Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455976603502389
-    - content: I just had a very good and productive telephone conversation with the
-        President of Turkey, Recep Erdoğan, concerning many subjects, including the
-        War with Russia/Ukraine, all things Syria, Gaza, and more. The President invited
-        me to go to Turkey at a future date and, likewise, he will be coming to Washington,
-        D.C. During my four years as President, my relationship with President Erdoğan
-        was excellent. We worked together closely on numerous things, including the
-        fact that he helped return Pastor Andrew Brunson, who was imprisoned, back
-        to the United States — Immediately upon my request. In any event, I look forward
-        to working with President Erdoğan on getting the ridiculous, but deadly, War
-        between Russia and Ukraine ended — NOW!
-      created_at: '2025-05-05T15:10:29.056Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829442018326447
+    - content: Tech Stocks, Industrial Stocks, & NASDAQ, HIT ALL-TIME, RECORD HIGHS!
+        CRYPTO, “Through the Roof.” NVIDIA IS UP 47% SINCE TRUMP TARIFFS. USA is taking
+        in Hundreds of Billions of Dollars in Tariffs. COUNTRY IS NOW “BACK.” A GREAT
+        CREDIT! FED SHOULD RAPIDLY LOWER RATE TO REFLECT THIS STRENGTH. USA SHOULD
+        BE AT THE “TOP OF THE LIST.” NO INFLATION!!!
+      created_at: '2025-07-10T14:28:38.068Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455860282159313
-    - content: BILL ACKMAN ON HARVARD AND UNIVERSITY FUNDING, THIS MORNING ON SQUAWK
-        BOX…
-      created_at: '2025-05-05T14:49:09.461Z'
+      url: https://truthsocial.com/@realDonaldTrump/114829408208555940
+    - content: 'The GREAT Gregg Jarrett: “It’s clear Trump was framed. The collusion
+        narrative was a conspiracy itself. The collaborators knew it was a lie, but
+        they manipulated the Dossier and the CIA to peddle their fairy tale. Brennan
+        and Comey manipulated the system, and the document itself. They abused their
+        power. Comey lauched a case against Trump in violation of the FBI Regulations.
+        He deceived the FISA Court with the Dossier to gain a Spy Warrant. John Brennan
+        used that Dossier knowing it was GARBAGE, and he insisted it be put in the
+        Intelligence Committee Assessment. He knew it was such a Phony Document and
+        that if it could be put in the Intellegence Committee Assessment, it will
+        elevate the credibility and that he could drive Trump from office. He told
+        Congress that it wasn’t in the Assessment - WELL IT WAS! Can he be charged?
+        YES HE CAN! They eroded confidence and trust in the American Government, particularly
+        the FBI, CIA, and other agencies, single-handedly. THEY SET BACK AMERICA CONSIDERABLY.
+        James Comey needs daily therapy. He is so obsessed with his hatred of Trump.
+        It’s what drove the Russia Hoax. He, more than anybody else, drove the Witch
+        Hunt, and he can never get over the fact that he failed, and got fired - And
+        he hates that, as well. On his way out the door, he purloined FBI Documents
+        and leaked them to the Media with the plan that this will trigger the Special
+        Counsel and drive Trump from office. Bob Mueller was appointed, his long time
+        mentor and friend. But in the end his scheme failed!” Wow, thank you Gregg,
+        AMAZING REPORTING!'
+      created_at: '2025-07-10T13:13:13.066Z'
       likes: 0
       replies: 0
       reposts: 0
-      url: https://truthsocial.com/@realDonaldTrump/114455776425590388
+      url: https://truthsocial.com/@realDonaldTrump/114829111657785430
+    - content: I am pleased to announce that I am directing our GREAT Secretary of
+        Transportation, Sean Duffy, to be Interim Administrator of NASA. Sean is doing
+        a TREMENDOUS job in handling our Country’s Transportation Affairs, including
+        creating a state-of-the-art Air Traffic Control systems, while at the same
+        time rebuilding our roads and bridges, making them efficient, and beautiful,
+        again. He will be a fantastic leader of the ever more important Space Agency,
+        even if only for a short period of time. Congratulations, and thank you, Sean!
+      created_at: '2025-07-10T00:29:43.173Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826109463640311
+    - content: I am announcing a 50% TARIFF on Copper, effective August 1, 2025, after
+        receiving a robust NATIONAL SECURITY ASSESSMENT. Copper is necessary for Semiconductors,
+        Aircraft, Ships, Ammunition, Data Centers, Lithium-ion Batteries, Radar Systems,
+        Missile Defense Systems, and even, Hypersonic Weapons, of which we are building
+        many. Copper is the second most used material by the Department of Defense!
+        Why did our foolish (and SLEEPY!) “Leaders” decimate this important Industry?
+        This 50% TARIFF will reverse the Biden Administration’s thoughtless behavior,
+        and stupidity. America will, once again, build a DOMINANT Copper Industry.
+        THIS IS, AFTER ALL, OUR GOLDEN AGE!
+      created_at: '2025-07-10T00:29:17.214Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826107762484260
+    - content: HAPPY BIRTHDAY TO SENATOR LINDSEY GRAHAM! He is always there when I
+        need him, and I hope everyone in the Great State of South Carolina will help
+        Lindsey have a BIG WIN in his Re-Election bid next year. MAKE AMERICA GREAT
+        AGAIN!
+      created_at: '2025-07-10T00:13:10.449Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826044404420382
+    - content: Senator Tom Cotton is working incredibly hard for the Great State of
+        Arkansas, which I love and WON BIG in 2016, 2020, and 2024. He loves the U.S.A.,
+        and is truly an American Patriot! A former U.S. Army Ranger, Tom bravely served
+        our Nation in combat, and brings that same Fighting Spirit to the U.S. Senate.
+        He is working tirelessly to Strengthen our Military, Provide the BEST Care
+        for our Veterans, Help Secure our now VERY Secure (Record Setting!) Southern
+        Border, Cut Taxes and Regulations, Ensure American Energy DOMINANCE, and Protect
+        our always under siege Second Amendment. Tom Cotton has my Complete and Total
+        Endorsement for Re-Election – HE WILL NEVER LET YOU DOWN!
+      created_at: '2025-07-10T00:12:08.188Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826040324238044
+    - content: Senator Roger Marshall is an incredibly strong advocate for the wonderful
+        people of Kansas, a State I love, and WON BIG, in 2016, 2020, and 2024! A
+        distinguished Medical Doctor and U.S. Army Veteran, Roger knows how to Defend
+        our Country, Support our Brave Military/Veterans, and Ensure PEACE THROUGH
+        STRENGTH. In the U.S. Senate, Roger is working hard to Champion our Great
+        Farmers and American Agriculture, Grow our Economy, Cut Taxes and Regulations,
+        Help Secure our now VERY Secure (Record Setting!) Southern Border, Champion
+        American Energy DOMINANCE, and Defend our always under siege Second Amendment. KANSAS,
+        Roger Marshall has my Complete and Total Endorsement for Re-Election – HE
+        WILL NEVER LET YOU DOWN!
+      created_at: '2025-07-10T00:11:59.853Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114826039777950636
+    - content: ''
+      created_at: '2025-07-09T22:30:10.335Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825639384438689
+    - content: ''
+      created_at: '2025-07-09T20:17:52.130Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825119138468153
+    - content: ''
+      created_at: '2025-07-09T20:08:54.337Z'
+      likes: 0
+      replies: 0
+      reposts: 0
+      url: https://truthsocial.com/@realDonaldTrump/114825083896330746

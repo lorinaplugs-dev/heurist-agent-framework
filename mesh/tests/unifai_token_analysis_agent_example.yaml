@@ -3,22 +3,49 @@ gmgn_trend_natural_language:
     query: Show me trending tokens on GMGN for the last 24 hours
     raw_data_only: false
   output:
-    response: "**Trending Tokens on GMGN for the Last 24 Hours**\n\nBelow is a summarized\
-      \ analysis of the top 10 trending tokens on GMGN for the last 24 hours, highlighting\
-      \ key metrics for each:\n\n### **Ranking Overview**\n\n| **Rank** | **Token\
-      \ Symbol** | **24h Price Change** | **Market Cap** | **24h Volume** |\n| ---\
-      \ | --- | --- | --- | --- |\n| **1** | **Kobushi** | -64.705524% | $120,478.19\
-      \ | $517,403.63 |\n| **2** | **VRA** | 30.123492% | $287,071,170 | $1,162,697.1\
-      \ |\n| **3** | **truth** | 18193.197% | $1,656,159.2 | $2,564,513.1 |\n| **4**\
-      \ | **GORKLON** | 3928.9172% | $585,152.08 | $4,378,352.1 |\n| **5** | **KAZE**\
-      \ | 588.80781% | $20,835.481 | $408,191.38 |\n| **6** | **GORKLON*** | -54.372274%\
-      \ | $218,208.57 | $475,988.68 |\n| **7** | **Trumpojak** | 104.81986% | $3,786.0837\
-      \ | $442,471.07 |\n| **8** | **Mog** | 6.3657666% | $245,190,970 | $1,756,360\
-      \ |\n| **9** | **CTM** | -3.5233411% | $22,033,038 | $88,070.659 |\n| **10**\
-      \ | **KOBUSHI*** | 1311.3908% | $96,653.772 | $247,275.74 |\n\n### **Key Observations\
-      \ and Highlights**\n\n- **Top Gainers (24h):**\n  - **truth**: 18193.197% increase,\
-      \ with a market cap of $1,656,159.2\n  - **GORKLON**: 3928.9172% increase, with\
-      \ a market cap of $585,152.08\n  - **KAZE**: 588."
+    response: "**Trending Tokens on GMGN (Last 24 Hours)**\n\nBelow is a summary of\
+      \ the top 10 trending tokens on GMGN for the last 24 hours, highlighting key\
+      \ metrics for each:\n\n### **Ranking Table**\n\n| **Rank** | **Token Symbol**\
+      \ | **24h Price Change** | **Current Price** | **Market Cap** | **24h Volume**\
+      \ |\n| --- | --- | --- | --- | --- | --- |\n| 1    | **AP**          | -30.82%\
+      \          | $0.012993285  | $12,993,285  | $4,762,828.2  |\n| 2    | **SOLX**\
+      \        | -6.38%           | $0.00072351152 | $60,051,456  | $2,272,321   \
+      \ |\n| 3    | **MARU**        | -57.35%          | $0.0013494973  | $567,720.02\
+      \   | $1,473,847.3  |\n| 4    | **ROSCOE**      | **57017.57%**    | $0.0017304536\
+      \  | $1,730,453.6  | $1,973,265.2  |\n| 5    | **MOOMOO**      | 37.47%    \
+      \       | $0.01450755    | $11,283,650   | $1,899,392.3  |\n| 6    | **XIAOBAI**\
+      \     | 68.66%           | $1.5530977e-9  | $1,553,097.7  | $1,615,212.7  |\n\
+      | 7    | **DOUG**        | **5767.86%**     | $0.0020568369  | $205,683.69 \
+      \  | $849,304.7    |\n| 8    | **K505**        | **1609.62%**     | $0.000076100177\
+      \ | $76,100.177   | $1,194,626.4  |\n| 9    | **TANSSI**      | -3.06%     \
+      \      | $0.073946096   | $13,194,057   | $2,221,522.6  |\n| 10   | **BTCBULL**\
+      \     | -37.75%          | $0.002745148   | $37,471,270   | $1,554,595.4  |\n\
+      \n### **Key Observations and Recommendations for Investors:**\n\n- **Top Gainers\
+      \ (24h):**\n  - **ROSCOE**: 57017.57% increase, significant price surge, but\
+      \ beware of potential volatility.\n  - **DOUG**: 5767.86% increase, similarly,\
+      \ a substantial gain but handle with caution due to possible price fluctuations.\n\
+      \  - **K505**: 1609.62% increase, another high gainer; monitor closely for sustainability.\n\
+      \n- **Notable Losers (24h):**\n  - **AP**: -30.82% decrease, significant drop;\
+      \ may be an opportunity to buy if fundamentals are strong.\n  - **MARU**: -57.35%\
+      \ decrease, substantial loss; evaluate the project's health before investing.\n\
+      \  - **BTCBULL**: -37.75% decrease, considerable drop; assess the market sentiment\
+      \ and project's outlook.\n\n- **Market Cap Leaders:**\n  - **SOLX**: With a\
+      \ market cap of $60,051,456, it has a relatively stable 24h price change of\
+      \ -6.38%.\n  - **BTCBULL**: Despite a -37.75% 24h price change, it maintains\
+      \ a market cap of $37,471,270.\n\n- **Trading Activity:**\n  - **AP** and **SOLX**\
+      \ lead in 24h volume, indicating higher liquidity.\n  - **ROSCOE**, **DOUG**,\
+      \ and **K505** show remarkable price increases but with lower trading volumes,\
+      \ suggesting potential for increased volatility.\n\n**Investment Advice:**\n\
+      \n1. **Due Diligence:** Always research a token's fundamentals, team, and community\
+      \ before investing.\n2. **Volatility Management:** Be cautious with high gainers\
+      \ (ROSCOE, DOUG, K505) due to potential price swings.\n3. **Buy Low Opportunity:**\
+      \ Consider AP and MARU if their fundamentals are strong and the drop is deemed\
+      \ a market overreaction.\n4. **Stability:** SOLX might offer a more stable investment\
+      \ environment, but always evaluate its growth prospects.\n\n**Disclaimer:**\
+      \ This analysis is based on the provided data snapshot and might not reflect\
+      \ the current market situation. Cryptocurrency investments are high-risk, high-reward.\
+      \ Always consult multiple sources and consider professional advice before making\
+      \ investment decisions."
     data:
       payload: '
 
@@ -27,784 +54,63 @@ gmgn_trend_natural_language:
 
         Token Basic Information:
 
-        - ID: 752528
+        - ID: 786213
 
         - Chain: eth
 
-        - Contract Address: 0x3125cccd8862eee9e8f2160113871f50fbd55edd
+        - Contract Address: 0xe60e9bd04ccc0a394f1fdf29874e35a773cb07f4
 
-        - Symbol: Kobushi
+        - Symbol: AP
 
-        - Logo: https://gmgn.ai/external-res/52c026a36d0892e79d6ee3a5f393f92c.webp
+        - Logo: https://gmgn.ai/external-res/d8a308e1a68f124c70e1929bc4c9c622.webp
 
-        - Website: https://kobushi.fun/
+        - Website: https://americaparty.meme/
 
-        - Twitter: KobushiCoin
+        - Twitter: AmericaPartyX
 
-        - Telegram: https://t.me/KobushiETH
+        - Telegram: https://t.me/APoneth
 
         - Total Supply: 1000000000
 
 
         Market Data:
 
-        - Current Price: $0.00012047819
+        - Current Price: $0.012993285
 
-        - 24h Price Change: -64.705524%
+        - 24h Price Change: -30.818436%
 
-        - 1m Price Change: 0%
+        - 1m Price Change: -3.0339057%
 
-        - 5m Price Change: 4.8486164%
+        - 5m Price Change: -3.6521293%
 
-        - 1h Price Change: 1.7591471%
+        - 1h Price Change: -5.2028922%
 
-        - Market Cap: $120478.19
+        - Market Cap: $12993285
 
 
         Trading Data:
 
-        - Total Swaps: 2573
+        - Total Swaps: 4028
 
         - 24h Swaps: 0
 
-        - 24h Volume: $517403.63
+        - 24h Volume: $4762828.2
 
-        - Buy Orders: 1454
+        - Buy Orders: 2274
 
-        - Sell Orders: 1119
+        - Sell Orders: 1754
 
 
         Liquidity Data:
 
-        - Current Liquidity: $38946.60884464596
+        - Current Liquidity: $649208.0082321863
 
         - Initial Liquidity: $0
 
 
         Holder Data:
 
-        - Total Holders: 641
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/2/2025, 1:33:47 PM
-
-        - First Trade Time: 5/2/2025, 1:33:47 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0%
-
-        - Bluechip NFT Holder Rate: 0.07020280811232449%
-
-        - Smart Investors Count: 4
-
-        - Renowned Address Count: 3
-
-
-
-        === Token Rank #2 ===
-
-
-        Token Basic Information:
-
-        - ID: 459
-
-        - Chain: eth
-
-        - Contract Address: 0xf411903cbc70a74d22900a5de66a2dda66507255
-
-        - Symbol: VRA
-
-        - Logo: https://gmgn.ai/external-res/766e8c547af749e72edca9b7aab59bce.webp
-
-        - Website: https://www.verasity.io/
-
-        - Twitter: verasitytech
-
-        - Telegram: Unknown
-
-        - Total Supply: 96882880693
-
-
-        Market Data:
-
-        - Current Price: $0.0029630743
-
-        - 24h Price Change: 30.123492%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: -0.22325455%
-
-        - 1h Price Change: -3.4925757%
-
-        - Market Cap: $287071170
-
-
-        Trading Data:
-
-        - Total Swaps: 2518
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $1162697.1
-
-        - Buy Orders: 1358
-
-        - Sell Orders: 1160
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $382410.0550715833
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 51580
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: creator_hold
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 2/11/2021, 1:12:48 PM
-
-        - First Trade Time: 3/19/2021, 4:39:26 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0%
-
-        - Bluechip NFT Holder Rate: 0.06659557968204731%
-
-        - Smart Investors Count: 2
-
-        - Renowned Address Count: 1
-
-
-
-        === Token Rank #3 ===
-
-
-        Token Basic Information:
-
-        - ID: 754917
-
-        - Chain: eth
-
-        - Contract Address: 0x10dc28e0458e824c8ccc9baa3880aaff7704ebc6
-
-        - Symbol: truth
-
-        - Logo: Unknown
-
-        - Website: Unknown
-
-        - Twitter: Unknown
-
-        - Telegram: Unknown
-
-        - Total Supply: 10000000000
-
-
-        Market Data:
-
-        - Current Price: $0.00016561592
-
-        - 24h Price Change: 18193.197%
-
-        - 1m Price Change: -3.7330099%
-
-        - 5m Price Change: 15.377869%
-
-        - 1h Price Change: 27.348626%
-
-        - Market Cap: $1656159.2
-
-
-        Trading Data:
-
-        - Total Swaps: 2187
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $2564513.1
-
-        - Buy Orders: 1130
-
-        - Sell Orders: 1057
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $253119.0330861212
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 1841
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/5/2025, 11:49:11 AM
-
-        - First Trade Time: 5/5/2025, 11:50:11 AM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0.00243291%
-
-        - Bluechip NFT Holder Rate: 0.0043454644215100485%
-
-        - Smart Investors Count: 1
-
-        - Renowned Address Count: 0
-
-
-
-        === Token Rank #4 ===
-
-
-        Token Basic Information:
-
-        - ID: 754957
-
-        - Chain: eth
-
-        - Contract Address: 0x763a988f5b605e250da469626ac9cd9c77717fe3
-
-        - Symbol: GORKLON
-
-        - Logo: Unknown
-
-        - Website: Unknown
-
-        - Twitter: Unknown
-
-        - Telegram: Unknown
-
-        - Total Supply: 1000000000
-
-
-        Market Data:
-
-        - Current Price: $0.00058515208
-
-        - 24h Price Change: 3928.9172%
-
-        - 1m Price Change: 1.5188741%
-
-        - 5m Price Change: 16.516828%
-
-        - 1h Price Change: 3.2763432%
-
-        - Market Cap: $585152.08
-
-
-        Trading Data:
-
-        - Total Swaps: 2009
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $4378352.1
-
-        - Buy Orders: 1571
-
-        - Sell Orders: 438
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $198468.06661288167
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 948
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/5/2025, 11:45:35 AM
-
-        - First Trade Time: 5/5/2025, 12:11:23 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0%
-
-        - Bluechip NFT Holder Rate: 0.004219409282700422%
-
-        - Smart Investors Count: 0
-
-        - Renowned Address Count: 0
-
-
-
-        === Token Rank #5 ===
-
-
-        Token Basic Information:
-
-        - ID: 755052
-
-        - Chain: eth
-
-        - Contract Address: 0x0d464ef3f329603034deaff4a18a2bdc719562d7
-
-        - Symbol: KAZE
-
-        - Logo: https://gmgn.ai/external-res/6e50e79a88244675b402b017432136a3.webp
-
-        - Website: Unknown
-
-        - Twitter: KazeERC
-
-        - Telegram: https://t.me/KazeERC
-
-        - Total Supply: 1000000000
-
-
-        Market Data:
-
-        - Current Price: $0.000020835481
-
-        - 24h Price Change: 588.80781%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: 1.4101897%
-
-        - 1h Price Change: 1.1732917%
-
-        - Market Cap: $20835.481
-
-
-        Trading Data:
-
-        - Total Swaps: 2001
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $408191.38
-
-        - Buy Orders: 1188
-
-        - Sell Orders: 813
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $11028.228781169531
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 289
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/5/2025, 2:41:59 PM
-
-        - First Trade Time: 5/5/2025, 2:56:35 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0.00141092%
-
-        - Bluechip NFT Holder Rate: 0.07958477508650519%
-
-        - Smart Investors Count: 3
-
-        - Renowned Address Count: 1
-
-
-
-        === Token Rank #6 ===
-
-
-        Token Basic Information:
-
-        - ID: 754408
-
-        - Chain: eth
-
-        - Contract Address: 0x38731c2467e4e19ee031d7401466a970f21755e0
-
-        - Symbol: GORKLON
-
-        - Logo: https://gmgn.ai/external-res/8c996a3d52a90a97a598eb4aa51afb3b.webp
-
-        - Website: https://gorklon.site
-
-        - Twitter: notgorkCTO
-
-        - Telegram: https://t.me/gorklonerc
-
-        - Total Supply: 100000000
-
-
-        Market Data:
-
-        - Current Price: $0.0021820857
-
-        - 24h Price Change: -54.372274%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: 0%
-
-        - 1h Price Change: -1.1981048%
-
-        - Market Cap: $218208.57
-
-
-        Trading Data:
-
-        - Total Swaps: 1675
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $475988.68
-
-        - Buy Orders: 945
-
-        - Sell Orders: 730
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $39922.2640582644
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 847
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/4/2025, 5:59:59 PM
-
-        - First Trade Time: 5/4/2025, 6:00:11 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0.0196%
-
-        - Bluechip NFT Holder Rate: 0.05667060212514758%
-
-        - Smart Investors Count: 6
-
-        - Renowned Address Count: 4
-
-
-
-        === Token Rank #7 ===
-
-
-        Token Basic Information:
-
-        - ID: 755022
-
-        - Chain: eth
-
-        - Contract Address: 0x451e4dc1ef9c941f391e89b61c99694acc5c930e
-
-        - Symbol: Trumpojak
-
-        - Logo: https://gmgn.ai/external-res/0267bbd69a9b548ee652f72d1f96f506.webp
-
-        - Website: https://feelstrump.com
-
-        - Twitter: Feels_Trump
-
-        - Telegram: https://t.me/Trumpojak
-
-        - Total Supply: 1000000000
-
-
-        Market Data:
-
-        - Current Price: $0.0000037860837
-
-        - 24h Price Change: 104.81986%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: 0%
-
-        - 1h Price Change: -30.545108%
-
-        - Market Cap: $3786.0837
-
-
-        Trading Data:
-
-        - Total Swaps: 1383
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $442471.07
-
-        - Buy Orders: 764
-
-        - Sell Orders: 619
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $5394.152147875324
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 241
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/5/2025, 3:05:47 PM
-
-        - First Trade Time: 5/5/2025, 3:05:47 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0%
-
-        - Bluechip NFT Holder Rate: 0.024896265560165973%
-
-        - Smart Investors Count: 1
-
-        - Renowned Address Count: 0
-
-
-
-        === Token Rank #8 ===
-
-
-        Token Basic Information:
-
-        - ID: 49139
-
-        - Chain: eth
-
-        - Contract Address: 0xaaee1a9723aadb7afa2810263653a34ba2c21c7a
-
-        - Symbol: Mog
-
-        - Logo: https://gmgn.ai/external-res/a5016b3f423658d841bbc4072102953f.webp
-
-        - Website: https://www.mogcoin.xyz
-
-        - Twitter: mogcoin
-
-        - Telegram: https://t.me/mogcoinYUP
-
-        - Total Supply: 390570159911439
-
-
-        Market Data:
-
-        - Current Price: $6.2777703e-7
-
-        - 24h Price Change: 6.3657666%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: 0.55789247%
-
-        - 1h Price Change: 0.32634904%
-
-        - Market Cap: $245190970
-
-
-        Trading Data:
-
-        - Total Swaps: 1371
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $1756360
-
-        - Buy Orders: 807
-
-        - Sell Orders: 564
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $9473557.070453905
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 51431
+        - Total Holders: 5006
 
         - Top 10 Holders Rate: 0%
 
@@ -830,19 +136,740 @@ gmgn_trend_natural_language:
 
         - Heat Level: 0
 
-        - Pool Creation Time: 7/20/2023, 3:06:47 AM
+        - Pool Creation Time: 6/6/2025, 10:11:35 PM
 
-        - First Trade Time: 7/20/2023, 3:38:23 AM
+        - First Trade Time: 6/6/2025, 10:11:59 PM
 
         - Launchpad Status: No
 
         - Rat Trader Rate: 0%
 
-        - Bluechip NFT Holder Rate: 0.36514942349944585%
+        - Bluechip NFT Holder Rate: 0.043547742708749504%
 
-        - Smart Investors Count: 1
+        - Smart Investors Count: 17
 
-        - Renowned Address Count: 6
+        - Renowned Address Count: 18
+
+
+
+        === Token Rank #2 ===
+
+
+        Token Basic Information:
+
+        - ID: 671139
+
+        - Chain: eth
+
+        - Contract Address: 0xe0b7ad7f8f26e2b00c8b47b5df370f15f90fcf48
+
+        - Symbol: SOLX
+
+        - Logo: https://gmgn.ai/external-res/da5b5279f4b7235b070e2a378644281d.webp
+
+        - Website: https://solaxy.io
+
+        - Twitter: solaxytoken
+
+        - Telegram: https://t.me/solaxytoken
+
+        - Total Supply: 82999999899
+
+
+        Market Data:
+
+        - Current Price: $0.00072351152
+
+        - 24h Price Change: -6.3834486%
+
+        - 1m Price Change: 0.56897224%
+
+        - 5m Price Change: 0.42114305%
+
+        - 1h Price Change: -2.7876119%
+
+        - Market Cap: $60051456
+
+
+        Trading Data:
+
+        - Total Swaps: 3160
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $2272321
+
+        - Buy Orders: 1994
+
+        - Sell Orders: 1166
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $1505070.635389242
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 47712
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: creator_close
+
+        - Creator Closed Contract: Yes
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 6/23/2025, 1:59:47 PM
+
+        - First Trade Time: 6/23/2025, 1:59:59 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0.466441%
+
+        - Bluechip NFT Holder Rate: 0.007293762575452716%
+
+        - Smart Investors Count: 2
+
+        - Renowned Address Count: 0
+
+
+
+        === Token Rank #3 ===
+
+
+        Token Basic Information:
+
+        - ID: 820499
+
+        - Chain: eth
+
+        - Contract Address: 0xe6f4567c330625f3488ec69266f5ddd3f3841f33
+
+        - Symbol: MARU
+
+        - Logo: https://gmgn.ai/external-res/f56e8d2ba048b855ac3ac405769dded4.webp
+
+        - Website: https://marueth.xyz/
+
+        - Twitter: ETHMARUTARO
+
+        - Telegram: https://t.me/maruethportal
+
+        - Total Supply: 420690000
+
+
+        Market Data:
+
+        - Current Price: $0.0013494973
+
+        - 24h Price Change: -57.351021%
+
+        - 1m Price Change: -0.62079907%
+
+        - 5m Price Change: -2.0995144%
+
+        - 1h Price Change: -1.1616079%
+
+        - Market Cap: $567720.02
+
+
+        Trading Data:
+
+        - Total Swaps: 3066
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1473847.3
+
+        - Buy Orders: 1801
+
+        - Sell Orders: 1265
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $91167.48468401132
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 1610
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: creator_add_liquidity
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/7/2025, 6:30:23 PM
+
+        - First Trade Time: 7/7/2025, 6:30:23 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.040372670807453416%
+
+        - Smart Investors Count: 7
+
+        - Renowned Address Count: 3
+
+
+
+        === Token Rank #4 ===
+
+
+        Token Basic Information:
+
+        - ID: 823117
+
+        - Chain: eth
+
+        - Contract Address: 0xf1d05ac563d3c59696e8c41dd34f49d1453c47c6
+
+        - Symbol: ROSCOE
+
+        - Logo: https://gmgn.ai/external-res/c775c720511a1c4d4b876dcf45a8dd05.webp
+
+        - Website: https://f1roscoe.dog/
+
+        - Twitter: F1DogRoscoe
+
+        - Telegram: https://t.me/F1DogRoscoe
+
+        - Total Supply: 1000000000
+
+
+        Market Data:
+
+        - Current Price: $0.0017304536
+
+        - 24h Price Change: 57017.57%
+
+        - 1m Price Change: -1.7313018%
+
+        - 5m Price Change: -2.8789189%
+
+        - 1h Price Change: 15.667617%
+
+        - Market Cap: $1730453.6
+
+
+        Trading Data:
+
+        - Total Swaps: 3039
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1973265.2
+
+        - Buy Orders: 1637
+
+        - Sell Orders: 1402
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $145530.51852438215
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 449
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: Unknown
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/10/2025, 6:29:47 PM
+
+        - First Trade Time: 7/10/2025, 6:29:47 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.026726057906458798%
+
+        - Smart Investors Count: 2
+
+        - Renowned Address Count: 0
+
+
+
+        === Token Rank #5 ===
+
+
+        Token Basic Information:
+
+        - ID: 822515
+
+        - Chain: eth
+
+        - Contract Address: 0x64442fe778f00b7d7ed1863b9327ca29342cf461
+
+        - Symbol: MOOMOO
+
+        - Logo: https://gmgn.ai/external-res/9f9f8ad9212dcff98f0d34dfac51fb22.webp
+
+        - Website: https://www.moomoo.wtf/
+
+        - Twitter: moomoo4chan
+
+        - Telegram: https://t.me/moomooeth
+
+        - Total Supply: 777777777
+
+
+        Market Data:
+
+        - Current Price: $0.01450755
+
+        - 24h Price Change: 37.466431%
+
+        - 1m Price Change: 0.54282195%
+
+        - 5m Price Change: -0.52717843%
+
+        - 1h Price Change: -3.7803402%
+
+        - Market Cap: $11283650
+
+
+        Trading Data:
+
+        - Total Swaps: 2826
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1899392.3
+
+        - Buy Orders: 1432
+
+        - Sell Orders: 1394
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $334053.29369686096
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 652
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: Unknown
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/9/2025, 11:25:47 PM
+
+        - First Trade Time: 7/9/2025, 11:55:59 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.049079754601226995%
+
+        - Smart Investors Count: 5
+
+        - Renowned Address Count: 0
+
+
+
+        === Token Rank #6 ===
+
+
+        Token Basic Information:
+
+        - ID: 815348
+
+        - Chain: eth
+
+        - Contract Address: 0xcb69e5750f8dc3b69647b9d8b1f45466ace0a027
+
+        - Symbol: XIAOBAI
+
+        - Logo: https://gmgn.ai/external-res/5c99342d942f8eba130d1473d3d27210.webp
+
+        - Website: https://xiaobaieth.com/
+
+        - Twitter: xiaobai_cto_eth
+
+        - Telegram: https://t.me/Xiaobai_CTO_ETH
+
+        - Total Supply: 1000000000000000
+
+
+        Market Data:
+
+        - Current Price: $1.5530977e-9
+
+        - 24h Price Change: 68.664942%
+
+        - 1m Price Change: -2.5879737%
+
+        - 5m Price Change: -0.81573131%
+
+        - 1h Price Change: 1.8603929%
+
+        - Market Cap: $1553097.7
+
+
+        Trading Data:
+
+        - Total Swaps: 2816
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1615212.7
+
+        - Buy Orders: 1653
+
+        - Sell Orders: 1163
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $169132.39695714158
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 1510
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: creator_add_liquidity
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/2/2025, 11:57:35 PM
+
+        - First Trade Time: 7/3/2025, 12:12:35 AM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.051655629139072845%
+
+        - Smart Investors Count: 6
+
+        - Renowned Address Count: 2
+
+
+
+        === Token Rank #7 ===
+
+
+        Token Basic Information:
+
+        - ID: 823019
+
+        - Chain: eth
+
+        - Contract Address: 0xeaaee87e33254d859a44cb2f72e88a6ab5eaa45d
+
+        - Symbol: DOUG
+
+        - Logo: https://gmgn.ai/external-res/93631f3dc5db38384d76d54866b99f67.webp
+
+        - Website: https://dougthepugerc.vip
+
+        - Twitter: DougThePug_X
+
+        - Telegram: https://t.me/DougThePug_TG
+
+        - Total Supply: 100000000
+
+
+        Market Data:
+
+        - Current Price: $0.0020568369
+
+        - 24h Price Change: 5767.8596%
+
+        - 1m Price Change: 4.7561644%
+
+        - 5m Price Change: 9.83062%
+
+        - 1h Price Change: -42.642329%
+
+        - Market Cap: $205683.69
+
+
+        Trading Data:
+
+        - Total Swaps: 2755
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $849304.7
+
+        - Buy Orders: 1660
+
+        - Sell Orders: 1095
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $47364.54320222166
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 661
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: Unknown
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/10/2025, 3:23:11 PM
+
+        - First Trade Time: 7/10/2025, 3:23:11 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.04084720121028744%
+
+        - Smart Investors Count: 2
+
+        - Renowned Address Count: 1
+
+
+
+        === Token Rank #8 ===
+
+
+        Token Basic Information:
+
+        - ID: 823083
+
+        - Chain: eth
+
+        - Contract Address: 0x6965fafd9f39c014a012084675b25dd150bc0124
+
+        - Symbol: K505
+
+        - Logo: https://gmgn.ai/external-res/69534aa6d73dba9ffb8c7bab51946d3e.webp
+
+        - Website: https://klik505.art/
+
+        - Twitter: klik505
+
+        - Telegram: https://t.me/klik505
+
+        - Total Supply: 1000000000
+
+
+        Market Data:
+
+        - Current Price: $0.000076100177
+
+        - 24h Price Change: 1609.622%
+
+        - 1m Price Change: 0%
+
+        - 5m Price Change: -0.57025764%
+
+        - 1h Price Change: -16.931842%
+
+        - Market Cap: $76100.177
+
+
+        Trading Data:
+
+        - Total Swaps: 2642
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1194626.4
+
+        - Buy Orders: 1525
+
+        - Sell Orders: 1117
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $42837.72926814016
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 356
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: Unknown
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/10/2025, 4:46:47 PM
+
+        - First Trade Time: 7/10/2025, 4:46:47 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.06460674157303371%
+
+        - Smart Investors Count: 7
+
+        - Renowned Address Count: 11
 
 
 
@@ -851,63 +878,63 @@ gmgn_trend_natural_language:
 
         Token Basic Information:
 
-        - ID: 738898
+        - ID: 792323
 
         - Chain: eth
 
-        - Contract Address: 0xc8ef4398664b2eed5ee560544f659083d98a3888
+        - Contract Address: 0x553f4cb7256d8fc038e91d36cb63fa7c13b624ab
 
-        - Symbol: CTM
+        - Symbol: TANSSI
 
-        - Logo: https://gmgn.ai/external-res/7ba6e383b60583276787342265991a7d.webp
+        - Logo: https://gmgn.ai/external-res/163018aea151ad9a137bce84374d5383.webp
 
-        - Website: https://c8ntinuum.com
+        - Website: https://www.tanssi.network/
 
-        - Twitter: c8ntinuum
+        - Twitter: TanssiNetwork
 
-        - Telegram: https://t.me/c8ntinuumANN
+        - Telegram: Unknown
 
-        - Total Supply: 296296240
+        - Total Supply: 178428046
 
 
         Market Data:
 
-        - Current Price: $0.074361517
+        - Current Price: $0.073946096
 
-        - 24h Price Change: -3.5233411%
+        - 24h Price Change: -3.0633862%
 
-        - 1m Price Change: 0.12189417%
+        - 1m Price Change: -0.072854046%
 
-        - 5m Price Change: -0.0166752%
+        - 5m Price Change: -0.70192073%
 
-        - 1h Price Change: 0.7115977%
+        - 1h Price Change: 3.2021285%
 
-        - Market Cap: $22033038
+        - Market Cap: $13194057
 
 
         Trading Data:
 
-        - Total Swaps: 1349
+        - Total Swaps: 2478
 
         - 24h Swaps: 0
 
-        - 24h Volume: $88070.659
+        - 24h Volume: $2221522.6
 
-        - Buy Orders: 622
+        - Buy Orders: 1076
 
-        - Sell Orders: 727
+        - Sell Orders: 1402
 
 
         Liquidity Data:
 
-        - Current Liquidity: $164667.716335789
+        - Current Liquidity: $739887.3180978531
 
         - Initial Liquidity: $0
 
 
         Holder Data:
 
-        - Total Holders: 1332
+        - Total Holders: 7689
 
         - Top 10 Holders Rate: 0%
 
@@ -922,9 +949,9 @@ gmgn_trend_natural_language:
 
         - Burn Status: Unknown
 
-        - Creator Token Status: Unknown
+        - Creator Token Status: creator_close
 
-        - Creator Closed Contract: No
+        - Creator Closed Contract: Yes
 
         - Wash Trading Detected: No
 
@@ -933,19 +960,19 @@ gmgn_trend_natural_language:
 
         - Heat Level: 0
 
-        - Pool Creation Time: 4/14/2025, 12:07:11 PM
+        - Pool Creation Time: 7/8/2025, 12:36:35 PM
 
-        - First Trade Time: 4/16/2025, 9:51:59 PM
+        - First Trade Time: 7/9/2025, 10:13:11 AM
 
         - Launchpad Status: No
 
-        - Rat Trader Rate: 0%
+        - Rat Trader Rate: 0.00212963%
 
-        - Bluechip NFT Holder Rate: 0.010510510510510511%
+        - Bluechip NFT Holder Rate: 0.006762908050461699%
 
         - Smart Investors Count: 1
 
-        - Renowned Address Count: 0
+        - Renowned Address Count: 1
 
 
 
@@ -954,63 +981,63 @@ gmgn_trend_natural_language:
 
         Token Basic Information:
 
-        - ID: 752535
+        - ID: 567218
 
         - Chain: eth
 
-        - Contract Address: 0xd86830e9c56785e2b703eb0029ae71a943e4d442
+        - Contract Address: 0xc3f822e94c321dd3ee53ca46b78098ea79b7ec8d
 
-        - Symbol: KOBUSHI
+        - Symbol: BTCBULL
 
-        - Logo: https://gmgn.ai/external-res/bc48a419fa1934a35009cde161107acf.webp
+        - Logo: https://gmgn.ai/external-res/ed1b509ab94b19dbab649c507e6dc5d0.webp
 
-        - Website: Unknown
+        - Website: https://btcbulltoken.com/
 
-        - Twitter: kobushi_eth?s=11
+        - Twitter: BTCBULL_TOKEN
 
-        - Telegram: https://t.me/kobushi_cto
+        - Telegram: https://t.me/BTC_Bull_Token
 
-        - Total Supply: 420690000000
+        - Total Supply: 13650000000
 
 
         Market Data:
 
-        - Current Price: $2.2975058e-7
+        - Current Price: $0.002745148
 
-        - 24h Price Change: 1311.3908%
+        - 24h Price Change: -37.753973%
 
-        - 1m Price Change: 0%
+        - 1m Price Change: 0.50302651%
 
-        - 5m Price Change: -1.5375067%
+        - 5m Price Change: 0.14517561%
 
-        - 1h Price Change: -14.525123%
+        - 1h Price Change: 1.6790024%
 
-        - Market Cap: $96653.772
+        - Market Cap: $37471270
 
 
         Trading Data:
 
-        - Total Swaps: 1122
+        - Total Swaps: 2258
 
         - 24h Swaps: 0
 
-        - 24h Volume: $247275.74
+        - 24h Volume: $1554595.4
 
-        - Buy Orders: 651
+        - Buy Orders: 1253
 
-        - Sell Orders: 471
+        - Sell Orders: 1005
 
 
         Liquidity Data:
 
-        - Current Liquidity: $24616.199051945416
+        - Current Liquidity: $866358.0882702987
 
         - Initial Liquidity: $0
 
 
         Holder Data:
 
-        - Total Holders: 250
+        - Total Holders: 10951
 
         - Top 10 Holders Rate: 0%
 
@@ -1025,9 +1052,9 @@ gmgn_trend_natural_language:
 
         - Burn Status: Unknown
 
-        - Creator Token Status: Unknown
+        - Creator Token Status: creator_close
 
-        - Creator Closed Contract: No
+        - Creator Closed Contract: Yes
 
         - Wash Trading Detected: No
 
@@ -1036,15 +1063,15 @@ gmgn_trend_natural_language:
 
         - Heat Level: 0
 
-        - Pool Creation Time: 5/2/2025, 1:58:11 PM
+        - Pool Creation Time: 7/7/2025, 1:59:47 PM
 
-        - First Trade Time: 5/2/2025, 1:58:11 PM
+        - First Trade Time: 7/7/2025, 1:59:59 PM
 
         - Launchpad Status: No
 
-        - Rat Trader Rate: 0%
+        - Rat Trader Rate: 0.346131%
 
-        - Bluechip NFT Holder Rate: 0.08%
+        - Bluechip NFT Holder Rate: 0.007396584786777463%
 
         - Smart Investors Count: 1
 
@@ -1068,784 +1095,63 @@ gmgn_trend_direct:
 
         Token Basic Information:
 
-        - ID: 752528
+        - ID: 786213
 
         - Chain: eth
 
-        - Contract Address: 0x3125cccd8862eee9e8f2160113871f50fbd55edd
+        - Contract Address: 0xe60e9bd04ccc0a394f1fdf29874e35a773cb07f4
 
-        - Symbol: Kobushi
+        - Symbol: AP
 
-        - Logo: https://gmgn.ai/external-res/52c026a36d0892e79d6ee3a5f393f92c.webp
+        - Logo: https://gmgn.ai/external-res/d8a308e1a68f124c70e1929bc4c9c622.webp
 
-        - Website: https://kobushi.fun/
+        - Website: https://americaparty.meme/
 
-        - Twitter: KobushiCoin
+        - Twitter: AmericaPartyX
 
-        - Telegram: https://t.me/KobushiETH
+        - Telegram: https://t.me/APoneth
 
         - Total Supply: 1000000000
 
 
         Market Data:
 
-        - Current Price: $0.00011999243
+        - Current Price: $0.01302143
 
-        - 24h Price Change: -64.847829%
+        - 24h Price Change: -30.66858%
 
-        - 1m Price Change: -0.40319331%
+        - 1m Price Change: -3.2268949%
 
-        - 5m Price Change: 3.7374823%
+        - 5m Price Change: -3.4434284%
 
-        - 1h Price Change: 1.3488611%
+        - 1h Price Change: -5.4106091%
 
-        - Market Cap: $119992.43
+        - Market Cap: $13021430
 
 
         Trading Data:
 
-        - Total Swaps: 2574
+        - Total Swaps: 4029
 
         - 24h Swaps: 0
 
-        - 24h Volume: $517416.16
+        - 24h Volume: $4762932.5
 
-        - Buy Orders: 1454
+        - Buy Orders: 2275
 
-        - Sell Orders: 1120
+        - Sell Orders: 1754
 
 
         Liquidity Data:
 
-        - Current Liquidity: $38951.13267600325
+        - Current Liquidity: $649926.308592219
 
         - Initial Liquidity: $0
 
 
         Holder Data:
 
-        - Total Holders: 640
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/2/2025, 1:33:47 PM
-
-        - First Trade Time: 5/2/2025, 1:33:47 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0%
-
-        - Bluechip NFT Holder Rate: 0.0703125%
-
-        - Smart Investors Count: 4
-
-        - Renowned Address Count: 3
-
-
-
-        === Token Rank #2 ===
-
-
-        Token Basic Information:
-
-        - ID: 459
-
-        - Chain: eth
-
-        - Contract Address: 0xf411903cbc70a74d22900a5de66a2dda66507255
-
-        - Symbol: VRA
-
-        - Logo: https://gmgn.ai/external-res/766e8c547af749e72edca9b7aab59bce.webp
-
-        - Website: https://www.verasity.io/
-
-        - Twitter: verasitytech
-
-        - Telegram: Unknown
-
-        - Total Supply: 96882880693
-
-
-        Market Data:
-
-        - Current Price: $0.0029630743
-
-        - 24h Price Change: 30.123492%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: -0.22325455%
-
-        - 1h Price Change: -3.4925757%
-
-        - Market Cap: $287071170
-
-
-        Trading Data:
-
-        - Total Swaps: 2518
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $1162697.1
-
-        - Buy Orders: 1358
-
-        - Sell Orders: 1160
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $382410.0550715833
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 51580
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: creator_hold
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 2/11/2021, 1:12:48 PM
-
-        - First Trade Time: 3/19/2021, 4:39:26 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0%
-
-        - Bluechip NFT Holder Rate: 0.06659557968204731%
-
-        - Smart Investors Count: 2
-
-        - Renowned Address Count: 1
-
-
-
-        === Token Rank #3 ===
-
-
-        Token Basic Information:
-
-        - ID: 754917
-
-        - Chain: eth
-
-        - Contract Address: 0x10dc28e0458e824c8ccc9baa3880aaff7704ebc6
-
-        - Symbol: truth
-
-        - Logo: Unknown
-
-        - Website: Unknown
-
-        - Twitter: Unknown
-
-        - Telegram: Unknown
-
-        - Total Supply: 10000000000
-
-
-        Market Data:
-
-        - Current Price: $0.00016471936
-
-        - 24h Price Change: 18094.167%
-
-        - 1m Price Change: -4.2541502%
-
-        - 5m Price Change: 6.6519767%
-
-        - 1h Price Change: 29.336786%
-
-        - Market Cap: $1647193.6
-
-
-        Trading Data:
-
-        - Total Swaps: 2188
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $2564789.1
-
-        - Buy Orders: 1131
-
-        - Sell Orders: 1057
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $253686.9675519718
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 1842
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/5/2025, 11:49:11 AM
-
-        - First Trade Time: 5/5/2025, 11:50:11 AM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0.00243291%
-
-        - Bluechip NFT Holder Rate: 0.004343105320304018%
-
-        - Smart Investors Count: 1
-
-        - Renowned Address Count: 0
-
-
-
-        === Token Rank #4 ===
-
-
-        Token Basic Information:
-
-        - ID: 754957
-
-        - Chain: eth
-
-        - Contract Address: 0x763a988f5b605e250da469626ac9cd9c77717fe3
-
-        - Symbol: GORKLON
-
-        - Logo: Unknown
-
-        - Website: Unknown
-
-        - Twitter: Unknown
-
-        - Telegram: Unknown
-
-        - Total Supply: 1000000000
-
-
-        Market Data:
-
-        - Current Price: $0.00060767802
-
-        - 24h Price Change: 4084.0139%
-
-        - 1m Price Change: 5.4269318%
-
-        - 5m Price Change: 24.899133%
-
-        - 1h Price Change: 28.523278%
-
-        - Market Cap: $607678.02
-
-
-        Trading Data:
-
-        - Total Swaps: 2010
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $4380490.8
-
-        - Buy Orders: 1572
-
-        - Sell Orders: 438
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $202753.4659377823
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 948
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/5/2025, 11:45:35 AM
-
-        - First Trade Time: 5/5/2025, 12:11:23 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0%
-
-        - Bluechip NFT Holder Rate: 0.004219409282700422%
-
-        - Smart Investors Count: 0
-
-        - Renowned Address Count: 0
-
-
-
-        === Token Rank #5 ===
-
-
-        Token Basic Information:
-
-        - ID: 755052
-
-        - Chain: eth
-
-        - Contract Address: 0x0d464ef3f329603034deaff4a18a2bdc719562d7
-
-        - Symbol: KAZE
-
-        - Logo: https://gmgn.ai/external-res/6e50e79a88244675b402b017432136a3.webp
-
-        - Website: Unknown
-
-        - Twitter: KazeERC
-
-        - Telegram: https://t.me/KazeERC
-
-        - Total Supply: 1000000000
-
-
-        Market Data:
-
-        - Current Price: $0.000020835481
-
-        - 24h Price Change: 588.80781%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: 3.3701821%
-
-        - 1h Price Change: 1.1732917%
-
-        - Market Cap: $20835.481
-
-
-        Trading Data:
-
-        - Total Swaps: 2001
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $408191.38
-
-        - Buy Orders: 1188
-
-        - Sell Orders: 813
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $11028.228781169531
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 289
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/5/2025, 2:41:59 PM
-
-        - First Trade Time: 5/5/2025, 2:56:35 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0.00141092%
-
-        - Bluechip NFT Holder Rate: 0.07958477508650519%
-
-        - Smart Investors Count: 3
-
-        - Renowned Address Count: 1
-
-
-
-        === Token Rank #6 ===
-
-
-        Token Basic Information:
-
-        - ID: 754408
-
-        - Chain: eth
-
-        - Contract Address: 0x38731c2467e4e19ee031d7401466a970f21755e0
-
-        - Symbol: GORKLON
-
-        - Logo: https://gmgn.ai/external-res/8c996a3d52a90a97a598eb4aa51afb3b.webp
-
-        - Website: https://gorklon.site
-
-        - Twitter: notgorkCTO
-
-        - Telegram: https://t.me/gorklonerc
-
-        - Total Supply: 100000000
-
-
-        Market Data:
-
-        - Current Price: $0.0021820857
-
-        - 24h Price Change: -54.372274%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: 0%
-
-        - 1h Price Change: -1.1981048%
-
-        - Market Cap: $218208.57
-
-
-        Trading Data:
-
-        - Total Swaps: 1675
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $475988.68
-
-        - Buy Orders: 945
-
-        - Sell Orders: 730
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $39922.2640582644
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 847
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/4/2025, 5:59:59 PM
-
-        - First Trade Time: 5/4/2025, 6:00:11 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0.0196%
-
-        - Bluechip NFT Holder Rate: 0.05667060212514758%
-
-        - Smart Investors Count: 6
-
-        - Renowned Address Count: 4
-
-
-
-        === Token Rank #7 ===
-
-
-        Token Basic Information:
-
-        - ID: 755022
-
-        - Chain: eth
-
-        - Contract Address: 0x451e4dc1ef9c941f391e89b61c99694acc5c930e
-
-        - Symbol: Trumpojak
-
-        - Logo: https://gmgn.ai/external-res/0267bbd69a9b548ee652f72d1f96f506.webp
-
-        - Website: https://feelstrump.com
-
-        - Twitter: Feels_Trump
-
-        - Telegram: https://t.me/Trumpojak
-
-        - Total Supply: 1000000000
-
-
-        Market Data:
-
-        - Current Price: $0.0000037860837
-
-        - 24h Price Change: 104.81986%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: 0%
-
-        - 1h Price Change: -25.380136%
-
-        - Market Cap: $3786.0837
-
-
-        Trading Data:
-
-        - Total Swaps: 1383
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $442471.07
-
-        - Buy Orders: 764
-
-        - Sell Orders: 619
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $5394.152147875324
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 241
-
-        - Top 10 Holders Rate: 0%
-
-
-        Security and Mechanisms:
-
-        - Mint Renounced: No
-
-        - Freeze Account Renounced: No
-
-        - Burn Ratio: 0%
-
-        - Burn Status: Unknown
-
-        - Creator Token Status: Unknown
-
-        - Creator Closed Contract: No
-
-        - Wash Trading Detected: No
-
-
-        Additional Information:
-
-        - Heat Level: 0
-
-        - Pool Creation Time: 5/5/2025, 3:05:47 PM
-
-        - First Trade Time: 5/5/2025, 3:05:47 PM
-
-        - Launchpad Status: No
-
-        - Rat Trader Rate: 0%
-
-        - Bluechip NFT Holder Rate: 0.024896265560165973%
-
-        - Smart Investors Count: 1
-
-        - Renowned Address Count: 0
-
-
-
-        === Token Rank #8 ===
-
-
-        Token Basic Information:
-
-        - ID: 49139
-
-        - Chain: eth
-
-        - Contract Address: 0xaaee1a9723aadb7afa2810263653a34ba2c21c7a
-
-        - Symbol: Mog
-
-        - Logo: https://gmgn.ai/external-res/a5016b3f423658d841bbc4072102953f.webp
-
-        - Website: https://www.mogcoin.xyz
-
-        - Twitter: mogcoin
-
-        - Telegram: https://t.me/mogcoinYUP
-
-        - Total Supply: 390570159911439
-
-
-        Market Data:
-
-        - Current Price: $6.2777703e-7
-
-        - 24h Price Change: 6.3657666%
-
-        - 1m Price Change: 0%
-
-        - 5m Price Change: 0.55789247%
-
-        - 1h Price Change: 0.061872314%
-
-        - Market Cap: $245190970
-
-
-        Trading Data:
-
-        - Total Swaps: 1371
-
-        - 24h Swaps: 0
-
-        - 24h Volume: $1756360
-
-        - Buy Orders: 807
-
-        - Sell Orders: 564
-
-
-        Liquidity Data:
-
-        - Current Liquidity: $9473557.070453905
-
-        - Initial Liquidity: $0
-
-
-        Holder Data:
-
-        - Total Holders: 51431
+        - Total Holders: 5006
 
         - Top 10 Holders Rate: 0%
 
@@ -1871,19 +1177,740 @@ gmgn_trend_direct:
 
         - Heat Level: 0
 
-        - Pool Creation Time: 7/20/2023, 3:06:47 AM
+        - Pool Creation Time: 6/6/2025, 10:11:35 PM
 
-        - First Trade Time: 7/20/2023, 3:38:23 AM
+        - First Trade Time: 6/6/2025, 10:11:59 PM
 
         - Launchpad Status: No
 
         - Rat Trader Rate: 0%
 
-        - Bluechip NFT Holder Rate: 0.36514942349944585%
+        - Bluechip NFT Holder Rate: 0.043547742708749504%
 
-        - Smart Investors Count: 1
+        - Smart Investors Count: 17
 
-        - Renowned Address Count: 6
+        - Renowned Address Count: 18
+
+
+
+        === Token Rank #2 ===
+
+
+        Token Basic Information:
+
+        - ID: 671139
+
+        - Chain: eth
+
+        - Contract Address: 0xe0b7ad7f8f26e2b00c8b47b5df370f15f90fcf48
+
+        - Symbol: SOLX
+
+        - Logo: https://gmgn.ai/external-res/da5b5279f4b7235b070e2a378644281d.webp
+
+        - Website: https://solaxy.io
+
+        - Twitter: solaxytoken
+
+        - Telegram: https://t.me/solaxytoken
+
+        - Total Supply: 82999999899
+
+
+        Market Data:
+
+        - Current Price: $0.00071954258
+
+        - 24h Price Change: -6.8969974%
+
+        - 1m Price Change: -0.50215575%
+
+        - 5m Price Change: 0.016424241%
+
+        - 1h Price Change: -2.9397794%
+
+        - Market Cap: $59722034
+
+
+        Trading Data:
+
+        - Total Swaps: 3161
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $2272603
+
+        - Buy Orders: 1994
+
+        - Sell Orders: 1167
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $1505824.274257033
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 47713
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: creator_close
+
+        - Creator Closed Contract: Yes
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 6/23/2025, 1:59:47 PM
+
+        - First Trade Time: 6/23/2025, 1:59:59 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0.466434%
+
+        - Bluechip NFT Holder Rate: 0.007293609708046025%
+
+        - Smart Investors Count: 2
+
+        - Renowned Address Count: 0
+
+
+
+        === Token Rank #3 ===
+
+
+        Token Basic Information:
+
+        - ID: 820499
+
+        - Chain: eth
+
+        - Contract Address: 0xe6f4567c330625f3488ec69266f5ddd3f3841f33
+
+        - Symbol: MARU
+
+        - Logo: https://gmgn.ai/external-res/f56e8d2ba048b855ac3ac405769dded4.webp
+
+        - Website: https://marueth.xyz/
+
+        - Twitter: ETHMARUTARO
+
+        - Telegram: https://t.me/maruethportal
+
+        - Total Supply: 420690000
+
+
+        Market Data:
+
+        - Current Price: $0.0013494973
+
+        - 24h Price Change: -57.351021%
+
+        - 1m Price Change: 0%
+
+        - 5m Price Change: -3.0611128%
+
+        - 1h Price Change: 2.2305857%
+
+        - Market Cap: $567720.02
+
+
+        Trading Data:
+
+        - Total Swaps: 3066
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1473847.3
+
+        - Buy Orders: 1801
+
+        - Sell Orders: 1265
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $91167.48468401132
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 1610
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: creator_add_liquidity
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/7/2025, 6:30:23 PM
+
+        - First Trade Time: 7/7/2025, 6:30:23 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.040372670807453416%
+
+        - Smart Investors Count: 7
+
+        - Renowned Address Count: 3
+
+
+
+        === Token Rank #4 ===
+
+
+        Token Basic Information:
+
+        - ID: 823117
+
+        - Chain: eth
+
+        - Contract Address: 0xf1d05ac563d3c59696e8c41dd34f49d1453c47c6
+
+        - Symbol: ROSCOE
+
+        - Logo: https://gmgn.ai/external-res/c775c720511a1c4d4b876dcf45a8dd05.webp
+
+        - Website: https://f1roscoe.dog/
+
+        - Twitter: F1DogRoscoe
+
+        - Telegram: https://t.me/F1DogRoscoe
+
+        - Total Supply: 1000000000
+
+
+        Market Data:
+
+        - Current Price: $0.0017079062
+
+        - 24h Price Change: 56273.341%
+
+        - 1m Price Change: -1.7274542%
+
+        - 5m Price Change: -1.7770933%
+
+        - 1h Price Change: 16.387226%
+
+        - Market Cap: $1707906.2
+
+
+        Trading Data:
+
+        - Total Swaps: 3041
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1974548.3
+
+        - Buy Orders: 1638
+
+        - Sell Orders: 1403
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $145325.82828916263
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 449
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: Unknown
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/10/2025, 6:29:47 PM
+
+        - First Trade Time: 7/10/2025, 6:29:47 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.026726057906458798%
+
+        - Smart Investors Count: 2
+
+        - Renowned Address Count: 0
+
+
+
+        === Token Rank #5 ===
+
+
+        Token Basic Information:
+
+        - ID: 822515
+
+        - Chain: eth
+
+        - Contract Address: 0x64442fe778f00b7d7ed1863b9327ca29342cf461
+
+        - Symbol: MOOMOO
+
+        - Logo: https://gmgn.ai/external-res/9f9f8ad9212dcff98f0d34dfac51fb22.webp
+
+        - Website: https://www.moomoo.wtf/
+
+        - Twitter: moomoo4chan
+
+        - Telegram: https://t.me/moomooeth
+
+        - Total Supply: 777777777
+
+
+        Market Data:
+
+        - Current Price: $0.014282765
+
+        - 24h Price Change: 35.336478%
+
+        - 1m Price Change: -1.5494346%
+
+        - 5m Price Change: -1.4823009%
+
+        - 1h Price Change: -4.5789815%
+
+        - Market Cap: $11108817
+
+
+        Trading Data:
+
+        - Total Swaps: 2831
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1904695.4
+
+        - Buy Orders: 1433
+
+        - Sell Orders: 1398
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $332080.6189498658
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 651
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: Unknown
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/9/2025, 11:25:47 PM
+
+        - First Trade Time: 7/9/2025, 11:55:59 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.04915514592933948%
+
+        - Smart Investors Count: 5
+
+        - Renowned Address Count: 0
+
+
+
+        === Token Rank #6 ===
+
+
+        Token Basic Information:
+
+        - ID: 815348
+
+        - Chain: eth
+
+        - Contract Address: 0xcb69e5750f8dc3b69647b9d8b1f45466ace0a027
+
+        - Symbol: XIAOBAI
+
+        - Logo: https://gmgn.ai/external-res/5c99342d942f8eba130d1473d3d27210.webp
+
+        - Website: https://xiaobaieth.com/
+
+        - Twitter: xiaobai_cto_eth
+
+        - Telegram: https://t.me/Xiaobai_CTO_ETH
+
+        - Total Supply: 1000000000000000
+
+
+        Market Data:
+
+        - Current Price: $1.5433005e-9
+
+        - 24h Price Change: 67.600975%
+
+        - 1m Price Change: -2.736143%
+
+        - 5m Price Change: -5.1719053%
+
+        - 1h Price Change: 1.2178405%
+
+        - Market Cap: $1543300.5
+
+
+        Trading Data:
+
+        - Total Swaps: 2818
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1615605.2
+
+        - Buy Orders: 1655
+
+        - Sell Orders: 1163
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $170087.45829722006
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 1509
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: creator_add_liquidity
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/2/2025, 11:57:35 PM
+
+        - First Trade Time: 7/3/2025, 12:12:35 AM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.05168986083499006%
+
+        - Smart Investors Count: 6
+
+        - Renowned Address Count: 2
+
+
+
+        === Token Rank #7 ===
+
+
+        Token Basic Information:
+
+        - ID: 823019
+
+        - Chain: eth
+
+        - Contract Address: 0xeaaee87e33254d859a44cb2f72e88a6ab5eaa45d
+
+        - Symbol: DOUG
+
+        - Logo: https://gmgn.ai/external-res/93631f3dc5db38384d76d54866b99f67.webp
+
+        - Website: https://dougthepugerc.vip
+
+        - Twitter: DougThePug_X
+
+        - Telegram: https://t.me/DougThePug_TG
+
+        - Total Supply: 100000000
+
+
+        Market Data:
+
+        - Current Price: $0.0020568369
+
+        - 24h Price Change: 5767.8596%
+
+        - 1m Price Change: 0%
+
+        - 5m Price Change: 10.615606%
+
+        - 1h Price Change: -42.642329%
+
+        - Market Cap: $205683.69
+
+
+        Trading Data:
+
+        - Total Swaps: 2755
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $849304.7
+
+        - Buy Orders: 1660
+
+        - Sell Orders: 1095
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $47364.54320222166
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 661
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: Unknown
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/10/2025, 3:23:11 PM
+
+        - First Trade Time: 7/10/2025, 3:23:11 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.04236006051437216%
+
+        - Smart Investors Count: 2
+
+        - Renowned Address Count: 1
+
+
+
+        === Token Rank #8 ===
+
+
+        Token Basic Information:
+
+        - ID: 823083
+
+        - Chain: eth
+
+        - Contract Address: 0x6965fafd9f39c014a012084675b25dd150bc0124
+
+        - Symbol: K505
+
+        - Logo: https://gmgn.ai/external-res/69534aa6d73dba9ffb8c7bab51946d3e.webp
+
+        - Website: https://klik505.art/
+
+        - Twitter: klik505
+
+        - Telegram: https://t.me/klik505
+
+        - Total Supply: 1000000000
+
+
+        Market Data:
+
+        - Current Price: $0.000076100177
+
+        - 24h Price Change: 1609.622%
+
+        - 1m Price Change: 0%
+
+        - 5m Price Change: -0.57025764%
+
+        - 1h Price Change: -19.91657%
+
+        - Market Cap: $76100.177
+
+
+        Trading Data:
+
+        - Total Swaps: 2642
+
+        - 24h Swaps: 0
+
+        - 24h Volume: $1194626.4
+
+        - Buy Orders: 1525
+
+        - Sell Orders: 1117
+
+
+        Liquidity Data:
+
+        - Current Liquidity: $42837.72926814016
+
+        - Initial Liquidity: $0
+
+
+        Holder Data:
+
+        - Total Holders: 356
+
+        - Top 10 Holders Rate: 0%
+
+
+        Security and Mechanisms:
+
+        - Mint Renounced: No
+
+        - Freeze Account Renounced: No
+
+        - Burn Ratio: 0%
+
+        - Burn Status: Unknown
+
+        - Creator Token Status: Unknown
+
+        - Creator Closed Contract: No
+
+        - Wash Trading Detected: No
+
+
+        Additional Information:
+
+        - Heat Level: 0
+
+        - Pool Creation Time: 7/10/2025, 4:46:47 PM
+
+        - First Trade Time: 7/10/2025, 4:46:47 PM
+
+        - Launchpad Status: No
+
+        - Rat Trader Rate: 0%
+
+        - Bluechip NFT Holder Rate: 0.06460674157303371%
+
+        - Smart Investors Count: 7
+
+        - Renowned Address Count: 11
 
 
 
@@ -1892,63 +1919,63 @@ gmgn_trend_direct:
 
         Token Basic Information:
 
-        - ID: 738898
+        - ID: 792323
 
         - Chain: eth
 
-        - Contract Address: 0xc8ef4398664b2eed5ee560544f659083d98a3888
+        - Contract Address: 0x553f4cb7256d8fc038e91d36cb63fa7c13b624ab
 
-        - Symbol: CTM
+        - Symbol: TANSSI
 
-        - Logo: https://gmgn.ai/external-res/7ba6e383b60583276787342265991a7d.webp
+        - Logo: https://gmgn.ai/external-res/163018aea151ad9a137bce84374d5383.webp
 
-        - Website: https://c8ntinuum.com
+        - Website: https://www.tanssi.network/
 
-        - Twitter: c8ntinuum
+        - Twitter: TanssiNetwork
 
-        - Telegram: https://t.me/c8ntinuumANN
+        - Telegram: Unknown
 
-        - Total Supply: 296296240
+        - Total Supply: 178428046
 
 
         Market Data:
 
-        - Current Price: $0.073956298
+        - Current Price: $0.074357061
 
-        - 24h Price Change: -4.0490724%
+        - 24h Price Change: -2.5246485%
 
-        - 1m Price Change: -0.54493106%
+        - 1m Price Change: 0.55576294%
 
-        - 5m Price Change: -0.56151539%
+        - 5m Price Change: 0.90261883%
 
-        - 1h Price Change: -0.30230969%
+        - 1h Price Change: 3.7961509%
 
-        - Market Cap: $21912973
+        - Market Cap: $13267385
 
 
         Trading Data:
 
-        - Total Swaps: 1350
+        - Total Swaps: 2479
 
         - 24h Swaps: 0
 
-        - 24h Volume: $88088.63
+        - 24h Volume: $2222568.6
 
-        - Buy Orders: 622
+        - Buy Orders: 1077
 
-        - Sell Orders: 728
+        - Sell Orders: 1402
 
 
         Liquidity Data:
 
-        - Current Liquidity: $164651.8849341228
+        - Current Liquidity: $741981.2207469891
 
         - Initial Liquidity: $0
 
 
         Holder Data:
 
-        - Total Holders: 1332
+        - Total Holders: 7689
 
         - Top 10 Holders Rate: 0%
 
@@ -1963,9 +1990,9 @@ gmgn_trend_direct:
 
         - Burn Status: Unknown
 
-        - Creator Token Status: Unknown
+        - Creator Token Status: creator_close
 
-        - Creator Closed Contract: No
+        - Creator Closed Contract: Yes
 
         - Wash Trading Detected: No
 
@@ -1974,19 +2001,19 @@ gmgn_trend_direct:
 
         - Heat Level: 0
 
-        - Pool Creation Time: 4/14/2025, 12:07:11 PM
+        - Pool Creation Time: 7/8/2025, 12:36:35 PM
 
-        - First Trade Time: 4/16/2025, 9:51:59 PM
+        - First Trade Time: 7/9/2025, 10:13:11 AM
 
         - Launchpad Status: No
 
-        - Rat Trader Rate: 0%
+        - Rat Trader Rate: 0.00212963%
 
-        - Bluechip NFT Holder Rate: 0.010510510510510511%
+        - Bluechip NFT Holder Rate: 0.006762908050461699%
 
         - Smart Investors Count: 1
 
-        - Renowned Address Count: 0
+        - Renowned Address Count: 1
 
 
 
@@ -1995,63 +2022,63 @@ gmgn_trend_direct:
 
         Token Basic Information:
 
-        - ID: 752535
+        - ID: 567218
 
         - Chain: eth
 
-        - Contract Address: 0xd86830e9c56785e2b703eb0029ae71a943e4d442
+        - Contract Address: 0xc3f822e94c321dd3ee53ca46b78098ea79b7ec8d
 
-        - Symbol: KOBUSHI
+        - Symbol: BTCBULL
 
-        - Logo: https://gmgn.ai/external-res/bc48a419fa1934a35009cde161107acf.webp
+        - Logo: https://gmgn.ai/external-res/ed1b509ab94b19dbab649c507e6dc5d0.webp
 
-        - Website: Unknown
+        - Website: https://btcbulltoken.com/
 
-        - Twitter: kobushi_eth?s=11
+        - Twitter: BTCBULL_TOKEN
 
-        - Telegram: https://t.me/kobushi_cto
+        - Telegram: https://t.me/BTC_Bull_Token
 
-        - Total Supply: 420690000000
+        - Total Supply: 13650000000
 
 
         Market Data:
 
-        - Current Price: $2.230302e-7
+        - Current Price: $0.0027323366
 
-        - 24h Price Change: 1270.1065%
+        - 24h Price Change: -38.044471%
 
-        - 1m Price Change: -2.9250764%
+        - 1m Price Change: -0.46669251%
 
-        - 5m Price Change: -4.4176099%
+        - 5m Price Change: 0.033986131%
 
-        - 1h Price Change: -17.025329%
+        - 1h Price Change: 1.4940747%
 
-        - Market Cap: $93826.575
+        - Market Cap: $37296395
 
 
         Trading Data:
 
-        - Total Swaps: 1123
+        - Total Swaps: 2259
 
         - 24h Swaps: 0
 
-        - 24h Volume: $247286.58
+        - 24h Volume: $1554615.6
 
-        - Buy Orders: 652
+        - Buy Orders: 1253
 
-        - Sell Orders: 471
+        - Sell Orders: 1006
 
 
         Liquidity Data:
 
-        - Current Liquidity: $24652.978808604803
+        - Current Liquidity: $867232.0617118366
 
         - Initial Liquidity: $0
 
 
         Holder Data:
 
-        - Total Holders: 251
+        - Total Holders: 10951
 
         - Top 10 Holders Rate: 0%
 
@@ -2066,9 +2093,9 @@ gmgn_trend_direct:
 
         - Burn Status: Unknown
 
-        - Creator Token Status: Unknown
+        - Creator Token Status: creator_close
 
-        - Creator Closed Contract: No
+        - Creator Closed Contract: Yes
 
         - Wash Trading Detected: No
 
@@ -2077,15 +2104,15 @@ gmgn_trend_direct:
 
         - Heat Level: 0
 
-        - Pool Creation Time: 5/2/2025, 1:58:11 PM
+        - Pool Creation Time: 7/7/2025, 1:59:47 PM
 
-        - First Trade Time: 5/2/2025, 1:58:11 PM
+        - First Trade Time: 7/7/2025, 1:59:59 PM
 
         - Launchpad Status: No
 
-        - Rat Trader Rate: 0%
+        - Rat Trader Rate: 0.346121%
 
-        - Bluechip NFT Holder Rate: 0.0796812749003984%
+        - Bluechip NFT Holder Rate: 0.007396584786777463%
 
         - Smart Investors Count: 1
 
@@ -2098,33 +2125,92 @@ gmgn_token_info_natural_language:
       Ethereum
     raw_data_only: false
   output:
-    response: "It seems the initial response didn't yield the desired outcome. Let's\
-      \ break down the steps to gather information about the Ethereum token you've\
-      \ specified (`0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599`) and provide a structured\
-      \ analysis based on publicly available data. Please note, the depth of information\
-      \ may vary depending on the token's presence in popular databases and blockchain\
-      \ explorers.\n\n### **Token Information Gathering**\n\nTo analyze the token\
-      \ `0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599`, we'll look at key data points\
-      \ typically of interest to investors and researchers. Since the initial response\
-      \ returned `{'payload': None}`, we'll manually outline how one would proceed\
-      \ to gather insights:\n\n#### **1. Blockchain Explorer Check**\n- **Tool:**\
-      \ Etherscan (etherscan.io), Etherchain (etherchain.org), or Ethplorer (ethplorer.io)\n\
-      - **Action:** Search for the token's contract address on one of these platforms.\n\
-      - **Expected Data:**\n  - **Token Name**\n  - **Token Symbol**\n  - **Total\
-      \ Supply**\n  - **Decimals**\n  - **Contract Creator**\n  - **Deployment Date**\n\
-      \n#### **2. Token Metrics and Market Data**\n- **Tool:** CoinMarketCap (coinmarketcap.com),\
-      \ CoinGecko (coingecko.com), or CryptoSlate (cryptoslate.com)\n- **Action:**\
-      \ If listed, search for the token by its name or symbol to find:\n  - **Current\
-      \ Price**\n  - **Market Capitalization**\n  - **24H Trading Volume**\n  - **Price\
-      \ Change (24H, 7D, etc.)**\n  - **Circulating Supply**\n\n#### **3. Smart Contract\
-      \ Audit and Security**\n- **Tool:** Check if the contract has been audited by\
-      \ reputable firms like OpenZeppelin, ChainSecurity, or Quantstamp.\n- **Action:**\
-      \ Research the contract address on these firms' websites or platforms like Etherscan\
-      \ for audit reports.\n- **Expected Insight:** Security vulnerabilities and audit\
-      \ scores.\n\n#### **4. Social Media and Community**\n- **Tool:** Twitter, Telegram,\
-      \ Discord, or the project's official website.\n- **Action:** Search for the\
-      \ token's name or symbol to gauge:\n  - **Community Size**\n  - **Recent Activity/Updates**\n\
-      \  - **Sentiment"
+    response: 'It seems like the initial response didn''t yield the expected token
+      information. Let''s break down the process and provide a structured analysis
+      for the Ethereum token with the address `0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599`.
+      Since the initial query returned `{''payload'': None}`, we''ll rely on publicly
+      available tools and data sources to gather information. Please note, the accuracy
+      and availability of data depend on these external sources.
+
+
+      ### Token Analysis for `0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599` on Ethereum
+
+
+      #### **1. Basic Token Information:**
+
+      - **Token Address:** `0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599` (Ethereum
+      Blockchain)
+
+      - **Token Name:** *Not Available* (Could not be retrieved. Possibly not listed
+      on main trackers or not enough data)
+
+      - **Token Symbol:** *Not Available* (Could not be retrieved. Possibly not listed
+      on main trackers or not enough data)
+
+      - **Token Type:** *Unknown* (ERC-20 assumed if on Ethereum, but not confirmed)
+
+
+      #### **2. Quantitative Metrics:**
+
+      - **Market Capitalization:** *Not Available* (Insufficient data or not listed
+      on trackers like CoinMarketCap, CoinGecko)
+
+      - **Circulating Supply:** *Not Available* (Requires access to more detailed
+      blockchain analytics or token''s official resources)
+
+      - **Total Supply:** *Not Available* (Same as above)
+
+      - **Current Price:** *Not Available* (Not listed on major cryptocurrency price
+      trackers)
+
+
+      #### **3. Liquidity and Trading:**
+
+      - **Exchanges:** *Not Listed* (Could not find on major exchanges like Binance,
+      Uniswap, etc. Might be available on smaller, more specialized platforms)
+
+      - **Trading Volume (24H):** *Not Available* (Dependent on exchange listing or
+      specialized analytics tools)
+
+      - **Liquidity Score:** *Not Calculable* (Requires trading volume and price data)
+
+
+      #### **4. Development and Community:**
+
+      - **GitHub Repository:** *Not Found* (Could not locate a directly associated
+      GitHub repository)
+
+      - **Social Media Presence:** *Not Assessed* (Twitter, Telegram, Discord, etc.
+      presence and engagement not evaluated due to lack of token identification)
+
+      - **Recent Updates:** *Not Available* (No accessible information on recent development
+      updates or community engagement)
+
+
+      #### **Key Takeaways for Investors:**
+
+      - **Due Diligence:** Insufficient publicly available data to conduct thorough
+      analysis.
+
+      - **Risk Assessment:** High risk due to lack of transparency and unavailability
+      of key metrics.
+
+      - **Investment Decision:** Recommend gathering more information directly from
+      the token''s official channels (if available) before making any investment decisions.
+
+
+      #### **Next Steps:**
+
+      1. **Official Token Resources:** Attempt to find and consult the token''s official
+      website, social media, or direct communication channels for more accurate and
+      up-to-date information.
+
+      2. **Specialized Analytics Tools:** Utilize paid or advanced blockchain analytics
+      tools for more detailed insights into the token''s on-chain activity.
+
+      3. **Community Engagement:** Engage with cryptocurrency forums or social media
+      groups to see if there''s any discussion or additional information available
+      about the token.'
     data:
       payload: null
 gmgn_token_info_direct:
@@ -2143,28 +2229,47 @@ token_analysis_natural_language:
     query: Analyze ETH token for me
     raw_data_only: false
   output:
-    response: "**ETH Token Analysis (as of 2025-05-06T07:59:34.544Z)**\n\n### **Overview**\n\
-      \n* **ID**: ethereum\n* **Symbol**: ETH\n* **Name**: Ethereum\n* **Market Cap\
-      \ Rank**: 2\n\n### **Current Market Metrics**\n\n* **Current Price**: $1,805.61\n\
-      * **Market Capitalization**: $217,942,453,664\n* **Fully Diluted Valuation**:\
-      \ $217,942,453,664 (matches Market Cap, as Total Supply is fully circulating)\n\
-      * **24h Trading Volume**: $9,173,881,223\n\n### **24h Performance**\n\n* **24h\
-      \ High**: $1,828.91\n* **24h Low**: $1,797.04\n* **24h Price Change**: -$20.80\n\
-      * **24h Price Change Percentage**: **-1.14%** (indicating a slight decline)\n\
-      \n### **Market Capitalization Changes**\n\n* **24h Market Cap Change**: -$2,516,406,196.23\n\
-      * **24h Market Cap Change Percentage**: **-1.14%** (mirroring the price change\
-      \ percentage, showing market cap and price are closely tied in this period)\n\
-      \n### **Supply Dynamics**\n\n* **Circulating Supply**: 120,732,501.5221701 ETH\n\
-      * **Total Supply**: 120,732,501.5221701 ETH (matches Circulating Supply, indicating\
-      \ all mined coins are in circulation)\n* **Max Supply**: **N/A** (Ethereum has\
-      \ no predefined maximum supply, as it transitioned to Proof of Stake with The\
-      \ Merge)\n\n### **Historical Price References**\n\n* **All-Time High (ATH)**:\
-      \ $4,878.26\n\t+ **ATH Change Percentage**: **-62.99%** from ATH to current\
-      \ price\n\t+ **ATH Date**: 2021-11-10\n* **All-Time Low (ATL)**: $0.432979\n\
-      \t+ **ATL Change Percentage**: **416,845.63%** from ATL to current price\n\t\
-      + **ATL Date**: 2015-10-20\n\n### **Investment Insights and Considerations**\n\
-      \n1. **Short-Term Volatility**: The -1.14% change in both price and market cap\
-      \ over the last 24 hours indicates a relatively stable short-term market"
+    response: "**ETH Token Analysis (as of 2025-07-11T10:41:52.125Z)**\n\n### **Overview**\n\
+      \n* **ID:** ethereum\n* **Symbol:** ETH\n* **Name:** Ethereum\n* **Market Cap\
+      \ Rank:** 2\n\n### **Current Market Performance**\n\n* **Current Price:** $**3,007.74**\n\
+      * **24h Price Change:** **+$225.36** (**+8.09939%**)\n* **24h Trading Volume:**\
+      \ $**48,661,794,087**\n* **Market Capitalization:** $**363,074,406,205**\n*\
+      \ **24h Market Cap Change:** **+$27,249,691,993** (**+8.11426%**)\n\n### **Supply\
+      \ Metrics**\n\n* **Circulating Supply:** 120,715,723.3341 ETH\n* **Total Supply:**\
+      \ 120,715,723.3341 ETH (matches Circulating Supply, indicating no unsold reserves\
+      \ or undisclosed supply)\n* **Max Supply:** **Not Available (N/A)**, implying\
+      \ Ethereum's supply is not capped, following its transition to Proof of Stake\
+      \ (PoS) and a more dynamic supply model.\n\n### **Historical Price Reference**\n\
+      \n* **All Time High (ATH):** $**4,878.26** \n\t+ **ATH Date:** 2021-11-10\n\t\
+      + **ATH Change Percentage (from ATH to Current):** **-38.34517%**\n* **All Time\
+      \ Low (ATL):** $**0.432979** \n\t+ **ATL Date:** 2015-10-20\n\t+ **ATL Change\
+      \ Percentage (from ATL to Current):** **+694,548.91842%**\n\n### **Key Insights\
+      \ for Investors:**\n\n1. **Short-Term Momentum:** Ethereum has seen a significant\
+      \ 24-hour price increase of **8.09939%**, indicating strong short-term momentum.\
+      \ This could be attractive for short-term investors looking for quick gains\
+      \ but also comes with higher risks.\n\n2. **Market Dominance:** With a **Market\
+      \ Cap Rank of 2**, Ethereum maintains its position as one of the most valuable\
+      \ cryptocurrencies, reflecting its strong market presence and adoption.\n\n\
+      3. **Supply Dynamics:** The lack of a maximum supply cap might influence long-term\
+      \ value stability. Investors should monitor how Ethereum's supply adjustments\
+      \ (e.g., through burning mechanisms or protocol updates) impact its value.\n\
+      \n4. **Long-Term Growth:** Despite the current price being **38.34517%** below\
+      \ its ATH, Ethereum has shown remarkable growth since its ATL, with an increase\
+      \ of over **694,548.91842%**. This underscores its potential for long-term investment,\
+      \ but past performance is not a guarantee of future results.\n\n5. **Volatility:**\
+      \ The significant **24h Price Change** and the gap between ATH and current price\
+      \ highlight Ethereum's volatility. Investors should be prepared for price fluctuations\
+      \ and consider a diversified portfolio.\n\n### **Recommendation for Further\
+      \ Analysis:**\n\n- **Technical Analysis:** Examine Ethereum's charts for patterns\
+      \ that might predict future price movements.\n- **Fundamental Analysis:** Keep\
+      \ up with Ethereum's protocol updates, adoption rates, and the overall health\
+      \ of its ecosystem, as these can significantly impact its value.\n- **Market\
+      \ Sentiment Analysis:** Monitor investor and community sentiment, as it can\
+      \ influence short-term price movements.\n\n**Disclaimer:** This analysis is\
+      \ based on the provided data snapshot and is intended for informational purposes\
+      \ only. It should not be considered as investment advice. Cryptocurrency markets\
+      \ are highly volatile, and prices can fluctuate rapidly. Always do your own\
+      \ research and consult with financial advisors before making investment decisions."
     data:
       payload:
         message: 'Coin Information:
@@ -2179,40 +2284,40 @@ token_analysis_natural_language:
 
           Market Data:
 
-          Current Price: 1805.61
+          Current Price: 3007.74
 
-          Market Cap: 217942453664
+          Market Cap: 363074406205
 
           Market Cap Rank: 2
 
-          Fully Diluted Valuation: 217942453664
+          Fully Diluted Valuation: 363074406205
 
-          24h Trading Volume: 9173881223
+          24h Trading Volume: 48661794087
 
 
           24h Price Changes:
 
-          24h High: 1828.91
+          24h High: 3027.12
 
-          24h Low: 1797.04
+          24h Low: 2767.71
 
-          24h Price Change: -20.801577026435552
+          24h Price Change: 225.36
 
-          24h Price Change Percentage: -1.13893%
+          24h Price Change Percentage: 8.09939%
 
 
           Market Cap Changes:
 
-          24h Market Cap Change: -2516406196.2349243
+          24h Market Cap Change: 27249691993
 
-          24h Market Cap Change Percentage: -1.14144%
+          24h Market Cap Change Percentage: 8.11426%
 
 
           Supply Information:
 
-          Circulating Supply: 120732501.5221701 eth
+          Circulating Supply: 120715723.3341001 eth
 
-          Total Supply: 120732501.5221701 eth
+          Total Supply: 120715723.3341001 eth
 
           Max Supply: N/A eth
 
@@ -2221,7 +2326,7 @@ token_analysis_natural_language:
 
           ATH: 4878.26
 
-          ATH Change Percentage: -62.99323%
+          ATH Change Percentage: -38.34517%
 
           ATH Date: 2021-11-10T14:24:19.604Z
 
@@ -2230,12 +2335,12 @@ token_analysis_natural_language:
 
           ATL: 0.432979
 
-          ATL Change Percentage: 416845.62796%
+          ATL Change Percentage: 694548.91842%
 
           ATL Date: 2015-10-20T00:00:00.000Z
 
 
-          Last Updated: 2025-05-06T07:59:34.544Z
+          Last Updated: 2025-07-11T10:41:52.125Z
 
           '
 token_analysis_direct:
@@ -2260,62 +2365,62 @@ token_analysis_direct:
 
           Market Data:
 
-          Current Price: 94412
+          Current Price: 118140
 
-          Market Cap: 1875036539955
+          Market Cap: 2350380381111
 
           Market Cap Rank: 1
 
-          Fully Diluted Valuation: 1875038616947
+          Fully Diluted Valuation: 2350380381111
 
-          24h Trading Volume: 19728697989
+          24h Trading Volume: 81066686721
 
 
           24h Price Changes:
 
-          24h High: 95111
+          24h High: 118667
 
-          24h Low: 93704
+          24h Low: 110768
 
-          24h Price Change: -324.8426353609393
+          24h Price Change: 7099.49
 
-          24h Price Change Percentage: -0.34289%
+          24h Price Change Percentage: 6.39359%
 
 
           Market Cap Changes:
 
-          24h Market Cap Change: -6464027478.921143
+          24h Market Cap Change: 141060180534
 
-          24h Market Cap Change Percentage: -0.34356%
+          24h Market Cap Change Percentage: 6.38478%
 
 
           Supply Information:
 
-          Circulating Supply: 19860831 btc
+          Circulating Supply: 19890790 btc
 
-          Total Supply: 19860853 btc
+          Total Supply: 19890790 btc
 
           Max Supply: 21000000 btc
 
 
           All Time High (ATH):
 
-          ATH: 108786
+          ATH: 118667
 
-          ATH Change Percentage: -13.1764%
+          ATH Change Percentage: -0.43861%
 
-          ATH Date: 2025-01-20T09:11:54.494Z
+          ATH Date: 2025-07-11T09:51:32.053Z
 
 
           All Time Low (ATL):
 
           ATL: 67.81
 
-          ATL Change Percentage: 139190.52492%
+          ATL Change Percentage: 174134.55076%
 
           ATL Date: 2013-07-06T00:00:00.000Z
 
 
-          Last Updated: 2025-05-06T07:59:41.348Z
+          Last Updated: 2025-07-11T10:42:54.066Z
 
           '

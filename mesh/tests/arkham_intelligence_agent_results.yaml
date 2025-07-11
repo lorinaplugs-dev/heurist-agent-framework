@@ -4,30 +4,31 @@ address_intelligence_nlp:
     raw_data_only: false
   output:
     response: "**Address Analysis: 0xec463d00aa4da76fb112cd2e4ac1c6bef02da6ea on Ethereum**\n\
-      \n**Status:** Success\n\n**Key Findings:**\n\n* **Address:** 0xec463D00aa4dA76fb112cD2e4AC1C6BeF02da6ea\
-      \ (validated)\n* **Chain:** Ethereum (validated)\n* **Entity Identification:**\n\
-      \t+ **Name:** Heurist\n\t+ **Type:** Miscellaneous (Misc)\n\t+ **Website:**\
-      \ https://www.heurist.ai\n\t+ **Twitter:** https://x.com/heurist_ai\n\t+ **Note:**\
-      \ None\n\t+ **ID:** heurist\n* **Label:**\n\t+ **Name:** Heurist (HEU)\n\t+\
-      \ **Chain Type:** EVM (Ethereum Virtual Machine)\n* **Address Nature:**\n\t\
-      + **.isUserAddress:** False (suggesting this is not an individual user's address)\n\
-      \t+ **contract:** True (indicating this address is associated with a smart contract)\n\
-      \n**Interpretation:**\n\nThe analyzed address, 0xec463d00aa4da76fb112cd2e4ac1c6bef02da6ea,\
-      \ on the Ethereum blockchain is identified as belonging to \"Heurist\", an entity\
-      \ categorized as miscellaneous. The presence of a website and Twitter handle\
-      \ suggests Heurist has an online presence, possibly indicating a project, service,\
-      \ or organization. The address is linked to a smart contract, which is typical\
-      \ for projects that utilize Ethereum's programmability for various applications,\
-      \ such as token sales, decentralized finance (DeFi) protocols, non-fungible\
-      \ tokens (NFTs), or more.\n\n**Next Steps for Deeper Insight:**\n\n1. **Portfolio\
-      \ Snapshot:** Request a portfolio snapshot for this address to view its token\
-      \ holdings and their USD values. Specify a time (default is 7 days ago if not\
-      \ specified) to understand the address's historical holdings.\nExample Query:\
-      \ Analyze portfolio for address 0xec463d00aa4da76fb112cd2e4ac1c6bef02da6ea on\
-      \ Ethereum at [specified Unix timestamp in milliseconds, if desired].\n\n2.\
-      \ **Token Holder Distribution:** If interested in the broader ecosystem of Heurist's\
-      \ token (if applicable), request a token holder distribution analysis to identify\
-      \ top holders and understand the token's dispersion"
+      \n**Summary:**\n\n* **Address:** 0xec463d00aa4da76fb112cd2e4ac1c6bef02da6ea\n\
+      * **Chain:** Ethereum\n* **Entity Identification:**\n\t+ **Name:** Heurist\n\
+      \t+ **Type:** Miscellaneous (Misc)\n\t+ **Website:** https://www.heurist.ai\n\
+      \t+ **Twitter:** https://x.com/heurist_ai\n* **Address Label:**\n\t+ **Name:**\
+      \ Heurist (HEU)\n\t+ **Chain Type:** EVM (Ethereum Virtual Machine)\n* **Key\
+      \ Findings:**\n\t+ **Not a User Address:** This address is likely associated\
+      \ with an organization or project rather than an individual user.\n\t+ **Contract\
+      \ Address:** This address is identified as a contract address, indicating it\
+      \ is linked to a deployed smart contract on the Ethereum blockchain.\n\n**Recommendations\
+      \ for Further Analysis:**\n\n1. **Contract Metadata:** To gain deeper insights,\
+      \ you may want to request contract metadata for this address, which could provide\
+      \ information on the contract's purpose, functions, and deployment details.\n\
+      2. **Portfolio Snapshot:** If you're interested in understanding the token holdings\
+      \ and USD value associated with this address, consider requesting a portfolio\
+      \ snapshot. Specify a time (in UTC day start, converted to Unix timestamp in\
+      \ milliseconds) for a targeted analysis or default to the last 7 days for a\
+      \ more current overview.\n3. **Token Holder Distribution (if applicable):**\
+      \ If Heurist (HEU) is a token, analyzing its holder distribution could offer\
+      \ insights into the token's ownership landscape, including identifying top holders.\n\
+      \n**Next Steps:**\nPlease respond with one of the following to proceed:\n\n\
+      A) Request contract metadata for this address.\nB) Provide a specific time (in\
+      \ UTC day start, to be converted to Unix timestamp in milliseconds) for a portfolio\
+      \ snapshot, or confirm to default to the last 7 days.\nC) Inquire about token\
+      \ holder distribution for Heurist (HEU), if applicable.\nD) Analyze a different\
+      \ address (provide new address and chain)."
     data:
       status: success
       data:
@@ -131,23 +132,27 @@ portfolio_snapshot_nlp:
     query: Get portfolio snapshot for 0x7d9d1821d15B9e0b8Ab98A058361233E255E405D
     raw_data_only: false
   output:
-    response: "**Portfolio Snapshot for Address: 0x7d9d1821d15B9e0b8Ab98A058361233E255E405D**\n\
-      \n**Default Time Frame: 7 days ago from current UTC day start (no specific time\
-      \ provided)**\n\n**Multi-Chain Portfolio Overview:**\n\nThe specified address\
-      \ has assets across **4** blockchain networks: Arbitrum One, Base, Ethereum,\
-      \ and Optimism. Other chains (Avalanche, Blast, BSC, Flare, Linea, Manta, Mantle,\
-      \ Polygon, Sonic) show empty balances.\n\n**Chain-by-Chain Breakdown:**\n\n\
-      1. **Arbitrum One (arbitrum_one)**\n\t* **Ethereum (ETH)**\n\t\t+ Balance: 0.000820892746828\
-      \ ETH\n\t\t+ Price: $2,563.54\n\t\t+ USD Value: $2.10\n\t* **USDT0 (USDT0)**\n\
-      \t\t+ Balance: 0.284783 USDT0\n\t\t+ Price: $0.998698\n\t\t+ USD Value: $0.28\n\
-      \n2. **Base (base)**\n\t* **Bridged USDC (USDBC)**\n\t\t+ Balance: 0.161415\
-      \ USDBC\n\t\t+ Price: $0.998686\n\t\t+ USD Value: $0.16\n\t* **Ethereum (ETH)**\n\
-      \t\t+ Balance: 0.00079567590922786 ETH\n\t\t+ Price: $2,563.54\n\t\t+ USD Value:\
-      \ $2.04\n\t* **Gochujangcoin (GOCHU)**\n\t\t+ Balance: 50,000 GOCHU\n\t\t+ Price:\
-      \ $2.31e-06\n\t\t+ USD Value: $0.12\n\t* **L2 Standard Bridged WETH (WETH)**\n\
-      \t\t+ Balance: 0.001200802506225319 WETH\n\t\t+ Price: $2,563.13\n\t\t+ USD\
-      \ Value: $3.08\n\n3. **Ethereum (ethereum)**\n\t* **Ankr Network (ANKR)**\n\t\
-      \t+ Balance: 344,827 ANKR\n\t\t+ Price: $0.01798584\n\t\t+ USD Value:"
+    response: "**Portfolio Snapshot for 0x7d9d1821d15B9e0b8Ab98A058361233E255E405D**\n\
+      \n**Time of Snapshot:** *Defaulted to 7 days ago from the current UTC day start\
+      \ (Unix timestamp not provided in the query)*\n\n**Chain Balances:**\n\n1. **Arbitrum\
+      \ One**\n\t* **Ethereum (ETH)**\n\t\t+ Balance: 0.000820892746828 ETH\n\t\t\
+      + Price: $2,591.61\n\t\t+ USD Value: $2.13\n\t* **USDT0**\n\t\t+ Balance: 0.284783\
+      \ USDT0\n\t\t+ Price: $0.999903\n\t\t+ USD Value: $0.28\n\n2. **Base**\n\t*\
+      \ **Bridged USDC (USDCB)**\n\t\t+ Balance: 0.161415 USDCB\n\t\t+ Price: $0.999444\n\
+      \t\t+ USD Value: $0.16\n\t* **Ethereum (ETH)**\n\t\t+ Balance: 0.00079485499032786\
+      \ ETH\n\t\t+ Price: $2,591.61\n\t\t+ USD Value: $2.06\n\t* **L2 Standard Bridged\
+      \ WETH (WETH)**\n\t\t+ Balance: 0.000825963921091042 WETH\n\t\t+ Price: $2,589.30\n\
+      \t\t+ USD Value: $2.14\n\t* **USDC**\n\t\t+ Balance: 77.02012 USDC\n\t\t+ Price:\
+      \ $0.999819\n\t\t+ USD Value: $77.01\n\n3. **Ethereum**\n\t* **Ankr Network\
+      \ (ANKR)**\n\t\t+ Balance: 344,827 ANKR\n\t\t+ Price: $0.01466012\n\t\t+ USD\
+      \ Value: $5,055.20\n\t* **Ethereum (ETH)**\n\t\t+ Balance: 0.2162209018356097\
+      \ ETH\n\t\t+ Price: $2,591.61\n\t\t+ USD Value: $560.36\n\t* **Fluence (FLT)**\n\
+      \t\t+ Balance: 5,000 FLT\n\t\t+ Price: $0.04768582\n\t\t+ USD Value: $238.43\n\
+      \t* **WETH**\n\t\t+ Balance: 0.015684 WETH\n\t\t+ Price: $2,592.14\n\t\t+ USD\
+      \ Value: $40.66\n\n4. **Optimism**\n\t* **Ethereum (ETH)**\n\t\t+ Balance: 0.07949063456071855\
+      \ ETH\n\t\t+ Price: $2,591.61\n\t\t+ USD Value: $206.01\n\n**Chains with No\
+      \ Balances:**\n- Avalanche\n- Blast\n- BSC\n- Flare\n- Linea\n- Manta\n- Mantle\n\
+      - Polygon\n- Sonic"
     data:
       status: success
       data:
@@ -157,15 +162,15 @@ portfolio_snapshot_nlp:
             name: Ethereum
             symbol: eth
             balance: 0.000820892746828
-            price: 2563.54
-            usd: 2.104391392203451
+            price: 2591.61
+            usd: 2.1274338516069133
           usdt0:
             id: usdt0
             name: USDT0
             symbol: usdt0
             balance: 0.284783
-            price: 0.998698
-            usd: 0.284412212534
+            price: 0.999903
+            usd: 0.28475537604900003
         avalanche: {}
         base:
           bridged-usd-coin-base:
@@ -173,29 +178,29 @@ portfolio_snapshot_nlp:
             name: Bridged USDC (Base)
             symbol: usdbc
             balance: 0.161415
-            price: 0.998686
-            usd: 0.16120290068999998
+            price: 0.999444
+            usd: 0.16132525326
           ethereum:
             id: ethereum
             name: Ethereum
             symbol: eth
-            balance: 0.00079567590922786
-            price: 2563.54
-            usd: 2.0397470203419883
-          gochujangcoin:
-            id: gochujangcoin
-            name: Gochujangcoin
-            symbol: gochu
-            balance: 50000
-            price: 2.31e-06
-            usd: 0.11549999999999999
+            balance: 0.00079485499032786
+            price: 2591.61
+            usd: 2.059954141483585
           l2-standard-bridged-weth-base:
             id: l2-standard-bridged-weth-base
             name: L2 Standard Bridged WETH (Base)
             symbol: weth
-            balance: 0.001200802506225319
-            price: 2563.13
-            usd: 3.0778129277813018
+            balance: 0.000825963921091042
+            price: 2589.3
+            usd: 2.138668380881035
+          usd-coin:
+            id: usd-coin
+            name: USDC
+            symbol: usdc
+            balance: 77.02012
+            price: 0.999819
+            usd: 77.00617935828001
         blast: {}
         bsc: {}
         ethereum:
@@ -204,29 +209,29 @@ portfolio_snapshot_nlp:
             name: Ankr Network
             symbol: ankr
             balance: 344827
-            price: 0.01798584
-            usd: 6202.0032496799995
+            price: 0.01466012
+            usd: 5055.20519924
           ethereum:
             id: ethereum
             name: Ethereum
             symbol: eth
             balance: 0.2162209018356097
-            price: 2563.54
-            usd: 554.2909306916589
+            price: 2591.61
+            usd: 560.3602514061845
           fluence-2:
             id: fluence-2
             name: Fluence
             symbol: flt
             balance: 5000
-            price: 0.03978191
-            usd: 198.90955
+            price: 0.04768582
+            usd: 238.42909999999998
           weth:
             id: weth
             name: WETH
             symbol: weth
             balance: 0.015684
-            price: 2568.07
-            usd: 40.27760988
+            price: 2592.14
+            usd: 40.655123759999995
         flare: {}
         linea: {}
         manta: {}
@@ -237,8 +242,8 @@ portfolio_snapshot_nlp:
             name: Ethereum
             symbol: eth
             balance: 0.07949063456071855
-            price: 2563.54
-            usd: 203.77742132178443
+            price: 2591.61
+            usd: 206.0087234339038
         polygon: {}
         sonic: {}
 token_holders_solana:
@@ -261,9 +266,29 @@ token_holders_solana:
           name: New XAI gork
           symbol: gork
         totalSupply:
-          solana: 999933610.073016
+          solana: 999925981.238232
         addressTopHolders:
           solana:
+          - address:
+              address: A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR
+              chain: solana
+              arkhamEntity:
+                name: Bitget
+                note: ''
+                id: bitget
+                type: cex
+                service: null
+                addresses: null
+                website: https://www.bitget.com/
+                twitter: https://twitter.com/bitgetglobal
+              arkhamLabel:
+                name: Hot Wallet
+                address: A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR
+                chainType: solana
+              isUserAddress: false
+            balance: 160803106.167554
+            usd: 1667682.5819394558
+            pctOfCap: 0.16080436325083958
           - address:
               address: u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w
               chain: solana
@@ -283,57 +308,16 @@ token_holders_solana:
                 address: u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w
                 chainType: solana
               isUserAddress: false
-            balance: 154395529.249383
-            usd: 1744738.9585061902
-            pctOfCap: 0.15439673624123668
-          - address:
-              address: A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR
-              chain: solana
-              arkhamEntity:
-                name: Bitget
-                note: ''
-                id: bitget
-                type: cex
-                service: null
-                addresses: null
-                website: https://www.bitget.com/
-                twitter: https://twitter.com/bitgetglobal
-              arkhamLabel:
-                name: Hot Wallet
-                address: A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR
-                chainType: solana
-              isUserAddress: false
-            balance: 147636851.783111
-            usd: 1668362.8617324568
-            pctOfCap: 0.1476380059387933
+            balance: 133803810.666442
+            usd: 1387673.9682692434
+            pctOfCap: 0.13380485668189498
           - address:
               address: 9ZPsRWGkukYeWg2Z7eZ8NaTBZ1DSuBUVzLcGQWZgE4Y4
               chain: solana
               isUserAddress: false
-            balance: 113902845.143291
-            usd: 1287153.4063995027
-            pctOfCap: 0.1139037355823268
-          - address:
-              address: 5PAhQiYdLBd6SVdjzBQDxUAEFyDdF5ExNPQfcscnPRj5
-              chain: solana
-              arkhamEntity:
-                name: MEXC
-                note: ''
-                id: mexc
-                type: cex
-                service: null
-                addresses: null
-                website: https://mexc.com
-                twitter: https://twitter.com/mexc_global
-                crunchbase: https://www.crunchbase.com/organization/mexc-global
-              arkhamLabel:
-                name: Hot Wallet
-                address: 5PAhQiYdLBd6SVdjzBQDxUAEFyDdF5ExNPQfcscnPRj5
-                chainType: solana
-              isUserAddress: false
-            balance: 49079084.03465
-            usd: 554615.7351793606
-            pctOfCap: 0.04907946771191645
+            balance: 96913547.876185
+            usd: 1005086.5284819996
+            pctOfCap: 0.09691430550086083
           - address:
               address: 37iWFSqgnTSAfShoBTBzQghwsTtkWAZW3yVzgJWKn6iK
               chain: solana
@@ -347,9 +331,9 @@ token_holders_solana:
                 website: https://pump.fun
                 twitter: https://x.com/pumpdotfun
               isUserAddress: false
-            balance: 47863349.922762
-            usd: 540877.3926346758
-            pctOfCap: 0.047863724095989206
+            balance: 53453652.150901
+            usd: 554365.6883109082
+            pctOfCap: 0.05345407002648981
           - address:
               address: BY4StcU9Y2BpgH8quZzorg31EGE4L1rjomN8FNsCBEcx
               chain: solana
@@ -369,9 +353,30 @@ token_holders_solana:
                 address: BY4StcU9Y2BpgH8quZzorg31EGE4L1rjomN8FNsCBEcx
                 chainType: solana
               isUserAddress: false
-            balance: 39001656.333225
-            usd: 440736.26731079246
-            pctOfCap: 0.039001961229886854
+            balance: 52153159.07858
+            usd: 540878.32667759
+            pctOfCap: 0.05215356678752375
+          - address:
+              address: 5PAhQiYdLBd6SVdjzBQDxUAEFyDdF5ExNPQfcscnPRj5
+              chain: solana
+              arkhamEntity:
+                name: MEXC
+                note: ''
+                id: mexc
+                type: cex
+                service: null
+                addresses: null
+                website: https://mexc.com
+                twitter: https://x.com/MEXC_Official
+                crunchbase: https://www.crunchbase.com/organization/mexc-global
+              arkhamLabel:
+                name: Hot Wallet
+                address: 5PAhQiYdLBd6SVdjzBQDxUAEFyDdF5ExNPQfcscnPRj5
+                chainType: solana
+              isUserAddress: false
+            balance: 44427705.869723
+            usd: 460757.9604666625
+            pctOfCap: 0.04442805318469593
           - address:
               address: ASTyfSima4LLAdDgoFGkgqoKowG1LZFDr9fAQrg7iaJZ
               chain: solana
@@ -383,16 +388,16 @@ token_holders_solana:
                 service: null
                 addresses: null
                 website: https://mexc.com
-                twitter: https://twitter.com/mexc_global
+                twitter: https://x.com/MEXC_Official
                 crunchbase: https://www.crunchbase.com/organization/mexc-global
               arkhamLabel:
                 name: Hot Wallet
                 address: ASTyfSima4LLAdDgoFGkgqoKowG1LZFDr9fAQrg7iaJZ
                 chainType: solana
               isUserAddress: false
-            balance: 22002734.474373
-            usd: 248640.80079092836
-            pctOfCap: 0.022002906481434333
+            balance: 22019917.714883
+            usd: 228367.685824343
+            pctOfCap: 0.02202008985627485
           - address:
               address: DBmae92YTQKLsNzXcPscxiwPqMcz9stQr2prB5ZCAHPd
               chain: solana
@@ -412,81 +417,37 @@ token_holders_solana:
                 address: DBmae92YTQKLsNzXcPscxiwPqMcz9stQr2prB5ZCAHPd
                 chainType: solana
               isUserAddress: false
-            balance: 19323790.33
-            usd: 218367.5264346485
-            pctOfCap: 0.01932394139433213
-          - address:
-              address: HVh6wHNBAsG3pq1Bj5oCzRjoWKVogEDHwUHkRz3ekFgt
-              chain: solana
-              arkhamEntity:
-                name: KuCoin
-                note: ''
-                id: kucoin
-                type: cex
-                service: null
-                addresses: null
-                website: https://kucoin.com
-                twitter: https://twitter.com/kucoincom
-                crunchbase: https://www.crunchbase.com/organization/kucoin
-                linkedin: https://www.linkedin.com/company/kucoin/
-              arkhamLabel:
-                name: Cold Wallet
-                address: HVh6wHNBAsG3pq1Bj5oCzRjoWKVogEDHwUHkRz3ekFgt
-                chainType: solana
-              isUserAddress: false
-            balance: 11679061.200535
-            usd: 131978.64714358575
-            pctOfCap: 0.011679152501959309
-          - address:
-              address: 44P5Ct5JkPz76Rs2K6juC65zXMpFRDrHatxcASJ4Dyra
-              chain: solana
-              arkhamEntity:
-                name: Wintermute
-                note: ''
-                id: wintermute
-                type: fund
-                service: null
-                addresses: null
-                website: https://www.wintermute.com/
-                twitter: https://twitter.com/wintermute_t
-                crunchbase: https://www.crunchbase.com/organization/wintermute-trading
-                linkedin: https://www.linkedin.com/company/wintermute-trading
-              arkhamLabel:
-                name: Hot Wallet
-                address: 44P5Ct5JkPz76Rs2K6juC65zXMpFRDrHatxcASJ4Dyra
-                chainType: solana
-              isUserAddress: false
-            balance: 11229231.180396
-            usd: 126895.36549250598
-            pctOfCap: 0.01122931896526013
+            balance: 18323790.33
+            usd: 190035.29656081682
+            pctOfCap: 0.018323933576801017
           - address:
               address: G1XPfkQHPVz9L4Hv85ECyH3QFkwcUkWP2Mf5YksiE58V
               chain: solana
               isUserAddress: false
-            balance: 11015611.252302
-            usd: 124481.36417607614
-            pctOfCap: 0.011015697367185698
+            balance: 11015612.67822
+            usd: 114242.4784613125
+            pctOfCap: 0.011015698793114845
+          - address:
+              address: ZBrbp9G8hkX1AiGq665nqcf1rCKp3SQubbJempg9P7i
+              chain: solana
+              isUserAddress: false
+            balance: 10000000.359891
+            usd: 103709.60373241515
+            pctOfCap: 0.010000078535204945
           - address:
               address: 4tamLUvPY7s1WpnfX42uXkgF8gCg3Qre6ozXB6U7TiDy
               chain: solana
               isUserAddress: false
             balance: 9964300.292492
-            usd: 112601.07724029123
+            usd: 103339.35976142283
             pctOfCap: 0.00996437818871956
           - address:
               address: 8uzLgGiLotHzYMoBbSGugALUhELCoPzmuFKLZk22PduZ
               chain: solana
               isUserAddress: false
             balance: 9210489.611578
-            usd: 104082.67733115662
+            usd: 95521.61934209097
             pctOfCap: 0.009210561614867108
-          - address:
-              address: 3JJgevm4KYSGd3DLsQfvFV6xBR5k7MzaebRBbBpPuPfZ
-              chain: solana
-              isUserAddress: false
-            balance: 5970776.8648
-            usd: 67472.46542182917
-            pctOfCap: 0.005970823541533911
           - address:
               address: D5jx4wmxuPz18hqmgpCMLGVq3uSksCafCp5xjVe1nw8p
               chain: solana
@@ -506,359 +467,9 @@ token_holders_solana:
                 address: D5jx4wmxuPz18hqmgpCMLGVq3uSksCafCp5xjVe1nw8p
                 chainType: solana
               isUserAddress: false
-            balance: 5883688.912662
-            usd: 66488.3323730913
-            pctOfCap: 0.0058837349085831365
-          - address:
-              address: FZ1t8TZtx7VSCQdBsxvFJiezj9paUBF6Ub7RKA2eTGyE
-              chain: solana
-              arkhamEntity:
-                name: KuCoin
-                note: ''
-                id: kucoin
-                type: cex
-                service: null
-                addresses: null
-                website: https://kucoin.com
-                twitter: https://twitter.com/kucoincom
-                crunchbase: https://www.crunchbase.com/organization/kucoin
-                linkedin: https://www.linkedin.com/company/kucoin/
-              arkhamLabel:
-                name: Cold Wallet
-                address: FZ1t8TZtx7VSCQdBsxvFJiezj9paUBF6Ub7RKA2eTGyE
-                chainType: solana
-              isUserAddress: false
-            balance: 5797137.1
-            usd: 65510.257941695
-            pctOfCap: 0.005797182419299647
-          - address:
-              address: 3caFdfwp2LQ93cTENzGm7T7SRSZHXiuWTB22gDQ2UBSy
-              chain: solana
-              arkhamLabel:
-                name: Gate.io Deposit
-                address: 3caFdfwp2LQ93cTENzGm7T7SRSZHXiuWTB22gDQ2UBSy
-                chainType: solana
-              isUserAddress: false
-            balance: 5626474
-            usd: 63581.688113300006
-            pctOfCap: 0.005626517985135553
-          - address:
-              address: ZBrbp9G8hkX1AiGq665nqcf1rCKp3SQubbJempg9P7i
-              chain: solana
-              isUserAddress: false
-            balance: 5568000.17174
-            usd: 62920.90754073928
-            pctOfCap: 0.0055680436997545815
-          - address:
-              address: 142JCVjsC1q4ozUkDJ5QHXDSFoEg1er7E51vcnx8Gn1D
-              chain: solana
-              isUserAddress: false
-            balance: 5258992.263411
-            usd: 59428.97912306283
-            pctOfCap: 0.0052590333757466445
-          - address:
-              address: 8jrM5p5ubeRjpwrNXwtLY1cbVUcNMvfquFaxPqGUaHsb
-              chain: solana
-              isUserAddress: false
-            balance: 5057945.845607
-            usd: 57157.064130989624
-            pctOfCap: 0.005057985386256018
-          - address:
-              address: Eo8ttYZZeBqHP7fmBdMgbquPJ4SP4WSY2755QT9Z7pqX
-              chain: solana
-              isUserAddress: false
-            balance: 5020237.141993
-            usd: 56730.938811234795
-            pctOfCap: 0.005020276387853054
-          - address:
-              address: FwpQx39GsS7DHhW51eR1TxnFEsGdMUqX71q2RYR5n8B3
-              chain: solana
-              isUserAddress: false
-            balance: 5011958.976975
-            usd: 56637.39182135714
-            pctOfCap: 0.005011998158120242
-          - address:
-              address: BPNbXCXNEDT5SEvV4qDGT3LAwK9yVwCRe3PyWKEdjUCB
-              chain: solana
-              isUserAddress: false
-            balance: 5000476.797623
-            usd: 56507.63802769883
-            pctOfCap: 0.0050005158890059475
-          - address:
-              address: 4gXs8oc2yEwDTPkDyo6V8ZixheTCZvu8JicrEuDat8tH
-              chain: solana
-              arkhamLabel:
-                name: CoinEx Deposit
-                address: 4gXs8oc2yEwDTPkDyo6V8ZixheTCZvu8JicrEuDat8tH
-                chainType: solana
-              isUserAddress: false
-            balance: 4960902.205618
-            usd: 56060.427329475926
-            pctOfCap: 0.004960940987625342
-          - address:
-              address: 6y9UtmoWTnixtNE7USacMNoaDVtamtPfcx3RpwPdjFeA
-              chain: solana
-              isUserAddress: false
-            balance: 4697223.054575
-            usd: 53080.73426707206
-            pctOfCap: 0.004697259775262376
-          - address:
-              address: EjwYJMj7wyP9w29WttYBSfh4dfFSuCFiSpAmjhiU72yp
-              chain: solana
-              arkhamLabel:
-                name: MEV Bot
-                address: EjwYJMj7wyP9w29WttYBSfh4dfFSuCFiSpAmjhiU72yp
-                chainType: solana
-              isUserAddress: false
-            balance: 4655511.331583
-            usd: 52609.373026987116
-            pctOfCap: 0.004655547726187683
-          - address:
-              address: MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa
-              chain: solana
-              arkhamEntity:
-                name: Wintermute
-                note: ''
-                id: wintermute
-                type: fund
-                service: null
-                addresses: null
-                website: https://www.wintermute.com/
-                twitter: https://twitter.com/wintermute_t
-                crunchbase: https://www.crunchbase.com/organization/wintermute-trading
-                linkedin: https://www.linkedin.com/company/wintermute-trading
-              arkhamLabel:
-                name: Market Maker
-                address: MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa
-                chainType: solana
-              isUserAddress: false
-            balance: 4548605.98993
-            usd: 51401.294558904476
-            pctOfCap: 0.004548641548798848
-          - address:
-              address: 7rhxnLV8C77o6d8oz26AgK8x8m5ePsdeRawjqvojbjnQ
-              chain: solana
-              arkhamLabel:
-                name: Market Maker
-                address: 7rhxnLV8C77o6d8oz26AgK8x8m5ePsdeRawjqvojbjnQ
-                chainType: solana
-              isUserAddress: false
-            balance: 4370335.731442
-            usd: 49386.76041637375
-            pctOfCap: 0.004370369896677556
-          - address:
-              address: EJU9E5c76pa6NnjxLRWRg7sd3QQKbM94vZqwQyRZPf1P
-              chain: solana
-              isUserAddress: false
-            balance: 4289306.926149
-            usd: 48471.09845360046
-            pctOfCap: 0.0042893404579393505
-          - address:
-              address: GjkBSrj7YUqZqnPPNddeuPhyDYskNRK9FtmoWTkyeYs9
-              chain: solana
-              isUserAddress: false
-            balance: 4180612.427148
-            usd: 47242.80170236462
-            pctOfCap: 0.004180645109215722
-          - address:
-              address: FjxgGwchRnwxaEcTTNJ8MHkoUqZDHwuEVHawMGASx441
-              chain: solana
-              isUserAddress: false
-            balance: 4108273.280782
-            usd: 46425.33679581295
-            pctOfCap: 0.004108305397336195
-          - address:
-              address: 58gXqXvjhYNJXMRztjUoQYPSs4yr6LSGuUaf4PQEqpsG
-              chain: solana
-              isUserAddress: false
-            balance: 4091470.404378
-            usd: 46235.456731153376
-            pctOfCap: 0.004091502389575186
-          - address:
-              address: 2ejQ9WqeFq8wgW9V9p9E1ti1HVruvJAunBvuqWtpAjAk
-              chain: solana
-              isUserAddress: false
-            balance: 4035814.134836
-            usd: 45606.51584000748
-            pctOfCap: 0.0040358456849385665
-          - address:
-              address: DbXvJyv5vikAsDYsPfKjtzP6z6HURSUatGuDipy3YewH
-              chain: solana
-              isUserAddress: false
-            balance: 3933524.032726
-            usd: 44450.59165561853
-            pctOfCap: 0.003933554783172511
-          - address:
-              address: DAE9MiXN9GySxiPJR8TWNdaeVaUubtZM1GKahU5W9SGL
-              chain: solana
-              isUserAddress: false
-            balance: 3761352.489112
-            usd: 42504.9757355857
-            pctOfCap: 0.003761381893602112
-          - address:
-              address: HJcUHAanSv3ReFq7PaAJEmaFAitaiewnxGq17Dt5nqj4
-              chain: solana
-              isUserAddress: false
-            balance: 3214885.985911
-            usd: 36329.65833948796
-            pctOfCap: 0.0032149111183822207
-          - address:
-              address: CBRvUc4qKowpE6k1qfsZyvTU37xtVncvk2xr7qAYPbiP
-              chain: solana
-              isUserAddress: false
-            balance: 3180089.946
-            usd: 35936.4474302757
-            pctOfCap: 0.003180114806452096
-          - address:
-              address: 4TJwj51Zw8QnepLvM2JfTVnmTimZCQ9zhtthcnyAb5n5
-              chain: solana
-              isUserAddress: false
-            balance: 3135365.25
-            usd: 35431.038239362504
-            pctOfCap: 0.0031353897608153935
-          - address:
-              address: HV6LWTxtJaa6trid2oKtvfL1tv5JwMM1AtuaTESy6Hcv
-              chain: solana
-              arkhamLabel:
-                name: Gate.io Deposit
-                address: HV6LWTxtJaa6trid2oKtvfL1tv5JwMM1AtuaTESy6Hcv
-                chainType: solana
-              isUserAddress: false
-            balance: 3020279.460871
-            usd: 34130.517033599695
-            pctOfCap: 0.003020303071999656
-          - address:
-              address: 7ByUUG3YsPPyavK2hTq2DFarwTQn9i2ghhNwf3PFNCoM
-              chain: solana
-              isUserAddress: false
-            balance: 3002000
-            usd: 33923.9509
-            pctOfCap: 0.003002023468228402
-          - address:
-              address: 7wStfonQPvpjoxfrjkTGVbV7GJoqY83a9VPxCu7XHsPX
-              chain: solana
-              isUserAddress: false
-            balance: 3000000
-            usd: 33901.35
-            pctOfCap: 0.00300002345259334
-          - address:
-              address: GygNP1K3TEF4uKTmhVRec95pXxdBNhuShajGrWdN4ikB
-              chain: solana
-              isUserAddress: false
-            balance: 2998211.365825
-            usd: 33881.137628937126
-            pctOfCap: 0.002998234804435637
-          - address:
-              address: 7fSjALZjf4SpFLgfJE9jnfMnYiARkGNcHkL7R3K9Xokd
-              chain: solana
-              isUserAddress: false
-            balance: 2935451.660681
-            usd: 33171.92471894261
-            pctOfCap: 0.002935474608665689
-          - address:
-              address: EatpCKiTs5PTHz6sbEm7kXKZiYCBhxDgCbMoCFt5adAC
-              chain: solana
-              isUserAddress: false
-            balance: 2836233.706975
-            usd: 32050.717193985638
-            pctOfCap: 0.0028362558793202488
-          - address:
-              address: 6xfPFKnwv48XvxpFf4athewqGFvSTKQcMmfzYapgZ2sG
-              chain: solana
-              isUserAddress: false
-            balance: 2708241.942794
-            usd: 30604.352662446458
-            pctOfCap: 0.00270826311455965
-          - address:
-              address: FCrydsoCGjYrcwpTA8qdYxMqZocPGacxiX7bXag9uaKa
-              chain: solana
-              isUserAddress: false
-            balance: 2569041.646712
-            usd: 29031.32667658662
-            pctOfCap: 0.0025690617302750046
-          - address:
-              address: 3ter55VG4QCQ9zSgpctqFSsvPmAb8ShPePWZWAmqF2NP
-              chain: solana
-              isUserAddress: false
-            balance: 2546942
-            usd: 28781.5907239
-            pctOfCap: 0.002546961910798329
-          - address:
-              address: B4xUYvGozsEMYhKWkHWocNfLWioBuyn2ETT1qdmYwLSb
-              chain: solana
-              arkhamEntity:
-                name: OpenBook
-                note: ''
-                id: openbookdex
-                type: dex
-                service: null
-                addresses: null
-                website: https://openbookdex.com
-                twitter: https://x.com/openbookdex
-              arkhamLabel:
-                name: Market Authority
-                address: B4xUYvGozsEMYhKWkHWocNfLWioBuyn2ETT1qdmYwLSb
-                chainType: solana
-              isUserAddress: false
-            balance: 2526417
-            usd: 28549.64898765
-            pctOfCap: 0.0025264367503435026
-          - address:
-              address: 33YiHQVPzpWHrb5ca5ibeZfAq1aNzaSzgULmvcEyfGuh
-              chain: solana
-              isUserAddress: false
-            balance: 2427405.993895
-            usd: 27430.780063710754
-            pctOfCap: 0.0024274249702168817
-          - address:
-              address: FpEjCb9CXKKoNQ4kWCBC95xpdYbyGrrbpSUM7neWb1xS
-              chain: solana
-              isUserAddress: false
-            balance: 2406658.012763
-            usd: 27196.318540327644
-            pctOfCap: 0.002406676826886894
-          - address:
-              address: 2dM6wMKS2is3jpwMueXvLfCgwveMiwB1iQNowkjx3x8S
-              chain: solana
-              arkhamEntity:
-                name: '@CryptoOmen'
-                note: ''
-                id: cryptoomen
-                type: individual
-                service: null
-                addresses: null
-                twitter: https://www.twitter.com/CryptoOmen
-              isUserAddress: false
-            balance: 2330821.23438
-            usd: 26339.32881804947
-            pctOfCap: 0.002330839455647519
-          - address:
-              address: 8GEL7V9LVBenwPRi17F1kNEH869R8fcGsUkNdEZVnXBB
-              chain: solana
-              isUserAddress: false
-            balance: 2233703.852354
-            usd: 25241.85869833376
-            pctOfCap: 0.0022337213144033637
-          - address:
-              address: CUmGUfJJb4o2yp2yQpS52iERcZ1LskcAajHDzP6qVsB5
-              chain: solana
-              arkhamEntity:
-                name: Meteora (Prev. Mercurial)
-                note: ''
-                id: meteora
-                type: dex
-                service: null
-                addresses: null
-                website: https://www.meteora.ag
-                twitter: https://x.com/MeteoraAG
-              arkhamLabel:
-                name: Market
-                address: CUmGUfJJb4o2yp2yQpS52iERcZ1LskcAajHDzP6qVsB5
-                chainType: solana
-              isUserAddress: false
-            balance: 2144407.598229
-            usd: 24232.770843406903
-            pctOfCap: 0.002144424362202119
+            balance: 8209262.867644
+            usd: 85137.9368298212
+            pctOfCap: 0.008209327043811885
           - address:
               address: BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6
               chain: solana
@@ -878,54 +489,307 @@ token_holders_solana:
                 address: BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6
                 chainType: solana
               isUserAddress: false
-            balance: 2047267.843454
-            usd: 23135.047901559752
-            pctOfCap: 0.0020472838480340635
+            balance: 7081782.263784
+            usd: 73444.88058641332
+            pctOfCap: 0.007081837625837185
           - address:
-              address: 5RA23pdRqxPHjGZT9kUCdywx5QgQ3NFo5NXiNSsCCVEz
+              address: 2Trxm1MjSkJeGaYHgAZ4NVbHCkj7vjPKaFtD22sUG5fE
               chain: solana
               isUserAddress: false
-            balance: 1835738.627257
-            usd: 20744.672570386363
-            pctOfCap: 0.0018357529782008345
+            balance: 5973248.452147
+            usd: 61948.32076727845
+            pctOfCap: 0.005973295148202622
           - address:
-              address: ExA1mQUvKcvhRP5JJBKspR5CyEJrPgz8LAJpXbNBNjYL
+              address: GsCY6n5RY7v3qcDAzGYcDShNzthngVs4So4b5nmVuqSN
               chain: solana
               isUserAddress: false
-            balance: 1756232.193636
-            usd: 19846.214092573937
-            pctOfCap: 0.001756245923035816
+            balance: 5554832.920418
+            usd: 57608.950024338264
+            pctOfCap: 0.005554876345497185
           - address:
-              address: CgANddXc7FKSsdLSdFv67X8faZqQaRTeLMXkAVANkZD4
+              address: G3vsWcG3arNgFpL7EN8CesVr4DAnGpjU2q2dNH689raR
               chain: solana
-              arkhamEntity:
-                name: BitMart
-                note: ''
-                id: bitmart
-                type: cex
-                service: null
-                addresses: null
-                website: https://bitmart.com
-                twitter: https://twitter.com/BitMartExchange
-                crunchbase: https://www.crunchbase.com/organization/bitmart-exchange
-                linkedin: https://www.linkedin.com/company/bitmart
+              isUserAddress: false
+            balance: 5378772.940052
+            usd: 55783.039010361696
+            pctOfCap: 0.00537881498877681
+          - address:
+              address: 3ACp4T3ptTdayzWryEhT65NKZSKLjwXviBjWEy54aFdW
+              chain: solana
+              isUserAddress: false
+            balance: 5143208.8905
+            usd: 53340.01367501988
+            pctOfCap: 0.0051432490976955235
+          - address:
+              address: CBRvUc4qKowpE6k1qfsZyvTU37xtVncvk2xr7qAYPbiP
+              chain: solana
+              isUserAddress: false
+            balance: 5074404.246347
+            usd: 52626.443462694886
+            pctOfCap: 0.005074443915660078
+          - address:
+              address: 8jrM5p5ubeRjpwrNXwtLY1cbVUcNMvfquFaxPqGUaHsb
+              chain: solana
+              isUserAddress: false
+            balance: 5057945.845607
+            usd: 52455.754046956376
+            pctOfCap: 0.005057985386256018
+          - address:
+              address: 8p11pkxyFurRZnjbPNpyDQXby3MLfkCn6418khJhmPLh
+              chain: solana
+              isUserAddress: false
+            balance: 4920768.134348
+            usd: 51033.08949059773
+            pctOfCap: 0.004920806602605992
+          - address:
+              address: HTCmRbkWB1u6sVkL5qdT1QUhsJdSUudWY3pZ5zaA3tkJ
+              chain: solana
+              isUserAddress: false
+            balance: 4619860.253892
+            usd: 47912.38589870378
+            pctOfCap: 0.004619896369793274
+          - address:
+              address: 3JJgevm4KYSGd3DLsQfvFV6xBR5k7MzaebRBbBpPuPfZ
+              chain: solana
+              isUserAddress: false
+            balance: 4570776.8648
+            usd: 47403.34403376621
+            pctOfCap: 0.004570812596990353
+          - address:
+              address: FwpQx39GsS7DHhW51eR1TxnFEsGdMUqX71q2RYR5n8B3
+              chain: solana
+              isUserAddress: false
+            balance: 4291958.976975
+            usd: 44511.73487184865
+            pctOfCap: 0.00429199252949784
+          - address:
+              address: EJU9E5c76pa6NnjxLRWRg7sd3QQKbM94vZqwQyRZPf1P
+              chain: solana
+              isUserAddress: false
+            balance: 4289306.926149
+            usd: 44484.23055881423
+            pctOfCap: 0.0042893404579393505
+          - address:
+              address: 58gXqXvjhYNJXMRztjUoQYPSs4yr6LSGuUaf4PQEqpsG
+              chain: solana
+              isUserAddress: false
+            balance: 4091470.404378
+            usd: 42432.47590498807
+            pctOfCap: 0.004091502389575186
+          - address:
+              address: 3jfG3fp3hzmex2PuHGktS26f1f1bZYFe7JYF7FmoewLb
+              chain: solana
+              isUserAddress: false
+            balance: 3805172.375981
+            usd: 39463.290504403914
+            pctOfCap: 0.003805202123034441
+          - address:
+              address: Bc3ryY3BPSPcdDHcmxrLYPmU1WrzgtPmByrDuxjYFSyw
+              chain: solana
+              isUserAddress: false
+            balance: 3635572.35326
+            usd: 37704.37545276533
+            pctOfCap: 0.0036356007744599863
+          - address:
+              address: 87jokkeQ6Dyx4R6uh6ivQ7WnyTEPiBNxEDcXvAHrTkNT
+              chain: solana
+              isUserAddress: false
+            balance: 3631709.059897
+            usd: 37664.30939182939
+            pctOfCap: 0.0036317374508955703
+          - address:
+              address: 7dAvKhgMAxUV7YKSSh48KhHe8HUPncUGZzsyUCxEHMuc
+              chain: solana
+              isUserAddress: false
+            balance: 3583144.498682
+            usd: 37160.64827005108
+            pctOfCap: 0.0035831725100256024
+          - address:
+              address: EjwYJMj7wyP9w29WttYBSfh4dfFSuCFiSpAmjhiU72yp
+              chain: solana
               arkhamLabel:
-                name: Hot Wallet
-                address: CgANddXc7FKSsdLSdFv67X8faZqQaRTeLMXkAVANkZD4
+                name: MEV Bot
+                address: EjwYJMj7wyP9w29WttYBSfh4dfFSuCFiSpAmjhiU72yp
                 chainType: solana
               isUserAddress: false
-            balance: 1647436.158613
-            usd: 18616.769938598274
-            pctOfCap: 0.0016474490374964272
+            balance: 3549984.597482
+            usd: 36816.74826110192
+            pctOfCap: 0.0035500123495970427
           - address:
-              address: DmGJnTqi4hNuroY95GqTvWcE168TAwBhPXauJ2ECvVr9
+              address: Eo8ttYZZeBqHP7fmBdMgbquPJ4SP4WSY2755QT9Z7pqX
               chain: solana
               isUserAddress: false
-            balance: 1576311.346744
-            usd: 17813.027558313235
-            pctOfCap: 0.0015763236696069974
+            balance: 3472059.995456
+            usd: 36008.59533047436
+            pctOfCap: 0.003472087138393042
           - address:
-              address: FEKBRuXEoCSKHjDHHXnrBv76eckpsyKhpHnenW3JPEPM
+              address: FXx4PsqTQSeTAR1txMibGNiUhHjxBv5tvPKAvXUX86Lw
+              chain: solana
+              isUserAddress: false
+            balance: 3257024.98
+            usd: 33778.4757865808
+            pctOfCap: 0.003257050441894118
+          - address:
+              address: 64cgerXRKXAH9BEFJHCP5o1cfb9YHaSU4KbkXgJyTiL9
+              chain: solana
+              arkhamEntity:
+                name: Phoenix
+                note: ''
+                id: phoenix-trade
+                type: dex
+                service: null
+                addresses: null
+                website: https://www.phoenix.trade
+                twitter: https://x.com/PhoenixTrade
+              arkhamLabel:
+                name: Pool
+                address: 64cgerXRKXAH9BEFJHCP5o1cfb9YHaSU4KbkXgJyTiL9
+                chainType: solana
+              isUserAddress: false
+              ownerAddress:
+                address: 64cgerXRKXAH9BEFJHCP5o1cfb9YHaSU4KbkXgJyTiL9
+                chain: solana
+                arkhamEntity:
+                  name: Phoenix
+                  note: ''
+                  id: phoenix-trade
+                  type: dex
+                  service: null
+                  addresses: null
+                  website: https://www.phoenix.trade
+                  twitter: https://x.com/PhoenixTrade
+                arkhamLabel:
+                  name: Pool
+                  address: 64cgerXRKXAH9BEFJHCP5o1cfb9YHaSU4KbkXgJyTiL9
+                  chainType: solana
+                isUserAddress: false
+                service: false
+                program: false
+            balance: 3178306.8
+            usd: 32962.092690528
+            pctOfCap: 0.0031783316465122968
+          - address:
+              address: 4TJwj51Zw8QnepLvM2JfTVnmTimZCQ9zhtthcnyAb5n5
+              chain: solana
+              isUserAddress: false
+            balance: 3135365.25
+            usd: 32516.74759314
+            pctOfCap: 0.0031353897608153935
+          - address:
+              address: 7ByUUG3YsPPyavK2hTq2DFarwTQn9i2ghhNwf3PFNCoM
+              chain: solana
+              isUserAddress: false
+            balance: 3002000
+            usd: 31133.62192
+            pctOfCap: 0.003002023468228402
+          - address:
+              address: 7wStfonQPvpjoxfrjkTGVbV7GJoqY83a9VPxCu7XHsPX
+              chain: solana
+              isUserAddress: false
+            balance: 3000000
+            usd: 31112.88
+            pctOfCap: 0.00300002345259334
+          - address:
+              address: GygNP1K3TEF4uKTmhVRec95pXxdBNhuShajGrWdN4ikB
+              chain: solana
+              isUserAddress: false
+            balance: 2998211.365825
+            usd: 31094.33014651644
+            pctOfCap: 0.002998234804435637
+          - address:
+              address: 4wMm8NqtmD6hi5y8L9GfZa8jjnJGNMRjQgaCijGXnz4J
+              chain: solana
+              isUserAddress: false
+            balance: 2690186.288251
+            usd: 27899.81438799959
+            pctOfCap: 0.002690207318866009
+          - address:
+              address: 35wvZdfHyczy5KWSVxPWu6uVY1SWjpu1iA4hnb6hsTE6
+              chain: solana
+              isUserAddress: false
+            balance: 2677221.229164
+            usd: 27765.354278810675
+            pctOfCap: 0.0026772421584242566
+          - address:
+              address: FCrydsoCGjYrcwpTA8qdYxMqZocPGacxiX7bXag9uaKa
+              chain: solana
+              isUserAddress: false
+            balance: 2569041.646712
+            usd: 26643.428156384285
+            pctOfCap: 0.0025690617302750046
+          - address:
+              address: 3ter55VG4QCQ9zSgpctqFSsvPmAb8ShPePWZWAmqF2NP
+              chain: solana
+              isUserAddress: false
+            balance: 2546942
+            usd: 26414.23360432
+            pctOfCap: 0.002546961910798329
+          - address:
+              address: J6qPofxemWVfzxwmnHk8nDwqUE7ohEBBnfY9z4Dmpqn2
+              chain: solana
+              isUserAddress: false
+            balance: 2530187.364816
+            usd: 26240.471953012144
+            pctOfCap: 0.0025302071446344472
+          - address:
+              address: 5r9BxQVdVdFucUcEuejksXcMNDHFJBcHJFwvdCM8hwWF
+              chain: solana
+              isUserAddress: false
+            balance: 2411257.546289
+            usd: 25007.05556226137
+            pctOfCap: 0.0024112763963698904
+          - address:
+              address: FpEjCb9CXKKoNQ4kWCBC95xpdYbyGrrbpSUM7neWb1xS
+              chain: solana
+              isUserAddress: false
+            balance: 2406658.012763
+            usd: 24959.353984044563
+            pctOfCap: 0.002406676826886894
+          - address:
+              address: 2dM6wMKS2is3jpwMueXvLfCgwveMiwB1iQNowkjx3x8S
+              chain: solana
+              arkhamEntity:
+                name: '@CryptoOmen'
+                note: ''
+                id: cryptoomen
+                type: individual
+                service: null
+                addresses: null
+                twitter: https://www.twitter.com/CryptoOmen
+              isUserAddress: false
+            balance: 2330821.23438
+            usd: 24172.853788905606
+            pctOfCap: 0.002330839455647519
+          - address:
+              address: 8GEL7V9LVBenwPRi17F1kNEH869R8fcGsUkNdEZVnXBB
+              chain: solana
+              isUserAddress: false
+            balance: 2233703.852354
+            usd: 23165.65330460924
+            pctOfCap: 0.0022337213144033637
+          - address:
+              address: Cfvo9bdxtQLMwS8g7aopMrNAJFR51aEWak8Q9qVJPhgy
+              chain: solana
+              isUserAddress: false
+            balance: 2108585.623634
+            usd: 21868.057159283268
+            pctOfCap: 0.0021086021075677175
+          - address:
+              address: HJcUHAanSv3ReFq7PaAJEmaFAitaiewnxGq17Dt5nqj4
+              chain: solana
+              isUserAddress: false
+            balance: 2080807.384867
+            usd: 21579.970156160263
+            pctOfCap: 0.002080823651643472
+          - address:
+              address: AQVBxfyseUrHRw2osb5cWjXbia56bDdQ2YFbugcKmACD
+              chain: solana
+              isUserAddress: false
+            balance: 2053458.847733
+            usd: 21296.339571485034
+            pctOfCap: 0.002053474900711432
+          - address:
+              address: CUmGUfJJb4o2yp2yQpS52iERcZ1LskcAajHDzP6qVsB5
               chain: solana
               arkhamEntity:
                 name: Meteora (Prev. Mercurial)
@@ -938,68 +802,100 @@ token_holders_solana:
                 twitter: https://x.com/MeteoraAG
               arkhamLabel:
                 name: Market
-                address: FEKBRuXEoCSKHjDHHXnrBv76eckpsyKhpHnenW3JPEPM
+                address: CUmGUfJJb4o2yp2yQpS52iERcZ1LskcAajHDzP6qVsB5
                 chainType: solana
               isUserAddress: false
-            balance: 1574072.322968
-            usd: 17787.725582083738
-            pctOfCap: 0.0015740846283273594
+            balance: 2016812.807895
+            usd: 20916.28495816673
+            pctOfCap: 0.0020168285743918757
           - address:
-              address: f47mMqAGUYFE1W61dPVBwHYzbuhMubX2urBUxfTfvSj
+              address: GZQ2wkG5KcND3myCEjxSoqdg81XVEZykRPA5ZbiA6dhf
               chain: solana
               isUserAddress: false
-            balance: 1500079.547688
-            usd: 16951.57392467086
-            pctOfCap: 0.0015000912746065363
+            balance: 2000512
+            usd: 20747.22993152
+            pctOfCap: 0.0020005276390648026
           - address:
-              address: 3ACp4T3ptTdayzWryEhT65NKZSKLjwXviBjWEy54aFdW
+              address: 5W7m9avcuDAwwP4sw1dZq48GN7jT8aHQXSxm729a91xq
               chain: solana
               isUserAddress: false
-            balance: 1491938.562221
-            usd: 16859.5771254503
-            pctOfCap: 0.0014919502254971293
+            balance: 1999872.122762
+            usd: 20740.593790279792
+            pctOfCap: 0.0019998877568245424
           - address:
-              address: FaQZhBzje8oZzP3cmrzHc9DK4jb3u4XQ4YBcnVnD9QK3
+              address: eV2vShLTVD7oncDaEQxKGf22hEFJR17R5qp2EQ2e7mv
               chain: solana
               isUserAddress: false
-            balance: 1490156.612868
-            usd: 16839.440295884193
-            pctOfCap: 0.0014901682622136848
+            balance: 1983193.366971
+            usd: 20567.619081121564
+            pctOfCap: 0.0019832088706468504
           - address:
-              address: Eayw2VYq9LLSyscKbof98AwcLBvdL5tTDZ2MMZ2wYLZi
+              address: 2STunE3pb4vJ2qjYwRR73L2VF6xaE4zDTSVRzE9VJdEg
               chain: solana
               isUserAddress: false
-            balance: 1446850.252884
-            usd: 16350.058940202996
-            pctOfCap: 0.0014468615636808683
+            balance: 1929763.728613
+            usd: 20013.502438896277
+            pctOfCap: 0.0019297788146009898
           - address:
-              address: CVez2sCU71zSFLy83wG9UbCbhGfuoRJbr4xpMnxwUuaU
+              address: 9RPXxbAE91tEAgYuGGDSvEQWCKKCwo4wP69Xx1VjhoLE
               chain: solana
               isUserAddress: false
-            balance: 1443894.771047
-            usd: 16316.660665478072
-            pctOfCap: 0.001443906058739297
+            balance: 1914658.560013
+            usd: 19856.847339552423
+            pctOfCap: 0.0019146735279158642
           - address:
-              address: 6J58pFxwcr9xvrDnyS4v5BDK4E8sHptkPZUHELUtQPHq
+              address: EatpCKiTs5PTHz6sbEm7kXKZiYCBhxDgCbMoCFt5adAC
               chain: solana
               isUserAddress: false
-            balance: 1443161.656519
-            usd: 16308.376141410134
-            pctOfCap: 0.0014431729384801514
+            balance: 1905680.055429
+            usd: 19763.731627651945
+            pctOfCap: 0.0019056949531421254
           - address:
-              address: J92Moce3aMz2pzTow4jGrPPicgL4d9hgkJBsfSkb3FVc
+              address: EBhwz6J294H7wbko6ivv2xksoXXnYpgFsaxG6xzRmNkD
               chain: solana
               isUserAddress: false
-            balance: 1365041.272992
-            usd: 15425.580653382447
-            pctOfCap: 0.0013650519442446225
+            balance: 1821041.986332
+            usd: 18885.95359856972
+            pctOfCap: 0.0018210562223843869
           - address:
-              address: 66m1GGjByGu3DevJ9pZ6Rv5G4f7kUHtCRqLD7HR1GBgo
+              address: DcGRm9LL2KVDF4wnKSRp5P2BLh5AUgG2VqGbhzXXCTka
+              chain: solana
+              arkhamLabel:
+                name: shittedpant.sol
+                address: DcGRm9LL2KVDF4wnKSRp5P2BLh5AUgG2VqGbhzXXCTka
+                chainType: solana
+              isUserAddress: false
+            balance: 1782912.643691
+            usd: 18490.515711213615
+            pctOfCap: 0.0017829265816660645
+          - address:
+              address: D3Urar5hHByYq42fYwa8xuHoYGwgtQwByVwh26fEfKWV
               chain: solana
               isUserAddress: false
-            balance: 1293000
-            usd: 14611.48185
-            pctOfCap: 0.0012930101080677295
+            balance: 1736987.798511
+            usd: 18014.23097884564
+            pctOfCap: 0.0017370013774671582
+          - address:
+              address: 6qZeApzkPG2LphcaUrPEKNVZkUytvWoRHw9472TXkGqR
+              chain: solana
+              isUserAddress: false
+            balance: 1694398.692141
+            usd: 17572.541060246625
+            pctOfCap: 0.001694411938155494
+          - address:
+              address: 4ZDigEwnr8LkeU1gkZdpAt8wqYky4g8o6WmxxgtQ2dud
+              chain: solana
+              isUserAddress: false
+            balance: 1687169.265078
+            usd: 17497.564961353335
+            pctOfCap: 0.0016871824545762232
+          - address:
+              address: HzKCgKDu1iojCj86RmA7jFfER6orETnf9jLjTKEfGxL3
+              chain: solana
+              isUserAddress: false
+            balance: 1665774.674066
+            usd: 17275.682513751522
+            pctOfCap: 0.0016657876963113423
           - address:
               address: 8s9j5qUtuE9PGA5s7QeAXEh5oc2UGr71pmJXgyiZMHkt
               chain: solana
@@ -1017,44 +913,166 @@ token_holders_solana:
                 address: 8s9j5qUtuE9PGA5s7QeAXEh5oc2UGr71pmJXgyiZMHkt
                 chainType: solana
               isUserAddress: false
-            balance: 1215289.49009
-            usd: 13733.31811828754
-            pctOfCap: 0.0012152989906534005
+            balance: 1645743.493993
+            usd: 17067.939946461644
+            pctOfCap: 0.0016457563596439689
           - address:
-              address: 3PhN4R5ZQNp2QV1fmxgZFpK1kH34icu6JhUJcyer45q3
+              address: DmGJnTqi4hNuroY95GqTvWcE168TAwBhPXauJ2ECvVr9
               chain: solana
               isUserAddress: false
-            balance: 1206716.784438
-            usd: 13636.442686702396
-            pctOfCap: 0.0012067262179840073
+            balance: 1576311.346744
+            usd: 16347.861924628154
+            pctOfCap: 0.0015763236696069974
           - address:
-              address: GX8nibctyXyunHv4Tg5qmWWyKXHauZcgUXeA4KWuuntg
+              address: 3fs3ZGZtbSEZn5BLm1iJ5ZUqpvyhnZavfjmyj92ZR2Wu
               chain: solana
               isUserAddress: false
-            balance: 1173748.82688
-            usd: 13263.889930716097
-            pctOfCap: 0.0011737580026979734
+            balance: 1575629.674911
+            usd: 16340.792333314985
+            pctOfCap: 0.0015756419924450068
           - address:
-              address: 2Trxm1MjSkJeGaYHgAZ4NVbHCkj7vjPKaFtD22sUG5fE
+              address: 73oKKThUvQFwyUBRVYAqieVnhQzivES2wJ5fLBxC8GbC
               chain: solana
               isUserAddress: false
-            balance: 1165009.889697
-            usd: 13165.136008026464
-            pctOfCap: 0.0011650189971980599
+            balance: 1569588.173486
+            usd: 16278.136163696367
+            pctOfCap: 0.0015696004437903814
           - address:
-              address: A1C6MhioaEYTaock4vxYMgGHREWrkdZ3bEWkvyHmAcXW
+              address: G68hbmvSwAKiUy7SnVX6YKnyw5Zn4NBC8U67xCNp1dUo
+              chain: solana
+              arkhamLabel:
+                name: Gate.io Deposit
+                address: G68hbmvSwAKiUy7SnVX6YKnyw5Zn4NBC8U67xCNp1dUo
+                chainType: solana
+              isUserAddress: false
+            balance: 1536221.73
+            usd: 15932.0941129608
+            pctOfCap: 0.0015362337394611712
+          - address:
+              address: 8r8LJBnrfbYJq2bvPHjWQAzzXrwMB3K8LyjnFPzu7XyE
               chain: solana
               isUserAddress: false
-            balance: 1148259.942943
-            usd: 12975.854072230224
-            pctOfCap: 0.0011482689195008301
+            balance: 1514291.45
+            usd: 15704.656056292
+            pctOfCap: 0.001514303288020525
+          - address:
+              address: FaQZhBzje8oZzP3cmrzHc9DK4jb3u4XQ4YBcnVnD9QK3
+              chain: solana
+              isUserAddress: false
+            balance: 1490156.612868
+            usd: 15454.354625789514
+            pctOfCap: 0.0014901682622136848
+          - address:
+              address: GER9sy6L8zpzZcWRrVdzRcPzhNmA9uB9NdNPn7zNS2Lt
+              chain: solana
+              isUserAddress: false
+            balance: 1488241.552327
+            usd: 15434.493609521225
+            pctOfCap: 0.0014882531867016395
+          - address:
+              address: Eayw2VYq9LLSyscKbof98AwcLBvdL5tTDZ2MMZ2wYLZi
+              chain: solana
+              isUserAddress: false
+            balance: 1446850.252884
+            usd: 15005.22609864985
+            pctOfCap: 0.0014468615636808683
+          - address:
+              address: 6J58pFxwcr9xvrDnyS4v5BDK4E8sHptkPZUHELUtQPHq
+              chain: solana
+              isUserAddress: false
+            balance: 1443161.656519
+            usd: 14966.971813292288
+            pctOfCap: 0.0014431729384801514
+          - address:
+              address: J92Moce3aMz2pzTow4jGrPPicgL4d9hgkJBsfSkb3FVc
+              chain: solana
+              isUserAddress: false
+            balance: 1365041.272992
+            usd: 14156.788440549113
+            pctOfCap: 0.0013650519442446225
+          - address:
+              address: 6BmhnWJbzpwFtEMqZkikBF2EafwwNYmqsv46GrpExqpQ
+              chain: solana
+              isUserAddress: false
+            balance: 1316040.19496
+            usd: 13648.600220322362
+            pctOfCap: 0.0013160504831451706
+          - address:
+              address: GWDNBpJJiZUiZqGHYonX8ocsHA9m7ffoEvR5LX5txsiV
+              chain: solana
+              isUserAddress: false
+            balance: 1287951.969194
+            usd: 13357.298354432207
+            pctOfCap: 0.0012879620377985916
+          - address:
+              address: BCwv17izxJYBFYFdmvdCGuHH6Wpa4Qk7ii5eAGcfqCnx
+              chain: solana
+              isUserAddress: false
+            balance: 1261343.856531
+            usd: 13081.34668232874
+            pctOfCap: 0.001261353717125843
+          - address:
+              address: FEKBRuXEoCSKHjDHHXnrBv76eckpsyKhpHnenW3JPEPM
+              chain: solana
+              arkhamEntity:
+                name: Meteora (Prev. Mercurial)
+                note: ''
+                id: meteora
+                type: dex
+                service: null
+                addresses: null
+                website: https://www.meteora.ag
+                twitter: https://x.com/MeteoraAG
+              arkhamLabel:
+                name: Market
+                address: FEKBRuXEoCSKHjDHHXnrBv76eckpsyKhpHnenW3JPEPM
+                chainType: solana
+              isUserAddress: false
+            balance: 1171811.269755
+            usd: 12152.807806178314
+            pctOfCap: 0.0011718204304260603
+          - address:
+              address: DcwtYwbUCcXPSsXchFasjZ2nrTMmaHdYDJQhVLiKmxPZ
+              chain: solana
+              isUserAddress: false
+            balance: 1156695.935251
+            usd: 11996.047276650712
+            pctOfCap: 0.0011567049777574626
+          - address:
+              address: HjSguRvMjEaLSiLPCCbKyiEay79o5RFm9iH3MpUSwPVs
+              chain: solana
+              isUserAddress: false
+            balance: 1152724.925312
+            usd: 11954.86409141374
+            pctOfCap: 0.0011527339367749688
           - address:
               address: HbXMi1JpxjqPYpXxLg7hprQ7qpvidZX4pU1cPQsPhjNK
               chain: solana
               isUserAddress: false
             balance: 1116070.745228
-            usd: 12612.101652911753
+            usd: 11574.725055929779
             pctOfCap: 0.0011160794701457755
+          - address:
+              address: HXgnBtUhf8fhFRcxubXPB89zc5o4to4AhjkKFbxZ9JF1
+              chain: solana
+              isUserAddress: false
+            balance: 1104037.14405
+            usd: 11449.92505945679
+            pctOfCap: 0.0011040457748947238
+          - address:
+              address: BVuewLg9z4KKUxhaacC8zDKfAEYLWfkQdMcbtvPVYuGj
+              chain: solana
+              isUserAddress: false
+            balance: 1100000.000008
+            usd: 11408.056000082968
+            pctOfCap: 0.0011000085992922248
+          - address:
+              address: CiVUwud3fdimA6U3QUZ6TjNjcQ4hFByiEWh2kjEdJJCk
+              chain: solana
+              isUserAddress: false
+            balance: 1094749.59
+            usd: 11353.604207906401
+            pctOfCap: 0.0010947581482389811
           - address:
               address: Eo4R8pBvnCbdvxQdFXMrdQrdy71vkv5mTh8HTD3VrEh1
               chain: solana
@@ -1068,190 +1086,113 @@ token_holders_solana:
                 twitter: https://twitter.com/BitCloutCat
               isUserAddress: false
             balance: 1064275.622426
-            usd: 12026.793457443891
+            usd: 11037.55990915515
             pctOfCap: 0.0010642839424337914
           - address:
-              address: 7mXco83XymXsA4VSP5LgL1AG9BBPPG8n6NRVEzMBHEmW
+              address: HXa6M57G351jMWde3bUt6SUUj2PKgwrDAYuE3MxA7tMB
               chain: solana
               isUserAddress: false
-            balance: 1041049.582966
-            usd: 11764.328759828135
-            pctOfCap: 0.0010410577214035053
-          - address:
-              address: 9o3Niyvhi6KCi45LjMaG1qaiQM2Lmb8qCLtgajgVuESM
-              chain: solana
-              isUserAddress: false
-            balance: 1016513.846499
-            usd: 11487.063896669624
-            pctOfCap: 0.0010165217931276222
-          - address:
-              address: 8Dx6FvfuMxZGQddN4NscTJVBPVEUhJCABqhxBwUH4XU5
-              chain: solana
-              isUserAddress: false
-            balance: 1010689.976277
-            usd: 11421.251542419424
-            pctOfCap: 0.0010106978773773356
+            balance: 1044418.428259
+            usd: 10831.62174273696
+            pctOfCap: 0.0010444265930325582
           - address:
               address: 45ADcnEoJHRWQxHJ7gWr4xqDtAemvrM6DszrsLkZaPa9
               chain: solana
               isUserAddress: false
             balance: 1010362.017424
-            usd: 11417.545459799041
+            usd: 10478.424068223609
             pctOfCap: 0.001010369915960507
           - address:
               address: 3Xo3WUQX6bGnsAc63SJu6FcF2cJfEXvsJRdQPtAShbyr
               chain: solana
               isUserAddress: false
             balance: 1007392.676149
-            usd: 11383.990567187968
+            usd: 10447.629148634234
             pctOfCap: 0.001007400551472589
-          - address:
-              address: 7Uvo3GHS72zxwzHUwt7LWEYdVFcM3bg4xeL8E7mL5nPZ
-              chain: solana
-              isUserAddress: false
-            balance: 1005954.984794
-            usd: 11367.744007915358
-            pctOfCap: 0.0010059628488783923
-          - address:
-              address: eQ9VgBLUBNTT12iaZHuZX5NLhHuoRuixrngTqNravv6
-              chain: solana
-              isUserAddress: false
-            balance: 1005479.405377
-            usd: 11362.369746492519
-            pctOfCap: 0.0010054872657435353
-          - address:
-              address: 6xx89gXFsgTY1Q5M2fZ7nEcMHDTvwXqtdSG2CGwt9oaU
-              chain: solana
-              isUserAddress: false
-            balance: 1000000.092138
-            usd: 11300.451041200862
-            pctOfCap: 0.0010000079096698336
           - address:
               address: HQDTCShLZLqKmA7NErvutMruAXfEgYpD1fwgFY9WVxyy
               chain: solana
               isUserAddress: false
             balance: 1000000
-            usd: 11300.45
+            usd: 10370.96
             pctOfCap: 0.0010000078175311134
           - address:
               address: 6Fc9ZUjoTNkNckW4kVa4E2qVrxQ5aYbrUiSsJxZLKYXs
               chain: solana
               isUserAddress: false
             balance: 1000000
-            usd: 11300.45
+            usd: 10370.96
             pctOfCap: 0.0010000078175311134
           - address:
-              address: 3hbv8NdNe5Smw1wEujFRxWXx9p8iqGm5ahTmo7CxvSnS
+              address: 8jZ7KHUhD7jcQsjrNtjKqiEQnbVppcNfKe98NMwCBoBC
+              chain: solana
+              isUserAddress: false
+            balance: 999935.67
+            usd: 10370.2928361432
+            pctOfCap: 0.0009999434870282117
+          - address:
+              address: CBoWXKTzeNm3RjqLKK2WB6NscXrxmp8jXP5hEUM4kByE
+              chain: solana
+              isUserAddress: false
+            balance: 999810
+            usd: 10368.9895176
+            pctOfCap: 0.0009998178160457824
+          - address:
+              address: 84N1kGqnDYLntUBNeYfXcGHgSF3KnFgWwHzA35RLj9EV
+              chain: solana
+              isUserAddress: false
+            balance: 996152.151761
+            usd: 10331.05411982726
+            pctOfCap: 0.00099615993921144
+          - address:
+              address: AMCjKgMsA5DbZWMyFAV1eWAhXc9RHyscPqYRxJhDSic3
               chain: solana
               isUserAddress: false
             balance: 990863.063729
-            usd: 11197.198508516378
+            usd: 10276.201199410909
             pctOfCap: 0.0009908708098318299
           - address:
-              address: C9vAHdNwMSjLBHbF2GgPYAfE1RTCwhSq7ojnVNk64oE2
+              address: 9t9gi99E3qA6eTsy6HC8DmMZfL3Vj7Ne4fdujhu8YRU2
               chain: solana
               isUserAddress: false
-            balance: 963102.431976
-            usd: 10883.49087742319
-            pctOfCap: 0.0009631099610592273
+            balance: 978761.8406
+            usd: 10150.699898388977
+            pctOfCap: 0.0009787694921011415
           - address:
-              address: B4N3KZ2Nw8nH4Ey8GkuDVpGADLbsGtNBWJsnczc6kBqt
+              address: A7sLPJYySndCULoDUDnq3NQroux3bR5qUmU7KmzkEU78
               chain: solana
               isUserAddress: false
-            balance: 962633.7483
-            usd: 10878.194540976734
-            pctOfCap: 0.0009626412737192781
+            balance: 969457.311583
+            usd: 10054.20300013483
+            pctOfCap: 0.0009694648903456963
           - address:
               address: 6qoE8teFWJjmDs94Dw3SjenbaJdh5kwNoPdnpAuKbPU9
               chain: solana
               isUserAddress: false
             balance: 953288.811309
-            usd: 10772.592547756789
+            usd: 9886.520130533187
             pctOfCap: 0.0009532962636739425
           - address:
-              address: cZpHypaTeWQTJD9x1bZSWaNNchk8Qf5GLcQG39kaKxV
+              address: DHcajK17JPp7TVDv4WyP9rbXD7oHV1Cq7ED6uBjkH61X
               chain: solana
               isUserAddress: false
-            balance: 953224.848787
-            usd: 10771.869742475053
-            pctOfCap: 0.0009532323006519135
-          - address:
-              address: Cfvo9bdxtQLMwS8g7aopMrNAJFR51aEWak8Q9qVJPhgy
-              chain: solana
-              isUserAddress: false
-            balance: 950298.103444
-            usd: 10738.79620306375
-            pctOfCap: 0.0009503055324289907
-          - address:
-              address: GFApM9bmoSUCe9LrPRCguhWJD21G1G1g4mgTDEeybyBg
-              chain: solana
-              isUserAddress: false
-            balance: 946064.917354
-            usd: 10690.959295313009
-            pctOfCap: 0.0009460723132459267
-          - address:
-              address: JBJFHt2dvumN1bmSAdc85sY5yo7B5a3fXS6ZpP8N8cbS
-              chain: solana
-              isUserAddress: false
-            balance: 904896.481664
-            usd: 10225.73744621995
-            pctOfCap: 0.0009049035557203997
-          - address:
-              address: HjSguRvMjEaLSiLPCCbKyiEay79o5RFm9iH3MpUSwPVs
-              chain: solana
-              isUserAddress: false
-            balance: 882283.205636
-            usd: 9970.197251129335
-            pctOfCap: 0.0008822901029124109
+            balance: 943878.830295
+            usd: 9788.929593836234
+            pctOfCap: 0.0009438862090971231
           - address:
               address: CQyTq9TE5Z5gvwEs18NjqGLcdySbLeLybQrU3H3WgTQu
               chain: solana
               isUserAddress: false
-            balance: 870575.807442
-            usd: 9837.898383207948
-            pctOfCap: 0.0008705826131954613
+            balance: 920052.952287
+            usd: 9541.832366050387
+            pctOfCap: 0.0009200601448295804
           - address:
-              address: 33FZhmiW2pYXiyzRxFQSgF5fk1iW1HCeCzdhbyqaY3QW
+              address: CPmLh33tLS4A174XgGvh63E6y3KNcKfvMqS5jzatLsNa
               chain: solana
               isUserAddress: false
-            balance: 869846.081419
-            usd: 9829.652150771339
-            pctOfCap: 0.0008698528814678054
-          - address:
-              address: 2wSqZHmsQwusuq361ohtYsUxrfhHa22b35yRmChLKhC8
-              chain: solana
-              isUserAddress: false
-            balance: 856928.041889
-            usd: 9683.67249096455
-            pctOfCap: 0.0008569347409506294
-          - address:
-              address: ESrG1fdCZKCpUM5bkdop33RRJ3si914Ytk8ZJbanXfyz
-              chain: solana
-              isUserAddress: false
-            balance: 852939
-            usd: 9638.59452255
-            pctOfCap: 0.0008529456678771703
-          - address:
-              address: 7Sq668BzjHZXTSAoQgDCY9ceCrSEj5AuzigG7L74fc7j
-              chain: solana
-              isUserAddress: false
-            balance: 847811.388309
-            usd: 9580.65020301644
-            pctOfCap: 0.0008478180161009063
-          - address:
-              address: 25YJB6S1S1mhAEHE3XekgDUxYgvJDBndHA8PYabv5QpK
-              chain: solana
-              isUserAddress: false
-            balance: 844401.598407
-            usd: 9542.118042718384
-            pctOfCap: 0.0008444081995427677
-          - address:
-              address: J4r232PwxLdSgDsfnxuYUGEycm58J9sJCbQcmSkVkUtt
-              chain: solana
-              isUserAddress: false
-            balance: 835657.895359
-            usd: 9443.310263609612
-            pctOfCap: 0.000835664428140597
+            balance: 900327.326368
+            usd: 9337.258688669473
+            pctOfCap: 0.0009003343647048861
         entityTopHolders: {}
 token_holders_solana_nlp:
   input:
@@ -1259,12 +1200,9 @@ token_holders_solana_nlp:
       on Solana
     raw_data_only: false
   output:
-    response: 'The token with the contract address 0xdAC17F958D2ee523a2206206994597C13D831ec7
-      is a Tether (USDT) token, which is primarily associated with Ethereum and other
-      EVM-compatible chains. It is not available on the Solana blockchain.
-
-
-      If you have another token or a different blockchain in mind, please let me know!'
+    response: The token address you provided is for Tether (USDT) on Ethereum, not
+      Solana. Please provide a valid token address for Solana or specify a different
+      token.
     data: {}
 portfolio_with_timestamp:
   input:

@@ -7,143 +7,135 @@ token_holdings:
   output:
     response: ''
     data: &id001
-      total_value: 17453.86777154248
-      token_count: 17
+      total_value: 9560.835125204903
+      token_count: 16
       tokens:
       - name: Ankr Network
         symbol: ANKR
         quantity: 344827
-        value: 6220.989424300001
-        price: 0.018040900000000002
-        change_24h_percent: -2.0380871468924755
+        value: 5590.2568758575
+        price: 0.0162117725
+        change_24h_percent: 8.722129939602974
         chain: ethereum
         token_address: '0x8290333cef9e6d528dd5618fb97a76f268f3edd4'
-      - name: Holdstation
-        symbol: HOLD
-        quantity: 3943.764021653412
-        value: 3754.1797466276043
-        price: 0.9519280884999999
-        change_24h_percent: 9.052073924992342
-        chain: zksync-era
-        token_address: '0xed4040fd47629e7c8fbb7da76bb50b3e7695f0f2'
-      - name: Ethereum
-        symbol: ETH
-        quantity: 2.0182961626332014
-        value: 3641.187924044932
-        price: 1804.09
-        change_24h_percent: -1.0584680183614248
-        chain: zksync-era
-        token_address: null
-      - name: Ethereum
-        symbol: ETH
-        quantity: 0.6594920003225626
-        value: 1189.7829228619319
-        price: 1804.09
-        change_24h_percent: -1.0584680183614248
-        chain: zksync-era
-        token_address: null
       - name: zkSync
         symbol: ZK
         quantity: 12892.414265522968
-        value: 670.7917418119666
-        price: 0.0520299556
-        change_24h_percent: -2.8439297803726005
+        value: 777.8698096829618
+        price: 0.060335465000000005
+        change_24h_percent: 22.049913881184512
         chain: zksync-era
         token_address: '0x5a7d6b2f92c77fad6ccabd7ee0624e64907eaf3e'
       - name: Ethereum
         symbol: ETH
         quantity: 0.2376
-        value: 428.65178399999996
-        price: 1804.09
-        change_24h_percent: -1.0584680183614248
+        value: 714.6414
+        price: 3007.75
+        change_24h_percent: 8.116997490959555
         chain: ethereum
         token_address: null
+      - name: ZyFAI
+        symbol: ZFI
+        quantity: 35331.37940764458
+        value: 679.0522414812616
+        price: 0.0192195225
+        change_24h_percent: 2.9608962693340457
+        chain: zksync-era
+        token_address: '0x5d0d7bca050e2e98fd4a5e8d3ba823b49f39868d'
       - name: Ethereum
         symbol: ETH
         quantity: 0.2162209018356097
-        value: 390.08196679260516
-        price: 1804.09
-        change_24h_percent: -1.0584680183614248
+        value: 650.3384174960552
+        price: 3007.75
+        change_24h_percent: 8.116997490959555
         chain: ethereum
         token_address: null
-      - name: Holdstation
-        symbol: HOLD
-        quantity: 265.1404839822009
-        value: 252.39467410114136
-        price: 0.9519280884999999
-        change_24h_percent: 9.052073924992342
+      - name: ZyFAI
+        symbol: ZFI
+        quantity: 18720.120592355423
+        value: 359.79177892748834
+        price: 0.0192195225
+        change_24h_percent: 2.9608962693340457
         chain: zksync-era
-        token_address: '0xed4040fd47629e7c8fbb7da76bb50b3e7695f0f2'
+        token_address: '0x5d0d7bca050e2e98fd4a5e8d3ba823b49f39868d'
+      - name: Ethereum
+        symbol: ETH
+        quantity: 0.0794900563006028
+        value: 239.08621683813823
+        price: 3007.75
+        change_24h_percent: 8.116997490959555
+        chain: optimism
+        token_address: null
       - name: Fluence
         symbol: FLT
         quantity: 5000
-        value: 205.93687350000002
-        price: 0.0411873747
-        change_24h_percent: 3.854490811071676
+        value: 238.36418749999999
+        price: 0.047672837499999995
+        change_24h_percent: 4.300329289817939
         chain: ethereum
         token_address: '0x236501327e701692a281934230af0b6be8df3353'
       - name: Heurist
         symbol: HEU
         quantity: 6155.271174763103
-        value: 204.21475576394516
-        price: 0.0331772151
-        change_24h_percent: -0.025561915256389067
+        value: 149.21894601970342
+        price: 0.024242465
+        change_24h_percent: 6.792034286413484
         chain: base
         token_address: '0xef22cb48b8483df6152e1423b19df5553bbd818b'
-      - name: Ethereum
-        symbol: ETH
-        quantity: 0.0794900563006028
-        value: 143.40721567135458
-        price: 1804.09
-        change_24h_percent: -1.0584680183614248
-        chain: optimism
-        token_address: null
-      - name: Zyfi Token
-        symbol: ZFI
-        quantity: 27875.61199722894
-        value: 141.31521710310693
-        price: 0.0050694929
-        change_24h_percent: -3.126932101601254
-        chain: zksync-era
-        token_address: '0x5d0d7bca050e2e98fd4a5e8d3ba823b49f39868d'
-      - name: Zyfi Token
-        symbol: ZFI
-        quantity: 26175.88800277106
-        value: 132.69847838124306
-        price: 0.0050694929
-        change_24h_percent: -3.126932101601254
-        chain: zksync-era
-        token_address: '0x5d0d7bca050e2e98fd4a5e8d3ba823b49f39868d'
-      - name: Ethereum
-        symbol: ETH
-        quantity: 0.016827718896828
-        value: 30.358719384578425
-        price: 1804.09
-        change_24h_percent: -1.0584680183614248
-        chain: arbitrum
-        token_address: null
+      - name: USD Coin
+        symbol: USDC
+        quantity: 83.02012
+        value: 83.0140169834285
+        price: 0.9999264874999999
+        change_24h_percent: -0.18745434486823198
+        chain: base
+        token_address: '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913'
       - name: Wrapped Ether
         symbol: WETH
         quantity: 0.015684
-        value: 28.283623928985566
-        price: 1803.3425101367998
-        change_24h_percent: -1.061757167709576
+        value: 47.16173449721001
+        price: 3006.9965887025
+        change_24h_percent: 8.040540737141178
         chain: ethereum
         token_address: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
       - name: Ethereum
         symbol: ETH
-        quantity: 0.009995576063979
-        value: 18.032918821263923
-        price: 1804.09
-        change_24h_percent: -1.0584680183614248
+        quantity: 0.0073573516144718
+        value: 22.12907431842749
+        price: 3007.75
+        change_24h_percent: 8.116997490959555
+        chain: zksync-era
+        token_address: null
+      - name: Wrapped Ether
+        symbol: WETH
+        quantity: 0.000825963921091
+        value: 2.483670693112104
+        price: 3006.9965887025
+        change_24h_percent: 8.040540737141178
+        chain: base
+        token_address: '0x4200000000000000000000000000000000000006'
+      - name: Ethereum
+        symbol: ETH
+        quantity: 0.000820892746828
+        value: 2.469040159271917
+        price: 3007.75
+        change_24h_percent: 8.116997490959555
+        chain: arbitrum
+        token_address: null
+      - name: Ethereum
+        symbol: ETH
+        quantity: 0.0007920580538652
+        value: 2.3823126115131155
+        price: 3007.75
+        change_24h_percent: 8.116997490959555
         chain: base
         token_address: null
       - name: Wrapped Ether
         symbol: WETH
         quantity: 0.000612232
-        value: 1.1040639916660733
-        price: 1803.3425101367998
-        change_24h_percent: -1.061757167709576
+        value: 1.8409795354945089
+        price: 3006.9965887025
+        change_24h_percent: 8.040540737141178
         chain: zksync-era
         token_address: '0x5aea5775959fbc2557cc8789bc1bf90a239d9a91'
 nft_holdings:
@@ -155,74 +147,10 @@ nft_holdings:
   output:
     response: ''
     data:
-      total_collections: 10
-      total_nfts: 26
-      total_floor_price: 0.0216419392674528
+      total_collections: 5
+      total_nfts: 21
+      total_floor_price: 6.9749976603578805
       collections:
-      - name: Lens Protocol Profiles
-        description: Planted in this collection, you’ll find all the Lens Protocol
-          Profile NFTs that have been claimed so far. By owning a Lens Profile NFT,
-          you are in control. You can choose where and how you use it. Welcome to
-          a new era of decentralized social media, welcome to Lens!
-        nfts_count: 1
-        floor_price: 0.0216419392674528
-        chains:
-        - polygon
-      - name: vBLST17
-        description: ''
-        nfts_count: 1
-        floor_price: 0
-        chains:
-        - blast
-      - name: sBLST141
-        description: ''
-        nfts_count: 1
-        floor_price: 0
-        chains:
-        - blast
-      - name: uBLST4
-        description: ''
-        nfts_count: 1
-        floor_price: 0
-        chains:
-        - blast
-      - name: BLAST
-        description: ''
-        nfts_count: 1
-        floor_price: 0
-        chains:
-        - blast
-      - name: Lens Handles
-        description: ''
-        nfts_count: 1
-        floor_price: 0
-        chains:
-        - polygon
-      - name: ZkSamurist
-        description: ''
-        nfts_count: 17
-        floor_price: 0
-        chains:
-        - zksync-era
-      - name: Boring Apes on Polygon
-        description: We are just a bunch of Boring Apes who love web3, Join us! Boring
-          Apes on Polygon is a NFT collecetion from the Boring Apes. 4,000 hand drawn
-          2d art NFTS, Bring together the original Boring Apes art with a Polygon
-          vibe.
-        nfts_count: 1
-        floor_price: 0
-        chains:
-        - polygon
-      - name: 'ENS: Ethereum Name Service'
-        description: Ethereum Name Service (ENS) domains are secure domain names for
-          the decentralized world. ENS domains provide a way for users to map human
-          readable names to blockchain and non-blockchain resources, like Ethereum
-          addresses, IPFS hashes, or website URLs. ENS domains can be bought and sold
-          on secondary markets.
-        nfts_count: 1
-        floor_price: 0
-        chains:
-        - ethereum
       - name: oncyber community (eth)
         description: "oncyber is a metaverse like no other. In under 5 clicks, anyone\
           \ can create a digital experience with their NFTs. \n\nThe oncyber community\
@@ -231,9 +159,39 @@ nft_holdings:
           \ from this collection allows you to use it as an immersive experience for\
           \ your digital assets oncyber.io/create"
         nfts_count: 1
-        floor_price: 0
+        floor_price: 4.51203
         chains:
         - ethereum
+      - name: Boring Apes on Polygon
+        description: We are just a bunch of Boring Apes who love web3, Join us! Boring
+          Apes on Polygon is a NFT collecetion from the Boring Apes. 4,000 hand drawn
+          2d art NFTS, Bring together the original Boring Apes art with a Polygon
+          vibe.
+        nfts_count: 1
+        floor_price: 2.0702096046
+        chains:
+        - polygon
+      - name: Lens Protocol Profiles
+        description: Planted in this collection, you’ll find all the Lens Protocol
+          Profile NFTs that have been claimed so far. By owning a Lens Profile NFT,
+          you are in control. You can choose where and how you use it. Welcome to
+          a new era of decentralized social media, welcome to Lens!
+        nfts_count: 1
+        floor_price: 0.30074873999788004
+        chains:
+        - polygon
+      - name: Lens Handles
+        description: ''
+        nfts_count: 1
+        floor_price: 0.09200931576
+        chains:
+        - polygon
+      - name: ZkSamurist
+        description: ''
+        nfts_count: 17
+        floor_price: 0
+        chains:
+        - zksync-era
 raw_data_query:
   input:
     query: What tokens does 0x7d9d1821d15B9e0b8Ab98A058361233E255E405D hold?
