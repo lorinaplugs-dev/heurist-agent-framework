@@ -2,41 +2,53 @@ ethereum_example:
   input:
     query: Identify the biggest transaction of ETH in the past 30 days
   output:
-    response: "**Transaction Analysis: Largest ETH Transfer in the Past 30 Days on\
-      \ Ethereum**\n\n**Query Breakdown:** \n* Blockchain: **Ethereum**\n* Query:\
-      \ **Identify the biggest transaction of ETH in the past 30 days**\n\n**Results:**\n\
-      \nThe largest Ethereum (ETH) transaction in the past 30 days has been identified\
-      \ as follows:\n\n* **Transaction Hash:** 0x9d944b5ba4d0eb1ce398e15fc088655bf846faa69d2d772030c69591a0813903\n\
-      * **Sender (From) Address:** 0x28c6c06298d514db089934071355e5743bf21d60\n* **Recipient\
-      \ (To) Address:** 0xf977814e90da44bfa03b6295a0616a897441acec\n* **Transaction\
-      \ Value:** Approximately **27,870.3232 ETH** (2.78703232E23, considering 10^18\
-      \ as the denominator for ETH)\n* **Block Timestamp:** June 8, 2025, 13:45:23\
-      \ (UTC)\n\n**Note:** The transaction value is equivalent to approximately 27,870.3232\
-      \ ETH, which, at the time of analysis, represents the largest single transaction\
-      \ of ETH on the Ethereum blockchain within the specified 30-day timeframe. Please\
-      \ note that the ETH price in fiat currency (e.g., USD) is not provided as it\
-      \ fluctuates and was not part of the original query. For current conversion\
-      \ rates, please refer to a reliable cryptocurrency pricing service."
+    response: 'It seems like there''s an unexpected technical issue here. The error
+      message you''ve provided doesn''t relate directly to the blockchain query you
+      asked me to process ("Identify the biggest transaction of ETH in the past 30
+      days"). Instead, it indicates a failure in the API request to a specific backend
+      service. Let''s break down the situation and provide a constructive response:
+
+
+      **Original Query:** Identify the biggest transaction of ETH in the past 30 days
+      (Inferred Blockchain: Ethereum)
+
+
+      **Expected Response Format:** Natural language response with relevant data (e.g.,
+      "The largest ETH transaction in the past 30 days was X ETH, occurring on Date,
+      from Address A to Address B, with Transaction Hash XYZ.")
+
+
+      **Actual Response (Due to API Error):**
+
+
+      Unfortunately, due to a technical issue (API request failed with a 404 error),
+      I''m unable to fetch the required data from the blockchain analytics tool at
+      this moment. The error message suggests a backend service issue rather than
+      a problem with the query itself.
+
+
+      **Interpreted Query for Future Reference (once the API is available):**
+
+      "What is the largest Ether (ETH) transaction by value on the Ethereum blockchain
+      within the last 30 days, including details such as transaction hash, sender,
+      recipient, and timestamp?"
+
+
+      **Solution:**
+
+      - **Retry:** Once the API issue is resolved, re-submit your query to obtain
+      the desired blockchain data.
+
+      - **Alternative:** If you have another query related to Ethereum, Bitcoin, Base,
+      or Solana blockchains, feel free to ask, and I''ll attempt to process it once
+      the API is operational.
+
+
+      Please let me know if there''s an alternative query I can assist with or if
+      you''d like to retry the original question once the technical issue is presumably
+      fixed.'
     data:
-      blockchain: ethereum
-      query: Identify the biggest transaction of ETH in the past 30 days
-      results:
-        code: 0
-        msg: Success
-        data:
-          column_infos:
-          - hash
-          - from_address
-          - to_address
-          - value
-          - block_timestamp
-          rows:
-          - items:
-            - '0x9d944b5ba4d0eb1ce398e15fc088655bf846faa69d2d772030c69591a0813903'
-            - '0x28c6c06298d514db089934071355e5743bf21d60'
-            - '0xf977814e90da44bfa03b6295a0616a897441acec'
-            - 2.78703232E23
-            - '2025-06-08 13:45:23.000'
+      error: 'API request failed: 404, message=''Not Found'', url=''https://interface.carv.io/ai-agent-backend/sql_query_by_llm'''
 direct_example:
   input:
     tool: query_onchain_data
@@ -46,17 +58,7 @@ direct_example:
   output:
     response: ''
     data:
-      blockchain: bitcoin
-      query: How many Bitcoins have been mined since the beginning of 2025?
-      results:
-        code: 0
-        msg: Success
-        data:
-          column_infos:
-          - total_bitcoins_mined
-          rows:
-          - items:
-            - 1.0424733379453155E8
+      error: 'API request failed: 404, message=''Not Found'', url=''https://interface.carv.io/ai-agent-backend/sql_query_by_llm'''
 raw_example:
   input:
     query: What are the top 5 most popular smart contracts on Ethereum in the past
@@ -65,29 +67,4 @@ raw_example:
   output:
     response: ''
     data:
-      blockchain: ethereum
-      query: What are the top 5 most popular smart contracts on Ethereum in the past
-        30 days?
-      results:
-        code: 0
-        msg: Success
-        data:
-          column_infos:
-          - contract_address
-          - total_transactions
-          rows:
-          - items:
-            - '0xdac17f958d2ee523a2206206994597c13d831ec7'
-            - '4418211'
-          - items:
-            - '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
-            - '2788220'
-          - items:
-            - '0x66a9893cc07d91d95644aedd05d03f95e1dba8af'
-            - '1104487'
-          - items:
-            - '0x7a250d5630b4cf539739df2c5dacb4c659f2488d'
-            - '846675'
-          - items:
-            - '0x0000000000001ff3684f28c67538d4d072c22734'
-            - '497288'
+      error: 'API request failed: 404, message=''Not Found'', url=''https://interface.carv.io/ai-agent-backend/sql_query_by_llm'''

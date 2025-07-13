@@ -12,23 +12,21 @@ output:
     data:
       search_term: What are the latest developments in artificial intelligence?
       results:
-      - title: Latest Development of Artificial Intelligence | InData Labs
-        link: https://indatalabs.com/blog/ai-latest-developments
-        snippet: The latest development of artificial intelligence in the healthcare
-          world is enabling improvements in accurate diagnoses, clinical decision-making,
-          and optimal patient care. AI research is driving the widespread adoption
-          of telemedicine at healthcare institutions. It's incorporated into wearable
-          devices that offer real-time patient data and ...
-      - title: The Top Artificial Intelligence Trends - IBM
+      - title: The Top Artificial Intelligence Trends | IBM
         link: https://www.ibm.com/think/insights/artificial-intelligence-trends
-        snippet: 2022 was the year that generative artificial intelligence (AI) exploded
-          into the public consciousness, and 2023 was the year it began to take root
-          in the business world. 2024 thus stands to be a pivotal year for the future
-          of AI, as researchers and enterprises seek to establish how this evolutionary
-          leap in technology can be most practically integrated into our everyday
-          lives.
-      - title: Artificial Intelligence News -- ScienceDaily
-        link: https://www.sciencedaily.com/news/computers_math/artificial_intelligence/
-        snippet: Artificial Intelligence News. Everything on AI including futuristic
-          robots with artificial intelligence, computer models of human intelligence
-          and more.
+        snippet: The release of OpenAI's o1 introduced a new avenue for increasing
+          model performance. Its head-turning improvement over prior state-of-the-art
+          performance on highly technical math and coding benchmarks initiated an
+          arms race in so-called "reasoning models." Their enhanced performance on
+          tasks requiring logical decision-making figures to play an important role
+          in the development of agentic ...
+      - title: Future of AI in 2025 [Top Trends and Predictions] - GeeksforGeeks
+        link: https://www.geeksforgeeks.org/blogs/future-of-ai/
+        snippet: Latest Developments in Artificial Intelligence AI technology is becoming
+          more adult, nimble, and safe, with wonderful new features that truly extend
+          its use in everyday living.
+      - title: What's next for AI in 2025 - MIT Technology Review
+        link: https://www.technologyreview.com/2025/01/08/1109188/whats-next-for-ai-in-2025/
+        snippet: You already know that agents and small language models are the next
+          big things. Here are five other hot trends you should watch out for this
+          year.

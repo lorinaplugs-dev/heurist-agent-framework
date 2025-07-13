@@ -1,19 +1,14 @@
 input:
   query: Predict ETH price in 5 minutes
 output:
-  response: 'ETH Price Prediction (5-minute timeframe):
-
-    Expected Price: $1,820.91
-
-    Token: Ethereum (ETH)
-
-    Timeframe: 5 minutes
-
-    **Note:** Confidence intervals not provided by the model for this prediction.'
+  response: "ETH 5-minute price prediction: \nExpected to be approximately $3009.15\
+    \ in the next 5 minutes, based on Allora's model. Please note that cryptocurrency\
+    \ markets are highly volatile; this forecast is subject to change. Exercise caution\
+    \ when making trading decisions."
   data:
     prediction_data:
       token: ETH
       timeframe: 5m
-      prediction: 1820.90771484375
+      prediction: 3009.1543223161602
       confidence_intervals: []
       confidence_interval_values: []

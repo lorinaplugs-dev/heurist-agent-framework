@@ -9,8 +9,8 @@ direct_token_clusters:
   output:
     response: ''
     data:
-      error: 'Failed to fetch token clusters: 403 Client Error: Forbidden for url:
-        https://bot.metasleuth.io/api/v1/tgbot/cluster'
+      error: 'Failed to fetch token clusters: 503 Server Error: Service Temporarily
+        Unavailable for url: https://bot.metasleuth.io/api/v1/tgbot/cluster'
 direct_cluster_details:
   input:
     tool: fetch_cluster_details
@@ -22,23 +22,8 @@ direct_cluster_details:
   output:
     response: ''
     data:
-      code: 0
-      message: ''
-      tokenSymbol: DOGE-CHAN
-      timestamp: 1742102704
-      holders:
-      - address: 73LnJ7G9ffBDjEBGgJDdgvLUhD5APLonKrNiHsKDCw5B
-        mainEntity: ''
-        holdingAmount: '4.6557611217744e+07'
-        holdingPercent: 0.0465938381097468
-      - address: 9RBxnMxQwcyF1CVkAxNt5u59RqgX52ejZ6PrPfXXNXoG
-        mainEntity: ''
-        holdingAmount: '2.7e+07'
-        holdingPercent: 0.027021008940503865
-      total: 2
-      fundFlowLink: solana/73LnJ7G9ffBDjEBGgJDdgvLUhD5APLonKrNiHsKDCw5B?source=8ef00717-d78d-4f28-896d-81c48feaa93f
-      tokenPrice: 2.808743153756841e-06
-      fundFlowUrl: '@https://metasleuth.io/result/solana/73LnJ7G9ffBDjEBGgJDdgvLUhD5APLonKrNiHsKDCw5B?source=8ef00717-d78d-4f28-896d-81c48feaa93f'
+      error: 'Failed to fetch cluster details: 503 Server Error: Service Temporarily
+        Unavailable for url: https://bot.metasleuth.io/api/v1/tgbot/cluster-detail'
 nl_token_analysis:
   input:
     query: 'Analyze the wallet clusters of this Solana token: tQNVaFm2sy81tWdHZ971ztS5FKaShJUKGAzHMcypump'
@@ -46,62 +31,54 @@ nl_token_analysis:
   output:
     response: "**Token Address Analysis: tQNVaFm2sy81tWdHZ971ztS5FKaShJUKGAzHMcypump\
       \ (Solana Chain)**\n\n**Status:** *Failed to Retrieve Data*\n\n**Error Message:**\n\
-      ```markdown\n* Error Code: 403\n* Error Description: Client Error - Forbidden\n\
-      * Affected URL: https://bot.metasleuth.io/api/v1/tgbot/cluster\n```\n\n**Analysis\
-      \ Outcome:** *No Data Available*\n\n* **Reason:** The request to fetch token\
-      \ clusters for the provided Solana token address (`tQNVaFm2sy81tWdHZ971ztS5FKaShJUKGAzHMcypump`)\
-      \ was met with a `403 Forbidden` error. This indicates that the server understood\
-      \ the request but refuses to authorize it.\n* **Data Unavailable:**\n\t+ **Wallet\
-      \ Clusters:** Not retrieved due to error.\n\t+ **Cluster Details:** Not applicable\
-      \ (requires successful cluster data retrieval).\n\t+ **Fund Flow Links:** Not\
-      \ available (dependent on successful data fetch).\n\n**Recommendations:**\n\n\
-      1. **Verify API Credentials:** Ensure that the credentials used to access the\
-      \ MetaSleuth API are valid and have the necessary permissions.\n2. **Check API\
-      \ Service Status:** Confirm that the MetaSleuth API is operational and not experiencing\
-      \ downtime or maintenance.\n3. **Retry Request:** Attempt to analyze the token\
-      \ address again after addressing the above steps.\n\n**To Proceed:**\nIf you'd\
-      \ like to analyze a specific cluster UUID instead (which is a separate analysis\
-      \ from token address analysis), please provide the cluster UUID. Otherwise,\
-      \ feel free to retry the token address analysis by providing the same address\
-      \ again after resolving the potential issues mentioned above."
+      > **503 Server Error: Service Temporarily Unavailable**\n\n**Details:**\n\n\
+      * **Token Address:** tQNVaFm2sy81tWdHZ971ztS5FKaShJUKGAzHMcypump\n* **Chain:**\
+      \ Solana\n* **Analysis Type:** Token-Level (Wallet Clusters)\n* **Tool Used:**\
+      \ fetch_token_clusters\n* **API Response:** \n\t+ Error Code: 503\n\t+ Error\
+      \ Message: Service Temporarily Unavailable\n\t+ **Result:** Unable to fetch\
+      \ wallet cluster data for the provided token address due to a temporary service\
+      \ outage.\n\n**Recommendations:**\n\n1. **Retry Analysis:** Attempt to analyze\
+      \ the token address again after some time, as the error is temporary.\n2. **Check\
+      \ MetaSleuth Status:** Verify the status of the MetaSleuth API to ensure there\
+      \ are no ongoing maintenance or outage announcements that might affect the analysis.\n\
+      3. **Contact Support (Optional):** If the issue persists, consider reaching\
+      \ out to MetaSleuth support for further assistance or to report the recurring\
+      \ error.\n\n**No wallet cluster data is available for display due to the service\
+      \ error.** \n\n**Would you like to:**\nA) Retry the analysis for the same token\
+      \ address (tQNVaFm2sy81tWdHZ971ztS5FKaShJUKGAzHMcypump)\nB) Analyze a different\
+      \ Solana token address\nC) Analyze a specific cluster UUID (switch to cluster-level\
+      \ analysis)\nD) Seek further assistance or report the issue"
     data:
-      error: 'Failed to fetch token clusters: 403 Client Error: Forbidden for url:
-        https://bot.metasleuth.io/api/v1/tgbot/cluster'
+      error: 'Failed to fetch token clusters: 503 Server Error: Service Temporarily
+        Unavailable for url: https://bot.metasleuth.io/api/v1/tgbot/cluster'
 nl_cluster_details:
   input:
     query: Show me the details of wallet cluster with UUID 0j7eWWwixWixBYPg5oeVX6
     raw_data_only: false
   output:
-    response: "**Cluster-Level Analysis**\n==========================\n\n**Cluster\
-      \ UUID:** `0j7eWWwixWixBYPg5oeVX6`\n\n**Details:**\n\n* **Associated Token Symbol:**\
-      \ `DOGE-CHAN`\n* **Last Updated:** `Timestamp: 1742102032` (Note: This is a\
-      \ Unix timestamp. To convert to a human-readable format, you can use an online\
-      \ converter. Approximate conversion: May 10, 2024, 12:00:32 AM UTC)\n* **Total\
-      \ Holders in Cluster:** `1`\n* **Holders and Their Details:**\n\t1. **Address:**\
-      \ `5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1`\n\t\t* **Main Entity:** `Raydium\
-      \ Authority V4`\n\t\t* **Holding Amount:** `8.54462958451071e+08 DOGE-CHAN`\n\
-      \t\t* **Holding Percentage (of the token's total supply within this cluster):**\
-      \ `85.51278236902138%`\n* **Token Price (at the time of the last update):**\
-      \ `2.808743153756841e-06` (Note: This price might not reflect the current market\
-      \ price. For the most up-to-date pricing, please refer to a real-time market\
-      \ data source.)\n* **Fund Flow Link:** *Not Available* (No link provided in\
-      \ the response) \n\n**No Fund Flow Link Available**\n------------------------------\n\
-      \n* **To explore more about the token or its ecosystem, you might want to search\
-      \ for `DOGE-CHAN` on https://metasleuth.io or consult other blockchain analytics\
-      \ platforms for additional insights.**"
+    response: "**Cluster-Level Analysis**\n==========================\n\n* **Cluster\
+      \ UUID**: 0j7eWWwixWixBYPg5oeVX6\n\n**Analysis Result**:\nUnfortunately, the\
+      \ analysis of the specified cluster UUID encountered an error.\n\n* **Error\
+      \ Message**: Failed to fetch cluster details\n* **Error Code**: 503 Server Error\n\
+      * **Error Description**: Service Temporarily Unavailable\n* **Affected URL**:\
+      \ https://bot.metasleuth.io/api/v1/tgbot/cluster-detail\n\n**Conclusion**:\n\
+      Due to a temporary service unavailability (503 Server Error) at the MetaSleuth\
+      \ API, the detailed information for the wallet cluster with UUID **0j7eWWwixWixBYPg5oeVX6**\
+      \ could not be retrieved at this time. Please try again later when the service\
+      \ is available.\n\n**Recommendation**:\n* Wait for a short period and retry\
+      \ the request with the same cluster UUID to see if the service is restored.\n\
+      * If the issue persists, consider reaching out to MetaSleuth support for further\
+      \ assistance. \n\n**Provided Data**:\nNo cluster details could be provided due\
+      \ to the service error.\n\n**Example of Expected Output (once service is available)**:\n\
+      (This section is for illustrative purposes only, as actual data was not available)\n\
+      \n* **Cluster Size**: [Number of wallets in the cluster]\n* **Total Tokens Held**:\
+      \ [Token amount and type, e.g., SOL, other SPL tokens]\n* **Notable Transactions**:\n\
+      \t+ [Transaction 1] - @https://metasleuth.io/result/{fundFlowLink1}\n\t+ [Transaction\
+      \ 2] - @https://metasleuth.io/result/{fundFlowLink2}\n* **Other Relevant Details**:\
+      \ [Additional information as provided by MetaSleuth API]"
     data:
-      code: 0
-      message: ''
-      tokenSymbol: DOGE-CHAN
-      timestamp: 1742102032
-      holders:
-      - address: 5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1
-        mainEntity: Raydium Authority V4
-        holdingAmount: '8.54462958451071e+08'
-        holdingPercent: 0.8551278236902138
-      total: 1
-      fundFlowLink: ''
-      tokenPrice: 2.808743153756841e-06
+      error: 'Failed to fetch cluster details: 503 Server Error: Service Temporarily
+        Unavailable for url: https://bot.metasleuth.io/api/v1/tgbot/cluster-detail'
 raw_data_query:
   input:
     query: Get token cluster data for tQNVaFm2sy81tWdHZ971ztS5FKaShJUKGAzHMcypump
@@ -109,5 +86,5 @@ raw_data_query:
   output:
     response: ''
     data:
-      error: 'Failed to fetch token clusters: 403 Client Error: Forbidden for url:
-        https://bot.metasleuth.io/api/v1/tgbot/cluster'
+      error: 'Failed to fetch token clusters: 503 Server Error: Service Temporarily
+        Unavailable for url: https://bot.metasleuth.io/api/v1/tgbot/cluster'

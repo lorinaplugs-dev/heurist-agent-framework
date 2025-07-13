@@ -3,408 +3,211 @@ natural_language_query:
     query: What are the latest developments in Web3?
     raw_data_only: false
   output:
-    response: '**Latest Web3 Developments Summary (as of May 6, 2025)**
+    response: '**Web3 News Update - July 11, 2025**
 
 
-      ### **Market-Moving Events**
+      ### **Market Highlights**
 
 
-      1. **Bitcoin Core to Remove OP_RETURN Limit**: Bitcoin developers plan to remove
-      the OP_RETURN limit in the next release, allowing more data to be included in
-      transactions. (Source: CoinDesk, Cointelegraph)
+      * **Bitcoin (BTC) Reaches New All-Time High in USD**: Surged to over $118,000,
+      with US-based spot Bitcoin ETFs seeing a record $1.2 billion in inflows. (Source:
+      CryptoSlate)
 
-      2. **SEC Delays Litecoin ETF, Seeks Public Comments**: The SEC has further delayed
-      the Litecoin ETF, requesting public comments. (Source: CoinDesk)
+      * **Note**: BTC has not reached a new all-time high when priced in euros and
+      pounds. (Source: CryptoSlate)
 
-      3. **eToro Aims for $4 Billion Valuation in US IPO**: eToro seeks to raise $500
-      million in its initial public offering, valuing the company up to $4 billion.
+
+      ### **Security and Regulation**
+
+
+      * **GMX Exploit Update**: The attacker behind the $40 million GMX exploit has
+      started returning stolen funds after accepting a $5 million white hat bounty.
       (Source: Cointelegraph)
 
-
-      ### **Regulatory Updates**
-
-
-      1. **Florida Drops Strategic Bitcoin Reserve Bills**: Florida''s legislative
-      session ended without passing bills to establish a state crypto reserve. (Source:
-      Cointelegraph, Decrypt)
-
-      2. **Arizona''s Bitcoin Reserve Legislation Faces Veto**: Arizona''s governor
-      vetoed a bill to create a state Bitcoin reserve, but other bills remain in consideration.
-      (Source: Cointelegraph)
-
-      3. **Kenyan Court Orders Sam Altman''s Crypto Project to Delete Biometric User
-      Data**: The project faces global scrutiny, with Kenya and Indonesia taking action
-      against it. (Source: Decrypt)
-
-      4. **Democratic Opposition Threatens GENIUS Act, Jeopardizing 2025 Crypto Agenda**:
-      Resistance from Democrats may hinder the passage of the stablecoin regulation
-      bill. (Source: CryptoSlate)
-
-
-      ### **Industry Developments**
-
-
-      1. **Ripple to Expand XRP Markets Report as Institutional Usage Jumps**: Ripple
-      will enhance its quarterly report due to increased institutional engagement.
-      (Source: CoinDesk)
-
-      2. **Ripple''s RLUSD in Focus Amid $25M Pledge to US Educational Initiatives**:
-      Ripple''s stablecoin gains attention as the company commits to educational initiatives.
-      (Source: CoinDesk)
-
-      3. **Spark Commits Additional $1 Billion to Tokenized Treasuries**: Spark''s
-      total deployment in tokenized U.S. Treasuries now stands at $2.4 billion. (Source:
-      Decrypt)
-
-      4. **VanEck Files First BNB ETF Application in the US**: If approved, the ETF
-      would list on a national exchange, marking a first for BNB in the US market.
+      * **Malta’s Crypto Licensing Under Scrutiny**: The European Securities and Markets
+      Authority (ESMA) warns of ''inadequate'' Malta crypto licensing for MiCA regulations.
       (Source: CryptoSlate)
 
+      * **Malicious Code in Ethereum Extension**: A cybersecurity firm discovered
+      two lines of malicious code in an update for ETHCode, an open-source suite of
+      tools for Ethereum. (Source: Decrypt)
 
-      ### **Notable Mentions**
+      * **SIM Swapper Resentenced to 12 Years in Prison**: For stealing $20 million
+      in crypto, the original 18-month term was increased due to failure to pay restitution.
+      (Source: Decrypt)
 
 
-      1'
+      ### **Investments and Funding**
+
+
+      * **Historic PUMP Pre-Sale**: Investors rush into the Solana-based memecoin
+      platform Pump.fun, aiming to raise $1.32 billion, potentially the third-largest
+      fundraising event in crypto history. (Source: CryptoSlate)
+
+      * **Ethena Labs Sees Significant Growth**: Reached $290.2 million in total protocol
+      revenue, seeking SEC clarity on its stablecoin, USDe. (Source: CryptoSlate)
+
+
+      ### **Insights and Analysis**
+
+
+      * **Passive Income with Lightning Nodes**: Running a Lightning Network node
+      can generate passive Bitcoin income, but success depends on capital, uptime,
+      and dynamic fee strategies. (Source: Cointelegraph)
+
+      * **Bitcoin Supply Shock**: Michael Saylor’s relentless BTC buying, alongside
+      other whales, may set the stage for a historic supply shock as the Bitcoin supply
+      shrinks. (Source: Cointelegraph)
+
+      * **Crypto Derivatives Outlook**: Despite Bitcoin’s push to a new all-time high,
+      the price outlook remains cautiously optimistic. (Source: Decrypt)
+
+
+      ### **Investigations**
+
+
+      * **Florida AG Investigates Robinhood**: Over crypto pricing claims, focusing
+      on the platform’s payment-for-order-flow model potentially misleading users.
+      (Source: Decrypt)
+
+
+      ### **Other News**
+
+
+      * **Fake Vatican Chamber Token Presale Exposed**: A scam offering fake memberships
+      and token sales through a fraudulent “Vatican Chamber of Trade” has been identified.
+      (Source: Cointelegraph)
+
+      * **Eric Trump’s Ethereum Call**: Investors who bought Ethereum when Eric Trump
+      suggested it are finally seeing returns, five months later. (Source: Decrypt)'
     data: &id001
       payload:
         results:
-        - link: https://www.coindesk.com/tech/2025/05/06/bitcoin-developers-plan-op_return-removal-in-next-release
-          published: Tue, 06 May 2025 06:25:22 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: Bitcoin Developers Plan OP_RETURN Removal in Next Release
-        - link: https://www.coindesk.com/markets/2025/05/06/ripples-rlusd-in-focus-as-firm-pledges-25m-to-us-educational-initiatives
-          published: Tue, 06 May 2025 06:14:04 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: Ripple’s RLUSD in Focus as Firm Pledges $25M to U.S. Educational
-            Initiatives
-        - link: https://www.coindesk.com/markets/2025/05/06/ripple-to-expand-its-quarterly-xrp-markets-report-as-institutional-usage-jumps
-          published: Tue, 06 May 2025 04:34:18 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: Ripple to Expand Its Quarterly XRP Markets Report as Institutional
-            Usage Jumps
-        - link: https://www.coindesk.com/policy/2025/05/05/sec-further-delays-litecoin-etf-requests-public-comments
-          published: Tue, 06 May 2025 00:54:31 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: SEC Further Delays Litecoin ETF, Requests Public Comments
-        - link: https://www.coindesk.com/news-analysis/2025/05/05/trumps-ties-make-cryptos-democrat-allies-stomp-brakes-on-bills
-          published: Mon, 05 May 2025 21:43:21 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: Trump’s Ties Make Crypto’s Democrat Allies Stomp Brakes on Bills
-        - link: https://cointelegraph.com/news/bitcoin-core-unilaterally-remove-controversial-op-return-limit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 07:04:53 +0100
+        - link: https://cointelegraph.com/news/gmx-exploiter-begins-returning-stolen-funds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 11:19:12 +0100
           source: Cointelegraph.com News
-          summary: 'Bitcoin Core developers have decided to remove a limit on transaction
-            data in the next network upgrade, enabling more data to be included in
-            a more efficient way. “Bitcoin Core’s next release will, by default, relay
-            and mine transactions whose OP_RETURN outputs exceed 80 bytes and allow
-            any number of these outputs,” read the announcement on GitHub by Bitcoin
-            developer Greg Sanders on May 5. The long-standing limit was originally
-            a “gentle signal that block space should be used sparingly for non-payment
-            proof of publication data,” has outlived its utility, he added. The proposal
-            (PR 32359) was created by Bitcoin pioneer Peter Todd at the request of
-            Chaincode Labs. OP_RETURN is a special type of Bitcoin (BTC) transaction
-            output that allows storing small amounts of data on the blockchain, popularized
-            during the ordinals inscriptions craze in early 2024.Unlike regular transaction
-            outputs, OP_RETURN outputs are not spendable and don’t bloat unspent transaction
-            outputs (UTXOs).The original limit is no longer effective as people found
-            ways around it, such as using fake output addresses, which are actually
-            worse for the network, while some mining services were already ignoring
-            the limit, said Sanders. “Large-data inscriptions are happening regardless
-            and can be done in more or less abusive ways; the cap merely channels
-            them into more opaque forms that cause damage to the network.” Related:
-            Bitcoin block size could grow to 4 MB with inscriptions: ResearchBenefits
-            of removing the limit include a cleaner UTXO set, or database of spendable
-            outputs, more consistent behavior across the network, and better alignment
-            with how Bitcoin is actually being used, he added. Three possible paths
-            were considered: keeping the cap, raising the cap and removing the cap,
-            which was ultimately decided upon after earning “broad, though not perhaps
-            unanimous, support.” A controversial change to Bitcoin “Many users find
-            this to be an undesirable change for a number of reasons,” said Bitcoiner
-            Samson Mow on X on May 5. He added that users “can refuse to upgrade and
-            stay on 29.0 or run another implementation” of the network. Critics said
-            that the proposal was introduced without a proper consensus process. “I
-            think one thing is pretty clear, there is no consensus at the moment on
-            this OP_RETURN issue,” said Ten31 Fund managing partner Marty Bent.Some
-            also expressed concerns about deprioritizing Bitcoin’s financial utility
-            and raised questions about undisclosed conflicts of interest.Critics of
-            OP_RETURN limit removal. Source: moonsettlerMagazine: Bitcoin to $1M ‘by
-            2029,’ CIA tips its hat to Bitcoin: Hodler’s Digest'
-          title: Bitcoin Core to unilaterally remove controversial OP-Return limit
-        - link: https://cointelegraph.com/news/celsius-mashinsky-lashes-govt-death-in-prison-sentence?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 07:01:33 +0100
+          summary: The attacker behind the $40 million GMX exploit has begun returning
+            the stolen crypto after accepting a $5 million white hat bounty offered
+            by the GMX team.
+          title: Hacker returns stolen funds from $40M GMX exploit
+        - link: https://cointelegraph.com/news/no-mica-license-malta-at-risk-esma-review-mfsa?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 11:09:40 +0100
           source: Cointelegraph.com News
-          summary: 'Alex Mashinsky, the founder and former CEO of bankrupt crypto
-            lending platform Celsius, has blasted the government''s 20-year “venom-laced”
-            sentence request, declaring it a “death-in-prison sentence.”The US Department
-            of Justice requested Mashinsky receive at least 20 years behind bars in
-            the May 8 sentencing for his role in misleading Celsius users and profiting
-            from the price manipulation of Celsius (CEL), which would make the 59-year-old
-            79 if he serves the whole sentence.Lawyers acting for Mashinsky argued
-            in a May 5 reply memorandum filed in a New York district court that he
-            should receive no more than 366 days, because the DOJ hasn''t taken into
-            account his status as a nonviolent first-time offender with a previously
-            unblemished 30-year history in business. “The government''s venom-laced
-            submission recasts this case as one involving a predator with an intent
-            to target victims, harm them, and steal their money,” they said.“It concludes
-            by recommending that a first time, nonviolent offender who pled guilty
-            and accepts responsibility receive a death-in-prison sentence.”Lawyers
-            acting for Mashinsky argue the DOJ has ignored their client''s background
-            in its sentencing request. Source: Court ListenerMashinsky pleaded guilty
-            to two out of seven charges As part of a plea agreement, Mashinsky pleaded
-            guilty in December 2024 to commodities fraud and manipulating the price
-            of CEL, earning $48 million by selling his holdings before Celsius collapsed
-            in June 2022. Prosecutors initially filed seven charges in July 2023.Lawyers
-            acting for Mashinsky allege the DOJ’s push for a 20-year sentence is because
-            their client is unwilling to “capitulate to the government’s exaggerated
-            characterizations of his actions,” specifically that he was a “fraud from
-            the get-go.” “Alex is inserted as the scapegoat for every corporate action,
-            every group decision, every unanimous vote, every market fluctuation,
-            and every employee''s watercooler speculation,” they said.As part of its
-            April 28 sentencing request, the DOJ said Mashinsky’s guilty plea showed
-            that his crimes were deliberate, calculated decisions to lie, deceive
-            and steal.Days earlier on April 23, US federal prosecutors also filed
-            statements from hundreds of victims who lost money due to the Celsius
-            collapse. They detailed how some had entrusted their life savings to the
-            protocol, believing Mashinsky’s assurances that it was safe.Related: What
-            do crypto users want to happen to Alex Mashinsky?Celsius filed for Chapter
-            11 bankruptcy on July 13, 2022, owing $4.7 billion to creditors after
-            halting withdrawals in June, citing volatile market conditions.In November
-            2023, a US bankruptcy court approved Celsius'' restructuring plan to repay
-            customers, and in August 2024, $2.53 billion was paid to 251,000 creditors.Former
-            Celsius chief revenue officer Roni Cohen-Pavon also pleaded guilty in
-            September 2023 to similar charges, but his Dec. 11 sentencing has been
-            delayed until after Mashinsky is sentenced.Magazine: Crypto wanted to
-            overthrow banks, now it’s becoming them in stablecoin fight'
-          title: Celsius’ Mashinsky lashes out at ‘death-in-prison sentence’
-        - link: https://cointelegraph.com/news/etoro-us-ipo-4-billion-valuation-500-million-raise?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 06:51:30 +0100
+          summary: Malta has sought to lead the way in EU crypto regulation, though
+            early leadership has not come without its challenges.
+          title: 'Malta regulator: No MiCA licenses at risk after EU review'
+        - link: https://cointelegraph.com/news/fake-vatican-chamber-token-presale-scam-exposed?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 10:28:53 +0100
           source: Cointelegraph.com News
-          summary: 'The Israel-based eToro Group says it’s looking for a valuation
-            of up to $4 billion with its initial public offering in the US, as the
-            stock and crypto trading platform forges ahead with listing on the Nasdaq.The
-            company and existing stockholders are aiming to raise $500 million through
-            offering a total of 10 million shares priced between $46 to $50 apiece,
-            eToro said on May 5.A filing with the US Securities and Exchange Commission
-            shows eToro is offering 5 million shares, with a further 5 million being
-            put up by the likes of the company’s co-founder and CEO, Yoni Assia; his
-            brother and executive director, Ronen Assia; along with venture firms
-            Spark Capital, BRM Group and Andalusian Private Capital, among others.The
-            company offers stock and crypto trading targeting retail and plans to
-            list on the tech-heavy Nasdaq Global Select Market under the ticker “ETOR.”It''s
-            slated to compete with Robinhood Markets Inc. (HOOD), which saw crypto
-            trading dip in the first quarter but whose shares have climbed by nearly
-            30% so far this year, according to Google Finance.In the filing, eToro
-            said some BlackRock funds and accounts indicated interest in buying up
-            to $100 million worth of shares at IPO. eToro has also put aside 500,000
-            shares to sell through a directed share program, typically targeted at
-            employees.The company reported that its revenue from crypto in 2024 was
-            $12.1 billion, up from $3.4 billion in 2023. It expected crypto to account
-            for 37% of its commission from trading activity in the first quarter of
-            2025, down from 43% in the year-ago quarter.Source: Matthew SigelIn a
-            section of its filing listing possible risks to the business, eToro warned
-            its users could leave, or it could struggle to get more users, due to
-            negative perceptions of the cryptocurrencies it lists, “either as a result
-            of media coverage or by experiencing significant losses.”Other crypto-related
-            risks the eToro flagged included US state-level crypto regulation, which
-            it said “may place strain on our resources and make it difficult to operate
-            in certain jurisdictions, if at all.”It also said it expects “to continue
-            to incur significant costs” due to the European Union’s Markets in Crypto-Assets
-            (MiCA) laws “on an ongoing basis.”IPOs ready to push after Trump tariff
-            jolt EToro initially made confidential filings with the SEC in January
-            for a public offering, before publicly announcing the plans on March 24.The
-            company reportedly delayed its IPO after President Donald Trump’s April
-            2 “Liberation Day” tariff announcements tanked global markets and stopped
-            many in-the-works public offerings.Related: Are Donald Trump’s tariffs
-            a legal house of cards?Crypto companies are also lining up to go public,
-            with stablecoin issuer Circle filing on April 1 but then pausing its plans
-            amid the uncertainty.Crypto exchange Kraken is also reportedly considering
-            a public offering for early next year, which has accelerated its plan
-            with Trump’s election.EToro’s public offering is led by Goldman Sachs,
-            Jefferies, UBS Investment Bank and Citigroup.Legal Panel: Crypto wanted
-            to overthrow banks, now it’s becoming them in stablecoin fight'
-          title: eToro aims for $4B valuation, $500M raise for US IPO
-        - link: https://cointelegraph.com/news/suspect-behind-190-million-nomad-bridge-hack-extradited-us?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 06:16:37 +0100
+          summary: The Vatican Bank has denied any link to a suspicious crypto project
+            offering fake memberships and token sales through a fraudulent “Vatican
+            Chamber of Trade.”
+          title: 'Thou shalt not shill: Fake ‘Vatican Chamber’ token presale exposed'
+        - link: https://cointelegraph.com/explained/can-you-earn-passive-income-running-a-lightning-node?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 08:50:00 +0100
           source: Cointelegraph.com News
-          summary: 'A Russian-Israeli citizen allegedly involved in the $190 million
-            Nomad bridge hack will soon be extradited to the US after he was reportedly
-            arrested at an Israeli airport while boarding a flight to Russia. Alexander
-            Gurevich will be investigated for his alleged involvement in several “computer
-            crimes,” including laundering millions of dollars and transferring stolen
-            property allegedly connected to the Nomad Bridge hack in 2022, The Jerusalem
-            Post reported on May 5.Gurevich returned to Israel from an overseas trip
-            on April 19 but was ordered to appear before the Jerusalem District Court
-            for an extradition hearing soon after, according to the report. On April
-            29, Gurevich changed his name in Israel’s Population Registry to “Alexander
-            Block” and received a passport under that name at Israel’s Ben-Gurion
-            Airport the next day.He was arrested at the same airport two days later,
-            on May 1, while waiting to board a flight to Russia. Gurevich allegedly
-            identified a vulnerability in the Nomad bridge, which he exploited and
-            stole roughly $2.89 million worth of tokens from in August 2022.Dozens
-            of copycat hackers discovered and capitalized on the security vulnerability
-            soon after, leading to a total loss of $190 million.Gurevich allegedly
-            reached out to a Nomad executive on TelegramProsecutors allege that shortly
-            after the hack, Gurevich messaged Nomad’s chief technology officer, James
-            Prestwich, on Telegram using a fake identity, admitting that he had been
-            “amateurishly” seeking a crypto protocol to exploit.He allegedly apologized
-            for “the trouble he caused Prestwich and his team” and voluntarily transferred
-            about $162,000 into a recovery wallet the company had set up.Prestwich
-            told Gurevich that Nomad would pay him 10% of the value of the assets
-            he had stolen, to which Gurevich responded that he would consult his lawyer.
-            However, Nomad never heard back from him after that.Alleged messages between
-            Gurevich and Nomad’s James Prestwich were shared on X by Israel-based
-            Walla News journalist Yoav Itiel. Source: Yoav ItielAt some point during
-            the negotiations, Gurevich demanded a reward of $500,000 for identifying
-            the vulnerability.Related: Do Kwon is in US custody after extradition
-            battleUS federal authorities filed an eight-count indictment against Gurevich
-            in the Northern District of California on Aug. 16, 2023, in addition to
-            obtaining a warrant for his arrest. California is where the team behind
-            the Nomad bridge is based.The US submitted a formal extradition request
-            in December 2024, the Post noted.The money laundering charges that Gurevich
-            faces carry a maximum of 20 years, significantly harsher than the penalties
-            he would face in Israel.Gurevich is believed to have arrived in Israel
-            a few days before the $190 million exploit occurred, prompting Israeli
-            officials to believe he carried out the attack while in Israel.Magazine:
-            Financial nihilism in crypto is over — It’s time to dream big again'
-          title: 'Suspect in $190M Nomad hack to be extradited to the US: Report'
-        - link: https://cointelegraph.com/news/florida-takes-strategic-bitcoin-reserve-bills-off-the-table?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 05:24:02 +0100
+          summary: Running a Lightning Network node in 2025 can generate passive Bitcoin
+            income, but success depends on capital, uptime and dynamic fee strategies.
+          title: Can you earn passive income running a Lightning node?
+        - link: https://cointelegraph.com/explained/bitcoin-supply-is-shrinking-will-saylors-relentless-btc-buying-cause-a-supply-shock?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 08:05:00 +0100
           source: Cointelegraph.com News
-          summary: 'Two Florida crypto bills have been removed from the legislative
-            process in the latest blow to American state-level strategic Bitcoin reserve
-            ambitions. Florida’s House Bill 487 and Senate Bill 550 have been “indefinitely
-            postponed and withdrawn from consideration” on May 3, according to the
-            Florida Senate. Florida’s legislative session adjourned on May 2 without
-            the passage of these two bills, which would have advanced legislation
-            to establish a crypto reserve for the state. The Senate and House agreed
-            to extend the session until June 6 to address budget plans. Lawmakers
-            passed about 230 bills during the session, dealing with things like prohibiting
-            putting fluoride in the water, protecting state parks, and a school smartphone
-            ban, but diversifying state treasury portfolios was not among them. State
-            strategic Bitcoin reserve legislation race. Source: Bitcoin LawsHB 487,
-            which was introduced in February, would have allowed Florida’s chief financial
-            officer and the State Board of Administration to invest up to 10% of certain
-            state funds into Bitcoin (BTC).SB 550 was also filed in February to enable
-            investments of public funds in Bitcoin.Related: Alabama, Minnesota lawmakers
-            join US states pushing for Bitcoin reservesFlorida has now dropped out
-            of the race to pass state-level crypto investment legislation, along with
-            Wyoming, South Dakota, North Dakota, Pennsylvania, Montana and Oklahoma,
-            which have all seen Bitcoin bills fail to pass House or Senate votes,
-            according to Bitcoin Laws. Arizona has two more chances It came just days
-            after Arizona advanced its strategic Bitcoin reserve legislation further
-            than any other state, until House Bill 1025 was vetoed by Governor Katie
-            Hobbs, who labelled digital assets “untested investments” on May 3.The
-            Digital Assets Strategic Reserve bill would have permitted Arizona to
-            invest seized funds into Bitcoin and create a reserve managed by state
-            officials. The move drew the ire of crypto advocates and Bitcoiners, including
-            entrepreneur Anthony Pompliano, who said: “Imagine the ignorance of a
-            politician to believe they can make investment decisions.”“Arizona has
-            two more chances to be the first in the nation to establish a Bitcoin
-            reserve,” said Satoshi Action Fund founder Dennis Porter on May 5, citing
-            an article from Fox’s Eleanor Terrett. He added that the most likely to
-            pass is HB 2749, which offers a budget-neutral method to fund the reserve
-            using profit from the unclaimed property fund.Source: Dennis PorterThere
-            is also a related bill, SB 1373, which would authorize the state treasurer
-            to allocate up to 10% of Arizona state funds into digital assets. It has
-            yet to reach a final vote.Magazine: Bitcoin to $1M ‘by 2029,’ CIA tips
-            its hat to Bitcoin: Hodler’s Digest'
-          title: Florida takes strategic Bitcoin reserve bills off the table
-        - link: https://decrypt.co/318035/spark-commits-additional-1-billion-to-lead-tokenized-treasuries-sector
-          published: Tue, 06 May 2025 06:30:32 +0000
+          summary: As Michael Saylor’s Strategy and other whales keep buying Bitcoin,
+            the stage may be set for a historic supply shock.
+          title: 'Bitcoin supply is shrinking: Will Saylor’s relentless BTC buying
+            cause a supply shock?'
+        - link: https://decrypt.co/329667/malicious-pull-request-inserted-into-ethereum-code-extension-research
+          published: Fri, 11 Jul 2025 10:17:53 +0000
           source: Decrypt
-          summary: Spark has allocated another $1 billion to tokenized U.S. Treasuries,
-            bringing its total deployment to $2.4 billion across three funds.
-          title: Spark Commits Additional $1 Billion to Lead Tokenized Treasuries
-            Sector
-        - link: https://decrypt.co/318033/florida-joins-growing-list-states-knocking-back-bitcoin-reserve-bills
-          published: Tue, 06 May 2025 05:11:47 +0000
+          summary: Cybersecurity firm ReversingLabs uncovered two lines of malicious
+            code in an update forETHCode, an open source suite of tools.
+          title: 'Malicious Pull Request Inserted Into Ethereum Code Extension: Research'
+        - link: https://decrypt.co/329664/florida-ag-investigates-robinhood-crypto-pricing
+          published: Fri, 11 Jul 2025 06:08:19 +0000
           source: Decrypt
-          summary: The push for state-level digital asset reserves is hitting resistance
-            nationally, despite early-year optimism among Bitcoin advocates.
-          title: Florida Joins Growing List of States Knocking Back Bitcoin Reserve
-            Bills
-        - link: https://decrypt.co/318031/trump-host-two-crypto-dinners-this-month-amid-growing-ethics-concerns
-          published: Tue, 06 May 2025 03:33:58 +0000
+          summary: Florida's AG said Robinhood's payment-for-order-flow model may
+            mislead users by hiding true crypto costs behind marketing claims.
+          title: Florida AG Investigates Robinhood Over Crypto Pricing Claims
+        - link: https://decrypt.co/329661/crypto-derivatives-bitcoins-record-price
+          published: Fri, 11 Jul 2025 05:48:46 +0000
           source: Decrypt
-          summary: President Trump will host a gala for the largest holders of his
-            meme coin later this month, as lawmakers flag potential conflicts of interest.
-          title: Trump to Host Two Crypto Dinners This Month Amid Growing Ethics Concerns
-        - link: https://decrypt.co/318029/kenyan-court-orders-sam-altmans-crypto-project-delete-biometric-user-data
-          published: Tue, 06 May 2025 02:34:35 +0000
+          summary: Despite Bitcoin’s push to a new all-time high, the price outlook
+            remains cautiously optimistic, Decrypt was told.
+          title: What Crypto Derivatives Say About Bitcoin's Record Price
+        - link: https://decrypt.co/329658/sim-swapper-20-million-crypto-resentenced-12-years-prison
+          published: Fri, 11 Jul 2025 04:12:06 +0000
           source: Decrypt
-          summary: The Sam Altman startup faces rising global scrutiny as Kenya joins
-            Indonesia in clamping down on the company this month.
-          title: Kenyan Court Orders Sam Altman's Crypto Project to Delete Biometric
-            User Data
-        - link: https://decrypt.co/318026/openai-ends-profit-cap-restructure-microsoft-yet-to-sign-off
-          published: Tue, 06 May 2025 01:56:36 +0000
+          summary: Truglia’s original 18-month term was dramatically increased after
+            he failed to pay restitution to crypto investor Michael Terpin.
+          title: SIM Swapper Who Stole $20 Million in Crypto Resentenced to 12 Years
+            in Prison
+        - link: https://decrypt.co/329655/ethereum-eric-trump-youre-finally-green
+          published: Fri, 11 Jul 2025 02:48:11 +0000
           source: Decrypt
-          summary: OpenAI lifts its profit cap and restructures as a public benefit
-            company, but Microsoft approval remains uncertain.
-          title: OpenAI Ends Profit Cap in Restructure, Microsoft Yet to Sign Off
-        - link: https://cryptoslate.com/melania-memecoin-insiders-reportedly-make-over-150-million-including-pre-sale-trades/
-          published: Tue, 06 May 2025 07:17:03 +0000
+          summary: Ethereum plunged as much as 37% after the president's son called
+            it a buy in February. Five months later, it has slowly clawed its way
+            back.
+          title: If You Bought Ethereum When Eric Trump Said So, You’re Finally in
+            the Green
+        - link: https://cryptoslate.com/bitcoin-etfs-see-record-1-2b-inflows-as-market-hits-all-time-high-in-dollars/
+          published: Fri, 11 Jul 2025 10:42:41 +0000
           source: CryptoSlate
-          summary: According to Financial Times analysis, a small cohort of traders
-            secured nearly $100 million in profits from Melania Trump’s MELANIA token
-            within minutes of its market debut. Insider trading allegations Its on-chain
-            analysis suggests that two dozen digital wallets purchased $2.6 million
-            worth of tokens less than three minutes before Trump’s Jan. 19 post on
-            […] The post MELANIA memecoin insiders reportedly make over $150 million
-            including pre-sale trades appeared first on CryptoSlate.
-          title: MELANIA memecoin insiders reportedly make over $150 million including
-            pre-sale trades
-        - link: https://cryptoslate.com/president-trump-confirms-may-22-gala-dinner-for-top-trump-holders/
-          published: Mon, 05 May 2025 23:00:07 +0000
+          summary: US-based spot Bitcoin ETFs saw a dramatic uptick in investor activity
+            as the top crypto price reached a new all-time high of over $118,000,
+            at least in dollars. According to SoSoValue data, the 12 funds saw cumulative
+            inflows of $1.2 billion, one of their strongest daily performances since
+            launch in 2024. Since mid-April, the funds […] The post Bitcoin ETFs see
+            record $1.2B inflows as market hits all-time high in dollars appeared
+            first on CryptoSlate.
+          title: Bitcoin ETFs see record $1.2B inflows as market hits all-time high
+            in dollars
+        - link: https://cryptoslate.com/european-watchdog-warns-of-inadequate-malta-crypto-licensing-for-mica-regulations/
+          published: Fri, 11 Jul 2025 09:45:04 +0000
           source: CryptoSlate
-          summary: President Donald Trump confirmed that a private dinner will be
-            held on May 22 at Trump National Golf Club in Washington for the top 220
-            holders of his memecoin, TRUMP. Trump made the announcement in a social
-            media post on May 5. The event, organized by Fight Fight Fight LLC, a
-            Trump-affiliated entity, will admit holders […] The post President Trump
-            confirms May 22 gala dinner for top TRUMP holders appeared first on CryptoSlate.
-          title: President Trump confirms May 22 gala dinner for top TRUMP holders
-        - link: https://cryptoslate.com/xrp-trading-volume-steady-at-3-2b-in-q1-but-xrpl-activity-contracts-sharply/
-          published: Mon, 05 May 2025 22:00:35 +0000
+          summary: The European Securities and Markets Authority (ESMA) has raised
+            red flags over Malta’s handling of license approvals under the EU’s Markets
+            in Crypto-Assets (MiCA) regulation. In a peer review report released on
+            July 10, ESMA highlighted deficiencies in how the Malta Financial Services
+            Authority (MFSA) approved a recent crypto asset service provider (CASP),
+            urging tighter […] The post European watchdog warns of ‘inadequate’ Malta
+            crypto licensing for MiCA regulations appeared first on CryptoSlate.
+          title: European watchdog warns of ‘inadequate’ Malta crypto licensing for
+            MiCA regulations
+        - link: https://cryptoslate.com/investors-rush-into-historic-pump-pre-sale-while-whales-quietly-prepare-for-a-crash/
+          published: Fri, 11 Jul 2025 08:46:09 +0000
           source: CryptoSlate
-          summary: Ripple’s XRP trading volume on top-tier exchanges throughout the
-            first quarter, with average daily volume (ADV) holding nearly $3.2 billion,
-            while XRP Ledger (XRPL) activity decreased. According to a May 5 report
-            by Ripple, the volume trend reflects sustained institutional and retail
-            engagement despite sharp price swings and moderating on-chain activity.
-            Spot market data shows […] The post XRP trading volume steady at $3.2B
-            in Q1, but XRPL activity contracts sharply appeared first on CryptoSlate.
-          title: XRP trading volume steady at $3.2B in Q1, but XRPL activity contracts
-            sharply
-        - link: https://cryptoslate.com/vaneck-officially-files-first-bnb-etf-application-in-the-us/
-          published: Mon, 05 May 2025 21:06:09 +0000
+          summary: Solana-based memecoin platform Pump.fun is preparing for what could
+            become one of the largest token sales in crypto history. The project aims
+            to raise $1.32 billion through its upcoming PUMP token offering, potentially
+            securing the third spot among the highest-ever fundraising events in the
+            industry. According to data from Cryptorank, Pump.fun’s fundraising goal
+            would put […] The post Investors rush into historic PUMP pre-sale while
+            whales quietly prepare for a crash appeared first on CryptoSlate.
+          title: Investors rush into historic PUMP pre-sale while whales quietly prepare
+            for a crash
+        - link: https://cryptoslate.com/bitcoin-has-not-reached-a-new-all-time-high-in-euros-and-pounds-amid-118k-breakout/
+          published: Fri, 11 Jul 2025 08:22:10 +0000
           source: CryptoSlate
-          summary: Asset manager VanEck filed a registration statement with the Securities
-            and Exchange Commission on May 2 to launch a BNB exchange-traded fund
-            (ETF). The filing marks the first known attempt to bring a spot BNB ETF
-            to the US market. If approved, the fund would list on an unspecified national
-            exchange under a yet-to-be-disclosed ticker symbol. […] The post VanEck
-            officially files first BNB ETF application in the US appeared first on
-            CryptoSlate.
-          title: VanEck officially files first BNB ETF application in the US
-        - link: https://cryptoslate.com/democratic-opposition-threatens-genius-act-jeopardizing-2025-crypto-agenda-galaxy/
-          published: Mon, 05 May 2025 20:11:21 +0000
+          summary: Bitcoin surged to a new all-time high against the US dollar on
+            July 10, hitting $111,683 on Binance before closing the day even higher
+            at $115,244. The breakout marked another milestone for dollar-based investors
+            in Bitcoin’s 2025 bull cycle. But while the headlines celebrated a fresh
+            record, BTC told a different story when priced in […] The post Bitcoin
+            has NOT reached a new all-time high in euros and pounds amid $118k breakout
+            appeared first on CryptoSlate.
+          title: Bitcoin has NOT reached a new all-time high in euros and pounds amid
+            $118k breakout
+        - link: https://cryptoslate.com/ethena-rockets-to-290-million-in-revenue-seeks-sec-clarity-on-usde/
+          published: Fri, 11 Jul 2025 01:00:57 +0000
           source: CryptoSlate
-          summary: The Senate GENIUS Act bill, designed to establish federal rules
-            for stablecoins, is facing resistance from key Democrats, jeopardizing
-            the prospects for broader crypto legislation in 2025. The Guiding and
-            Establishing National Innovation for US Stablecoins Act (GENIUS Act) advanced
-            from the Senate Banking Committee in March with bipartisan support. However,
-            nine Senate Democrats announced […] The post Democratic opposition threatens
-            GENIUS Act, jeopardizing 2025 crypto agenda – Galaxy appeared first on
-            CryptoSlate.
-          title: Democratic opposition threatens GENIUS Act, jeopardizing 2025 crypto
-            agenda – Galaxy
+          summary: Ethena Labs reached $290.2 million in total protocol revenue on
+            July 9, trailing only Tether, Circle, and Sky among stablecoin issuers.
+            Token Terminal data show that the stablecoin issuer reached $100 million
+            in cumulative revenue 251 days after its launch, making it the second-fastest
+            protocol to cross this threshold. Daily fees averaged $3.1 million during
+            […] The post Ethena rockets to $290 million in revenue, seeks SEC clarity
+            on USDe appeared first on CryptoSlate.
+          title: Ethena rockets to $290 million in revenue, seeks SEC clarity on USDe
 default_parameters:
   input:
     tool: get_web3_news
@@ -434,340 +237,128 @@ keyword_parameter:
     data:
       payload:
         results:
-        - link: https://www.coindesk.com/tech/2025/05/06/bitcoin-developers-plan-op_return-removal-in-next-release
-          published: Tue, 06 May 2025 06:25:22 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: Bitcoin Developers Plan OP_RETURN Removal in Next Release
-        - link: https://www.coindesk.com/markets/2025/05/06/ripples-rlusd-in-focus-as-firm-pledges-25m-to-us-educational-initiatives
-          published: Tue, 06 May 2025 06:14:04 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: Ripple’s RLUSD in Focus as Firm Pledges $25M to U.S. Educational
-            Initiatives
-        - link: https://www.coindesk.com/markets/2025/05/06/ripple-to-expand-its-quarterly-xrp-markets-report-as-institutional-usage-jumps
-          published: Tue, 06 May 2025 04:34:18 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: Ripple to Expand Its Quarterly XRP Markets Report as Institutional
-            Usage Jumps
-        - link: https://www.coindesk.com/policy/2025/05/05/sec-further-delays-litecoin-etf-requests-public-comments
-          published: Tue, 06 May 2025 00:54:31 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: SEC Further Delays Litecoin ETF, Requests Public Comments
-        - link: https://www.coindesk.com/news-analysis/2025/05/05/trumps-ties-make-cryptos-democrat-allies-stomp-brakes-on-bills
-          published: Mon, 05 May 2025 21:43:21 +0000
-          source: 'CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data'
-          summary: ''
-          title: Trump’s Ties Make Crypto’s Democrat Allies Stomp Brakes on Bills
-        - link: https://cointelegraph.com/news/bitcoin-core-unilaterally-remove-controversial-op-return-limit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 07:04:53 +0100
+        - link: https://cointelegraph.com/news/gmx-exploiter-begins-returning-stolen-funds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 11:19:12 +0100
           source: Cointelegraph.com News
-          summary: 'Bitcoin Core developers have decided to remove a limit on transaction
-            data in the next network upgrade, enabling more data to be included in
-            a more efficient way. “Bitcoin Core’s next release will, by default, relay
-            and mine transactions whose OP_RETURN outputs exceed 80 bytes and allow
-            any number of these outputs,” read the announcement on GitHub by Bitcoin
-            developer Greg Sanders on May 5. The long-standing limit was originally
-            a “gentle signal that block space should be used sparingly for non-payment
-            proof of publication data,” has outlived its utility, he added. The proposal
-            (PR 32359) was created by Bitcoin pioneer Peter Todd at the request of
-            Chaincode Labs. OP_RETURN is a special type of Bitcoin (BTC) transaction
-            output that allows storing small amounts of data on the blockchain, popularized
-            during the ordinals inscriptions craze in early 2024.Unlike regular transaction
-            outputs, OP_RETURN outputs are not spendable and don’t bloat unspent transaction
-            outputs (UTXOs).The original limit is no longer effective as people found
-            ways around it, such as using fake output addresses, which are actually
-            worse for the network, while some mining services were already ignoring
-            the limit, said Sanders. “Large-data inscriptions are happening regardless
-            and can be done in more or less abusive ways; the cap merely channels
-            them into more opaque forms that cause damage to the network.” Related:
-            Bitcoin block size could grow to 4 MB with inscriptions: ResearchBenefits
-            of removing the limit include a cleaner UTXO set, or database of spendable
-            outputs, more consistent behavior across the network, and better alignment
-            with how Bitcoin is actually being used, he added. Three possible paths
-            were considered: keeping the cap, raising the cap and removing the cap,
-            which was ultimately decided upon after earning “broad, though not perhaps
-            unanimous, support.” A controversial change to Bitcoin “Many users find
-            this to be an undesirable change for a number of reasons,” said Bitcoiner
-            Samson Mow on X on May 5. He added that users “can refuse to upgrade and
-            stay on 29.0 or run another implementation” of the network. Critics said
-            that the proposal was introduced without a proper consensus process. “I
-            think one thing is pretty clear, there is no consensus at the moment on
-            this OP_RETURN issue,” said Ten31 Fund managing partner Marty Bent.Some
-            also expressed concerns about deprioritizing Bitcoin’s financial utility
-            and raised questions about undisclosed conflicts of interest.Critics of
-            OP_RETURN limit removal. Source: moonsettlerMagazine: Bitcoin to $1M ‘by
-            2029,’ CIA tips its hat to Bitcoin: Hodler’s Digest'
-          title: Bitcoin Core to unilaterally remove controversial OP-Return limit
-        - link: https://cointelegraph.com/news/celsius-mashinsky-lashes-govt-death-in-prison-sentence?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 07:01:33 +0100
+          summary: The attacker behind the $40 million GMX exploit has begun returning
+            the stolen crypto after accepting a $5 million white hat bounty offered
+            by the GMX team.
+          title: Hacker returns stolen funds from $40M GMX exploit
+        - link: https://cointelegraph.com/news/no-mica-license-malta-at-risk-esma-review-mfsa?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 11:09:40 +0100
           source: Cointelegraph.com News
-          summary: 'Alex Mashinsky, the founder and former CEO of bankrupt crypto
-            lending platform Celsius, has blasted the government''s 20-year “venom-laced”
-            sentence request, declaring it a “death-in-prison sentence.”The US Department
-            of Justice requested Mashinsky receive at least 20 years behind bars in
-            the May 8 sentencing for his role in misleading Celsius users and profiting
-            from the price manipulation of Celsius (CEL), which would make the 59-year-old
-            79 if he serves the whole sentence.Lawyers acting for Mashinsky argued
-            in a May 5 reply memorandum filed in a New York district court that he
-            should receive no more than 366 days, because the DOJ hasn''t taken into
-            account his status as a nonviolent first-time offender with a previously
-            unblemished 30-year history in business. “The government''s venom-laced
-            submission recasts this case as one involving a predator with an intent
-            to target victims, harm them, and steal their money,” they said.“It concludes
-            by recommending that a first time, nonviolent offender who pled guilty
-            and accepts responsibility receive a death-in-prison sentence.”Lawyers
-            acting for Mashinsky argue the DOJ has ignored their client''s background
-            in its sentencing request. Source: Court ListenerMashinsky pleaded guilty
-            to two out of seven charges As part of a plea agreement, Mashinsky pleaded
-            guilty in December 2024 to commodities fraud and manipulating the price
-            of CEL, earning $48 million by selling his holdings before Celsius collapsed
-            in June 2022. Prosecutors initially filed seven charges in July 2023.Lawyers
-            acting for Mashinsky allege the DOJ’s push for a 20-year sentence is because
-            their client is unwilling to “capitulate to the government’s exaggerated
-            characterizations of his actions,” specifically that he was a “fraud from
-            the get-go.” “Alex is inserted as the scapegoat for every corporate action,
-            every group decision, every unanimous vote, every market fluctuation,
-            and every employee''s watercooler speculation,” they said.As part of its
-            April 28 sentencing request, the DOJ said Mashinsky’s guilty plea showed
-            that his crimes were deliberate, calculated decisions to lie, deceive
-            and steal.Days earlier on April 23, US federal prosecutors also filed
-            statements from hundreds of victims who lost money due to the Celsius
-            collapse. They detailed how some had entrusted their life savings to the
-            protocol, believing Mashinsky’s assurances that it was safe.Related: What
-            do crypto users want to happen to Alex Mashinsky?Celsius filed for Chapter
-            11 bankruptcy on July 13, 2022, owing $4.7 billion to creditors after
-            halting withdrawals in June, citing volatile market conditions.In November
-            2023, a US bankruptcy court approved Celsius'' restructuring plan to repay
-            customers, and in August 2024, $2.53 billion was paid to 251,000 creditors.Former
-            Celsius chief revenue officer Roni Cohen-Pavon also pleaded guilty in
-            September 2023 to similar charges, but his Dec. 11 sentencing has been
-            delayed until after Mashinsky is sentenced.Magazine: Crypto wanted to
-            overthrow banks, now it’s becoming them in stablecoin fight'
-          title: Celsius’ Mashinsky lashes out at ‘death-in-prison sentence’
-        - link: https://cointelegraph.com/news/etoro-us-ipo-4-billion-valuation-500-million-raise?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 06:51:30 +0100
+          summary: Malta has sought to lead the way in EU crypto regulation, though
+            early leadership has not come without its challenges.
+          title: 'Malta regulator: No MiCA licenses at risk after EU review'
+        - link: https://cointelegraph.com/news/fake-vatican-chamber-token-presale-scam-exposed?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 10:28:53 +0100
           source: Cointelegraph.com News
-          summary: 'The Israel-based eToro Group says it’s looking for a valuation
-            of up to $4 billion with its initial public offering in the US, as the
-            stock and crypto trading platform forges ahead with listing on the Nasdaq.The
-            company and existing stockholders are aiming to raise $500 million through
-            offering a total of 10 million shares priced between $46 to $50 apiece,
-            eToro said on May 5.A filing with the US Securities and Exchange Commission
-            shows eToro is offering 5 million shares, with a further 5 million being
-            put up by the likes of the company’s co-founder and CEO, Yoni Assia; his
-            brother and executive director, Ronen Assia; along with venture firms
-            Spark Capital, BRM Group and Andalusian Private Capital, among others.The
-            company offers stock and crypto trading targeting retail and plans to
-            list on the tech-heavy Nasdaq Global Select Market under the ticker “ETOR.”It''s
-            slated to compete with Robinhood Markets Inc. (HOOD), which saw crypto
-            trading dip in the first quarter but whose shares have climbed by nearly
-            30% so far this year, according to Google Finance.In the filing, eToro
-            said some BlackRock funds and accounts indicated interest in buying up
-            to $100 million worth of shares at IPO. eToro has also put aside 500,000
-            shares to sell through a directed share program, typically targeted at
-            employees.The company reported that its revenue from crypto in 2024 was
-            $12.1 billion, up from $3.4 billion in 2023. It expected crypto to account
-            for 37% of its commission from trading activity in the first quarter of
-            2025, down from 43% in the year-ago quarter.Source: Matthew SigelIn a
-            section of its filing listing possible risks to the business, eToro warned
-            its users could leave, or it could struggle to get more users, due to
-            negative perceptions of the cryptocurrencies it lists, “either as a result
-            of media coverage or by experiencing significant losses.”Other crypto-related
-            risks the eToro flagged included US state-level crypto regulation, which
-            it said “may place strain on our resources and make it difficult to operate
-            in certain jurisdictions, if at all.”It also said it expects “to continue
-            to incur significant costs” due to the European Union’s Markets in Crypto-Assets
-            (MiCA) laws “on an ongoing basis.”IPOs ready to push after Trump tariff
-            jolt EToro initially made confidential filings with the SEC in January
-            for a public offering, before publicly announcing the plans on March 24.The
-            company reportedly delayed its IPO after President Donald Trump’s April
-            2 “Liberation Day” tariff announcements tanked global markets and stopped
-            many in-the-works public offerings.Related: Are Donald Trump’s tariffs
-            a legal house of cards?Crypto companies are also lining up to go public,
-            with stablecoin issuer Circle filing on April 1 but then pausing its plans
-            amid the uncertainty.Crypto exchange Kraken is also reportedly considering
-            a public offering for early next year, which has accelerated its plan
-            with Trump’s election.EToro’s public offering is led by Goldman Sachs,
-            Jefferies, UBS Investment Bank and Citigroup.Legal Panel: Crypto wanted
-            to overthrow banks, now it’s becoming them in stablecoin fight'
-          title: eToro aims for $4B valuation, $500M raise for US IPO
-        - link: https://cointelegraph.com/news/suspect-behind-190-million-nomad-bridge-hack-extradited-us?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 06:16:37 +0100
+          summary: The Vatican Bank has denied any link to a suspicious crypto project
+            offering fake memberships and token sales through a fraudulent “Vatican
+            Chamber of Trade.”
+          title: 'Thou shalt not shill: Fake ‘Vatican Chamber’ token presale exposed'
+        - link: https://cointelegraph.com/explained/can-you-earn-passive-income-running-a-lightning-node?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 08:50:00 +0100
           source: Cointelegraph.com News
-          summary: 'A Russian-Israeli citizen allegedly involved in the $190 million
-            Nomad bridge hack will soon be extradited to the US after he was reportedly
-            arrested at an Israeli airport while boarding a flight to Russia. Alexander
-            Gurevich will be investigated for his alleged involvement in several “computer
-            crimes,” including laundering millions of dollars and transferring stolen
-            property allegedly connected to the Nomad Bridge hack in 2022, The Jerusalem
-            Post reported on May 5.Gurevich returned to Israel from an overseas trip
-            on April 19 but was ordered to appear before the Jerusalem District Court
-            for an extradition hearing soon after, according to the report. On April
-            29, Gurevich changed his name in Israel’s Population Registry to “Alexander
-            Block” and received a passport under that name at Israel’s Ben-Gurion
-            Airport the next day.He was arrested at the same airport two days later,
-            on May 1, while waiting to board a flight to Russia. Gurevich allegedly
-            identified a vulnerability in the Nomad bridge, which he exploited and
-            stole roughly $2.89 million worth of tokens from in August 2022.Dozens
-            of copycat hackers discovered and capitalized on the security vulnerability
-            soon after, leading to a total loss of $190 million.Gurevich allegedly
-            reached out to a Nomad executive on TelegramProsecutors allege that shortly
-            after the hack, Gurevich messaged Nomad’s chief technology officer, James
-            Prestwich, on Telegram using a fake identity, admitting that he had been
-            “amateurishly” seeking a crypto protocol to exploit.He allegedly apologized
-            for “the trouble he caused Prestwich and his team” and voluntarily transferred
-            about $162,000 into a recovery wallet the company had set up.Prestwich
-            told Gurevich that Nomad would pay him 10% of the value of the assets
-            he had stolen, to which Gurevich responded that he would consult his lawyer.
-            However, Nomad never heard back from him after that.Alleged messages between
-            Gurevich and Nomad’s James Prestwich were shared on X by Israel-based
-            Walla News journalist Yoav Itiel. Source: Yoav ItielAt some point during
-            the negotiations, Gurevich demanded a reward of $500,000 for identifying
-            the vulnerability.Related: Do Kwon is in US custody after extradition
-            battleUS federal authorities filed an eight-count indictment against Gurevich
-            in the Northern District of California on Aug. 16, 2023, in addition to
-            obtaining a warrant for his arrest. California is where the team behind
-            the Nomad bridge is based.The US submitted a formal extradition request
-            in December 2024, the Post noted.The money laundering charges that Gurevich
-            faces carry a maximum of 20 years, significantly harsher than the penalties
-            he would face in Israel.Gurevich is believed to have arrived in Israel
-            a few days before the $190 million exploit occurred, prompting Israeli
-            officials to believe he carried out the attack while in Israel.Magazine:
-            Financial nihilism in crypto is over — It’s time to dream big again'
-          title: 'Suspect in $190M Nomad hack to be extradited to the US: Report'
-        - link: https://cointelegraph.com/news/florida-takes-strategic-bitcoin-reserve-bills-off-the-table?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
-          published: Tue, 06 May 2025 05:24:02 +0100
+          summary: Running a Lightning Network node in 2025 can generate passive Bitcoin
+            income, but success depends on capital, uptime and dynamic fee strategies.
+          title: Can you earn passive income running a Lightning node?
+        - link: https://cointelegraph.com/explained/bitcoin-supply-is-shrinking-will-saylors-relentless-btc-buying-cause-a-supply-shock?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound
+          published: Fri, 11 Jul 2025 08:05:00 +0100
           source: Cointelegraph.com News
-          summary: 'Two Florida crypto bills have been removed from the legislative
-            process in the latest blow to American state-level strategic Bitcoin reserve
-            ambitions. Florida’s House Bill 487 and Senate Bill 550 have been “indefinitely
-            postponed and withdrawn from consideration” on May 3, according to the
-            Florida Senate. Florida’s legislative session adjourned on May 2 without
-            the passage of these two bills, which would have advanced legislation
-            to establish a crypto reserve for the state. The Senate and House agreed
-            to extend the session until June 6 to address budget plans. Lawmakers
-            passed about 230 bills during the session, dealing with things like prohibiting
-            putting fluoride in the water, protecting state parks, and a school smartphone
-            ban, but diversifying state treasury portfolios was not among them. State
-            strategic Bitcoin reserve legislation race. Source: Bitcoin LawsHB 487,
-            which was introduced in February, would have allowed Florida’s chief financial
-            officer and the State Board of Administration to invest up to 10% of certain
-            state funds into Bitcoin (BTC).SB 550 was also filed in February to enable
-            investments of public funds in Bitcoin.Related: Alabama, Minnesota lawmakers
-            join US states pushing for Bitcoin reservesFlorida has now dropped out
-            of the race to pass state-level crypto investment legislation, along with
-            Wyoming, South Dakota, North Dakota, Pennsylvania, Montana and Oklahoma,
-            which have all seen Bitcoin bills fail to pass House or Senate votes,
-            according to Bitcoin Laws. Arizona has two more chances It came just days
-            after Arizona advanced its strategic Bitcoin reserve legislation further
-            than any other state, until House Bill 1025 was vetoed by Governor Katie
-            Hobbs, who labelled digital assets “untested investments” on May 3.The
-            Digital Assets Strategic Reserve bill would have permitted Arizona to
-            invest seized funds into Bitcoin and create a reserve managed by state
-            officials. The move drew the ire of crypto advocates and Bitcoiners, including
-            entrepreneur Anthony Pompliano, who said: “Imagine the ignorance of a
-            politician to believe they can make investment decisions.”“Arizona has
-            two more chances to be the first in the nation to establish a Bitcoin
-            reserve,” said Satoshi Action Fund founder Dennis Porter on May 5, citing
-            an article from Fox’s Eleanor Terrett. He added that the most likely to
-            pass is HB 2749, which offers a budget-neutral method to fund the reserve
-            using profit from the unclaimed property fund.Source: Dennis PorterThere
-            is also a related bill, SB 1373, which would authorize the state treasurer
-            to allocate up to 10% of Arizona state funds into digital assets. It has
-            yet to reach a final vote.Magazine: Bitcoin to $1M ‘by 2029,’ CIA tips
-            its hat to Bitcoin: Hodler’s Digest'
-          title: Florida takes strategic Bitcoin reserve bills off the table
-        - link: https://decrypt.co/318035/spark-commits-additional-1-billion-to-lead-tokenized-treasuries-sector
-          published: Tue, 06 May 2025 06:30:32 +0000
+          summary: As Michael Saylor’s Strategy and other whales keep buying Bitcoin,
+            the stage may be set for a historic supply shock.
+          title: 'Bitcoin supply is shrinking: Will Saylor’s relentless BTC buying
+            cause a supply shock?'
+        - link: https://decrypt.co/329667/malicious-pull-request-inserted-into-ethereum-code-extension-research
+          published: Fri, 11 Jul 2025 10:17:53 +0000
           source: Decrypt
-          summary: Spark has allocated another $1 billion to tokenized U.S. Treasuries,
-            bringing its total deployment to $2.4 billion across three funds.
-          title: Spark Commits Additional $1 Billion to Lead Tokenized Treasuries
-            Sector
-        - link: https://decrypt.co/318033/florida-joins-growing-list-states-knocking-back-bitcoin-reserve-bills
-          published: Tue, 06 May 2025 05:11:47 +0000
+          summary: Cybersecurity firm ReversingLabs uncovered two lines of malicious
+            code in an update forETHCode, an open source suite of tools.
+          title: 'Malicious Pull Request Inserted Into Ethereum Code Extension: Research'
+        - link: https://decrypt.co/329664/florida-ag-investigates-robinhood-crypto-pricing
+          published: Fri, 11 Jul 2025 06:08:19 +0000
           source: Decrypt
-          summary: The push for state-level digital asset reserves is hitting resistance
-            nationally, despite early-year optimism among Bitcoin advocates.
-          title: Florida Joins Growing List of States Knocking Back Bitcoin Reserve
-            Bills
-        - link: https://decrypt.co/318031/trump-host-two-crypto-dinners-this-month-amid-growing-ethics-concerns
-          published: Tue, 06 May 2025 03:33:58 +0000
+          summary: Florida's AG said Robinhood's payment-for-order-flow model may
+            mislead users by hiding true crypto costs behind marketing claims.
+          title: Florida AG Investigates Robinhood Over Crypto Pricing Claims
+        - link: https://decrypt.co/329661/crypto-derivatives-bitcoins-record-price
+          published: Fri, 11 Jul 2025 05:48:46 +0000
           source: Decrypt
-          summary: President Trump will host a gala for the largest holders of his
-            meme coin later this month, as lawmakers flag potential conflicts of interest.
-          title: Trump to Host Two Crypto Dinners This Month Amid Growing Ethics Concerns
-        - link: https://decrypt.co/318029/kenyan-court-orders-sam-altmans-crypto-project-delete-biometric-user-data
-          published: Tue, 06 May 2025 02:34:35 +0000
+          summary: Despite Bitcoin’s push to a new all-time high, the price outlook
+            remains cautiously optimistic, Decrypt was told.
+          title: What Crypto Derivatives Say About Bitcoin's Record Price
+        - link: https://decrypt.co/329658/sim-swapper-20-million-crypto-resentenced-12-years-prison
+          published: Fri, 11 Jul 2025 04:12:06 +0000
           source: Decrypt
-          summary: The Sam Altman startup faces rising global scrutiny as Kenya joins
-            Indonesia in clamping down on the company this month.
-          title: Kenyan Court Orders Sam Altman's Crypto Project to Delete Biometric
-            User Data
-        - link: https://decrypt.co/318026/openai-ends-profit-cap-restructure-microsoft-yet-to-sign-off
-          published: Tue, 06 May 2025 01:56:36 +0000
+          summary: Truglia’s original 18-month term was dramatically increased after
+            he failed to pay restitution to crypto investor Michael Terpin.
+          title: SIM Swapper Who Stole $20 Million in Crypto Resentenced to 12 Years
+            in Prison
+        - link: https://decrypt.co/329655/ethereum-eric-trump-youre-finally-green
+          published: Fri, 11 Jul 2025 02:48:11 +0000
           source: Decrypt
-          summary: OpenAI lifts its profit cap and restructures as a public benefit
-            company, but Microsoft approval remains uncertain.
-          title: OpenAI Ends Profit Cap in Restructure, Microsoft Yet to Sign Off
-        - link: https://cryptoslate.com/melania-memecoin-insiders-reportedly-make-over-150-million-including-pre-sale-trades/
-          published: Tue, 06 May 2025 07:17:03 +0000
+          summary: Ethereum plunged as much as 37% after the president's son called
+            it a buy in February. Five months later, it has slowly clawed its way
+            back.
+          title: If You Bought Ethereum When Eric Trump Said So, You’re Finally in
+            the Green
+        - link: https://cryptoslate.com/bitcoin-etfs-see-record-1-2b-inflows-as-market-hits-all-time-high-in-dollars/
+          published: Fri, 11 Jul 2025 10:42:41 +0000
           source: CryptoSlate
-          summary: According to Financial Times analysis, a small cohort of traders
-            secured nearly $100 million in profits from Melania Trump’s MELANIA token
-            within minutes of its market debut. Insider trading allegations Its on-chain
-            analysis suggests that two dozen digital wallets purchased $2.6 million
-            worth of tokens less than three minutes before Trump’s Jan. 19 post on
-            […] The post MELANIA memecoin insiders reportedly make over $150 million
-            including pre-sale trades appeared first on CryptoSlate.
-          title: MELANIA memecoin insiders reportedly make over $150 million including
-            pre-sale trades
-        - link: https://cryptoslate.com/president-trump-confirms-may-22-gala-dinner-for-top-trump-holders/
-          published: Mon, 05 May 2025 23:00:07 +0000
+          summary: US-based spot Bitcoin ETFs saw a dramatic uptick in investor activity
+            as the top crypto price reached a new all-time high of over $118,000,
+            at least in dollars. According to SoSoValue data, the 12 funds saw cumulative
+            inflows of $1.2 billion, the second strongest daily performance since
+            launch in 2024, and the best this year. […] The post Bitcoin ETFs see
+            record $1.2B inflows as market hits all-time high in dollars appeared
+            first on CryptoSlate.
+          title: Bitcoin ETFs see record $1.2B inflows as market hits all-time high
+            in dollars
+        - link: https://cryptoslate.com/european-watchdog-warns-of-inadequate-malta-crypto-licensing-for-mica-regulations/
+          published: Fri, 11 Jul 2025 09:45:04 +0000
           source: CryptoSlate
-          summary: President Donald Trump confirmed that a private dinner will be
-            held on May 22 at Trump National Golf Club in Washington for the top 220
-            holders of his memecoin, TRUMP. Trump made the announcement in a social
-            media post on May 5. The event, organized by Fight Fight Fight LLC, a
-            Trump-affiliated entity, will admit holders […] The post President Trump
-            confirms May 22 gala dinner for top TRUMP holders appeared first on CryptoSlate.
-          title: President Trump confirms May 22 gala dinner for top TRUMP holders
-        - link: https://cryptoslate.com/xrp-trading-volume-steady-at-3-2b-in-q1-but-xrpl-activity-contracts-sharply/
-          published: Mon, 05 May 2025 22:00:35 +0000
+          summary: The European Securities and Markets Authority (ESMA) has raised
+            red flags over Malta’s handling of license approvals under the EU’s Markets
+            in Crypto-Assets (MiCA) regulation. In a peer review report released on
+            July 10, ESMA highlighted deficiencies in how the Malta Financial Services
+            Authority (MFSA) approved a recent crypto asset service provider (CASP),
+            urging tighter […] The post European watchdog warns of ‘inadequate’ Malta
+            crypto licensing for MiCA regulations appeared first on CryptoSlate.
+          title: European watchdog warns of ‘inadequate’ Malta crypto licensing for
+            MiCA regulations
+        - link: https://cryptoslate.com/investors-rush-into-historic-pump-pre-sale-while-whales-quietly-prepare-for-a-crash/
+          published: Fri, 11 Jul 2025 08:46:09 +0000
           source: CryptoSlate
-          summary: Ripple’s XRP trading volume on top-tier exchanges throughout the
-            first quarter, with average daily volume (ADV) holding nearly $3.2 billion,
-            while XRP Ledger (XRPL) activity decreased. According to a May 5 report
-            by Ripple, the volume trend reflects sustained institutional and retail
-            engagement despite sharp price swings and moderating on-chain activity.
-            Spot market data shows […] The post XRP trading volume steady at $3.2B
-            in Q1, but XRPL activity contracts sharply appeared first on CryptoSlate.
-          title: XRP trading volume steady at $3.2B in Q1, but XRPL activity contracts
-            sharply
-        - link: https://cryptoslate.com/vaneck-officially-files-first-bnb-etf-application-in-the-us/
-          published: Mon, 05 May 2025 21:06:09 +0000
+          summary: Solana-based memecoin platform Pump.fun is preparing for what could
+            become one of the largest token sales in crypto history. The project aims
+            to raise $1.32 billion through its upcoming PUMP token offering, potentially
+            securing the third spot among the highest-ever fundraising events in the
+            industry. According to data from Cryptorank, Pump.fun’s fundraising goal
+            would put […] The post Investors rush into historic PUMP pre-sale while
+            whales quietly prepare for a crash appeared first on CryptoSlate.
+          title: Investors rush into historic PUMP pre-sale while whales quietly prepare
+            for a crash
+        - link: https://cryptoslate.com/bitcoin-has-not-reached-a-new-all-time-high-in-euros-and-pounds-amid-118k-breakout/
+          published: Fri, 11 Jul 2025 08:22:10 +0000
           source: CryptoSlate
-          summary: Asset manager VanEck filed a registration statement with the Securities
-            and Exchange Commission on May 2 to launch a BNB exchange-traded fund
-            (ETF). The filing marks the first known attempt to bring a spot BNB ETF
-            to the US market. If approved, the fund would list on an unspecified national
-            exchange under a yet-to-be-disclosed ticker symbol. […] The post VanEck
-            officially files first BNB ETF application in the US appeared first on
-            CryptoSlate.
-          title: VanEck officially files first BNB ETF application in the US
-        - link: https://cryptoslate.com/democratic-opposition-threatens-genius-act-jeopardizing-2025-crypto-agenda-galaxy/
-          published: Mon, 05 May 2025 20:11:21 +0000
+          summary: Bitcoin surged to a new all-time high against the US dollar on
+            July 10, hitting $111,683 on Binance before closing the day even higher
+            at $115,244. The breakout marked another milestone for dollar-based investors
+            in Bitcoin’s 2025 bull cycle. But while the headlines celebrated a fresh
+            record, BTC told a different story when priced in […] The post Bitcoin
+            has NOT reached a new all-time high in euros and pounds amid $118k breakout
+            appeared first on CryptoSlate.
+          title: Bitcoin has NOT reached a new all-time high in euros and pounds amid
+            $118k breakout
+        - link: https://cryptoslate.com/ethena-rockets-to-290-million-in-revenue-seeks-sec-clarity-on-usde/
+          published: Fri, 11 Jul 2025 01:00:57 +0000
           source: CryptoSlate
-          summary: The Senate GENIUS Act bill, designed to establish federal rules
-            for stablecoins, is facing resistance from key Democrats, jeopardizing
-            the prospects for broader crypto legislation in 2025. The Guiding and
-            Establishing National Innovation for US Stablecoins Act (GENIUS Act) advanced
-            from the Senate Banking Committee in March with bipartisan support. However,
-            nine Senate Democrats announced […] The post Democratic opposition threatens
-            GENIUS Act, jeopardizing 2025 crypto agenda – Galaxy appeared first on
-            CryptoSlate.
-          title: Democratic opposition threatens GENIUS Act, jeopardizing 2025 crypto
-            agenda – Galaxy
+          summary: Ethena Labs reached $290.2 million in total protocol revenue on
+            July 9, trailing only Tether, Circle, and Sky among stablecoin issuers.
+            Token Terminal data show that the stablecoin issuer reached $100 million
+            in cumulative revenue 251 days after its launch, making it the second-fastest
+            protocol to cross this threshold. Daily fees averaged $3.1 million during
+            […] The post Ethena rockets to $290 million in revenue, seeks SEC clarity
+            on USDe appeared first on CryptoSlate.
+          title: Ethena rockets to $290 million in revenue, seeks SEC clarity on USDe

@@ -1,115 +1,501 @@
 input_mentions:
   query: Search for mentions of elonmusk, tesla, and spacex in the last 30 days
 output_mentions:
-  response: '**ELFA API Response Analysis**
-
-
-    **Query Summary**
-
-    * **Search Terms:** `elonmusk`, `tesla`, `spacex`
-
-    * **Time Frame:** Last 30 days
-
-    * **API:** ELFA API
-
-
-    **Response Overview**
-
-
-    * **Status:** `success`
-
-    * **Success Indicator:** `True`
-
-    * **Returned Data:** **EMPTY** (`[]`)
-
-
-    **Key Findings:**
-
-
-    1. **No Mentions Found**: Despite the query covering three prominent entities
-    (`elonmusk`, `tesla`, `spacex`) over a significant time frame (last 30 days),
-    the ELFA API returned **no mentions** related to these terms in the context of
-    crypto tokens.
-
-
-    **Possible Interpretations:**
-
-
-    * **Low Crypto Relevance**: The searched terms might not have been significantly
-    discussed in relation to crypto tokens within the last 30 days.
-
-    * **API Scope Limitations**: The ELFA API''s scope or data sources might not cover
-    the platforms or conversations where these terms were mentioned in a crypto context.
-
-    * **Query Specificity**: The search terms, while popular, might not have been
-    linked to specific crypto tokens or discussions that the ELFA API tracks.
-
-
-    **Recommendations for Further Analysis:**
-
-
-    1. **Broaden Time Frame**: Extend the search period to observe if there were relevant
-    mentions in the preceding months.
-
-    2. **Related Crypto Tokens**: Identify specific crypto tokens related to the searched
-    terms (e.g., DOGE for Elon Musk) and query those directly.
-
-    3. **Cross-Platform Comparison**: Utilize other social media analytics tools to
-    compare the prevalence of these terms across different platforms for a more comprehensive
-    view.
-
-
-    **Next Steps:**
-
-    Would you like to:
-
-    A) Refine the search with a broader time frame
-
-    B) Query specific crypto tokens related to the searched terms
-
-    C) Explore mentions of different entities
-
-    D) Other (please specify)'
+  response: "**Search Results for Heurist, HEU, and heurist_ai (Last 30 days)**\n\n\
+    **Overview**\n\n* **Total Mentions:** 17\n* **Unique Tweets:** 7 (due to multiple\
+    \ retweets/reposts of the same content)\n* **Timeframe:** June 26 - July 3, 2025\n\
+    * **Sentiment Analysis:**\n\t+ **Positive:** 3 mentions\n\t+ **Neutral:** 13 mentions\n\
+    \t+ **Negative:** 0 mentions\n\t+ **Unknown (e.g., due to 'RT' without additional\
+    \ context):** 1 mention\n\n**Breakdown by Keyword:**\n\n* **Heurist:**\n\t+ Mentions:\
+    \ 10\n\t+ Sentiment: 2 Positive, 7 Neutral, 1 Unknown\n* **HEU:**\n\t+ **No mentions\
+    \ found**\n* **heurist_ai:**\n\t+ Mentions: 7\n\t+ Sentiment: 1 Positive, 6 Neutral\n\
+    \n**Key Takeaways from Unique Tweets:**\n\n1. **Partnership and Ecosystem:**\n\
+    \t* Heurist is mentioned alongside other projects (@Gaianet_AI, @Calderaxyz, @atomaAI)\
+    \ as part of @GenLayer's modular stack for building trustless, AI-native applications.\n\
+    2. **Technology and Innovation:**\n\t* Heurist contributes to the development\
+    \ of a decentralized GPU cloud, enabling censorship-free deployment of AI models.\n\
+    \t* The A2A protocol, with Heurist's involvement, accelerates open agent communication\
+    \ standards, potentially leading to a \"TCP/IP moment for AI agents.\"\n3. **Market\
+    \ and Community:**\n\t* A user lists \"heurist\" among low-cap tokens (<$15 million\
+    \ market cap) they've invested in, aiming for 5-10× returns, indicating some community\
+    \ interest in speculative investing.\n\n**Top Engaging Tweets (by View Count):**\n\
+    \n1. **\"A2A protocol joining @linuxfoundation...\"** (View Count: up to 5718)\n\
+    2. **\"The Trust Layer for the AI Age Is Here - and It’s Already Live...\"** (View\
+    \ Count: up to 1398)\n3. **\"The Context - Episode 5 ft. Linux Foundation & Heurist\
+    \ AI\"** (View Count: up to 5385)\n\n**Note:** The view counts vary slightly across\
+    \ identical tweets due to them being reposts or retweets at different times. The\
+    \ provided view counts are the highest observed for each unique tweet."
   data:
     status: success
     data:
       success: true
-      data: []
+      data:
+      - content: "I’ve noticed that big channels are pushing altcoins and saying alt‑season\
+          \ is coming—or maybe it’s already here. \nSo I bought 60 tokens from the\
+          \ @base ecosystem at $250 each, investing a total of $15,000, and I already\
+          \ took that money out as profit from $virtuals\n\nThese are low‑cap tokens\
+          \ (under $15 million market cap), $Bid @CreatorBid  and $virtuals @virtuals_io\
+          \ either community or utility projects. If I’m right, I’m aiming for 5–10×\
+          \ returns on my investment.\nMy list:\n\nflock - 17m \ngiza - 16m  \nTIG\
+          \ - 10.5m  \nSQDGN - 7.5m  \nbyte - 7m  \nfxh - 6.6m  \nacolyt - 6.6m  \n\
+          symp - 6.5m  \neai - 6m  \naixcb - 5.5m  \nnative - 5.3m  \nindexy - 5.2m\
+          \  \nBase is for everyone - 5.1m  \nbios - 5m  \nshekel - 4.7m  \ntrust\
+          \ - 4.7m  \nagent - 4.6m  \nvirgen - 4.5m  \ndrb - 4.1m  \nbro - 3.8m  \n\
+          heurist - 3.6m  \nhigher - 3.5m  \nshogun - 3.5m  \nsolace - 3.4m  \nArbus\
+          \ - 3.3m  \nrfl - 3.3m  \nadm - 3.1m  \nokayeg - 3.1m  \nveil - 3m  \nmaicro\
+          \ - 3m  \ntaolor - 2.9m  \nloky - 2.9m  \nvu - 2.9m  \nwint - 2.7m\nr1 -\
+          \ 2.6m  \nLucien - 2.6m  \nAAA(arcadia) - 2.5m  \nsanta - 2m  \nloomlay\
+          \ - 1.9m  \ndegenc - 1.8m  \naiyp - 1.8m  \nmusic - 1.8m  \nbario - 1.7m\
+          \  \nwai - 1.7m  \nrobot - 1.5m  \ncertaik - 1.5m  \naifun - 1.3m   \npoly\
+          \ - 1.3m  \neolas - 1.1m  \ngloria - 1m  \nshow - 1m  \nroom - 900k  \n\
+          money - 900k  \ndtrxbt - 900k  \ncliza - 850k  \nmaneki - 800k  \nnyko -\
+          \ 800k  \nholly - 750k  \nhana - 700k\n\nWish me luck ☺️  @jessepollak help\
+          \ me to pump my @base bags"
+        mentioned_at: '2025-07-03T09:14:01+00:00'
+        type: note
+        metrics:
+          like_count: 37
+          reply_count: 28
+          repost_count: 3
+          view_count: 1939
+        sentiment: positive
+      - content: "I’ve noticed that big channels are pushing altcoins and saying alt‑season\
+          \ is coming—or maybe it’s already here. \nSo I bought 60 tokens from the\
+          \ @base ecosystem at $250 each, investing a total of $15,000, and I already\
+          \ took that money out as profit from $virtuals\n\nThese are low‑cap tokens\
+          \ (under $15 million market cap), $Bid @CreatorBid  and $virtuals @virtuals_io\
+          \ either community or utility projects. If I’m right, I’m aiming for 5–10×\
+          \ returns on my investment.\nMy list:\n\nflock - 17m \ngiza - 16m  \nTIG\
+          \ - 10.5m  \nSQDGN - 7.5m  \nbyte - 7m  \nfxh - 6.6m  \nacolyt - 6.6m  \n\
+          symp - 6.5m  \neai - 6m  \naixcb - 5.5m  \nnative - 5.3m  \nindexy - 5.2m\
+          \  \nBase is for everyone - 5.1m  \nbios - 5m  \nshekel - 4.7m  \ntrust\
+          \ - 4.7m  \nagent - 4.6m  \nvirgen - 4.5m  \ndrb - 4.1m  \nbro - 3.8m  \n\
+          heurist - 3.6m  \nhigher - 3.5m  \nshogun - 3.5m  \nsolace - 3.4m  \nArbus\
+          \ - 3.3m  \nrfl - 3.3m  \nadm - 3.1m  \nokayeg - 3.1m  \nveil - 3m  \nmaicro\
+          \ - 3m  \ntaolor - 2.9m  \nloky - 2.9m  \nvu - 2.9m  \nwint - 2.7m\nr1 -\
+          \ 2.6m  \nLucien - 2.6m  \nAAA(arcadia) - 2.5m  \nsanta - 2m  \nloomlay\
+          \ - 1.9m  \ndegenc - 1.8m  \naiyp - 1.8m  \nmusic - 1.8m  \nbario - 1.7m\
+          \  \nwai - 1.7m  \nrobot - 1.5m  \ncertaik - 1.5m  \naifun - 1.3m   \npoly\
+          \ - 1.3m  \neolas - 1.1m  \ngloria - 1m  \nshow - 1m  \nroom - 900k  \n\
+          money - 900k  \ndtrxbt - 900k  \ncliza - 850k  \nmaneki - 800k  \nnyko -\
+          \ 800k  \nholly - 750k  \nhana - 700k\n\nWish me luck ☺️  @jessepollak help\
+          \ me to pump my @base bags"
+        mentioned_at: '2025-07-03T09:14:01+00:00'
+        type: note
+        metrics:
+          like_count: 37
+          reply_count: 28
+          repost_count: 3
+          view_count: 1956
+        sentiment: positive
+      - content: 'RT A2A protocol joining @linuxfoundation accelerates open agent
+          communication standards.
+
+
+          New possibilities for agent collaboration at the internet scale.
+
+
+          Watch our livestream on how Heurist contributes to this future:'
+        mentioned_at: '2025-06-28T19:19:09+00:00'
+        type: repost
+        metrics:
+          like_count: 0
+          reply_count: 0
+          repost_count: 16
+          view_count: 0
+        sentiment: netural
+      - content: 'RT A2A protocol joining @linuxfoundation accelerates open agent
+          communication standards.
+
+
+          New possibilities for agent collaboration at the internet scale.
+
+
+          Watch our livestream on how Heurist contributes to this future:'
+        mentioned_at: '2025-06-28T19:19:09+00:00'
+        type: repost
+        metrics:
+          like_count: 0
+          reply_count: 0
+          repost_count: 16
+          view_count: 0
+        sentiment: netural
+      - content: 'RT A2A protocol joining @linuxfoundation accelerates open agent
+          communication standards.
+
+
+          New possibilities for agent collaboration at the internet scale.
+
+
+          Watch our livestream on how Heurist contributes to this future:'
+        mentioned_at: '2025-06-28T19:19:09+00:00'
+        type: repost
+        metrics:
+          like_count: 0
+          reply_count: 0
+          repost_count: 16
+          view_count: 0
+        sentiment: netural
+      - content: 'A2A protocol joining @linuxfoundation accelerates open agent communication
+          standards.
+
+
+          New possibilities for agent collaboration at the internet scale.
+
+
+          Watch our livestream on how Heurist contributes to this future:'
+        mentioned_at: '2025-06-28T16:46:13+00:00'
+        type: quote
+        metrics:
+          like_count: 30
+          reply_count: 12
+          repost_count: 16
+          view_count: 5361
+        sentiment: netural
+      - content: 'A2A protocol joining @linuxfoundation accelerates open agent communication
+          standards.
+
+
+          New possibilities for agent collaboration at the internet scale.
+
+
+          Watch our livestream on how Heurist contributes to this future:'
+        mentioned_at: '2025-06-28T16:46:13+00:00'
+        type: quote
+        metrics:
+          like_count: 33
+          reply_count: 13
+          repost_count: 16
+          view_count: 5665
+        sentiment: netural
+      - content: 'A2A protocol joining @linuxfoundation accelerates open agent communication
+          standards.
+
+
+          New possibilities for agent collaboration at the internet scale.
+
+
+          Watch our livestream on how Heurist contributes to this future:'
+        mentioned_at: '2025-06-28T16:46:13+00:00'
+        type: quote
+        metrics:
+          like_count: 33
+          reply_count: 13
+          repost_count: 16
+          view_count: 5718
+        sentiment: netural
+      - content: 'RT Just days ago, as I was preparing my session on Heurist MCP for
+          this stream, the Linux Foundation announced another big win for open standards:
+
+
+          Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+          SDK and tooling, to a @linuxfoundation  governed project.
+
+
+          With MCP defining context and A2A standardizing communication, we’re stepping
+          closer to the TCP/IP moment for AI agents, and we are excited to be part
+          of that journey with both @heurist_ai and the broader open-source ecosystem!'
+        mentioned_at: '2025-06-26T22:03:05+00:00'
+        type: repost
+        metrics:
+          like_count: 0
+          reply_count: 0
+          repost_count: 1
+          view_count: 0
+        sentiment: neutral
+      - content: 'RT Just days ago, as I was preparing my session on Heurist MCP for
+          this stream, the Linux Foundation announced another big win for open standards:
+
+
+          Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+          SDK and tooling, to a @linuxfoundation  governed project.
+
+
+          With MCP defining context and A2A standardizing communication, we’re stepping
+          closer to the TCP/IP moment for AI agents, and we are excited to be part
+          of that journey with both @heurist_ai and the broader open-source ecosystem!'
+        mentioned_at: '2025-06-26T22:03:05+00:00'
+        type: repost
+        metrics:
+          like_count: 0
+          reply_count: 0
+          repost_count: 1
+          view_count: 0
+        sentiment: neutral
+      - content: 'RT Just days ago, as I was preparing my session on Heurist MCP for
+          this stream, the Linux Foundation announced another big win for open standards:
+
+
+          Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+          SDK and tooling, to a @linuxfoundation  governed project.
+
+
+          With MCP defining context and A2A standardizing communication, we’re stepping
+          closer to the TCP/IP moment for AI agents, and we are excited to be part
+          of that journey with both @heurist_ai and the broader open-source ecosystem!'
+        mentioned_at: '2025-06-26T22:03:05+00:00'
+        type: repost
+        metrics:
+          like_count: 0
+          reply_count: 0
+          repost_count: 1
+          view_count: 0
+        sentiment: neutral
+      - content: 'Just days ago, as I was preparing my session on Heurist MCP for
+          this stream, the Linux Foundation announced another big win for open standards:
+
+
+          Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+          SDK and tooling, to a @linuxfoundation  governed project.
+
+
+          With MCP defining context and A2A standardizing communication, we’re stepping
+          closer to the TCP/IP moment for AI agents, and we are excited to be part
+          of that journey with both @heurist_ai and the broader open-source ecosystem!'
+        mentioned_at: '2025-06-26T20:41:28+00:00'
+        type: quote
+        metrics:
+          like_count: 3
+          reply_count: 0
+          repost_count: 1
+          view_count: 336
+        sentiment: positive
+      - content: 'Just days ago, as I was preparing my session on Heurist MCP for
+          this stream, the Linux Foundation announced another big win for open standards:
+
+
+          Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+          SDK and tooling, to a @linuxfoundation  governed project.
+
+
+          With MCP defining context and A2A standardizing communication, we’re stepping
+          closer to the TCP/IP moment for AI agents, and we are excited to be part
+          of that journey with both @heurist_ai and the broader open-source ecosystem!'
+        mentioned_at: '2025-06-26T20:41:28+00:00'
+        type: quote
+        metrics:
+          like_count: 3
+          reply_count: 1
+          repost_count: 1
+          view_count: 426
+        sentiment: positive
+      - content: 'Just days ago, as I was preparing my session on Heurist MCP for
+          this stream, the Linux Foundation announced another big win for open standards:
+
+
+          Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+          SDK and tooling, to a @linuxfoundation  governed project.
+
+    1. **Broaden Time Frame**: Extend the search period to observe if there were relevant
+    mentions in the preceding months.
+
+          With MCP defining context and A2A standardizing communication, we’re stepping
+          closer to the TCP/IP moment for AI agents, and we are excited to be part
+          of that journey with both @heurist_ai and the broader open-source ecosystem!'
+        mentioned_at: '2025-06-26T20:41:28+00:00'
+        type: quote
+        metrics:
+          like_count: 3
+          reply_count: 1
+          repost_count: 1
+          view_count: 488
+        sentiment: positive
+      - content: 'The Context - Episode 5 ft. Linux Foundation &amp; Heurist AI '
+        mentioned_at: '2025-06-26T17:00:00+00:00'
+        type: post
+        metrics:
+          like_count: 5
+          reply_count: 0
+          repost_count: 1
+          view_count: 4648
+        sentiment: netural
+      - content: 'The Context - Episode 5 ft. Linux Foundation &amp; Heurist AI '
+        mentioned_at: '2025-06-26T17:00:00+00:00'
+        type: post
+        metrics:
+          like_count: 5
+          reply_count: 0
+          repost_count: 1
+          view_count: 5218
+        sentiment: netural
+      - content: 'The Context - Episode 5 ft. Linux Foundation &amp; Heurist AI '
+        mentioned_at: '2025-06-26T17:00:00+00:00'
+        type: post
+        metrics:
+          like_count: 5
+          reply_count: 0
+          repost_count: 1
+          view_count: 5385
+        sentiment: netural
+      - content: "The Trust Layer for the AI Age Is Here - and It’s Already Live\n\
+          \nThe future of the internet won’t be run by banks, courts, or cloud providers\
+          \ ☁️ \nIt will be powered by autonomous agents and programmable trust -\
+          \ and GenLayer is laying the foundation for it \U0001F446\U0001F3FC\n\n\
+          In just a few weeks, @GenLayer has rolled out four massive partnerships\
+          \ and launched its first testnet \U0001F4BB\n\nIt’s not just momentum. It’s\
+          \ a movement. Its the calm before the storm \U0001F32C️ \n\nWhy @GenLayer\
+          \ ❓\n\nBlockchains automate transactions.\nGenLayer automates judgment.\n\
+          \nIt introduces an AI-powered legal layer for the internet - where smart\
+          \ contracts don’t just execute, they interpret \U0001F9E0\n\nUsing large\
+          \ language models (LLMs), @GenLayer validators resolve subjective logic\
+          \ in real-time. From disputes to dynamic agreements, contracts now have\
+          \ context - and decisions are made transparently, onchain.\n\nAnd GenLayer\
+          \ isn’t doing it alone.\n\nThe Power of Partnerships\n\nEach piece of the\
+          \ puzzle fits into a bigger vision.\n\n➡️ @Gaianet_AI brings decentralized\
+          \ AI inference to the edge - where users, not corporations, run the compute.\n\
+          \n➡️ @Calderaxyz unlocks scalability with modular rollups, plugged directly\
+          \ into GenLayer’s intelligent consensus.\n\n➡️ @atomaAI enables private,\
+          \ verifiable AI through trusted execution environments - perfect for sensitive\
+          \ decisions.\n\n➡️ @heurist_ai delivers a decentralized GPU cloud, giving\
+          \ developers a censorship-free playground to run AI models.\n\nTogether,\
+          \ they form a modular stack for building the next generation of trustless,\
+          \ AI-native applications.\n\n@GenLayer first Testnet Asimov Is Live. Bradbury\
+          \ Is Next.\n\nTestnet Asimov is more than a proof of concept - it’s GenLayer’s\
+          \ vision coming to life.\n\nDevelopers are already deploying contracts that\
+          \ can:\n\n➡️ Understand natural language\n➡️ Evaluate real-world data\n\
+          ➡️ Resolve nuanced, human-like disputes - all through decentralized AI validators\n\
+          \nIt’s not a court simulation.\nIt’s the first operational legal layer for\
+          \ the internet.\n\nComing next: Testnet Bradbury (Q3 2025)\n\nWith deeper\
+          \ incentives, validator upgrades, and full ecosystem integration, Bradbury\
+          \ will scale what Asimov started.\n\nThe Bigger Picture \U0001F304\n\n@GenLayer\
+          \ isn’t chasing a trend.\nIt’s defining the architecture for decentralized\
+          \ intelligence.\n\nWith Gaianet, Caldera, Atoma and Heurist in the mix,\
+          \ GenLayer is no longer just theorizing the future - it’s shipping it.\n\
+          \nThis is what the new internet looks like:\n\n➡️Contracts that think\n\
+          ➡️ Networks that reason\n➡️ Trust that’s built in, not assumed\n\nThe age\
+          \ of intelligent contracts has officially begun.\nAnd @GenLayer is already\
+          \ in session."
+        mentioned_at: '2025-06-26T12:40:23+00:00'
+        type: note
+        metrics:
+          like_count: 32
+          reply_count: 18
+          repost_count: 5
+          view_count: 1297
+        sentiment: positive
+      - content: "The Trust Layer for the AI Age Is Here - and It’s Already Live\n\
+          \nThe future of the internet won’t be run by banks, courts, or cloud providers\
+          \ ☁️ \nIt will be powered by autonomous agents and programmable trust -\
+          \ and GenLayer is laying the foundation for it \U0001F446\U0001F3FC\n\n\
+          In just a few weeks, @GenLayer has rolled out four massive partnerships\
+          \ and launched its first testnet \U0001F4BB\n\nIt’s not just momentum. It’s\
+          \ a movement. Its the calm before the storm \U0001F32C️ \n\nWhy @GenLayer\
+          \ ❓\n\nBlockchains automate transactions.\nGenLayer automates judgment.\n\
+          \nIt introduces an AI-powered legal layer for the internet - where smart\
+          \ contracts don’t just execute, they interpret \U0001F9E0\n\nUsing large\
+          \ language models (LLMs), @GenLayer validators resolve subjective logic\
+          \ in real-time. From disputes to dynamic agreements, contracts now have\
+          \ context - and decisions are made transparently, onchain.\n\nAnd GenLayer\
+          \ isn’t doing it alone.\n\nThe Power of Partnerships\n\nEach piece of the\
+          \ puzzle fits into a bigger vision.\n\n➡️ @Gaianet_AI brings decentralized\
+          \ AI inference to the edge - where users, not corporations, run the compute.\n\
+          \n➡️ @Calderaxyz unlocks scalability with modular rollups, plugged directly\
+          \ into GenLayer’s intelligent consensus.\n\n➡️ @atomaAI enables private,\
+          \ verifiable AI through trusted execution environments - perfect for sensitive\
+          \ decisions.\n\n➡️ @heurist_ai delivers a decentralized GPU cloud, giving\
+          \ developers a censorship-free playground to run AI models.\n\nTogether,\
+          \ they form a modular stack for building the next generation of trustless,\
+          \ AI-native applications.\n\n@GenLayer first Testnet Asimov Is Live. Bradbury\
+          \ Is Next.\n\nTestnet Asimov is more than a proof of concept - it’s GenLayer’s\
+          \ vision coming to life.\n\nDevelopers are already deploying contracts that\
+          \ can:\n\n➡️ Understand natural language\n➡️ Evaluate real-world data\n\
+          ➡️ Resolve nuanced, human-like disputes - all through decentralized AI validators\n\
+          \nIt’s not a court simulation.\nIt’s the first operational legal layer for\
+          \ the internet.\n\nComing next: Testnet Bradbury (Q3 2025)\n\nWith deeper\
+          \ incentives, validator upgrades, and full ecosystem integration, Bradbury\
+          \ will scale what Asimov started.\n\nThe Bigger Picture \U0001F304\n\n@GenLayer\
+          \ isn’t chasing a trend.\nIt’s defining the architecture for decentralized\
+          \ intelligence.\n\nWith Gaianet, Caldera, Atoma and Heurist in the mix,\
+          \ GenLayer is no longer just theorizing the future - it’s shipping it.\n\
+          \nThis is what the new internet looks like:\n\n➡️Contracts that think\n\
+          ➡️ Networks that reason\n➡️ Trust that’s built in, not assumed\n\nThe age\
+          \ of intelligent contracts has officially begun.\nAnd @GenLayer is already\
+          \ in session."
+        mentioned_at: '2025-06-26T12:40:23+00:00'
+        type: note
+        metrics:
+          like_count: 33
+          reply_count: 18
+          repost_count: 5
+          view_count: 1378
+        sentiment: positive
+      - content: "The Trust Layer for the AI Age Is Here - and It’s Already Live\n\
+          \nThe future of the internet won’t be run by banks, courts, or cloud providers\
+          \ ☁️ \nIt will be powered by autonomous agents and programmable trust -\
+          \ and GenLayer is laying the foundation for it \U0001F446\U0001F3FC\n\n\
+          In just a few weeks, @GenLayer has rolled out four massive partnerships\
+          \ and launched its first testnet \U0001F4BB\n\nIt’s not just momentum. It’s\
+          \ a movement. Its the calm before the storm \U0001F32C️ \n\nWhy @GenLayer\
+          \ ❓\n\nBlockchains automate transactions.\nGenLayer automates judgment.\n\
+          \nIt introduces an AI-powered legal layer for the internet - where smart\
+          \ contracts don’t just execute, they interpret \U0001F9E0\n\nUsing large\
+          \ language models (LLMs), @GenLayer validators resolve subjective logic\
+          \ in real-time. From disputes to dynamic agreements, contracts now have\
+          \ context - and decisions are made transparently, onchain.\n\nAnd GenLayer\
+          \ isn’t doing it alone.\n\nThe Power of Partnerships\n\nEach piece of the\
+          \ puzzle fits into a bigger vision.\n\n➡️ @Gaianet_AI brings decentralized\
+          \ AI inference to the edge - where users, not corporations, run the compute.\n\
+          \n➡️ @Calderaxyz unlocks scalability with modular rollups, plugged directly\
+          \ into GenLayer’s intelligent consensus.\n\n➡️ @atomaAI enables private,\
+          \ verifiable AI through trusted execution environments - perfect for sensitive\
+          \ decisions.\n\n➡️ @heurist_ai delivers a decentralized GPU cloud, giving\
+          \ developers a censorship-free playground to run AI models.\n\nTogether,\
+          \ they form a modular stack for building the next generation of trustless,\
+          \ AI-native applications.\n\n@GenLayer first Testnet Asimov Is Live. Bradbury\
+          \ Is Next.\n\nTestnet Asimov is more than a proof of concept - it’s GenLayer’s\
+          \ vision coming to life.\n\nDevelopers are already deploying contracts that\
+          \ can:\n\n➡️ Understand natural language\n➡️ Evaluate real-world data\n\
+          ➡️ Resolve nuanced, human-like disputes - all through decentralized AI validators\n\
+          \nIt’s not a court simulation.\nIt’s the first operational legal layer for\
+          \ the internet.\n\nComing next: Testnet Bradbury (Q3 2025)\n\nWith deeper\
+          \ incentives, validator upgrades, and full ecosystem integration, Bradbury\
+          \ will scale what Asimov started.\n\nThe Bigger Picture \U0001F304\n\n@GenLayer\
+          \ isn’t chasing a trend.\nIt’s defining the architecture for decentralized\
+          \ intelligence.\n\nWith Gaianet, Caldera, Atoma and Heurist in the mix,\
+          \ GenLayer is no longer just theorizing the future - it’s shipping it.\n\
+          \nThis is what the new internet looks like:\n\n➡️Contracts that think\n\
+          ➡️ Networks that reason\n➡️ Trust that’s built in, not assumed\n\nThe age\
+          \ of intelligent contracts has officially begun.\nAnd @GenLayer is already\
+          \ in session."
+        mentioned_at: '2025-06-26T12:40:23+00:00'
+        type: note
+        metrics:
+          like_count: 33
+          reply_count: 18
+          repost_count: 5
+          view_count: 1398
+        sentiment: positive
 input_account:
   query: Analyze the Twitter account @heurist_ai
 output_account:
-  response: "**Twitter Account Analysis: @heurist_ai**\n\n**Overall Status:** Successful\
-    \ data retrieval\n\n**Account Statistics:**\n\n1. **Follower Count:**\n\t* **Total\
-    \ Followers:** 34,075\n\t* **Smart Follower Count (likely engaged/active followers):**\
-    \ 142 (approximately **0.42%** of total followers)\n2. **Network:**\n\t* **Following\
-    \ Count (Smart):** 0 (indicating the account does not follow any other smart/active\
-    \ accounts via ELFA's definition)\n3. **Engagement & Reach:**\n\t* **Average Engagement:**\
-    \ **16.89%** (a relatively high engagement rate, suggesting content resonates\
-    \ with the audience)\n\t* **Average Reach:** **5,756** (average number of users\
-    \ who view the account's tweets)\n\n**Mentions Analysis:**\n\n* **Success Status:**\
-    \ True\n* **Mentions Data:** **No mentions found** (within the time frame or data\
-    \ scope provided by the ELFA API query)\n\n**Insights and Recommendations:**\n\
-    \n1. **High Engagement Rate:** The account's average engagement rate of 16.89%\
-    \ is significantly higher than typical rates (often around 1-2% for many accounts).\
-    \ This suggests that the content is highly engaging for the audience.\n   \n2.\
-    \ **Low Smart Follower Ratio:** Despite a large total follower count, the smart\
-    \ follower count is relatively low. This might indicate a need to focus on creating\
-    \ more engaging content to activate a broader segment of the audience.\n\n3. **No\
-    \ Mentions:** The absence of mentions in the provided data scope could indicate\
-    \ that the account is not currently part of larger conversations or is not being\
-    \ referenced by other users. Engaging with others, participating in relevant discussions,\
-    \ or collaborating with influencers might help increase visibility.\n\n4. **Following\
-    \ Strategy:** The account does not follow any \"smart\" accounts. Consider identifying\
-    \ and engaging with influential or highly active accounts in the crypto/token\
-    \ space to potentially expand the reach and build relationships.\n\n**Next Steps\
-    \ for Deeper Analysis:**\n\n- **Content Analysis:** Examine the types of tweets\
-    \ that receive the highest engagement to refine content strategy.\n- **Audience\
-    \ Analysis:** Use additional tools to dive deeper into the demographics and interests\
-    \ of both total and smart followers.\n- **Temporal Analysis:** Assess how engagement\
-    \ and reach vary over time to identify peaks and troughs, potentially correlating\
-    \ with specific events or content types.\n- **Comparative Analysis:** Compare\
-    \ @heurist_ai's metrics with industry benchmarks or direct competitors for a more\
-    \ nuanced understanding of its performance."
+  response: "**Twitter Analysis for @heurist_ai**\n\n**Account Stats:**\n\n* **Smart\
+    \ Following Count:** 0\n* **Average Engagement:** 0.16893637003991546 (Moderate)\n\
+    * **Follower Engagement Ratio:** 5756 (High, indicating a large following relative\
+    \ to engagement)\n\n**Mentions Analysis (last 20 mentions):**\n\n* **Total Mentions:**\
+    \ 20\n* **Unique Tweets:** 7 (13 duplicates/reposts)\n* **Time Range:** 2025-06-19\
+    \ to 2025-07-04\n* **Sentiment Distribution:**\n\t+ **Positive:** 5 (25%)\n\t\
+    + **Neutral:** 15 (75%)\n* **Top Interacting Users:**\n\t+ @claude_code (2 replies,\
+    \ 2 mentions)\n\t+ @GenLayer (3 mentions)\n\t+ @Arbus (5 mentions, all in a single\
+    \ repeated tweet)\n* **Top Hashtags:** None consistently used across mentions\n\
+    \n**Engagement Metrics (average per unique tweet):**\n\n* **Like Count:** 4.57\n\
+    * **Reply Count:** 0.57\n* **Repost Count:** 2.43\n* **View Count:** 544.29 (available\
+    \ for only 7 unique tweets)\n\n**Insights:**\n\n1. **Partnerships and Collaborations:**\
+    \ @heurist_ai is mentioned alongside other projects (@GenLayer, @Gaianet_AI, @Calderaxyz,\
+    \ @atomaAI) in the context of building a modular stack for trustless, AI-native\
+    \ applications.\n2. **Product/Feature Mentions:**\n\t* Heurist Mesh MCP (connected\
+    \ with @claude_code for remote blockchain data analysis)\n\t* AI Agent Framework\
+    \ and Live2D animations (mentioned in the context of another project, $mona)\n\
+    3. **User Perception:** The sentiment around @heurist_ai is largely neutral, with\
+    \ some positive sentiments expressing excitement about collaborations and product\
+    \ features.\n4. **Engagement:** Despite a large following (implied by the high\
+    \ Follower Engagement Ratio), engagement metrics are moderate to low, indicating\
+    \ potential for growth in community interaction.\n\n**Recommendations:**\n\n1.\
+    \ **Encourage Community Engagement:** Respond to replies, ask questions, or request\
+    \ feedback to boost engagement.\n2. **Highlight Unique Selling Points (USPs):**\
+    \ Emphasize the benefits and innovative aspects of Heurist Mesh MCP and other\
+    \ products to attract more positive sentiments.\n3. **Collaborate with Influencers/Projects:**\
+    \ Continue and expand partnerships to increase visibility and credibility within\
+    \ the AI and blockchain spaces."
   data:
     status: success
     data:
@@ -117,13 +503,703 @@ output_account:
         success: true
         data:
           smartFollowingCount: 0
-          averageEngagement: 0.1689214966984593
-          averageReach: 5756
-          smartFollowerCount: 142
-          followerCount: 34075
+          averageEngagement: 0.16893637003991546
+          followerEngagementRatio: 5756
       mentions:
         success: true
-        data: []
+        data:
+        - content: 'RT 🗓️ Arbus Monthly Recap – June ‘25
+
+
+            What a month it’s been 😮‍💨
+
+
+            🏗️ Product Updates
+
+
+            🔹Arbus Terminal launched for stakers (Stake 100K $ARBUS to access)
+
+            🔹 Arbus Agent went live on @virtuals_io ACP Public Beta, unlocking a new
+            rev model
+
+            🔹 AttentionFi coming to Arbus Layer
+
+            🔹 Arbus Score integrated into @Vader_AI_’s Yapping (42.5% weight)
+
+            🔹 Arbus API testing started with partners incl. @AIxVC_Axelrod, @TheSWARM_ai,
+            @heurist_ai, @Agent_YP and more
+
+
+            🤝 Partnerships
+
+
+            🔹 Formed 3-way coalition with Axelrod & @BasisOS to build towards DeFAI
+            future
+
+            🔹 Joined forces with The SWARM to empower Swarm agents
+
+            🔹 Partnered with AgentYP to enrich its gaming signals
+
+            🔹 Arbus Data Layer to fuel @maicrotrader''s Quant Agent
+
+
+            🛠️ Terminal Upgrades
+
+
+            🔹 AI Assistant UI & formatting enhanced
+
+            🔹 Watchlist Feature: New metrics, visualizations, richer data
+
+            🔹 Most Mentioned & View Mentions features upgraded
+
+            🔹 InfoFi category added to Arbus Index
+
+
+            🌐 Community & PR
+
+
+            🔹 Virtuals published "Solving the Cold Start Problem" article on Arbus
+            Launch
+
+            🔹 @XTexchange released Arbus research post CEX listing of $ARBUS
+
+            🔹 Joined X Spaces by @virtuals_vc, @WagmiHub, @COTInetwork, @AIonBase_,
+            @Rivalz_AI, and XT Exchange'
+          mentioned_at: '2025-07-04T11:04:41+00:00'
+          type: repost
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 11
+            view_count: 0
+          sentiment: positive
+        - content: 'RT 🗓️ Arbus Monthly Recap – June ‘25
+
+
+            What a month it’s been 😮‍💨
+
+
+            🏗️ Product Updates
+
+
+            🔹Arbus Terminal launched for stakers (Stake 100K $ARBUS to access)
+
+            🔹 Arbus Agent went live on @virtuals_io ACP Public Beta, unlocking a new
+            rev model
+
+            🔹 AttentionFi coming to Arbus Layer
+
+            🔹 Arbus Score integrated into @Vader_AI_’s Yapping (42.5% weight)
+
+            🔹 Arbus API testing started with partners incl. @AIxVC_Axelrod, @TheSWARM_ai,
+            @heurist_ai, @Agent_YP and more
+
+
+            🤝 Partnerships
+
+
+            🔹 Formed 3-way coalition with Axelrod & @BasisOS to build towards DeFAI
+            future
+
+            🔹 Joined forces with The SWARM to empower Swarm agents
+
+            🔹 Partnered with AgentYP to enrich its gaming signals
+
+            🔹 Arbus Data Layer to fuel @maicrotrader''s Quant Agent
+
+
+            🛠️ Terminal Upgrades
+
+
+            🔹 AI Assistant UI & formatting enhanced
+
+            🔹 Watchlist Feature: New metrics, visualizations, richer data
+
+            🔹 Most Mentioned & View Mentions features upgraded
+
+            🔹 InfoFi category added to Arbus Index
+
+
+            🌐 Community & PR
+
+
+            🔹 Virtuals published "Solving the Cold Start Problem" article on Arbus
+            Launch
+
+            🔹 @XTexchange released Arbus research post CEX listing of $ARBUS
+
+            🔹 Joined X Spaces by @virtuals_vc, @WagmiHub, @COTInetwork, @AIonBase_,
+            @Rivalz_AI, and XT Exchange'
+          mentioned_at: '2025-07-04T11:04:41+00:00'
+          type: repost
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 11
+            view_count: 0
+          sentiment: positive
+        - content: 'RT 🗓️ Arbus Monthly Recap – June ‘25
+
+
+            What a month it’s been 😮‍💨
+
+
+            🏗️ Product Updates
+
+
+            🔹Arbus Terminal launched for stakers (Stake 100K $ARBUS to access)
+
+            🔹 Arbus Agent went live on @virtuals_io ACP Public Beta, unlocking a new
+            rev model
+
+            🔹 AttentionFi coming to Arbus Layer
+
+            🔹 Arbus Score integrated into @Vader_AI_’s Yapping (42.5% weight)
+
+            🔹 Arbus API testing started with partners incl. @AIxVC_Axelrod, @TheSWARM_ai,
+            @heurist_ai, @Agent_YP and more
+
+
+            🤝 Partnerships
+
+
+            🔹 Formed 3-way coalition with Axelrod & @BasisOS to build towards DeFAI
+            future
+
+            🔹 Joined forces with The SWARM to empower Swarm agents
+
+            🔹 Partnered with AgentYP to enrich its gaming signals
+
+            🔹 Arbus Data Layer to fuel @maicrotrader''s Quant Agent
+
+
+            🛠️ Terminal Upgrades
+
+
+            🔹 AI Assistant UI & formatting enhanced
+
+            🔹 Watchlist Feature: New metrics, visualizations, richer data
+
+            🔹 Most Mentioned & View Mentions features upgraded
+
+            🔹 InfoFi category added to Arbus Index
+
+
+            🌐 Community & PR
+
+
+            🔹 Virtuals published "Solving the Cold Start Problem" article on Arbus
+            Launch
+
+            🔹 @XTexchange released Arbus research post CEX listing of $ARBUS
+
+            🔹 Joined X Spaces by @virtuals_vc, @WagmiHub, @COTInetwork, @AIonBase_,
+            @Rivalz_AI, and XT Exchange'
+          mentioned_at: '2025-07-04T11:02:32+00:00'
+          type: repost
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 10
+            view_count: 0
+          sentiment: neutral
+        - content: '🗓️ Arbus Monthly Recap – June ‘25
+
+
+            What a month it’s been 😮‍💨
+
+
+            🏗️ Product Updates
+
+
+            🔹Arbus Terminal launched for stakers (Stake 100K $ARBUS to access)
+
+            🔹 Arbus Agent went live on @virtuals_io ACP Public Beta, unlocking a new
+            rev model
+
+            🔹 AttentionFi coming to Arbus Layer
+
+            🔹 Arbus Score integrated into @Vader_AI_’s Yapping (42.5% weight)
+
+            🔹 Arbus API testing started with partners incl. @AIxVC_Axelrod, @TheSWARM_ai,
+            @heurist_ai, @Agent_YP and more
+
+
+            🤝 Partnerships
+
+
+            🔹 Formed 3-way coalition with Axelrod & @BasisOS to build towards DeFAI
+            future
+
+            🔹 Joined forces with The SWARM to empower Swarm agents
+
+            🔹 Partnered with AgentYP to enrich its gaming signals
+
+            🔹 Arbus Data Layer to fuel @maicrotrader''s Quant Agent
+
+
+            🛠️ Terminal Upgrades
+
+
+            🔹 AI Assistant UI & formatting enhanced
+
+            🔹 Watchlist Feature: New metrics, visualizations, richer data
+
+            🔹 Most Mentioned & View Mentions features upgraded
+
+            🔹 InfoFi category added to Arbus Index
+
+
+            🌐 Community & PR
+
+
+            🔹 Virtuals published "Solving the Cold Start Problem" article on Arbus
+            Launch
+
+            🔹 @XTexchange released Arbus research post CEX listing of $ARBUS
+
+            🔹 Joined X Spaces by @virtuals_vc, @WagmiHub, @COTInetwork, @AIonBase_,
+            @Rivalz_AI, and XT Exchange'
+          mentioned_at: '2025-07-04T10:59:52+00:00'
+          type: note
+          metrics:
+            like_count: 80
+            reply_count: 16
+            repost_count: 11
+            view_count: 4427
+          sentiment: neutral
+        - content: '🗓️ Arbus Monthly Recap – June ‘25
+
+
+            What a month it’s been 😮‍💨
+
+
+            🏗️ Product Updates
+
+
+            🔹Arbus Terminal launched for stakers (Stake 100K $ARBUS to access)
+
+            🔹 Arbus Agent went live on @virtuals_io ACP Public Beta, unlocking a new
+            rev model
+
+            🔹 AttentionFi coming to Arbus Layer
+
+            🔹 Arbus Score integrated into @Vader_AI_’s Yapping (42.5% weight)
+
+            🔹 Arbus API testing started with partners incl. @AIxVC_Axelrod, @TheSWARM_ai,
+            @heurist_ai, @Agent_YP and more
+
+
+            🤝 Partnerships
+
+
+            🔹 Formed 3-way coalition with Axelrod & @BasisOS to build towards DeFAI
+            future
+
+            🔹 Joined forces with The SWARM to empower Swarm agents
+
+            🔹 Partnered with AgentYP to enrich its gaming signals
+
+            🔹 Arbus Data Layer to fuel @maicrotrader''s Quant Agent
+
+
+            🛠️ Terminal Upgrades
+
+
+            🔹 AI Assistant UI & formatting enhanced
+
+            🔹 Watchlist Feature: New metrics, visualizations, richer data
+
+            🔹 Most Mentioned & View Mentions features upgraded
+
+            🔹 InfoFi category added to Arbus Index
+
+
+            🌐 Community & PR
+
+
+            🔹 Virtuals published "Solving the Cold Start Problem" article on Arbus
+            Launch
+
+            🔹 @XTexchange released Arbus research post CEX listing of $ARBUS
+
+            🔹 Joined X Spaces by @virtuals_vc, @WagmiHub, @COTInetwork, @AIonBase_,
+            @Rivalz_AI, and XT Exchange'
+          mentioned_at: '2025-07-04T10:59:52+00:00'
+          type: note
+          metrics:
+            like_count: 81
+            reply_count: 16
+            repost_count: 11
+            view_count: 5591
+          sentiment: neutral
+        - content: 'RT Just days ago, as I was preparing my session on Heurist MCP
+            for this stream, the Linux Foundation announced another big win for open
+            standards:
+
+
+            Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+            SDK and tooling, to a @linuxfoundation  governed project.
+
+
+            With MCP defining context and A2A standardizing communication, we’re stepping
+            closer to the TCP/IP moment for AI agents, and we are excited to be part
+            of that journey with both @heurist_ai and the broader open-source ecosystem!'
+          mentioned_at: '2025-06-26T22:03:05+00:00'
+          type: repost
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 1
+            view_count: 0
+          sentiment: neutral
+        - content: 'RT Just days ago, as I was preparing my session on Heurist MCP
+            for this stream, the Linux Foundation announced another big win for open
+            standards:
+
+
+            Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+            SDK and tooling, to a @linuxfoundation  governed project.
+
+
+            With MCP defining context and A2A standardizing communication, we’re stepping
+            closer to the TCP/IP moment for AI agents, and we are excited to be part
+            of that journey with both @heurist_ai and the broader open-source ecosystem!'
+          mentioned_at: '2025-06-26T22:03:05+00:00'
+          type: repost
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 1
+            view_count: 0
+          sentiment: neutral
+        - content: 'RT Just days ago, as I was preparing my session on Heurist MCP
+            for this stream, the Linux Foundation announced another big win for open
+            standards:
+
+
+            Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+            SDK and tooling, to a @linuxfoundation  governed project.
+
+
+            With MCP defining context and A2A standardizing communication, we’re stepping
+            closer to the TCP/IP moment for AI agents, and we are excited to be part
+            of that journey with both @heurist_ai and the broader open-source ecosystem!'
+          mentioned_at: '2025-06-26T22:03:05+00:00'
+          type: repost
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 1
+            view_count: 0
+          sentiment: neutral
+        - content: 'Just days ago, as I was preparing my session on Heurist MCP for
+            this stream, the Linux Foundation announced another big win for open standards:
+
+
+            Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+            SDK and tooling, to a @linuxfoundation  governed project.
+
+
+            With MCP defining context and A2A standardizing communication, we’re stepping
+            closer to the TCP/IP moment for AI agents, and we are excited to be part
+            of that journey with both @heurist_ai and the broader open-source ecosystem!'
+          mentioned_at: '2025-06-26T20:41:28+00:00'
+          type: quote
+          metrics:
+            like_count: 3
+            reply_count: 0
+            repost_count: 1
+            view_count: 336
+          sentiment: positive
+        - content: 'Just days ago, as I was preparing my session on Heurist MCP for
+            this stream, the Linux Foundation announced another big win for open standards:
+
+
+            Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+            SDK and tooling, to a @linuxfoundation  governed project.
+
+
+            With MCP defining context and A2A standardizing communication, we’re stepping
+            closer to the TCP/IP moment for AI agents, and we are excited to be part
+            of that journey with both @heurist_ai and the broader open-source ecosystem!'
+          mentioned_at: '2025-06-26T20:41:28+00:00'
+          type: quote
+          metrics:
+            like_count: 3
+            reply_count: 1
+            repost_count: 1
+            view_count: 426
+          sentiment: positive
+        - content: 'Just days ago, as I was preparing my session on Heurist MCP for
+            this stream, the Linux Foundation announced another big win for open standards:
+
+
+            Google is donating its Agent-to-Agent (A2A) protocol, along with the full
+            SDK and tooling, to a @linuxfoundation  governed project.
+
+
+            With MCP defining context and A2A standardizing communication, we’re stepping
+            closer to the TCP/IP moment for AI agents, and we are excited to be part
+            of that journey with both @heurist_ai and the broader open-source ecosystem!'
+          mentioned_at: '2025-06-26T20:41:28+00:00'
+          type: quote
+          metrics:
+            like_count: 3
+            reply_count: 1
+            repost_count: 1
+            view_count: 488
+          sentiment: positive
+        - content: "The Trust Layer for the AI Age Is Here - and It’s Already Live\n\
+            \nThe future of the internet won’t be run by banks, courts, or cloud providers\
+            \ ☁️ \nIt will be powered by autonomous agents and programmable trust\
+            \ - and GenLayer is laying the foundation for it \U0001F446\U0001F3FC\n\
+            \nIn just a few weeks, @GenLayer has rolled out four massive partnerships\
+            \ and launched its first testnet \U0001F4BB\n\nIt’s not just momentum.\
+            \ It’s a movement. Its the calm before the storm \U0001F32C️ \n\nWhy @GenLayer\
+            \ ❓\n\nBlockchains automate transactions.\nGenLayer automates judgment.\n\
+            \nIt introduces an AI-powered legal layer for the internet - where smart\
+            \ contracts don’t just execute, they interpret \U0001F9E0\n\nUsing large\
+            \ language models (LLMs), @GenLayer validators resolve subjective logic\
+            \ in real-time. From disputes to dynamic agreements, contracts now have\
+            \ context - and decisions are made transparently, onchain.\n\nAnd GenLayer\
+            \ isn’t doing it alone.\n\nThe Power of Partnerships\n\nEach piece of\
+            \ the puzzle fits into a bigger vision.\n\n➡️ @Gaianet_AI brings decentralized\
+            \ AI inference to the edge - where users, not corporations, run the compute.\n\
+            \n➡️ @Calderaxyz unlocks scalability with modular rollups, plugged directly\
+            \ into GenLayer’s intelligent consensus.\n\n➡️ @atomaAI enables private,\
+            \ verifiable AI through trusted execution environments - perfect for sensitive\
+            \ decisions.\n\n➡️ @heurist_ai delivers a decentralized GPU cloud, giving\
+            \ developers a censorship-free playground to run AI models.\n\nTogether,\
+            \ they form a modular stack for building the next generation of trustless,\
+            \ AI-native applications.\n\n@GenLayer first Testnet Asimov Is Live. Bradbury\
+            \ Is Next.\n\nTestnet Asimov is more than a proof of concept - it’s GenLayer’s\
+            \ vision coming to life.\n\nDevelopers are already deploying contracts\
+            \ that can:\n\n➡️ Understand natural language\n➡️ Evaluate real-world\
+            \ data\n➡️ Resolve nuanced, human-like disputes - all through decentralized\
+            \ AI validators\n\nIt’s not a court simulation.\nIt’s the first operational\
+            \ legal layer for the internet.\n\nComing next: Testnet Bradbury (Q3 2025)\n\
+            \nWith deeper incentives, validator upgrades, and full ecosystem integration,\
+            \ Bradbury will scale what Asimov started.\n\nThe Bigger Picture \U0001F304\
+            \n\n@GenLayer isn’t chasing a trend.\nIt’s defining the architecture for\
+            \ decentralized intelligence.\n\nWith Gaianet, Caldera, Atoma and Heurist\
+            \ in the mix, GenLayer is no longer just theorizing the future - it’s\
+            \ shipping it.\n\nThis is what the new internet looks like:\n\n➡️Contracts\
+            \ that think\n➡️ Networks that reason\n➡️ Trust that’s built in, not assumed\n\
+            \nThe age of intelligent contracts has officially begun.\nAnd @GenLayer\
+            \ is already in session."
+          mentioned_at: '2025-06-26T12:40:23+00:00'
+          type: note
+          metrics:
+            like_count: 32
+            reply_count: 18
+            repost_count: 5
+            view_count: 1297
+          sentiment: positive
+        - content: "The Trust Layer for the AI Age Is Here - and It’s Already Live\n\
+            \nThe future of the internet won’t be run by banks, courts, or cloud providers\
+            \ ☁️ \nIt will be powered by autonomous agents and programmable trust\
+            \ - and GenLayer is laying the foundation for it \U0001F446\U0001F3FC\n\
+            \nIn just a few weeks, @GenLayer has rolled out four massive partnerships\
+            \ and launched its first testnet \U0001F4BB\n\nIt’s not just momentum.\
+            \ It’s a movement. Its the calm before the storm \U0001F32C️ \n\nWhy @GenLayer\
+            \ ❓\n\nBlockchains automate transactions.\nGenLayer automates judgment.\n\
+            \nIt introduces an AI-powered legal layer for the internet - where smart\
+            \ contracts don’t just execute, they interpret \U0001F9E0\n\nUsing large\
+            \ language models (LLMs), @GenLayer validators resolve subjective logic\
+            \ in real-time. From disputes to dynamic agreements, contracts now have\
+            \ context - and decisions are made transparently, onchain.\n\nAnd GenLayer\
+            \ isn’t doing it alone.\n\nThe Power of Partnerships\n\nEach piece of\
+            \ the puzzle fits into a bigger vision.\n\n➡️ @Gaianet_AI brings decentralized\
+            \ AI inference to the edge - where users, not corporations, run the compute.\n\
+            \n➡️ @Calderaxyz unlocks scalability with modular rollups, plugged directly\
+            \ into GenLayer’s intelligent consensus.\n\n➡️ @atomaAI enables private,\
+            \ verifiable AI through trusted execution environments - perfect for sensitive\
+            \ decisions.\n\n➡️ @heurist_ai delivers a decentralized GPU cloud, giving\
+            \ developers a censorship-free playground to run AI models.\n\nTogether,\
+            \ they form a modular stack for building the next generation of trustless,\
+            \ AI-native applications.\n\n@GenLayer first Testnet Asimov Is Live. Bradbury\
+            \ Is Next.\n\nTestnet Asimov is more than a proof of concept - it’s GenLayer’s\
+            \ vision coming to life.\n\nDevelopers are already deploying contracts\
+            \ that can:\n\n➡️ Understand natural language\n➡️ Evaluate real-world\
+            \ data\n➡️ Resolve nuanced, human-like disputes - all through decentralized\
+            \ AI validators\n\nIt’s not a court simulation.\nIt’s the first operational\
+            \ legal layer for the internet.\n\nComing next: Testnet Bradbury (Q3 2025)\n\
+            \nWith deeper incentives, validator upgrades, and full ecosystem integration,\
+            \ Bradbury will scale what Asimov started.\n\nThe Bigger Picture \U0001F304\
+            \n\n@GenLayer isn’t chasing a trend.\nIt’s defining the architecture for\
+            \ decentralized intelligence.\n\nWith Gaianet, Caldera, Atoma and Heurist\
+            \ in the mix, GenLayer is no longer just theorizing the future - it’s\
+            \ shipping it.\n\nThis is what the new internet looks like:\n\n➡️Contracts\
+            \ that think\n➡️ Networks that reason\n➡️ Trust that’s built in, not assumed\n\
+            \nThe age of intelligent contracts has officially begun.\nAnd @GenLayer\
+            \ is already in session."
+          mentioned_at: '2025-06-26T12:40:23+00:00'
+          type: note
+          metrics:
+            like_count: 33
+            reply_count: 18
+            repost_count: 5
+            view_count: 1378
+          sentiment: positive
+        - content: "The Trust Layer for the AI Age Is Here - and It’s Already Live\n\
+            \nThe future of the internet won’t be run by banks, courts, or cloud providers\
+            \ ☁️ \nIt will be powered by autonomous agents and programmable trust\
+            \ - and GenLayer is laying the foundation for it \U0001F446\U0001F3FC\n\
+            \nIn just a few weeks, @GenLayer has rolled out four massive partnerships\
+            \ and launched its first testnet \U0001F4BB\n\nIt’s not just momentum.\
+            \ It’s a movement. Its the calm before the storm \U0001F32C️ \n\nWhy @GenLayer\
+            \ ❓\n\nBlockchains automate transactions.\nGenLayer automates judgment.\n\
+            \nIt introduces an AI-powered legal layer for the internet - where smart\
+            \ contracts don’t just execute, they interpret \U0001F9E0\n\nUsing large\
+            \ language models (LLMs), @GenLayer validators resolve subjective logic\
+            \ in real-time. From disputes to dynamic agreements, contracts now have\
+            \ context - and decisions are made transparently, onchain.\n\nAnd GenLayer\
+            \ isn’t doing it alone.\n\nThe Power of Partnerships\n\nEach piece of\
+            \ the puzzle fits into a bigger vision.\n\n➡️ @Gaianet_AI brings decentralized\
+            \ AI inference to the edge - where users, not corporations, run the compute.\n\
+            \n➡️ @Calderaxyz unlocks scalability with modular rollups, plugged directly\
+            \ into GenLayer’s intelligent consensus.\n\n➡️ @atomaAI enables private,\
+            \ verifiable AI through trusted execution environments - perfect for sensitive\
+            \ decisions.\n\n➡️ @heurist_ai delivers a decentralized GPU cloud, giving\
+            \ developers a censorship-free playground to run AI models.\n\nTogether,\
+            \ they form a modular stack for building the next generation of trustless,\
+            \ AI-native applications.\n\n@GenLayer first Testnet Asimov Is Live. Bradbury\
+            \ Is Next.\n\nTestnet Asimov is more than a proof of concept - it’s GenLayer’s\
+            \ vision coming to life.\n\nDevelopers are already deploying contracts\
+            \ that can:\n\n➡️ Understand natural language\n➡️ Evaluate real-world\
+            \ data\n➡️ Resolve nuanced, human-like disputes - all through decentralized\
+            \ AI validators\n\nIt’s not a court simulation.\nIt’s the first operational\
+            \ legal layer for the internet.\n\nComing next: Testnet Bradbury (Q3 2025)\n\
+            \nWith deeper incentives, validator upgrades, and full ecosystem integration,\
+            \ Bradbury will scale what Asimov started.\n\nThe Bigger Picture \U0001F304\
+            \n\n@GenLayer isn’t chasing a trend.\nIt’s defining the architecture for\
+            \ decentralized intelligence.\n\nWith Gaianet, Caldera, Atoma and Heurist\
+            \ in the mix, GenLayer is no longer just theorizing the future - it’s\
+            \ shipping it.\n\nThis is what the new internet looks like:\n\n➡️Contracts\
+            \ that think\n➡️ Networks that reason\n➡️ Trust that’s built in, not assumed\n\
+            \nThe age of intelligent contracts has officially begun.\nAnd @GenLayer\
+            \ is already in session."
+          mentioned_at: '2025-06-26T12:40:23+00:00'
+          type: note
+          metrics:
+            like_count: 33
+            reply_count: 18
+            repost_count: 5
+            view_count: 1398
+          sentiment: positive
+        - content: '🚀 Significant last hour moves
+
+
+            AI Meme:
+
+            $flavia -2.7% | @n/a
+
+            $iq -2.1% | @IQ6900_
+
+            $loria +13.4% | @n/a
+
+
+            My Analysis:
+
+            $mona: Mona''s been quiet lately but the recent tweets from @mona_witchy
+            and @heurist_ai show that the project''s been working on a major transformation,
+            including a new AI agent framework and Live2D animations. Accumulation
+            phase is likely.'
+          mentioned_at: '2025-06-25T23:10:05+00:00'
+          type: note
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 0
+            view_count: 2
+          sentiment: neutral
+        - content: '🚀 Significant last hour moves
+
+
+            AI Meme:
+
+            $flavia -2.7% | @n/a
+
+            $iq -2.1% | @IQ6900_
+
+            $loria +13.4% | @n/a
+
+
+            My Analysis:
+
+            $mona: Mona''s been quiet lately but the recent tweets from @mona_witchy
+            and @heurist_ai show that the project''s been working on a major transformation,
+            including a new AI agent framework and Live2D animations. Accumulation
+            phase is likely.'
+          mentioned_at: '2025-06-25T23:10:05+00:00'
+          type: note
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 0
+            view_count: 2
+          sentiment: neutral
+        - content: "@claude_code @heurist_ai What happened here:\n\n- Claude Code\
+            \ connected to Heurist Mesh MCP remotely (no local setup!)\n- Pulled live\
+            \ blockchain data for the ETH address using @etherscan \n- Analyzed transaction\
+            \ patterns, balances, activity\n\nAll in one shot. This is the next level\
+            \ of vibe-coding"
+          mentioned_at: '2025-06-19T14:30:45+00:00'
+          type: reply
+          metrics:
+            like_count: 0
+            reply_count: 1
+            repost_count: 0
+            view_count: 52
+          sentiment: positive
+        - content: "@claude_code @heurist_ai What happened here:\n\n- Claude Code\
+            \ connected to Heurist Mesh MCP remotely (no local setup!)\n- Pulled live\
+            \ blockchain data for the ETH address using @etherscan \n- Analyzed transaction\
+            \ patterns, balances, activity\n\nAll in one shot. This is the next level\
+            \ of vibe-coding"
+          mentioned_at: '2025-06-19T14:30:45+00:00'
+          type: reply
+          metrics:
+            like_count: 0
+            reply_count: 1
+            repost_count: 0
+            view_count: 52
+          sentiment: positive
+        - content: 'Just tried the new @claude_code MCP feature with @heurist_ai MCP.
+
+
+            Asked Claude to create a name card for an Ethereum address using blockchain
+            data.
+
+
+            The result? A stunning website with "liquid glass" style generated instantly
+            🤯 '
+          mentioned_at: '2025-06-19T14:29:08+00:00'
+          type: post
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 0
+            view_count: 17
+          sentiment: positive
+        - content: 'Just tried the new @claude_code MCP feature with @heurist_ai MCP.
+
+
+            Asked Claude to create a name card for an Ethereum address using blockchain
+            data.
+
+
+            The result? A stunning website with "liquid glass" style generated instantly
+            🤯 '
+          mentioned_at: '2025-06-19T14:29:08+00:00'
+          type: post
+          metrics:
+            like_count: 0
+            reply_count: 0
+            repost_count: 0
+            view_count: 17
+          sentiment: positive
 input_trending:
   tool: get_trending_tokens
   tool_arguments:
@@ -141,384 +1217,202 @@ output_trending:
         pageSize: 50
         data:
         - token: btc
-          current_count: 949
-          previous_count: 834
-          change_percent: 13.79
+          current_count: 2449
+          previous_count: 1762
+          change_percent: 38.99
         - token: eth
-          current_count: 797
-          previous_count: 519
-          change_percent: 53.56
-        - token: bonk
-          current_count: 524
-          previous_count: 713
-          change_percent: -26.51
-        - token: sol
-          current_count: 351
-          previous_count: 241
-          change_percent: 45.64
-        - token: pump
-          current_count: 284
-          previous_count: 22
-          change_percent: 1190.91
-        - token: xrp
-          current_count: 189
-          previous_count: 105
-          change_percent: 80
+          current_count: 1917
+          previous_count: 1557
+          change_percent: 23.12
         - token: pengu
-          current_count: 181
-          previous_count: 159
-          change_percent: 13.84
+          current_count: 720
+          previous_count: 461
+          change_percent: 56.18
+        - token: sol
+          current_count: 569
+          previous_count: 414
+          change_percent: 37.44
+        - token: pump
+          current_count: 463
+          previous_count: 1116
+          change_percent: -58.51
         - token: hype
-          current_count: 173
-          previous_count: 102
-          change_percent: 69.61
-        - token: hosico
-          current_count: 169
-          previous_count: 151
-          change_percent: 11.92
-        - token: crcl
-          current_count: 157
-          previous_count: 31
-          change_percent: 406.45
-        - token: mstr
-          current_count: 156
-          previous_count: 50
-          change_percent: 212
-        - token: dog
-          current_count: 153
-          previous_count: 247
-          change_percent: -38.06
-        - token: wolfi
-          current_count: 138
-          previous_count: 83
-          change_percent: 66.27
-        - token: rekt
-          current_count: 123
-          previous_count: 112
-          change_percent: 9.82
-        - token: usdc
-          current_count: 116
-          previous_count: 72
-          change_percent: 61.11
-        - token: bitcoin
-          current_count: 115
-          previous_count: 60
-          change_percent: 91.67
-        - token: jail
-          current_count: 113
-          previous_count: 136
-          change_percent: -16.91
-        - token: bnkr
-          current_count: 112
-          previous_count: 121
-          change_percent: -7.44
-        - token: tao
-          current_count: 111
-          previous_count: 70
-          change_percent: 58.57
-        - token: vader
-          current_count: 111
-          previous_count: 114
-          change_percent: -2.63
-        - token: strd
-          current_count: 110
-          previous_count: 13
-          change_percent: 746.15
-        - token: ap
-          current_count: 109
-          previous_count: 89
-          change_percent: 22.47
-        - token: sbet
-          current_count: 109
-          previous_count: 21
-          change_percent: 419.05
-        - token: gp
-          current_count: 107
-          previous_count: 94
-          change_percent: 13.83
-        - token: tsla
-          current_count: 102
-          previous_count: 75
-          change_percent: 36
-        - token: m
-          current_count: 101
-          previous_count: 96
-          change_percent: 5.21
-        - token: spx
-          current_count: 101
-          previous_count: 67
-          change_percent: 50.75
-        - token: mim
-          current_count: 100
-          previous_count: 41
-          change_percent: 143.9
-        - token: useless
-          current_count: 97
-          previous_count: 62
-          change_percent: 56.45
-        - token: doge
-          current_count: 95
-          previous_count: 88
-          change_percent: 7.95
-        - token: s
-          current_count: 92
-          previous_count: 80
-          change_percent: 15
-        - token: satfi
-          current_count: 92
-          previous_count: 174
-          change_percent: -47.13
-        - token: link
-          current_count: 91
-          previous_count: 82
-          change_percent: 10.98
-        - token: quby
-          current_count: 89
-          previous_count: 46
-          change_percent: 93.48
-        - token: btbt
-          current_count: 88
-          previous_count: 4
-          change_percent: 2100
+          current_count: 411
+          previous_count: 271
+          change_percent: 51.66
         - token: pepe
-          current_count: 86
-          previous_count: 117
-          change_percent: -26.5
-        - token: uranus
-          current_count: 84
-          previous_count: 38
-          change_percent: 121.05
+          current_count: 290
+          previous_count: 193
+          change_percent: 50.26
+        - token: bonk
+          current_count: 254
+          previous_count: 352
+          change_percent: -27.84
+        - token: usdc
+          current_count: 191
+          previous_count: 179
+          change_percent: 6.7
+        - token: xrp
+          current_count: 191
+          previous_count: 249
+          change_percent: -23.29
+        - token: mog
+          current_count: 188
+          previous_count: 103
+          change_percent: 82.52
         - token: avax
-          current_count: 81
-          previous_count: 61
-          change_percent: 32.79
-        - token: dege
-          current_count: 78
-          previous_count: 29
-          change_percent: 168.97
-        - token: ikun
-          current_count: 78
-          previous_count: 89
-          change_percent: -12.36
-        - token: tibbir
-          current_count: 78
-          previous_count: 34
-          change_percent: 129.41
-        - token: joe
-          current_count: 72
-          previous_count: 30
-          change_percent: 140
-        - token: kas
-          current_count: 72
-          previous_count: 62
-          change_percent: 16.13
+          current_count: 170
+          previous_count: 122
+          change_percent: 39.34
+        - token: bnkr
+          current_count: 170
+          previous_count: 109
+          change_percent: 55.96
+        - token: dog
+          current_count: 167
+          previous_count: 127
+          change_percent: 31.5
         - token: sui
-          current_count: 68
-          previous_count: 54
-          change_percent: 25.93
-        - token: giko
-          current_count: 67
-          previous_count: 15
-          change_percent: 346.67
-        - token: ton
-          current_count: 66
-          previous_count: 176
-          change_percent: -62.5
+          current_count: 156
+          previous_count: 135
+          change_percent: 15.56
+        - token: tao
+          current_count: 155
+          previous_count: 128
+          change_percent: 21.09
+        - token: sbet
+          current_count: 152
+          previous_count: 131
+          change_percent: 16.03
+        - token: s
+          current_count: 140
+          previous_count: 94
+          change_percent: 48.94
+        - token: bitcoin
+          current_count: 137
+          previous_count: 122
+          change_percent: 12.3
+        - token: mstr
+          current_count: 134
+          previous_count: 128
+          change_percent: 4.69
+        - token: usdt
+          current_count: 122
+          previous_count: 133
+          change_percent: -8.27
+        - token: doge
+          current_count: 120
+          previous_count: 126
+          change_percent: -4.76
+        - token: imf
+          current_count: 112
+          previous_count: 37
+          change_percent: 202.7
+        - token: ada
+          current_count: 110
+          previous_count: 107
+          change_percent: 2.8
+        - token: spx
+          current_count: 109
+          previous_count: 119
+          change_percent: -8.4
+        - token: hosico
+          current_count: 106
+          previous_count: 93
+          change_percent: 13.98
+        - token: wif
+          current_count: 106
+          previous_count: 63
+          change_percent: 68.25
+        - token: era
+          current_count: 105
+          previous_count: 21
+          change_percent: 400
+        - token: satfi
+          current_count: 105
+          previous_count: 99
+          change_percent: 6.06
+        - token: wolfi
+          current_count: 105
+          previous_count: 122
+          change_percent: -13.93
+        - token: link
+          current_count: 104
+          previous_count: 99
+          change_percent: 5.05
+        - token: giga
+          current_count: 101
+          previous_count: 83
+          change_percent: 21.69
+        - token: nvda
+          current_count: 100
+          previous_count: 163
+          change_percent: -38.65
+        - token: kta
+          current_count: 97
+          previous_count: 103
+          change_percent: -5.83
+        - token: m
+          current_count: 97
+          previous_count: 97
+          change_percent: 0
+        - token: sei
+          current_count: 95
+          previous_count: 30
+          change_percent: 216.67
+        - token: manyu
+          current_count: 90
+          previous_count: 117
+          change_percent: -23.08
         - token: shib
-          current_count: 65
-          previous_count: 36
-          change_percent: 80.56
-        - token: coq
-          current_count: 62
-          previous_count: 27
-          change_percent: 129.63
-        - token: btog
-          current_count: 61
+          current_count: 89
+          previous_count: 101
+          change_percent: -11.88
+        - token: mim
+          current_count: 88
+          previous_count: 103
+          change_percent: -14.56
+        - token: hyper
+          current_count: 87
+          previous_count: 34
+          change_percent: 155.88
+        - token: vader
+          current_count: 86
+          previous_count: 85
+          change_percent: 1.18
+        - token: mask
+          current_count: 85
+          previous_count: 76
+          change_percent: 11.84
+        - token: jail
+          current_count: 83
+          previous_count: 112
+          change_percent: -25.89
+        - token: ibit
+          current_count: 82
+          previous_count: 57
+          change_percent: 43.86
+        - token: rekt
+          current_count: 79
+          previous_count: 60
+          change_percent: 31.67
+        - token: troll
+          current_count: 78
+          previous_count: 75
+          change_percent: 4
+        - token: ruji
+          current_count: 76
+          previous_count: 73
+          change_percent: 4.11
+        - token: bmnr
+          current_count: 69
+          previous_count: 34
+          change_percent: 102.94
+        - token: crcl
+          current_count: 69
+          previous_count: 86
+          change_percent: -19.77
+        - token: lzr
+          current_count: 69
           previous_count: 0
           change_percent: 100
-        - token: gray
-          current_count: 61
-          previous_count: 15
-          change_percent: 306.67
-api_dance_test_query1:
-  tweet_id: '1913624766793289972'
-api_dance_output_query1:
-  pinned_tweet: null
-  tweets:
-  - tweet_id: '1913624766793289972'
-    user_id: '1736748346566459392'
-    media_type: video
-    text: 'Your agents, your way.
-
-      Create a dedicated MCP server with Heurist as simple as 3 steps 👇 https://t.co/8fj2Xkc9Jt'
-    medias:
-    - https://pbs.twimg.com/amplify_video_thumb/1913624592876535808/img/WHw2G9VCP7UNO0fL.jpg
-    urls: null
-    is_self_send: true
-    is_retweet: false
-    is_quote: false
-    is_reply: false
-    is_like: false
-    related_tweet_id: ''
-    related_user_id: ''
-    favorite_count: 38
-    quote_count: 4
-    reply_count: 12
-    retweet_count: 15
-    created_at: Sat Apr 19 16:04:32 +0000 2025
-    user:
-      id_str: '1736748346566459392'
-      name: Heurist
-      screen_name: heurist_ai
-      location: Agent-native Cloud
-      description: "Agent-native Cloud for Collective Intelligence \nBacked by @AmberGroup_io,\
-        \ @ManifoldTrading, @SeliniCapital \nhttps://t.co/RVIdwhpLdz"
-      followers_count: 34104
-      friends_count: 266
-      created_at: Mon Dec 18 14:01:02 +0000 2023
-      favourites_count: 1455
-      verified: true
-      statuses_count: 1379
-      media_count: 288
-      profile_image_url_https: https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_normal.jpg
-  - tweet_id: '1913625034478034984'
-    user_id: '1736748346566459392'
-    media_type: ''
-    text: '1. Get an API key: https://t.co/Me0O3WQ4H9
-
-      2. Visit Heurist MCP Portal https://t.co/9mZtQWfB0W
-
-      3. Choose your agents and start!'
-    medias: null
-    urls:
-    - https://heurist.ai/credits
-    - https://mcp.heurist.ai
-    is_self_send: false
-    is_retweet: false
-    is_quote: false
-    is_reply: true
-    is_like: false
-    related_tweet_id: '1913624766793289972'
-    related_user_id: '1736748346566459392'
-    favorite_count: 6
-    quote_count: 0
-    reply_count: 0
-    retweet_count: 3
-    created_at: Sat Apr 19 16:05:36 +0000 2025
-    user:
-      id_str: '1736748346566459392'
-      name: Heurist
-      screen_name: heurist_ai
-      location: Agent-native Cloud
-      description: "Agent-native Cloud for Collective Intelligence \nBacked by @AmberGroup_io,\
-        \ @ManifoldTrading, @SeliniCapital \nhttps://t.co/RVIdwhpLdz"
-      followers_count: 34104
-      friends_count: 266
-      created_at: Mon Dec 18 14:01:02 +0000 2023
-      favourites_count: 1455
-      verified: true
-      statuses_count: 1379
-      media_count: 288
-      profile_image_url_https: https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_normal.jpg
-  - tweet_id: '1913635740543520884'
-    user_id: '1399243366886486016'
-    media_type: ''
-    text: '@heurist_ai Love the simplicity, @heurist_ai! 🚀 Setting up a dedicated
-      MCP server in just 3 steps? That''s what I call user-friendly! Can''t wait to
-      see how this fuels our DeFi adventures! Let''s get those agents rolling! 💪🔥
-      #CryptoInnovation'
-    medias: null
-    urls: null
-    is_self_send: false
-    is_retweet: false
-    is_quote: false
-    is_reply: true
-    is_like: false
-    related_tweet_id: '1913624766793289972'
-    related_user_id: '1736748346566459392'
-    favorite_count: 0
-    quote_count: 0
-    reply_count: 0
-    retweet_count: 0
-    created_at: Sat Apr 19 16:48:08 +0000 2025
-    user:
-      id_str: '1399243366886486016'
-      name: sidekick.finance
-      screen_name: SidekickFinance
-      location: Atlanta, GA
-      description: "\U0001F680 NFT crowdfunding - JumpStart \n\U0001F4A5 PFPS - mint\
-        \ is live!\nhttps://t.co/sWo9ACWsVZ…\n#nft #crowdfunding #altcoin"
-      followers_count: 4579
-      friends_count: 1710
-      created_at: Mon May 31 05:57:02 +0000 2021
-      favourites_count: 24621
-      verified: true
-      statuses_count: 26978
-      media_count: 444
-      profile_image_url_https: https://pbs.twimg.com/profile_images/1682152266608828416/l3CRrWM3_normal.jpg
-  - tweet_id: '1913655033914065398'
-    user_id: '1878762026878504960'
-    media_type: ''
-    text: '@heurist_ai Just set this up for our internal tools—runs like a dream.'
-    medias: null
-    urls: null
-    is_self_send: false
-    is_retweet: false
-    is_quote: false
-    is_reply: true
-    is_like: false
-    related_tweet_id: '1913624766793289972'
-    related_user_id: '1736748346566459392'
-    favorite_count: 0
-    quote_count: 0
-    reply_count: 0
-    retweet_count: 0
-    created_at: Sat Apr 19 18:04:48 +0000 2025
-    user:
-      id_str: '1878762026878504960'
-      name: DigiMask CLONE $MGT🌕
-      screen_name: CloneMgt68974
-      location: New York, USA
-      description: Talk about 🔥tech 🔥crypto 🔥
-      followers_count: 50
-      friends_count: 263
-      created_at: Mon Jan 13 11:12:43 +0000 2025
-      favourites_count: 0
-      verified: false
-      statuses_count: 142
-      media_count: 0
-      profile_image_url_https: https://pbs.twimg.com/profile_images/1878762361579786241/hr0guLXP_normal.jpg
-  - tweet_id: '1913655086967820623'
-    user_id: '1863707690901356544'
-    media_type: ''
-    text: '@heurist_ai “Your agents, your way.” No lies detected ✅'
-    medias: null
-    urls: null
-    is_self_send: false
-    is_retweet: false
-    is_quote: false
-    is_reply: true
-    is_like: false
-    related_tweet_id: '1913624766793289972'
-    related_user_id: '1736748346566459392'
-    favorite_count: 0
-    quote_count: 0
-    reply_count: 0
-    retweet_count: 0
-    created_at: Sat Apr 19 18:05:01 +0000 2025
-    user:
-      id_str: '1863707690901356544'
-      name: CHEF
-      screen_name: CHEF03825545919
-      location: Binan City, Philippines
-      description: Lil Ass Aeon🪽 Went to the doc to get my test levels checked, I
-        got 6900T. GME on roids💹🧲
-      followers_count: 1
-      friends_count: 3
-      created_at: Mon Dec 02 22:12:08 +0000 2024
-      favourites_count: 346
-      verified: false
-      statuses_count: 153
-      media_count: 0
-      profile_image_url_https: https://pbs.twimg.com/profile_images/1863707969986125824/uWaIykv8_normal.jpg
-  next_cursor_str: LgAAAPAfHBlG0IDd1Y_1x4416MG0iabkzI417Iew8ajH1Y41nsWwlbTK1Y41JQQRFQ4AAA

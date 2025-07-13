@@ -204,7 +204,7 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/tx/{txid}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=10000)
             )
 
             markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""
@@ -282,7 +282,7 @@ class EtherscanAgent(MeshAgent):
             url = f"{explorer_url}/token/{address}"
 
             scrape_result = await asyncio.get_event_loop().run_in_executor(
-                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=5000)
+                None, lambda: self.app.scrape_url(url, formats=["markdown"], wait_for=10000)
             )
 
             markdown_content = getattr(scrape_result, "markdown", "") if hasattr(scrape_result, "markdown") else ""

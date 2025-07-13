@@ -1,9 +1,7 @@
+import asyncio
 import logging
 import os
-import time
 from typing import Any, Dict, List, Optional
-
-import requests
 
 from decorators import with_cache, with_retry
 from mesh.mesh_agent import MeshAgent
@@ -14,7 +12,7 @@ logger = logging.getLogger(__name__)
 class MasaTwitterSearchAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.api_url = "https://data.masa.ai/api/v1"  # Updated to production URL
+        self.api_url = "https://data.masa.ai/api/v1"
         self.api_key = os.getenv("MASA_API_KEY")
         if not self.api_key:
             raise ValueError("MASA_API_KEY environment variable is required")
@@ -96,43 +94,51 @@ class MasaTwitterSearchAgent(MeshAgent):
                 "type": "twitter-credential-scraper",
                 "arguments": {"query": search_term, "max_results": max_results},
             }
-            response = requests.post(f"{self.api_url}/search/live/twitter", headers=self.headers, json=payload)
-            response.raise_for_status()
 
-            search_data = response.json()
-            uuid = search_data.get("uuid")
-            logger.info(f"Initialized search with UUID: {uuid}")
+            search_url = f"{self.api_url}/search/live/twitter"
+            logger.info(f"Initiating search at {search_url} with payload: {payload}")
+            search_data = await self._api_request(
+                url=search_url, method="POST", headers=self.headers, json_data=payload
+            )
+            logger.info(f"Search initialization response type: {type(search_data)}, content: {search_data}")
+            if isinstance(search_data, dict) and search_data.get("error") and search_data["error"].strip():
+                logger.error(f"Search initialization error: {search_data['error']}")
+                return {"error": search_data["error"]}
+            uuid = None
+            if isinstance(search_data, dict):
+                uuid = search_data.get("uuid")
 
             if not uuid:
+                logger.error(f"No UUID returned from search initialization. Response: {search_data}")
                 return {"error": "Failed to initialize search: No UUID returned"}
+            logger.info(f"Search initialized successfully with UUID: {uuid}")
 
-            if search_data.get("error"):
-                return {"error": f"Search initialization failed: {search_data.get('error')}"}
             max_attempts = 30
             wait_time = 2
             waiting_logged = False
 
             for attempt in range(max_attempts):
-                status_response = requests.get(
-                    f"{self.api_url}/search/live/twitter/result/{uuid}", headers=self.headers
+                status_url = f"{self.api_url}/search/live/twitter/result/{uuid}"
+                logger.debug(f"Polling attempt {attempt + 1}/{max_attempts} at {status_url}")
+                status_data = await self._api_request(url=status_url, method="GET", headers=self.headers)
+                logger.debug(
+                    f"Polling response {attempt + 1}: type={type(status_data)}, content={str(status_data)[:500]}"
                 )
-                try:
-                    status_response.raise_for_status()
-                except requests.RequestException as e:
+                if isinstance(status_data, dict) and status_data.get("error") and status_data["error"].strip():
                     logger.warning(
-                        f"Status check failed for UUID {uuid} attempt {attempt + 1}/{max_attempts}: {e}, body: {status_response.text}"
+                        f"Status check failed for UUID {uuid} attempt {attempt + 1}/{max_attempts}: {status_data['error']}"
                     )
-                    time.sleep(wait_time)
+                    await asyncio.sleep(wait_time)
                     continue
 
-                status_data = status_response.json()
                 if isinstance(status_data, dict) and status_data.get("status") == "in progress":
                     if not waiting_logged:
                         logger.info(f"Search in progress for UUID {uuid}, waiting for response...")
                         waiting_logged = True
-                    time.sleep(wait_time)
+                    await asyncio.sleep(wait_time)
                     continue
-                if isinstance(status_data, dict) and status_data.get("error"):
+
+                if isinstance(status_data, dict) and status_data.get("error") and status_data["error"].strip():
                     error_msg = status_data.get("error")
                     details = status_data.get("details", {})
                     if details and details.get("error"):
@@ -143,28 +149,52 @@ class MasaTwitterSearchAgent(MeshAgent):
                     logger.error(f"Search failed for UUID {uuid}: {full_error}")
                     return {"error": f"Search failed: {full_error}"}
 
-                # If we get here and it's not "in progress" and no error, assume it's done
-                # For the old flow, we would check if status == "done", but since we're using result endpoint
-                # we can assume if it's not "in progress" and not an error, we have results
-                if isinstance(status_data, list) or (
-                    isinstance(status_data, dict) and status_data.get("status") != "in progress"
-                ):
-                    logger.info(f"Search completed for UUID {uuid}, response received")
-                    break
+                if isinstance(status_data, list):
+                    logger.info(f"Search completed for UUID {uuid}, received {len(status_data)} results")
+                    return self.format_twitter_results(status_data)
 
-                time.sleep(wait_time)
-            else:
-                logger.error(f"Search timed out for UUID {uuid} after {max_attempts} attempts")
-                return {"error": "Search timed out after maximum attempts"}
+                elif isinstance(status_data, dict):
+                    if status_data.get("Content"):
+                        logger.info(f"Search completed for UUID {uuid}, received single result")
+                        return self.format_twitter_results([status_data])
+                    elif status_data.get("data") and isinstance(status_data["data"], list):
+                        logger.info(
+                            f"Search completed for UUID {uuid}, received {len(status_data['data'])} results in data array"
+                        )
+                        return self.format_twitter_results(status_data["data"])
+                    elif status_data.get("status") == "completed" or status_data.get("status") == "done":
+                        logger.info(f"Search completed for UUID {uuid} with no results")
+                        return self.format_twitter_results([])
 
-            return self.format_twitter_results(status_data if isinstance(status_data, list) else [status_data])
+                    elif status_data.get("status") != "in progress" and status_data.get("status") is not None:
+                        logger.info(f"Search completed for UUID {uuid} with status: {status_data.get('status')}")
+                        # Try to extract any results from the response
+                        results = []
+                        if "results" in status_data:
+                            results = (
+                                status_data["results"]
+                                if isinstance(status_data["results"], list)
+                                else [status_data["results"]]
+                            )
+                        return self.format_twitter_results(results)
 
-        except requests.RequestException as e:
-            logger.error(f"Error during Twitter search: {e}")
+                await asyncio.sleep(wait_time)
+
+            logger.error(f"Search timed out for UUID {uuid} after {max_attempts} attempts")
+            return {"error": "Search timed out after maximum attempts"}
+
+        except Exception as e:
+            logger.error(f"Error during Twitter search for '{search_term}': {str(e)}", exc_info=True)
             return {"error": f"Failed to search Twitter: {str(e)}"}
 
     def format_twitter_results(self, data: List) -> Dict:
         """Format Twitter search results in a structured way"""
+        logger.info(f"Formatting {len(data) if data else 0} Twitter results")
+        if not data:
+            return {
+                "search_stats": {"total_results": 0, "has_results": False},
+                "tweets": [],
+            }
         if isinstance(data, dict):
             data = [data]
 
@@ -184,7 +214,6 @@ class MasaTwitterSearchAgent(MeshAgent):
             metrics = metadata.get("public_metrics", {}) if metadata else {}
 
             formatted_tweet = {
-                # "id": tweet.get("ExternalID"),
                 "content": tweet.get("Content"),
                 "created_at": created_at,
                 "language": metadata.get("lang") if metadata else None,
@@ -195,8 +224,6 @@ class MasaTwitterSearchAgent(MeshAgent):
                     "quotes": metrics.get("QuoteCount", 0),
                     "bookmarks": metrics.get("BookmarkCount", 0),
                 },
-                # "author_id": metadata.get("user_id") if metadata else None,
-                # "conversation_id": metadata.get("conversation_id") if metadata else None,
             }
 
             formatted_results["tweets"].append(formatted_tweet)
@@ -224,8 +251,12 @@ class MasaTwitterSearchAgent(MeshAgent):
 
             errors = self._handle_error(result)
             if errors:
+                logger.error(f"Search returned error: {errors}")
                 return errors
 
+            logger.info(f"Search completed successfully. Result type: {type(result)}")
             return result
         else:
-            return {"error": f"Unsupported tool '{tool_name}'"}
+            error_msg = f"Unsupported tool '{tool_name}'"
+            logger.error(error_msg)
+            return {"error": error_msg}

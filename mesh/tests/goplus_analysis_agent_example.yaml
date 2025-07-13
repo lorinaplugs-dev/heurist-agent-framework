@@ -2,29 +2,42 @@ input_ethereum:
   query: 'Check the safety of this token: 0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9
     on Ethereum'
 output_ethereum:
-  response: "**Token Security Analysis Report**\n\n**Token Details**\n\n* **Contract\
-    \ Address:** `0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9`\n* **Chain ID:** Ethereum\
-    \ (1)\n* **Token Name:** Aave Token\n* **Token Symbol:** AAVE\n* **Total Supply:**\
-    \ 16,000,000\n\n**Security Metrics Assessment**\n\n1. **Is Honeypot:** **FALSE**\
-    \ (Low Risk) - The token is not identified as a honeypot, reducing the risk of\
-    \ it being a malicious contract designed to trap funds.\n2. **Is Blacklisted:**\
-    \ **FALSE** (Low Risk) - There is no indication that the token has been blacklisted,\
-    \ suggesting it hasn't been associated with malicious activities.\n3. **Is Open\
-    \ Source:** **TRUE** (Positive) - The smart contract's open-source nature allows\
-    \ for community review, enhancing transparency and trust.\n4. **Buy/Sell Tax:**\
-    \ **0%** (Neutral) - No taxes are applied on buying or selling, which is standard\
-    \ for most legitimate tokens.\n5. **Can Take Back Ownership:** **FALSE** (Low\
-    \ Risk) - The contract owner cannot take back ownership, reducing the risk of\
-    \ arbitrary token seizures.\n6. **Is Proxy:** **TRUE** (Moderate Risk) - Being\
-    \ a proxy contract might indicate a more complex setup, potentially allowing for\
-    \ upgrades but also introducing a layer of indirection that requires trust in\
-    \ the proxy's management.\n\n**Ownership and Liquidity Analysis**\n\n* **Creator\
-    \ Address:** `0x51f22ac850d29c879367a77d241734acb276b815`\n* **Owner Address:**\
-    \ **EMPTY** (Moderate Risk) - The lack of a specified owner address might indicate\
-    \ a decentralized governance model or a potential oversight.\n* **Top Holders:**\n\
-    \t1. `0x4da27a545c0c5b758a6ba100e3a049001de870f5` - 17.86%\n\t2. `0xf977814e90da44bfa03b6295a0616a897441acec`\
-    \ - 7.66%\n\t3. `0xa700b4eb416be35b2911fd5dee80678ff64ff6c9` - 7.13%\n\t(Diversified\
-    \ Ownership, Low Risk)\n\n**Liqu"
+  response: "**Token Safety Assessment for AAVE (0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9)\
+    \ on Ethereum (Chain ID: 1)**\n\n**Contract Address:** `0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9`\n\
+    **Chain ID:** `1` (Ethereum)\n\n**Token Metadata:**\n\n* **Name:** Aave Token\n\
+    * **Symbol:** AAVE\n* **Total Supply:** 16,000,000\n* **Holder Count:** 192,008\n\
+    \n**Security Metrics:**\n\n* **Is Honeypot:** `FALSE` (Low Risk)\n* **Is Blacklisted:**\
+    \ `FALSE` (Low Risk)\n* **Is Open Source:** `TRUE` (Positive, indicates transparency)\n\
+    * **Buy Tax:** `0` (No tax on buying)\n* **Sell Tax:** `0` (No tax on selling)\n\
+    * **Can Take Back Ownership:** `FALSE` (Low Risk, reduces likelihood of malicious\
+    \ ownership changes)\n* **Is Proxy:** `TRUE` (May indicate upgradeability; monitor\
+    \ for potential risks)\n* **Is Mintable:** `FALSE` (Low Risk, total supply is\
+    \ fixed)\n\n**Liquidity Information:**\n\n* **Is in DEX:** `TRUE` (Available on\
+    \ various decentralized exchanges, indicating liquidity)\n* **DEX Listings:**\
+    \ Multiple listings across Uniswap V2, Uniswap V3, Uniswap V4, and SushiSwap V2,\
+    \ with the highest liquidity pool on Uniswap V3 (`9576947.05710350741413908323`)\n\
+    \n**Ownership and Holder Distribution:**\n\n* **Creator Address:** `0x51f22ac850d29c879367a77d241734acb276b815`\n\
+    * **Owner Address:** *Empty* (Could indicate a decentralized ownership structure\
+    \ or a misinterpretation of the data)\n* **Top Holders:**\n\t1. `0x4da27a545c0c5b758a6ba100e3a049001de870f5`\
+    \ - 29.21% (Contract, Unlocked)\n\t2. `0xa700b4eb416be35b2911fd5dee80678ff64ff6c9`\
+    \ - 13.13% (Contract, Unlocked)\n\t3. `0xf977814e90da44bfa03b6295a0616a897441acec`\
+    \ - 7.5% (Non-Contract, Unlocked)\n\n**Risk Assessment:**\n\n* **Overall Risk\
+    \ Level:** **LOW TO MODERATE**\n* **Reasons:**\n\t+ **Positive:**\n\t\t- Open-source\
+    \ nature of the contract.\n\t\t- Fixed total supply (not mintable).\n\t\t- No\
+    \ buy/sell taxes.\n\t\t- Wide liquidity across multiple DEXs.\n\t+ **Neutral/Monitor:**\n\
+    \t\t- Proxy nature of the contract (upgradeability, potential for changes).\n\t\
+    \t- Distribution among top holders (while significant, the top holder's percentage\
+    \ is not overwhelmingly high, and the assets are currently unlocked).\n\t+ **Negative:**\n\
+    \t\t- None significant based on the provided data.\n\n**Recommendations for Users:**\n\
+    \n1. **Continuously Monitor:** Keep an eye on the project's development, updates,\
+    \ and any changes in the ownership structure or contract modifications.\n2. **Diversify:**\
+    \ As with any investment, consider diversifying your portfolio to minimize risk.\n\
+    3. **Stay Informed About Upgrades:** Given the proxy nature of the contract, stay\
+    \ updated on any upcoming upgrades or changes to ensure they align with your investment\
+    \ strategy.\n\n**Disclaimer:** This assessment is based on the provided data snapshot\
+    \ and might not reflect future changes or undisclosed information. Always conduct\
+    \ your own research (DYOR) and consider multiple sources before making investment\
+    \ decisions."
   data:
     status: success
     data:
@@ -32,7 +45,7 @@ output_ethereum:
         name: Aave Token
         symbol: AAVE
         total_supply: '16000000'
-        holder_count: '186111'
+        holder_count: '192008'
       security_metrics:
         is_honeypot: false
         is_blacklisted: false
@@ -47,53 +60,82 @@ output_ethereum:
         dex:
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '8373971.76775299375586025364'
+          liquidity: '9576947.05710350741413908323'
           pair: '0x5ab53ee1d50eef2c1dd3d5402789cd27bb52c1bb'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '6389563.38220642869182992180'
+          liquidity: '3973157.48031240015340833844'
           pair: '0x59c38b6775ded821f010dbd30ecabdcf84e04756'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '85004.62463648680'
+          liquidity: '331025.280507927886'
           pair: '0xdceaf5d0e5e0db9596a47c0c4120654e80b1d706'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '309916.1103300'
+          pair: '0x4d1ad4a9e61bc0e5529d64f38199ccfca56f5a42'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '143302.23457291054965036944'
+          pair: '0x1c60dc7ce348dc9f1e8992c027350acfda4ba66e2365aa87cbdd98c490185088'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '55451.77686186'
+          liquidity: '88890.30510444'
           pair: '0xdfc14d2af169b0d36c4eff567ada9b2e0cae044f'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '45163.57428950'
+          liquidity: '77855.90672856'
           pair: '0xd75ea151a61d06868e31f8988d28dfe5e9df57b4'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '36793.1047900'
-          pair: '0x4d1ad4a9e61bc0e5529d64f38199ccfca56f5a42'
+          liquidity: '47691.39885530217029726036'
+          pair: '0x4674abc5796e1334b5075326b39b748bee9eaa34'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '47613.55495747127195545952'
+          pair: '0xd3a88a5397e0446db33fbaf631e2a4c46ddc4c743ed2c52ba52a74b4084a472c'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '12778.95928714049380912250'
+          liquidity: '12039.57932472460918788776'
           pair: '0x1353fe67fff8f376762b7034dc9066f0be15a723'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '1752.56913281581662289242'
+          pair: '0xcd019866bb9876e0c3f135bc5fe856a0566d490c1b2fcca97e8205ee25048e6f'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '174.27096366'
+          liquidity: '307.62488462'
           pair: '0xdbb317929a4924e032bc21add1ce8e30a978c257'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '184.90228642516941566751'
+          pair: '0x4f50da0f408624f24203aa1724fadea3d748a24fb27f8d2b90aec0a616ec4192'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '15.64620647'
+          liquidity: '19.95637288'
           pair: '0x674e114dad81838d151d9beda2271228eeae0e8b'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '10.49177800'
+          liquidity: '13.58628900'
           pair: '0x1f447690a6ddf18400533b705516159e1312f892'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '2.51140646'
+          liquidity: '3.19715286'
           pair: '0x38e12fdd8dc51e48830863151e1afa7799e6fe97'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.00707429100161128176'
+          pair: '0xb6c428945734dbfd1525eaeab1a85c945807e431e89b4e7d2c22206ed761a880'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '0.00404235'
+          liquidity: '0.00483759'
           pair: '0xa2b8d2d5a74c69f754d4b80d36ab58b41aa04286'
-        lp_holder_count: '10'
+        lp_holder_count: '164'
       ownership:
         creator_address: '0x51f22ac850d29c879367a77d241734acb276b815'
         owner_address: ''
@@ -101,44 +143,60 @@ output_ethereum:
         - address: '0x4da27a545c0c5b758a6ba100e3a049001de870f5'
           tag: ''
           is_contract: 1
-          balance: '2857933.735229810899234355'
-          percent: '0.178620858451863181'
-          is_locked: 0
-        - address: '0xf977814e90da44bfa03b6295a0616a897441acec'
-          tag: ''
-          is_contract: 0
-          balance: '1225630.044'
-          percent: '0.076601877750000000'
+          balance: '2921981.377892853806944463'
+          percent: '0.182623836118303362'
           is_locked: 0
         - address: '0xa700b4eb416be35b2911fd5dee80678ff64ff6c9'
           tag: ''
           is_contract: 1
-          balance: '1140277.539127562143819847'
-          percent: '0.071267346195472633'
+          balance: '1313502.521732554855165512'
+          percent: '0.082093907608284678'
+          is_locked: 0
+        - address: '0xf977814e90da44bfa03b6295a0616a897441acec'
+          tag: ''
+          is_contract: 0
+          balance: '1200000'
+          percent: '0.075000000000000000'
           is_locked: 0
 input_solana:
   query: 'Check the safety of this Solana token: AcmFHCquGwbrPxh9b3sUPMtAtXKMjkEzKnqkiHEnpump'
 output_solana:
-  response: "**Security Analysis Report for Solana Token: AcmFHCquGwbrPxh9b3sUPMtAtXKMjkEzKnqkiHEnpump\
-    \ (TRUMPWOULD)**\n\n**Token Metadata:**\n\n* **Name:** trump would\n* **Symbol:**\
-    \ TRUMPWOULD\n* **Description:** *None provided*\n* **URI:** https://gateway.pinata.cloud/ipfs/QmedJa55RXX5SdGhezGT2dB8R1536vHHLY36J4Jw1Rfg62\n\
-    \n**Token Settings and Security Assessment:**\n\n1. **Mintable Status and Authority:**\n\
-    \t* **Status:** `0` (False) - **The token is NOT mintable.**\n\t* **Authority:**\
-    \ *None listed* (Empty array) - **No addresses have minting authority.**\n\t*\
-    \ **Risk Level:** *Low* (Reduces the risk of unexpected token supply increases)\n\
-    \n2. **Metadata Mutability and Upgrade Authority:**\n\t* **Status:** `1` (True)\
-    \ - **Metadata is mutable.**\n\t* **Authority:**\n\t\t+ **Address:** `EhwZHKFDXXFZ3hGP4Qt45z6G6bkoN4jZmAa6pfVVFBX1`\n\
-    \t\t+ **Malicious Address Flag:** `0` (False) - **Currently not flagged as malicious.**\n\
-    \t* **Risk Level:** *Moderate* (Allows for updates, but relies on the trustworthiness\
-    \ of the authority address)\n\n3. **Freezable Status and Authority:**\n\t* **Status:**\
-    \ `0` (False) - **The token is NOT freezable.**\n\t* **Authority:** *None listed*\
-    \ (Empty array) - **No addresses have freezing authority.**\n\t* **Risk Level:**\
-    \ *Low* (Reduces the risk of unexpected account freezes)\n\n4. **Balance Mutability\
-    \ and Authority:**\n\t* **Status:** `0` (False) - **Balance is NOT mutable by\
-    \ authority.**\n\t* **Authority:** *None listed* (Empty array) - **No addresses\
-    \ have balance mutation authority.**\n\t* **Risk Level:** *Low* (Protects users\
-    \ from unauthorized balance changes)\n\n5. **Closable Status and Authority:**\n\
-    \t* **Status:** `0` (False) - **The token is NOT"
+  response: "**Solana Token Security Analysis**\n=====================================\n\
+    \n**Token Details**\n-----------------\n\n* **Contract Address (Mint):** `AcmFHCquGwbrPxh9b3sUPMtAtXKMjkEzKnqkiHEnpump`\n\
+    * **Chain ID:** `Solana` (Note: Solana's Chain ID is represented as a string,\
+    \ not a numerical ID)\n* **Token Metadata:**\n\t+ **Name:** `trump would`\n\t\
+    + **Symbol:** `TRUMPWOULD`\n\t+ **Description:** *Empty*\n\t+ **URI:** `https://gateway.pinata.cloud/ipfs/QmedJa55RXX5SdGhezGT2dB8R1536vHHLY36J4Jw1Rfg62`\n\
+    \n**Security Assessment**\n----------------------\n\n### **Authority Settings:**\n\
+    \n1. **Mintable Status:** **FALSE** (✅ *Good*: No new tokens can be minted, reducing\
+    \ the risk of inflation.)\n\t* **Authority:** *None* (Since minting is disabled,\
+    \ no authority is listed.)\n2. **Metadata Mutability:** **TRUE** (⚠️ *Caution*:\
+    \ Metadata can be changed by the authorized party.)\n\t* **Metadata Upgrade Authority:**\n\
+    \t\t- **Address:** `EhwZHKFDXXFZ3hGP4Qt45z6G6bkoN4jZmAa6pfVVFBX1`\n\t\t- **Malicious\
+    \ Address Flag:** `0` (Indicates no known malicious activity associated with this\
+    \ address.)\n3. **Freezable Status:** **FALSE** (✅ *Good*: Token balances cannot\
+    \ be frozen without holder consent.)\n\t* **Authority:** *None* (Since freezing\
+    \ is disabled, no authority is listed.)\n4. **Closable Status:** **FALSE** (✅\
+    \ *Good*: The token cannot be closed, ensuring continued usability.)\n\t* **Authority:**\
+    \ *None* (Since closing is disabled, no authority is listed.)\n5. **Balance Mutability\
+    \ Authority:** **FALSE** (✅ *Good*: Token balances cannot be altered without the\
+    \ holder's direct involvement.)\n\t* **Authority:** *None* (Since balance mutability\
+    \ by an external authority is disabled, no authority is listed.)\n\n### **Additional\
+    \ Security Metrics:**\n\n* **Verified Token:** **FALSE** (⚠️ *Caution*: The token\
+    \ is not verified, which might indicate a lack of formal review or recognition.)\n\
+    * **Trusted Token:** **FALSE** (⚠️ *Caution*: Not recognized as a trusted token,\
+    \ which could imply a higher risk profile for investors.)\n\n### **Risk Assessment\
+    \ Summary:**\n\n* **Overall Risk Level:** ⚠️ **Moderate**\n\t+ **Reasons for Caution:**\n\
+    \t\t- Metadata can be mutated by a central authority.\n\t\t- The token is not\
+    \ verified or trusted.\n\t+ **Positive Factors:**\n\t\t- Non-mintable, reducing\
+    \ inflation risk.\n\t\t- Non-freezable and non-closable, protecting holder rights.\n\
+    \t\t- Balance mutability is restricted, safeguarding holders' balances.\n\n**Recommendation:**\n\
+    -------------------\n\n* **Due Diligence:** Investors should conduct thorough\
+    \ research on the project, focusing on the metadata upgrade authority's intentions\
+    \ and the project's overall legitimacy.\n* **Tracking:** Monitor the token's metadata\
+    \ for any changes that could impact its value or usability.\n* **Investment Decision:**\
+    \ Approach with caution, weighing the potential benefits against the identified\
+    \ risks, especially the central control over metadata and the lack of verification/trust\
+    \ status."
   data:
     status: success
     data:
@@ -193,8 +251,8 @@ output_direct_ethereum:
       token_info:
         name: USD Coin
         symbol: USDC
-        total_supply: '40026871456.693382'
-        holder_count: '3039293'
+        total_supply: '41268249097.986327'
+        holder_count: '3493188'
       security_metrics:
         is_honeypot: false
         is_blacklisted: false
@@ -207,111 +265,300 @@ output_direct_ethereum:
       liquidity_info:
         is_in_dex: true
         dex:
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '39428287.31229454471859315379'
+          pair: '0x21c67e77068de97969ba93d4aab21826d33ca12bb9f565d8496e8fda8a82ca27'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '75948950.49991263601740899682'
-          pair: '0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640'
-        - liquidity_type: UniV3
-          name: UniswapV3
-          liquidity: '23918546.01208373568979631346'
+          liquidity: '23983601.74552494053186955792'
           pair: '0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '10028770.9289960'
-          pair: '0x3416cf6c708da44db2624d63ea0aaef7113527c6'
+          liquidity: '22538850.90083755483911070544'
+          pair: '0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '9509836.79455725'
+          liquidity: '12603389.39021838'
           pair: '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '2862648.17995217153660159196'
+          liquidity: '5568774.976396632'
+          pair: '0x3416cf6c708da44db2624d63ea0aaef7113527c6'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '2385346.8533127810398595440'
+          pair: '0x1e1dfff79d95725aaafd6b47af4fbc28d859ce28'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '2157874.24428846981849487832'
           pair: '0xe0554a476a092703abdb3ef35c80e0d76d32939f'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '1845997.38121100'
+          liquidity: '1850369.85975100'
           pair: '0x3041cbd36888becc7bbcbc0045e3b1f144466f5f'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '1403279.1996270'
+          pair: '0x8aa4e11cbdf30eedc92100f4c8a31ff748e201d44712cc8c90d189edaa8e4e47'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '1399443.53744976562962838080'
+          pair: '0xdce6394339af00981949f5f3baf27e3610c76326a700af57e4b3e3ae4977f78d'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '1070019.89695217'
+          liquidity: '1393128.55438275'
           pair: '0x397ff1542f962076d0bfe58ea045ffa2d347aca0'
-        - liquidity_type: UniV3
-          name: UniswapV3
-          liquidity: '749992.9132200'
-          pair: '0x7858e59e0c01ea06df3af3d20ac7b0003275d4bf'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '735156.58339502'
+          liquidity: '735257.78148079'
           pair: '0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '555360.4629400'
+          pair: '0x3b1bd35a555160a9b60c7524db56029c2025ab93b69d97d33ca3f1c23b6494ad'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '480804.6091340'
-          pair: '0xee4cf3b78a74affa38c6a926282bcd8b5952818d'
+          liquidity: '399429.1672750'
+          pair: '0x7858e59e0c01ea06df3af3d20ac7b0003275d4bf'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '355793.49029049993567971052'
-          pair: '0x7bea39867e4169dbe237d55c8242a8f2fcdcc387'
-        - liquidity_type: UniV3
-          name: UniswapV3
-          liquidity: '323244.903159913100129956983364'
+          liquidity: '357806.7233074673038599200'
           pair: '0x6c6bc977e13df9b0de53b251522280bb72383700'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '56289.739712175661298255406712'
+          liquidity: '335246.10702876057362779208'
+          pair: '0x7bea39867e4169dbe237d55c8242a8f2fcdcc387'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '243334.20612907070970183306'
+          pair: '0x9a5c1d2f4a7a7962a63259de6fcc1afb1d0aa1abdf5d19c23d22fd78953c5167'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '189380.2671640'
+          pair: '0xee4cf3b78a74affa38c6a926282bcd8b5952818d'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '100345.7493510'
+          pair: '0xe018f09af38956affdfeab72c2cefbcd4e6fee44d09df7525ec9dba3e51356a5'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '43596.6718600690261279610'
           pair: '0x5777d92f208679db4b9778590fa3cab3ac9e2168'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '48086.4009377875926454428'
+          liquidity: '38917.17685011826467390635'
           pair: '0xd0fc8ba7e267f2bc56044a7715a489d851dc6d78'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '12455.90110810'
+          liquidity: '12459.21206969'
           pair: '0xaaf5110db6e744ff70fb339de037b990a20bdace'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '6497.72588539322606427840'
+          pair: '0xe9687064960741fc5a0708a0fe57eab7c082b965e07864ac4e2be732329e89a8'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '4134.44688655'
+          liquidity: '4498.47536178'
           pair: '0xebfb684dd2b01e698ca6c14f10e4f289934a54d6'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '3002.23999807395380049536'
+          pair: '0x19440817311e1e63b36f0c147163759b0450352957e4b10ac19e7ea4396cdbd7'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '2498.049595701168802430407716'
+          pair: '0xd967702f17f83d907b36e66c9a62eb50ac327432c581d5b273a76519692434be'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '928.87443125870490664832'
+          pair: '0x74bd54aae01494001f74a34ebc166326be65cf6a7057264b128f025380786636'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '879.22632600'
-          pair: '0xd86a120a06255df8d4e2248ab04d4267e23adfaa'
-        - liquidity_type: UniV2
-          name: SushiSwapV2
-          liquidity: '834.31280244'
+          liquidity: '917.73037301'
           pair: '0xba87dc891945dbb3caeeaf822de208d7ea89b298'
-        - liquidity_type: UniV3
-          name: UniswapV3
-          liquidity: '340.060868687114672246106792'
-          pair: '0xa63b490aa077f541c9d64bfc1cc0db2a752157b5'
+        - liquidity_type: UniV2
+          name: SushiSwapV2
+          liquidity: '879.41042800'
+          pair: '0xd86a120a06255df8d4e2248ab04d4267e23adfaa'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '618.9576000'
+          pair: '0xd49b419ced7700b88756e5c576f7a6fc165d8b4b140970ec4e6f468784c8385c'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '494.080406833045214806436'
+          pair: '0x0637d0aabe5ac8b2beea2664e12b393ada314576b0a8c8f731251fce62e826fd'
         - liquidity_type: UniV3
           name: UniswapV3
           liquidity: '217.675946488'
           pair: '0xbb256c2f1b677e27118b0345fd2b3894d2e6d487'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '19.079561282497612693252182'
+          liquidity: '174.0382712280963139370'
+          pair: '0xa63b490aa077f541c9d64bfc1cc0db2a752157b5'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '169.72907783700172139628'
+          pair: '0xe8ae71f498139a99b28c0208279e60801776ed642143eeecde91f4fbd673fc93'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '106.24105526973819458508'
+          pair: '0xd934712639fede326a3ff8d2a9c2f73749bac510c23fb33443cea7f3c9aca6f3'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '74.51538706014453130560'
+          pair: '0x93c94b1dfdd338d2325d8f04db8f8f7057dd85ffba6cda061d3744bc1e4ed7b9'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '38.51000028847973223768'
+          pair: '0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '30.9806023058278706432'
+          pair: '0x4f88f7c99022eace4740c6898f59ce6a2e798a1e64ce54589720b7153eb224a7'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '26.36516318813438048631'
+          pair: '0x079dbf92033d091e7dee1c293092426433ef30daac4ac2490785b04b08251245'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '14.58264715932306033906'
+          pair: '0x864203406645996fb446f15aa3e721e3f6bcd63c8fb44d077823624b4df23ea6'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '13.60351459519732881728'
+          pair: '0xf4cea555f4656f4561ecd2a74ec2673331779220cd60686514983edb16d027f3'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '11.661384701534982432185390'
           pair: '0x184c33b7b1089747440057e46b4e2bb61f09bc8d'
         - liquidity_type: UniV3
           name: UniswapV3
           liquidity: '9.2458416773029116082'
           pair: '0xab2044f105c43c25b1de3ee27504f0b889ce5953'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '6.4884080'
+          pair: '0xdc6cb2e032b7fb675c931b9845576d236e1b72c3463126fc0020d84b33873328'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '4.97066170920820056549'
+          pair: '0x77b6a53b1693c129dde9736b4c1156b2de2501bdbb17a3d9063b31229ab76495'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '3.90570355992202000839'
+          pair: '0x5bbd9615c3ade8174f2d7f7e1a8d25d5e5416eb66847c4825b482bb59dfbd377'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '2.64410980070912997714'
+          pair: '0xf8735779c33a0b3a7c8b346165b8e7c148f74dff19b90a4604a4b206757e0dfd'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '2.52989899909137416529'
+          pair: '0x642c46918072534e2581c75849ab2d011503e571aea8b4d8e0116cd7e5fc967e'
         - liquidity_type: UniV3
           name: UniswapV3
           liquidity: '1.847452263566629299581574'
           pair: '0x6958686b6348c3d6d5f2dca3106a5c09c156873a'
+        - liquidity_type: UniV2
+          name: UniswapV2
+          liquidity: '1.00534994'
+          pair: '0x239650663a422273c0b2c7a1f1a8bdab69e78d1b'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.9999990'
+          pair: '0xdea1d9b8722dfea1db7a1e59580d2545c045a30beafad2fb808b8f667994bf28'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.999988345298748097884177'
+          pair: '0x161416bb5ae111270227198d0bc01aa66f3a395dc57b3d526b0f12b9c4ecc9ee'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '1.0910325597408336234'
+          liquidity: '0.89085656719476311743'
           pair: '0xe845469aae04f8823202b011a848cf199420b4c1'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.2644109999999206767'
+          pair: '0x02d6d0c5817fbe2904b614f37e0d1e08686abc9819ec47643c6ecc7f6dc2c058'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.26441099999750924838'
+          pair: '0x525fd6c9148cfb25f17baea835eb9adb4069a7b22fcac2d99dd1564658cfc538'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.26441099998181381142'
+          pair: '0xa555d6dc92c65c8c0ebe01f93462841cf13e148ea2868abe8b7ff6541d8f6632'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.26441084388340343295'
+          pair: '0x25b5a5dfdc857dbad480b4929eeecd96bc0499156887f5b3d5d9f5cc5eae9283'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.1014080'
+          pair: '0x538dbee74d964012f58855b7d841060beb99d82cf05d84845a20f19be2d3d9e4'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.05379839832449208987'
+          pair: '0x6dd7caf0f98bed1e8fc49c048f39a265b2fe6e0b0c0897d52402a477f70fb4e8'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '0.76673247'
-          pair: '0x239650663a422273c0b2c7a1f1a8bdab69e78d1b'
-        - liquidity_type: UniV2
-          name: UniswapV2
-          liquidity: '0.10141135'
+          liquidity: '0.01419727'
           pair: '0x672b6e8c2c05e9576fe09a1de5f80c35f63c19a6'
-        lp_holder_count: '10'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.0094280'
+          pair: '0x76f75965083b5bfcc0b96f9c5e77e9e00f80b377def5e7625866013fa3059080'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.00056405334601893249'
+          pair: '0x811a9d9ae89f0bd308e8c2d5f66e98974069f8b9e239b7154438b461b447bd99'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.0000020'
+          pair: '0x3ad280c97568a027da5e10bf3e757886fc4e2fa301959d7bb6c296d3e39f30b5'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.0000000001502537740'
+          pair: '0x3034c14051334a85f674ae727e4059f107a839b29160cca64bc24ee11b90a9a4'
+        lp_holder_count: '61'
       ownership:
         creator_address: '0x95ba4cf87d6723ad9c0db21737d862be80e93911'
         owner_address: ''
@@ -319,20 +566,20 @@ output_direct_ethereum:
         - address: '0x37305b1cd40574e4c5ce33f8e8306be057fd7341'
           tag: ''
           is_contract: 0
-          balance: '4190790400.880011'
-          percent: '0.104699424370805222'
+          balance: '2680204737.413935'
+          percent: '0.064945928068092301'
           is_locked: 0
         - address: '0xad354cfbaa4a8572dd6df021514a3931a8329ef5'
           tag: ''
           is_contract: 1
           balance: '1400000000.5'
-          percent: '0.034976503272675559'
+          percent: '0.033924385722686563'
           is_locked: 0
-        - address: '0x420ef1f25563593af5fe3f9b9d3bc56a8bd8c104'
+        - address: '0xf977814e90da44bfa03b6295a0616a897441acec'
           tag: ''
-          is_contract: 1
-          balance: '1000000002.0169'
-          percent: '0.024983216664805757'
+          is_contract: 0
+          balance: '1400000000'
+          percent: '0.033924385710570711'
           is_locked: 0
 input_direct_base:
   tool: fetch_security_details
@@ -347,8 +594,8 @@ output_direct_base:
       token_info:
         name: Dai Stablecoin
         symbol: DAI
-        total_supply: '2213331.454611254059630351'
-        holder_count: '199477'
+        total_supply: '2299769.188780791521215007'
+        holder_count: '356097'
       security_metrics:
         is_honeypot: false
         is_blacklisted: false
@@ -361,78 +608,117 @@ output_direct_base:
       liquidity_info:
         is_in_dex: true
         dex:
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '7284.626356728192'
+          pair: '0xc18f50d6a832f12f6dcaaeee8d0c87a65b96787e'
         - liquidity_type: UniV2
           name: BaseSwap
-          liquidity: '4625.35638464'
+          liquidity: '4144.76509332'
           pair: '0x6d3c5a4a7ac4b1428368310e4ec3bb1350d01455'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '4086.33192691092037294458'
+          liquidity: '3628.53228417324111362112'
           pair: '0x93e8542e6ca0efffb9d57a270b76712b968a38f5'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '3918.4714640'
-          pair: '0xc18f50d6a832f12f6dcaaeee8d0c87a65b96787e'
-        - liquidity_type: UniV3
-          name: UniswapV3
-          liquidity: '1643.9580320'
+          liquidity: '3606.681529330816'
           pair: '0x22f9623817f152148b4e080e98af66fbe9c5adf8'
-        - liquidity_type: UniV3
-          name: SushiSwapV3
-          liquidity: '851.76958840688949705513'
-          pair: '0x4d734eaf2102407825f45571d51fc7c4dae86ff8'
         - liquidity_type: UniV2
           name: BaseSwap
-          liquidity: '773.54411317'
+          liquidity: '835.24791383'
           pair: '0x0feb1490f80b6978002c3e501753562f2f2853b2'
         - liquidity_type: UniV3
+          name: SushiSwapV3
+          liquidity: '617.59474273547905190784'
+          pair: '0x4d734eaf2102407825f45571d51fc7c4dae86ff8'
+        - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '646.40467594692582797400'
+          liquidity: '537.05641872748659296608'
           pair: '0xdcf81663e68f076ef9763442de134fd0699de4ef'
+        - poolManager: '0x498581fF718922c3f8e6A244956aF099B2652b2b'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '202.585983616062'
+          pair: '0xaf41b575e6e86bc1f7100720712c2a70252c26d79c40771af067ff64624cb35d'
         - liquidity_type: UniV3
           name: SushiSwapV3
-          liquidity: '173.30067762354231310096'
+          liquidity: '129.46624695941882760595'
           pair: '0x77bc7bfb2a37a3bc583117e05fab2ae4526e7102'
-        - liquidity_type: UniV3
-          name: SushiSwapV3
-          liquidity: '70.37789445403978424944'
-          pair: '0xcbe12d2c0d16f1868ebf68040c28de86ae28e61b'
+        - poolManager: '0x498581fF718922c3f8e6A244956aF099B2652b2b'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '88.018874025663'
+          pair: '0x35575bda468c32b7d0134e4383fcd61428f09b904391b684327473cef076dcf1'
         - liquidity_type: UniV2
           name: BaseSwap
-          liquidity: '53.46032561'
+          liquidity: '64.56942886'
           pair: '0x8b7cc11ff640a494e5a31a82415bb0d831e62363'
+        - poolManager: '0x498581fF718922c3f8e6A244956aF099B2652b2b'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '61.21730212648934363305'
+          pair: '0xccebeacc62081b2b641ed287df24dea177a92bff828b195509335909bc620b9e'
         - liquidity_type: UniV3
           name: SushiSwapV3
-          liquidity: '53.33661347719689051872'
+          liquidity: '44.43381447528804819195'
+          pair: '0xcbe12d2c0d16f1868ebf68040c28de86ae28e61b'
+        - liquidity_type: UniV2
+          name: UniswapV2
+          liquidity: '38.77937142'
+          pair: '0xb2839134b8151964f19f6f3c7d59c70ae52852f5'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '30.75516473380672599780'
+          pair: '0x48ad1e2e7c447f6814e69aefe3f0203a0cc128af'
+        - liquidity_type: UniV2
+          name: SushiSwapV2
+          liquidity: '29.11845280'
+          pair: '0xd035d4c8f848dde156ba097fa33df20f6068e29d'
+        - liquidity_type: UniV3
+          name: SushiSwapV3
+          liquidity: '21.69020813378101471890'
           pair: '0x5b91f52c98942884030a2bb6d70aff872d035373'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '52.57336241635647583184'
-          pair: '0x48ad1e2e7c447f6814e69aefe3f0203a0cc128af'
-        - liquidity_type: UniV3
-          name: UniswapV3
-          liquidity: '25.70779813159259285392'
+          liquidity: '14.04882583999654511965'
           pair: '0x751864805accc54ce46e09fb7f6c46c907ac8590'
         - liquidity_type: UniV2
-          name: SushiSwapV2
-          liquidity: '23.68090096'
-          pair: '0xd035d4c8f848dde156ba097fa33df20f6068e29d'
-        - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '14.90836304'
+          liquidity: '13.24406067'
           pair: '0x950847d1dd451b67a2fc1795c0c9a53cf88e63a2'
-        - liquidity_type: UniV2
-          name: UniswapV2
-          liquidity: '11.92293813'
-          pair: '0xb2839134b8151964f19f6f3c7d59c70ae52852f5'
+        - poolManager: '0x498581fF718922c3f8e6A244956aF099B2652b2b'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '9.71698152805300226100'
+          pair: '0x4b882f394f112820aee2dcb9c17e74af5c5696373c0d029446bd5285077aa00c'
+        - poolManager: '0x498581fF718922c3f8e6A244956aF099B2652b2b'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '5.686572466869'
+          pair: '0xe000cf0bb619e837a8efcfa287bb09f71f996c75ca76c3d19307fcfc9cd0716a'
+        - poolManager: '0x498581fF718922c3f8e6A244956aF099B2652b2b'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '4.681060705734'
+          pair: '0xcd9b2ba818fbd68fef0c4efe9a9241c46046224b6d28c794560142d460c3602e'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '4.27942010'
+          liquidity: '4.32511524'
           pair: '0xf12084a6393b01c1bf7490cf2430cfd5d390ba5d'
+        - poolManager: '0x498581fF718922c3f8e6A244956aF099B2652b2b'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.010130328220'
+          pair: '0xbb3935c9d362baf75f1369de998571776cb9031ecde384790feec0268191de40'
         - liquidity_type: UniV3
           name: SushiSwapV3
           liquidity: '0.0000019015904362016837390526371548930063118525997523393739'
           pair: '0x019eff8e9b225d8cbc6127748f5f47ea3e2f28e5'
+        - liquidity_type: UniV2
+          name: UniswapV2
+          liquidity: '0.00000100'
+          pair: '0xfd58d5253a497bab25d3f3e998617f9011d30f65'
         - liquidity_type: UniV2
           name: UniswapV2
           liquidity: '0.00000100'
@@ -505,7 +791,7 @@ output_direct_base:
           name: UniswapV3
           liquidity: '0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007288257057436130291548598308322250817265638417028130'
           pair: '0x6ef112968283869e99dc8a6bccc7346302c3bdba'
-        lp_holder_count: '463'
+        lp_holder_count: '75'
       ownership:
         creator_address: '0xd1236a6a111879d9862f8374ba15344b6b233fbd'
         owner_address: '0x4200000000000000000000000000000000000010'
@@ -514,19 +800,19 @@ output_direct_base:
           tag: ''
           is_contract: 0
           balance: '493107.416745250227452228'
-          percent: '0.222789684625820678'
+          percent: '0.214416046249696948'
+          is_locked: 0
+        - address: '0x09aea4b2242abc8bb4bb78d537a67a245a7bec64'
+          tag: ''
+          is_contract: 1
+          balance: '105885.700483878716311884'
+          percent: '0.046041881507253938'
           is_locked: 0
         - address: '0x2ab5618c63060119fbb8ddd3a6f8097a10775c74'
           tag: ''
           is_contract: 0
           balance: '90000.794840993446249357'
-          percent: '0.040663044232930327'
-          is_locked: 0
-        - address: '0x09aea4b2242abc8bb4bb78d537a67a245a7bec64'
-          tag: ''
-          is_contract: 1
-          balance: '81536.192045097113285705'
-          percent: '0.036838672253640382'
+          percent: '0.039134707639381330'
           is_locked: 0
 input_raw_data:
   query: Is 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599 safe on chain 1?
@@ -539,8 +825,8 @@ output_raw_data:
       token_info:
         name: Wrapped BTC
         symbol: WBTC
-        total_supply: '128814.95633878'
-        holder_count: '126699'
+        total_supply: '128850.89873878'
+        holder_count: '134094'
       security_metrics:
         is_honeypot: false
         is_blacklisted: false
@@ -555,75 +841,135 @@ output_raw_data:
         dex:
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '53932655.78278985998243877754'
+          liquidity: '75051107.29038967742294773200'
           pair: '0xcbcdf9626bc03e24f779434178a73a0b4bad62ed'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '43564484.0026650'
+          liquidity: '45293801.53221516511'
           pair: '0x99ac8ca7087fa4a2a1fb6357269965a2014abc35'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '24707173.94782515359814997278'
-          pair: '0x4585fe77225b41b697c938b018e2ac67ac5a20c0'
+          liquidity: '34765074.8922190'
+          pair: '0x9db9e0e53058c89e5b94e29621a205198648425b'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '19952511.0204540'
+          pair: '0x20c3a15e34e5d88aeba004b0753af69e4f6bea80eae2263f7a92e919cd33cc56'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '16237583.9264080'
-          pair: '0x9db9e0e53058c89e5b94e29621a205198648425b'
+          liquidity: '19138223.39202503445067105009'
+          pair: '0x4585fe77225b41b697c938b018e2ac67ac5a20c0'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '11418462.70670015'
+          liquidity: '16393689.83902690'
           pair: '0xceff51756c56ceffca006cd410b03ffc46dd3a58'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '13237031.44177970336'
+          pair: '0x9a772018fbd77fcd2d25657e5c547baff3fd7d16'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '5286339.18251527'
+          liquidity: '7574121.85401913'
           pair: '0xbb2b8038a1640196fbe3e38816f3e67cba72d940'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '4842200.1653260'
-          pair: '0x9a772018fbd77fcd2d25657e5c547baff3fd7d16'
-        - liquidity_type: UniV3
-          name: UniswapV3
-          liquidity: '4288252.3775110'
+          liquidity: '6194134.869921999'
           pair: '0x56534741cd8b152df6d48adf7ac51f75169a83b2'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '4445550.337918200764'
+          pair: '0xb98437c7ba28c6590dd4e1cc46aa89eed181f97108e5b6221730d41347bc817f'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '2355420.01621156602990579440'
+          pair: '0x54c72c46df32f2cc455e84e41e191b26ed73a29452cdd3d82f511097af9f427e'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '1926590.530767518800'
+          pair: '0x3ea74c37fbb79dfcd6d760870f0f4e00cf4c3960b3259d0d43f211c0547394c1'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '885251.6651120'
+          pair: '0x4a24fcf3c1cbebd80d09537c7aa15adf2d228aa1b9ba1b0e5fb82e66dc96c0d2'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '522800.353748790916159225251150'
-          pair: '0x391e8501b626c623d39474afca6f9e46c2686649'
-        - liquidity_type: UniV3
-          name: UniswapV3
-          liquidity: '331184.40024160727071243356'
+          liquidity: '98842.63065788366868413604'
           pair: '0x8f0cb37cdff37e004e0088f563e5fe39e05ccc5b'
+        - liquidity_type: UniV2
+          name: UniswapV2
+          liquidity: '75259.55534220'
+          pair: '0x004375dff511095cc5a197a54140a24efef3a416'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '65856.65527893235291742320'
+          pair: '0x599326d9cd5e1ea0893305c87d5ec3199e7f05e94d72159f35dea381479a615e'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '180459.77125860341384788660'
+          liquidity: '13628.56383271721072961568'
           pair: '0x6ab3bba2f41e7eaa262fa5a1a9b3932fa161526f'
+        - liquidity_type: UniV3
+          name: UniswapV3
+          liquidity: '13259.112058467644001521003012'
+          pair: '0x391e8501b626c623d39474afca6f9e46c2686649'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '67408.96379823'
-          pair: '0x004375dff511095cc5a197a54140a24efef3a416'
-        - liquidity_type: UniV2
-          name: UniswapV2
-          liquidity: '9803.90294333'
+          liquidity: '10964.70957442'
           pair: '0x231b7589426ffe1b75405526fc32ac09d44364c4'
         - liquidity_type: UniV3
           name: UniswapV3
-          liquidity: '8461.53646372503421998084'
+          liquidity: '4762.14269048316851750000'
           pair: '0xe6ff8b9a37b0fab776134636d9981aa778c4e718'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '834.23786700'
+          liquidity: '921.08330300'
           pair: '0x784178d58b641a4febf8d477a6abd28504273132'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '316.39585766017592777200'
+          pair: '0x3d8a4e3c8985f514808a901424724c9bc03b7a5b5ac3ca8b679d4681690d1e7f'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '286.430778496328'
+          pair: '0x1faf7720479b619d5d6a9ae1b1670c0c8e7d1324d7bc9091955044aadc05e06d'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '256.2766520'
+          pair: '0xba22b985438f0293c1b8084c8141cb3a3737a8d036fcd0ea4061b84cf4aa409d'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '193.85523700'
+          liquidity: '214.80534200'
           pair: '0x0de0fa91b6dbab8c8503aaa2d1dfa91a192cb149'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '177.61183404677905677456'
+          pair: '0xbc70f7834efbe16819a1f96556d2ba379c6ba425fe344d9dc46f5be0e0365799'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '80.8864410'
+          pair: '0x95a5ec95c8e4815997dd82451c87bee4a1fd7793c2ef230291a70e63eb017d48'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '77.5184670'
+          pair: '0x1e58170b9bd63a7394ddb486ed8e94d2255568a7913fb02a24f30e079f4e0e9a'
         - liquidity_type: UniV3
           name: UniswapV3
           liquidity: '42.084757512'
           pair: '0xcbfb0745b8489973bf7b334d54fdbd573df7ef3c'
         - liquidity_type: UniV2
           name: UniswapV2
-          liquidity: '9.69965925'
+          liquidity: '15.48027394'
           pair: '0xaa873c9da6541f13c89416c17271b4c21bf7b2d7'
         - liquidity_type: UniV3
           name: UniswapV3
@@ -633,11 +979,21 @@ output_raw_data:
           name: UniswapV3
           liquidity: '2.0526980'
           pair: '0x026babd2ae9379525030fc2574e39bc156c10583'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.2359176156771237745'
+          pair: '0x0df29494f2ef2d3249f8b99e2a12d35970076a50d0c5b15a481d38fac1c3d940'
+        - poolManager: '0x000000000004444c5dc75cB358380D2e3dE08A90'
+          liquidity_type: UniV4
+          name: UniswapV4
+          liquidity: '0.2056130'
+          pair: '0x046559a73a17019ec8abef1b6e2da622e65b5c151fc09be9a09f78ac5f7ac545'
         - liquidity_type: UniV2
           name: SushiSwapV2
-          liquidity: '0.00617208'
+          liquidity: '0.00617178'
           pair: '0x622d4a772b72f56602546559c95d7ca214ebb24f'
-        lp_holder_count: '10'
+        lp_holder_count: '152'
       ownership:
         creator_address: '0x8b41783ad99fcbeb8d575fa7a7b5a04fa0b8d80b'
         owner_address: '0xca06411bd7a7296d7dbdd0050dfc846e95febeb7'
@@ -645,18 +1001,18 @@ output_raw_data:
         - address: '0x5ee5bf7ae06d1be5997a1a72006fe6c607ec6de8'
           tag: ''
           is_contract: 1
-          balance: '37698.40882981'
-          percent: '0.292655526200421640'
+          balance: '40584.14437515'
+          percent: '0.314969819942245155'
           is_locked: 0
         - address: '0xa3a7b6f88361f48403514059f1f16c8e78d60eec'
           tag: ''
           is_contract: 1
-          balance: '8189.38991907'
-          percent: '0.063574837517563694'
+          balance: '8351.89187821'
+          percent: '0.064818266383549466'
           is_locked: 0
         - address: '0xc3d688b66703497daa19211eedff47f25384cdc3'
           tag: ''
           is_contract: 1
-          balance: '6306.26961462'
-          percent: '0.048956035804062023'
+          balance: '5829.11850081'
+          percent: '0.045239253725559166'
           is_locked: 0
