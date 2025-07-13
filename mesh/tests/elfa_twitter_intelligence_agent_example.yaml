@@ -1,5 +1,5 @@
 input_mentions:
-  query: Search for mentions of Heurist, HEU, and heurist_ai in the last 30 days
+  query: Search for mentions of elonmusk, tesla, and spacex in the last 30 days
 output_mentions:
   response: "**Search Results for Heurist, HEU, and heurist_ai (Last 30 days)**\n\n\
     **Overview**\n\n* **Total Mentions:** 17\n* **Unique Tweets:** 7 (due to multiple\
@@ -286,6 +286,8 @@ output_mentions:
           Google is donating its Agent-to-Agent (A2A) protocol, along with the full
           SDK and tooling, to a @linuxfoundation  governed project.
 
+    1. **Broaden Time Frame**: Extend the search period to observe if there were relevant
+    mentions in the preceding months.
 
           With MCP defining context and A2A standardizing communication, we’re stepping
           closer to the TCP/IP moment for AI agents, and we are excited to be part
