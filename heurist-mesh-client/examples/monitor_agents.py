@@ -53,14 +53,14 @@ logger = PrefixAdapter(base_logger, "AGENT")
 # Configuration
 load_dotenv()
 MESH_METADATA_URL = "https://mesh.heurist.ai/metadata.json"
-PUSHGATEWAY_URL = "45.146.242.71:9091"
-JOB_NAME = "MESH_AGENTS_DAILY_CHECK"
+PUSHGATEWAY_URL = os.getenv("PUSHGATEWAY_URL", "45.146.242.71:9091")
+JOB_NAME = os.getenv("JOB_NAME", "MESH_AGENTS_DAILY_CHECK")
 INTERVAL = 86400  # 24 hours
 NUM_WORKERS = 4
 TEST_PER_WORKER = 4
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEST_INPUTS_FILE = os.path.join(SCRIPT_DIR, "test_inputs.json")
-DISABLED_AGENTS = {"DeepResearchAgent", "MemoryAgent"}
+DISABLED_AGENTS = {"DeepResearchAgent", "MemoryAgent", "ArbusAgent"}
 
 
 def is_agent_hidden(agent_data: dict) -> bool:
