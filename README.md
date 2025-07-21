@@ -70,6 +70,7 @@ The Heurist Agent Framework is built on a modular architecture that allows an AI
 
 Want to contribute your own agent? Check out the [Mesh README](./mesh/README.md) for detailed guidelines, examples, and best practices.
 
+
 ### MCP Support
 
 **Just In:** All Heurist Mesh agents are accessible via MCP! This means you can access them from your favorite MCP client, including [Claude Desktop](https://claude.ai/download), [Cursor](https://www.cursor.com/), and [Windsurf](https://codeium.com/windsurf).
@@ -105,6 +106,8 @@ Head to [heurist-mesh-mcp-server](https://github.com/heurist-network/heurist-mes
 [Read the Mesh documentation](./mesh/README.md)
 
 ## Heurist Agent Framework Architecture
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/heurist-network/heurist-agent-framework) 🔍 Click the badge to explore technical insights, ask questions.
 
 The framework follows a modular, component-based architecture:
 
