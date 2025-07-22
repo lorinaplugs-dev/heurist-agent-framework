@@ -40,7 +40,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes LetsBonk.fun tokens on Solana using Bitquery API. It tracks tokens about to graduate, provides trading data, price information, and identifies top buyers on the Raydium Launchpad.",
                 "external_apis": ["Bitquery"],
-                "tags": ["LetsBonk"],
+                "tags": ["LetsBonk", "solana"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/LetsBonk.png",
                 "examples": [
                     "Show me top 100 tokens about to graduate on LetsBonk.fun",
