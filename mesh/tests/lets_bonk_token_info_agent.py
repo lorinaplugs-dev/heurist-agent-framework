@@ -24,43 +24,33 @@ async def run_agent():
         }
         agent_output_direct_graduate = await agent.handle_message(agent_input_direct_graduate)
 
-        # Get test token from graduation results
-        test_token = None
-        if (
-            agent_output_direct_graduate.get("data", {}).get("tokens")
-            and len(agent_output_direct_graduate["data"]["tokens"]) > 0
-        ):
-            test_token = agent_output_direct_graduate["data"]["tokens"][0]["token_info"]["mint_address"]
-        else:
-            test_token = "4TBi66vi32S7J8X1A6eWfaLHYmUXu7CStcEmsJQdpump"
-
-        # Test latest trades
-        trades_input = {"query": f"Show me the latest 20 trades for token {test_token}"}
+        # Test latest trades with a known Solana token address
+        trades_input = {"query": "Show me the latest 20 trades for token So11111111111111111111111111111111111111112"}
         trades_output = await agent.handle_message(trades_input)
 
         trades_direct_input = {
             "tool": "query_latest_trades",
-            "tool_arguments": {"token_address": test_token, "limit": 20},
+            "tool_arguments": {"token_address": "So11111111111111111111111111111111111111112", "limit": 20},
         }
         trades_direct_output = await agent.handle_message(trades_direct_input)
 
-        # Test latest price
-        price_input = {"query": f"What's the current price of token {test_token}?"}
+        # Test latest price with USDC token address
+        price_input = {"query": "What's the current price of token EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v?"}
         price_output = await agent.handle_message(price_input)
 
         price_direct_input = {
             "tool": "query_latest_price",
-            "tool_arguments": {"token_address": test_token},
+            "tool_arguments": {"token_address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"},
         }
         price_direct_output = await agent.handle_message(price_direct_input)
 
-        # Test top buyers
-        buyers_input = {"query": f"Show me the top 30 buyers of token {test_token}"}
+        # Test top buyers with another authentic Solana token (BONK)
+        buyers_input = {"query": "Show me the top 30 buyers of token DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"}
         buyers_output = await agent.handle_message(buyers_input)
 
         buyers_direct_input = {
             "tool": "query_top_buyers",
-            "tool_arguments": {"token_address": test_token, "limit": 30},
+            "tool_arguments": {"token_address": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263", "limit": 30},
         }
         buyers_direct_output = await agent.handle_message(buyers_direct_input)
 
@@ -84,23 +74,23 @@ async def run_agent():
         }
         graduate_date_direct_output = await agent.handle_message(graduate_date_direct_input)
 
-        # Test with different trade limits
-        trades_10_input = {"query": f"Get latest 10 trades for {test_token}"}
+        # Test with different trade limits using Raydium token
+        trades_10_input = {"query": "Get latest 10 trades for 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R"}
         trades_10_output = await agent.handle_message(trades_10_input)
 
         trades_10_direct_input = {
             "tool": "query_latest_trades",
-            "tool_arguments": {"token_address": test_token, "limit": 10},
+            "tool_arguments": {"token_address": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R", "limit": 10},
         }
         trades_10_direct_output = await agent.handle_message(trades_10_direct_input)
 
-        # Test with different buyer limits
-        buyers_50_input = {"query": f"Show me top 50 buyers of {test_token}"}
+        # Test with different buyer limits using Serum token
+        buyers_50_input = {"query": "Show me top 50 buyers of SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"}
         buyers_50_output = await agent.handle_message(buyers_50_input)
 
         buyers_50_direct_input = {
             "tool": "query_top_buyers",
-            "tool_arguments": {"token_address": test_token, "limit": 50},
+            "tool_arguments": {"token_address": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt", "limit": 50},
         }
         buyers_50_direct_output = await agent.handle_message(buyers_50_direct_input)
 
@@ -111,32 +101,52 @@ async def run_agent():
         }
         raw_data_output = await agent.handle_message(raw_data_input)
 
-        # Test another token if available
-        test_token_2 = None
-        if (
-            agent_output_direct_graduate.get("data", {}).get("tokens")
-            and len(agent_output_direct_graduate["data"]["tokens"]) > 1
-        ):
-            test_token_2 = agent_output_direct_graduate["data"]["tokens"][1]["token_info"]["mint_address"]
-        else:
-            test_token_2 = "98mb39tPFKQJ4Bif8iVg9mYb9wsfPZgpgN1sxoVTpump"
-
-        # Test second token price
-        price_2_input = {"query": f"What's the price of {test_token_2}?"}
+        # Test with Mango token price
+        price_2_input = {"query": "What's the price of MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac?"}
         price_2_output = await agent.handle_message(price_2_input)
 
         price_2_direct_input = {
             "tool": "query_latest_price",
-            "tool_arguments": {"token_address": test_token_2},
+            "tool_arguments": {"token_address": "MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac"},
         }
         price_2_direct_output = await agent.handle_message(price_2_direct_input)
 
-        # Test edge cases
+        # Test edge cases with minimal limit
         edge_case_input = {
             "tool": "query_about_to_graduate_tokens",
             "tool_arguments": {"limit": 1},
         }
         edge_case_output = await agent.handle_message(edge_case_input)
+
+        # Test with another authentic token for trades (Jupiter)
+        jupiter_trades_input = {"query": "Show me latest 15 trades for JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"}
+        jupiter_trades_output = await agent.handle_message(jupiter_trades_input)
+
+        jupiter_trades_direct_input = {
+            "tool": "query_latest_trades",
+            "tool_arguments": {"token_address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN", "limit": 15},
+        }
+        jupiter_trades_direct_output = await agent.handle_message(jupiter_trades_direct_input)
+
+        # Test with USDT price check
+        usdt_price_input = {"query": "What's the current price of Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB?"}
+        usdt_price_output = await agent.handle_message(usdt_price_input)
+
+        usdt_price_direct_input = {
+            "tool": "query_latest_price",
+            "tool_arguments": {"token_address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"},
+        }
+        usdt_price_direct_output = await agent.handle_message(usdt_price_direct_input)
+
+        # Test top buyers for Orca token
+        orca_buyers_input = {"query": "Show me top 25 buyers of orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE"}
+        orca_buyers_output = await agent.handle_message(orca_buyers_input)
+
+        orca_buyers_direct_input = {
+            "tool": "query_top_buyers",
+            "tool_arguments": {"token_address": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE", "limit": 25},
+        }
+        orca_buyers_direct_output = await agent.handle_message(orca_buyers_direct_input)
 
         # Save results to YAML file
         script_dir = Path(__file__).parent
@@ -149,15 +159,15 @@ async def run_agent():
                 "natural_language_query": {"input": agent_input, "output": agent_output},
                 "direct_tool_call": {"input": agent_input_direct_graduate, "output": agent_output_direct_graduate},
             },
-            "latest_trades": {
+            "latest_trades_sol": {
                 "natural_language_query": {"input": trades_input, "output": trades_output},
                 "direct_tool_call": {"input": trades_direct_input, "output": trades_direct_output},
             },
-            "latest_price": {
+            "latest_price_usdc": {
                 "natural_language_query": {"input": price_input, "output": price_output},
                 "direct_tool_call": {"input": price_direct_input, "output": price_direct_output},
             },
-            "top_buyers": {
+            "top_buyers_bonk": {
                 "natural_language_query": {"input": buyers_input, "output": buyers_output},
                 "direct_tool_call": {"input": buyers_direct_input, "output": buyers_direct_output},
             },
@@ -169,11 +179,11 @@ async def run_agent():
                 "natural_language_query": {"input": graduate_date_input, "output": graduate_date_output},
                 "direct_tool_call": {"input": graduate_date_direct_input, "output": graduate_date_direct_output},
             },
-            "trades_10_limit": {
+            "trades_10_limit_raydium": {
                 "natural_language_query": {"input": trades_10_input, "output": trades_10_output},
                 "direct_tool_call": {"input": trades_10_direct_input, "output": trades_10_direct_output},
             },
-            "buyers_50_limit": {
+            "buyers_50_limit_serum": {
                 "natural_language_query": {"input": buyers_50_input, "output": buyers_50_output},
                 "direct_tool_call": {"input": buyers_50_direct_input, "output": buyers_50_direct_output},
             },
@@ -181,17 +191,38 @@ async def run_agent():
                 "input": raw_data_input,
                 "output": raw_data_output,
             },
-            "second_token_price": {
+            "mango_token_price": {
                 "natural_language_query": {"input": price_2_input, "output": price_2_output},
                 "direct_tool_call": {"input": price_2_direct_input, "output": price_2_direct_output},
+            },
+            "jupiter_trades": {
+                "natural_language_query": {"input": jupiter_trades_input, "output": jupiter_trades_output},
+                "direct_tool_call": {"input": jupiter_trades_direct_input, "output": jupiter_trades_direct_output},
+            },
+            "usdt_price": {
+                "natural_language_query": {"input": usdt_price_input, "output": usdt_price_output},
+                "direct_tool_call": {"input": usdt_price_direct_input, "output": usdt_price_direct_output},
+            },
+            "orca_buyers": {
+                "natural_language_query": {"input": orca_buyers_input, "output": orca_buyers_output},
+                "direct_tool_call": {"input": orca_buyers_direct_input, "output": orca_buyers_direct_output},
             },
             "edge_case_test": {
                 "input": edge_case_input,
                 "output": edge_case_output,
             },
             "test_metadata": {
-                "test_token_used": test_token,
-                "test_token_2_used": test_token_2,
+                "tokens_tested": {
+                    "sol_wrapped": "So11111111111111111111111111111111111111112",
+                    "usdc": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                    "bonk": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+                    "raydium": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+                    "serum": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt",
+                    "mango": "MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac",
+                    "jupiter": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+                    "usdt": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+                    "orca": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+                },
                 "agent_name": "LetsBonkTokenInfoAgent",
             },
         }
