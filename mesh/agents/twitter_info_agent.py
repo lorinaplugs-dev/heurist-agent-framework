@@ -36,16 +36,24 @@ class TwitterInfoAgent(MeshAgent):
                     "Summarise recent updates of @heurist_ai",
                     "What has @elonmusk been tweeting lately?",
                     "Get the recent tweets from cz_binance",
+                    "Search for 'bitcoin' (single word search)",
+                    "Search for '#ETH' (hashtag search)",
                 ],
                 "credits": 2,
             }
         )
 
     def get_system_prompt(self) -> str:
-        return """
-        You are a specialized Twitter analyst that helps users get information about Twitter profiles and their recent tweets.
-
-        Keep your analysis factual and concise. Only use the data provided. NEVER make up data that is not returned from the tool.
+        return """You are a specialized Twitter analyst that helps users get information about Twitter profiles and their recent tweets.
+        
+        IMPORTANT RULES:
+        1. When using get_general_search, ONLY use single keywords, hashtags, or mentions. Multi-word searches will likely return empty results.
+        2. Keep your analysis factual and concise. Only use the data provided.
+        3. NEVER make up data that is not returned from the tool.
+        4. If a search returns no results, suggest using a single keyword instead of multiple words.
+        
+        Search examples that work: 'bitcoin', '#ETH', '@username', '"exact phrase"'
+        Search examples that fail: 'latest bitcoin news', 'what people think about ethereum'
         """
 
     def get_tool_schemas(self) -> List[Dict]:
@@ -54,7 +62,7 @@ class TwitterInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_user_tweets",
-                    "description": "Fetch recent tweets from a Twitter user",
+                    "description": "Fetch recent tweets from a specific Twitter user's timeline. This tool retrieves the most recent posts from a user's profile, including their own tweets and retweets. Use this when you want to see what a specific person or organization has been posting recently, track their updates, or analyze their Twitter activity patterns. The tool returns tweet content, engagement metrics (likes, retweets, replies), and timestamps. Maximum 50 tweets can be retrieved per request.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -64,7 +72,7 @@ class TwitterInfoAgent(MeshAgent):
                             },
                             "limit": {
                                 "type": "integer",
-                                "description": "Maximum number of tweets to return",
+                                "description": "Maximum number of tweets to return (max: 50)",
                                 "default": 10,
                             },
                         },
@@ -76,18 +84,13 @@ class TwitterInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_twitter_detail",
-                    "description": "Fetch detailed information about a specific tweet including replies and thread content",
+                    "description": "Fetch detailed information about a specific tweet, including the full thread context and replies. This tool provides comprehensive data about a single tweet, including the original tweet content, any tweets in the same thread (if it's part of a conversation), and replies to the tweet. Use this when you need to understand the full context of a discussion, see how people are responding to a specific tweet, or analyze a Twitter thread. The tool returns the complete thread structure and engagement metrics.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "tweet_id": {
                                 "type": "string",
                                 "description": "The ID of the tweet to fetch details for",
-                            },
-                            "cursor": {
-                                "type": "string",
-                                "description": "Cursor for pagination through replies or threaded content",
-                                "default": "",
                             },
                         },
                         "required": ["tweet_id"],
@@ -98,18 +101,13 @@ class TwitterInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_general_search",
-                    "description": "Search for tweets using a query term",
+                    "description": "Search for tweets using a SINGLE keyword, hashtag, or mention. WARNING: Multi-word searches often return EMPTY results on X/Twitter. ONLY use: single words (e.g., 'bitcoin'), hashtags (e.g., '#ETH'), mentions (e.g., '@username'), or exact phrases in quotes (e.g., '\"market crash\"'). NEVER use sentences or multiple unquoted words like 'latest bitcoin news' or 'what people think'. If you need to search for a complex topic, break it down into single keyword searches. This tool searches Twitter's public timeline for tweets matching your query. Each search query should be ONE concept only.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "q": {
                                 "type": "string",
-                                "description": "The search query term (e.g. eth)",
-                            },
-                            "cursor": {
-                                "type": "string",
-                                "description": "A pagination token to fetch the next page of results",
-                                "default": "",
+                                "description": "The search query - MUST be a single keyword, hashtag (#example), mention (@username), or exact phrase in quotes. DO NOT use multiple words or sentences.",
                             },
                         },
                         "required": ["q"],
@@ -140,6 +138,39 @@ class TwitterInfoAgent(MeshAgent):
     def _is_numeric_id(self, input_str: str) -> bool:
         """Check if the input is a numeric ID"""
         return input_str.strip().isdigit()
+
+    def _simplify_tweet_data(self, tweet: Dict) -> Dict:
+        """Extract only essential tweet information"""
+        simplified = {
+            "id": tweet.get("id_str", ""),
+            "text": tweet.get("text", ""),
+            "created_at": tweet.get("created_at", ""),
+            "author": {
+                "id": tweet.get("user", {}).get("id_str", ""),
+                "username": tweet.get("user", {}).get("screen_name", ""),
+                "name": tweet.get("user", {}).get("name", ""),
+            },
+            "engagement": {
+                "retweets": tweet.get("retweet_count", 0),
+                "likes": tweet.get("favorite_count", 0),
+                "replies": tweet.get("reply_count", 0),
+            },
+        }
+        
+        # Add thread/reply context if available
+        if tweet.get("in_reply_to_status_id_str"):
+            simplified["in_reply_to_tweet_id"] = tweet.get("in_reply_to_status_id_str")
+            simplified["in_reply_to_user"] = tweet.get("in_reply_to_screen_name")
+        
+        # Add quoted tweet info if available
+        if tweet.get("quoted_status"):
+            simplified["quoted_tweet"] = {
+                "id": tweet["quoted_status"].get("id_str", ""),
+                "text": tweet["quoted_status"].get("text", ""),
+                "author": tweet["quoted_status"].get("user", {}).get("screen_name", ""),
+            }
+            
+        return simplified
 
     # ------------------------------------------------------------------------
     #                      TWITTER API-SPECIFIC METHODS
@@ -173,7 +204,6 @@ class TwitterInfoAgent(MeshAgent):
                 "followers_count": user_data.get("followers_count"),
                 "friends_count": user_data.get("friends_count"),
                 "statuses_count": user_data.get("statuses_count"),
-                "profile_image_url": user_data.get("profile_image_url_https"),
                 "verified": user_data.get("verified", False),
                 "created_at": user_data.get("created_at"),
             }
@@ -202,19 +232,7 @@ class TwitterInfoAgent(MeshAgent):
                 return tweets_data
 
             tweets = tweets_data.get("tweets", [])
-            cleaned_tweets = []
-
-            for tweet in tweets:
-                cleaned_tweet = {
-                    "text": tweet.get("text", ""),
-                    "created_at": tweet.get("created_at", ""),
-                    "engagement": {
-                        "retweets": tweet.get("retweet_count", 0),
-                        "likes": tweet.get("favorite_count", 0),
-                        "replies": tweet.get("reply_count", 0) if "reply_count" in tweet else 0,
-                    },
-                }
-                cleaned_tweets.append(cleaned_tweet)
+            cleaned_tweets = [self._simplify_tweet_data(tweet) for tweet in tweets]
 
             logger.info(f"Successfully fetched {len(cleaned_tweets)} tweets")
             return {"tweets": cleaned_tweets}
@@ -225,12 +243,10 @@ class TwitterInfoAgent(MeshAgent):
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def get_tweet_detail(self, tweet_id: str, cursor: str = "") -> Dict:
+    async def get_tweet_detail(self, tweet_id: str) -> Dict:
         """Fetch detailed information about a specific tweet using _api_request"""
         try:
             params = {"tweet_id": tweet_id}
-            if cursor:
-                params["cursor"] = cursor
 
             logger.info(f"Fetching tweet details for tweet_id: {tweet_id}")
             tweet_data = await self._api_request(
@@ -242,10 +258,21 @@ class TwitterInfoAgent(MeshAgent):
                 return tweet_data
 
             result = {
-                "pinned_tweet": tweet_data.get("pinned_tweet"),
-                "tweets": tweet_data.get("tweets", []),
-                "next_cursor": tweet_data.get("next_cursor_str"),
+                "main_tweet": None,
+                "thread_tweets": [],
+                "replies": []
             }
+            
+            # Find the main tweet and organize thread/replies
+            tweets = tweet_data.get("tweets", [])
+            for tweet in tweets:
+                simplified = self._simplify_tweet_data(tweet)
+                if tweet.get("id_str") == tweet_id:
+                    result["main_tweet"] = simplified
+                elif tweet.get("in_reply_to_status_id_str") == tweet_id:
+                    result["replies"].append(simplified)
+                else:
+                    result["thread_tweets"].append(simplified)
 
             logger.info("Successfully fetched tweet details")
             return result
@@ -256,12 +283,14 @@ class TwitterInfoAgent(MeshAgent):
 
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def general_search(self, query: str, cursor: str = "") -> Dict:
+    async def general_search(self, query: str) -> Dict:
         """Search for tweets using a query term using _api_request"""
         try:
+            # Warn if query appears to be multi-word without quotes
+            if ' ' in query and not (query.startswith('"') and query.endswith('"')):
+                logger.warning(f"Multi-word search query detected: '{query}'. This may return empty results.")
+            
             params = {"q": query}
-            if cursor:
-                params["cursor"] = cursor
 
             logger.info(f"Performing general search for query: {query}")
             search_data = await self._api_request(
@@ -272,13 +301,20 @@ class TwitterInfoAgent(MeshAgent):
                 logger.error(f"Error in general search: {search_data['error']}")
                 return search_data
 
+            tweets = search_data.get("tweets", [])
+            simplified_tweets = [self._simplify_tweet_data(tweet) for tweet in tweets]
+
             result = {
                 "query": query,
-                "tweets": search_data.get("tweets", []),
-                "next_cursor": search_data.get("next_cursor_str"),
+                "tweets": simplified_tweets,
+                "result_count": len(simplified_tweets)
             }
+            
+            # Add warning if no results found
+            if len(simplified_tweets) == 0:
+                result["warning"] = "No results found. If you used multiple words, try a single keyword, hashtag (#example), or mention (@username) instead."
 
-            logger.info(f"Successfully completed search for query: {query}")
+            logger.info(f"Successfully completed search for query: {query}, found {len(simplified_tweets)} results")
             return result
 
         except Exception as e:
@@ -331,14 +367,13 @@ class TwitterInfoAgent(MeshAgent):
 
         elif tool_name == "get_twitter_detail":
             tweet_id = function_args.get("tweet_id")
-            cursor = function_args.get("cursor", "")
 
             if not tweet_id:
                 return {"error": "Missing 'tweet_id' parameter"}
 
             logger.info(f"Fetching tweet details for tweet_id '{tweet_id}'")
 
-            tweet_detail_result = await self.get_tweet_detail(tweet_id, cursor)
+            tweet_detail_result = await self.get_tweet_detail(tweet_id)
             errors = self._handle_error(tweet_detail_result)
             if errors:
                 return errors
@@ -347,14 +382,21 @@ class TwitterInfoAgent(MeshAgent):
 
         elif tool_name == "get_general_search":
             query = function_args.get("q")
-            cursor = function_args.get("cursor", "")
 
             if not query:
                 return {"error": "Missing 'q' parameter"}
 
+            # Log warning for multi-word queries
+            if ' ' in query and not (query.startswith('"') and query.endswith('"')):
+                logger.warning(f"Multi-word search query: '{query}'. Suggesting single keyword search.")
+                self.push_update(
+                    {"query": query}, 
+                    "Warning: Multi-word searches often return empty results. Searching anyway..."
+                )
+
             logger.info(f"Performing general search for query '{query}'")
 
-            search_result = await self.general_search(query, cursor)
+            search_result = await self.general_search(query)
             errors = self._handle_error(search_result)
             if errors:
                 return errors
