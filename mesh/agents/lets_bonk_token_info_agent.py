@@ -586,7 +586,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
         Returns:
             Dict: Dictionary containing latest price data
         """
-        query = """query ($token_address: String!, $protocol_name: String!) { Solana { DEXTradeByTokens(orderBy: { descending: Block_Time } limit: { count: 1 } where: { Trade: { Dex: { ProtocolName: { is: $protocol_name } } Currency: { MintAddress: { is: $token_address } } } }) { Block { Time } Transaction { Signature } Trade { Market { MarketAddress } Dex { ProtocolName ProtocolFamily } AmountInUSD PriceInUSD Amount Currency { Name Symbol MintAddress } Side { Type Currency { Symbol MintAddress Name } AmountInUSD Amount } } } } }"""
+        query = """query ($token_address: String!) { Solana { DEXTradeByTokens(orderBy: { descending: Block_Time } limit: { count: 1 } where: { Trade: { Currency: { MintAddress: { is: $token_address } } } }) { Block { Time } Trade { Dex { ProtocolName } PriceInUSD Currency { Name Symbol MintAddress } } } } }"""    
 
         variables = {
             "token_address": token_address,
