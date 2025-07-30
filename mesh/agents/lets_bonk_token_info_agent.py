@@ -23,7 +23,6 @@ class LetsBonkTokenInfoAgent(MeshAgent):
 
         # LetsBonk.fun specific constants
         self.LETSBONK_DEX_PROGRAM = "LanMV9sAd7wArD4vJFi2qDdfnVhFxYSUg6eADduJ3uj"
-        self.RAYDIUM_LAUNCHPAD = "raydium_launchpad"
         self.GRADUATION_THRESHOLD = "206900000"
         self.DEFAULT_LIMIT = 10
         self.TOTAL_SUPPLY = 1000000000
@@ -42,7 +41,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "version": "1.0.0",
                 "author": "Heurist team",
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
-                "description": "This agent analyzes LetsBonk.fun tokens on Solana using Bitquery API. It tracks tokens about to graduate, provides trading data, price information, identifies top buyers/sellers, OHLCV data, pair addresses, liquidity information, tracks new token creation, calculates bonding curve progress, and monitors tokens above 95% bonding curve progress on the Raydium Launchpad.",
+                "description": "This agent analyzes LetsBonk.fun tokens on Solana using Bitquery API. It tracks tokens about to graduate, provides trading data, price information, identifies top buyers/sellers, OHLCV data, pair addresses, liquidity information, tracks new token creation, calculates bonding curve progress, and monitors tokens above 95% bonding curve progress across all available launchpads.",
                 "external_apis": ["Bitquery"],
                 "tags": ["LetsBonk", "solana"],
                 "image_url": "https://raw.githubusercontent.com/heurist-network/heurist-agent-framework/refs/heads/main/mesh/images/LetsBonk.png",
@@ -58,6 +57,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                     "Show me recently created LetsBonk.fun tokens",
                     "Calculate bonding curve progress for token EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
                     "Show me tokens above 95% bonding curve progress",
+                    "Get trades on raydium_launchpad for token EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
                 ],
             }
         )
@@ -66,7 +66,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
         return """You are a specialized assistant that analyzes LetsBonk.fun tokens on Solana using Bitquery API. Your capabilities include:
 
             1. Graduation Tracking: Monitor tokens that are about to graduate on LetsBonk.fun (approaching the graduation threshold)
-            2. Trading Analysis: Track recent trades for specific tokens on Raydium Launchpad
+            2. Trading Analysis: Track recent trades for specific tokens across all launchpads or filter by specific launchpad
             3. Price Monitoring: Get latest price information for LetsBonk.fun tokens
             4. Buyer Analysis: Identify top buyers and their trading volumes for specific tokens
             5. Seller Analysis: Identify top sellers and their trading volumes for specific tokens
@@ -80,7 +80,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
             LetsBonk.fun Context:
             - LetsBonk.fun is a token launchpad on Solana similar to Pump.fun
             - Tokens "graduate" when they reach a certain market cap threshold
-            - Trading happens on Raydium Launchpad
+            - Trading happens across multiple launchpads (raydium_launchpad, etc.)
             - Graduation threshold is approximately 206,900,000 base tokens
             - Total supply is 1,000,000,000 tokens with 206,900,000 reserved tokens
             - Bonding curve progress = 100 - (((balance - 206900000) * 100) / 793100000)
@@ -93,7 +93,8 @@ class LetsBonkTokenInfoAgent(MeshAgent):
             - Highlight tokens close to graduation as they may see increased trading activity
             - Show bonding curve progress as percentage when available
             - All data is sourced from Bitquery API with real-time updates
-            - Default limit is 10 entries to ensure fast responses, user can request more if needed"""
+            - Default limit is 10 entries to ensure fast responses, user can request more if needed
+            - Data is retrieved from all available launchpads unless a specific launchpad is requested"""
 
     def get_tool_schemas(self) -> List[Dict]:
         return [
@@ -124,7 +125,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "query_latest_trades",
-                    "description": "Get the most recent trades for a specific LetsBonk.fun token on Raydium Launchpad. Useful for tracking trading activity and price movements.",
+                    "description": "Get the most recent trades for a specific LetsBonk.fun token across all launchpads. Useful for tracking trading activity and price movements. Can optionally filter by a specific launchpad.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -139,6 +140,10 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                                 "default": 10,
                                 "description": "Number of recent trades to return (default 10)",
                             },
+                            "launchpad": {
+                                "type": "string",
+                                "description": "Optional: Specific launchpad to filter trades (e.g., 'raydium_launchpad'). If not provided, returns trades from all launchpads.",
+                            },
                         },
                         "required": ["token_address"],
                     },
@@ -148,13 +153,17 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "query_latest_price",
-                    "description": "Get the most recent price data for a specific LetsBonk.fun token on Raydium Launchpad. Returns the latest trade price and transaction details.",
+                    "description": "Get the most recent price data for a specific LetsBonk.fun token across all launchpads. Returns the latest trade price and transaction details. Can optionally filter by a specific launchpad.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "token_address": {
                                 "type": "string",
                                 "description": "The token mint address to get price for",
+                            },
+                            "launchpad": {
+                                "type": "string",
+                                "description": "Optional: Specific launchpad to filter price data (e.g., 'raydium_launchpad'). If not provided, returns latest price from all launchpads.",
                             },
                         },
                         "required": ["token_address"],
@@ -165,7 +174,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "query_top_buyers",
-                    "description": "Get the top buyers for a specific LetsBonk.fun token on Raydium Launchpad. Shows who has bought the most (by USD volume) and can help identify whales and smart money.",
+                    "description": "Get the top buyers for a specific LetsBonk.fun token across all launchpads. Shows who has bought the most (by USD volume) and can help identify whales and smart money. Can optionally filter by a specific launchpad.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -180,6 +189,10 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                                 "default": 10,
                                 "description": "Number of top buyers to return",
                             },
+                            "launchpad": {
+                                "type": "string",
+                                "description": "Optional: Specific launchpad to filter buyers (e.g., 'raydium_launchpad'). If not provided, returns buyers from all launchpads.",
+                            },
                         },
                         "required": ["token_address"],
                     },
@@ -189,7 +202,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "query_top_sellers",
-                    "description": "Get the top sellers for a specific LetsBonk.fun token on Raydium Launchpad. Shows who has sold the most (by USD volume) and can help identify distribution patterns.",
+                    "description": "Get the top sellers for a specific LetsBonk.fun token across all launchpads. Shows who has sold the most (by USD volume) and can help identify distribution patterns. Can optionally filter by a specific launchpad.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -204,6 +217,10 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                                 "default": 10,
                                 "description": "Number of top sellers to return",
                             },
+                            "launchpad": {
+                                "type": "string",
+                                "description": "Optional: Specific launchpad to filter sellers (e.g., 'raydium_launchpad'). If not provided, returns sellers from all launchpads.",
+                            },
                         },
                         "required": ["token_address"],
                     },
@@ -213,7 +230,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "query_ohlcv_data",
-                    "description": "Get OHLCV (Open, High, Low, Close, Volume) data for a specific LetsBonk.fun token on Raydium Launchpad. Returns candlestick data for technical analysis.",
+                    "description": "Get OHLCV (Open, High, Low, Close, Volume) data for a specific LetsBonk.fun token across all launchpads. Returns candlestick data for technical analysis. Can optionally filter by a specific launchpad.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -228,6 +245,10 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                                 "default": 10,
                                 "description": "Number of time intervals to return",
                             },
+                            "launchpad": {
+                                "type": "string",
+                                "description": "Optional: Specific launchpad to filter OHLCV data (e.g., 'raydium_launchpad'). If not provided, returns data from all launchpads.",
+                            },
                         },
                         "required": ["token_address"],
                     },
@@ -237,13 +258,17 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "query_pair_address",
-                    "description": "Get the pair/pool address for a specific LetsBonk.fun token on Raydium Launchpad. Returns the market address and trading pair information.",
+                    "description": "Get the pair/pool address for a specific LetsBonk.fun token across all launchpads. Returns the market address and trading pair information. Can optionally filter by a specific launchpad.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "token_address": {
                                 "type": "string",
                                 "description": "The token mint address to get pair address for",
+                            },
+                            "launchpad": {
+                                "type": "string",
+                                "description": "Optional: Specific launchpad to filter pairs (e.g., 'raydium_launchpad'). If not provided, returns pairs from all launchpads.",
                             },
                         },
                         "required": ["token_address"],
@@ -480,13 +505,14 @@ class LetsBonkTokenInfoAgent(MeshAgent):
     @monitor_execution()
     @with_cache(ttl_seconds=60)
     @with_retry(max_retries=3)
-    async def query_latest_trades(self, token_address: str, limit: int = None) -> Dict:
+    async def query_latest_trades(self, token_address: str, limit: int = None, launchpad: Optional[str] = None) -> Dict:
         """
         Get latest trades for a specific LetsBonk.fun token.
 
         Args:
             token_address (str): Token mint address
             limit (int): Number of recent trades to return (defaults to 10)
+            launchpad (str, optional): Specific launchpad to filter trades
 
         Returns:
             Dict: Dictionary containing recent trades
@@ -496,13 +522,17 @@ class LetsBonkTokenInfoAgent(MeshAgent):
         elif limit > 100:
             limit = 100
 
-        query = """query ($token_address: String!, $limit: Int!, $protocol_name: String!) { Solana { DEXTradeByTokens(orderBy: { descending: Block_Time } limit: { count: $limit } where: { Trade: { Dex: { ProtocolName: { is: $protocol_name } } Currency: { MintAddress: { is: $token_address } } } }) { Block { Time } Transaction { Signature } Trade { Market { MarketAddress } Dex { ProtocolName ProtocolFamily } AmountInUSD PriceInUSD Amount Currency { Name Symbol MintAddress } Side { Type Currency { Symbol MintAddress Name } AmountInUSD Amount } } } } }"""
+        where_clause = "Trade: { Currency: { MintAddress: { is: $token_address } } }"
+        if launchpad:
+            where_clause = "Trade: { Dex: { ProtocolName: { is: $launchpad } } Currency: { MintAddress: { is: $token_address } } }"
+        query = f"""query ($token_address: String!, $limit: Int!{', $launchpad: String!' if launchpad else ''}) {{ Solana {{ DEXTradeByTokens(orderBy: {{ descending: Block_Time }} limit: {{ count: $limit }} where: {{ {where_clause} }}) {{ Block {{ Time }} Transaction {{ Signature }} Trade {{ Market {{ MarketAddress }} Dex {{ ProtocolName ProtocolFamily }} AmountInUSD PriceInUSD Amount Currency {{ Name Symbol MintAddress }} Side {{ Type Currency {{ Symbol MintAddress Name }} AmountInUSD Amount }} }} }} }} }}"""
 
         variables = {
             "token_address": token_address,
             "limit": limit,
-            "protocol_name": self.RAYDIUM_LAUNCHPAD,
         }
+        if launchpad:
+            variables["launchpad"] = launchpad
 
         result = await self._execute_query(query, variables)
 
@@ -569,6 +599,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "trades": formatted_trades,
                 "total_count": len(formatted_trades),
                 "token_address": token_address,
+                "launchpad_filter": launchpad if launchpad else "all",
             }
 
         return {"trades": [], "total_count": 0}
@@ -576,22 +607,27 @@ class LetsBonkTokenInfoAgent(MeshAgent):
     @monitor_execution()
     @with_cache(ttl_seconds=30)
     @with_retry(max_retries=3)
-    async def query_latest_price(self, token_address: str) -> Dict:
+    async def query_latest_price(self, token_address: str, launchpad: Optional[str] = None) -> Dict:
         """
         Get latest price for a specific LetsBonk.fun token.
 
         Args:
             token_address (str): Token mint address
+            launchpad (str, optional): Specific launchpad to filter price data
 
         Returns:
             Dict: Dictionary containing latest price data
         """
-        query = """query ($token_address: String!) { Solana { DEXTradeByTokens(orderBy: { descending: Block_Time } limit: { count: 1 } where: { Trade: { Currency: { MintAddress: { is: $token_address } } } }) { Block { Time } Trade { Dex { ProtocolName } PriceInUSD Currency { Name Symbol MintAddress } } } } }"""    
+        where_clause = "Trade: { Currency: { MintAddress: { is: $token_address } } }"
+        if launchpad:
+            where_clause = "Trade: { Dex: { ProtocolName: { is: $launchpad } } Currency: { MintAddress: { is: $token_address } } }"
+        query = f"""query ($token_address: String!{', $launchpad: String!' if launchpad else ''}) {{ Solana {{ DEXTradeByTokens(orderBy: {{ descending: Block_Time }} limit: {{ count: 1 }} where: {{ {where_clause} }}) {{ Block {{ Time }} Transaction {{ Signature }} Trade {{ Market {{ MarketAddress }} Dex {{ ProtocolName ProtocolFamily }} AmountInUSD PriceInUSD Amount Currency {{ Name Symbol MintAddress }} Side {{ Type Currency {{ Symbol MintAddress Name }} AmountInUSD Amount }} }} }} }} }}"""
 
         variables = {
             "token_address": token_address,
-            "protocol_name": self.RAYDIUM_LAUNCHPAD,
         }
+        if launchpad:
+            variables["launchpad"] = launchpad
 
         result = await self._execute_query(query, variables)
 
@@ -651,6 +687,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                         "mint_address": side_currency.get("MintAddress", ""),
                     },
                 },
+                "launchpad_filter": launchpad if launchpad else "all",
             }
 
             return {"price_data": price_data, "token_address": token_address}
@@ -660,13 +697,14 @@ class LetsBonkTokenInfoAgent(MeshAgent):
     @monitor_execution()
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def query_top_buyers(self, token_address: str, limit: int = None) -> Dict:
+    async def query_top_buyers(self, token_address: str, limit: int = None, launchpad: Optional[str] = None) -> Dict:
         """
         Get top buyers for a specific LetsBonk.fun token.
 
         Args:
             token_address (str): Token mint address
             limit (int): Number of top buyers to return (defaults to 10)
+            launchpad (str, optional): Specific launchpad to filter buyers
 
         Returns:
             Dict: Dictionary containing top buyers
@@ -676,13 +714,18 @@ class LetsBonkTokenInfoAgent(MeshAgent):
         elif limit > 100:
             limit = 100
 
-        query = """query ($token_address: String!, $protocol_name: String!, $limit: Int!) { Solana { DEXTradeByTokens(where: { Trade: { Dex: { ProtocolName: { is: $protocol_name } } Currency: { MintAddress: { is: $token_address } } Side: { Type: { is: buy } } } } orderBy: { descendingByField: "buy_volume" } limit: { count: $limit }) { Trade { Currency { MintAddress Name Symbol } } Transaction { Signer } buy_volume: sum(of: Trade_Side_AmountInUSD) } } }"""
+        where_clause = "Trade: { Currency: { MintAddress: { is: $token_address } } Side: { Type: { is: buy } } }"
+        if launchpad:
+            where_clause = "Trade: { Dex: { ProtocolName: { is: $launchpad } } Currency: { MintAddress: { is: $token_address } } Side: { Type: { is: buy } } }"
+
+        query = f"""query ($token_address: String!, $limit: Int!{', $launchpad: String!' if launchpad else ''}) {{ Solana {{ DEXTradeByTokens(where: {{ {where_clause} }} orderBy: {{ descendingByField: "buy_volume" }} limit: {{ count: $limit }}) {{ Trade {{ Currency {{ MintAddress Name Symbol }} Dex {{ ProtocolName }} }} Transaction {{ Signer }} buy_volume: sum(of: Trade_Side_AmountInUSD) }} }} }}"""
 
         variables = {
             "token_address": token_address,
-            "protocol_name": self.RAYDIUM_LAUNCHPAD,
             "limit": limit,
         }
+        if launchpad:
+            variables["launchpad"] = launchpad
 
         result = await self._execute_query(query, variables)
 
@@ -696,6 +739,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
             for buyer_data in buyers:
                 trade = buyer_data.get("Trade", {})
                 currency = trade.get("Currency", {})
+                dex = trade.get("Dex", {})
                 transaction = buyer_data.get("Transaction", {})
 
                 try:
@@ -711,6 +755,9 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                         "symbol": currency.get("Symbol", "Unknown"),
                         "mint_address": currency.get("MintAddress", ""),
                     },
+                    "dex_info": {
+                        "protocol_name": dex.get("ProtocolName", "Unknown"),
+                    },
                 }
                 formatted_buyers.append(formatted_buyer)
 
@@ -722,6 +769,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "total_count": len(formatted_buyers),
                 "total_buy_volume_usd": total_volume,
                 "token_address": token_address,
+                "launchpad_filter": launchpad if launchpad else "all",
                 "stats": {
                     "largest_buyer_volume": formatted_buyers[0]["total_buy_volume_usd"] if formatted_buyers else 0,
                     "average_buy_volume": total_volume / len(formatted_buyers) if formatted_buyers else 0,
@@ -733,13 +781,14 @@ class LetsBonkTokenInfoAgent(MeshAgent):
     @monitor_execution()
     @with_cache(ttl_seconds=300)
     @with_retry(max_retries=3)
-    async def query_top_sellers(self, token_address: str, limit: int = None) -> Dict:
+    async def query_top_sellers(self, token_address: str, limit: int = None, launchpad: Optional[str] = None) -> Dict:
         """
         Get top sellers for a specific LetsBonk.fun token.
 
         Args:
             token_address (str): Token mint address
             limit (int): Number of top sellers to return (defaults to 10)
+            launchpad (str, optional): Specific launchpad to filter sellers
 
         Returns:
             Dict: Dictionary containing top sellers
@@ -749,13 +798,18 @@ class LetsBonkTokenInfoAgent(MeshAgent):
         elif limit > 100:
             limit = 100
 
-        query = """query ($token_address: String!, $protocol_name: String!, $limit: Int!) { Solana { DEXTradeByTokens(where: { Trade: { Dex: { ProtocolName: { is: $protocol_name } } Currency: { MintAddress: { is: $token_address } } Side: { Type: { is: sell } } } } orderBy: { descendingByField: "sell_volume" } limit: { count: $limit }) { Trade { Currency { MintAddress Name Symbol } } Transaction { Signer } sell_volume: sum(of: Trade_Side_AmountInUSD) } } }"""
+        where_clause = "Trade: { Currency: { MintAddress: { is: $token_address } } Side: { Type: { is: sell } } }"
+        if launchpad:
+            where_clause = "Trade: { Dex: { ProtocolName: { is: $launchpad } } Currency: { MintAddress: { is: $token_address } } Side: { Type: { is: sell } } }"
+
+        query = f"""query ($token_address: String!, $limit: Int!{', $launchpad: String!' if launchpad else ''}) {{ Solana {{ DEXTradeByTokens(where: {{ {where_clause} }} orderBy: {{ descendingByField: "sell_volume" }} limit: {{ count: $limit }}) {{ Trade {{ Currency {{ MintAddress Name Symbol }} Dex {{ ProtocolName }} }} Transaction {{ Signer }} sell_volume: sum(of: Trade_Side_AmountInUSD) }} }} }}"""
 
         variables = {
             "token_address": token_address,
-            "protocol_name": self.RAYDIUM_LAUNCHPAD,
             "limit": limit,
         }
+        if launchpad:
+            variables["launchpad"] = launchpad
 
         result = await self._execute_query(query, variables)
 
@@ -769,6 +823,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
             for seller_data in sellers:
                 trade = seller_data.get("Trade", {})
                 currency = trade.get("Currency", {})
+                dex = trade.get("Dex", {})
                 transaction = seller_data.get("Transaction", {})
 
                 try:
@@ -784,6 +839,9 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                         "symbol": currency.get("Symbol", "Unknown"),
                         "mint_address": currency.get("MintAddress", ""),
                     },
+                    "dex_info": {
+                        "protocol_name": dex.get("ProtocolName", "Unknown"),
+                    },
                 }
                 formatted_sellers.append(formatted_seller)
 
@@ -795,6 +853,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "total_count": len(formatted_sellers),
                 "total_sell_volume_usd": total_volume,
                 "token_address": token_address,
+                "launchpad_filter": launchpad if launchpad else "all",
                 "stats": {
                     "largest_seller_volume": formatted_sellers[0]["total_sell_volume_usd"] if formatted_sellers else 0,
                     "average_sell_volume": total_volume / len(formatted_sellers) if formatted_sellers else 0,
@@ -806,13 +865,14 @@ class LetsBonkTokenInfoAgent(MeshAgent):
     @monitor_execution()
     @with_cache(ttl_seconds=180)
     @with_retry(max_retries=3)
-    async def query_ohlcv_data(self, token_address: str, limit: int = None) -> Dict:
+    async def query_ohlcv_data(self, token_address: str, limit: int = None, launchpad: Optional[str] = None) -> Dict:
         """
         Get OHLCV data for a specific LetsBonk.fun token.
 
         Args:
             token_address (str): Token mint address
             limit (int): Number of time intervals to return (defaults to 10)
+            launchpad (str, optional): Specific launchpad to filter OHLCV data
 
         Returns:
             Dict: Dictionary containing OHLCV data
@@ -822,14 +882,19 @@ class LetsBonkTokenInfoAgent(MeshAgent):
         elif limit > 100:
             limit = 100
 
-        query = """query ($token_address: String!, $protocol_name: String!, $limit: Int!, $wsol_address: String!) { Solana { DEXTradeByTokens(where: { Trade: { Dex: { ProtocolName: { is: $protocol_name } } Currency: { MintAddress: { is: $token_address } } Side: { Currency: { MintAddress: { is: $wsol_address } } } } Transaction: { Result: { Success: true } } } limit: { count: $limit } orderBy: { descendingByField: "Block_Timefield" }) { Block { Timefield: Time(interval: { count: 1, in: minutes }) } Trade { open: Price(minimum: Block_Slot) high: Price(maximum: Trade_Price) low: Price(minimum: Trade_Price) close: Price(maximum: Block_Slot) } volumeInUSD: sum(of: Trade_Side_AmountInUSD) count } } }"""
+        where_clause = """Trade: { Currency: { MintAddress: { is: $token_address } } Side: { Currency: { MintAddress: { is: $wsol_address } } } } Transaction: { Result: { Success: true } }"""
+        if launchpad:
+            where_clause = """Trade: { Dex: { ProtocolName: { is: $launchpad } } Currency: { MintAddress: { is: $token_address } } Side: { Currency: { MintAddress: { is: $wsol_address } } } } Transaction: { Result: { Success: true } }"""
+
+        query = f"""query ($token_address: String!, $limit: Int!, $wsol_address: String!{', $launchpad: String!' if launchpad else ''}) {{ Solana {{ DEXTradeByTokens(where: {{ {where_clause} }} limit: {{ count: $limit }} orderBy: {{ descendingByField: "Block_Timefield" }}) {{ Block {{ Timefield: Time(interval: {{ count: 1, in: minutes }}) }} Trade {{ open: Price(minimum: Block_Slot) high: Price(maximum: Trade_Price) low: Price(minimum: Trade_Price) close: Price(maximum: Block_Slot) Dex {{ ProtocolName }} }} volumeInUSD: sum(of: Trade_Side_AmountInUSD) count }} }} }}"""
 
         variables = {
             "token_address": token_address,
-            "protocol_name": self.RAYDIUM_LAUNCHPAD,
             "limit": limit,
             "wsol_address": "So11111111111111111111111111111111111111112",
         }
+        if launchpad:
+            variables["launchpad"] = launchpad
 
         result = await self._execute_query(query, variables)
 
@@ -843,6 +908,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
             for candle_data in ohlcv_data:
                 trade = candle_data.get("Trade", {})
                 block = candle_data.get("Block", {})
+                dex = trade.get("Dex", {})
 
                 try:
                     open_price = float(trade.get("open", 0))
@@ -867,6 +933,9 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                     "close": close_price,
                     "volume_usd": volume_usd,
                     "trade_count": trade_count,
+                    "dex_info": {
+                        "protocol_name": dex.get("ProtocolName", "Unknown"),
+                    },
                 }
                 formatted_ohlcv.append(formatted_candle)
 
@@ -878,6 +947,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "ohlcv_data": formatted_ohlcv,
                 "total_count": len(formatted_ohlcv),
                 "token_address": token_address,
+                "launchpad_filter": launchpad if launchpad else "all",
                 "stats": {
                     "total_volume_usd": total_volume,
                     "total_trades": total_trades,
@@ -891,22 +961,28 @@ class LetsBonkTokenInfoAgent(MeshAgent):
     @monitor_execution()
     @with_cache(ttl_seconds=600)
     @with_retry(max_retries=3)
-    async def query_pair_address(self, token_address: str) -> Dict:
+    async def query_pair_address(self, token_address: str, launchpad: Optional[str] = None) -> Dict:
         """
         Get pair address for a specific LetsBonk.fun token.
 
         Args:
             token_address (str): Token mint address
+            launchpad (str, optional): Specific launchpad to filter pairs
 
         Returns:
             Dict: Dictionary containing pair address information
         """
-        query = """query ($token_address: String!, $protocol_name: String!) { Solana { DEXTradeByTokens(where: { Trade: { Dex: { ProtocolName: { is: $protocol_name } } Currency: { MintAddress: { is: $token_address } } } } limit: { count: 10 }) { Trade { Market { MarketAddress } Currency { Name Symbol MintAddress } Side { Currency { Name Symbol MintAddress } } } count } } }"""
+        where_clause = "Trade: { Currency: { MintAddress: { is: $token_address } } }"
+        if launchpad:
+            where_clause = "Trade: { Dex: { ProtocolName: { is: $launchpad } } Currency: { MintAddress: { is: $token_address } } }"
+
+        query = f"""query ($token_address: String!{', $launchpad: String!' if launchpad else ''}) {{ Solana {{ DEXTradeByTokens(where: {{ {where_clause} }} limit: {{ count: 10 }}) {{ Trade {{ Market {{ MarketAddress }} Currency {{ Name Symbol MintAddress }} Side {{ Currency {{ Name Symbol MintAddress }} }} Dex {{ ProtocolName ProtocolFamily }} }} count }} }} }}"""
 
         variables = {
             "token_address": token_address,
-            "protocol_name": self.RAYDIUM_LAUNCHPAD,
         }
+        if launchpad:
+            variables["launchpad"] = launchpad
 
         result = await self._execute_query(query, variables)
 
@@ -926,6 +1002,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 market = trade.get("Market", {})
                 currency = trade.get("Currency", {})
                 side_currency = trade.get("Side", {}).get("Currency", {})
+                dex = trade.get("Dex", {})
 
                 market_address = market.get("MarketAddress", "")
                 if market_address:
@@ -941,6 +1018,10 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                                 "name": side_currency.get("Name", "Unknown"),
                                 "symbol": side_currency.get("Symbol", "Unknown"),
                                 "mint_address": side_currency.get("MintAddress", ""),
+                            },
+                            "dex_info": {
+                                "protocol_name": dex.get("ProtocolName", "Unknown"),
+                                "protocol_family": dex.get("ProtocolFamily", "Unknown"),
                             },
                             "trade_count": 0,
                         }
@@ -961,6 +1042,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                 "pairs": formatted_pairs,
                 "total_pairs": len(formatted_pairs),
                 "token_address": token_address,
+                "launchpad_filter": launchpad if launchpad else "all",
                 "primary_pair": formatted_pairs[0] if formatted_pairs else None,
             }
 
@@ -979,7 +1061,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
         Returns:
             Dict: Dictionary containing liquidity data
         """
-        query = """query ($pool_address: String!) { Solana { DEXPools(where: { Pool: { Market: { MarketAddress: { is: $pool_address } } } Transaction: { Result: { Success: true } } } orderBy: { descending: Block_Time } limit: { count: 1 }) { Pool { Base { PostAmount } Quote { PostAmount } Market { BaseCurrency { MintAddress Name Symbol } QuoteCurrency { MintAddress Name Symbol } } } Block { Time } } } }"""
+        query = """query ($pool_address: String!) { Solana { DEXPools(where: { Pool: { Market: { MarketAddress: { is: $pool_address } } } Transaction: { Result: { Success: true } } } orderBy: { descending: Block_Time } limit: { count: 1 }) { Pool { Base { PostAmount } Quote { PostAmount } Market { BaseCurrency { MintAddress Name Symbol } QuoteCurrency { MintAddress Name Symbol } } Dex { ProtocolName ProtocolFamily } } Block { Time } } } }"""
 
         variables = {
             "pool_address": pool_address,
@@ -1003,6 +1085,7 @@ class LetsBonkTokenInfoAgent(MeshAgent):
             quote_currency = market.get("QuoteCurrency", {})
             base = pool.get("Base", {})
             quote = pool.get("Quote", {})
+            dex = pool.get("Dex", {})
 
             try:
                 base_amount = float(base.get("PostAmount", 0))
@@ -1029,6 +1112,10 @@ class LetsBonkTokenInfoAgent(MeshAgent):
                         "symbol": quote_currency.get("Symbol", "Unknown"),
                         "mint_address": quote_currency.get("MintAddress", ""),
                     },
+                },
+                "dex_info": {
+                    "protocol_name": dex.get("ProtocolName", "Unknown"),
+                    "protocol_family": dex.get("ProtocolFamily", "Unknown"),
                 },
                 "total_liquidity_summary": {
                     "base_symbol": base_currency.get("Symbol", "Unknown"),
@@ -1332,35 +1419,41 @@ class LetsBonkTokenInfoAgent(MeshAgent):
             if not token_address:
                 return {"error": "Missing 'token_address' parameter"}
             limit = function_args.get("limit", self.DEFAULT_LIMIT)
-            result = await self.query_latest_trades(token_address=token_address, limit=limit)
+            launchpad = function_args.get("launchpad")
+            result = await self.query_latest_trades(token_address=token_address, limit=limit, launchpad=launchpad)
         elif tool_name == "query_latest_price":
             token_address = function_args.get("token_address")
             if not token_address:
                 return {"error": "Missing 'token_address' parameter"}
-            result = await self.query_latest_price(token_address=token_address)
+            launchpad = function_args.get("launchpad")
+            result = await self.query_latest_price(token_address=token_address, launchpad=launchpad)
         elif tool_name == "query_top_buyers":
             token_address = function_args.get("token_address")
             if not token_address:
                 return {"error": "Missing 'token_address' parameter"}
             limit = function_args.get("limit", self.DEFAULT_LIMIT)
-            result = await self.query_top_buyers(token_address=token_address, limit=limit)
+            launchpad = function_args.get("launchpad")
+            result = await self.query_top_buyers(token_address=token_address, limit=limit, launchpad=launchpad)
         elif tool_name == "query_top_sellers":
             token_address = function_args.get("token_address")
             if not token_address:
                 return {"error": "Missing 'token_address' parameter"}
             limit = function_args.get("limit", self.DEFAULT_LIMIT)
-            result = await self.query_top_sellers(token_address=token_address, limit=limit)
+            launchpad = function_args.get("launchpad")
+            result = await self.query_top_sellers(token_address=token_address, limit=limit, launchpad=launchpad)
         elif tool_name == "query_ohlcv_data":
             token_address = function_args.get("token_address")
             if not token_address:
                 return {"error": "Missing 'token_address' parameter"}
             limit = function_args.get("limit", self.DEFAULT_LIMIT)
-            result = await self.query_ohlcv_data(token_address=token_address, limit=limit)
+            launchpad = function_args.get("launchpad")
+            result = await self.query_ohlcv_data(token_address=token_address, limit=limit, launchpad=launchpad)
         elif tool_name == "query_pair_address":
             token_address = function_args.get("token_address")
             if not token_address:
                 return {"error": "Missing 'token_address' parameter"}
-            result = await self.query_pair_address(token_address=token_address)
+            launchpad = function_args.get("launchpad")
+            result = await self.query_pair_address(token_address=token_address, launchpad=launchpad)
         elif tool_name == "query_liquidity":
             pool_address = function_args.get("pool_address")
             if not pool_address:
