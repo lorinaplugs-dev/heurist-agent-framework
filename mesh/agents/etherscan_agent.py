@@ -144,18 +144,18 @@ class EtherscanAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_transaction_details",
-                    "description": "Analyze a specific blockchain transaction by scraping the explorer page. Provides detailed information about the transaction including sender, receiver, amount, gas fees, and status.",
+                    "description": "Analyze a specific blockchain transaction. Provides detailed information about the transaction including sender, receiver, gas fees, and transaction actions (such as trading on DEX, interacting with DeFi). Use this tool when you want to know what exactly happened for a transaction id.",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "chain": {
                                 "type": "string",
-                                "description": "Blockchain network to query",
+                                "description": "Blockchain network to query.",
                                 "enum": ["ethereum", "base", "arbitrum", "zksync", "avalanche", "bsc"],
                             },
                             "txid": {
                                 "type": "string",
-                                "description": "Transaction hash to analyze",
+                                "description": "Transaction hash starting with 0x",
                             },
                         },
                         "required": ["chain", "txid"],
@@ -166,7 +166,7 @@ class EtherscanAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_address_history",
-                    "description": "Analyze a blockchain address to get transaction history, balance, and activity summary. Provides insights into the address's usage patterns and holdings.",
+                    "description": "Analyze a blockchain address to get transaction history, balance, and activity summary. Use this tool to gets insights into the address usage patterns and token holdings.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -177,7 +177,7 @@ class EtherscanAgent(MeshAgent):
                             },
                             "address": {
                                 "type": "string",
-                                "description": "Wallet address to analyze",
+                                "description": "Wallet address starting with 0x",
                             },
                         },
                         "required": ["chain", "address"],
@@ -188,7 +188,7 @@ class EtherscanAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_erc20_token_transfers",
-                    "description": "Get recent token transfer transactions and basic token information including name, symbol, total supply, and holder count.",
+                    "description": "Get recent token transfer transactions and basic token information including name, symbol, total supply, and holder count. Use this tool to understand recent tranfers of the token. Do not use this for token holder detailed distribution.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -199,7 +199,7 @@ class EtherscanAgent(MeshAgent):
                             },
                             "address": {
                                 "type": "string",
-                                "description": "Token contract address to analyze",
+                                "description": "Token contract address",
                             },
                         },
                         "required": ["chain", "address"],
@@ -210,7 +210,7 @@ class EtherscanAgent(MeshAgent):
                 "type": "function",
                 "function": {
                     "name": "get_erc20_top_holders",
-                    "description": "Get top 50 token holders data including wallet addresses, balances, percentages, and basic token information.",
+                    "description": "Get top 50 token holders data including wallet addresses, balances, percentages, and basic token information. Use this tool to understand token holder distribution.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -221,7 +221,7 @@ class EtherscanAgent(MeshAgent):
                             },
                             "address": {
                                 "type": "string",
-                                "description": "Token contract address to analyze",
+                                "description": "Token contract address",
                             },
                         },
                         "required": ["chain", "address"],
