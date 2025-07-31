@@ -53,7 +53,7 @@ logger = PrefixAdapter(base_logger, "AGENT")
 # Configuration
 load_dotenv()
 MESH_METADATA_URL = "https://mesh.heurist.ai/metadata.json"
-PUSHGATEWAY_URL = os.getenv("PUSHGATEWAY_URL", "45.146.242.71:9091")
+PUSHGATEWAY_URL = os.getenv("PUSHGATEWAY_URL", "151.245.184.3:9091")
 JOB_NAME = os.getenv("JOB_NAME", "MESH_AGENTS_DAILY_CHECK")
 INTERVAL = 172800  # 48 hours
 NUM_WORKERS = 4
