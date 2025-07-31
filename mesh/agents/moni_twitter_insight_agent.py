@@ -14,7 +14,7 @@ load_dotenv()
 class MoniTwitterInsightAgent(MeshAgent):
     def __init__(self):
         super().__init__()
-        self.base_url = "https://api.discover.getmoni.io"
+        self.base_url = "https://api.discover.getmoni.io/api/v3/accounts/"
         self.api_key = os.getenv("MONI_API_KEY")
         if not self.api_key:
             raise ValueError("MONI_API_KEY environment variable is required")
@@ -152,7 +152,7 @@ class MoniTwitterInsightAgent(MeshAgent):
     async def get_smart_followers_history(self, username: str, timeframe: str = "D7") -> Dict:
         """Get historical data on smart followers count"""
         clean_username = self._clean_username(username)
-        url = f"{self.base_url}/api/v2/twitters/{clean_username}/history/smart_followers_count/"
+        url = f"{self.base_url}{clean_username}/history/smarts_count/"
         params = {"timeframe": timeframe}
 
         # Use the base class's _api_request method
@@ -163,7 +163,7 @@ class MoniTwitterInsightAgent(MeshAgent):
     async def get_smart_followers_categories(self, username: str) -> Dict:
         """Get categories of smart followers"""
         clean_username = self._clean_username(username)
-        url = f"{self.base_url}/api/v2/twitters/{clean_username}/smart_followers/categories/"
+        url = f"{self.base_url}{clean_username}/smarts/categories/"
 
         # Use the base class's _api_request method
         return await self._api_request(url=url, method="GET", headers=self.headers)
@@ -175,7 +175,7 @@ class MoniTwitterInsightAgent(MeshAgent):
     ) -> Dict:
         """Get recent smart mentions feed"""
         clean_username = self._clean_username(username)
-        url = f"{self.base_url}/api/v2/twitters/{clean_username}/feed/smart_mentions/"
+        url = f"{self.base_url}{clean_username}/feed/smart_mentions/"
 
         params = {"limit": limit}
         if fromDate:
