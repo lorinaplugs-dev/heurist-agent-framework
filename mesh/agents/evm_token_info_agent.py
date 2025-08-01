@@ -28,7 +28,7 @@ class EvmTokenInfoAgent(MeshAgent):
                 "author_address": "0x7d9d1821d15B9e0b8Ab98A058361233E255E405D",
                 "description": "This agent analyzes large trades for EVM tokens across multiple chains using Bitquery API. It tracks whale movements, identifying large buyers and sellers with transaction details.",
                 "external_apis": ["Bitquery"],
-                "tags": ["EVM", "DeFi", "Trading", "Whale Tracking"],
+                "tags": ["EVM"],
                 "supported_chains": ["ethereum", "eth", "bsc", "binance", "base", "arbitrum", "arb"],
                 "examples": [
                     "Show me recent large trades for USDT on Ethereum",
