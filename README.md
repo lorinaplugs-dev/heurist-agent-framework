@@ -185,15 +185,15 @@ To set up your development environment:
 
 1.  **Install dependencies using uv:**
 
-```bash
+\`\`\`bash
    uv sync
-```
+\`\`\`
 
 2.  **Activate the virtual environment:**
 
-```bash
+\`\`\`bash
    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-```
+\`\`\`
 
 > [!NOTE]
 > To run a file, you can use either `python <filename>.py` or `uv run <filename>.py`.

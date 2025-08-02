@@ -28,23 +28,23 @@ Workflows are designed to be used as a starting point for building more complex 
 
 ## Installation
 
-```bash
+\`\`\`bash
 pip install heurist-core
-```
+\`\`\`
 
 Or install directly from the repository:
 
-```bash
+\`\`\`bash
 pip install git+https://github.com/heurist-network/heurist-agent-framework.git#subdirectory=core
-```
+\`\`\`
 
 ## Environment Variables
 
 Copy `.env.example` to `.env` and configure your environment variables:
 
-```bash
+\`\`\`bash
 cp .env.example .env
-```
+\`\`\`
 
 Required variables:
 - `HEURIST_API_KEY`: Your Heurist API key for accessing LLM and other services
@@ -66,7 +66,7 @@ The Heurist Core package provides several core components for building LLM-power
 
 Handles interactions with LLM services. Easily integrates with tools and tool managers for painless tool use.
 
-```python
+\`\`\`python
 from heurist_core.components import LLMProvider
 
 llm_provider = LLMProvider(
@@ -103,7 +103,7 @@ classification = llm_provider.classify_text(
     text="This product is amazing!",
     classification_prompt="Classify the sentiment of this text as POSITIVE, NEGATIVE, or NEUTRAL."
 )
-```
+\`\`\`
 
 **Dependencies:**
 - Environment variables: `HEURIST_API_KEY`, `HEURIST_BASE_URL`, `LARGE_MODEL_ID`, `SMALL_MODEL_ID`
@@ -113,7 +113,7 @@ classification = llm_provider.classify_text(
 
 Manages conversation context and history.
 
-```python
+\`\`\`python
 from heurist_core.components import ConversationManager
 from heurist_core.embedding import MessageStore, SQLiteVectorStorage
 
@@ -145,7 +145,7 @@ await conversation_manager.store_interaction(
     chat_id="user123",              # Required: Chat ID
     metadata={}                     # Optional: Additional metadata
 )
-```
+\`\`\`
 
 **Dependencies:**
 - `message_store`: Required for storing and retrieving messages
@@ -155,7 +155,7 @@ await conversation_manager.store_interaction(
 
 Manages knowledge storage and retrieval.
 
-```python
+\`\`\`python
 from heurist_core.components import KnowledgeProvider
 from heurist_core.embedding import MessageStore, SQLiteVectorStorage
 
@@ -178,7 +178,7 @@ knowledge_context = await knowledge_provider.get_knowledge_context(
 await knowledge_provider.update_knowledge_base(
     json_file_path="data/quantum_computing.json"  # Path to JSON knowledge file
 )
-```
+\`\`\`
 
 **Dependencies:**
 - `message_store`: Required for storing and retrieving knowledge
@@ -188,7 +188,7 @@ await knowledge_provider.update_knowledge_base(
 
 Handles media processing (images, audio, etc.)
 
-```python
+\`\`\`python
 from heurist_core.components import MediaHandler, LLMProvider
 
 # Initialize media handler
@@ -219,7 +219,7 @@ audio_path = await media_handler.text_to_speech(
 should_generate = media_handler.should_generate_image(
     message="Show me a picture of a sunset"
 )
-```
+\`\`\`
 
 **Dependencies:**
 - `llm_provider`: Required for generating image prompts
@@ -229,7 +229,7 @@ should_generate = media_handler.should_generate_image(
 
 Manages agent personality and prompt configurations.
 
-```python
+\`\`\`python
 from heurist_core.components import PersonalityProvider
 
 # Initialize personality provider
@@ -253,7 +253,7 @@ name = personality_provider.get_name()
 # Get personality settings
 basic_settings = personality_provider.get_basic_settings()
 interaction_styles = personality_provider.get_interaction_styles()
-```
+\`\`\`
 
 **Dependencies:**
 - `config_path`: Optional path to custom prompts.yaml
@@ -267,7 +267,7 @@ Workflows combine multiple components to create complex agent behaviors.
 
 Standard RAG + tools pattern.
 
-```python
+\`\`\`python
 from heurist_core.workflows import AugmentedLLMCall
 from heurist_core.components import KnowledgeProvider, ConversationManager, LLMProvider
 from heurist_core.tools import Tools
@@ -304,7 +304,7 @@ response, image_url, tool_back = await augmented_llm.process(
         "tool_choice": "auto"                 # Tool choice mode (default: "auto")
     }
 )
-```
+\`\`\`
 
 **Dependencies:**
 - `knowledge_provider`: Required for knowledge retrieval
@@ -316,7 +316,7 @@ response, image_url, tool_back = await augmented_llm.process(
 
 Chain of thought reasoning pattern.
 
-```python
+\`\`\`python
 from heurist_core.workflows import ChainOfThoughtReasoning, AugmentedLLMCall
 from heurist_core.components import LLMProvider
 from heurist_core.tools import Tools
@@ -349,7 +349,7 @@ response, image_url, _ = await chain_of_thought.process(
         "store_interaction": False                   # Store interaction (default: False)
     }
 )
-```
+\`\`\`
 
 **Dependencies:**
 - `llm_provider`: Required for LLM calls
@@ -360,7 +360,7 @@ response, image_url, _ = await chain_of_thought.process(
 
 Research workflow for deep web search and analysis.
 
-```python
+\`\`\`python
 from heurist_core.workflows import ResearchWorkflow
 from heurist_core.components import LLMProvider
 from heurist_core.tools import Tools
@@ -397,7 +397,7 @@ report, _, research_results = await research_workflow.process(
         "raw_data_only": False                          # Return only raw data (default: False)
     }
 )
-```
+\`\`\`
 
 **Dependencies:**
 - `llm_provider`: Required for LLM calls
@@ -413,7 +413,7 @@ Tools enable agents to interact with external systems and services. Tools enable
 
 Generic tool execution framework.
 
-```python
+\`\`\`python
 from heurist_core.tools import ToolBox, Tools, tool
 
 # Create a custom toolbox by inheriting from ToolBox
@@ -446,13 +446,13 @@ response, _, tool_calls = await llm_provider.call(
     user_prompt="What is 234 * 456?",
     skip_tools=False  # Enable tool usage
 )
-```
+\`\`\`
 
 ### Tools (MCP)
 
 Tools integration with MCP. Tools MCP enables simple tool management and execution for Heurist Mesh agents and any other MCP Servers.
 
-```python
+\`\`\`python
 from heurist_core.tools.tools_mcp import Tools
 from heurist_core.components import LLMProvider
 
@@ -474,7 +474,7 @@ response, _, tool_calls = await llm_provider.call(
 
 # Don't forget to clean up when done
 await tools.cleanup()
-```
+\`\`\`
 
 **Dependencies:**
 - `mcp`: For MCP integration
@@ -488,7 +488,7 @@ Clients for external services.
 
 Unified search client for web search.
 
-```python
+\`\`\`python
 from heurist_core.clients import SearchClient
 
 # Initialize search client with Firecrawl
@@ -515,7 +515,7 @@ search_results = await firecrawl_client.search(
 
 # Update rate limit
 firecrawl_client.update_rate_limit(rate_limit=2)
-```
+\`\`\`
 
 **Dependencies:**
 - For "firecrawl" client: `firecrawl` package
@@ -525,7 +525,7 @@ firecrawl_client.update_rate_limit(rate_limit=2)
 
 Client for MCP Protocol, facilitating communication and interaction with MCP Servers.
 
-```python
+\`\`\`python
 from heurist_core.clients import MCPClient
 
 # Initialize MCP client
@@ -544,7 +544,7 @@ await mcp_client.send(
 
 # Close connection
 await mcp_client.close()
-```
+\`\`\`
 
 **Dependencies:**
 - `mcp`: For MCP integration
@@ -555,7 +555,7 @@ Here are some examples of how to use the Heurist Core package:
 
 ### Basic LLM Call
 
-```python
+\`\`\`python
 from heurist_core.components import LLMProvider
 import os
 import asyncio
@@ -575,11 +575,11 @@ async def main():
 # Run the async main function
 if __name__ == "__main__":
     asyncio.run(main())
-```
+\`\`\`
 
 ### Research Workflow
 
-```python
+\`\`\`python
 from heurist_core.workflows import ResearchWorkflow
 from heurist_core.components import LLMProvider
 from heurist_core.tools.tools_mcp import Tools
@@ -610,11 +610,11 @@ async def main():
 # Run the async main function
 if __name__ == "__main__":
     asyncio.run(main())
-```
+\`\`\`
 
 ### Chain of Thought Reasoning
 
-```python
+\`\`\`python
 from heurist_core.workflows import ChainOfThoughtReasoning
 from heurist_core.components import LLMProvider, ConversationManager, KnowledgeProvider
 from heurist_core.embedding import MessageStore, SQLiteVectorStorage, SQLiteConfig
@@ -671,7 +671,7 @@ async def main():
 # Run the async main function
 if __name__ == "__main__":
     asyncio.run(main())
-```
+\`\`\`
 
 This example demonstrates:
 1. Complex multi-step reasoning
@@ -682,7 +682,7 @@ This example demonstrates:
 
 ### Conversation with Memory
 
-```python
+\`\`\`python
 from heurist_core.workflows import AugmentedLLMCall
 from heurist_core.components import LLMProvider, ConversationManager, KnowledgeProvider
 from heurist_core.embedding import MessageStore, SQLiteVectorStorage, SQLiteConfig
@@ -721,7 +721,7 @@ async def main():
 # Run the async main function
 if __name__ == "__main__":
     asyncio.run(main())
-```
+\`\`\`
 
 For more examples, see the `examples/` directory.
 

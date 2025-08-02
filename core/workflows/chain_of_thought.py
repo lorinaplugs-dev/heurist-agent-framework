@@ -212,9 +212,9 @@ class ChainOfThoughtReasoning:
         Each step should have "step", "tool", and "parameters" fields.
 
         Original text:
-        ```
+        \`\`\`
         {text}
-        ```
+        \`\`\`
 
         Return ONLY the fixed JSON with no additional text, explanations, or markdown formatting.
         """

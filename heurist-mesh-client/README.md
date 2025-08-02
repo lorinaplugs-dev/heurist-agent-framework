@@ -11,28 +11,28 @@ Heurist Mesh provides a powerful REST API that enables developers to seamlessly 
 
 You can install the Heurist Mesh client directly from GitHub:
 
-```bash
+\`\`\`bash
 pip install git+https://github.com/heurist-network/heurist-agent-framework.git#subdirectory=heurist-mesh-client
-```
+\`\`\`
 
 ### Authentication
 
 The API requires authentication using an API key. Set your API key as an environment variable:
 
-```
+\`\`\`
 HEURIST_API_KEY=your_api_key_here
-```
+\`\`\`
 
 Alternatively, you can use a `.env` file in your project directory:
 
-```
+\`\`\`
 # .env file
 HEURIST_API_KEY=your_api_key_here
-```
+\`\`\`
 
 Then load it in your application:
 
-```python
+\`\`\`python
 from dotenv import load_dotenv
 
 # load environment variables from .env file
@@ -41,18 +41,18 @@ load_dotenv()
 # the client will automatically use the HEURIST_API_KEY from environment
 from heurist_mesh_client import MeshClient
 client = MeshClient()
-```
+\`\`\`
 
 ### Client Setup
 
 The client supports both synchronous requests and asynchronous task patterns. Here's how to initialize the client:
 
-```python
+\`\`\`python
 from heurist_mesh_client import MeshClient
 
 # initialize the client
 client = MeshClient()
-```
+\`\`\`
 
 ### Request Patterns
 
@@ -63,18 +63,18 @@ The client supports two main request patterns:
 
 #### Synchronous Request Example
 
-```python
+\`\`\`python
 # synchronous request
 response = client.sync_request(
     agent_id="CoinGeckoTokenInfoAgent",
     query="What is the current price of Bitcoin?"
 )
 print(json.dumps(response, indent=2))
-```
+\`\`\`
 
 #### Asynchronous Task Example
 
-```python
+\`\`\`python
 # create an asynchronous task
 task = client.create_task(
     agent_id="CoinGeckoTokenInfoAgent",
@@ -91,7 +91,7 @@ while True:
         break
     print("Task in progress...")
     time.sleep(1)
-```
+\`\`\`
 
 ### Request Types
 
@@ -102,24 +102,24 @@ The client handles two main types of requests:
 
 #### Natural Language Example
 
-```python
+\`\`\`python
 # natural language query
 response = client.sync_request(
     agent_id="CoinGeckoTokenInfoAgent",
     query="What is the current price of Bitcoin?"
 )
-```
+\`\`\`
 
 #### Tool-based Request Example
 
-```python
+\`\`\`python
 # tool-based request with specific arguments
 response = client.sync_request(
     agent_id="CoinGeckoTokenInfoAgent",
     tool="get_token_price",
     tool_arguments={"coingecko_id": "solana"},
 )
-```
+\`\`\`
 
 ### Parameters
 
@@ -138,7 +138,7 @@ response = client.sync_request(
 
 The API returns responses in JSON format containing:
 
-```python
+\`\`\`python
 # for sync_request:
 {
     "result": {
@@ -165,4 +165,4 @@ The API returns responses in JSON format containing:
         "success": true  # or false
     }
 }
-```
+\`\`\`

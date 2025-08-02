@@ -4,7 +4,7 @@ input_market_sentiment:
 output_market_sentiment:
   response: "**Error Response**\n\n**Request:** Current Market Sentiment for Top Cryptocurrencies\n\
     **Tool Used:** `get_sentiments` (for General Market Sentiment)\n\n**Error Message:**\n\
-    ```markdown\n{\n  'error': \"API request failed: 400, message='Bad Request', url='https://api.tokenmetrics.com/v2/sentiments?limit=5&page=0'\"\
+    \`\`\`markdown\n{\n  'error': \"API request failed: 400, message='Bad Request', url='https://api.tokenmetrics.com/v2/sentiments?limit=5&page=0'\"\
     \n}\n```\n\n**Analysis and Resolution:**\n\n* **Error Code:** 400 (Bad Request)\
     \ indicates that the server cannot process the request due to a client-side error.\n\
     * **Potential Causes:**\n\t1. **Invalid Request Parameters:** The `limit=5&page=0`\
@@ -18,11 +18,11 @@ output_market_sentiment:
     \ cryptocurrency sentiments:\n\n**Retry (Conceptual, as direct API call not provided\
     \ here):**\nUse `get_sentiments` without any parameters to fetch the current general\
     \ market sentiment.\n\n**Expected Response Format (once successfully queried):**\n\
-    ```markdown\n# General Crypto Market Sentiment\n- **Sentiment Grade:** [e.g.,\
+    \`\`\`markdown\n# General Crypto Market Sentiment\n- **Sentiment Grade:** [e.g.,\
     \ Positive, Negative, Neutral]\n- **Sentiment Labels:** [e.g., Bullish, Bearish,\
     \ Stable]\n- **Summary:** Brief overview of the current market mood based on Twitter\
     \ sentiment analysis.\n```\n\n**Example (Simulated, as actual API call failed):**\n\
-    ```markdown\n# General Crypto Market Sentiment\n- **Sentiment Grade:** Neutral\n\
+    \`\`\`markdown\n# General Crypto Market Sentiment\n- **Sentiment Grade:** Neutral\n\
     - **Sentiment Labels:** Stable, Cautious\n- **Summary:** Market participants exhibit\
     \ cautious optimism, awaiting key economic indicators for direction.\n```\n\n\
     **For Top Cryptocurrency Sentiment or Specific Analysis:**\nPlease note, the `get_sentiments`\

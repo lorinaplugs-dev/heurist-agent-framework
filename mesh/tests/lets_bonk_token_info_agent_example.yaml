@@ -2844,7 +2844,7 @@ bonding_curve_progress:
       response: "**Bonding Curve Progress Calculation for Token AF5ZJKsC12VsvmLASF6JWDZQjeKMBdD7mCQYSHHnbonk**\n\
         \n**Error Response from Bitquery API:**\n```markdown\n{\n  'error': 'No pool\
         \ data found for token AF5ZJKsC12VsvmLASF6JWDZQjeKMBdD7mCQYSHHnbonk'\n}\n\
-        ```\n\n**Analysis and Next Steps:**\n\n* **Error Reason:** The Bitquery API\
+        \`\`\`\n\n**Analysis and Next Steps:**\n\n* **Error Reason:** The Bitquery API\
         \ returned an error indicating that no pool data was found for the specified\
         \ token `[AF5ZJKsC12VsvmLASF6JWDZQjeKMBdD7mCQYSHHnbonk](https://solscan.io/token/AF5ZJKsC12VsvmLASF6JWDZQjeKMBdD7mCQYSHHnbonk)`.\
         \ This suggests that the token might not be listed on any of the tracked launchpads\

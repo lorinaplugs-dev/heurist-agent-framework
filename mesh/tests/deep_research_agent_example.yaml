@@ -156,7 +156,7 @@ output:
       3. **Careful Planning for RISC-V Integration**: To mitigate potential backward\
       \ compatibility and migration issues.\n4. **Development of In-Depth Technical\
       \ Resources**: For non-experts to fully leverage ZKP advancements.\n\" \n}\n\
-      ```"
+      \`\`\`"
     data:
       learnings:
       - Matter Labs' ZKsync Airbender generates Ethereum block proofs in 35 seconds

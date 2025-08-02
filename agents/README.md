@@ -2,15 +2,15 @@
 
 1. Clone the repository:
 
-```bash
+\`\`\`bash
 git clone https://github.com/heurist-network/heurist-agent-framework.git
 cd heurist-agent-framework
-```
+\`\`\`
 
 2. Install dependencies:
-```bash
+\`\`\`bash
 pip install -r requirements.txt
-```
+\`\`\`
 
 3. Set up environment variables in `.env`:
 see `.env.example`
@@ -21,24 +21,24 @@ see `.env.example`
 ### Running Different Interfaces
 
 1. Telegram Agent:
-```bash
+\`\`\`bash
 python main_telegram.py
-```
+\`\`\`
 
 2. Discord Agent:
-```bash
+\`\`\`bash
 python main_discord.py
-```
+\`\`\`
 
 3. REST API:
-```bash
+\`\`\`bash
 python main_api.py
-```
+\`\`\`
 
 4. Twitter Bot (Posting):
-```bash
+\`\`\`bash
 python main_twitter.py
-```
+\`\`\`
 
 ### API Endpoints
 
@@ -49,11 +49,11 @@ The REST API provides the following endpoints:
   - Response: `{"text": "Response text", "image_url": "Optional image URL"}`
 
 Example:
-```bash
+\`\`\`bash
 curl -X POST http://localhost:5005/message \
   -H "Content-Type: application/json" \
   -d '{"message": "Tell me about artificial intelligence"}'
-```
+\`\`\`
 
 ### Main Loop
 
@@ -75,6 +75,6 @@ To add a new interface:
 ## Configuration
 
 The framework uses YAML configuration for prompts and agent behavior. Configure these in:
-```
+\`\`\`
 config/prompts.yaml
-```
+\`\`\`
