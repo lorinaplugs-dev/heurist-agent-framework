@@ -18,17 +18,17 @@ classifiers = [
 ]
 dependencies = [
     "openai==1.71.0",
-    "requests==2.32.3",
+    "requests==2.32.4",
     "numpy==1.26.3",
     "scikit-learn==1.6.1",
     "psycopg2-binary==2.9.10",
-    "smolagents==1.9.2",
+    "smolagents==1.17.0",
     "python-dotenv==1.1.0",
     "pyyaml==6.0.2",
     "tenacity==8.5.0",
     "tiktoken==0.9.0",
-    "aiohttp==3.11.15",
-    "mcp==1.6.0",
+    "aiohttp==3.12.14",
+    "mcp==1.10.0",
     "firecrawl-py==2.8.0",
 ]
 
