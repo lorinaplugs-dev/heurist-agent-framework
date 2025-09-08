@@ -1,3 +1,0 @@
-"""
-Mesh package initialization
-"""
